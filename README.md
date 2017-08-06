@@ -1,2 +1,2 @@
 # SafeLanguage
-Bot to clean wikipedia from grammar mistakes
+Bot to clean wikipedia from language mistakes.
