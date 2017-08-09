@@ -10,6 +10,7 @@ dependencies:
 - scipy
 - pandas
 - pandas-summary
+- lxml
 - pip:
   - environment_kernels
   - missingno
