@@ -1,0 +1,1 @@
+mv $1 cuatro.txt; ./REF cuatro.txt
