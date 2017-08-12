@@ -1,0 +1,1 @@
+mv $1 dos.txt ; ./AUTO dos.txt

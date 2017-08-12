@@ -1,0 +1,5 @@
+bzcat /media/ascander/datos/ascander/RespaldoWP/geswiki-20150901-pages-articles.txt.bz2 |egrep ' (ademas|tambien|ningun|todavia|despues) '| _s/sed.py -e 's/→.*//'> _/frec15
+for arch in $(ls _/_*); do  echo $arch; _s/excluir.py < $arch > _/XX; wc -l _/XX $arch; mv  _/XX $arch; done
+python pwb.py login
+bzcat ~/perso/Respaldos/WP/geswiki-20170401-pages-articles.txt.bz2 |_s/errores.py> _/NUE
+_s/excluir.py < _/NUE > _/NUE_F

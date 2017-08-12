@@ -1,7 +1,6 @@
 # SafeLanguage
 /.cache/
 
-
 # Compiled source #
 ###################
 *.com
@@ -43,3 +42,8 @@ tmtagsHistory
 *.sublime-project
 *.sublime-workspace
 .bundle
+
+#Editor's temporary files
+#######################
+*.*~
+*~

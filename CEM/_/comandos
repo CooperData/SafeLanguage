@@ -1,0 +1,4 @@
+bzcat ~/perso/Respaldos/WP/geswiki-20170401-pages-articles.txt.bz2 |egrep "\[\[[ABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÍÍÓÚ](.*?)\|[abcdefghijklmnñopqrstuvwxyzáííóú]\1\]"> _/pipes 
+bzcat ~/perso/Respaldos/WP/geswiki-20170401-pages-articles.txt.bz2 |_s/errores.py ; cat Los.lem
+bzcat ~/perso/Respaldos/WP/geswiki-20170401-pages-articles.txt.bz2 |_s/errores.py > _/nuevos ; cat Los.lem
+bzcat ~/perso/Respaldos/WP/geswiki-20170401-pages-articles.txt.bz2|egrep 'm[aá]s tardes'

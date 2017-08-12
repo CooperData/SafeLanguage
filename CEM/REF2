@@ -1,0 +1,2 @@
+#echo $* && cat $* > dos.txt && rm $* && ./REF dos.txt
+mv $1 dos.txt ; ./REF dos.txt
