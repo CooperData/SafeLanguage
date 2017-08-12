@@ -1,0 +1,2 @@
+#echo $* && cat $* > uno.txt && rm $* && ./REF uno.txt
+mv $1 uno.txt ; ./REF uno.txt

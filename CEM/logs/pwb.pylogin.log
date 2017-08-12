@@ -1,0 +1,58 @@
+2017-06-20 05:40:33       wikipedia.py, 9219 in     writelogheader: INFO     === Pywikipediabot framework v1.0 -- Logging header ===
+2017-06-20 05:40:33       wikipedia.py, 9222 in     writelogheader: INFO     COMMAND: ['pwb.py', 'login']
+2017-06-20 05:40:39       wikipedia.py, 9231 in     writelogheader: ERROR    ParseError
+2017-06-20 05:40:39       wikipedia.py, 9235 in     writelogheader: INFO     SYSTEM: ('Linux', 'desktop', '4.4.0-79-generic', '#100-Ubuntu SMP Wed May 17 19:58:14 UTC 2017', 'x86_64')
+2017-06-20 05:40:39       wikipedia.py, 9238 in     writelogheader: INFO     MODULES:
+2017-06-20 05:40:39       wikipedia.py, 9242 in     writelogheader: INFO       family.py 255cc3d 2016-12-15 20:13:07.942562
+2017-06-20 05:40:39       wikipedia.py, 9242 in     writelogheader: INFO       pywikibot/version.py c96b74b 2016-12-15 20:11:20.446929
+2017-06-20 05:40:39       wikipedia.py, 9242 in     writelogheader: INFO       xmlreader.py 344ddf5 2016-12-15 20:13:07.734555
+2017-06-20 05:40:39       wikipedia.py, 9242 in     writelogheader: INFO       pywikibot/exceptions.py 9f2eb10 2016-12-15 20:11:20.306924
+2017-06-20 05:40:39       wikipedia.py, 9242 in     writelogheader: INFO       wikipedia.py c459615 2016-12-15 20:11:29.951255
+2017-06-20 05:40:39       wikipedia.py, 9242 in     writelogheader: INFO       pywikibot/textlib.py d0e69c4 2017-04-09 02:45:07.377050
+2017-06-20 05:40:39       wikipedia.py, 9242 in     writelogheader: INFO       userlib.py 21e7c74 2016-12-15 20:11:31.263299
+2017-06-20 05:40:39       wikipedia.py, 9242 in     writelogheader: INFO       login.py 49befc8 2016-12-15 20:13:17.134868
+2017-06-20 05:40:39       wikipedia.py, 9242 in     writelogheader: INFO       pywikibot/throttle.py 08b1383 2016-12-15 20:11:20.562932
+2017-06-20 05:40:39       wikipedia.py, 9242 in     writelogheader: INFO       wikipediatools.py 7af8cb7 2016-12-15 20:11:29.959255
+2017-06-20 05:40:39       wikipedia.py, 9242 in     writelogheader: INFO       query.py ced5323 2016-12-15 20:11:30.003256
+2017-06-20 05:40:39       wikipedia.py, 9242 in     writelogheader: INFO       config.py ef495ca 2016-12-15 20:11:20.238921
+2017-06-20 05:40:39       wikipedia.py, 9242 in     writelogheader: INFO       pywikibot/i18n.py d180604 2016-12-15 20:11:20.322924
+2017-06-20 05:40:39       wikipedia.py, 9242 in     writelogheader: INFO       pywikibot/support.py e6db56b 2016-12-15 20:11:20.630935
+2017-06-20 05:40:40       wikipedia.py, 9245 in     writelogheader: INFO     MESSAGES: none
+2017-06-20 05:40:40       wikipedia.py, 9247 in     writelogheader: INFO     === === === === === === === === === === === === === === 
+2017-06-20 05:40:43             pwb.py,  169 in           <module>: ERROR    ParseError
+Traceback (most recent call last):
+  File "pwb.py", line 156, in <module>
+    'online_ver': version.getversion_onlinerepo()[:7],
+  File "/home/usuario/perso/Proyectos/CEM/pywikibot/version.py", line 160, in getversion_onlinerepo
+    raise ParseError
+ParseError
+2017-06-20 05:40:43             pwb.py,   60 in send_mailnotification: INFO     Sending mail "Bot ERROR" to "CEM-" as notification!
+2017-06-20 05:40:43             pwb.py,   63 in send_mailnotification: INFO     Bot allowed to send email: True
+2017-06-20 05:40:43             pwb.py,   64 in send_mailnotification: INFO     Permissions: [[u'editmyoptions', u'changetags', u'move', u'flow-hide', u'applychangetags', u'editsemiprotected', u'transcode-reset', u'editmywatchlist', u'flow-edit-post', u'ep-bereviewer', u'createtalk', u'minoredit', u'skipcaptcha', u'nominornewtalk', u'noratelimit', u'*', u'collectionsaveasuserpage', u'viewmywatchlist', u'abusefilter-view', u'editmyuserjs', u'reupload-own', u'ep-enroll', u'writeapi', u'flow-lock', u'createaccount', u'editmyprivateinfo', u'centralauth-merge', u'read', u'autopatrol', u'abusefilter-log', u'suppressredirect', u'user', u'createpage', u'apihighlimits', u'move-categorypages', u'autoconfirmed', u'move-rootuserpages', u'edit', u'sendemail', u'bot', u'upload', u'vipsscaler-test', u'patrolmarks', u'purge', u'reupload', u'editmyusercss', u'viewmyprivateinfo', u'mwoauthmanagemygrants'], None]
+2017-06-20 05:40:44             pwb.py,   72 in send_mailnotification: ERROR    AttributeError: 'User' object has no attribute '_mailable'
+Traceback (most recent call last):
+  File "pwb.py", line 69, in send_mailnotification
+    if usr.sendMail(subject=subject, text=text):    # 'text' should be unicode!
+  File "/home/usuario/perso/Proyectos/CEM/userlib.py", line 232, in sendMail
+    if not self.isEmailable():
+  File "/home/usuario/perso/Proyectos/CEM/userlib.py", line 168, in isEmailable
+    return self._mailable
+AttributeError: 'User' object has no attribute '_mailable'
+2017-06-20 05:40:44             pwb.py,   73 in send_mailnotification: ERROR    mail to CEM- could not be sent!
+2017-06-20 05:40:44             pwb.py,   75 in send_mailnotification: INFO     May be not logged in - try to send emergency email
+2017-06-20 05:40:44             pwb.py,   92 in send_mailnotification: ERROR    error: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "pwb.py", line 88, in send_mailnotification
+    server = smtplib.SMTP("localhost")
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 316, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/lib/python2.7/smtplib.py", line 291, in _get_socket
+    return socket.create_connection((host, port), timeout)
+  File "/usr/lib/python2.7/socket.py", line 575, in create_connection
+    raise err
+error: [Errno 111] Connection refused
+2017-06-20 05:40:44             pwb.py,   93 in send_mailnotification: ERROR    emergency mail to [u'cem-@toolserver.org'] could not be sent!
+2017-06-20 05:40:44             pwb.py,  176 in           <module>: INFO     
+2017-06-20 05:40:44             pwb.py,  177 in           <module>: WARNING  DONE with Exception(s) occured in Bot
