@@ -63,4 +63,16 @@ fabric.properties
 # Sonarlint plugin
 .idea/sonarlint
 
+
+
+# Compiled source #
+###################
+*.pyc
+
+#Editor's temporary files
+#######################
+*.*~
+*~
+
+
 # End of https://www.gitignore.io/api/pycharm
