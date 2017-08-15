@@ -63,7 +63,8 @@ fabric.properties
 # Sonarlint plugin
 .idea/sonarlint
 
-
+# pytest
+.cache
 
 # Compiled source #
 ###################
