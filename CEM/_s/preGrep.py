@@ -1,5 +1,10 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 # -*- coding: utf-8  -*-
+
+# conda execute
+# env:
+#  - python >=3
+
 #Preparar un respaldo para usar grep
 import sys, getopt
 import re
