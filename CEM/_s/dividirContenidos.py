@@ -1,5 +1,9 @@
-#!/home/ascander/py3/Python-3.3.1/python
+#!/usr/bin/env python
 # -*- coding: utf-8  -*-
+
+# conda execute
+# env:
+#  - python >=3
 import sys, getopt
 import re
 import excluidos
