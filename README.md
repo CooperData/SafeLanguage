@@ -14,6 +14,8 @@ The goal of this project is to reduce the percentage of changes that a human has
 
 1. Filter lines with “radicals”, i.e. lines in which one of the correction rules can be applied.
 
+1. Filter to split paragraphs in sentences.
+
 1. Correct selected articles with CEM-bot.
 
 1. Manually check each of the changes made by the bot and revert any incorrect change.
@@ -24,6 +26,8 @@ Given that the number of articles with radicals is very high, steps 3 and 4 are 
 
 1. Transform it’s XML format into a grep’able format i.e one in which only content lines 
 of articles are present, prepended.
+
+1. Filter to split paragraphs in sentences.
 
 1. Create an empty set of checked articles.
 
@@ -50,6 +54,8 @@ The selector uses a line by line approach and sometimes reasons for not correcti
 
 1. Transform it’s XML format into a grep’able format i.e one in which only content lines of articles are present, prepended by the name of the article.
 
+1. Filter to split paragraphs in sentences.
+
 1. Filter lines with “radicals”, i.e. lines in which one of the correction rules can be applied.
 
 1. Filter lines with the Spanish language selector.
@@ -65,6 +71,8 @@ This sequence could reduce the corrections of phrases in other languages.
 1. Download the last backup of the Spanish Wikipedia.
 
 1. Transform it’s XML format into a grep’able format i.e one in which only content lines of articles are present, prepended by the name of the article.
+
+1. Filter to split paragraphs in sentences.
 
 1. Filter lines with “radicals”, i.e. lines in which one of the correction rules can be applied.
 
