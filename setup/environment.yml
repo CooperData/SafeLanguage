@@ -11,6 +11,8 @@ dependencies:
 - pandas
 - pandas-summary
 - lxml
+- nltk
 - pip:
   - environment_kernels
   - missingno
+  - wikipedia

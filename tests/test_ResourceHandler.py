@@ -10,3 +10,9 @@ class TestResourceHandler(object):
         prediction = clf.predict(sentence)
         assert target_names[prediction[0]] == 'es'
 
+    def test_get_feature_pages(self):
+        resource_handler = ResourceHandler()
+        feature_articles = resource_handler.get_feature_pages()
+        print(feature_articles.keys())
+        # assert target_names[prediction[0]] == 'es'
+        pass

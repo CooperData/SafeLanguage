@@ -1,0 +1,39 @@
+import wikipedia
+import pickle
+import pathlib
+
+from collections import defaultdict
+
+
+def create_wiki_links():
+
+    languages = {'es': 'Wikipedia:Artículos destacados',
+                 'it': 'Wikipedia:Vetrina',
+                 'en': 'Wikipedia:Featured articles',
+                 'de': 'Wikipedia:Exzellente Artikel',
+                 'ca': 'Viquipèdia:Articles de qualitat',
+                 'fr': 'https://en.wikipedia.org/wiki/Wikipedia:Translation/*/Featured_Articles/French'}
+
+    all_links = defaultdict(list)
+
+    for language in languages:
+        wikipedia.set_lang(language)
+        if language == 'fr':
+            continue
+        feature_page = wikipedia.page(languages.get(language))
+        links = feature_page.links
+        for link in links:
+            all_links[language].append(link)
+
+    pickle.dump(all_links, open('featured_links.pkl', 'wb'))
+
+
+def main():
+
+    wiki_links = pathlib.Path('/feature_links.pkl')
+    if not wiki_links.is_file():
+        create_wiki_links()
+
+
+if __name__ == '__main__':
+    main()

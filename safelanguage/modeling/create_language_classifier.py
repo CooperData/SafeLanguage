@@ -9,14 +9,17 @@ from sklearn.externals import joblib
 download_data()
 
 # Load training data
-languages_data_folder = './paragraphs'
+languages_data_folder = './data/paragraphs'
 dataset = load_files(languages_data_folder)
+
+print(dataset)
+print(dataset.target_names)
 
 # data: dataset.data,
 # label: dataset.target
 
 # Creating pipeline
-hashing_vectorizer = HashingVectorizer(analyzer = 'char_wb', ngram_range = (1,3))
+hashing_vectorizer = HashingVectorizer(analyzer='char_wb', ngram_range=(1, 3))
 text_clf = Pipeline([
                     ('vec', hashing_vectorizer),
                     ('clf', Perceptron()),
@@ -24,9 +27,9 @@ text_clf = Pipeline([
 
 clf = text_clf.fit(dataset.data, dataset.target)
 clf_model = [clf, dataset.target_names]
+
 # wrapping classifier
 joblib.dump(clf_model, '../resources/language_classification_model.pkl')
-
 
 # Delete data
 delete_data()

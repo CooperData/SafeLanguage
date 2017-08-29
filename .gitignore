@@ -66,6 +66,10 @@ fabric.properties
 # pytest
 .cache
 
+# OsX
+.DS_Store
+profile
+
 # Compiled source #
 ###################
 **/*.pyc
