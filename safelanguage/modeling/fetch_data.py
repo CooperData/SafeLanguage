@@ -11,10 +11,11 @@ import codecs
 import shutil
 from safelanguage.ResourceHandler import ResourceHandler
 import wikipedia
+import re
 
-html_folder = u'./data/html'
-text_folder = u'./data/paragraphs'
-short_text_folder = u'./data/short_paragraphs'
+html_folder = u'./modeling/data/html'
+text_folder = u'./modeling/data/paragraphs'
+short_text_folder = u'./modeling/data/short_paragraphs'
 
 
 def download_data(data_size='small'):
@@ -53,33 +54,38 @@ def create_folder(languages):
 
 
 def download_all_data():
+    WORDS_SHORT_TEXT = 5
     resource_handler = ResourceHandler()
     feature_articles = resource_handler.get_feature_pages()
     for language in feature_articles.keys():
         articles = feature_articles.get(language)
         wikipedia.set_lang(language)
         for article in articles:
-            i = 0
+            article_number = 0
             content = wikipedia.page(article).content
             split_content = content.splitlines()
             paragraphs = [re.sub(r'\[[^]]*\]\u200b', '', p.strip()) for p in split_content if len(p.strip()) > 0]
             for paragraph in paragraphs:
+                paragraph_number = 0
+                words = paragraph.split()
                 if len(paragraph) < 100:
-                    write_small_paragraph(paragraph)
+                    continue
                 else:
-                    write_normal_paragraph(paragraph)
-            break
-            i += 1
-
-    print(feature_articles)
+                    write_normal_paragraph(paragraph, language, article_number, paragraph_number)
+                paragraph_number += 1
+            article_number += 1
 
 
-def write_small_paragraph(paragraph):
+
+def write_small_paragraph(paragraph, language, article_number, paragraph_number):
     pass
 
 
-def write_normal_paragraph(paragraph):
-    pass
+def write_normal_paragraph(paragraph, language, article_number, paragraph_number):
+    text_filename = os.path.join(language_folder_path('normal', language),
+                                 '%s_%06d_%04d.txt' % (language, article_number, paragraph_number))
+    print("Writing %s" % text_filename)
+    open(text_filename, 'wb').write(paragraph.encode('utf-8', 'ignore'))
 
 
 def download_small_data():
@@ -146,6 +152,6 @@ def download_small_data():
 
 
 def delete_data():
-    if os.path.exists('./data'):
-        shutil.rmtree('./data')
+    if os.path.exists('./modeling/data'):
+        shutil.rmtree('./modeling//data')
 

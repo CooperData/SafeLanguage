@@ -4,7 +4,7 @@ import pickle
 
 class ResourceHandler:
 
-    RESOURCE_PATH = './safelanguage/resources/'
+    RESOURCE_PATH = './resources/'
     MODEL_INDEX = 0
     TARGET_INDEX = 1
 
