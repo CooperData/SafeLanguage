@@ -13,10 +13,11 @@ def filter():
     spat = re.compile("→")
     while line:
         structure = spat.split(line)
-        lines = pat.split(structure[1])
-        for l in lines[:-1]:
-            print (structure[0]+"→"+l+".")
-        print(structure[0]+"→"+lines[-1])
+        if len(structure>1):
+            lines = pat.split(structure[1])
+            for l in lines[:-1]:
+                print (structure[0]+"→"+l+".")
+                print(structure[0]+"→"+lines[-1])
         line = sys.stdin.readline()[:-1]
 
 filter()
