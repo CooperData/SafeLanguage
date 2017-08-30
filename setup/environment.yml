@@ -8,6 +8,7 @@ dependencies:
 - pytest
 - scikit-learn
 - scipy
+- beautifulSoup
 - pandas
 - pandas-summary
 - lxml

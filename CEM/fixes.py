@@ -2955,7 +2955,7 @@ lema(ur'[Dd]ebut_ó__o') + #49
 lema(ur'[Rr](?:abi|adi|adic|adiografi|amific|anci|apt|arific|asc|asguñ|astre|atific|ay|azon|eaccion|eacondicion|eactiv|eafirm|eagrup|eanim|eanud|earm|easign|eaviv|ebaj|eban|ebas|ebautiz|ebel|ebot|ebusc|ecab|ecal|ecalc|ecalific|ecambi|ecaptur|ecaud|ecicl|ecit|eclam|eclut|ecobr|ecolect|ecoloc|ecombin|ecompens|econcili|econquist|econsider|ecopil|ecort|ecre|ecri|ecrimin|ectific|ecul|ecuper|edact|edireccion|ediseñ|edobl|edonde|edund|eduplic|eedific|eedit|eeduc|eelabor|eembarc|eencarn|eentr|eenvi|eestren|eestructur|eferenci|efin|eflej|eflexion|eform|eformul|efrend|efresc|efugi|efund|efut|egal|egañ|egent|egistr|eglament|egrab|egres|egul|ehabilit|ein|einaugur|eincorpor|eingres|einstal|einstaur|eintegr|einterpret|einvent|eiter|eivindic|elacion|elaj|elampague|elat|elev|ellen|emarc|emat|emed|emedi|ememor|emezcl|emodel|emolc|emont|enombr|enov|enunci|eorden|eorient|epar|epas|epatri|epesc|epic|eplante|eplic|eport|epos|epresent|eproch|eprogram|epudi|equis|esabi|esalt|esbal|escat|esec|eserv|eseñ|esfri|esguard|esign|espald|espet|est|estaur|esucit|esult|et|etard|etoc|etom|etorn|etract|etras|etrat|etruc|eubic|eunific|evalid|evel|everenci|evindic|evis|evivific|evoc|evolucion|igi|ob|oci|od|ode|onc|ond|ot|ubric|umi|umore)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #61
 lema(ur'[Dd]edic_ó__o', pre=ur'[Ss]e ') + #24
 lema(ur'[Pp](?:acific|act|agin|ali|anific|ar|arafrase|arodi|arpade|articip|as|ase|atale|ate|atent|atin|atrocin|atrull|aviment|ec|edale|ein|el|ele|ellizc|enc|enetr|ens|ercat|erdon|erdur|eregrin|erfeccion|erfil|erjudic|ermut|ernoct|erpetr|erpetu|ersign|erson|ersonific|erturb|es|esc|etrific|ic|ifi|ill|ilot|inch|int|irar|irate|is|it|ivot|izc|lac|lagi|lanch|lane|lanific|lant|lante|lantific|lasm|lastific|latic|leite|onch|ontific|opul|orfi|ort|os|osesion|osibilit|osicion|ostul|otenci|ractic|reci|recipit|recis|redic|redomin|refabric|refij|regon|regunt|reludi|remi|reocup|repar|resagi|resenci|reserv|resion|rest|restigi|revaric|rim|rincipi|riv|rivilegi|roces|rocesion|rocre|rocur|rofes|rogram|rogres|rolifer|romedi|rometi|romocion|ronostic|ronunci|ropici|ropin|roporcion|ropugn|ropuls|rosific|rosper|rotest|rovoc|royect|ublic|ublicit|uj|uls|untu|urific)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #46
-lema(ur'[Tt]om_ó__o', pre=ur'\b(?:[Ll]a|[Yy]) ', xpre=[ur'tomo ', ur'Shannon ', ur'Kagura ', ur'Mafuyu ', ur'Terry ', ], xpos=[ur' (?:[IVXLCDM]+|requerido|segundo|Takahashi|Yamanobe|Inoue|Vran|se ven|logró|tienen|[0-9]+)', ur'(?:, que|: [0-9]+|: [IVXLCDM]+)', ]) + #16
+lema(ur'[Tt]om_ó__o', pre=ur'\b(?:[Ll]a|[Yy]) ', xpre=[ur'[Mm]e ', ur'tomo ', ur'Shannon ', ur'Kagura ', ur'Mafuyu ', ur'Terry ', ], xpos=[ur' (?:[IVXLCDM]+|requerido|segundo|Takahashi|Yamanobe|Inoue|Vran|se ven|logró|tienen|[0-9]+)', ur'(?:, que|: [0-9]+|: [IVXLCDM]+)', ]) + #16
 lema(ur'[Dd]estac_ó__o') + #17
 lema(ur'[Cc]onstruy_ó__o') + #82
 lema(ur'[Ff](?:abric|acilit|actur|acult|aj|all|alsific|alt|antase|ascin|astidi|ech|elicit|eri|estej|estone|ich|igur|ili|ilm|ilosof|iltr|inanci|irm|lame|let|lot|oli|oment|onde|orceje|orj|orm|ormate|ormul|ornic|orr|ortific|otocopi|otografi|racas|raccion|ractur|ragment|recuent|ren|ris|ructific|rustr|ulmin|uncion|und|undament|usil|usion)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #53
@@ -3002,8 +3002,8 @@ lema(ur'[Ee]specializ_ó__o') + #30
 lema(ur'[Vv]enci_ó__o') + #23
 lema(ur'[Aa]dapt_ó__o') + #21
 lema(ur'[Cc]onstituy_ó__o', pre=ur'[Ss]e ') + #1
-lema(ur'[Ss]err_ó__o') + #27
-lema(ur'[Ll]ogr_ó__o', pre=ur'(?:[Ll][eo]|[Ss]e(?: me| te| l[aeo]s?|)) ') + #15
+lema(ur'[Ss]err_ó__o', xpos=[ur' do\b', ur'\]\]']) + #27
+lema(ur'[Ll]ogr_ó__o', pre=ur'(?:[Ll][eo]|[Ss]e(?: me| te| l[aeo]s?|)) ', xpre=[ur'\by ']) + #15
 lema(ur'[Aa]mpli_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ', xpos=[ur' del? ', ]) + #10
 lema(ur'[Bb](?:abe|ail|aj|alance|albuce|anc|araj|as|ast|atall|ate|añ|eatific|ec|enefici|es|ifurc|iloc|iografi|isec|lanque|lasfem|loc|loque|oicote|ombarde|onific|orde|orr|osquej|ot|re|rill|rinc|rome|ronce|rot|uce|url)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #9
 lema(ur'[Ii]ncluy_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)|que) ') + #15
@@ -3698,8 +3698,9 @@ lema(ur'[Aa]dapt_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
 #lema(ur'[Aa]dicion_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
 #lema(ur'[Aa]horc_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
 #lema(ur'[Aa]lcanz_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Aa]m_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a', xpre=[ur'Pedro ']) + #18
-lema(ur'[Aa]not_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
+lema(ur'[Aa]m_á_ndo(?:[mst]e|l[aeo]s|la|nos)(?:[mt]e|l[aeo]s?|nos|)_a', xpre=[ur'Pedro ']) + #18
+lema(ur'[Aa]m_á_ndola_a', xpre=[ur'Pedro '], xpos=[ur'\]\]']) + #18
+lema(ur'[Aa]not_á_ndola(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
 lema(ur'[Aa]nunci_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
 #lema(ur'[Aa]pod_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
 lema(ur'[Aa]poder_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
@@ -4337,7 +4338,7 @@ lema(ur'[Vv]isti_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
 
 grupoMusica = [
 lema(ur'[Mm]_ú_sica_u', pre=ur'\bde ', xpre=[ur'\'', ur'Dialogus ', ur'Tractatus ', ur'Escola ', ur'Scriptores ', ur'ecclesiastici '], xpos=[ur' (?:i|da|medii|libri|tratactus|theorica|Elettronica|aurea|Ficta|Tonante|negli)\b']) + #1
-lema(ur'[Mm]_ú_sica_u', pre=ur'[Ll]a ', xpre=[ur'Per ', ur'Plau De ', ur'sopra ', ur'Euridice, ', ur'Storia de ', ur' e ', ur'Contro ', ur'sei ', ur'per ', ur'Prima '], xpos=[ur' (?:[èe]|ci|Italiana nel|alla|del (?:cuore|violone|mare)|alla|per|degli|antica|nella|intorno|Fiorentina|russa|In)\b']) + #175
+lema(ur'[Mm]_ú_sica_u', pre=ur'[Ll]a ', xpre=[ur'Per ', ur'Plau De ', ur'sopra ', ur'Euridice, ', ur'Storia de ', ur' e ', ur'Contro ', ur'sei ', ur'per ', ur'Prima '], xpos=[ur' (?:[èe]|dei|ci|Italiana nel|alla|del (?:cuore|violone|mare)|alla|per|degli|antica|nella|intorno|Fiorentina|russa|In)\b']) + #175
 lema(ur'[Mm]_ú_sicas?_u', pre=ur'(?:[Ll]as|[Uu]nas?|[Ss]us?|[Dd]ar|[Dd]ando|[Tt]ocando|[Cc]ada|tocaba|cantaba) ') + #10
 lema(ur'[Mm]_ú_sica (?:o|y|a|[Aa]c[uú]stica|culta|elaborada|folcl[óo]rica|instrumental|militar|original|orquestal|popular|pagana|profana|sinf[oó]nica|tradicional|regional|religiosa|vocal|[Ee]lectr[óo]nica|[Mm]ec[aá]nica|[Cc]ountry)\b_u') + #107
 lema(ur'[Mm]_ú_sica del_u', xpre=[ur'Ars '], xpos=[ur' (?:XV [Ss]ecolo|cuore|violone|mare|señor Giulio|Signor)']) + #8
@@ -11589,7 +11590,7 @@ lema(ur'[Dd]emogr_á_fic[ao]s?_a', xpre=[ur'Bilancio ', ur'storia ', ]) + #588
 lema(ur'(?:[Aa]|[Dd]e)__l (?:equipo|resto|primer|grupo|pueblo|personaje|nombre|[Rr]ey|programa|club|presidente|nuevo|álbum|municipio|planeta|número|estado|centro|trabajo|productor|padre|mundo|lugar|jugador|gobierno|país|margen|juego|incremento|gran|estudio|elenco|desarrollo|cuarto|antiguo|verdadero|usuario|[uú]ltimo|tema|poder|oeste|momento|español|otro|entonces)_ e', xpre=[ur'(?:[Ll]ado|[Cc]ara) ', ur'\.', ]) + #287
 lema(ur'[Ii]m_á_genes_a', xpos=[ur' Librorum']) + #115
 lema(ur'[Bb]ater_í_as?_i', xpre=[ur'[Rr]ainha de ']) + #171
-lema(ur'_ha_ (?:jugado|labrado|lanzado|liberado|limitado|llegado|llenado|llevado|logrado|manejado|marcado|mantenido|matado|mejorado|mencionado|modelado|modernizado|mostrado|multiplicado|nacido|obtenido|observado|ocupado|ofrecido|ordenado|participado|peleado|perdido|permanecido|permitido|perseguido|pertenecido|podido|pose[ií]do|presentado|probado|promovido|propagado|prosperado|provocado|publicado|quedado|realizado|recibido|recuperado|regresado|registrado|renunciado|repercutido|replanteado|representado|respondido|restaurado|retenido|retratado|reunido|revelado|revisado|revolucionado|sabido|sacado|señalado|separado|sido|sobrevivido|sostenido|sufrido|sugerido|superado|suspendido|sustituido|tenido|terminado|tocado|tomado|trabajado|tra[ií]do|transcurrido|transformado|trasladado|tratado|ubicado|usado|utilizado|variado|vendido|venido|viajado|visto|vivido|vuelto)_ah?', xpre=[ur'[0-9]', ]) + #160
+lema(ur'_ha_ (?:jugado|labrado|lanzado|liberado|limitado|llegado|llenado|llevado|logrado|manejado|marcado|mantenido|matado|mejorado|mencionado|modelado|modernizado|mostrado|multiplicado|nacido|obtenido|observado|ocupado|ofrecido|ordenado|participado|peleado|perdido|permanecido|permitido|perseguido|pertenecido|podido|pose[ií]do|presentado|probado|promovido|propagado|prosperado|provocado|publicado|quedado|realizado|recibido|recuperado|regresado|registrado|renunciado|repercutido|replanteado|representado|respondido|restaurado|retenido|retratado|reunido|revelado|revisado|revolucionado|sabido|sacado|salido|señalado|separado|sido|sobrevivido|sostenido|sufrido|sugerido|superado|suspendido|sustituido|tenido|terminado|tocado|tomado|trabajado|tra[ií]do|transcurrido|transformado|trasladado|tratado|ubicado|usado|utilizado|variado|vendido|venido|viajado|visto|vivido|vuelto)_ah?', xpre=[ur'[0-9]', ]) + #160
 lema(ur'[Nn]_ú_meros?_u', pre=ur'(?:[Ll]a|[Ee]l|[UuEe]n|[Ll]os|[Uu]nos|[Ss]u|[Ss]in|[Gg]ran|[Cc]iertos?|[Ee]s(?:te|tos|se)) ', xpre=[ur' il '], xpos=[ur' (?:Piccoli|indefinito)']) + #134
 lema(ur'[Pp]el_í_culas?_i', xpos=[ur'(?:\.disneylatino|\.info|9)']) + #669
 lema(ur'[Cc]r_é_dito_e', xpre=[ur'\bdi ', ], xpos=[ur' (?:in|Italiano|Artigiano|Valtellinese|Bergamasco|Emiliano|and|per|Varessino|Esattorie)', ]) + lema(ur'[Cc]r_é_ditos_e', xpre=[ur'\blo ', ur'Pizze a '], xpos=[ur' in\b', ]) + #26
@@ -13032,12 +13033,20 @@ lema(ur'[Mm]arc_ó_ (?:un|dos|tre|el|la|l[ao]s)_o') + #1
 lema(ur'[Pp]repar_ó__o', xpre=[ur'\b(?:[Mm]e|[Yy]o|[Ll]o|de) '], xpos=[ur' (?:la adecuada|muy bien|el (?:t[eé]|arroz)|arroz|te para|una (?:fiambrera|super)|muy poco|estas gilipolleces)']) + #1
 lema(ur'[Vv]isit_ó__o', xpos=[ur' (?:Mi Región|Mi Naturaleza|Mi Historia)']) + #1
 lema(ur'[Pp]re_c_isamente_s') + #1
+lema(ur'[Ee]spadach_í_n_i') + #1
+#lema(ur'___') + #1
+#lema(ur'___') + #1
+#lema(ur'___') + #1
+#lema(ur'___') + #1
+#lema(ur'___') + #1
+#lema(ur'___') + #1
+#lema(ur'___') + #1
+#lema(ur'___') + #1
+#lema(ur'___') + #1
+#lema(ur'___') + #1
+#lema(ur'___') + #1
+#lema(ur'___') + #1
 #lema(ur'___') + #deleitó 
-#lema(ur'___') + #1
-#lema(ur'___') + #1
-#lema(ur'___') + #1
-#lema(ur'___') + #1
-#lema(ur'___') + #1
 
 lema(ur'_É_l (?:est(?:ar|)[aá]n?|estará|estuvo|estaban|estar[ií]an?|vienen?|fu[ée]|fueron|vendr[aá]n?|tiene|tuvo|tendrán?|es|era|serán?|fue|ha|hab[ií]a|sabe|sab[ií]a)_E', xpre=[ur'(?:ch\'|Af\')', ur'Gnet ', ur'H\''], xpos=[ur' (?:agua|esos)']) + #630
 lema(ur'_É_xodos?_E', xpre=[ur'\|', ur'Trofeo del '], xpos=[ur' Salmus', ur', Excess']) + #1

@@ -10094,3 +10094,8 @@
 2017-08-30 05:21:40 r-1 (unknown) Python 2.7.12 replace-es.py "-fix:ones-es" "-page:Fondillón"
 2017-08-30 05:35:39 r-1 (unknown) Python 2.7.12 replace-es.py "-fix:ones-es" "-file:dos.txt"
 2017-08-30 05:56:01 r-1 (unknown) Python 2.7.12 replace-es.py "-fix:ones-es" "-page:Tabla periódica de los elementos"
+2017-08-30 16:27:32 r-1 (unknown) Python 2.7.12 replace-es.py "-fix:ones-es" "-file:dos.txt"
+2017-08-30 16:28:40 r-1 (unknown) Python 2.7.12 replace-es.py "-fix:ones-es" "-file:uno.txt"
+2017-08-30 16:37:05 r-1 (unknown) Python 2.7.12 replace-es.py "-fix:ones-es" "-page:[[El"
+2017-08-30 16:37:24 r-1 (unknown) Python 2.7.12 replace-es.py "-fix:ones-es" "-page:El secreto de Santa Vittoria"
+2017-08-30 16:53:24 r-1 (unknown) Python 2.7.12 replace-es.py "-fix:ones-es" "-page:Pokémon"
