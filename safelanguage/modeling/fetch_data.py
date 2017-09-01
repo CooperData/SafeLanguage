@@ -20,7 +20,7 @@ short_text_folder = u'./modeling/data/short_paragraphs'
 
 def download_data(data_size='small'):
 
-    languages = ['es', 'fr', 'de', 'it', 'pt', 'en']
+    languages = ['es', 'fr', 'de', 'it', 'pt', 'en', 'ca', 'ro', 'an', 'gl', 'ast', 'eu']
     create_folder(languages)
 
     if data_size == 'small':
@@ -57,16 +57,19 @@ def download_all_data():
     WORDS_SHORT_TEXT = 5
     resource_handler = ResourceHandler()
     feature_articles = resource_handler.get_feature_pages()
+
     for language in feature_articles.keys():
         articles = feature_articles.get(language)
         wikipedia.set_lang(language)
+
+        article_number = 0
         for article in articles:
-            article_number = 0
             content = wikipedia.page(article).content
             split_content = content.splitlines()
             paragraphs = [re.sub(r'\[[^]]*\]\u200b', '', p.strip()) for p in split_content if len(p.strip()) > 0]
+
+            paragraph_number = 0
             for paragraph in paragraphs:
-                paragraph_number = 0
                 words = paragraph.split()
                 if len(paragraph) < 100:
                     continue
@@ -76,14 +79,13 @@ def download_all_data():
             article_number += 1
 
 
-
 def write_small_paragraph(paragraph, language, article_number, paragraph_number):
     pass
 
 
 def write_normal_paragraph(paragraph, language, article_number, paragraph_number):
     text_filename = os.path.join(language_folder_path('normal', language),
-                                 '%s_%06d_%04d.txt' % (language, article_number, paragraph_number))
+                                 '%s_%04d_%04d.txt' % (language, article_number, paragraph_number))
     print("Writing %s" % text_filename)
     open(text_filename, 'wb').write(paragraph.encode('utf-8', 'ignore'))
 
@@ -97,7 +99,13 @@ def download_small_data():
         u'es': u'http://es.wikipedia.org/wiki/Wikipedia',
         u'fr': u'http://fr.wikipedia.org/wiki/Wikip%C3%A9dia',
         u'it': u'http://it.wikipedia.org/wiki/Wikipedia',
-        u'pt': u'https://pt.wikipedia.org/wiki/Wikip%C3%A9dia'
+        u'pt': u'https://pt.wikipedia.org/wiki/Wikip%C3%A9dia',
+        u'ca': u'https://ca.wikipedia.org/wiki/Viquip%C3%A8dia',
+        u'ro': u'https://ro.wikipedia.org/wiki/Wikipedia',
+        u'an': u'https://an.wikipedia.org/wiki/Biquipedia',
+        u'gl': u'https://gl.wikipedia.org/wiki/Wikipedia',
+        u'ast': u'https://ast.wikipedia.org/wiki/Wikipedia',
+        u'eu': u'https://eu.wikipedia.org/wiki/Wikipedia'
     }
 
     for lang, page in pages.items():

@@ -12,25 +12,36 @@ def create_wiki_links():
                  'en': 'Wikipedia:Featured articles',
                  'de': 'Wikipedia:Exzellente Artikel',
                  'ca': 'Viquipèdia:Articles de qualitat',
-                 'fr': 'https://en.wikipedia.org/wiki/Wikipedia:Translation/*/Featured_Articles/French'}
+                 'fr': 'Wikipédia:Contenus_de_qualité',
+                 'pt': 'Wikipédia:Artigos_destacados',
+                 'ro': 'Wikipedia:Articole_de_calitate',
+                 'an': 'Wikipedia:Articlos_destacatos',
+                 'gl': 'Wikipedia:Artigos_de_calidade',
+                 'ast': 'Wikipedia:Artículos_destacaos',
+                 'eu': 'Wikipedia:Artikulu_nabarmenduak'}
 
     all_links = defaultdict(list)
 
     for language in languages:
         wikipedia.set_lang(language)
-        if language == 'fr':
-            continue
+        # if language == 'fr':
+        #    continue
         feature_page = wikipedia.page(languages.get(language))
         links = feature_page.links
+        print('************************************************************')
+        print(language)
+        print(len(links))
+        print('************************************************************')
         for link in links:
             all_links[language].append(link)
 
-    pickle.dump(all_links, open('featured_links.pkl', 'wb'))
+    print(all_links)
+    pickle.dump(all_links, open('./resources/featured_links.pkl', 'wb'))
 
 
 def main():
 
-    wiki_links = pathlib.Path('/feature_links.pkl')
+    wiki_links = pathlib.Path('./resources/featured_links.pkl')
     if not wiki_links.is_file():
         create_wiki_links()
 

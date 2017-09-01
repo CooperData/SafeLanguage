@@ -6,10 +6,12 @@ from fetch_data import download_data, delete_data
 from sklearn.externals import joblib
 
 # Download data
-download_data()
+delete_data()
+download_data(data_size='all')
+
 
 # Load training data
-languages_data_folder = './data/paragraphs'
+languages_data_folder = './modeling//data/paragraphs'
 dataset = load_files(languages_data_folder)
 
 print(dataset)
@@ -29,7 +31,7 @@ clf = text_clf.fit(dataset.data, dataset.target)
 clf_model = [clf, dataset.target_names]
 
 # wrapping classifier
-joblib.dump(clf_model, '../resources/language_classification_model.pkl')
+joblib.dump(clf_model, './resources/language_classification_model.pkl')
 
 # Delete data
 delete_data()
