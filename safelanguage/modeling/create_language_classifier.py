@@ -11,7 +11,7 @@ download_data(data_size='all')
 
 
 # Load training data
-languages_data_folder = './modeling//data/paragraphs'
+languages_data_folder = './modeling/data/paragraphs'
 dataset = load_files(languages_data_folder)
 
 print(dataset)
