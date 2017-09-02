@@ -12,21 +12,24 @@ import shutil
 from safelanguage.ResourceHandler import ResourceHandler
 import wikipedia
 import re
+from nltk.tokenize import sent_tokenize
+
 
 html_folder = u'./modeling/data/html'
 text_folder = u'./modeling/data/paragraphs'
 short_text_folder = u'./modeling/data/short_paragraphs'
+sentence_folder = u'./modeling/data/sentence'
+resource_handler = ResourceHandler()
 
 
-def download_data(data_size='small'):
-
+def download_data(data_size='small', total_articles=4000):
     languages = ['es', 'fr', 'de', 'it', 'pt', 'en', 'ca', 'ro', 'an', 'gl', 'ast', 'eu']
     create_folder(languages)
 
     if data_size == 'small':
         download_small_data()
     elif data_size == 'all':
-        download_all_data()
+        download_all_data(total_articles)
     else:
         print('data_size should be small (default) or all')
 
@@ -53,30 +56,63 @@ def create_folder(languages):
             os.makedirs(short_text_lang_folder)
 
 
-def download_all_data():
-    WORDS_SHORT_TEXT = 5
-    resource_handler = ResourceHandler()
+def download_all_data(total_articles):
     feature_articles = resource_handler.get_feature_pages()
-
     for language in feature_articles.keys():
-        articles = feature_articles.get(language)
-        wikipedia.set_lang(language)
+        download_language_data(language, total_articles)
 
-        article_number = 0
-        for article in articles:
+
+def download_language_data(language, total_articles):
+    articles = resource_handler.get_feature_pages().get(language)
+    wikipedia.set_lang(language)
+    article_number = 0
+
+    for article in articles:
+        if article_number > total_articles:
+            break
+        else:
             content = wikipedia.page(article).content
             split_content = content.splitlines()
             paragraphs = [re.sub(r'\[[^]]*\]\u200b', '', p.strip()) for p in split_content if len(p.strip()) > 0]
 
             paragraph_number = 0
             for paragraph in paragraphs:
-                words = paragraph.split()
                 if len(paragraph) < 100:
                     continue
                 else:
                     write_normal_paragraph(paragraph, language, article_number, paragraph_number)
                 paragraph_number += 1
             article_number += 1
+
+
+def paragraph_to_sentence_data(language='es'):
+    paragraph_directory = './modeling/data/paragraphs/' + language
+    sentence_directory = u'./modeling/data/sentences/' + language
+
+    if not os.path.exists(sentence_directory):
+        os.makedirs(sentence_directory)
+
+    all_sentences = []
+
+    for filename in os.listdir(paragraph_directory):
+        if filename.endswith(".txt"):
+            read_from_file = os.path.join(paragraph_directory, filename)
+            print(read_from_file)
+            with open(read_from_file, 'r') as file:
+                content = file.read()
+                sentences = sent_tokenize(content)
+
+            for sentence in sentences:
+                all_sentences.append(sentence)
+
+    sentence_file = os.path.join(sentence_directory, language + '.txt')
+    write_into_csv(all_sentences, sentence_file)
+
+
+def write_into_csv(text_list, filename):
+    with open(filename, 'w') as file:
+        for item in text_list:
+            file.write("%s\n" % item)
 
 
 def write_small_paragraph(paragraph, language, article_number, paragraph_number):
@@ -161,5 +197,5 @@ def download_small_data():
 
 def delete_data():
     if os.path.exists('./modeling/data'):
-        shutil.rmtree('./modeling//data')
+        shutil.rmtree('./modeling/data')
 
