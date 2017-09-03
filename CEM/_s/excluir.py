@@ -15,6 +15,7 @@ def filtrar(noElimDup, elimExcl, elimRev, excluidos, revisados):
   titulo=''
   prefijo=''
   pat = re.compile("^([^\[]*)\[\[(.*?)\]\](.*)$")
+  doublePat = re.compile('(?:,,|"")')
   noExcluir=False
   while True:
     linea = sys.stdin.readline()
@@ -25,20 +26,22 @@ def filtrar(noElimDup, elimExcl, elimRev, excluidos, revisados):
         #print('>>>'+match.group(1)+'<<<->>>'+match.group(2)+'<<<->>>'+match.group(3)+'<<<')
         nuevoPrefijo = match.group(1)
         nuevoTitulo = match.group(2)
+        nuevoTituloSinEsc = doublePat.sub(lambda m:m.group(0)[0],nuevoTitulo)
+        nuevoContenido = match.group(3)
         #print (nuevoTitulo)
         if titulo != nuevoTitulo:
           if len(titulo)>0 and noExcluir:
-            contenido = match.group(3)
-            contenido = re.sub("[\[\{]","<", contenido)
-            contenido = re.sub("[\]\}]",">", contenido)
+            nuevoContenido = re.sub("[\[\{]","<", nuevoContenido)
+            nuevoContenido = re.sub("[\]\}]",">", nuevoContenido)
             print (prefijo+"[["+titulo+"]]"+contenido)
           titulo = nuevoTitulo
+          tituloSinEsc = nuevoTituloSinEsc
           prefijo = nuevoPrefijo
           contador = 1
          # print(titulo+str(contador))
-          contenido = match.group(3)
+          contenido = nuevoContenido
           contenidoLow = contenido.lower()
-          noExcluir = not((elimExcl and titulo in excluidos) or (elimRev and titulo in revisados) or ("#redirect" in contenido) or ("#redirección" in contenido))
+          noExcluir = not((elimExcl and tituloSinEsc in excluidos) or (elimRev and tituloSinEsc in revisados) or ("#redirect" in contenido) or ("#redirección" in contenido))
           #print('>>>'+titulo+'<<<->>>'+contenido+'<<<Noexcluir>>>'+str(noExcluir))
         else:
           contador = contador + 1

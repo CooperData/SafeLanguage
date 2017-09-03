@@ -2659,6 +2659,7 @@ lema(ur'Gal_í_ndez_i') + #1
 lema(ur'Gonz_á_lez_a', xpre=[ur'Yann ', ur'Noe ',]) + #1
 lema(ur'L_ó_pez_o', xpre=[ur'4657\) ', ur'v\. ', ur'Santana ', ur'Manoel ', ur'Brook Lopez\|', ur'Brook ', ur'Rick ', ur'Olivia ', ur'Bernard ', ur'Colby ', ur'East ', ur'George ', ur'Elysia ', ur'Litoria ', ur'Gerard ', ur'Jennifer ', ur'Lynn '], xpos=[ur' (?:Tonight|Expeditions|Island|dos)', ur'(?:\. Genova|\'s|, Steven)']) + #1
 lema(ur'Mart_í_nez_i', xpre=[ur'Guillaume ', ur'Deuce" ', ur'California\)\|', ur'Georgia\)\|', ur'Deuce ', ur'Vicci ', ur'Dean ', ur'Sammy ', ur'Pamela ', ur'Yannick '], xpos=[ur' \((?:California|Georgia)']) + #1
+lema(ur'Negr_í_n_i') + #1
 lema(ur'Ram_í_rez_i', xpre=[ur'Erika ', ur'Twiggy ']) + #1
 lema(ur'S_á_nchez_a', xpre=[ur'[Oo]f ', ur'Nia ', ur'Little ', ur'Temple ', ur'Cole ', ur'Enfants de ', ur'Mike ', ur'Dirty ', ], xpos=[ur' (?:Get High|tradition)', ]) + #1
 lema(ur'Su_á_rez_a', xpre=[ur'Jean de ', ur'und ', ur'Jeremy ', ur'R, ', ]) + #1
@@ -2778,8 +2779,7 @@ grupoPost = [#Sólo si hay otros cambios
 ] +
 []][0]
 
-grupoFrec = [#Los que corrijo en cada respaldo
-lema(ur'Jos_é_ (?:Alberto|Álvarez|García|Gómez|González|Jiménez|Martínez|Pérez|Ramírez|Rodríguez|Sánchez|Suárez|Vásquez)_e') + #1
+grupo1FormatoLibre = [
 [
  (ur'\[\[([Aa])(bstenci)[oó](n)\]\](es|istas?)', ur'[[A\2ó\3|\1\2o\3\4]]'),
  (ur'\[\[([Aa])(cci)[oó](n)\]\](es|ari[ao]s?)', ur'[[A\2ó\3|\1\2o\3\4]]'),
@@ -2826,6 +2826,7 @@ lema(ur'Jos_é_ (?:Alberto|Álvarez|García|Gómez|González|Jiménez|Martínez|
  (ur'\[\[([Pp])(ort)[oó](n)\]\](es)', ur'[[P\2ó\3|\1\2o\3\4]]'),
  (ur'\[\[([Pp])(rofesi)[oó](n)\]\](es|al|ales|istas?|almente)', ur'[[P\2ó\3|\1\2o\3\4]]'),
  (ur'\[\[([Pp])(rot)[oó](n)\]\](es)', ur'[[P\2ó\3|\1\2o\3\4]]'),
+ (ur'\[\[([Rr])(egi)[oó](n)\]\](es|al|ales)', ur'[[R\2ó\3|\1\2o\3\4]]'),
  (ur'\[\[([Rr])(evoluci)[oó](n)\]\](es|ari[ao]s?)', ur'[[R\2ó\3|\1\2o\3\4]]'),
  (ur'\[\[([Ss])(al)[oó](n)\]\](es)', ur'[[S\2ó\3|\1\2o\3\4]]'),
  (ur'\[\[([Ss])(axof)[oó](n)\]\](es|istas?)', ur'[[S\2ó\3|\1\2o\3\4]]'),
@@ -2836,482 +2837,485 @@ lema(ur'Jos_é_ (?:Alberto|Álvarez|García|Gómez|González|Jiménez|Martínez|
  (ur'\[\[([Tt])(urr)[oó](n)\]\](es|er[ao]s?)', ur'[[T\2ó\3|\1\2o\3\4]]'),
  (ur'\[\[([Vv])(ol)[uú](men)\]\](es)', ur'[[V\2ú\3|\1\2u\3\4]]'),
 ] +
+[(ur'< */ *(?P<a>[Bb][Rr]) *>', ur'<br />')] + #1
+[(ur'(?P<ii>[=]+ *)(?P<tt>(?:Cabezas de Serie|Jugadores Destacados|Rondas Finales|Selección Nacional|Cuadro Inferior|Cuadro Superior|Enlaces Externos|Lista de Canciones))(?P<dd> *[=])', titulo),  
+   (ur'(?P<ii>[=]+ *)(?P<tt>(?:Características Técnicas|Centros Comerciales|Centros de Salud|Cine y Televisión|Clasificación General|Como Productor|Cooperación Internacional|Cuadrangular Final|Cuarta Temporada|Disco Dos|Disco Uno|Edición Especial|El Edificio|Especificaciones Técnicas|Exposiciones Individuales|Fiesta Patronal|Formación Académica|Goleadores Históricos|Gran Final|Grupo Norte|Grupo Único|Historia Antigua|Instituciones Educativas|Mecanismo de Acción|Modo Batalla|Obras de Teatro|Otras Actividades|Otras Canciones|Otros Proyectos|Otros Trabajos|Partidos Internacionales|Posiciones en Liga|Premios Individuales|Premios y Distinciones|Primera Generación|Primera Parte|Quinta Temporada|Recepción de La crítica|Origen del Nombre|Referencias Bibliográficas|Segunda Generación|Segunda Parte|Su Obra|Vida Profesional|Álbum de Estudio|Álbumes Recopilatorios))(?P<dd> *[=])', titulo),  
+(ur'(?P<ii>[=]+ *)(?P<tt>(?:Campeonatos Nacionales|Dobles Masculino|Fase Final|Fase de Grupos|Individual Masculino|Media Distancia|Premios y Nominaciones|Primera Ronda|Vida Personal))(?P<dd> *[=])', titulo),  
+(ur'(?P<ii>[=]+ *)(?P<tt>(?:Banda Sonora|Campeonatos Internacionales|Campeonatos Mundiales|Carrera Profesional|Copa del Mundo|Cuadro Final|Cuartos de Final|Distinciones Individuales|Equipos Participantes|Lista de Episodios|Lista de Temas|Medios de Comunicación|Personajes Principales|Primera Fase|Primeros Años|Segunda Fase|Segunda Ronda|Series de Televisión|Series de Tv|Tabla de Posiciones|Tercer Lugar|Video Musical|Véase También|Álbumes de Estudio))(?P<dd> *[=])', titulo),
+(ur'(?P<ii>[=]+ *)(?P<tt>(?:Aerolíneas y Destinos|Artistas Invitados|Carrera Musical|Carrera Política|Ciudades Hermanadas|Ciudades Hermanas|Como Entrenador|Como Jugador|Copas Internacionales|Cuadros Finales|Datos del Club|Dobles Femenino|Dobles Masculinos|Ficha Técnica|Fiestas Patronales|Flora y Fauna|Individuales Masculino|Individuales Masculinos|Información General|Larga Distancia|Listado de Canciones|Lugares de Interés|Medio Ambiente|Miembros Actuales|Notas y Referencias|Orden de Batalla|Organizaciones Multilaterales|Participaciones Internacionales|Personajes Ilustres|Personajes Recurrentes|Personajes Secundarios|Premios Especiales|Primera División|Primera Etapa|Primera Fecha|Primera Temporada|Puntos de Interés|Referencias Externas|Ronda Final|Ronda Preliminar|Récord Europeo|Segunda Fecha|Segunda Temporada|Tabla General|Tercera Fecha|Torneos Nacionales|Videos Musicales|Vídeo Musical|Zona Norte|Zona Residencial|Zona Sur))(?P<dd> *[=])', titulo),
+(ur'(?P<ii>[=]+ *)(?P<tt>(?:Actividad Económica|Actividades Políticas|Antiguos Miembros|Ascensos y Descensos|Atractivos Turísticos|Barrios Servidos|Cabeza de Serie|Campeonato Mundial|Campeonato de Pilotos|Carrera Deportiva|Carrera Internacional|Carrera Militar|Clasificación Final|Clubes Afiliados|Composición del Distrito|Consejo de Administración|Cuadro Principal|Cuadro de Honor|Cuerpo Técnico|Cultura Popular|Destinos Internacionales|Destinos Nacionales|Distribución y Hábitat|División Administrativa|División Política|Dobles Femeninos|Ediciones Anteriores|Emisión Internacional|Enlace Externo|Entrenadores Destacados|Estrellas Invitadas|Evolución de la Clasificación|Exposiciones Colectivas|Exposiciones Personales|Finales de División|Formación Actual|Formato del Torneo|Galería de Imágenes|Goles en la Selección|Individual Femenino|Individuales Femenino|Individuales Femeninos|Infancia y Juventud|Junta Directiva|La Batalla|Liga Dominicana|Lista de Campeones|Lugares que Atraviesa|Medallero Total|Medallero por Género|Modos de Juego|Movimientos Divisionales|Máximos Goleadores|Músicos Invitados|Números Retirados|Octavos de Final|Otras Versiones|Otros Personajes|Otros Premios|Parte Alta|Parte Baja|Paso por Carrera Oficial|Poderes y Habilidades|Posiciones Finales|Prehistoria y edad Antigua|Premios Internacionales|Premios Nacionales|Premios y Reconocimientos|Presentación Previa|Programas de Tv|Recursos Naturales|Referencias Culturales|Reseña Histórica|Resultados Electorales|Roles Interpretados|Segunda División|Segunda Etapa|Semifinales de División|Servicios Ferroviarios|Servicios Públicos|Sistema de Competencia|Sitios de Interés|Sitios de Referencia|Tabla Acumulada|Temporada Regular|Tercera Ronda|Tercera Temporada|Territorio y Población|Torneos Internacionales|Trayectoria Política|Trayectoria Profesional|Trayectoria en TV|Ubicación Geográfica|Vialidad y Transporte|Vida Política|Vida Privada|Vida y Carrera|Vida y Obra|Vías de Comunicación|Vídeos Musicales))(?P<dd> *[=])', titulo),
+ (ur'(?P<ii>[=]+ *)(?:Best [Aa]lbums)(?P<dd> *[=])', ur'\g<ii>Mejores álbumes\g<dd>'),  
+ (ur'(?P<ii>[=]+ *)(?:Bonus [Tt]racks)(?P<dd> *[=])', ur'\g<ii>Pistas adicionales\g<dd>'),  
+ (ur'(?P<ii>[=]+ *)(?:Track [Ll]isting)(?P<dd> *[=])', ur'\g<ii>Lista de canciones\g<dd>'),  
+ (ur'(?P<ii>[=]+ *)(?:edad [Mm]oderna|Edad moderna)(?P<dd> *[=])', ur'\g<ii>Edad Moderna\g<dd>'),  
+ (ur'(?P<ii>[=]+ *)(?:edad [Aa]ntigua|Edad Antigua)(?P<dd> *[=])', ur'\g<ii>Edad Antigua\g<dd>'),  
+ (ur'(?P<ii>[=]+ *)(?:edad [Mm]edia|Edad media)(?P<dd> *[=])', ur'\g<ii>Edad Media\g<dd>'),  
+ (ur'(?P<ii>[=]+ *)(?:edad [Cc]ontempor[áa]nea|Edad contempor[áa]mea|Edad Contemporanea)(?P<dd> *[=])', ur'\g<ii>Edad Contemporánea\g<dd>'),  
+] + #1
+#[(ur'¿ *(?:por *qu[eé]|Porqu[eé]|Por que)', ur'¿Por qué')] + #1
+[]][0]
+
+grupo1Frec = [#Los que corrijo en cada respaldo
+lema(ur'[Ff]_ue__(?:ú[eé]|ué)') + #432
+lema(ur'[Aa]_ú_n (?:más|menos|peor|mejor|están?|estaban?|no se|se|queda|hay|m[aá]s)_u') + #413
+lema(ur'[Dd]i_o__ó') + #405
+lema(ur'[Tt]_ambié_n_(?:ma?bi[eé]|ámbi[eé]|abi[eé]|ambi[eè]|ambí[eéè])') + #345
+lema(ur'[Dd]_espué_s_(?:espue|epue|epué)') + #334
+lema(ur'_ También__[Tt]ambi[eé]n', pre=ur'[-0-9a-záéúíóúüñA-ZÁÉÚÍÓÚÜÑ\]]+[\.;]') + #316
+lema(ur'Jos_é_ (?:Alberto|Álvarez|García|Gómez|González|Jiménez|Martínez|Pérez|Ramírez|Rodríguez|Sánchez|Suárez|Vásquez)_e') + #185
+lema(ur'[Vv]i_o_(?!\]\])_ó', xpre=[ur'El hombre que se ', ur'Nadie lo ', ur'[Vv]alle de ', ]) + #152
+lema(ur'[Vv]_éase__(?:eas[eé]|eáse)') + #131
+lema(ur'[Aa]dem_á_s_a') + #128
+lema(ur'[d]em_á_s_a', xpre=[ur' el \'\'', ]) + #98
+lema(ur'[Aa]lg_ú_n_u', xpos=[ur' (?:titella|lloc)', ]) + #87
+lema(ur'_ Además__[Aa]dem[aá]s', pre=ur'[-0-9a-záéúíóúüñA-ZÁÉÚÍÓÚÜÑ\]]+[\.;]') + #84
+lema(ur'[Cc]onstrucci_ó_n_o', xpos=[ur'\]\]es', ]) + #71
+lema(ur'_ D_esde_[Dd]', pre=ur'[-0-9a-záéúíóúüñA-ZÁÉÚÍÓÚÜÑ\]]+[\.;]', xpre=[ur'\.\.', ]) + #66
+lema(ur'_ Después__[Dd]espu[eé]s', pre=ur'[-0-9a-záéúíóúüñA-ZÁÉÚÍÓÚÜÑ\]]+[\.;]') + #66
+lema(ur'[VvLl]_éase t_ambi[eé]n_(?:ea[sc][eé] [Tt]|éace t|eá[sc][eé] [tT])') + #58
+lema(ur'_Enlaces externos_ *=_External [Ll]inks', pre=ur'= *') + #56
+lema(ur'[Nn]ing_ú_n_u', xpos=[ur' (?:Yoru|poder no por kita|de Barberans)', ]) + #55
+lema(ur'[Dd]etr_á_s_a') + #52
+lema(ur'[Aa]tr_á_s_a', xpre=[ur'Rogla ', ], xpos=[ur' (?:Abante|d[ae] [Pp]orta)', ]) + #50
+lema(ur'[Cc]onstitu_i_d[ao]s?_í') + #49
+lema(ur'[Vv]ol_ú_menes_u') + #41
+lema(ur'[Cc]onstru_i_d[ao]s?_í') + #38
+lema(ur'[Ff]_á_cil_a') + #34
+lema(ur'[Tt]odav_í_a_i') + #30
+lema(ur'[Ff]_á_cilmente_a') + #29
+lema(ur'Referenc_ia_s *=_e', pre=ur'= *') + #22
+lema(ur'[Dd]esag_ü_es?_u') + #9
+lema(ur'_hus_os? horarios?_(?:huz|[uú][sz])') + #7
+lema(ur'[Tt]_ambié_n_ami[eé]', xpre=[ur'Santa Clara, ', ur'también ', ], xpos=[ur' (?:te quieru|i ai|la Virxen)', ur'(?:\||\'\' \(también)', ]) + #6
+lema(ur'[Pp]os_ibili_dad(?:es)?_(?:bili|osibil|osibli)') + #3
+lema(ur'[Cc]onstitu_i_r(?:l[aeo]s?|se|)_í') + #2
+lema(ur'[Cc]onsig_uió__io') + #1
+lema(ur'[Cc]onstrucci_o_nes_ó') + #1
+#lema(ur'[Pp]_é_rdidas?_[eè]', pre=ur'(?:[Ss]in ) ') + #0
 #lema(ur'[Hh]a_ll_a[ns]?_y', pre=ur'(?:se) ') + #1
 #lema(ur'[Hh]a_ya__(?:llan?|yan)', pre=ur'(?:que|no) ') + #1
-lema(ur'[Pp]_é_rdidas?_[eè]', pre=ur'(?:[Ss]in ) ') + #1
-lema(ur'[Pp]os_ibili_dad(?:es)?_(?:bili|osibil|osibli)') + #1
-lema(ur'[Cc]onsig_uió__io') + #5
-lema(ur'[Cc]onstrucci_o_nes_ó') + #1
-lema(ur'[Cc]onstrucci_ó_n_o', xpos=[ur'\]\]es', ]) + #77
-lema(ur'_hu_sos? horarios?_(?:hu|[uú])') + #1
-lema(ur'[Ff]_á_cilmente_a') + #56
-lema(ur'[Ff]_á_cil_a') + #56
-lema(ur'[Vv]ol_ú_menes_u') + #113
-lema(ur'[Dd]esag_ü_es?_u') + #1
-lema(ur'[Cc]onstitu_i_d[ao]s?_í') + #42
-lema(ur'[Cc]onstitu_i_r(?:l[aeo]s?|se|)_í') + #5
-lema(ur'[Cc]onstru_i_d[ao]s?_í') + #402
-lema(ur'[Aa]_ú_n (?:más|menos|peor|mejor|están?|estaban?|no se|se|queda|hay|m[aá]s)_u') + #1
-lema(ur'[Aa]dem_á_s_a') + #439
-lema(ur'[Aa]lg_ú_n_u', xpos=[ur' (?:titella|lloc)', ]) + #112
-lema(ur'[Aa]tr_á_s_a', xpre=[ur'Rogla ', ], xpos=[ur' (?:Abante|d[ae] [Pp]orta)', ]) + #87
-lema(ur'_ Además__[Aa]dem[aá]s', pre=ur'[-0-9a-záéúíóúüñA-ZÁÉÚÍÓÚÜÑ\]]+[\.;]') + #925
-lema(ur'[Dd]_espué_s_(?:espue|epue|epué)') + #795
-lema(ur'[Dd]etr_á_s_a') + #92
-lema(ur'[Dd]i_o__ó') + #954
-lema(ur'[d]em_á_s_a', xpre=[ur' el \'\'', ]) + #154
-lema(ur'_ D_esde_[Dd]', pre=ur'[-0-9a-záéúíóúüñA-ZÁÉÚÍÓÚÜÑ\]]+[\.;]', xpre=[ur'\.\.', ]) + #4172
-lema(ur'_ Después__[Dd]espu[eé]s', pre=ur'[-0-9a-záéúíóúüñA-ZÁÉÚÍÓÚÜÑ\]]+[\.;]') + #1274
-lema(ur'_Enlaces externos_ *=_External [Ll]inks', pre=ur'= *') + #54
-lema(ur'[Ff]_ue__(?:ú[eé]|ué)') + #851
-lema(ur'[Nn]ing_ú_n_u', xpos=[ur' (?:Yoru|poder no por kita|de Barberans)', ]) + #110
-lema(ur'Referenc_ia_s *=_e', pre=ur'= *') + #22
-lema(ur'_ También__[Tt]ambi[eé]n', pre=ur'[-0-9a-záéúíóúüñA-ZÁÉÚÍÓÚÜÑ\]]+[\.;]') + #2390
-lema(ur'[Tt]_ambié_n_ami[eé]', xpre=[ur'Santa Clara, ', ur'también ', ], xpos=[ur' (?:te quieru|i ai|la Virxen)', ur'(?:\||\'\' \(también)', ]) + #13
-lema(ur'[Tt]_ambié_n_(?:ma?bi[eé]|ámbi[eé]|abi[eé]|ambi[eè]|ambí[eéè])') + #732
-lema(ur'[Tt]odav_í_a_i') + #70
-lema(ur'[Vv]_éase__(?:eas[eé]|eáse)') + #244
-lema(ur'[Vv]i_o_(?!\]\])_ó', xpre=[ur'El hombre que se ', ur'Nadie lo ', ur'[Vv]alle de ', ]) + #375
-lema(ur'[VvLl]_éase t_ambi[eé]n_(?:ea[sc][eé] [Tt]|éace t|eá[sc][eé] [tT])') + #1
 []][0]
 
-grupoMas = [
-lema(ur'[Mm]_á_s (?:abajo|abundantes?|acorde|adelante|allá|amable?|amarg[ao]s?|amenazas?|ansiedad|arriba|basuras?|bien|bienes|breves?|brillantes?|cerca|comunes|común|confiables?|conservador(?:[ae]s|)|contenidos?|crucial(?:es|)|daños?|de (?:un[ao]?|dos|tres|diez|cien|mil)|del? [$0-9]+|destacables?|detalles?|dineros?|disparos?|efectos?|efica(?:z|ces)|empleos?|espacios?|frecuentes?|fuertes?|fuerzas?|gente|grandes?|graves?|hacia|hasta|hermos[ao]s?|horribles?|ilustres?importancia|importantes?|influyentes?|informaci(?:ón|ones)|inteligentes?|interesantes?|joven|jóvenes|lejos|lind[ao]s?|mel[oó]dic[ao]s?|memorables?|notables?|o menos|operables?|pero|personajes?|personas?|pobres?|pol[eé]mic[ao]s?|posterior|potentes?|probables?|producción|prominentes?|pronto|protagonismo|puntos?|relevantes?|remedios?|rentables?|resistentes?|saludables?|sensibles?|simples?|semejantes?|sexys?|simples?|sobre|tarde|tempran[ao]s?|territorios?|tiempos?|trascendentes?|usad[ao]s?|veces|velo(?:z|ces)|ventas?|viables?|votos?)\b_a') + #688
-lema(ur'[Mm]_á_s (?:aclamad|activ|adecuad|afectad|agresiv|agud|alejad|alt|anbugu|ampli|anch|angost|antigu|apropiad|asombros|atractiv|asidu|avanzad|baj|barat|bell|bonit|buscad|car|céntric|cercan|certer|chiflad|clar|c[oó]mic|c[oó]mod|complej|complet|complicad|concurrid|conocid|conservad|contaminad|cort|cotizad|creativ|crític|crud|cálid|cómod|delgad|derivad|desapercibid|desarrollad|descargad|destacad|detallad|difundid|distinguid|divertid|ecl[eé]ctic|ecológic|efectiv|elaborad|elevad|emblemátic|enfocad|escuchad|esperad|exclusiv|exitos|extendid|extens|extrañ|famos|fin|fr[ií]|generalizad|grandios|grues|hermos|húmed|inclusiv|influenciad|inmediat|intens|interesad|intern|[ií]ntim|larg|lauread|lejan|lent|liger|lind|limpi|list|llamativ|loc|lluvios|madur|malvad|masculin|met[óo]dic|modern|necesitad|numeros|odiad|ordinari|orientad|oscur|parecid|partid|pausad|pedid|peligros|pequeñ|pesad|poblad|poderos|practicad|preciad|precios|premiad|prestigios|profund|prolongad|pronunciad|próxim|psicodélic|pálid|pulid|pur|querid|r[aá]pid|reconocid|recordad|redond|reducid|relacionad|remot|renombrad|representativ|respetad|ric|rud|rudimentari|sagrad|segur|significativ|sofisticad|solicitad|sólid|sonad|seguid|seri|taquiller|tardí|temid|tont|transitad|transitori|usad|utilizad|valios|valorad|variad|vendid|viej|visitad|vist|viv|votad)[ao]s?_a') + #570
-lema(ur'[m]_á_s_a', pre=ur'(?:[Aa]|[Aa]brir|afectar|agrava|[Aa]lgo|[Aa][uú]n|[Aa]preciar|[Cc]on|[Cc]rear|[Cc]uanto|[Dd]a|[Dd]elimitar|desarrolla[nrs]?|diferentes|[Dd]onde|[ee]s|[Ee]sta(?:ba|)|extendiéndose|hacer|[Ii]mpulsar|incrementado|[Mm]is?|mientras|[Mm]uch[ao]s?|[Nn]ada|[Nn]uestros?|ofendía[ns]?|[Pp]oco|proyectar|[Pp]areciéndose|[Pp]or|[Qq]u[eé]|[Ss]er|[Ss]ea|[Ss]iendo|[Ss]ino|[Ss]us?|tanto|tiene[ns]?|[Tt]odavía|[Tt]iempo|[Tt]rayendo|[Uu]n[ao]s?|[Uu]tiliza[ns]?|[Vv]eces|[Vv]er|[Vv]e[sz]) ') + #33
-lema(ur'[m]_á_s_a', pre=ur'[Nn]o(?: (?:agregar|apoyar|añade|causar|construir|contar|ejercería|encontrar|es|era|haber|huirán?|perder|rodar|ser|son|[Ee]s|ser[aá]|soportar|tienen?|tendrán?|trabajar|usar)|) ') + #12
-#lema(ur'[m]_á_s_a', pre=ur'[Aa]lgun[ao]s? ', xpos=[ur' no']) + #0
-lema(ur'[m]_á_s_a', pre=ur'(?:[Ll]os?|y|[Ss]on) ') + #147
-lema(ur'[m]_á_s de_a', xpre=[ur'7', ur'Não de costas ', ], xpos=[ur' (?:Rou|Chemnitz|Cadenet|Moulinas|Mierda|Fontmarie|Partirás|mill|pronto|Fondespierres|Bannière|la Carrasca|Saint|dozientos|pronto el|uma|ella no hay|la (?:Jasse|Cuca)|Méric|Raspall|l)\b', ]) + #161
-lema(ur'[Mm]_á_s (?:abiert|activ|ampli|atractiv|cercan|clar|concrent|concret|confus|correct|dens|direct|e[sx]trech|económic|efectiv|específic|explícit|fidedign|fácil|hermos|h[uú]med|intens|just|larg|lent|minucios|net|ocupad|oportun|ordinari|precis|pront|propi|rápid|seri|sever|silencios|típic|verdader)(?:[ao]s?|amente|)_a') + #92
-lema(ur'[m]_á_s_a', pre=ur'[Ll]as? ', xpos=[ur' Cérbero', ]) + #88
-lema(ur'[Mm]_á_s (?:amable|brutal|com[uú]n|constante|eficiente|esencial|especial|favorable|firme|formal|fácil|general|lineal|notable|particular|peculiar|popular|preponderante|probable|reciente|sexual|terminante|terrible|torpe|veloz)(?:mente|)_a') + #56
-lema(ur'[Mm]_á_s_a', pre=ur'[Qq]ue ', xpos=[ur' (?:fue|i Fontdevila|colaboró|de Barberans)', ]) + #63
-lema(ur'[Mm]_á_s que\b_a', xpre=[ur'Archivo ', ur'Carlos ', ], xpos=[ur' (?:nada|otr[ao]s?|tod[ao]s?|en|con|las?|los)', ur' (?:no|Sayago|finquen|doidice|bobo que eu)\b', ]) + #63
-lema(ur'[m]_á_s_a', pre=ur'\b[Yy] ', xpre=[ur'Rajoy ', ]) + #48
-lema(ur'[Mm]_á_s (?:ágil|austral|cantidad|convencional|comercial|d[eé]bil|dif[ií]cil|error|fiel|f[aá]cil|funcionalidad|habitual|in[uú]til|meridional|oportunidad|oriental|poder|popular|radical|tradicional)(?:es|)_a') + #53
-lema(ur'[m]_á_s_a', pre=ur'\b[Ee]l ', xpos=[ur' (?:al Montseny|era|Viaplana|Sobirà|Clarà|ha pasado|está|di|de (?:Vila|San|Méric|los Frailes|l|Raspall|la Cuca)|del (?:Quiquet|Canadell)|Borrull|Esquerra|Jordán|Miret|Soler|Bruguera)\b', ur'(?:’am|, el pagès)', ]) + #50
-lema(ur'[m]_á_s_a', pre=ur'[Dd]e ', xpos=[ur' y Partners', ]) + #35
-lema(ur'[Mm]_á_s (?:apar|atray|cali|coher|combati|concluy|congru|consist|contund|contund|conveni|convinc|corri|cruji|dec|desobedi|difer|elocu|evid|exig|fehaci|g|independi|inefici|influy|intelig|persist|perteneci|pot|pres|prevaleci|proced|promin|pudi|recurr|resist|rever|sobresali|solv|sorprend|sufici|supl|transpar|urg|vali|vig)entes?_a') + #30
-lema(ur'[Mm]_á_s (?:su número|vidas?|c[aá]maras|ayuda|carros|[ée]xitos?|yardas|tiendo|[Ii]nformaci[oó]n)_a') + #20
-lema(ur'[Mm]_á_s que (?:nada|otr[ao]s?|tod[ao]s?|en|con|las?|los)_a', xpos=[ur'\]', ]) + #18
-lema(ur'[Mm]_á_s_a', pre=ur'\bo ', xpos=[ur' (?:Codorniu|Pinc|Dorca|de (?:Vilanova|Vilanoveta|Partirás|Marco)|Duran)', ]) + #19
-lema(ur'[m]_á_s_a', pre=ur'(?:[Ss]e (?:(?:acentúa|acerca|acoge|adapta|arreglaba|articula|asemeja|atiene|basa|centraba|centra|comenta|compara|concentra|construyese|convertiría|corre|cree|da|describe|describirá|dirige|discute|divide|ejecute|emitiese|emplea|encontraba|encuentra|enfocaba|exhiba|explica|expondrá|extiende|fecunda|habl[ae]|hace|hacía|haga|hallaba|halle|incluía|indica|instala|lleva|mantenía|mantiene|menciona|mezclaba|modifica|muestra|mueve|multiplica|necesita|necesitaría|organizaba|parece|permite|preocupa|presenta|produce|producía|prolonga|provee|publicaría|refiere|reflejaba|remonta|reparte|requerirá|sienta|sentía|tenía|tiene|trabaja|ubica|us[ae]|usará|utilizaba|utiliza|valora|ve|volvía|vuelve)n?)|acumuló|colgaron|consagraron|convirtió|demoró|desarrolló|difundió|dijo|establecieron|estudiaron|exportaron|fijó|hicieron|hizo|necesitó|plantaron|tornaron|vio|volvieron|volvió) ') + #15
-lema(ur'[Mm]_á_s (?:adecuada|aguda|apropiada|concreta|cómoda|detallada|detenida|exacta|frecuente|fácil|infortunada|marcada|pesada|precisa|profunda|reciente|rápida|seguida|sólida)mente_a') + #10
-lema(ur'[Mm]_á_s_a', pre=ur'[0-9$]+ ', xpre=[ur'actualmente de ', ], xpos=[ur' (?:sin|retorn[oó]|si)\b', ]) + #18
-lema(ur'[m]_á_s y\b_a') + #6
-lema(ur'[m]_á_s_a', pre=ur'(?:[Aa][uú]n|[Aa]lgo|[Aa]lguien|[Aa]lgunos?|[Aa]ños?|[Cc]ientos|[Cc]osas?|[Dd][eé]cadas?|[Dd]esarrollos|[Dd]ías?|[Dd]ur[oó]|[Ee]n|[Hh]oras?|[Mm]es(?:es|)|[Mm]iles|[Mm]illones|[Mm]inutos?|[Mm]uch[ao]s|[Nn]adie|[Nn]unca|[Oo]tr[ao]s?|[Pp]udo|[Ss]egundos?|[Vv]ari[ao]s|[Vv]eces|[Vv]ez|y) ', xpre=[ur'Caralt ', ur'Carreras ', ur'Cerní ', ur'Dijons ', ur'Givanel ', ur'Miguel ', ur'Rajoy ', ur'Zapatero ', ur'd’', ], xpos=[ur' (?:d|Sanz|Deu|Puigsec|Caucas|Crispí|Sauró|Graves|Boronat|Llombart|Altaba|Dorca|le|de (?:las Matas|Boeta|Vilanoveta|la Vila|Figuera|Flors|Fortuny|Bacanizas)|Fumàs|Bort|Films|Rampinyo|Usall|Génégals)\b', ur'[‘\']', ]) + #6
-lema(ur'[m]_á_s_a', pre=ur'[Aa]l ', xpos=[ur' se hace', ]) + #5
-lema(ur'[m]_á_s_a', pre=ur'[Dd]el ', xpos=[ur' (?:d`en|Olmo|Cornell|de (?:l\'Artís|Marianet)|Esquerra)', ]) + #8
-lema(ur'[Mm]_á_s nunca_a', xpos=[ur' (?:abandones|daja)', ]) + #3
-lema(ur'[Mm]_á_s (?:ganador|prometedor|tentador)(?:as?|es|)_a') + #8
-lema(ur'[Mm]_á_s ni_a', xpos=[ur' (?:sabes)', ]) + #4
+grupo1Mas = [
+lema(ur'[Mm]_á_s (?:abajo|abundantes?|acorde|adelante|allá|amable?|amarg[ao]s?|amenazas?|ansiedad|arriba|basuras?|bien|bienes|breves?|brillantes?|cerca|comunes|común|confiables?|conservador(?:[ae]s|)|contenidos?|crucial(?:es|)|daños?|de (?:un[ao]?|dos|tres|diez|cien|mil)|del? [$0-9]+|destacables?|detalles?|dineros?|disparos?|efectos?|efica(?:z|ces)|empleos?|espacios?|frecuentes?|fuertes?|fuerzas?|gente|grandes?|graves?|hacia|hasta|hermos[ao]s?|horribles?|ilustres?importancia|importantes?|influyentes?|informaci(?:ón|ones)|inteligentes?|interesantes?|joven|jóvenes|lejos|lind[ao]s?|mel[oó]dic[ao]s?|memorables?|notables?|o menos|operables?|pero|personajes?|personas?|pobres?|pol[eé]mic[ao]s?|posterior|potentes?|probables?|producción|prominentes?|pronto|protagonismo|puntos?|relevantes?|remedios?|rentables?|resistentes?|saludables?|sensibles?|simples?|semejantes?|sexys?|simples?|sobre|tarde|tempran[ao]s?|territorios?|tiempos?|trascendentes?|usad[ao]s?|veces|velo(?:z|ces)|ventas?|viables?|votos?)\b_a') + #1159
+lema(ur'[Mm]_á_s (?:aclamad|activ|adecuad|afectad|agresiv|agud|alejad|alt|anbugu|ampli|anch|angost|antigu|apropiad|asombros|atractiv|asidu|avanzad|baj|barat|bell|bonit|buscad|car|céntric|cercan|certer|chiflad|clar|c[oó]mic|c[oó]mod|complej|complet|complicad|concurrid|conocid|conservad|contaminad|cort|cotizad|creativ|crític|crud|cálid|cómod|delgad|derivad|desapercibid|desarrollad|descargad|destacad|detallad|difundid|distinguid|divertid|ecl[eé]ctic|ecológic|efectiv|elaborad|elevad|emblemátic|enfocad|escuchad|esperad|exclusiv|exitos|extendid|extens|extrañ|famos|fin|fr[ií]|generalizad|grandios|grues|hermos|húmed|inclusiv|influenciad|inmediat|intens|interesad|intern|[ií]ntim|larg|lauread|lejan|lent|liger|lind|limpi|list|llamativ|loc|lluvios|madur|malvad|masculin|met[óo]dic|modern|necesitad|numeros|odiad|ordinari|orientad|oscur|parecid|partid|pausad|pedid|peligros|pequeñ|pesad|poblad|poderos|practicad|preciad|precios|premiad|prestigios|profund|prolongad|pronunciad|próxim|psicodélic|pálid|pulid|pur|querid|r[aá]pid|reconocid|recordad|redond|reducid|relacionad|remot|renombrad|representativ|respetad|ric|rud|rudimentari|sagrad|segur|significativ|sofisticad|solicitad|sólid|sonad|seguid|seri|taquiller|tardí|temid|tont|transitad|transitori|usad|utilizad|valios|valorad|variad|vendid|viej|visitad|vist|viv|votad)[ao]s?_a') + #930
+lema(ur'[m]_á_s_a', pre=ur'(?:[Aa]|[Aa]brir|afectar|agrava|[Aa]lgo|[Aa][uú]n|[Aa]preciar|[Cc]on|[Cc]rear|[Cc]uanto|[Dd]a|[Dd]elimitar|desarrolla[nrs]?|diferentes|[Dd]onde|[ee]s|[Ee]sta(?:ba|)|extendiéndose|hacer|[Ii]mpulsar|incrementado|[Mm]is?|mientras|[Mm]uch[ao]s?|[Nn]ada|[Nn]uestros?|ofendía[ns]?|[Pp]oco|proyectar|[Pp]areciéndose|[Pp]or|[Qq]u[eé]|[Ss]er|[Ss]ea|[Ss]iendo|[Ss]ino|[Ss]us?|tanto|tiene[ns]?|[Tt]odavía|[Tt]iempo|[Tt]rayendo|[Uu]n[ao]s?|[Uu]tiliza[ns]?|[Vv]eces|[Vv]er|[Vv]e[sz]) ') + #626
+lema(ur'[m]_á_s de_a', xpre=[ur'7', ur'Não de costas ', ], xpos=[ur' (?:Rou|Chemnitz|Cadenet|Moulinas|Mierda|Fontmarie|Partirás|mill|pronto|Fondespierres|Bannière|la Carrasca|Saint|dozientos|pronto el|uma|ella no hay|la (?:Jasse|Cuca)|Méric|Raspall|l)\b', ]) + #348
+lema(ur'[m]_á_s_a', pre=ur'(?:[Aa][uú]n|[Aa]lgo|[Aa]lguien|[Aa]lgunos?|[Aa]ños?|[Cc]ientos|[Cc]osas?|[Dd][eé]cadas?|[Dd]esarrollos|[Dd]ías?|[Dd]ur[oó]|[Ee]n|[Hh]oras?|[Mm]es(?:es|)|[Mm]iles|[Mm]illones|[Mm]inutos?|[Mm]uch[ao]s|[Nn]adie|[Nn]unca|[Oo]tr[ao]s?|[Pp]udo|[Ss]egundos?|[Vv]ari[ao]s|[Vv]eces|[Vv]ez|y) ', xpre=[ur'Caralt ', ur'Carreras ', ur'Cerní ', ur'Dijons ', ur'Givanel ', ur'Miguel ', ur'Rajoy ', ur'Zapatero ', ur'd’', ], xpos=[ur' (?:d|Sanz|Deu|Puigsec|Caucas|Crispí|Sauró|Graves|Boronat|Llombart|Altaba|Dorca|le|de (?:las Matas|Boeta|Vilanoveta|la Vila|Figuera|Flors|Fortuny|Bacanizas)|Fumàs|Bort|Films|Rampinyo|Usall|Génégals)\b', ur'[‘\']', ]) + #318
+lema(ur'[m]_á_s_a', pre=ur'(?:[Ll]os?|y|[Ss]on) ') + #307
+lema(ur'[Mm]_á_s (?:adult|alt|ambicios|básic|característic|clásic|competitiv|deportiv|desead|destructiv|electrónic|exitos|fresc|hablad|longev|lujos|negr|nominad|nuev|poblad|productiv|prolífic|prosper|rar|rocker|sangrient|técnic|vendid|violent)[ao]s?_a') + #231
+lema(ur'[m]_á_s_a', pre=ur'[Ll]as? ', xpos=[ur' Cérbero', ]) + #172
+lema(ur'[Mm]_á_s (?:abiert|activ|ampli|atractiv|cercan|clar|concrent|concret|confus|correct|dens|direct|e[sx]trech|económic|efectiv|específic|explícit|fidedign|fácil|hermos|h[uú]med|intens|just|larg|lent|minucios|net|ocupad|oportun|ordinari|precis|pront|propi|rápid|seri|sever|silencios|típic|verdader)(?:[ao]s?|amente|)_a') + #166
+lema(ur'[Mm]_á_s (?:abrupt|abultad|aceptad|acertad|actualizad|antigu|apegad|apreciad|blanc|carismátic|celebrad|centrad|codiciad|colorid|compact|complet|consolidad|controvertid|costos|criticad|cuidad|distintiv|divers|emotiv|emplead|equipad|espacios|especializad|estrict|estudiad|exact|experimentad|expuest|frecuentad|glorios|icónic|innovador|junt|lógic|marcad|moderad|modest|montaños|negativ|organizad|orgánic|perfect|poderos|positiv|primitiv|propens|práctic|prósper|redondead|refinad|relajad|reproducid|riguros|robust|turístic|unid|vist|vistos|árid|ásper)[ao]s?_a') + #145
+lema(ur'[Mm]_á_s que\b_a', xpre=[ur'Archivo ', ur'Carlos ', ], xpos=[ur' (?:nada|otr[ao]s?|tod[ao]s?|en|con|las?|los)', ur' (?:no|Sayago|finquen|doidice|bobo que eu)\b', ]) + #113
+lema(ur'[m]_á_s_a', pre=ur'\b[Ee]l ', xpos=[ur' (?:al Montseny|era|Viaplana|Sobirà|Clarà|ha pasado|está|di|de (?:Vila|San|Méric|los Frailes|l|Raspall|la Cuca)|del (?:Quiquet|Canadell)|Borrull|Esquerra|Jordán|Miret|Soler|Bruguera)\b', ur'(?:’am|, el pagès)', ]) + #110
+lema(ur'[Mm]_á_s_a', pre=ur'[Qq]ue ', xpos=[ur' (?:fue|i Fontdevila|colaboró|de Barberans)', ]) + #104
+lema(ur'[m]_á_s_a', pre=ur'\b[Yy] ', xpre=[ur'Rajoy ', ]) + #98
+lema(ur'[Mm]_á_s (?:amable|brutal|com[uú]n|constante|eficiente|esencial|especial|favorable|firme|formal|fácil|general|lineal|notable|particular|peculiar|popular|preponderante|probable|reciente|sexual|terminante|terrible|torpe|veloz)(?:mente|)_a') + #88
+lema(ur'[Mm]_á_s (?:ágil|austral|cantidad|convencional|comercial|d[eé]bil|dif[ií]cil|error|fiel|f[aá]cil|funcionalidad|habitual|in[uú]til|meridional|oportunidad|oriental|poder|popular|radical|tradicional)(?:es|)_a') + #72
+lema(ur'[m]_á_s_a', pre=ur'[Dd]e ', xpos=[ur' y Partners', ]) + #63
+lema(ur'[Mm]_á_s (?:apar|atray|cali|coher|combati|concluy|congru|consist|contund|contund|conveni|convinc|corri|cruji|dec|desobedi|difer|elocu|evid|exig|fehaci|g|independi|inefici|influy|intelig|persist|perteneci|pot|pres|prevaleci|proced|promin|pudi|recurr|resist|rever|sobresali|solv|sorprend|sufici|supl|transpar|urg|vali|vig)entes?_a') + #56
+lema(ur'[Mm]_á_s que (?:nada|otr[ao]s?|tod[ao]s?|en|con|las?|los)_a', xpos=[ur'\]', ]) + #37
+lema(ur'[Mm]_á_s_a', pre=ur'\bo ', xpos=[ur' (?:Codorniu|Pinc|Dorca|de (?:Vilanova|Vilanoveta|Partirás|Marco)|Duran)', ]) + #28
+lema(ur'[Mm]_á_s (?:su número|vidas?|c[aá]maras|ayuda|carros|[ée]xitos?|yardas|tiendo|[Ii]nformaci[oó]n)_a') + #25
+lema(ur'[Mm]_á_s_a', pre=ur'[0-9$]+ ', xpre=[ur'actualmente de ', ], xpos=[ur' (?:sin|retorn[oó]|si)\b', ]) + #23
+lema(ur'[m]_á_s_a', pre=ur'(?:[Ss]e (?:(?:acentúa|acerca|acoge|adapta|arreglaba|articula|asemeja|atiene|basa|centraba|centra|comenta|compara|concentra|construyese|convertiría|corre|cree|da|describe|describirá|dirige|discute|divide|ejecute|emitiese|emplea|encontraba|encuentra|enfocaba|exhiba|explica|expondrá|extiende|fecunda|habl[ae]|hace|hacía|haga|hallaba|halle|incluía|indica|instala|lleva|mantenía|mantiene|menciona|mezclaba|modifica|muestra|mueve|multiplica|necesita|necesitaría|organizaba|parece|permite|preocupa|presenta|produce|producía|prolonga|provee|publicaría|refiere|reflejaba|remonta|reparte|requerirá|sienta|sentía|tenía|tiene|trabaja|ubica|us[ae]|usará|utilizaba|utiliza|valora|ve|volvía|vuelve)n?)|acumuló|colgaron|consagraron|convirtió|demoró|desarrolló|difundió|dijo|establecieron|estudiaron|exportaron|fijó|hicieron|hizo|necesitó|plantaron|tornaron|vio|volvieron|volvió) ') + #22
+lema(ur'[m]_á_s_a', pre=ur'[Nn]o(?: (?:agregar|apoyar|añade|causar|construir|contar|ejercería|encontrar|es|era|haber|huirán?|perder|rodar|ser|son|[Ee]s|ser[aá]|soportar|tienen?|tendrán?|trabajar|usar)|) ') + #21
+lema(ur'[Mm]_á_s (?:adecuada|aguda|apropiada|concreta|cómoda|detallada|detenida|exacta|frecuente|fácil|infortunada|marcada|pesada|precisa|profunda|reciente|rápida|seguida|sólida)mente_a') + #15
+lema(ur'[m]_á_s y\b_a') + #15
+lema(ur'[m]_á_s_a', pre=ur'[Dd]el ', xpos=[ur' (?:d`en|Olmo|Cornell|de (?:l\'Artís|Marianet)|Esquerra)', ]) + #12
+lema(ur'[Mm]_á_s (?:ganador|prometedor|tentador)(?:as?|es|)_a') + #11
+lema(ur'[m]_á_s_a', pre=ur'[Aa]l ', xpos=[ur' se hace', ]) + #6
+lema(ur'[Mm]_á_s ni_a', xpos=[ur' (?:sabes)', ]) + #5
 lema(ur'[Mm]_á_s dur[ao]s?_a', xpos=[ur' que marmor', ]) + #4
-lema(ur'[Mm]_á_s (?:adult|alt|ambicios|básic|característic|clásic|competitiv|deportiv|desead|destructiv|electrónic|exitos|fresc|hablad|longev|lujos|negr|nominad|nuev|poblad|productiv|prolífic|prosper|rar|rocker|sangrient|técnic|vendid|violent)[ao]s?_a') + #153
-lema(ur'[Mm]_á_s (?:abrupt|abultad|aceptad|acertad|actualizad|antigu|apegad|apreciad|blanc|carismátic|celebrad|centrad|codiciad|colorid|compact|complet|consolidad|controvertid|costos|criticad|cuidad|distintiv|divers|emotiv|emplead|equipad|espacios|especializad|estrict|estudiad|exact|experimentad|expuest|frecuentad|glorios|icónic|innovador|junt|lógic|marcad|moderad|modest|montaños|negativ|organizad|orgánic|perfect|poderos|positiv|primitiv|propens|práctic|prósper|redondead|refinad|relajad|reproducid|riguros|robust|turístic|unid|vist|vistos|árid|ásper)[ao]s?_a') + #91
+lema(ur'[Mm]_á_s nunca_a', xpos=[ur' (?:abandones|daja)', ]) + #4
+#lema(ur'[m]_á_s_a', pre=ur'[Aa]lgun[ao]s? ', xpos=[ur' no']) + #0
 []][0]
 
-grupoEsta = [
-lema(ur'[Ee]st_á_ (?!cuando)[a-z]+(?:[ae]ndo|[aáeé]ndose(?:las?|les?|los?|))_a', xpre=[ur' (?:en|de) ', ur' a ', ur'por ']) + #347
-lema(ur'[Ee]st_á_ (?:a(?: ?cargo| punto| [0-9,.]+[a-z]*)|arriba|abajo|debajo|dentro|encima|vac[ií][ao]|viv[ao])_a') + #94
-lema(ur'[Ee]st_á_ (?:abastec|absorb|aburr|adher|admit|agradec|arrepent|aturd|bendec|ced|ceñ|cog|compart|comprend|comprim|compromet|conceb|conduc|confund|conmov|constitu|constru|conten|convenc|convert|corromp|cos|defin|deprim|destitu|destru|deten|dilu|dirig|disminu|distribu|divid|dol|ejerc|embeb|embellec|enfurec|enloquec|enriquec|erig|escond|esculp|establec|exclu|exhib|flác|fortalec|hund|imbu|imped|inclu|induc|influ|interrump|invert|invest|malher|manten|met|obstru|omit|oscurec|permit|podr|preced|preestablec|prend|presid|produc|prohib|proteg|reclu|reg|repart|resent|restring|reun|revest|segu|sobreentend|somet|sorprend|sosten|subdivid|sumerg|sum|suprim|suspend|tej|tend|traduc|transmit|vend|vest)id[ao]_a', xpre=[ur'siendo ', ur'quedar ']) + #243
-lema(ur'[Ee]st_á_ (?:abier|adscri|circunscri|compues|conten|descrip|descri|dispues|disuel|escri|exen|exhaus|expues|hambrien|har|incomple|incorrup|inscri|ocul|opues|predispues|prescri|provis|recubier|reple|resuel|ro|suel|suje|superpues|trascri)t[ao]_a') + #216
-lema(ur'[Ee]st_á_ (?:aboc|abraz|acab|aceler|achat|aclar|acompañ|acondicion|acopl|acost|acostumbr|acot|acredit|adapt|adorn|ados|afect|afili|afin|afinc|agot|agreg|agrup|agujere|ahuec|ajust|ali|aliment|aline|alist|almacen|almorz|aloj|alter|altern|amarr|ambient|amenaz|ameniz|ancl|angusti|anunci|apag|aparc|apart|aplan|aplast|aplic|apoy|aprob|aprovech|ar|arrend|arrop|arrug|asegur|asfalt|asign|asoci|asque|asust|atavi|aterr|aterroriz|atrap|atraves|audit|aument|autoedit|aval|avergonz|ayud|balance|bañ|bas|bloque|borde|calcul|calibr|calific|canaliz|cant)ad[ao]_a') + #284
-lema(ur'[Ee]st_á_ (?:aquí|allí|allá|acá)_a') + #18
-lema(ur'[Ee]st_á_ (?:casad|capacit|captur|caracteriz|carg|castig|cataliz|catalog|categoriz|cav|centr|cercen|cerr|certific|ciment|cincel|circund|circunval|clarific|clasificad|codific|colaps|colg|colmat|coloc|colore|comand|combin|compens|compil|compinch|complement|complet|comprob|comunic|concentr|concert|condicion|conect|confeccion|confi|configur|confin|confirm|conform|congel|consagr|conserv|consign|consolid|consum|contabiliz|cont|contamin|contempl|contraindic|contrat|control|convoc|coordin|cop|cre|cuarte|cur|curv|custodi|d|dat|debilit|declar|decor|dedic|deflact|delimit|deline|demand|demarc|deposit|derog|desaconsej|desacostumbr|desactiv|desactualiz|desafin|desanim|desarm|desarroll)ad[ao]_a') + #377
-lema(ur'[Ee]st_á_ considerad[ao]_a', xpre=[ur'siendo ']) + #1
-lema(ur'[Ee]st_á_ (?:desbloque|descans|desconect|descontinu|descuid|desdobl|desempeñ|desemple|desencant|desfas|deshabilit|deshabit|design|desinteres|desmay|despein|desproporcion|desterr|destin|destroz|desvel|desvi|devalu|devast|dibuj|dict|diseñ|disfraz|disgust|distanci|divorci|dobl|document|domin|dot|edific|edit|ejemplific|elimin|embals|embarc|emocion|emparent|empat|empeñ|emplaz|emple|enamor|encabez|encaden|encaj|encall|encamin|encant|encaprich|encarcel|encarg|encarn|encerr|enclav|encomend|encuadern|encuadr|endeud|energiz|enerv|enfad|enfatiz|enfoc|enfrent|enganch|englob|enlaz|enmarc|enmascar|enoj|enraiz|enred|enroll|enrosc|ensanch|ensangrent|enseñ|enter|enterr|entrelaz|entren|entub|entusiasm|envain|envenen|equip)ad[ao]_a') + #148
-lema(ur'[Ee]st_á_ (?:distra|extra|pose|prove)íd[ao]_a') + #6
-lema(ur'[Ee]st_á_ (?:escenific|escolt|especializ|especific|esponsoriz|estacion|estandardiz|estim|estipul|estrope|estructur|estudi|estuf|excit|experiment|explic|explot|expres|expuls|extravi|fabric|facult|fascin|fatig|fech|fij|film|finaliz|financi|firm|flanque|flaque|form|formul|fortific|fragment|franque|frustr|fund|fundament|fusion|garantiz|gener|gestion|gobern|grab|gradu|guard|gui|habilit|habit|habl|hal|hechiz|herman|horroriz|hosped|ide|identific|ilumin|impact|implement|implic|imposibilit|impregn|imprim|impuls|imput|inclin|incorpor|indic|individualiz|inerv|infect|infest|influenci|inform|insert|inspir|instal|integr|intencion|intercomunic|interconect|interes|intern|interpret|inund|investig|invit|involucr|jubil|junt|justific|labr|lament|lanz)ad[ao]_a') + #276
-lema(ur'[Ee]st_á_ (?:lastim|laure|legisl|legitim|lesion|levant|liber|licenci|lider|limpi|list|llev|localiz|maltrat|manch|mand|manej|maniat|manifest|manipul|manufactur|maquill|mare|matrimoni|mediatiz|mezcl|model|modific|moj|molest|mont|motoriz|multiplic|mutil|nombr|nomin|normaliz|not|obsesion|ocult|oficializ|oper|optimiz|orden|organiz|orient|orl|ornament|pag|paraliz|parcel|patrocin|peg|pein|pele|pen|penaliz|penetr|pens|perne|personaliz|personific|pint|plag|plane|planific|plant|plante|plasm|pleg|pobl|posicion|potenci|predestin|predetermin|prend|prens|prepar|present|preserv|prob|program|promocion|propuls|protagoniz|provoc)ad[ao]_a') + #142
-lema(ur'[Ee]st_á_ (?:list|partid|medid|propues|abandonad|administrad|alargad|autorizad|cruzad|vuelt|destacad|revuelt|llamad|cubiert|armad|parad|maldit|retirad|perdid|quebrad|limitad|conocid|crecid|extint|movid|acogid|unid|agitad|aislad|transformad|animad|arraig|asentad|atestad|atorment|forzad|herid|citad|buscad|complicad|ligad|condenad|marcad|motivad|ocupad|premiad|preocupad|coronad|cortad|cotizad|cuajad|previst|decidid|proporcionad|recogid|recomendad|reconocid|recuperad|reducid|referid|demostrad|denominad|desaparecid|desesperad|despedid|determinad|difundid|repetid|señalad|elaborad|embrujad|encubiert|entregad|envuelt|equilibrad|errad|esperad|expandid|extendid|tirad|aceptad|acusad|alejad|afilad|atribuid)o_a') + #102
-lema(ur'[Ee]st_á_ (?:proyect|public|radic|realiz|recalc|reclam|recopil|recost|redact|reflej|reforz|refreg|reg|regent|registr|regl|reglament|regul|rehabilit|rein|relacion|relaj|rellen|remarc|remat|remoj|remplaz|report|repres|represent|resguard|residenci|respald|retras|revis|revoc|rod|rode|rotul|sac|salpic|salv|seccion|secuestr|segment|seleccion|sell|sembr|sent|separ|sepult|señaliz|simboliz|sincroniz|situ|sobrecarg|sobregir|solicit|solt|sombre|soport|suaviz|subordin|supedit|superpobl|surc|tachon|tall|tap|tapiz|tas|tech|tematiz|termin|tipific|titul|tom|trab|trabaj|traumatiz|traves|traz|tumb|tutel|ubic|us|utiliz|valor|valu|ved|vigil|vincul|volc)ad[ao]_a') + #390
-lema(ur'[Ee]st_á_ (?:él|ella)_a', xpre=[ur' (?:[Dd]e|[Ee]n) ']) + #4
-lema(ur'[Ee]st_á_ al_a', xpre=[ur' [ay] ', ur' de ', ur'Andrea\. ', ur'Hunter ', ur'Tae, ', ur'[Pp]ero ', ur'además, ', ur'adopt[oó] ', ur'c[oó]mo ', ur'cambio ', ur'cayendo ', ur'con ', ur'contra ', ur'contrario, ', ur'convertirse ', ur'corre ', ur'correlaciona ', ur'de que ', ur'deben ', ur'directamente ', ur'directamente ',  ur'dándosela ', ur'embargo, ', ur'entendiéndose', ur'entrando ', ur'llegando ', ur'pasando ', ur'pedir ', ur'por ', ur'sobre ', ur'subordinar ', ur'transmite ', ur'traslad[oó] ', ur'ubicada ', ], xpos=[ur' (?:ver|parecer)']) + #35
-#lema(ur'[Ee]st_á_ bautizad[ao]_a', xpre=[ur'Siendo ']) + #0
-lema(ur'[Ee]st_á_ embarazad[ao]_a', xpre=[ur'estando ']) + #5
-lema(ur'[Ee]st_á_ fuera del?_a', xpre=[ur'a ', ]) + #3
-lema(ur'[Ee]st_á_ mal_a', xpre=[ur' de ']) + #15
-lema(ur'[Ee]st_á_ muy_a', xpre=[ur'incluía ', ur'ser ', ], xpos=[ur' (?:particular|alabada|polémica|pocas|apreciada|notable|dañada|limitada)', ]) + #39
+grupo1Esta = [
+lema(ur'[Ee]st_á_ (?:proyect|public|radic|realiz|recalc|reclam|recopil|recost|redact|reflej|reforz|refreg|reg|regent|registr|regl|reglament|regul|rehabilit|rein|relacion|relaj|rellen|remarc|remat|remoj|remplaz|report|repres|represent|resguard|residenci|respald|retras|revis|revoc|rod|rode|rotul|sac|salpic|salv|seccion|secuestr|segment|seleccion|sell|sembr|sent|separ|sepult|señaliz|simboliz|sincroniz|situ|sobrecarg|sobregir|solicit|solt|sombre|soport|suaviz|subordin|supedit|superpobl|surc|tachon|tall|tap|tapiz|tas|tech|tematiz|termin|tipific|titul|tom|trab|trabaj|traumatiz|traves|traz|tumb|tutel|ubic|us|utiliz|valor|valu|ved|vigil|vincul|volc)ad[ao]_a') + #441
+lema(ur'[Ee]st_á_ (?!cuando)[a-z]+(?:[ae]ndo|[aáeé]ndose(?:las?|les?|los?|))_a', xpre=[ur' (?:en|de) ', ur' a ', ur'por ', ]) + #395
+lema(ur'[Ee]st_á_ (?:aboc|abraz|acab|aceler|achat|aclar|acompañ|acondicion|acopl|acost|acostumbr|acot|acredit|adapt|adorn|ados|afect|afili|afin|afinc|agot|agreg|agrup|agujere|ahuec|ajust|ali|aliment|aline|alist|almacen|almorz|aloj|alter|altern|amarr|ambient|amenaz|ameniz|ancl|angusti|anunci|apag|aparc|apart|aplan|aplast|aplic|apoy|aprob|aprovech|ar|arrend|arrop|arrug|asegur|asfalt|asign|asoci|asque|asust|atavi|aterr|aterroriz|atrap|atraves|audit|aument|autoedit|aval|avergonz|ayud|balance|bañ|bas|bloque|borde|calcul|calibr|calific|canaliz|cant)ad[ao]_a') + #312
+lema(ur'[Ee]st_á_ (?:escenific|escolt|especializ|especific|esponsoriz|estacion|estandardiz|estim|estipul|estrope|estructur|estudi|estuf|excit|experiment|explic|explot|expres|expuls|extravi|fabric|facult|fascin|fatig|fech|fij|film|finaliz|financi|firm|flanque|flaque|form|formul|fortific|fragment|franque|frustr|fund|fundament|fusion|garantiz|gener|gestion|gobern|grab|gradu|guard|gui|habilit|habit|habl|hal|hechiz|herman|horroriz|hosped|ide|identific|ilumin|impact|implement|implic|imposibilit|impregn|imprim|impuls|imput|inclin|incorpor|indic|individualiz|inerv|infect|infest|influenci|inform|insert|inspir|instal|integr|intencion|intercomunic|interconect|interes|intern|interpret|inund|investig|invit|involucr|jubil|junt|justific|labr|lament|lanz)ad[ao]_a') + #312
+lema(ur'[Ee]st_á_n_a', xpos=[ur' en bliau', ]) + #282
+lema(ur'[Ee]st_á_ (?:abastec|absorb|aburr|adher|admit|agradec|arrepent|aturd|bendec|ced|ceñ|cog|compart|comprend|comprim|compromet|conceb|conduc|confund|conmov|constitu|constru|conten|convenc|convert|corromp|cos|defin|deprim|destitu|destru|deten|dilu|dirig|disminu|distribu|divid|dol|ejerc|embeb|embellec|enfurec|enloquec|enriquec|erig|escond|esculp|establec|exclu|exhib|flác|fortalec|hund|imbu|imped|inclu|induc|influ|interrump|invert|invest|malher|manten|met|obstru|omit|oscurec|permit|podr|preced|preestablec|prend|presid|produc|prohib|proteg|reclu|reg|repart|resent|restring|reun|revest|segu|sobreentend|somet|sorprend|sosten|subdivid|sumerg|sum|suprim|suspend|tej|tend|traduc|transmit|vend|vest)id[ao]_a', xpre=[ur'quedar ', ur'siendo ', ]) + #278
+lema(ur'[Ee]st_á_ (?:casad|capacit|captur|caracteriz|carg|castig|cataliz|catalog|categoriz|cav|centr|cercen|cerr|certific|ciment|cincel|circund|circunval|clarific|clasificad|codific|colaps|colg|colmat|coloc|colore|comand|combin|compens|compil|compinch|complement|complet|comprob|comunic|concentr|concert|condicion|conect|confeccion|confi|configur|confin|confirm|conform|congel|consagr|conserv|consign|consolid|consum|contabiliz|cont|contamin|contempl|contraindic|contrat|control|convoc|coordin|cop|cre|cuarte|cur|curv|custodi|d|dat|debilit|declar|decor|dedic|deflact|delimit|deline|demand|demarc|deposit|derog|desaconsej|desacostumbr|desactiv|desactualiz|desafin|desanim|desarm|desarroll)ad[ao]_a') + #276
+lema(ur'[Ee]st_á_ (?:abier|adscri|circunscri|compues|conten|descrip|descri|dispues|disuel|escri|exen|exhaus|expues|hambrien|har|incomple|incorrup|inscri|ocul|opues|predispues|prescri|provis|recubier|reple|resuel|ro|suel|suje|superpues|trascri)t[ao]_a') + #243
+lema(ur'[Ee]st_á_ (?:desbloque|descans|desconect|descontinu|descuid|desdobl|desempeñ|desemple|desencant|desfas|deshabilit|deshabit|design|desinteres|desmay|despein|desproporcion|desterr|destin|destroz|desvel|desvi|devalu|devast|dibuj|dict|diseñ|disfraz|disgust|distanci|divorci|dobl|document|domin|dot|edific|edit|ejemplific|elimin|embals|embarc|emocion|emparent|empat|empeñ|emplaz|emple|enamor|encabez|encaden|encaj|encall|encamin|encant|encaprich|encarcel|encarg|encarn|encerr|enclav|encomend|encuadern|encuadr|endeud|energiz|enerv|enfad|enfatiz|enfoc|enfrent|enganch|englob|enlaz|enmarc|enmascar|enoj|enraiz|enred|enroll|enrosc|ensanch|ensangrent|enseñ|enter|enterr|entrelaz|entren|entub|entusiasm|envain|envenen|equip)ad[ao]_a') + #167
+lema(ur'[Ee]st_á_ (?:lastim|laure|legisl|legitim|lesion|levant|liber|licenci|lider|limpi|list|llev|localiz|maltrat|manch|mand|manej|maniat|manifest|manipul|manufactur|maquill|mare|matrimoni|mediatiz|mezcl|model|modific|moj|molest|mont|motoriz|multiplic|mutil|nombr|nomin|normaliz|not|obsesion|ocult|oficializ|oper|optimiz|orden|organiz|orient|orl|ornament|pag|paraliz|parcel|patrocin|peg|pein|pele|pen|penaliz|penetr|pens|perne|personaliz|personific|pint|plag|plane|planific|plant|plante|plasm|pleg|pobl|posicion|potenci|predestin|predetermin|prend|prens|prepar|present|preserv|prob|program|promocion|propuls|protagoniz|provoc)ad[ao]_a') + #164
+lema(ur'[Ee]st_á_ considerad[ao]_a', xpre=[ur'siendo ', ]) + #128
+lema(ur'[Ee]st_á_ (?:list|partid|medid|propues|abandonad|administrad|alargad|autorizad|cruzad|vuelt|destacad|revuelt|llamad|cubiert|armad|parad|maldit|retirad|perdid|quebrad|limitad|conocid|crecid|extint|movid|acogid|unid|agitad|aislad|transformad|animad|arraig|asentad|atestad|atorment|forzad|herid|citad|buscad|complicad|ligad|condenad|marcad|motivad|ocupad|premiad|preocupad|coronad|cortad|cotizad|cuajad|previst|decidid|proporcionad|recogid|recomendad|reconocid|recuperad|reducid|referid|demostrad|denominad|desaparecid|desesperad|despedid|determinad|difundid|repetid|señalad|elaborad|embrujad|encubiert|entregad|envuelt|equilibrad|errad|esperad|expandid|extendid|tirad|aceptad|acusad|alejad|afilad|atribuid)o_a') + #121
+lema(ur'[Ee]st_á_ (?:a(?: ?cargo| punto| [0-9,.]+[a-z]*)|arriba|abajo|debajo|dentro|encima|vac[ií][ao]|viv[ao])_a') + #105
+lema(ur'[Ee]st_á_ muy_a', xpre=[ur'incluía ', ur'ser ', ], xpos=[ur' (?:particular|alabada|polémica|pocas|apreciada|notable|dañada|limitada)', ]) + #62
+lema(ur'[Ee]st_á_ al_a', xpre=[ur' [ay] ', ur' de ', ur'Andrea\. ', ur'Hunter ', ur'Tae, ', ur'[Pp]ero ', ur'además, ', ur'adopt[oó] ', ur'c[oó]mo ', ur'cambio ', ur'cayendo ', ur'con ', ur'contra ', ur'contrario, ', ur'convertirse ', ur'corre ', ur'correlaciona ', ur'de que ', ur'deben ', ur'directamente ', ur'directamente ', ur'dándosela ', ur'embargo, ', ur'entendiéndose', ur'entrando ', ur'llegando ', ur'pasando ', ur'pedir ', ur'por ', ur'sobre ', ur'subordinar ', ur'transmite ', ur'traslad[oó] ', ur'ubicada ', ], xpos=[ur' (?:ver|parecer)', ]) + #42
+lema(ur'[Ee]st_á_ (?:aquí|allí|allá|acá)_a') + #22
+lema(ur'[Ee]st_á_ mal_a', xpre=[ur' de ', ]) + #16
+lema(ur'[Ee]st_á_ fuera del?_a', xpre=[ur'a ', ]) + #8
+lema(ur'[Ee]st_á_ (?:distra|extra|pose|prove)íd[ao]_a') + #7
+lema(ur'[Ee]st_á_ (?:él|ella)_a', xpre=[ur' (?:[Dd]e|[Ee]n) ', ]) + #5
+lema(ur'[Ee]st_á_ embarazad[ao]_a', xpre=[ur'estando ', ]) + #5
 lema(ur'[Ee]st_á_ pactad[ao]_a', xpos=[ur' solución', ]) + #1
-lema(ur'[Ee]st_á_n_a', xpos=[ur' en bliau']) + #230
+#lema(ur'[Ee]st_á_ bautizad[ao]_a', xpre=[ur'Siendo ', ]) + #0
 []][0]
 
-grupoSe = [
-lema(ur'[Ll]lev_ó a c_abo_(?:o a ?c|ó ac)', xpre=[ur'[Hh]oy ']) + #136
-lema(ur'[Ll]lev_ó__o', pre=ur'(?:[Ll][ao]s?|[Ee]llo|[Ee]sto|[Ss]e(?: me| te| l[aeo]s?|)) ', xpre=[ur'\b[Mm]e ', ur'interior ', ur'amor ', ur'tengo ', ], xpos=[ur' dentro', ]) + #250
-lema(ur'[Cc](?:abece|able|ablegrafi|aduc|al|alc|alcific|alcografi|alcul|alific|aligrafi|all|alm|alumni|amin|amufl|ancel|anje|ans|ant|ap|apacit|apisc|apitane|apitul|apt|asc|astr|atapult|aus|autiv|av|eb|ej|en|ens|ensur|entr|entuplic|erc|ercen|err|ertific|es|hamusc|hanc|hasc|hate|heque|hirri|hiv|hoc|horre|hurrusc|i|ifr|iment|ircul|isc|it|lam|larific|laudic|lausur|lav|oadyuv|obij|obr|ocin|odici|odific|ofund|olabor|olaps|oleccion|olect|olegi|olision|olm|olore|olumpi|omand|ombin|oment|omerci|omi|omision|ompagin|ompar|ompendi|ompenetr|ompens|ompil|omplement|omplet|omplic|omport|ompr|omprob|omput|omunic|oncentr|oncert|oncienci|oncit|oncret|onculc|oncurs|ondecor|onden|ondicion|ondon|onect|onfeccion|onferenci|onfes|onfi|onfigur|onfin|onfirm|onfisc|onform|onfront|ongel|ongeni|ongraci|onjetur|onjur|onllev|onmemor|onmin|onmocion|onmut|onquist|onsagr|onserv|onsider|onsign|onsolid|onspir|onst|onstat|onstip|onsult|onsum|ontact|ontagi|ontamin|ontempl|ontent|ontest|ontraatac|ontraindic|ontrari|ontrarrest|ontrast|ontrat|ontrol|onvalid|onvers|onvoc|ooper|oordin|op|opi|oquete|oron|orrete|orrobor|ort|ortej|osc|osech|osific|oste|otej|re|ritic|ronometr|rucific|uadriplic|uadruplic|uaj|ualific|uantific|ubic|uchiche|uestion|uid|ulmin|ulp|ultiv|ur|urr|urs|ustodi)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #109
-lema(ur'[Ee](?:ch|clips|dific|dit|duc|fectu|gres|jecut|jemplific|jercit|labor|lectrific|limin|logi|lucid|man|mancip|mbalsam|mbanc|mbarc|mbarranc|mbauc|mbelec|mbeles|mboc|mbols|mborrach|mborrasc|mbosc|mbroc|mbronc|migr|mocion|mpac|mpan|mpap|mpapuci|mparej|mpat|mpecin|mpeor|mperic|mpeñ|mple|mpuj|mpuñ|mul|najen|namor|namoric|narbol|narc|ncaden|ncaj|ncall|ncamin|ncan|ncant|ncar|ncarcel|ncariñ|ncarn|ncharc|ncomi|ncorv|ncuadr|ncumbr|ndemoni|ndeud|ndos|nemist|nfad|nferm|nfil|nfoc|nfosc|nfrasc|nfrent|nfri|nganch|ngañ|ngendr|nglob|ngrip|njuici|nlist|nmarc|nnoviar|noj|nrabi|nranci|nred|nroc|nrol|nrosc|nsambl|nsanch|nsay|nseñ|nsimism|nsuci|ntabl|nter|ntibi|nton|ntr|ntrañ|ntrechoc|ntren|ntresac|ntrevist|ntronc|nturbi|ntusiasm|numer|nunci|nvenen|nvi|nvici|nvidi|nviud|quilibr|quip|quipar|quivoc|rosion|rradic|ruct|scal|scalofri|scamp|scanci|scane|scap|scaque|scarific|scatim|scenific|scoli|scolt|scori|scuch|scudriñ|sfum|smer|spaci|spant|sparranc|specific|specul|sper|spet|spi|spole|spoli|sput|squi|squiv|stacion|staf|stall|stamp|stanc|statific|stereotip|stim|stimul|stipul|stir|stoque|storb|strangul|stratific|strech|strell|stren|stres|stri|strope|structur|struj|stuc|studi|tiquet|vapor|videnci|vit|voc|volucion|xacerb|xager|xalt|xamin|xcav|xcit|xclam|xcori|xcus|xfoli|xhort|xhum|xili|ximi|xoner|xpatri|xpendi|xperiment|xpi|xpir|xplor|xplot|xpoli|xport|xpres|xpropi|xpuls|xtasi|xtermin|xtravi|xtrañ|yect)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #124
-lema(ur'[Dd](?:amnific|at|añ|eambul|ebilit|ebit|ebut|ecalcific|ecant|ecapit|ecepcion|eclam|eclin|ecodific|ecor|ecortic|ecret|efec|efoli|eform|efraud|egener|egrad|egust|eific|elat|eleit|elimit|eline|emand|emarc|emor|enomin|enot|ensific|ent|enunci|epar|eport|eposit|eprec|epreci|eriv|erram|errib|erroc|errot|errubi|errumb|esaceler|esacidific|esaconsej|esacopl|esacredit|esactiv|esafi|esagrad|esagravi|esagrup|esahuci|esanim|esaparc|esaplic|esapropi|esaprovech|esarm|esarroll|esarticul|esat|esatanc|esatasc|esatornill|esatranc|esayun|esbanc|esbarat|esbarranc|esbast|esbloque|esboc|esbord|escalcific|escalific|escambi|escans|escar|escarri|escarril|escart|escentr|escifr|esclasific|escoc|escodific|escojon|escoloc|esconect|esconfi|escontrol|esconvoc|escuid|esdas|esdeñ|esdobl|ese|esec|esech|esembarc|esemboc|esempac|esempeñ|esencaden|esenfoc|esenred|esenrosc|esenvain|esert|esertific|esestim|esfalc|esfil|esgaj|esgarr|esgraci|eshidrat|esign|esilusion|esintegr|esinteres|esintoxic|esli|eslind|eslumbr|esmantel|esmarc|esmay|esmemoriar|esmitific|esmont|esmoron|esnuc|esnud|espach|esparasit|espej|espeluc|espen|espendol|esperdici|esplom|espoj|espos|espotric|espreci|espreocup|esprestigi|espunt|esquici|estac|estap|estin|estron|esubic|esvari|esvel|esvi|esvincul|etall|etect|eterior|etermin|eton|evast|evor|iagnostic|iagram|ibuj|ict|ictamin|iezm|iferenci|ificult|ign|ignific|ilat|iligenci|iluvi|iplom|isc|iscrep|iscrimin|isculp|isec|isemin|isert|iseñ|isfrut|isgust|isip|isloc|isoci|ispens|ispers|isput|istanci|istorsion|iversific|ivis|ivorci|obl|octor|ocument|omestic|omicili|omin|on|osific|ot|ren|ud|ulcific|uplic|ur)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #132
-lema(ur'[Gg]ui_o__ó', xpos=[ur' mar\b']) + #407
-lema(ur'[Tt]raslad_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #33
-lema(ur'[Jj]ug_ó_ (?:[0-9]+|un|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez)_o') + #181
-lema(ur'[Dd]errot_ó__o') + #51
-lema(ur'[Ii](?:de|dentific|gnor|gual|lumin|lustr|magin|mbric|mit|mpact|mper|mpetr|mplant|mplement|mplic|mplor|mport|mposibilit|mpost|mprec|mpregn|mpresion|mprovis|mpugn|mpuls|mpurific|mput|ncapacit|ncaut|ncendi|ncentiv|ncit|nclin|ncomunic|ncordi|ncrement|ncrep|ncrust|ncub|nculc|ncursion|ndic|ndigest|ndign|ndult|nfect|nfiltr|nfluenci|nform|nfundi|ngeni|nhabilit|nici|njuri|nmigr|nnov|nquiet|nsert|nsinu|nspeccion|nspir|nst|nstal|nstaur|nstrument|nsult|ntegr|ntensific|ntent|ntercal|ntercambi|ntercept|ntercomunic|nterconect|nteres|ntermedi|ntern|nterpel|nterpret|ntitul|ntoxic|ntrinc|nund|nvalid|nvent|nventari|nvit|nvoc|nvolucr|nyect|rradi|rrit)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #69
-lema(ur'[Aa](?:bandon|banic|barc|barranc|bdic|bjur|bland|boc|bofete|bon|bord|borrasc|bort|boton|brev|brevi|bronc|bult|bund|bus|camp|capar|carici|carre|cat|caudill|ccident|cech|celer|cept|cerc|chac|chic|cidific|clam|clar|climat|comod|compañ|condicion|congoj|consej|copi|copl|corral|cort|cos|costumbr|cot|credit|ctiv|cuci|cultur|cumul|cun|curruc|cus|cuñ|dapt|delant|dentr|dicion|diestr|divin|djudic|djunt|dministr|dmir|dopt|dor|dorn|dos|dueñ|fect|ferr|ficion|fiebr|fili|finc|firm|floj|flor|front|garr|gasaj|genci|git|glutin|gobi|got|graci|grad|grand|grav|gravi|greg|gremi|gri|grup|guant|gusan|hond|horc|horr|huec|hues|huyent|just|justici|lab|lambic|larde|larm|lborot|legr|lej|lert|li|liger|liment|line|list|list|livi|llan|lmacen|loj|lquil|lter|lterc|ltern|lumbr|m|maestr|mamant|mas|mañ|mbicion|mbient|medrent|merit|mnisti|modorr|mold|monest|monton|mosc|motin|mpar|mplific|mput|muebl|ncl|nestesi|nex|nexion|ngusti|nhel|nid|nill|nim|niquil|nonad|nsi|nticip|ntoj|nul|padrin|palanc|parc|pare|part|pasion|pel|penc|piad|piñ|plac|plan|plast|plic|poc|pod|poder|port|postat|poy|preci|premi|pres|prest|presur|prision|propi|provech|proxim|punt|puñal|r|rañ|rbitr|rchiv|rgument|rm|rque|rranc|rras|rrasc|rrastr|rre|rrebat|rreci|rregl|rrejunt|rrellan|rrest|rri|rrib|rrincon|rrodill|rroj|rroll|rruin|rticul|s|salari|salt|se|sedi|segur|semej|sesin|sesor|sest|sever|sfixi|sign|simil|soci|som|sombr|spir|sust|t|tac|taj|tasc|tavi|tent|test|tin|torment|trac|tragant|tranc|trap|tras|trinc|trincher|trofi|tropell|udicion|udit|ugur|ument|usent|uspici|utentic|utentific|utodenomin|utonombr|utoproclam|uxili|val|ventaj|ventur|veri|vi|vis|vist|viv|voc|yud|zot)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #59
-lema(ur'[Jj]ug_ó__o', pre=ur'(?:[Qq]ui[ée]n|[Qq]u[ée]|[Dd][óo]nde|[Cc]u[áa]ndo|[Tt]ambién|[Aa]demás|[Ss]e|[Ll][ao]s?|e) ') + #133
-lema(ur'[Pp]articip_ó__o', pre=ur'(?:[Qq]ui[ée]n|[Qq]u[ée]|[Dd][óo]nde|[Cc]u[áa]ndo|[Tt]ambién|[Aa]demás|[Ss]e|[Ll][ao]s?|[Nn]o) ') + #58
-lema(ur'[Dd]ebut_ó__o') + #49
-lema(ur'[Rr](?:abi|adi|adic|adiografi|amific|anci|apt|arific|asc|asguñ|astre|atific|ay|azon|eaccion|eacondicion|eactiv|eafirm|eagrup|eanim|eanud|earm|easign|eaviv|ebaj|eban|ebas|ebautiz|ebel|ebot|ebusc|ecab|ecal|ecalc|ecalific|ecambi|ecaptur|ecaud|ecicl|ecit|eclam|eclut|ecobr|ecolect|ecoloc|ecombin|ecompens|econcili|econquist|econsider|ecopil|ecort|ecre|ecri|ecrimin|ectific|ecul|ecuper|edact|edireccion|ediseñ|edobl|edonde|edund|eduplic|eedific|eedit|eeduc|eelabor|eembarc|eencarn|eentr|eenvi|eestren|eestructur|eferenci|efin|eflej|eflexion|eform|eformul|efrend|efresc|efugi|efund|efut|egal|egañ|egent|egistr|eglament|egrab|egres|egul|ehabilit|ein|einaugur|eincorpor|eingres|einstal|einstaur|eintegr|einterpret|einvent|eiter|eivindic|elacion|elaj|elampague|elat|elev|ellen|emarc|emat|emed|emedi|ememor|emezcl|emodel|emolc|emont|enombr|enov|enunci|eorden|eorient|epar|epas|epatri|epesc|epic|eplante|eplic|eport|epos|epresent|eproch|eprogram|epudi|equis|esabi|esalt|esbal|escat|esec|eserv|eseñ|esfri|esguard|esign|espald|espet|est|estaur|esucit|esult|et|etard|etoc|etom|etorn|etract|etras|etrat|etruc|eubic|eunific|evalid|evel|everenci|evindic|evis|evivific|evoc|evolucion|igi|ob|oci|od|ode|onc|ond|ot|ubric|umi|umore)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #61
-lema(ur'[Dd]edic_ó__o', pre=ur'[Ss]e ') + #24
-lema(ur'[Pp](?:acific|act|agin|ali|anific|ar|arafrase|arodi|arpade|articip|as|ase|atale|ate|atent|atin|atrocin|atrull|aviment|ec|edale|ein|el|ele|ellizc|enc|enetr|ens|ercat|erdon|erdur|eregrin|erfeccion|erfil|erjudic|ermut|ernoct|erpetr|erpetu|ersign|erson|ersonific|erturb|es|esc|etrific|ic|ifi|ill|ilot|inch|int|irar|irate|is|it|ivot|izc|lac|lagi|lanch|lane|lanific|lant|lante|lantific|lasm|lastific|latic|leite|onch|ontific|opul|orfi|ort|os|osesion|osibilit|osicion|ostul|otenci|ractic|reci|recipit|recis|redic|redomin|refabric|refij|regon|regunt|reludi|remi|reocup|repar|resagi|resenci|reserv|resion|rest|restigi|revaric|rim|rincipi|riv|rivilegi|roces|rocesion|rocre|rocur|rofes|rogram|rogres|rolifer|romedi|rometi|romocion|ronostic|ronunci|ropici|ropin|roporcion|ropugn|ropuls|rosific|rosper|rotest|rovoc|royect|ublic|ublicit|uj|uls|untu|urific)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #46
-lema(ur'[Tt]om_ó__o', pre=ur'\b(?:[Ll]a|[Yy]) ', xpre=[ur'[Mm]e ', ur'tomo ', ur'Shannon ', ur'Kagura ', ur'Mafuyu ', ur'Terry ', ], xpos=[ur' (?:[IVXLCDM]+|requerido|segundo|Takahashi|Yamanobe|Inoue|Vran|se ven|logró|tienen|[0-9]+)', ur'(?:, que|: [0-9]+|: [IVXLCDM]+)', ]) + #16
-lema(ur'[Dd]estac_ó__o') + #17
-lema(ur'[Cc]onstruy_ó__o') + #82
-lema(ur'[Ff](?:abric|acilit|actur|acult|aj|all|alsific|alt|antase|ascin|astidi|ech|elicit|eri|estej|estone|ich|igur|ili|ilm|ilosof|iltr|inanci|irm|lame|let|lot|oli|oment|onde|orceje|orj|orm|ormate|ormul|ornic|orr|ortific|otocopi|otografi|racas|raccion|ractur|ragment|recuent|ren|ris|ructific|rustr|ulmin|uncion|und|undament|usil|usion)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #53
-lema(ur'[Rr]ecibi_ó__o') + #74
-lema(ur'[Pp]erdi_ó__o') + #56
-lema(ur'[Cc]omenz_ó__o') + #22
-lema(ur'[Aa]nunci_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|[Qq]ue) ') + #15
-lema(ur'[Ff]inaliz_ó__o') + #70
-lema(ur'[Ll]anz_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #22
-lema(ur'[Rr]etir_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #21
-lema(ur'[Ss]urgi_ó__o') + #68
-lema(ur'[Ff]orm_ó__o', pre=ur'(?:[Qq]ui[ée]n|[Qq]u[ée]|[Dd][óo]nde|[Cc]u[áa]ndo|[Tt]ambién|[Aa]demás|[Ss]e|[Ll][ao]s?|e) ') + #18
-lema(ur'[Ss](?:abore|abote|ac|acarific|aci|ald|alific|almodi|alpic|alt|alte|alud|alv|an|ancion|ane|angr|antific|aponific|aque|ec|ecuenci|ecuestr|ecund|eleccion|ell|ent|entenci|epar|eptuplic|epult|esion|extuplic|eñal|ignific|ilb|ilenci|implific|imul|imultane|indic|iti|oborn|obrepas|ocav|ofistic|ofoc|olap|olidific|olt|olucion|olvent|onde|onsac|opes|opl|oport|orte|oslay|ospech|ubast|uberific|ubestim|ublev|ublim|ubordin|ubray|ubsan|ubsidi|ubstanci|ubtitul|ud|ugestion|uicid|ujet|um|umari|umi|uministr|uper|upervis|uplant|uplic|urc|uscit|ustanci|ustent|usurr)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #33
-lema(ur'[Ff]alleci_ó__o') + #38
-lema(ur'[Cc]elebr_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #7
-lema(ur'[Pp]rometi_ó__o', xpos=[ur'(?:, (?:[Tt]antalio|[Pp]olonio)|\||\]\])']) + #56
-lema(ur'[Cc]onvirti_ó__o') + #28
-lema(ur'[Dd]esterr_ó__o', xpre=[ur'\bO ', ur'\bd[eo] ', ur'Florianópolis\|'], xpos=[ur' (?:RC|\(Santa)', ur'(?:: Edições|\]\])']) + #31
-lema(ur'[Cc]ambi_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|[Nn]os) ') + #10
-lema(ur'[Vv]olvi_ó__o') + #44
-lema(ur'[Pp]rovoc_ó__o') + #47
-lema(ur'[Tt](?:abic|ach|al|all|ap|api|aquigrafi|ar|arare|ard|artamude|ecnific|elefone|elegrafi|eletransport|elevis|elone|empl|erci|ergivers|ermin|est|estific|estimoni|ibi|ild|ipific|ir|itube|oc|oler|om|onific|op|ore|orn|orpede|ortur|rab|rabaj|rabuc|rafic|raicion|ram|ramit|ransit|ransparent|ransport|ransubstanci|rape|rasform|rasnoch|raspas|rastabill|rastoc|rastorn|rat|rep|ribut|rinc|riplic|risc|ritur|riunf|rompic|ruc|runc|umb|ute)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #18
-lema(ur'[Oo](?:bcec|bjet|bnubil|br|bsequi|bserv|bsesion|bstin|bvi|casion|cult|cup|di|fert|fici|fusc|je|lisc|lvid|nde|per|pin|probi|pt|r|rbit|rden|re|rient|rigin|rquest|s|scil|sific|stent|torg|vacion)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #22
-lema(ur'[Ll](?:abor|abr|ac|agrime|ament|astim|av|egisl|egitim|enific|entific|esion|ev|evant|evit|ib|iber|ibr|icenci|icit|ider|idi|ignific|ij|imit|impi|iquid|isi|ist|len|lor|o|ogr|ubric|ubrific|uch|uci)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #27
-lema(ur'[Qq](?:uebr|uebrant|ued|uej|uem|uerell|uintuplic|uit)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #25
-lema(ur'[Ii]naugur_ó__o') + #41
+grupo1Se = [
+lema(ur'[Gg]ui_o__ó', xpos=[ur' mar\b', ]) + #471
+lema(ur'[Ll]lev_ó__o', pre=ur'(?:[Ll][ao]s?|[Ee]llo|[Ee]sto|[Ss]e(?: me| te| l[aeo]s?|)) ', xpre=[ur'\b[Mm]e ', ur'amor ', ur'interior ', ur'tengo ', ], xpos=[ur' dentro', ]) + #331
+lema(ur'[Jj]ug_ó_ (?:[0-9]+|un|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez)_o') + #216
+lema(ur'[Dd](?:amnific|at|añ|eambul|ebilit|ebit|ebut|ecalcific|ecant|ecapit|ecepcion|eclam|eclin|ecodific|ecor|ecortic|ecret|efec|efoli|eform|efraud|egener|egrad|egust|eific|elat|eleit|elimit|eline|emand|emarc|emor|enomin|enot|ensific|ent|enunci|epar|eport|eposit|eprec|epreci|eriv|erram|errib|erroc|errot|errubi|errumb|esaceler|esacidific|esaconsej|esacopl|esacredit|esactiv|esafi|esagrad|esagravi|esagrup|esahuci|esanim|esaparc|esaplic|esapropi|esaprovech|esarm|esarroll|esarticul|esat|esatanc|esatasc|esatornill|esatranc|esayun|esbanc|esbarat|esbarranc|esbast|esbloque|esboc|esbord|escalcific|escalific|escambi|escans|escar|escarri|escarril|escart|escentr|escifr|esclasific|escoc|escodific|escojon|escoloc|esconect|esconfi|escontrol|esconvoc|escuid|esdas|esdeñ|esdobl|ese|esec|esech|esembarc|esemboc|esempac|esempeñ|esencaden|esenfoc|esenred|esenrosc|esenvain|esert|esertific|esestim|esfalc|esfil|esgaj|esgarr|esgraci|eshidrat|esign|esilusion|esintegr|esinteres|esintoxic|esli|eslind|eslumbr|esmantel|esmarc|esmay|esmemoriar|esmitific|esmont|esmoron|esnuc|esnud|espach|esparasit|espej|espeluc|espen|espendol|esperdici|esplom|espoj|espos|espotric|espreci|espreocup|esprestigi|espunt|esquici|estac|estap|estin|estron|esubic|esvari|esvel|esvi|esvincul|etall|etect|eterior|etermin|eton|evast|evor|iagnostic|iagram|ibuj|ict|ictamin|iezm|iferenci|ificult|ign|ignific|ilat|iligenci|iluvi|iplom|isc|iscrep|iscrimin|isculp|isec|isemin|isert|iseñ|isfrut|isgust|isip|isloc|isoci|ispens|ispers|isput|istanci|istorsion|iversific|ivis|ivorci|obl|octor|ocument|omestic|omicili|omin|on|osific|ot|ren|ud|ulcific|uplic|ur)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #176
+lema(ur'[Ee](?:ch|clips|dific|dit|duc|fectu|gres|jecut|jemplific|jercit|labor|lectrific|limin|logi|lucid|man|mancip|mbalsam|mbanc|mbarc|mbarranc|mbauc|mbelec|mbeles|mboc|mbols|mborrach|mborrasc|mbosc|mbroc|mbronc|migr|mocion|mpac|mpan|mpap|mpapuci|mparej|mpat|mpecin|mpeor|mperic|mpeñ|mple|mpuj|mpuñ|mul|najen|namor|namoric|narbol|narc|ncaden|ncaj|ncall|ncamin|ncan|ncant|ncar|ncarcel|ncariñ|ncarn|ncharc|ncomi|ncorv|ncuadr|ncumbr|ndemoni|ndeud|ndos|nemist|nfad|nferm|nfil|nfoc|nfosc|nfrasc|nfrent|nfri|nganch|ngañ|ngendr|nglob|ngrip|njuici|nlist|nmarc|nnoviar|noj|nrabi|nranci|nred|nroc|nrol|nrosc|nsambl|nsanch|nsay|nseñ|nsimism|nsuci|ntabl|nter|ntibi|nton|ntr|ntrañ|ntrechoc|ntren|ntresac|ntrevist|ntronc|nturbi|ntusiasm|numer|nunci|nvenen|nvi|nvici|nvidi|nviud|quilibr|quip|quipar|quivoc|rosion|rradic|ruct|scal|scalofri|scamp|scanci|scane|scap|scaque|scarific|scatim|scenific|scoli|scolt|scori|scuch|scudriñ|sfum|smer|spaci|spant|sparranc|specific|specul|sper|spet|spi|spole|spoli|sput|squi|squiv|stacion|staf|stall|stamp|stanc|statific|stereotip|stim|stimul|stipul|stir|stoque|storb|strangul|stratific|strech|strell|stren|stres|stri|strope|structur|struj|stuc|studi|tiquet|vapor|videnci|vit|voc|volucion|xacerb|xager|xalt|xamin|xcav|xcit|xclam|xcori|xcus|xfoli|xhort|xhum|xili|ximi|xoner|xpatri|xpendi|xperiment|xpi|xpir|xplor|xplot|xpoli|xport|xpres|xpropi|xpuls|xtasi|xtermin|xtravi|xtrañ|yect)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #162
+lema(ur'[Ll]lev_ó a c_abo_(?:o a ?c|ó ac)', xpre=[ur'[Hh]oy ', ]) + #160
+lema(ur'[Jj]ug_ó__o', pre=ur'(?:[Qq]ui[ée]n|[Qq]u[ée]|[Dd][óo]nde|[Cc]u[áa]ndo|[Tt]ambién|[Aa]demás|[Ss]e|[Ll][ao]s?|e) ') + #147
+lema(ur'[Cc](?:abece|able|ablegrafi|aduc|al|alc|alcific|alcografi|alcul|alific|aligrafi|all|alm|alumni|amin|amufl|ancel|anje|ans|ant|ap|apacit|apisc|apitane|apitul|apt|asc|astr|atapult|aus|autiv|av|eb|ej|en|ens|ensur|entr|entuplic|erc|ercen|err|ertific|es|hamusc|hanc|hasc|hate|heque|hirri|hiv|hoc|horre|hurrusc|i|ifr|iment|ircul|isc|it|lam|larific|laudic|lausur|lav|oadyuv|obij|obr|ocin|odici|odific|ofund|olabor|olaps|oleccion|olect|olegi|olision|olm|olore|olumpi|omand|ombin|oment|omerci|omi|omision|ompagin|ompar|ompendi|ompenetr|ompens|ompil|omplement|omplet|omplic|omport|ompr|omprob|omput|omunic|oncentr|oncert|oncienci|oncit|oncret|onculc|oncurs|ondecor|onden|ondicion|ondon|onect|onfeccion|onferenci|onfes|onfi|onfigur|onfin|onfirm|onfisc|onform|onfront|ongel|ongeni|ongraci|onjetur|onjur|onllev|onmemor|onmin|onmocion|onmut|onquist|onsagr|onserv|onsider|onsign|onsolid|onspir|onst|onstat|onstip|onsult|onsum|ontact|ontagi|ontamin|ontempl|ontent|ontest|ontraatac|ontraindic|ontrari|ontrarrest|ontrast|ontrat|ontrol|onvalid|onvers|onvoc|ooper|oordin|op|opi|oquete|oron|orrete|orrobor|ort|ortej|osc|osech|osific|oste|otej|re|ritic|ronometr|rucific|uadriplic|uadruplic|uaj|ualific|uantific|ubic|uchiche|uestion|uid|ulmin|ulp|ultiv|ur|urr|urs|ustodi)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #139
+lema(ur'[Cc]onstruy_ó__o') + #100
+lema(ur'[Ii](?:de|dentific|gnor|gual|lumin|lustr|magin|mbric|mit|mpact|mper|mpetr|mplant|mplement|mplic|mplor|mport|mposibilit|mpost|mprec|mpregn|mpresion|mprovis|mpugn|mpuls|mpurific|mput|ncapacit|ncaut|ncendi|ncentiv|ncit|nclin|ncomunic|ncordi|ncrement|ncrep|ncrust|ncub|nculc|ncursion|ndic|ndigest|ndign|ndult|nfect|nfiltr|nfluenci|nform|nfundi|ngeni|nhabilit|nici|njuri|nmigr|nnov|nquiet|nsert|nsinu|nspeccion|nspir|nst|nstal|nstaur|nstrument|nsult|ntegr|ntensific|ntent|ntercal|ntercambi|ntercept|ntercomunic|nterconect|nteres|ntermedi|ntern|nterpel|nterpret|ntitul|ntoxic|ntrinc|nund|nvalid|nvent|nventari|nvit|nvoc|nvolucr|nyect|rradi|rrit)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #90
+lema(ur'[Ll]lam_ó__o', pre=ur'(?:[Qq]ui[ée]n|[Qq]u[ée]|[Dd][óo]nde|[Cc]u[áa]ndo|[Tt]ambién|[Aa]demás|[Ss]e|[Ll][ao]s?|e) ', xpre=[ur'"', ur'\'\'', ur'Desde ', ur'Yo ', ur'esto ', ]) + #89
+lema(ur'[Aa](?:bandon|banic|barc|barranc|bdic|bjur|bland|boc|bofete|bon|bord|borrasc|bort|boton|brev|brevi|bronc|bult|bund|bus|camp|capar|carici|carre|cat|caudill|ccident|cech|celer|cept|cerc|chac|chic|cidific|clam|clar|climat|comod|compañ|condicion|congoj|consej|copi|copl|corral|cort|cos|costumbr|cot|credit|ctiv|cuci|cultur|cumul|cun|curruc|cus|cuñ|dapt|delant|dentr|dicion|diestr|divin|djudic|djunt|dministr|dmir|dopt|dor|dorn|dos|dueñ|fect|ferr|ficion|fiebr|fili|finc|firm|floj|flor|front|garr|gasaj|genci|git|glutin|gobi|got|graci|grad|grand|grav|gravi|greg|gremi|gri|grup|guant|gusan|hond|horc|horr|huec|hues|huyent|just|justici|lab|lambic|larde|larm|lborot|legr|lej|lert|li|liger|liment|line|list|list|livi|llan|lmacen|loj|lquil|lter|lterc|ltern|lumbr|m|maestr|mamant|mas|mañ|mbicion|mbient|medrent|merit|mnisti|modorr|mold|monest|monton|mosc|motin|mpar|mplific|mput|muebl|ncl|nestesi|nex|nexion|ngusti|nhel|nid|nill|nim|niquil|nonad|nsi|nticip|ntoj|nul|padrin|palanc|parc|pare|part|pasion|pel|penc|piad|piñ|plac|plan|plast|plic|poc|pod|poder|port|postat|poy|preci|premi|pres|prest|presur|prision|propi|provech|proxim|punt|puñal|r|rañ|rbitr|rchiv|rgument|rm|rque|rranc|rras|rrasc|rrastr|rre|rrebat|rreci|rregl|rrejunt|rrellan|rrest|rri|rrib|rrincon|rrodill|rroj|rroll|rruin|rticul|s|salari|salt|se|sedi|segur|semej|sesin|sesor|sest|sever|sfixi|sign|simil|soci|som|sombr|spir|sust|t|tac|taj|tasc|tavi|tent|test|tin|torment|trac|tragant|tranc|trap|tras|trinc|trincher|trofi|tropell|udicion|udit|ugur|ument|usent|uspici|utentic|utentific|utodenomin|utonombr|utoproclam|uxili|val|ventaj|ventur|veri|vi|vis|vist|viv|voc|yud|zot)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #86
+lema(ur'[Rr]ecibi_ó__o') + #83
+lema(ur'[Ff]inaliz_ó__o') + #77
+lema(ur'[Rr](?:abi|adi|adic|adiografi|amific|anci|apt|arific|asc|asguñ|astre|atific|ay|azon|eaccion|eacondicion|eactiv|eafirm|eagrup|eanim|eanud|earm|easign|eaviv|ebaj|eban|ebas|ebautiz|ebel|ebot|ebusc|ecab|ecal|ecalc|ecalific|ecambi|ecaptur|ecaud|ecicl|ecit|eclam|eclut|ecobr|ecolect|ecoloc|ecombin|ecompens|econcili|econquist|econsider|ecopil|ecort|ecre|ecri|ecrimin|ectific|ecul|ecuper|edact|edireccion|ediseñ|edobl|edonde|edund|eduplic|eedific|eedit|eeduc|eelabor|eembarc|eencarn|eentr|eenvi|eestren|eestructur|eferenci|efin|eflej|eflexion|eform|eformul|efrend|efresc|efugi|efund|efut|egal|egañ|egent|egistr|eglament|egrab|egres|egul|ehabilit|ein|einaugur|eincorpor|eingres|einstal|einstaur|eintegr|einterpret|einvent|eiter|eivindic|elacion|elaj|elampague|elat|elev|ellen|emarc|emat|emed|emedi|ememor|emezcl|emodel|emolc|emont|enombr|enov|enunci|eorden|eorient|epar|epas|epatri|epesc|epic|eplante|eplic|eport|epos|epresent|eproch|eprogram|epudi|equis|esabi|esalt|esbal|escat|esec|eserv|eseñ|esfri|esguard|esign|espald|espet|est|estaur|esucit|esult|et|etard|etoc|etom|etorn|etract|etras|etrat|etruc|eubic|eunific|evalid|evel|everenci|evindic|evis|evivific|evoc|evolucion|igi|ob|oci|od|ode|onc|ond|ot|ubric|umi|umore)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #70
+lema(ur'[Ss]urgi_ó__o') + #69
+lema(ur'[Pp]articip_ó__o', pre=ur'(?:[Qq]ui[ée]n|[Qq]u[ée]|[Dd][óo]nde|[Cc]u[áa]ndo|[Tt]ambién|[Aa]demás|[Ss]e|[Ll][ao]s?|[Nn]o) ') + #68
+lema(ur'[Dd]ebut_ó__o') + #62
+lema(ur'[Dd]errot_ó__o') + #62
+lema(ur'[Pp]erdi_ó__o') + #61
+lema(ur'[Ff](?:abric|acilit|actur|acult|aj|all|alsific|alt|antase|ascin|astidi|ech|elicit|eri|estej|estone|ich|igur|ili|ilm|ilosof|iltr|inanci|irm|lame|let|lot|oli|oment|onde|orceje|orj|orm|ormate|ormul|ornic|orr|ortific|otocopi|otografi|racas|raccion|ractur|ragment|recuent|ren|ris|ructific|rustr|ulmin|uncion|und|undament|usil|usion)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #59
+lema(ur'[Pp]rovoc_ó__o') + #53
+lema(ur'[Cc]omp_itió__(?:eti[oó]|itio)') + #52
+lema(ur'[Pp](?:acific|act|agin|ali|anific|ar|arafrase|arodi|arpade|articip|as|ase|atale|ate|atent|atin|atrocin|atrull|aviment|ec|edale|ein|el|ele|ellizc|enc|enetr|ens|ercat|erdon|erdur|eregrin|erfeccion|erfil|erjudic|ermut|ernoct|erpetr|erpetu|ersign|erson|ersonific|erturb|es|esc|etrific|ic|ifi|ill|ilot|inch|int|irar|irate|is|it|ivot|izc|lac|lagi|lanch|lane|lanific|lant|lante|lantific|lasm|lastific|latic|leite|onch|ontific|opul|orfi|ort|os|osesion|osibilit|osicion|ostul|otenci|ractic|reci|recipit|recis|redic|redomin|refabric|refij|regon|regunt|reludi|remi|reocup|repar|resagi|resenci|reserv|resion|rest|restigi|revaric|rim|rincipi|riv|rivilegi|roces|rocesion|rocre|rocur|rofes|rogram|rogres|rolifer|romedi|rometi|romocion|ronostic|ronunci|ropici|ropin|roporcion|ropugn|ropuls|rosific|rosper|rotest|rovoc|royect|ublic|ublicit|uj|uls|untu|urific)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #50
+lema(ur'[Vv]olvi_ó__o') + #48
+lema(ur'[Pp]rometi_ó__o', xpre=[ur'del \bel ', ur'elemento ', ], xpos=[ur'(?:, (?:[Tt]antalio|[Pp]olonio)|\||\]\])', ]) + #47
+lema(ur'[Tt]raslad_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #46
+lema(ur'[Ff]alleci_ó__o') + #45
+lema(ur'[Ii]nterpret_ó__o', pre=ur'(?:[Qq]ui[ée]n|[Qq]u[ée]|[Dd][óo]nde|[Cc]u[áa]ndo|[Tt]ambién|[Aa]demás|[Ss]e|[Ll][ao]s?|e) ') + #44
+lema(ur'[Ii]naugur_ó__o') + #43
+lema(ur'[Ss](?:abore|abote|ac|acarific|aci|ald|alific|almodi|alpic|alt|alte|alud|alv|an|ancion|ane|angr|antific|aponific|aque|ec|ecuenci|ecuestr|ecund|eleccion|ell|ent|entenci|epar|eptuplic|epult|esion|extuplic|eñal|ignific|ilb|ilenci|implific|imul|imultane|indic|iti|oborn|obrepas|ocav|ofistic|ofoc|olap|olidific|olt|olucion|olvent|onde|onsac|opes|opl|oport|orte|oslay|ospech|ubast|uberific|ubestim|ublev|ublim|ubordin|ubray|ubsan|ubsidi|ubstanci|ubtitul|ud|ugestion|uicid|ujet|um|umari|umi|uministr|uper|upervis|uplant|uplic|urc|uscit|ustanci|ustent|usurr)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #41
 lema(ur'[Cc]onllev_ó__o') + #39
-lema(ur'[Aa]pareci_ó__o') + #13
-lema(ur'[Cc]oloc_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ', xpre=[ur'Yo ', ]) + #16
-lema(ur'[Ii]nterpret_ó__o', pre=ur'(?:[Qq]ui[ée]n|[Qq]u[ée]|[Dd][óo]nde|[Cc]u[áa]ndo|[Tt]ambién|[Aa]demás|[Ss]e|[Ll][ao]s?|e) ') + #34
-lema(ur'[Pp]rotagoniz_ó__o') + #35
-lema(ur'[Ss]ucedi_ó__o') + #33
-lema(ur'[Mm](?:ac|achac|achuc|adur|agnific|alcri|aleduc|alinterpret|alogr|altrat|anc|and|anduc|anej|anifest|aniobr|anipul|anufactur|aravill|arch|archit|are|argin|arin|arisc|artill|asacr|asc|asific|astic|asturb|at|atricul|atrimoni|e|ecanografi|edic|edit|ejor|el|ene|enospreci|ent|erc|erm|ezcl|igr|ilit|im|in|ini|ir|istific|itific|ixtific|odel|oder|odific|of|oj|olde|olest|olific|omific|ont|ortific|ostr|otiv|ult|ultiplic|urmur|usic|usti|ut|util)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #21
-lema(ur'[Dd]irigi_ó__o') + #11
-lema(ur'[Ss]igui_ó__o') + #33
-lema(ur'[Cc]aptur_ó__o') + #5
-lema(ur'[Uu](?:ltim|nific|nt|s|surp)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #11
-lema(ur'[Ss]ufri_ó__o') + #18
-lema(ur'[Ii]ncorpor_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #8
-lema(ur'[Rr]euni_ó__o') + #28
-lema(ur'[Uu]ni_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ', xpos=[ur' (?:Steamship|Flag|Jack)', ]) + #11
-lema(ur'[Uu]ni_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ', xpos=[ur' (?:Steamship|Flag|Jack)', ]) + #41
-lema(ur'[Ee]specializ_ó__o') + #30
-lema(ur'[Vv]enci_ó__o') + #23
-lema(ur'[Aa]dapt_ó__o') + #21
-lema(ur'[Cc]onstituy_ó__o', pre=ur'[Ss]e ') + #1
-lema(ur'[Ss]err_ó__o', xpos=[ur' do\b', ur'\]\]']) + #27
-lema(ur'[Ll]ogr_ó__o', pre=ur'(?:[Ll][eo]|[Ss]e(?: me| te| l[aeo]s?|)) ', xpre=[ur'\by ']) + #15
-lema(ur'[Aa]mpli_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ', xpos=[ur' del? ', ]) + #10
-lema(ur'[Bb](?:abe|ail|aj|alance|albuce|anc|araj|as|ast|atall|ate|añ|eatific|ec|enefici|es|ifurc|iloc|iografi|isec|lanque|lasfem|loc|loque|oicote|ombarde|onific|orde|orr|osquej|ot|re|rill|rinc|rome|ronce|rot|uce|url)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #9
-lema(ur'[Ii]ncluy_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)|que) ') + #15
-lema(ur'[Gg](?:alardon|angren|asific|ast|ener|ermin|est|estion|ir|lori|lorific|los|ole|olpe|radu|ranje|ratific|rit|uard|uerre|uill|uis|uiñ|ust)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #9
-lema(ur'[Aa]sumi_ó__o') + #6
+lema(ur'[Pp]rotagoniz_ó__o') + #38
+lema(ur'[Ss]ucedi_ó__o') + #38
+lema(ur'[Cc]onvirti_ó__o') + #35
+lema(ur'[Ss]igui_ó__o') + #35
+lema(ur'[Ll](?:abor|abr|ac|agrime|ament|astim|av|egisl|egitim|enific|entific|esion|ev|evant|evit|ib|iber|ibr|icenci|icit|ider|idi|ignific|ij|imit|impi|iquid|isi|ist|len|lor|o|ogr|ubric|ubrific|uch|uci)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #34
+lema(ur'[Dd]esterr_ó__o', xpre=[ur'Florianópolis\|', ur'\bO ', ur'\bd[eo] ', ], xpos=[ur' (?:RC|\(Santa)', ur'(?:: Edições|\]\])', ]) + #32
+lema(ur'[Rr]euni_ó__o') + #31
+lema(ur'[Ee]specializ_ó__o') + #29
+lema(ur'[Dd]edic_ó__o', pre=ur'[Ss]e ') + #28
+lema(ur'[Mm](?:ac|achac|achuc|adur|agnific|alcri|aleduc|alinterpret|alogr|altrat|anc|and|anduc|anej|anifest|aniobr|anipul|anufactur|aravill|arch|archit|are|argin|arin|arisc|artill|asacr|asc|asific|astic|asturb|at|atricul|atrimoni|e|ecanografi|edic|edit|ejor|el|ene|enospreci|ent|erc|erm|ezcl|igr|ilit|im|in|ini|ir|istific|itific|ixtific|odel|oder|odific|of|oj|olde|olest|olific|omific|ont|ortific|ostr|otiv|ult|ultiplic|urmur|usic|usti|ut|util)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #28
+lema(ur'[Tt](?:abic|ach|al|all|ap|api|aquigrafi|ar|arare|ard|artamude|ecnific|elefone|elegrafi|eletransport|elevis|elone|empl|erci|ergivers|ermin|est|estific|estimoni|ibi|ild|ipific|ir|itube|oc|oler|om|onific|op|ore|orn|orpede|ortur|rab|rabaj|rabuc|rafic|raicion|ram|ramit|ransit|ransparent|ransport|ransubstanci|rape|rasform|rasnoch|raspas|rastabill|rastoc|rastorn|rat|rep|ribut|rinc|riplic|risc|ritur|riunf|rompic|ruc|runc|umb|ute)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #27
+lema(ur'[Oo](?:bcec|bjet|bnubil|br|bsequi|bserv|bsesion|bstin|bvi|casion|cult|cup|di|fert|fici|fusc|je|lisc|lvid|nde|per|pin|probi|pt|r|rbit|rden|re|rient|rigin|rquest|s|scil|sific|stent|torg|vacion)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #26
+lema(ur'[Qq](?:uebr|uebrant|ued|uej|uem|uerell|uintuplic|uit)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #26
+lema(ur'[Aa]dapt_ó__o') + #25
+lema(ur'[C]uric_ó__o') + #25
+lema(ur'[Cc]omenz_ó__o') + #25
+lema(ur'[Ll]anz_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #24
+lema(ur'[Vv]enci_ó__o') + #24
+lema(ur'[Ff]irm_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ', xpre=[ur'Te ', ]) + #23
+lema(ur'[Ss]err_ó__o', xpos=[ur' do\b', ur'\]\]', ]) + #23
+lema(ur'[Aa]nunci_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|[Qq]ue) ') + #22
+lema(ur'[Ff]orm_ó__o', pre=ur'(?:[Qq]ui[ée]n|[Qq]u[ée]|[Dd][óo]nde|[Cc]u[áa]ndo|[Tt]ambién|[Aa]demás|[Ss]e|[Ll][ao]s?|e) ') + #22
+lema(ur'[Dd]estac_ó__o') + #21
+lema(ur'[Rr]etir_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #20
+lema(ur'[Tt]om_ó__o', pre=ur'\b(?:[Ll]a|[Yy]) ', xpre=[ur'Kagura ', ur'Mafuyu ', ur'Shannon ', ur'Terry ', ur'[Mm]e ', ur'tomo ', ], xpos=[ur' (?:[IVXLCDM]+|requerido|segundo|Takahashi|Yamanobe|Inoue|Vran|se ven|logró|tienen|[0-9]+)', ur'(?:, que|: [0-9]+|: [IVXLCDM]+)', ]) + #20
+lema(ur'[Aa]pareci_ó__o') + #19
+lema(ur'[Ss]ufri_ó__o') + #19
+lema(ur'[Ll]ogr_ó__o', pre=ur'(?:[Ll][eo]|[Ss]e(?: me| te| l[aeo]s?|)) ', xpre=[ur'\by ', ]) + #18
+lema(ur'[Cc]oloc_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ', xpre=[ur'Yo ', ]) + #17
+lema(ur'[Ff]ij_ó__o', pre=ur'(?:[Ss]e(?: l[aeo]s?|)|[Ll][aeo]s?) ', xpre=[ur' a ', ur' e[ns] ', ]) + #17
+lema(ur'[Ii]ncluy_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)|que) ') + #17
+lema(ur'[Oo]curri_ó__o') + #17
 lema(ur'[Cc]ubri_ó__o') + #16
-lema(ur'[Ee]stableci_ó__o') + #6
-lema(ur'[Nn](?:ad|aj|arr|ecesit|egoci|evisc|idific|ombr|omin|oque|ot|otific|umer)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #6
-lema(ur'[Pp]ermiti_ó__o') + #13
-lema(ur'[C]uric_ó__o') + #22
-lema(ur'[Dd]estruy_ó__o') + #12
-lema(ur'[Ff]irm_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ', xpre=[ur'Te ', ]) + #14
-lema(ur'[Mm]arc_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|[Ll]os?) ') + #14
-lema(ur'[Ii]nvolucr_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|[Qq]ue) ') + #13
-lema(ur'[Tt]itul_ó__o', pre=ur'(?:[Yy]a|[Ss]e)(?: me| te| l[aeo]s?|) ') + #4
-lema(ur'[Ee]ncontr_ó__o', pre=ur'(?:[Ss]e(?: l[aeo]s?|)|[Ll][aeo]s?|[Dd]onde) ') + #3
-lema(ur'[Gg]rab_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #5
-lema(ur'[Oo]curri_ó__o') + #15
-#lema(ur'[p]ublic_ó__o', pre=ur'y ', xpre=[ur'maestros ', ur'alumnos ', ur'oral ', ur'privado ', ur'cr[íi]tica '], xpos=[ur' (?:en general|presente)', ur'\)']) + #0
-lema(ur'[Ff]ij_ó__o', pre=ur'(?:[Ss]e(?: l[aeo]s?|)|[Ll][aeo]s?) ', xpre=[ur' a ', ur' e[ns] ', ]) + #16
-lema(ur'[Aa]dquiri_ó__o') + #8
-lema(ur'[Cc]ompiti_ó__o') + #2
-lema(ur'[Ee]mpat_ó__o') + #6
-lema(ur'[Rr]ompi_ó__o') + #9
-lema(ur'[Uu]tiliz_ó__o', pre=ur'[Ss]e ') + #8
-lema(ur'[Dd]escribi_ó__o') + #11
-lema(ur'[Oo]ficializ_ó__o') + #10
-lema(ur'[Pp]erteneci_ó__o') + #14
-lema(ur'[Aa]cab_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ', xpre=[ur'[Mm]e ', ]) + #2
-lema(ur'[Dd]esapareci_ó__o') + #4
-lema(ur'[Ee]ntreg_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #6
-lema(ur'[Rr]ecord_ó__o') + #14
-lema(ur'[Ss]irvi_ó__o') + #11
-lema(ur'[Aa]not_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|y) ') + #5
-lema(ur'[Aa]bri_ó__o') + #10
-lema(ur'[Aa]ctu_ó__o') + #6
-lema(ur'[Aa]prob_ó__o') + #6
-lema(ur'[Aa]ñadi_ó__o') + #12
-lema(ur'[Dd]ebi_ó__o') + #10
-lema(ur'[Rr]ecomend_ó__o') + #10
-lema(ur'[Cc]omparti_ó__o') + #2
-lema(ur'[Dd]ispar_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|[LlMmTt]e|[Nn]os) ') + #2
-lema(ur'[Cc]umpli_ó__o') + #5
-lema(ur'[Dd]espert_ó__o') + #8
-lema(ur'[Ii]mpidi_ó__o') + #14
-lema(ur'[Oo]freci_ó__o') + #5
-lema(ur'[Ss]inti_ó__o') + #10
-lema(ur'[Cc]reci_ó__o') + #6
-lema(ur'[Hh](?:abilit|abit|abl|all|amac|art|asti|el|ered|erman|erni|ibern|inc|ip|ipertrofi|ipotec|ocic|omenaje|onr|osped|osti|ueve|umidific|umill|usme)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #4
-lema(ur'[Ee]xtendi_ó__o') + #10
-lema(ur'[Tt]ransmiti_ó__o') + #9
-lema(ur'[Cc]oncedi_ó__o') + #2
-lema(ur'[Dd]efini_ó__o') + #8
-lema(ur'[Dd]emostr_ó__o') + #4
-lema(ur'[Dd]escendi_ó__o') + #3
-lema(ur'[Jj](?:act|ade|ipi|iñ|ubil|unt|urament|ustific|ustipreci)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #5
-lema(ur'[Pp]lane_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|[Qq]ue) ') + #3
-lema(ur'[Rr]egres_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|[Qq]ue) ') + #6
-lema(ur'[Ss]ubi_ó__o') + #9
-lema(ur'[Aa]prendi_ó__o') + #5
-lema(ur'[Cc]ompr_ó__o', pre=ur'(?:[Ll][eo]|[Ss]e(?: me| te| l[aeo]s?|)) ') + #4
-lema(ur'[Dd]ecapit_ó__o') + #8
-lema(ur'[Dd]esv_í_o_i', pre=ur'(?:[AaEe]l|[Uu]n|[Cc]ada|[Ll]igero|[Oo]tro|[Pp]rimer|[Dd]el?|[Mm]ismo) ') + #8
-lema(ur'[Ee]strell_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|y) ') + #3
-lema(ur'[Jj]odi_ó__o') + #9
-lema(ur'[Rr]equiri_ó__o') + #8
-lema(ur'[Ss]ecuestr_ó__o', pre=ur'\b(?:[Ll]a) ', xpre=[ur'Antiextorsión ', ur'Extorsión ', ], xpos=[ur' (?:de (?:Sol|nativas)|por)\b', ]) + #5
-lema(ur'[Vv](?:ac|aci|acil|alid|alor|anaglori|ari|aticin|el|endimi|ener|entisc|erane|erific|ers|ersific|ersion|et|iaj|ici|idri|igil|ilipendi|incul|indic|iol|iolent|ir|ision|isit|islumbr|itrific|ivific|olte|omit|ot|ulner)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #5
-lema(ur'[Aa]llan_ó__o', xpre=[ur'me ']) + #5
-lema(ur'[Dd]espleg_ó__o') + #8
-lema(ur'[Dd]espleg_ó__o') + #10
-lema(ur'[Ii]nterfiri_ó__o') + #5
-lema(ur'[Rr]eforz_ó__o') + #6
-lema(ur'[Dd]ifundi_ó__o') + #6
-#lema(ur'[Dd]isolvi_ó__o') + #0
+lema(ur'[Rr]ecord_ó__o') + #16
+lema(ur'[Bb](?:abe|ail|aj|alance|albuce|anc|araj|as|ast|atall|ate|añ|eatific|ec|enefici|es|ifurc|iloc|iografi|isec|lanque|lasfem|loc|loque|oicote|ombarde|onific|orde|orr|osquej|ot|re|rill|rinc|rome|ronce|rot|uce|url)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #15
+lema(ur'[Dd]estruy_ó__o') + #15
+lema(ur'[Dd]irigi_ó__o') + #15
+lema(ur'[Ii]mpidi_ó__o') + #15
+lema(ur'[Mm]arc_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|[Ll]os?) ') + #15
+lema(ur'[Pp]ermiti_ó__o') + #15
+lema(ur'[Pp]erteneci_ó__o') + #15
+lema(ur'[Dd]ebi_ó__o') + #14
+lema(ur'[Ii]nvolucr_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|[Qq]ue) ') + #14
+lema(ur'[Ss]irvi_ó__o') + #14
+lema(ur'[Aa]ñadi_ó__o') + #13
+lema(ur'[Dd]escribi_ó__o') + #13
+lema(ur'[Ee]xtendi_ó__o') + #13
+lema(ur'[Ss]inti_ó__o') + #13
+lema(ur'[Uu](?:ltim|nific|nt|s|surp)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #13
+lema(ur'[Aa]bri_ó__o') + #12
+lema(ur'[Aa]mpli_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ', xpos=[ur' del? ', ]) + #12
+lema(ur'[Cc]ambi_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|[Nn]os) ') + #12
+lema(ur'[Dd]esv_í_o_i', pre=ur'(?:[AaEe]l|[Uu]n|[Cc]ada|[Ll]igero|[Oo]tro|[Pp]rimer|[Dd]el?|[Mm]ismo) ') + #12
+lema(ur'[Gg](?:alardon|angren|asific|ast|ener|ermin|est|estion|ir|lori|lorific|los|ole|olpe|radu|ranje|ratific|rit|uard|uerre|uill|uis|uiñ|ust)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #12
+lema(ur'[Pp]obl_ó__o') + #12
+lema(ur'[Tt]ransmiti_ó__o') + #12
+lema(ur'[Ll]len_ó__o', pre=ur'(?:[Ll][aeo]s?|[Ss]e(?: me| te| l[aeo]s?|)) ', xpre=[ur'\'\'', ur'vacío y ', ]) + #11
+lema(ur'[Oo]ficializ_ó__o') + #11
+lema(ur'[Rr]ecomend_ó__o') + #11
+lema(ur'[Uu]ni_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ', xpos=[ur' (?:Steamship|Flag|Jack)', ]) + #11
+lema(ur'[Uu]ni_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ', xpos=[ur' (?:Steamship|Flag|Jack)', ]) + #11
+lema(ur'[Cc]elebr_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #10
+lema(ur'[Cc]reci_ó__o') + #10
+lema(ur'[Dd]espert_ó__o') + #10
+lema(ur'[Ee]ntreg_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #10
+lema(ur'[Aa]dquiri_ó__o') + #9
+lema(ur'[Dd]emostr_ó__o') + #9
+lema(ur'[Ee]mpat_ó__o') + #9
 lema(ur'[Ee]xigi_ó__o') + #9
-lema(ur'[Mm]inti_ó__o') + #7
+lema(ur'[Jj]odi_ó__o') + #9
+lema(ur'[Pp]areci_ó__o') + #9
+lema(ur'[Pp]as_ó__o', pre=ur'(?:[Tt]odo|[Nn]ada) ', xpos=[ur' se', ]) + #9
 lema(ur'[Pp]rotegi_ó__o') + #9
-lema(ur'[Rr]esidi_ó__o') + #6
-lema(ur'[Aa]dmiti_ó__o') + #3
-lema(ur'[Aa]sent_ó__o') + #3
-lema(ur'[Aa]sesin_ó__o', pre=ur'\b(?:[Ll]a) ', xpre=[ur'Bitch ', ur'amigo ', ur'corrupto ', ur'psicópata ', ur'violador ', ], xpos=[ur' (?:What|psicópata|serial)', ]) + #2
-lema(ur'[Cc]ometi_ó__o') + #1
-#lema(ur'[Ee]scogi_ó__o') + #0
-lema(ur'[Pp]areci_ó__o') + #7
-lema(ur'[Pp]as_ó__o', pre=ur'(?:[Tt]odo|[Nn]ada) ', xpos=[ur' se', ]) + #6
+lema(ur'[Rr]egres_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|[Qq]ue) ') + #9
+lema(ur'[Rr]equiri_ó__o') + #9
+lema(ur'[Rr]ompi_ó__o') + #9
+lema(ur'[Ss]ubi_ó__o') + #9
+lema(ur'[Aa]not_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|y) ') + #8
+lema(ur'[Dd]ecapit_ó__o') + #8
+lema(ur'[Dd]efini_ó__o') + #8
+lema(ur'[Dd]espleg_ó__o') + #8
+lema(ur'[Dd]espleg_ó__o') + #8
+lema(ur'[Hh](?:abilit|abit|abl|all|amac|art|asti|el|ered|erman|erni|ibern|inc|ip|ipertrofi|ipotec|ocic|omenaje|onr|osped|osti|ueve|umidific|umill|usme)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #8
 lema(ur'[Rr]ecogi_ó__o') + #8
-lema(ur'[Rr]ecorri_ó__o') + #7
-lema(ur'[Rr]espondi_ó__o') + #2
-lema(ur'[Ss]olicit_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #4
-lema(ur'[Ss]ometi_ó__o') + #5
-#lema(ur'[Aa]plic_ó__o', pre=ur'\b(?:[Ll]a|[Yy]) ', xpos=[ur' en usos singulares']) + #0
-lema(ur'[Bb]rind_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|que) ') + #1
-lema(ur'[Cc]ogi_ó__o') + #5
-lema(ur'[Cc]omprometi_ó__o') + #6
-lema(ur'[Cc]onsisti_ó__o') + #6
-lema(ur'[Pp]retendi_ó__o') + #3
-lema(ur'[Pp]rohibi_ó__o') + #1
-lema(ur'[Rr]econoci_ó__o') + #4
-lema(ur'[Rr]econstruy_ó__o') + #4
-lema(ur'[Rr]indi_ó__o') + #4
-lema(ur'[Vv]isti_ó__o') + #6
+lema(ur'[Uu]tiliz_ó__o', pre=ur'[Ss]e ') + #8
+lema(ur'[Aa]prob_ó__o') + #7
 lema(ur'[Aa]rrend_ó__o') + #7
-lema(ur'[Cc]edi_ó__o') + #1
-lema(ur'[Dd]espidi_ó__o') + #3
-lema(ur'[Dd]esprendi_ó__o') + #4
-lema(ur'[Mm]ordi_ó__o') + #4
-lema(ur'[Rr]eprob_ó__o') + #4
-lema(ur'[a]terr_ó__o') + #5
-lema(ur'[Cc]olg_ó__o') + #3
-lema(ur'[Dd]efendi_ó__o') + #1
-lema(ur'[Dd]evolvi_ó__o') + #4
-lema(ur'[Dd]imiti_ó__o') + #5
-lema(ur'[Ee]ncomend_ó__o') + #3
-lema(ur'[Ee]xpandi_ó__o') + #2
-lema(ur'[Pp]obl_ó__o') + #4
-lema(ur'[Pp]refiri_ó__o') + #5
-lema(ur'[Rr]epiti_ó__o') + #4
-lema(ur'[Rr]escindi_ó__o') + #5
-lema(ur'[Tt]rasmiti_ó__o') + #3
-lema(ur'[l]ami_ó__o') + #4
-lema(ur'[Aa]cogi_ó__o') + #3
-lema(ur'[Aa]dvirti_ó__o') + #3
-#lema(ur'[Aa]gradeci_ó__o') + #0
-lema(ur'[Aa]zot_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|[Qq]ue) ') + #1
-lema(ur'[Cc]onsumi_ó__o') + #2
-lema(ur'[Dd]epar_ó__o') + #2
-lema(ur'[Dd]esalent_ó__o') + #3
-lema(ur'[Dd]esaloj_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|[Ll][aeo]s?) ') + #2
-lema(ur'[Dd]esconcert_ó__o') + #4
-lema(ur'[Dd]urmi_ó__o', xpos=[ur' Quadrato']) + #2
-lema(ur'[Ee]fectu_ó__o') + #1
-lema(ur'[Ee]ludi_ó__o') + #4
-lema(ur'[Ee]mprendi_ó__o') + #3
-lema(ur'[Ee]nloqueci_ó__o') + #2
-lema(ur'[Ee]scondi_ó__o') + #1
-lema(ur'[Ee]valu_ó__o') + #2
-lema(ur'[Ff]avoreci_ó__o') + #2
-lema(ur'[Ii]nscribi_ó__o') + #2
-lema(ur'[Ii]nsisti_ó__o') + #2
-lema(ur'[Pp]ermaneci_ó__o') + #3
-lema(ur'[Pp]ersigui_ó__o') + #3
-lema(ur'[Qq]uem_ó__o', pre=ur'\b(?:[Yy]|[Ss]e) ', xpos=[ur' por mis']) + #1
-lema(ur'[Qq]uit_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ', xpre=[ur'[Yy]o ', ]) + #2
-lema(ur'[Rr]econcomi_ó__o') + #3
-lema(ur'[Rr]esolvi_ó__o') + #1
-lema(ur'[Rr]evivi_ó__o') + #3
-lema(ur'[Ss]obrevivi_ó__o') + #3
+lema(ur'[Cc]omprometi_ó__o') + #7
+lema(ur'[Cc]umpli_ó__o') + #7
+lema(ur'[Ii]ncorpor_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #7
+lema(ur'[Mm]inti_ó__o') + #7
+lema(ur'[Nn](?:ad|aj|arr|ecesit|egoci|evisc|idific|ombr|omin|oque|ot|otific|umer)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #7
+lema(ur'[Oo]freci_ó__o') + #7
+lema(ur'[Rr]ecorri_ó__o') + #7
+lema(ur'[Vv]isti_ó__o') + #7
+lema(ur'[Aa]ctu_ó__o') + #6
+lema(ur'[Aa]prendi_ó__o') + #6
+lema(ur'[Aa]sent_ó__o') + #6
+lema(ur'[Aa]sumi_ó__o') + #6
+lema(ur'[Dd]ifundi_ó__o') + #6
+lema(ur'[Ee]stableci_ó__o') + #6
+lema(ur'[Rr]esidi_ó__o') + #6
 lema(ur'[Ss]uspendi_ó__o') + #6
-lema(ur'[Aa]basteci_ó__o') + #3
-lema(ur'[Aa]ccedi_ó__o') + #3
-lema(ur'[Aa]traves_ó__o') + #2
-lema(ur'[Cc]oincidi_ó__o') + #2
-lema(ur'[Cc]ombati_ó__o') + #2
-#lema(ur'[Cc]omprendi_ó__o') + #0
-lema(ur'[Cc]onfundi_ó__o') + #2
-lema(ur'[Dd]evalu_ó__o') + #3
-lema(ur'[Ee]ncerr_ó__o') + #2
-lema(ur'[Ee]nfureci_ó__o') + #2
-lema(ur'[Ee]xisti_ó__o') + #3
-lema(ur'[Ee]xtingui_ó__o') + #3
-lema(ur'[Ff]inaliz_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #1
-lema(ur'[Ff]ingi_ó__o') + #2
-lema(ur'[Ff]undi_ó__o') + #2
-lema(ur'[Ii]nvirti_ó__o') + #2
-lema(ur'[Ll]lam_ó__o', pre=ur'(?:[Qq]ui[ée]n|[Qq]u[ée]|[Dd][óo]nde|[Cc]u[áa]ndo|[Tt]ambién|[Aa]demás|[Ss]e|[Ll][ao]s?|e) ', xpre=[ur'"', ur'\'\'', ur'esto ', ur'Desde ', ur'Yo ', ]) + #2
+lema(ur'[Vv](?:ac|aci|acil|alid|alor|anaglori|ari|aticin|el|endimi|ener|entisc|erane|erific|ers|ersific|ersion|et|iaj|ici|idri|igil|ilipendi|incul|indic|iol|iolent|ir|ision|isit|islumbr|itrific|ivific|olte|omit|ot|ulner)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #6
+lema(ur'[Aa]cogi_ó__o') + #5
+lema(ur'[Aa]llan_ó__o', xpre=[ur'me ', ]) + #5
+lema(ur'[Cc]aptur_ó__o') + #5
+lema(ur'[Cc]ogi_ó__o') + #5
+lema(ur'[Cc]ompr_ó__o', pre=ur'(?:[Ll][eo]|[Ss]e(?: me| te| l[aeo]s?|)) ') + #5
+lema(ur'[Cc]onsisti_ó__o') + #5
+lema(ur'[Dd]esprendi_ó__o') + #5
+lema(ur'[Dd]imiti_ó__o') + #5
+lema(ur'[Dd]ispar_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|[LlMmTt]e|[Nn]os) ') + #5
+lema(ur'[Ee]strell_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|y) ') + #5
+lema(ur'[Gg]rab_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #5
+lema(ur'[Ii]nterfiri_ó__o') + #5
+lema(ur'[Jj](?:act|ade|ipi|iñ|ubil|unt|urament|ustific|ustipreci)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #5
+lema(ur'[Pp]ermaneci_ó__o') + #5
+lema(ur'[Pp]refiri_ó__o') + #5
+lema(ur'[Qq]uit_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ', xpre=[ur'[Yy]o ', ]) + #5
+lema(ur'[Rr]econstruy_ó__o') + #5
+lema(ur'[Rr]escindi_ó__o') + #5
+lema(ur'[Ss]ecuestr_ó__o', pre=ur'\b(?:[Ll]a) ', xpre=[ur'Antiextorsión ', ur'Extorsión ', ], xpos=[ur' (?:de (?:Sol|nativas)|por)\b', ]) + #5
+lema(ur'[Ss]ometi_ó__o') + #5
+lema(ur'[a]terr_ó__o') + #5
+lema(ur'[Aa]dvirti_ó__o') + #4
+lema(ur'[Cc]oncedi_ó__o') + #4
+lema(ur'[Dd]esapareci_ó__o') + #4
+lema(ur'[Dd]esconcert_ó__o') + #4
+lema(ur'[Dd]evolvi_ó__o') + #4
+lema(ur'[Ee]ludi_ó__o') + #4
+lema(ur'[Ee]ncontr_ó__o', pre=ur'(?:[Ss]e(?: l[aeo]s?|)|[Ll][aeo]s?|[Dd]onde) ') + #4
+lema(ur'[Ee]xisti_ó__o') + #4
 lema(ur'[Mm]idi_ó__o') + #4
-lema(ur'[Pp]adeci_ó__o') + #3
-lema(ur'[Pp]recedi_ó__o') + #2
-lema(ur'[Pp]rendi_ó__o') + #3
-lema(ur'[Pp]rocedi_ó__o') + #1
+lema(ur'[Mm]ordi_ó__o') + #4
+lema(ur'[Pp]lane_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|[Qq]ue) ') + #4
 lema(ur'[Pp]romovi_ó__o') + #4
-lema(ur'[Rr]eapareci_ó__o') + #2
-lema(ur'[Rr]etransmiti_ó__o') + #2
-lema(ur'[Rr]evirti_ó__o') + #2
-lema(ur'[Ss]orprendi_ó__o') + #1
+lema(ur'[Rr]econoci_ó__o') + #4
+lema(ur'[Rr]epiti_ó__o') + #4
+lema(ur'[Rr]eprob_ó__o') + #4
+lema(ur'[Rr]espondi_ó__o') + #4
+lema(ur'[Rr]indi_ó__o') + #4
+lema(ur'[Ss]olicit_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #4
+lema(ur'[Tt]itul_ó__o', pre=ur'(?:[Yy]a|[Ss]e)(?: me| te| l[aeo]s?|) ') + #4
+lema(ur'[l]ami_ó__o') + #4
+lema(ur'[Aa]basteci_ó__o') + #3
+lema(ur'[Aa]cab_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ', xpre=[ur'[Mm]e ', ]) + #3
+lema(ur'[Aa]ccedi_ó__o') + #3
+lema(ur'[Aa]traves_ó__o') + #3
+lema(ur'[Cc]olg_ó__o') + #3
+lema(ur'[Cc]ombati_ó__o') + #3
+lema(ur'[Cc]omparti_ó__o') + #3
+lema(ur'[Dd]efendi_ó__o') + #3
+lema(ur'[Dd]esalent_ó__o') + #3
+lema(ur'[Dd]escendi_ó__o') + #3
+lema(ur'[Dd]espidi_ó__o') + #3
+lema(ur'[Dd]evalu_ó__o') + #3
+lema(ur'[Dd]evalu_ó__o', pre=ur'[Ss]e ') + #3
+lema(ur'[Ee]mprendi_ó__o') + #3
+lema(ur'[Ee]nfureci_ó__o') + #3
+lema(ur'[Ee]xpandi_ó__o') + #3
+lema(ur'[Ee]xtingui_ó__o') + #3
+lema(ur'[Ii]mparti_ó__o') + #3
+lema(ur'[Pp]adeci_ó__o') + #3
+lema(ur'[Pp]ersigui_ó__o') + #3
+lema(ur'[Pp]rendi_ó__o') + #3
+lema(ur'[Pp]retendi_ó__o') + #3
+lema(ur'[Rr]econcomi_ó__o') + #3
+lema(ur'[Rr]eforz_ó__o', xpre=[ur'Juan ', ], xpos=[ur' y su', ]) + #3
+lema(ur'[Rr]evivi_ó__o') + #3
+lema(ur'[Ss]ali_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #3
+lema(ur'[Ss]uprimi_ó__o') + #3
 lema(ur'[Tt]ranscurri_ó__o') + #3
-lema(ur'[Tt]ransport_ó__o', pre=ur'\b[Ll]o ') + #2
+lema(ur'[Tt]rasmiti_ó__o') + #3
+lema(ur'[p]ublic_ó__o', pre=ur'y ', xpre=[ur'alumnos ', ur'cr[íi]tica ', ur'maestros ', ur'oral ', ur'privado ', ], xpos=[ur' (?:en general|presente)', ur'\)', ]) + #3
 lema(ur'[Aa]bati_ó__o') + #2
 lema(ur'[Aa]bsorbi_ó__o') + #2
 lema(ur'[Aa]conteci_ó__o') + #2
-lema(ur'[Aa]cost_ó__o') + #2
-#lema(ur'[Aa]maneci_ó__o') + #0
-#lema(ur'[Aa]peg_ó__o', pre=ur'[Ss]e ') + #0
+lema(ur'[Aa]dmiti_ó__o') + #2
+lema(ur'[Aa]marr_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #2
 lema(ur'[Aa]plaudi_ó__o') + #2
 lema(ur'[Aa]rremeti_ó__o') + #2
-#lema(ur'[Aa]tendi_ó__o') + #0
+lema(ur'[Aa]sesin_ó__o', pre=ur'\b(?:[Ll]a) ', xpre=[ur'Bitch ', ur'amigo ', ur'corrupto ', ur'psicópata ', ur'violador ', ], xpos=[ur' (?:What|psicópata|serial)', ]) + #2
+lema(ur'[Aa]trevi_ó__o') + #2
+lema(ur'[Aa]zot_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|[Qq]ue) ') + #2
+lema(ur'[Cc]oincidi_ó__o') + #2
+lema(ur'[Cc]ompiti_ó__o') + #2
+lema(ur'[Cc]onfundi_ó__o') + #2
+lema(ur'[Cc]onsumi_ó__o') + #2
 lema(ur'[Dd]eneg_ó__o') + #2
-lema(ur'[Dd]erriti_ó__o') + #1
-#lema(ur'[Dd]esenterr_ó__o') + #0
+lema(ur'[Dd]epar_ó__o') + #2
+lema(ur'[Dd]esaloj_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|[Ll][aeo]s?) ') + #2
+lema(ur'[Dd]esconoci_ó__o') + #2
 lema(ur'[Dd]esisti_ó__o') + #2
-lema(ur'[Dd]esvaneci_ó__o') + #1
-lema(ur'[Dd]evalu_ó__o', pre=ur'[Ss]e ') + #2
-lema(ur'[Ee]njuici_ó__o') + #1
+lema(ur'[Dd]esminti_ó__o') + #2
+lema(ur'[Dd]urmi_ó__o', xpos=[ur' Quadrato', ]) + #2
+lema(ur'[Ee]ncerr_ó__o') + #2
+lema(ur'[Ee]ncomend_ó__o') + #2
+lema(ur'[Ee]nloqueci_ó__o') + #2
 lema(ur'[Ee]ntendi_ó__o') + #2
-#lema(ur'[Ee]xpidi_ó__o') + #0
-lema(ur'[Ii]mparti_ó__o') + #3
+lema(ur'[Ee]valu_ó__o') + #2
+lema(ur'[Ff]avoreci_ó__o') + #2
+lema(ur'[Ff]ingi_ó__o') + #2
+lema(ur'[Ff]undi_ó__o') + #2
 lema(ur'[Ii]mprimi_ó__o') + #2
-lema(ur'[Ii]ntercedi_ó__o') + #1
-lema(ur'[Ii]nterrumpi_ó__o') + #3
+lema(ur'[Ii]ncumpli_ó__o') + #2
+lema(ur'[Ii]nsinu_ó__o') + #2
+lema(ur'[Ii]nsisti_ó__o') + #2
+lema(ur'[Ii]nterrumpi_ó__o') + #2
 lema(ur'[Ii]nvadi_ó__o') + #2
-#lema(ur'[Mm]asacr_ó__o', pre=ur'\b(?:[Ll]a|[Yy]) ') + #0
-#lema(ur'[Mm]edi_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ', xpos=[ur' enterraban', ]) + #0
-lema(ur'[Mm]ereci_ó__o') + #2
+lema(ur'[Ii]nvirti_ó__o') + #2
+lema(ur'[Ll]ey_ó__o') + #2
 lema(ur'[Oo]miti_ó__o') + #2
-lema(ur'[Pp]resumi_ó__o') + #1
-#lema(ur'[Pp]rosigui_ó__o') + #0
-lema(ur'[Rr]eabri_ó__o') + #1
-lema(ur'[Rr]efiri_ó__o') + #1
+lema(ur'[Pp]recedi_ó__o') + #2
+lema(ur'[Pp]rocedi_ó__o') + #2
+lema(ur'[Qq]uem_ó__o', pre=ur'\b(?:[Yy]|[Ss]e) ', xpos=[ur' por mis', ]) + #2
+lema(ur'[Rr]eabri_ó__o') + #2
+lema(ur'[Rr]eapareci_ó__o') + #2
+lema(ur'[Rr]efiri_ó__o') + #2
 lema(ur'[Rr]emovi_ó__o') + #2
-lema(ur'[Rr]enaci_ó__o') + #1
-#lema(ur'[Rr]esumi_ó__o') + #0
-lema(ur'[Rr]event_ó__o') + #3
-lema(ur'[Ss]ali_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #3
+lema(ur'[Rr]esisti_ó__o') + #2
+lema(ur'[Rr]etransmiti_ó__o') + #2
+lema(ur'[Rr]event_ó__o') + #2
+lema(ur'[Rr]evirti_ó__o') + #2
+lema(ur'[Ss]obrevivi_ó__o') + #2
 lema(ur'[Ss]ucumbi_ó__o') + #2
-#lema(ur'[Ss]ugiri_ó__o') + #0
-lema(ur'[Ss]uprimi_ó__o') + #3
-#lema(ur'[Tt]embl_ó__o') + #0
+lema(ur'[Ss]ugiri_ó__o') + #2
 lema(ur'[Tt]emi_ó__o') + #2
+lema(ur'[Tt]ransport_ó__o', pre=ur'\b[Ll]o ') + #2
 lema(ur'[Vv]erti_ó__o') + #2
 lema(ur'[Aa]borreci_ó__o') + #1
-#lema(ur'[Aa]bsolvi_ó__o') + #0
 lema(ur'[Aa]burri_ó__o') + #1
-#lema(ur'[Aa]crecent_ó__o') + #0
-#lema(ur'[Aa]gredi_ó__o') + #0
-#lema(ur'[Aa]ludi_ó__o') + #0
-lema(ur'[Aa]marr_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #1
-#lema(ur'[Aa]nocheci_ó__o') + #0
+lema(ur'[Aa]cost_ó__o') + #1
+lema(ur'[Aa]cudi_ó__o') + #1
+lema(ur'[Aa]dhiri_ó__o') + #1
 lema(ur'[Aa]pret_ó__o') + #1
-#lema(ur'[Aa]rrepinti_ó__o') + #0
-lema(ur'[Aa]trevi_ó__o') + #2
 lema(ur'[Bb]lanqueci_ó__o') + #1
+lema(ur'[Bb]rind_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|que) ') + #1
 lema(ur'[Ca]ambi_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #1
+lema(ur'[Cc]edi_ó__o') + #1
 lema(ur'[Cc]oescribi_ó__o') + #1
-lema(ur'[Cc]omp_itió__(?:eti[oó]|itio)') + #48
+lema(ur'[Cc]ometi_ó__o') + #1
 lema(ur'[Cc]onmovi_ó__o') + #1
-#lema(ur'[Cc]orrespondi_ó__o') + #0
-#lema(ur'[Cc]orrigi_ó__o') + #0
-#lema(ur'[Dd]ebati_ó__o') + #0
+lema(ur'[Cc]onsinti_ó__o') + #1
+lema(ur'[Cc]onstituy_ó__o', pre=ur'[Ss]e ') + #1
+lema(ur'[Dd]ebati_ó__o') + #1
 lema(ur'[Dd]eprimi_ó__o') + #1
-lema(ur'[Dd]erriv_ó__o', xpre=[ur'\bel ']) + #1
-lema(ur'[Dd]esconoci_ó__o') + #2
+lema(ur'[Dd]erriti_ó__o') + #1
 lema(ur'[Dd]esenvolvi_ó__o') + #1
 lema(ur'[Dd]esoll_ó__o') + #1
+lema(ur'[Dd]esvaneci_ó__o') + #1
 lema(ur'[Dd]iscurri_ó__o') + #1
-#lema(ur'[Dd]iscuti_ó__o') + #0
+lema(ur'[Dd]iscuti_ó__o') + #1
 lema(ur'[Dd]istingui_ó__o') + #1
 lema(ur'[Dd]isuadi_ó__o') + #1
-#lema(ur'[Ee]ncendi_ó__o') + #0
-#lema(ur'[Ee]ndureci_ó__o') + #0
-#lema(ur'[Ee]nmudeci_ó__o') + #0
+lema(ur'[Ee]fectu_ó__o') + #1
+lema(ur'[Ee]mparent_ó__o') + #1
+lema(ur'[Ee]njuici_ó__o') + #1
 lema(ur'[Ee]nnobleci_ó__o') + #1
-#lema(ur'[Ee]nriqueci_ó__o') + #0
+lema(ur'[Ee]ntrometi_ó__o') + #1
 lema(ur'[Ee]nvisti_ó__o') + #1
-#lema(ur'[Ee]sclareci_ó__o') + #0
+lema(ur'[Ee]scogi_ó__o') + #1
+lema(ur'[Ee]scondi_ó__o') + #1
 lema(ur'[Ee]sculpi_ó__o') + #1
 lema(ur'[Ee]xcedi_ó__o') + #1
-#lema(ur'[Ff]ortaleci_ó__o') + #0
-lema(ur'[Ii]ncumpli_ó__o') + #1
-lema(ur'[Ii]nsinu_ó__o') + #2
-lema(ur'[Ll]ey_ó__o') + #1
+lema(ur'[Ff]inaliz_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #1
+lema(ur'[Ii]nscribi_ó__o') + #1
+lema(ur'[Ii]ntercedi_ó__o') + #1
+lema(ur'[Ii]ntim_ó__o', pre=ur'(?:[Ll][aeo]s?|[Ss]e(?: me| te| l[aeo]s?|)) ') + #1
+lema(ur'[Jj]ur_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ', xpos=[ur' padre', ur', Señoría', ]) + #1
+lema(ur'[Mm]ereci_ó__o') + #1
 lema(ur'[Nn]utri_ó__o') + #1
-#lema(ur'[Oo]bedeci_ó__o') + #0
 lema(ur'[Pp]endi_ó__o') + #1
+lema(ur'[Pp]ercibi_ó__o') + #1
 lema(ur'[Pp]osey_ó__o') + #1
 lema(ur'[Pp]rescindi_ó__o') + #1
-#lema(ur'[Pp]revaleci_ó__o') + #0
+lema(ur'[Pp]resumi_ó__o') + #1
+lema(ur'[Pp]rohibi_ó__o') + #1
 lema(ur'[Pp]rovey_ó__o') + #1
-#lema(ur'[Rr]easumi_ó__o') + #0
-#lema(ur'[Rr]ecurri_ó__o') + #0
+lema(ur'[Rr]edimi_ó__o') + #1
 lema(ur'[Rr]eescribi_ó__o') + #1
-#lema(ur'[Rr]eincidi_ó__o') + #0
+lema(ur'[Rr]emiti_ó__o') + #1
+lema(ur'[Rr]enaci_ó__o') + #1
 lema(ur'[Rr]eparti_ó__o') + #1
-#lema(ur'[Rr]epobl_ó__o') + #0
-#lema(ur'[Rr]eprendi_ó__o') + #0
+lema(ur'[Rr]esolvi_ó__o') + #1
 lema(ur'[Rr]estableci_ó__o') + #1
 lema(ur'[Rr]etrocedi_ó__o') + #1
-#lema(ur'[Rr]evendi_ó__o') + #0
 lema(ur'[Rr]evisti_ó__o') + #1
 lema(ur'[Rr]evolvi_ó__o') + #1
 lema(ur'[Ss]acudi_ó__o') + #1
 lema(ur'[Ss]embr_ó__o') + #1
-#lema(ur'[Ss]ocorri_ó__o') + #0
-#lema(ur'[Ss]oterr_ó__o') + #0
-#lema(ur'[Tt]raicion_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #0
-#lema(ur'[Tt]ransfiri_ó__o') + #0
+lema(ur'[Ss]ocorri_ó__o') + #1
+lema(ur'[Ss]orprendi_ó__o') + #1
+lema(ur'[Ss]oterr_ó__o') + #1
+lema(ur'[Tt]ransfiri_ó__o') + #1
 lema(ur'[Tt]ravisti_ó__o') + #1
-#lema(ur'[Zz](?:af|anj|ap|arp|ozobr|urr)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #0
+# lema(ur'[Aa]bsolvi_ó__o') + #0
 # lema(ur'[Aa]caeci_ó__o') + #0
 # lema(ur'[Aa]centu_ó__o') + #0
+# lema(ur'[Aa]crecent_ó__o') + #0
 # lema(ur'[Aa]creci_ó__o') + #0
-# lema(ur'[Aa]cudi_ó__o') + #0
-# lema(ur'[Aa]dhiri_ó__o') + #0
 # lema(ur'[Aa]doleci_ó__o') + #0
 # lema(ur'[Aa]dormeci_ó__o') + #0
 # lema(ur'[Aa]dscribi_ó__o') + #0
 # lema(ur'[Aa]dsorbi_ó__o') + #0
 # lema(ur'[Aa]fligi_ó__o') + #0
+# lema(ur'[Aa]gradeci_ó__o') + #0
+# lema(ur'[Aa]gredi_ó__o') + #0
 # lema(ur'[Aa]hij_ó__o') + #0
+# lema(ur'[Aa]ludi_ó__o') + #0
+# lema(ur'[Aa]maneci_ó__o') + #0
+# lema(ur'[Aa]nocheci_ó__o') + #0
 # lema(ur'[Aa]ntecedi_ó__o') + #0
 # lema(ur'[Aa]pacent_ó__o') + #0
+# lema(ur'[Aa]peg_ó__o', pre=ur'[Ss]e ') + #0
 # lema(ur'[Aa]percibi_ó__o') + #0
 # lema(ur'[Aa]peteci_ó__o') + #0
+# lema(ur'[Aa]plic_ó__o', pre=ur'\b(?:[Ll]a|[Yy]) ', xpos=[ur' en usos singulares', ]) + #0
 # lema(ur'[Aa]prehendi_ó__o') + #0
+# lema(ur'[Aa]rrepinti_ó__o') + #0
 # lema(ur'[Aa]serr_ó__o') + #0
 # lema(ur'[Aa]sinti_ó__o') + #0
 # lema(ur'[Aa]sus_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|[Qq]ue) ') + #0
 # lema(ur'[Aa]tardeci_ó__o') + #0
+# lema(ur'[Aa]tendi_ó__o') + #0
 # lema(ur'[Aa]terriz_ó__o', pre=ur'(?:[Ss]e(?: me| te| l[aeo]s?|)|[Qq]ue) ') + #0
 # lema(ur'[Aa]turdi_ó__o') + #0
 # lema(ur'[Aa]up_ó__o') + #0
@@ -3333,14 +3337,16 @@ lema(ur'[Tt]ravisti_ó__o') + #1
 # lema(ur'[Cc]ompareci_ó__o') + #0
 # lema(ur'[Cc]ompeli_ó__o') + #0
 # lema(ur'[Cc]omplaci_ó__o') + #0
+# lema(ur'[Cc]omprendi_ó__o') + #0
 # lema(ur'[Cc]oncibi_ó__o') + #0
 # lema(ur'[Cc]oncurri_ó__o') + #0
 # lema(ur'[Cc]ondescendi_ó__o') + #0
 # lema(ur'[Cc]ondoli_ó__o') + #0
 # lema(ur'[Cc]onfiri_ó__o') + #0
-# lema(ur'[Cc]onsinti_ó__o') + #0
 # lema(ur'[Cc]onsol_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #0
 # lema(ur'[Cc]onvaleci_ó__o') + #0
+# lema(ur'[Cc]orrespondi_ó__o') + #0
+# lema(ur'[Cc]orrigi_ó__o') + #0
 # lema(ur'[Cc]orrompi_ó__o') + #0
 # lema(ur'[Cc]osi_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #0
 # lema(ur'[Cc]ovenci_ó__o') + #0
@@ -3348,6 +3354,7 @@ lema(ur'[Tt]ravisti_ó__o') + #1
 # lema(ur'[Dd]ecreci_ó__o') + #0
 # lema(ur'[Dd]emoli_ó__o') + #0
 # lema(ur'[Dd]ependi_ó__o') + #0
+# lema(ur'[Dd]erriv_ó__o', xpre=[ur'\bel ', ]) + #0
 # lema(ur'[Dd]esabasteci_ó__o') + #0
 # lema(ur'[Dd]esacert_ó__o') + #0
 # lema(ur'[Dd]esagradeci_ó__o') + #0
@@ -3357,6 +3364,7 @@ lema(ur'[Tt]ravisti_ó__o') + #1
 # lema(ur'[Dd]escorri_ó__o') + #0
 # lema(ur'[Dd]escosi_ó__o') + #0
 # lema(ur'[Dd]esentendi_ó__o') + #0
+# lema(ur'[Dd]esenterr_ó__o') + #0
 # lema(ur'[Dd]esentumeci_ó__o') + #0
 # lema(ur'[Dd]esfalleci_ó__o') + #0
 # lema(ur'[Dd]esfavoreci_ó__o') + #0
@@ -3366,7 +3374,6 @@ lema(ur'[Tt]ravisti_ó__o') + #1
 # lema(ur'[Dd]esmembr_ó__o') + #0
 # lema(ur'[Dd]esmereci_ó__o') + #0
 # lema(ur'[Dd]esmidi_ó__o') + #0
-# lema(ur'[Dd]esminti_ó__o') + #0
 # lema(ur'[Dd]esobedeci_ó__o') + #0
 # lema(ur'[Dd]esoy_ó__o') + #0
 # lema(ur'[Dd]esposey_ó__o') + #0
@@ -3378,6 +3385,7 @@ lema(ur'[Tt]ravisti_ó__o') + #1
 # lema(ur'[Dd]igiri_ó__o') + #0
 # lema(ur'[Dd]irimi_ó__o') + #0
 # lema(ur'[Dd]isinti_ó__o') + #0
+# lema(ur'[Dd]isolvi_ó__o') + #0
 # lema(ur'[Dd]istendi_ó__o') + #0
 # lema(ur'[Dd]ivirti_ó__o') + #0
 # lema(ur'[Ee]mbasteci_ó__o') + #0
@@ -3388,7 +3396,6 @@ lema(ur'[Tt]ravisti_ó__o') + #1
 # lema(ur'[Ee]mbraveci_ó__o') + #0
 # lema(ur'[Ee]mbruteci_ó__o') + #0
 # lema(ur'[Ee]mpalideci_ó__o') + #0
-# lema(ur'[Ee]mparent_ó__o') + #0
 # lema(ur'[Ee]mpedr_ó__o') + #0
 # lema(ur'[Ee]mpequeñeci_ó__o') + #0
 # lema(ur'[Ee]mplasteci_ó__o') + #0
@@ -3400,15 +3407,19 @@ lema(ur'[Tt]ravisti_ó__o') + #1
 # lema(ur'[Ee]ncareci_ó__o') + #0
 # lema(ur'[Ee]ncay_ó__o') + #0
 # lema(ur'[Ee]ncegueci_ó__o') + #0
+# lema(ur'[Ee]ncendi_ó__o') + #0
 # lema(ur'[Ee]ncubri_ó__o') + #0
+# lema(ur'[Ee]ndureci_ó__o') + #0
 # lema(ur'[Ee]nflaqueci_ó__o') + #0
 # lema(ur'[Ee]ngrandeci_ó__o') + #0
 # lema(ur'[Ee]nmel_ó__o') + #0
 # lema(ur'[Ee]nmend_ó__o') + #0
 # lema(ur'[Ee]nmoheci_ó__o') + #0
+# lema(ur'[Ee]nmudeci_ó__o') + #0
 # lema(ur'[Ee]nnegreci_ó__o') + #0
 # lema(ur'[Ee]norgulleci_ó__o') + #0
 # lema(ur'[Ee]nrareci_ó__o') + #0
+# lema(ur'[Ee]nriqueci_ó__o') + #0
 # lema(ur'[Ee]nrojeci_ó__o') + #0
 # lema(ur'[Ee]nronqueci_ó__o') + #0
 # lema(ur'[Ee]nsangrent_ó__o') + #0
@@ -3423,7 +3434,6 @@ lema(ur'[Tt]ravisti_ó__o') + #1
 # lema(ur'[Ee]ntremeti_ó__o') + #0
 # lema(ur'[Ee]ntreteji_ó__o') + #0
 # lema(ur'[Ee]ntristeci_ó__o') + #0
-# lema(ur'[Ee]ntrometi_ó__o') + #0
 # lema(ur'[Ee]ntumeci_ó__o') + #0
 # lema(ur'[Ee]nvaneci_ó__o') + #0
 # lema(ur'[Ee]nvejeci_ó__o') + #0
@@ -3432,13 +3442,16 @@ lema(ur'[Tt]ravisti_ó__o') + #1
 # lema(ur'[Ee]scarment_ó__o') + #0
 # lema(ur'[Ee]scarneci_ó__o') + #0
 # lema(ur'[Ee]scindi_ó__o') + #0
+# lema(ur'[Ee]sclareci_ó__o') + #0
 # lema(ur'[Ee]scupi_ó__o') + #0
 # lema(ur'[Ee]sgrimi_ó__o') + #0
 # lema(ur'[Ee]splendi_ó__o') + #0
 # lema(ur'[Ee]stremeci_ó__o') + #0
 # lema(ur'[Ee]xhibi_ó__o') + #0
 # lema(ur'[Ee]xpeli_ó__o') + #0
+# lema(ur'[Ee]xpidi_ó__o') + #0
 # lema(ur'[Ff]eneci_ó__o') + #0
+# lema(ur'[Ff]ortaleci_ó__o') + #0
 # lema(ur'[Ff]osforeci_ó__o') + #0
 # lema(ur'[Ff]osforesci_ó__o') + #0
 # lema(ur'[Gg]imi_ó__o') + #0
@@ -3455,27 +3468,26 @@ lema(ur'[Tt]ravisti_ó__o') + #1
 # lema(ur'[Ii]ngiri_ó__o') + #0
 # lema(ur'[Ii]nhibi_ó__o') + #0
 # lema(ur'[Ii]njiri_ó__o') + #0
-# lema(ur'[Ii]ntim_ó__o', pre=ur'(?:[Ll][aeo]s?|[Ss]e(?: me| te| l[aeo]s?|)) ') + #0
 # lema(ur'[Ii]nvisti_ó__o') + #0
 # lema(ur'[Ii]rrumpi_ó__o') + #0
 # lema(ur'[Jj]jug_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #0
 # lema(ur'[Jj]ur_ó__o', pre=ur'[Ss]e(?: me| te| l[ae]s?|los|) ') + #0
-# lema(ur'[Jj]ur_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ', xpos=[ur' padre', ur', Señoría', ]) + #0
 # lema(ur'[Ll]anguideci_ó__o') + #0
-# lema(ur'[Ll]len_ó__o', pre=ur'(?:[Ll][aeo]s?|[Ss]e(?: me| te| l[aeo]s?|)) ', xpre=[ur'\'\'', ur'vacío y ', ]) + #0
 # lema(ur'[Mm]alcomi_ó__o') + #0
 # lema(ur'[Mm]alentendi_ó__o') + #0
 # lema(ur'[Mm]alhiri_ó__o') + #0
 # lema(ur'[Mm]almeti_ó__o') + #0
 # lema(ur'[Mm]alvendi_ó__o') + #0
+# lema(ur'[Mm]asacr_ó__o', pre=ur'\b(?:[Ll]a|[Yy]) ') + #0
+# lema(ur'[Mm]edi_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ', xpos=[ur' enterraban', ]) + #0
 # lema(ur'[Mm]erend_ó__o') + #0
 # lema(ur'[Nn]aufrag_ó__o', pre=ur'[Qq]ue ') + #0
+# lema(ur'[Oo]bedeci_ó__o') + #0
 # lema(ur'[Oo]bscureci_ó__o') + #0
 # lema(ur'[Oo]fendi_ó__o') + #0
 # lema(ur'[Oo]scureci_ó__o') + #0
 # lema(ur'[Oo]xid_ó__o', pre=ur'[Ss]e ') + #0
 # lema(ur'[Pp]alideci_ó__o') + #0
-# lema(ur'[Pp]ercibi_ó__o') + #0
 # lema(ur'[Pp]erfor_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #0
 # lema(ur'[Pp]ersisti_ó__o') + #0
 # lema(ur'[Pp]ersuadi_ó__o') + #0
@@ -3486,9 +3498,12 @@ lema(ur'[Tt]ravisti_ó__o') + #1
 # lema(ur'[Pp]redefini_ó__o') + #0
 # lema(ur'[Pp]rescribi_ó__o') + #0
 # lema(ur'[Pp]resinti_ó__o') + #0
+# lema(ur'[Pp]revaleci_ó__o') + #0
 # lema(ur'[Pp]ropendi_ó__o') + #0
 # lema(ur'[Pp]roscribi_ó__o') + #0
+# lema(ur'[Pp]rosigui_ó__o') + #0
 # lema(ur'[Rr]eabsorbi_ó__o') + #0
+# lema(ur'[Rr]easumi_ó__o') + #0
 # lema(ur'[Rr]ebati_ó__o') + #0
 # lema(ur'[Rr]eblandeci_ó__o') + #0
 # lema(ur'[Rr]ecalent_ó__o') + #0
@@ -3496,31 +3511,34 @@ lema(ur'[Tt]ravisti_ó__o') + #1
 # lema(ur'[Rr]ecosi_ó__o') + #0
 # lema(ur'[Rr]ecrudeci_ó__o') + #0
 # lema(ur'[Rr]ecubri_ó__o') + #0
+# lema(ur'[Rr]ecurri_ó__o') + #0
 # lema(ur'[Rr]edefini_ó__o') + #0
 # lema(ur'[Rr]edescubri_ó__o') + #0
-# lema(ur'[Rr]edimi_ó__o') + #0
 # lema(ur'[Rr]edirigi_ó__o') + #0
 # lema(ur'[Rr]eemprendi_ó__o') + #0
 # lema(ur'[Rr]eestableci_ó__o') + #0
 # lema(ur'[Rr]eexpidi_ó__o') + #0
 # lema(ur'[Rr]eimprimi_ó__o') + #0
+# lema(ur'[Rr]eincidi_ó__o') + #0
 # lema(ur'[Rr]einvirti_ó__o') + #0
 # lema(ur'[Rr]ejuveneci_ó__o') + #0
 # lema(ur'[Rr]elami_ó__o') + #0
 # lema(ur'[Rr]eley_ó__o') + #0
 # lema(ur'[Rr]emeti_ó__o') + #0
-# lema(ur'[Rr]emiti_ó__o') + #0
 # lema(ur'[Rr]emordi_ó__o') + #0
 # lema(ur'[Rr]epeli_ó__o') + #0
 # lema(ur'[Rr]epens_ó__o') + #0
 # lema(ur'[Rr]epercuti_ó__o') + #0
+# lema(ur'[Rr]epobl_ó__o') + #0
+# lema(ur'[Rr]eprendi_ó__o') + #0
 # lema(ur'[Rr]eprimi_ó__o') + #0
 # lema(ur'[Rr]equebr_ó__o') + #0
 # lema(ur'[Rr]esinti_ó__o') + #0
-# lema(ur'[Rr]esisti_ó__o') + #0
 # lema(ur'[Rr]esplandeci_ó__o') + #0
 # lema(ur'[Rr]estringi_ó__o') + #0
+# lema(ur'[Rr]esumi_ó__o') + #0
 # lema(ur'[Rr]etorci_ó__o') + #0
+# lema(ur'[Rr]evendi_ó__o') + #0
 # lema(ur'[Rr]everdeci_ó__o') + #0
 # lema(ur'[Rr]evolc_ó__o') + #0
 # lema(ur'[Rr]obusteci_ó__o') + #0
@@ -3541,6 +3559,8 @@ lema(ur'[Tt]ravisti_ó__o') + #1
 # lema(ur'[Ss]urti_ó__o') + #0
 # lema(ur'[Ss]uscribi_ó__o') + #0
 # lema(ur'[Tt]eji_ó__o') + #0
+# lema(ur'[Tt]embl_ó__o') + #0
+# lema(ur'[Tt]raicion_ó__o', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #0
 # lema(ur'[Tt]ranscendi_ó__o') + #0
 # lema(ur'[Tt]ranscribi_ó__o') + #0
 # lema(ur'[Tt]rascendi_ó__o') + #0
@@ -3549,292 +3569,208 @@ lema(ur'[Tt]ravisti_ó__o') + #1
 # lema(ur'[Uu]rdi_ó__o') + #0
 # lema(ur'[Vv]erdeci_ó__o') + #0
 # lema(ur'[Xx](?:erografi)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #0
+# lema(ur'[Zz](?:af|anj|ap|arp|ozobr|urr)_ó__o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #0
 # lema(ur'[Zz]ahiri_ó__o') + #0
 []][0]
 
-grupoAndos = [
-lema(ur'[Cc]onvirti_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #56
-lema(ur'[d]_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #37
-lema(ur'[Hh]aci_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #36
-lema(ur'[Ll]lev_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #14
-lema(ur'[Rr]efiri_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #14
-lema(ur'[Dd]ej_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #22
-lema(ur'[Ll]lam_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #11
-lema(ur'[Pp]resent_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #9
-lema(ur'[Cc]onsider_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #5
-lema(ur'[Dd]ici_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #11
-lema(ur'[Ee]nfrent_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #8
-lema(ur'[Mm]anteni_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #14
-lema(ur'[Dd]estac_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #6
-lema(ur'[Bb]as_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #20
-lema(ur'[Dd]isput_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #9
-lema(ur'[Pp]repar_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
-lema(ur'[Qq]ued_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #10
-lema(ur'[Uu]ni_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #7
-lema(ur'[Cc]lasific_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #4
-lema(ur'[Cc]onsagr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
-lema(ur'[Ee]miti_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #4
-lema(ur'[Ee]xplic_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-lema(ur'[Gg]an_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #11
-lema(ur'[Jj]ug_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #8
-lema(ur'[Ll]anz_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #7
-lema(ur'[Mm]ir_á_ndo(?:[mst]e|las|l[eo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #8
-lema(ur'[Mm]ostr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #6
-lema(ur'[Oo]blig_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
-lema(ur'[Pp]oni_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #6
-lema(ur'[Rr]eemplaz_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #5
-lema(ur'[Tt]ransform_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
-#lema(ur'[Tt]ray_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
-lema(ur'[Vv]olvi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #6
-lema(ur'[Bb]es_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-lema(ur'[Cc]oloc_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #8
-lema(ur'[Cc]ompar_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-lema(ur'[Cc]onserv_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
-lema(ur'[Cc]re_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #6
-#lema(ur'[Dd]emostr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Dd]irigi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #7
-lema(ur'[Dd]ispar_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Ff]orm_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #6
-lema(ur'[Gg]radu_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #7
-lema(ur'[Ii]ncorpor_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #11
-lema(ur'[Mm]at_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #8
-lema(ur'[Nn]eg_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-lema(ur'[Pp]as_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Pp]roclam_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #6
-lema(ur'[Rr]euni_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
-lema(ur'[Ss]epar_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #4
-lema(ur'[Tt]oc_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-lema(ur'[Vv]i_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #8
-lema(ur'[Aa]delant_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Aa]segur_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Bb]usc_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #5
-lema(ur'[Cc]aus_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-#lema(ur'[Cc]onduci_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
-#lema(ur'[Cc]onfi_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Cc]onsolid_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-lema(ur'[Cc]onstituy_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #2
-lema(ur'[Cc]ort_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
-lema(ur'[Dd]efini_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #4
-lema(ur'[Dd]esarroll_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #8
-lema(ur'[Dd]ividi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #2
-lema(ur'[Ee]strell_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Ee]xpandi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #7
-lema(ur'[Gg]olpe_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #4
-lema(ur'[Hh]abi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #5
-#lema(ur'[Hh]undi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
-lema(ur'[Mm]arc_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
-lema(ur'[Pp]ermiti_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #10
-lema(ur'[Pp]idi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #4
-lema(ur'[Pp]osicion_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #9
-lema(ur'[Pp]udi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #3
-lema(ur'[Ss]igui_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
-lema(ur'[Ss]itu_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #6
-lema(ur'[Ss]um_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-lema(ur'[Tt]om_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
+grupo1Andos = [
+lema(ur'[Cc]onvirti_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #69
+lema(ur'[d]_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #46
+lema(ur'[Hh]aci_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #45
+lema(ur'[Dd]ej_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #27
+lema(ur'[Bb]as_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #23
+lema(ur'[Rr]efiri_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #20
+lema(ur'[Dd]ici_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #18
+lema(ur'[Ll]lev_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #18
+lema(ur'[Aa]m_á_ndo(?:[mst]e|l[aeo]s|la|nos)(?:[mt]e|l[aeo]s?|nos|)_a', xpre=[ur'Pedro ', ]) + #17
+lema(ur'[Gg]an_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #16
+lema(ur'[Mm]anteni_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #15
+lema(ur'[Aa]m_á_ndola_a', xpre=[ur'Pedro ', ], xpos=[ur'\]\]', ]) + #14
+lema(ur'[Ll]lam_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #14
+lema(ur'[Cc]oloc_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #13
+lema(ur'[Pp]resent_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #13
+lema(ur'[Rr]etir_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #12
+lema(ur'[Dd]isput_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #11
+lema(ur'[Ee]nfrent_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #11
+lema(ur'[Pp]ermiti_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #11
+lema(ur'[Pp]osicion_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #11
+lema(ur'[Qq]ued_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #11
+lema(ur'[Ii]ncorpor_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #10
+lema(ur'[Mm]at_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #10
+lema(ur'[Uu]ni_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #10
+lema(ur'[Vv]i_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #10
+lema(ur'[Dd]esarroll_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #9
+lema(ur'[Dd]estac_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #9
 lema(ur'[Uu]bic_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #9
-lema(ur'[Aa]bri_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #2
-lema(ur'[Aa]cerc_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-lema(ur'[Aa]djudic_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-lema(ur'[Aa]dvirti_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
-lema(ur'[Aa]firm_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Aa]greg_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-#lema(ur'[Aa]lej_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Aa]liment_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Aa]part_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Aa]tac_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Aa]yud_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #4
+lema(ur'[Cc]onsider_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #8
+lema(ur'[Gg]radu_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #8
+lema(ur'[Hh]abi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #8
+lema(ur'[Jj]ug_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #8
+lema(ur'[Ll]anz_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #8
+lema(ur'[Mm]ir_á_ndo(?:[mst]e|las|l[eo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #8
+lema(ur'[Vv]olvi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #8
 lema(ur'[Cc]alific_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #7
-#lema(ur'[Cc]arg_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Cc]entr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Cc]lav_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Cc]omplet_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-#lema(ur'[Cc]omponi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
-lema(ur'[Cc]ompr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Cc]onform_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-#lema(ur'[Cc]onfundi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
-lema(ur'[Cc]ont_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Cc]uid_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[D]_á_ndo(?:[mst]e|las?|les?|los|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
-lema(ur'[Dd]enomin_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
-lema(ur'[Dd]espidi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
-#lema(ur'[Ee]jecut_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+lema(ur'[Cc]oron_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #7
+lema(ur'[Dd]irigi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #7
+lema(ur'[Ee]xpandi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #7
+lema(ur'[Mm]ostr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #7
+lema(ur'[Pp]oni_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #7
+lema(ur'[Pp]roclam_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #7
+lema(ur'[Tt]ransmiti_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #7
+lema(ur'[Aa]yud_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #6
+lema(ur'[Cc]re_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #6
+lema(ur'[Ff]orm_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #6
+lema(ur'[Ii]ncluy_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #6
+lema(ur'[Pp]idi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #6
+lema(ur'[Ss]epar_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #6
+lema(ur'[Ss]itu_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #6
+lema(ur'[Bb]usc_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #5
+lema(ur'[Cc]lasific_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #5
+lema(ur'[Dd]efini_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #5
+lema(ur'[Ee]miti_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #5
+lema(ur'[Hh]all_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #5
+lema(ur'[Ii]nstal_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #5
+lema(ur'[Rr]eemplaz_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #5
+lema(ur'[Aa]cerc_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #4
+lema(ur'[Aa]ñadi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #4
+lema(ur'[Cc]ambi_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #4
+lema(ur'[Cc]edi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #4
 lema(ur'[Ee]ncontr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #4
-#lema(ur'[Ee]nsambl_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Ee]nseñ_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Ee]ntreg_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
-lema(ur'[Ee]scondi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #2
-lema(ur'[Ff]elicit_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Hh]all_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Ee]nfoc_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #4
+lema(ur'[Ee]ngañ_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #4
+lema(ur'[Ee]ntreg_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #4
+lema(ur'[Ee]specializ_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #4
+lema(ur'[Ee]stableci_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #4
+lema(ur'[Gg]olpe_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #4
+lema(ur'[Ii]ntegr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #4
+lema(ur'[Pp]repar_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #4
+lema(ur'[Qq]uit_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #4
+lema(ur'[Ss]alv_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #4
+lema(ur'[Tt]ir_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #4
+lema(ur'[Tt]ransform_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #4
+lema(ur'[Aa]bri_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #3
+lema(ur'[Aa]dapt_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Aa]sent_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Aa]tribuy_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #3
+lema(ur'[Cc]ompar_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Cc]omunic_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Cc]onoci_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #3
+lema(ur'[Cc]onsagr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Cc]onserv_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Cc]onstituy_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #3
+lema(ur'[Cc]ort_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Cc]ost_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[D]_á_ndo(?:[mst]e|las?|les?|los|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Dd]edic_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Dd]efendi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #3
+lema(ur'[Dd]enomin_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Dd]evolvi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #3
+lema(ur'[Ee]scondi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #3
+lema(ur'[Ee]xplic_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Ee]xtendi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #3
+lema(ur'[Mm]arc_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Nn]eg_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Nn]ombr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Oo]rganiz_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Pp]as_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Pp]rovoc_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Pp]udi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #3
+lema(ur'[Rr]educi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #3
+lema(ur'[Rr]enombr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Rr]ob_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Tt]om_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Tt]raslad_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Tt]rat_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Aa]cus_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Aa]firm_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Aa]greg_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Aa]poder_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Aa]puñal_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Aa]rroj_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Bb]es_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Cc]aus_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Cc]omplet_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Cc]ompr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Cc]onform_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Cc]onsolid_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Dd]ispar_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Dd]ividi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #2
+lema(ur'[Ee]stren_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Ff]usion_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Gg]ener_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Ii]mpidi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #2
 lema(ur'[Ii]mponi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #2
-#lema(ur'[Ii]nspir_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Ll]ogr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Mm]and_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Mm]ud_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
+lema(ur'[Ll]ogr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Mm]ovi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #2
+lema(ur'[Oo]blig_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
 lema(ur'[Oo]bteni_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #2
-lema(ur'[Pp]eg_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-#lema(ur'[Pp]rest_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+lema(ur'[Pp]regunt_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
 lema(ur'[Pp]rometi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #2
 lema(ur'[Pp]ublic_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
 lema(ur'[Qq]uem_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-lema(ur'[Rr]ecuper_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-#lema(ur'[Rr]elacion_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Rr]enov_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Rr]eparti_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
-lema(ur'[Rr]eport_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Rr]etir_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #8
-lema(ur'[Rr]ob_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-lema(ur'[Ss]alv_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-lema(ur'[Ss]i_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #3
-lema(ur'[Ss]inti_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
-lema(ur'[Tt]ir_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
-#lema(ur'[Tt]orn_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Tt]raslad_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
+lema(ur'[Rr]ecuper_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Rr]egistr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Rr]evel_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Rr]indi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #2
+lema(ur'[Rr]ode_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Rr]ompi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #2
+lema(ur'[Ss]i_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #2
+lema(ur'[Ss]igui_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #2
+lema(ur'[Ss]irvi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #2
+lema(ur'[Ss]um_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Ss]ustituy_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #2
+lema(ur'[Tt]itul_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Tt]oc_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
 lema(ur'[Uu]tiliz_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-lema(ur'[Yy]_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
+lema(ur'[Vv]ali_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #2
 lema(ur'[Aa]bandon_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Aa]cus_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
-lema(ur'[Aa]dapt_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-#lema(ur'[Aa]dentr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Aa]dicion_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Aa]horc_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Aa]lcanz_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Aa]m_á_ndo(?:[mst]e|l[aeo]s|la|nos)(?:[mt]e|l[aeo]s?|nos|)_a', xpre=[ur'Pedro ']) + #18
-lema(ur'[Aa]m_á_ndola_a', xpre=[ur'Pedro '], xpos=[ur'\]\]']) + #18
-lema(ur'[Aa]not_á_ndola(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
+lema(ur'[Aa]delant_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
+lema(ur'[Aa]djudic_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
+lema(ur'[Aa]dvirti_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
 lema(ur'[Aa]nunci_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-#lema(ur'[Aa]pod_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Aa]poder_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-#lema(ur'[Aa]poy_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Aa]proxim_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Aa]puñal_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-#lema(ur'[Aa]rrebat_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Aa]rregl_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Aa]rroj_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Aa]sent_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-#lema(ur'[Aa]torment_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Aa]traves_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Aa]tribuy_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #2
-#lema(ur'[Aa]vent_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Aa]ñadi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #4
+lema(ur'[Aa]segur_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
+lema(ur'[Aa]tac_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
 lema(ur'[Bb]orr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Cc]ambi_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
 lema(ur'[Cc]as_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Cc]edi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #4
-#lema(ur'[Cc]hoc_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Cc]ocin_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Cc]ogi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
-#lema(ur'[Cc]omi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
+lema(ur'[Cc]lav_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
 lema(ur'[Cc]omparti_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
-#lema(ur'[Cc]omprob_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Cc]omprometi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
-lema(ur'[Cc]omunic_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
-#lema(ur'[Cc]oncentr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
 lema(ur'[Cc]onfes_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Cc]onoci_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #3
-#lema(ur'[Cc]onstruy_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
-#lema(ur'[Cc]opi_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Cc]oron_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #4
-lema(ur'[Cc]ost_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-#lema(ur'[Cc]ur_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Dd]edic_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
-lema(ur'[Dd]efendi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #3
-lema(ur'[Dd]errot_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-#lema(ur'[Dd]ese_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+lema(ur'[Cc]ont_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
+lema(ur'[Cc]uid_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
+lema(ur'[Dd]errot_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
+lema(ur'[Dd]espidi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
 lema(ur'[Dd]estin_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Dd]evolvi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
-#lema(ur'[Dd]ibuj_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Dd]iscuti_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
-#lema(ur'[Dd]istingui_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
 lema(ur'[Dd]istribuy_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
-#lema(ur'[Dd]omin_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Ee]lectrocut_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Ee]mple_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Ee]nfoc_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #4
-lema(ur'[Ee]ngañ_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #4
-lema(ur'[Ee]nter_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
 lema(ur'[Ee]quip_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Ee]specializ_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #4
-lema(ur'[Ee]stableci_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #3
-#lema(ur'[Ee]strangul_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Ee]stren_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
+lema(ur'[Ee]strell_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
 lema(ur'[Ee]xigi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
-#lema(ur'[Ee]ximi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
-lema(ur'[Ee]xtendi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #3
-#lema(ur'[Ff]alt_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Ff]orz_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Ff]usion_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Gg]ener_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-#lema(ur'[Gg]obern_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+lema(ur'[Ff]elicit_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
 lema(ur'[Hh]abl_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-#lema(ur'[Hh]iri_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
-lema(ur'[Ii]mpidi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
 lema(ur'[Ii]mplic_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-#lema(ur'[Ii]mport_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Ii]ncendi_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
 lema(ur'[Ii]nclin_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Ii]ncluy_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #6
-#lema(ur'[Ii]nici_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
 lema(ur'[Ii]nscribi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
-#lema(ur'[Ii]nsert_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Ii]nstal_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #5
-#lema(ur'[Ii]nsult_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Ii]ntegr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
-#lema(ur'[Jj]unt_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
 lema(ur'[Ll]i_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-#lema(ur'[Ll]iber_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Ll]ider_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Mm]encion_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Mm]ezcl_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+lema(ur'[Mm]and_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
 lema(ur'[Mm]odific_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
 lema(ur'[Mm]olest_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
 lema(ur'[Mm]ordi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
-lema(ur'[Mm]ovi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #2
-lema(ur'[Nn]ombr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
-#lema(ur'[Oo]bserv_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+lema(ur'[Mm]ud_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
 lema(ur'[Oo]di_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Oo]rganiz_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
-#lema(ur'[Pp]ractic_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Pp]regunt_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
+lema(ur'[Pp]eg_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
 lema(ur'[Pp]riv_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-#lema(ur'[Pp]rohibi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
-#lema(ur'[Pp]roporcion_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Pp]rovey_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
-lema(ur'[Pp]rovoc_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-#lema(ur'[Qq]ueri_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
-lema(ur'[Qq]uit_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-#lema(ur'[Rr]ecrimin_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Rr]educi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #2
-#lema(ur'[Rr]egal_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Rr]egistr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-#lema(ur'[Rr]egres_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Rr]eincorpor_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-#lema(ur'[Rr]emont_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Rr]enombr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #4
+lema(ur'[Rr]eport_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
 lema(ur'[Rr]epresent_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-#lema(ur'[Rr]espondi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
-lema(ur'[Rr]evel_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-lema(ur'[Rr]indi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
-lema(ur'[Rr]ode_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-lema(ur'[Rr]ompi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
-#lema(ur'[Rr]ugi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
+lema(ur'[Rr]euni_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
 lema(ur'[Ss]alt_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
 lema(ur'[Ss]ell_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Ss]irvi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
+lema(ur'[Ss]inti_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
 lema(ur'[Ss]oterr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
 lema(ur'[Ss]ubi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
-#lema(ur'[Ss]uplic_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Ss]ustituy_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #2
-#lema(ur'[Tt]ap_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
 lema(ur'[Tt]eni_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
-lema(ur'[Tt]itul_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #2
-#lema(ur'[Tt]raduci_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
-lema(ur'[Tt]ransmiti_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #6
-lema(ur'[Tt]rat_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #3
-lema(ur'[Vv]ali_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #2
 lema(ur'[Vv]enci_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
 lema(ur'[Vv]eng_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
 lema(ur'[Vv]isti_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
-#lema(ur'[Vv]ol_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+lema(ur'[Yy]_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
 # lema(ur'[Aa]bati_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
 # lema(ur'[Aa]bofete_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
 # lema(ur'[Aa]braz_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
@@ -4334,1091 +4270,1028 @@ lema(ur'[Vv]isti_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #1
 # lema(ur'[Vv]ision_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
 # lema(ur'[Vv]isualiz_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
 # lema(ur'[Vv]omit_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Aa]dentr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Aa]dicion_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Aa]horc_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Aa]lcanz_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Aa]lej_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Aa]liment_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Aa]not_á_ndola(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Aa]part_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Aa]pod_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Aa]poy_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Aa]proxim_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Aa]rrebat_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Aa]rregl_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Aa]torment_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Aa]traves_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Aa]vent_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Cc]arg_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Cc]entr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Cc]hoc_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Cc]ocin_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Cc]ogi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
+#lema(ur'[Cc]omi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
+#lema(ur'[Cc]omponi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
+#lema(ur'[Cc]omprob_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Cc]omprometi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
+#lema(ur'[Cc]oncentr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Cc]onduci_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
+#lema(ur'[Cc]onfi_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Cc]onfundi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
+#lema(ur'[Cc]onstruy_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
+#lema(ur'[Cc]opi_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Cc]ur_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Dd]emostr_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Dd]ese_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Dd]ibuj_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Dd]iscuti_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
+#lema(ur'[Dd]istingui_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
+#lema(ur'[Dd]omin_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Ee]jecut_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Ee]lectrocut_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Ee]mple_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Ee]nsambl_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Ee]nseñ_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Ee]nter_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Ee]strangul_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Ee]ximi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
+#lema(ur'[Ff]alt_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Ff]orz_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Gg]obern_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Hh]iri_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
+#lema(ur'[Hh]undi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
+#lema(ur'[Ii]mport_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Ii]ncendi_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Ii]nici_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Ii]nsert_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Ii]nspir_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Ii]nsult_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Jj]unt_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Ll]iber_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Ll]ider_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Mm]encion_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Mm]ezcl_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Oo]bserv_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Pp]ractic_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Pp]rest_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Pp]rohibi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
+#lema(ur'[Pp]roporcion_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Pp]rovey_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
+#lema(ur'[Qq]ueri_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
+#lema(ur'[Rr]ecrimin_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Rr]egal_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Rr]egres_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Rr]eincorpor_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Rr]elacion_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Rr]emont_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Rr]enov_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Rr]eparti_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
+#lema(ur'[Rr]espondi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
+#lema(ur'[Rr]ugi_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
+#lema(ur'[Ss]uplic_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Tt]ap_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Tt]orn_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
+#lema(ur'[Tt]raduci_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
+#lema(ur'[Tt]ray_é_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_e') + #0
+#lema(ur'[Vv]ol_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
 []][0]
 
-grupoMusica = [
-lema(ur'[Mm]_ú_sica_u', pre=ur'\bde ', xpre=[ur'\'', ur'Dialogus ', ur'Tractatus ', ur'Escola ', ur'Scriptores ', ur'ecclesiastici '], xpos=[ur' (?:i|da|medii|libri|tratactus|theorica|Elettronica|aurea|Ficta|Tonante|negli)\b']) + #1
-lema(ur'[Mm]_ú_sica_u', pre=ur'[Ll]a ', xpre=[ur'Per ', ur'Plau De ', ur'sopra ', ur'Euridice, ', ur'Storia de ', ur' e ', ur'Contro ', ur'sei ', ur'per ', ur'Prima '], xpos=[ur' (?:[èe]|dei|ci|Italiana nel|alla|del (?:cuore|violone|mare)|alla|per|degli|antica|nella|intorno|Fiorentina|russa|In)\b']) + #175
-lema(ur'[Mm]_ú_sicas?_u', pre=ur'(?:[Ll]as|[Uu]nas?|[Ss]us?|[Dd]ar|[Dd]ando|[Tt]ocando|[Cc]ada|tocaba|cantaba) ') + #10
-lema(ur'[Mm]_ú_sica (?:o|y|a|[Aa]c[uú]stica|culta|elaborada|folcl[óo]rica|instrumental|militar|original|orquestal|popular|pagana|profana|sinf[oó]nica|tradicional|regional|religiosa|vocal|[Ee]lectr[óo]nica|[Mm]ec[aá]nica|[Cc]ountry)\b_u') + #107
-lema(ur'[Mm]_ú_sica del_u', xpre=[ur'Ars '], xpos=[ur' (?:XV [Ss]ecolo|cuore|violone|mare|señor Giulio|Signor)']) + #8
-lema(ur'[Mm]_ú_sica de_u', xpre=[ur'della ']) + #93
+grupo1Musica = [
+lema(ur'[Mm]_ú_sica_u', pre=ur'[Ll]a ', xpre=[ur' e ', ur'Contro ', ur'Euridice, ', ur'Per ', ur'Plau De ', ur'Prima ', ur'Storia de ', ur'per ', ur'sei ', ur'sopra ', ], xpos=[ur' (?:[èe]|dei|ci|Italiana nel|alla|del (?:cuore|violone|mare)|alla|per|degli|antica|nella|intorno|Fiorentina|russa|In)\b', ]) + #217
+lema(ur'[Mm]_ú_sica_u', pre=ur'\bde ', xpre=[ur'\'', ur'Dialogus ', ur'Escola ', ur'Scriptores ', ur'Tractatus ', ur'ecclesiastici ', ], xpos=[ur' (?:i|da|medii|libri|tratactus|theorica|Elettronica|aurea|Ficta|Tonante|negli)\b', ]) + #182
+lema(ur'[Mm]_ú_sicos?_u', xpre=[ur'Adversus ', ur'\b(?:di|[Ii]l) ', ], xpos=[ur' (?:prattico|del secolo|di|portuguezes|ha menester|perfetto)\b', ]) + #150
+lema(ur'[Mm]_ú_sica (?:o|y|a|[Aa]c[uú]stica|culta|elaborada|folcl[óo]rica|instrumental|militar|original|orquestal|popular|pagana|profana|sinf[oó]nica|tradicional|regional|religiosa|vocal|[Ee]lectr[óo]nica|[Mm]ec[aá]nica|[Cc]ountry)\b_u') + #142
+lema(ur'[Mm]_ú_sica de_u', xpre=[ur'Ars ', ur'della ', ]) + #116
+lema(ur'[Mm]_ú_sica en_[uù]', xpre=[ur'Della ', ur'MSC Storia de la ', ur'per ', ], xpos=[ur' (?:nella|Macerata|Mainz|negli)', ]) + #23
+lema(ur'[Mm]_ú_sicas?_u', pre=ur'(?:[Ll]as|[Uu]nas?|[Ss]us?|[Dd]ar|[Dd]ando|[Tt]ocando|[Cc]ada|tocaba|cantaba) ') + #13
+lema(ur'[Mm]_ú_sica cl[aá]sica_u') + #12
+lema(ur'[Mm]_ú_sica del_u', xpre=[ur'Ars ', ], xpos=[ur' (?:XV [Ss]ecolo|cuore|violone|mare|señor Giulio|Signor)', ]) + #11
 lema(ur'[Mm]_ú_sica al_u', xpos=[ur' (?:Castell|tempo)', ]) + #2
 #lema(ur'[Mm]_ú_sicas_u', pre=ur'(?:[Ll]as|[Uu]nas|[Ss]us) ', xpos=[ur' [Cc]0
-lema(ur'[Mm]_ú_sica cl[aá]sica_u') + #9
-lema(ur'[Mm]_ú_sica en_[uù]', xpre=[ur'Della ', ur'MSC ' ur'Storia de la ', ur'per ', ], xpos=[ur' (?:nella|Macerata|Mainz|negli)', ]) + #14
-lema(ur'[Mm]_ú_sicos?_u', xpre=[ur'\b(?:di|[Ii]l) ', ur'Adversus '], xpos=[ur' (?:prattico|del secolo|di|portuguezes|ha menester|perfetto)\b', ]) + #123
 []][0]
 
-grupo1 = grupoMas + grupoEsta + grupoMusica + grupoAndos + grupoSe + [#Desde 1000
-[(ur'< */ *(?P<a>[Bb][Rr]) *>', ur'<br />')] + #1
-lema(ur'_ E_st(?:e|á[ns]?|[ao]s?)_[Ee]', pre=ur'[-0-9a-záéúíóúüñA-ZÁÉÚÍÓÚÜÑ\]]+[\.;]') + #1
-lema(ur'[Aa]uton_ó_mic[ao]s?_o', xpos=[ur'[0-9]']) + #4712
-lema(ur'[Tt]_í_tulos?_i', xpre=[ur' [Ss]e ', ur'<', ur'[Qq]ue ', ur'atributo "', ur'class="', ur'inline,splendido ', ], xpos=[ur' (?:Sancti|post praemia|Basilicae|Sanctae|Immaculatae)', ]) + #4112
-lema(ur'[Cc]ap_í_tulos?_i', xpre=[ur' in ', ], xpos=[ur' et']) + #1636
-lema(ur'[Ff]_ú_tbol Sala_u') + lema(ur'[Ff]_ú_tbol_u', pre=ur'(?:Millonarios|Bogotá) ') + lema(ur'[Ff]_ú_tbol_u', pre=ur'(?:[Aa]l|[Ee]l|[Uu]n|[Dd]el) ', xpre=[ur'Cap ', ur'Estadi ', ur'Història crítica ', ur'lusionistes ', ], xpos=[ur' (?:Gavà|Català|Martinenc|modest|Reus|Vilanova i|Igualada|Balaguer|D\'Ordino|Nou|Club Santboià)', ur'ʹnyy̆', ]) + lema(ur'[Ff]_ú_tbol_u', pre=ur'[Dd]e ', xpre=[ur'Associació Catalana ', ur'Burjassot Club ', ur'Club Escola ', ur'Escola ', ur'Estadi Municipal ', ur'Federació ', ur'Federació Andorrana ', ur'Federació [Cc]atalana ', ur'Lliga Nacional ', ur'Mafumet Club ', ur'Nou camp ', ur'Ontinyent Club ', ur'Palamós Club ', ur'Pego Club ', ur'Segona Catalana ', ur'Selecció catalana ', ur'Tercera Catalana ', ur'Vilobí Club ', ur'[Cc]amp ', ur'anys ', ur'equip ', ], xpos=[ur' (?:Amposta|Mollet|Juventut|Os |do |Gavà|Badalona|Balaguer|Pobla|Club Martinenc|Valls|Club Andorra|Indoor|Sudanell|Lloret|de Logroño|Santa Eulàlia|Organyà|Reus|Vilanova|Factory|Femení|Suiço|Jovent|Atlètic)', ]) + #1426
-lema(ur'_Latinoamé_rica_(?:Latinoame|latinoam[eé])', xpos=[ur' e tutti', ur'\]\][a-z]*', ]) + #1363
-lema(ur'_ú_ltimos?_u', pre=ur'(?:[Ss]us?|[Ee]l|[Ll]os?|[Aa]l?|[Ee]n|[Dd]el?|[Uu]n(?:os|)|[Ee]st(?:e|os?)|[Éé]ste|[Ee]s(?:e|os?)|[Pp]or|[Cc]omo|[Cc]uyos?|[Yy]|[Mm]is?|terminó|terminando|terminar|quedar|quedando|dos) ', xpos=[ur' (?:battito|fine)', ]) + lema(ur'_últ_im[ao]s?_[uú]tl') + #1227
-lema(ur'[Rr]ep_ú_blicas?_u', xpre=[ur'\bA ', ur'\ba I ', ur'\b(?:Na|De|et) ', ur'Ceska ', ur'Maria ', ur'Summa de ', ur'Vèneta ', ur'Trăiască ', ur'\b(?:[Dd]el|the|Res) ', ur'della ', ur'i de la ', ur'nella ', ur'siue ', ur'summa ', ], xpos=[ur' (?:litteraria|\(álbum|Sovietică|Velha|sang Negros|Moldova|Socialistă|Moldovenească|Cheka|Portuguesa|emendanda|\(banda|noastră|Populară|dominatione|semanalmente|libri|est|e a política|commentationes|e Chantun|Iasorum|Mioritică|Neo |d[io] )', ur'(?:\.com|, Westside|, grabando|\]\]n[ao]s?)', ]) + #1225
-lema(ur'_á_lbum(?:es|)_a', pre=ur'(?:[Aa]l|[Dd]el?|[Ee]ste|[Ee]stos|[Ee]l|[Ee]n|[Ll]os|[Dd]os|[Tt]res|[Cc]uatro|[Ss]us?|[Pp]rimer|[Ss]egundo|[Tt]ercer|[Cc]uarto|[Qq]uinto|[Ss]exto|[UuÚú]ltimo|[Mm]ejor|[Nn]ing[uú]n|[Nn]uevo|[Mm]ismo) ') + #1030
-lema(ur'_á_lbum_a', pre=ur'[Uu]n ', xpos=[ur' che']) + #1
-lema(ur'[Ee]j_é_rcito_e', pre=ur'(?:[Aa]l|[Ee]l|[Dd]el|[Uu]n|[Ss]u) ') + #1003
-lema(ur'[Dd]ej_ó__o', xpre=[ur' (?:un|[tm]e|al|lo|yo) ', ur' [&] ', ur'(?:[Ee]l|Un|[TM]e|Al|Lo) ', ur'ningún ', ur'con ', ur'tus manos ', ur'Ahí les ', ur'Ben ', ur'herencia que le ', ur'Aquí ', ur'Aquí les ', ur'Chullén ', ur'Juan ', ur'Karen ', ur'Lozada ', ur'Ahí le ', ur'visigodos ', ur'conducto ', ur'esta noche ', ur'ese ', ur'Os ', ur'Yo ', ur'#Los ', ur'aplicó ', ur'Les ', ur'un cierto ', ur'No la ', ur'Yo nunca ', ur'Si ', ur'si no ', ur'Si alguna vez ', ur'cuando ', ur'irme ', ur'[Ss]u ', ur'o no ', ur'qu-o\'\' \'', ur'"lo ', ur'linquo\'\' \'', ur'o no la '], xpos=[ur' (?:charapa|aquí|alemán|que|todo|a |CNN|botá|heredad|Bendezú|ar |The|Dance|el (?:Art|amor|cargo|festival|resto)|entre vosotros|En Libertad|la (?:selección|ventana|mejor compañía|Sonora)|[Dd]e (?:Pensar|salir)|o no|[Tt]u (?:sombra|corazón)|su hogar|[Mm]i (?:estela|corazón|Huella|estatua|dedo)|Amber|Libre|Madrid|Sparavalo|eso para Mortifera|Fayemi|prendida mi|un apellido|una familia|como herederos|curial|rastro tras|piedra sobre|por razones|[Cc]onstancia|nuestra|y me)', ur'(?:[\'\]]|, Juan|" \(1 sg)', ]) + #1745
-lema(ur'[Nn]_ú_mero (?:de|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|veinte|[1-9][0-9]*)_u', xpre=[ur'(?:[Ii]l|um) ', ur'notte ', ur'anno II, ', ur'anno III, ', ur'anno IV, ', ur'Anno III – ', ur'Canzone ', ur'Magazine, ', ur'Resolução ', ur'Sunyer\. ', ur'Turisme\'\'\. ', ur'anno 1897 ', ur'anno 8. ', ur'anno I, ', ur'archi ', ur'grande ', ur'humanitat\. ', ur'pericolo ', ur'pubblicazione ', ur'scudetto ', ur'stesso ', ur'tram ', ], xpos=[ur' (?:apeles|d[ai] )', ]) + #1206
-lema(ur'[Kk]il_ó_metros?_o') + #1106
+grupo1 = grupo1FormatoLibre + grupo1Frec + grupo1Mas + grupo1Esta + grupo1Musica + grupo1Andos + grupo1Se + [#Desde 1000
+lema(ur'[Tt]_í_tulos?_i', xpre=[ur' [Ss]e ', ur'<', ur'[Qq]ue ', ur'atributo "', ur'class="', ur'inline,splendido ', ], xpos=[ur' (?:Sancti|post praemia|Basilicae|Sanctae|Immaculatae)', ]) + #2000
+lema(ur'[Rr]ep_ú_blicas?_u', xpre=[ur'Ceska ', ur'Maria ', ur'Summa de ', ur'Trăiască ', ur'Vèneta ', ur'\b(?:Na|De|et) ', ur'\b(?:[Dd]el|the|Res) ', ur'\bA ', ur'\ba I ', ur'della ', ur'i de la ', ur'nella ', ur'siue ', ur'summa ', ], xpos=[ur' (?:litteraria|\(álbum|Sovietică|Velha|sang Negros|Moldova|Socialistă|Moldovenească|Cheka|Portuguesa|emendanda|\(banda|noastră|Populară|dominatione|semanalmente|libri|est|e a política|commentationes|e Chantun|Iasorum|Mioritică|Neo |d[io] )', ur'(?:\.com|, Westside|, grabando|\]\]n[ao]s?)', ]) + #1119
+lema(ur'_Latinoamé_rica_(?:Latinoame|latinoam[eé])', xpos=[ur' e tutti', ur'\]\][a-z]*', ]) + #951
+lema(ur'[Ff]_ú_tbol_u', pre=ur'[Dd]e ', xpre=[ur'Associació Catalana ', ur'Burjassot Club ', ur'Club Escola ', ur'Escola ', ur'Estadi Municipal ', ur'Federació ', ur'Federació Andorrana ', ur'Federació [Cc]atalana ', ur'Lliga Nacional ', ur'Mafumet Club ', ur'Nou camp ', ur'Ontinyent Club ', ur'Palamós Club ', ur'Pego Club ', ur'Segona Catalana ', ur'Selecció catalana ', ur'Tercera Catalana ', ur'Vilobí Club ', ur'[Cc]amp ', ur'anys ', ur'equip ', ], xpos=[ur' (?:Amposta|Mollet|Juventut|Os |do |Gavà|Badalona|Balaguer|Pobla|Club Martinenc|Valls|Club Andorra|Indoor|Sudanell|Lloret|de Logroño|Santa Eulàlia|Organyà|Reus|Vilanova|Factory|Femení|Suiço|Jovent|Atlètic)', ]) + #798
+lema(ur'_ E_st(?:e|á[ns]?|[ao]s?)_[Ee]', pre=ur'[-0-9a-záéúíóúüñA-ZÁÉÚÍÓÚÜÑ\]]+[\.;]') + #642
+lema(ur'_ú_ltimos?_u', pre=ur'(?:[Ss]us?|[Ee]l|[Ll]os?|[Aa]l?|[Ee]n|[Dd]el?|[Uu]n(?:os|)|[Ee]st(?:e|os?)|[Éé]ste|[Ee]s(?:e|os?)|[Pp]or|[Cc]omo|[Cc]uyos?|[Yy]|[Mm]is?|terminó|terminando|terminar|quedar|quedando|dos) ', xpos=[ur' (?:battito|fine)', ]) + #587
+lema(ur'[Cc]ap_í_tulos?_i', xpre=[ur' in ', ], xpos=[ur' et', ]) + #556
+lema(ur'[Nn]_ú_mero (?:de|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|veinte|[1-9][0-9]*)_u', xpre=[ur'(?:[Ii]l|um) ', ur'Anno III – ', ur'Canzone ', ur'Magazine, ', ur'Resolução ', ur'Sunyer\. ', ur'Turisme\'\'\. ', ur'anno 1897 ', ur'anno 8. ', ur'anno I, ', ur'anno II, ', ur'anno III, ', ur'anno IV, ', ur'archi ', ur'grande ', ur'humanitat\. ', ur'notte ', ur'pericolo ', ur'pubblicazione ', ur'scudetto ', ur'stesso ', ur'tram ', ], xpos=[ur' (?:apeles|d[ai] )', ]) + #465
+lema(ur'[Aa]uton_ó_mic[ao]s?_o', xpos=[ur'[0-9]', ]) + #441
+lema(ur'[Ff]_ú_tbol_u', pre=ur'(?:[Aa]l|[Ee]l|[Uu]n|[Dd]el) ', xpre=[ur'Cap ', ur'Estadi ', ur'Història crítica ', ur'lusionistes ', ], xpos=[ur' (?:Gavà|Català|Martinenc|modest|Reus|Vilanova i|Igualada|Balaguer|D\'Ordino|Nou|Club Santboià)', ur'ʹnyy̆', ]) + #412
+lema(ur'_á_lbum(?:es|)_a', pre=ur'(?:[Aa]l|[Dd]el?|[Ee]ste|[Ee]stos|[Ee]l|[Ee]n|[Ll]os|[Dd]os|[Tt]res|[Cc]uatro|[Ss]us?|[Pp]rimer|[Ss]egundo|[Tt]ercer|[Cc]uarto|[Qq]uinto|[Ss]exto|[UuÚú]ltimo|[Mm]ejor|[Nn]ing[uú]n|[Nn]uevo|[Mm]ismo) ') + #407
+lema(ur'[Ee]j_é_rcito_e', pre=ur'(?:[Aa]l|[Ee]l|[Dd]el|[Uu]n|[Ss]u) ') + #395
+lema(ur'[Dd]ej_ó__o', xpre=[ur' (?:un|[tm]e|al|lo|yo) ', ur' [&] ', ur'"lo ', ur'#Los ', ur'(?:[Ee]l|Un|[TM]e|Al|Lo) ', ur'Ahí le ', ur'Ahí les ', ur'Aquí ', ur'Aquí les ', ur'Ben ', ur'Chullén ', ur'Juan ', ur'Karen ', ur'Les ', ur'Lozada ', ur'No la ', ur'Os ', ur'Si ', ur'Si alguna vez ', ur'Yo ', ur'Yo nunca ', ur'[Ss]u ', ur'aplicó ', ur'con ', ur'conducto ', ur'cuando ', ur'ese ', ur'esta noche ', ur'herencia que le ', ur'irme ', ur'linquo\'\' \'', ur'ningún ', ur'o no ', ur'o no la ', ur'qu-o\'\' \'', ur'si no ', ur'tus manos ', ur'un cierto ', ur'visigodos ', ], xpos=[ur' (?:charapa|aquí|alemán|que|todo|a |CNN|botá|heredad|Bendezú|ar |The|Dance|el (?:Art|amor|cargo|festival|resto)|entre vosotros|En Libertad|la (?:selección|ventana|mejor compañía|Sonora)|[Dd]e (?:Pensar|salir)|o no|[Tt]u (?:sombra|corazón)|su hogar|[Mm]i (?:estela|corazón|Huella|estatua|dedo)|Amber|Libre|Madrid|Sparavalo|eso para Mortifera|Fayemi|prendida mi|un apellido|una familia|como herederos|curial|rastro tras|piedra sobre|por razones|[Cc]onstancia|nuestra|y me)', ur'(?:[\'\]]|, Juan|" \(1 sg)', ]) + #389
+lema(ur'[Kk]il_ó_metros?_o') + #179
+lema(ur'[Ff]_ú_tbol Sala_u') + #113
+lema(ur'_á_lbum_a', pre=ur'[Uu]n ', xpos=[ur' che', ]) + #30
+lema(ur'_últ_im[ao]s?_[uú]tl') + #14
+lema(ur'[Ff]_ú_tbol_u', pre=ur'(?:Millonarios|Bogotá) ') + #2
 []][0]
 
-grupoAccion = [
-lema(ur'[Ss]elecci_ó_n_o', xpos=[ur' Esportives', ur'\]\]es', ]) + #605
-lema(ur'[Pp]oblaci_ó_n_o', xpre=[ur'New ', ur'North ', ur'Old ', ur'South ', ], xpos=[ur' (?:East|West)', ur'\]\](?:es|al|ales)', ]) + #483
-lema(ur'[Cc]lasificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #532
-lema(ur'[Ee]staci_ó_n_o', xpos=[ur'\]\]es', ]) + #402
-lema(ur'[Nn]aci_ó_n_o', xpre=[ur'Mexicana ', ], xpos=[ur' Occitana', ur'(?:\]|\.com)', ]) + #367
-lema(ur'[Cc]anci_ó_n_o', xpos=[ur'\]\]es', ]) + #195
-lema(ur'[Dd]ivisi_ó_n_o', pre=ur'(?:[Uu]na|[Cc]ada|[Ss]u|[Pp]rimera|[Ss]egunda|[Cc]uarta) ', xpos=[ur' [12]\b', ur'\.htm', ]) + #144
-lema(ur'[Ff]undaci_ó_n_o', xpre=[ur'Fundación en 1987 "', ], xpos=[ur' Paraguaya\'s', ur'(?:[\]@]|2008|\.uocra)', ]) + #255
-lema(ur'[Rr]edirecci_ó_n_o', xpos=[ur'\]\]es', ]) + #299
-lema(ur'[Cc]ampe_ó_n_o', xpos=[ur'\]\]es', ]) + #146
-lema(ur'[Cc]oncepci_ó_n_o', xpre=[ur' (?:of|ng) ', ur'Araneus ', ur'Immaculate ', ur'Sam ', ], xpos=[ur' (?:Gross|\(Texas)', ur'(?:\]|\.cl)', ]) + #172
-lema(ur'[Ee]dici_ó_n(?!\]|\.cl)_o') + #133
-lema(ur'[Vv]ersi_ó_n_o', pre=ur'(?:de|[Ll]a|[Uu]na|[Ee]sta|[Ee]sa|[Cc]ada|[Ss]u|[Ee]n|[Pp]rimera|[Ss]egunda|[Tt]ercera|[Cc]uarta|[ÚUúu]ltima|[Nn]ueva|cualquier) ', xpre=[ur'd\'après ', ur'pour ', ur'pour ', ], xpos=[ur' (?:Cue|thebaine|restaurée|en français|française)', ]) + #99
-lema(ur'[Gg]rabaci_ó_n_o', xpos=[ur'\]\]es', ]) + #170
-lema(ur'[Aa]sunci_ó_n_o', xpre=[ur' of ', ur'd\'', ur'near ', ], xpos=[ur' (?:Skyscraper|Golf|Business)', ]) + #157
-lema(ur'[Pp]roduc_c_i(?:ón|ones)_s?') + #22
-lema(ur'[Cc]oraz_ó_n_o', xpre=[ur'D\'', ur'Anya ', ], xpos=[ur' (?:Productions|Aquino)', ur'(?:\]\][a-z]+|\.(?:pe|cl|com))', ]) + #121
-lema(ur'[Dd]irecci_ó_n_o', xpos=[ur'(?:\]|\.tytres)', ]) + #123
-lema(ur'[Tt]elevisi_ó_n_o', pre=ur'[Dd]e ', xpos=[ur' (?:City|Without|Heaven)', ]) + #95
-lema(ur'[Ii]nformaci_ó_n_o', xpos=[ur'(?: *[@\]]|\.(?:com|es))', ]) + #123
-lema(ur'[Rr]inc_ó_n_o', xpre=[ur'\bs ', ur'cráter\)\|', ur'Georgia\)\|', ur'Vespo\]\] \(', ur'Rincon\]\] \(', ur'Vespo ', ur'Chrysometa ', ur'Beach ', ur'Real ', ur'Bonaire\)\|', ur'California\)\|', ur'Indiana\)\|'], xpos=[ur' (?:to|Valley|Beach|Mix|High|Center|Sapiencia|Point|Hill|Road|i Verdera|\((?:cráter|Georgia|Bonaire|California|Indiana))\b', ur'(?:, Bonaire|\]\]es)', ]) + #116
-lema(ur'[Cc]omisi_ó_n_o', xpos=[ur'\]\]es', ]) + #128
-lema(ur'[Cc]onstituci_ó_n_o', xpre=[ur'da ', ], xpos=[ur' di', ur'\]\]', ]) + #174
-lema(ur'[Uu]ni_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Ee]st?a) ', xpre=[ur' á ', ur'Auto ', ur'Journal de la ', ur'Ridge ', ur'San Fernando de ', ur'of ', ], xpos=[ur' (?:Académique|College|Women|Insurance|Catholique|anarchiste|County|Nazionale|Bordeaux|Sportive|Testament|Metallic|Anarco-communiste|Athletique|Avenue|Bay|Brazilian|Buildings|Carbide|Castle|Chapel|Church|City|Company|Cycliste|Elementary|Elevated|Evangelischer|Ferry|Fire|Flag|Française|Guilde|High|Hill|Internationale|Jack|League|List|Maçonnique|Mining|Mundial pro|Nationale|Oil|Pacific|Square|Station|Steamship|Stock|Street|Terminal|Theological|Trust|Turnpike|University|Vélocipédique|anarcho|calédonienne|des|fédérale|istorica|nationale|pour|socialiste|storica|de (?:Compositeurs|banques)|(?:of|do) )', ]) + #62
-lema(ur'[Aa]sociaci_ó_n_o', xpos=[ur'\]|\.Civil', ]) + #88
-lema(ur'[Ee]ducaci_ó_n_o', xpos=[ur' Salsa', ur'(?:\]|\.go[bv]|\.yucatan|\.es)', ]) + #89
-lema(ur'[Rr]elaci_ó_n_o', xpos=[ur'\]\]es', ]) + #80
-lema(ur'[Aa]cci_ó_n_o', xpre=[ur'd\'', ], xpos=[ur'\]\]es', ]) + #137
-lema(ur'[Cc]añ_ó_n_o', xpre=[ur'Ipyahe ', ur'[Mm]icropolitana ', ], xpos=[ur' City', ur'\]\]es', ]) + #77
-lema(ur'[Pp]osici_ó_n_o', xpos=[ur'\]\]es', ]) + #68
-lema(ur'_Venevisió_n_(venevisi[óo]|Venevisio)', xpre=[ur'\.', ], xpos=[ur'\.', ]) + #83
-lema(ur'[Pp]roducci_ó_n_o', xpos=[ur'(?:\]|\.(?:com|gob)|\'s)', ]) + #63
-lema(ur'[Dd]escripci_ó_n_o', xpre=[ur'cousa ', ], xpos=[ur' (?:Graphica|breue|Histórico Geografía|de todas las provincias, reynos)', ur'\]\]es', ]) + #100
-lema(ur'[Rr]az_ó_n_o', xpre=[ur'Bernard ', ur'Cynthia V\. ', ur'Meital de ', ], xpos=[ur' (?:and|Copa|de aquellas muchas cabeçuelas)', ur'\]\]es', ]) + #90
-lema(ur'[Aa]vi_ó_n_o', xpre=[ur'\b[LlDd]\'', ur'CS ', ur'Comme un ', ur'Paul ', ur'Cantón de ', ur'Europe en ', ur'cet ', ur'[Cc]antón de Avion\|', ur'[Cc]antón de ', ur'Novi ', ur'Orchestra ', ur'Par ', ur'Calais\)\|', ur'yvate ', ], xpos=[ur' (?:Corporation|Travel|de (?:Transport|minuit|Combat)|Baker|Express|\(Paso|)', ur'(?:, (?:Pas|Grenay)|\]\]es)', ]) + #73
-lema(ur'[Rr]evoluci_ó_n_o', xpre=[ur'Zonda ', ], xpos=[ur'\]\]es', ]) + #78
-lema(ur'[Ff]ederaci_ó_n_o', xpos=[ur' (?:de l|Galega|d)\b', ur'(?:\]|\.pe)', ]) + #156
-lema(ur'[Rr]egi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na) ', xpos=[ur' (?:de|Mediterraneenne|Centrale|alpine|himalayenne|du |Sud et|Côtier|d\'Ambovombe)', ]) + #50
-lema(ur'[Oo]rganizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #73
-lema(ur'[Gg]esti_ó_n_o', xpre=[ur'Assurances ', ur'Contrôle de ', ur'Français de ', ur'Intercommunal de ', ur'Sciences de la ', ur'Societé de ', ur'Socièté de ', ur'Société de ', ur'Suisses de ', ur'Syndicat de ', ur'Système de ', ur'contrôle de ', ur'et ', ur'et de ', ur'européen de ', ur'française de ', ur'mauvaise ', ur'méthodes de ', ur'nouvelle ', ur'pour ', ur'pour la ', ur'structure, ', ur'supérieur de ', ur'École de ', ur'à la ', ur'économie, ', ], xpos=[ur' (?:(?:et|ou) |par|pour|forestière|Privee-SIB|informatisée|publique|Patrimoniale|Animation|Bonfire|stratégique|écologique|du|des|plus|Municipale|Intégrée|de (?:Genève|classe|la qualité|la relation|documents|contenu|l\'ArchiTEcture|l\'Entreprise)|Cinématographique)', ur'(?:[0-9\]]|\.org)', ]) + #65
-lema(ur'[Ii]nterpretaci_ó_n_o', xpos=[ur'\]\]es', ]) + #80
-lema(ur'[Pp]resentaci_ó_n_o', xpos=[ur'\]\]es', ]) + #75
-lema(ur'[Tt]ibur_ó_n_o', xpre=[ur'(?:EA|[Ll]e|of|[Ii]n) ', ur'Arts ', ur'California\)\|', ur'Hyundai ', ], xpos=[ur' (?:Film|Chum|Boulevard|International|Challenger|y Belvedere|Center|Peninsula|\(California)', ur'(?:, \[|\]\]es)', ]) + #44
-lema(ur'[Cc]olecci_ó_n_o', xpos=[ur'\]\]es', ]) + #59
-lema(ur'[Cc]reaci_ó_n_o', xpos=[ur'\]\]es', ]) + #73
-lema(ur'[Cc]omunicaci_ó_n_o', xpos=[ur'(?:\,umh|\]\]es|\.senado)', ]) + #60
-lema(ur'[Pp]articipaci_ó_n_o', xpos=[ur' ciutadana', ur'\]\]es', ]) + #32
-lema(ur'[Cc]onservaci_ó_n_o', xpos=[ur'\]\](?:es|ista)', ]) + #71
-lema(ur'[Ee]lecci_ó_n_o', xpos=[ur'\]\]es', ]) + #53
-lema(ur'[Oo]cupaci_ó_n_o', xpos=[ur'\]\]es', ]) + #59
-lema(ur'[Ff]ormaci_ó_n_o', xpos=[ur'\]\]es', ]) + #37
-lema(ur'[Pp]asi_ó_n_o', xpre=[ur'E\. ', ur'the ', ], xpos=[ur' (?:for|Wrestling|Dub|ni)\b', ur'\.demotilla', ]) + #61
-lema(ur'[Ss]ecci_ó_n_o', xpos=[ur'[1-9\]]', ]) + #53
-lema(ur'[Gg]eneraci_ó_n_o', xpre=[ur'@1', ], xpos=[ur'(?:\]|\.com)', ]) + #48
-lema(ur'[Ii]lustraci_ó_n_o', xpos=[ur'\]\]es', ]) + #57
-lema(ur'[Pp]ercusi_ó_n_o', xpre=[ur'and ', ], xpos=[ur' [Ss]et', ur'\]\]es', ]) + #19
-lema(ur'[Tt]radici_ó_n_o', xpos=[ur'\]\](?:al|es)', ]) + #50
-lema(ur'[Ff]usi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|de|y) ', xpre=[ur'énergie ', ], xpos=[ur' (?:Ford|Man|de deux|Systems|Rhône)', ur'\]\]es', ]) + #41
-lema(ur'[Dd]ivisi_ó_n_o', pre=ur'[Tt]ercera ', xpos=[ur'\.cl', ]) + #15
-lema(ur'[Dd]ivisi_ó_n_o', pre=ur'[Ll]a ', xpos=[ur' (?:[12]|Interrégionale|me perd|navale|en France|of |du |politique|méthodique|Rosemont|One|Two|Three|Théorique|de l’intérieur|des |Skanderbeg, Histoire|Charlemagne|SS Das reich sème|[Oo]ne)\b', ]) + #44
-lema(ur'[Ii]nstituci_ó_n_o', xpos=[ur'\]\]es', ]) + #37
-lema(ur'[Ii]nvestigaci_ó_n_o', xpos=[ur'\]\]es', ]) + #42
-lema(ur'[Pp]reten_sio_nes_(?:sió|ci[oó])') + #7
-lema(ur'[Ss]ituaci_ó_n_o', xpre=[ur'Q[’\']', ], xpos=[ur' \(Abril de 1864', ur'\]\]es', ]) + #39
-lema(ur'[Ee]xposici_ó_n_o', xpos=[ur' de la dotrina', ur'\]\]es', ]) + #46
-lema(ur'[Tt]orre_ó_n_o', xpos=[ur'\]\]es', ]) + #53
-lema(ur'[Aa]parici_ó_n_o', xpos=[ur'\]\]es', ]) + #26
-lema(ur'[Dd]efinici_ó_n_o', xpos=[ur'(?:\]|\.org|\.de)', ]) + #41
-lema(ur'[Oo]peraci_ó_n_o', xpos=[ur'\]\]es', ]) + #43
-lema(ur'[Ff]icci_ó_n_o', xpos=[ur'\]\]es', ]) + #21
-lema(ur'[Aa]dministraci_ó_n_o', xpos=[ur'(?:@|\]\]es)', ]) + #55
-lema(ur'[Ff]unci_ó_n_o', xpos=[ur'\]\]es', ]) + #42
-lema(ur'[Pp]ublicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #28
-lema(ur'[Uu]bicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #48
-lema(ur'[Rr]egi_ó_n de_o', xpre=[ur'Muscinees de la ', ]) + #37
-lema(ur'[Aa]nimaci_ó_n_o', xpos=[ur'\]\]es', ]) + #27
-lema(ur'[Aa]viaci_ó_n_o', xpos=[ur'(?:\]\]es|\.mil)', ]) + #35
-lema(ur'[Tt]ra_nsliteració_n_sliteraci[oó]') + #7
-lema(ur'[Aa]dmin_istració_n_(?:itraci[oó]|straci[oó]|istrac[ioó])') + #10
-lema(ur'[Dd]rag_ó_n_[oò]', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u) ', xpre=[ur'Dent ', ur'Europa ', ur'Rêve ', ], xpos=[ur' (?:Cry|Con|Dance|Hunters|Inn|Lancer|Psychic|Caesar|Ranger|School|dans|Festival|Hill|Lore|Fly|Queen|Rouge|Warrior|Boy|TV|City|Tales|Booster|Rock|Comics|Knight|Tour|Hawk|marin|[Bb]oat|Lee|[Bb]all|[Ss]layer|[Qq]uest|[Rr]apide|[Ff]all|[Aa]ge|[Ww]orld|[Gg]ate|Shot|Tail|Khan|Ash|Sound|Force|Mk\.IV|/ Falcon)', ur'(?:\]\]es|\'s)', ]) + #38
-lema(ur'[Pp]rogramaci_ó_n_o', xpos=[ur'\]\]es', ]) + #36
-lema(ur'[Ee]ncarnaci_ó_n_o', xpos=[ur'\]\]es', ]) + #30
-lema(ur'[Pp]abell_ó_n_o', xpos=[ur' As', ur'\]\]es', ]) + #39
-lema(ur'[Ss]ubcampe_ó_n_o', xpos=[ur'\]\]es', ]) + #23
-lema(ur'[Tt]elevisi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Ee]n|[Pp]or|Caracas) ', xpos=[ur' (?:Broadcasts?|Critics?|City|Parts|Preview)', ]) + #17
-lema(ur'[Kk]ilot_ó_n_o', xpos=[ur'\]\]es', ]) + #47
-lema(ur'[Pp]romoci_ó_n_o', xpre=[ur'Ròker ', ], xpos=[ur'\]\]es', ]) + #24
-lema(ur'[Dd]istribuci_ó_n_o', xpos=[ur'\]\]es', ]) + #25
-lema(ur'[Ee]lec_cio_nes_(?:i[oó]|cci[oó])') + #23
+grupo2Accion = [
+lema(ur'[Ss]elecci_ó_n_o', xpos=[ur' Esportives', ur'\]\]es', ]) + #614
+lema(ur'[Cc]lasificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #539
+lema(ur'[Pp]oblaci_ó_n_o', xpre=[ur'New ', ur'North ', ur'Old ', ur'South ', ], xpos=[ur' (?:East|West)', ur'\]\](?:es|al|ales)', ]) + #501
+lema(ur'[Nn]aci_ó_n_o', xpre=[ur'Mexicana ', ], xpos=[ur' Occitana', ur'(?:\]|\.com)', ]) + #427
+lema(ur'[Ee]staci_ó_n_o', xpos=[ur'\]\]es', ]) + #425
+lema(ur'[Rr]edirecci_ó_n_o', xpos=[ur'\]\]es', ]) + #300
+lema(ur'[Ff]undaci_ó_n_o', xpre=[ur'Fundación en 1987 "', ], xpos=[ur' Paraguaya\'s', ur'(?:[\]@]|2008|\.uocra)', ]) + #282
+lema(ur'[Cc]anci_ó_n_o', xpos=[ur'\]\]es', ]) + #216
+lema(ur'[Cc]oncepci_ó_n_o', xpre=[ur' (?:of|ng) ', ur'Araneus ', ur'Immaculate ', ur'Sam ', ], xpos=[ur' (?:Gross|\(Texas)', ur'(?:\]|\.cl)', ]) + #191
+lema(ur'[Cc]onstituci_ó_n_o', xpre=[ur'da ', ], xpos=[ur' di', ur'\]\]', ]) + #178
+lema(ur'[Gg]rabaci_ó_n_o', xpos=[ur'\]\]es', ]) + #175
+lema(ur'[Aa]sunci_ó_n_o', xpre=[ur' of ', ur'd\'', ur'near ', ], xpos=[ur' (?:Skyscraper|Golf|Business)', ]) + #172
+lema(ur'[Aa]cci_ó_n_o', xpre=[ur'd\'', ], xpos=[ur'\]\]es', ]) + #161
+lema(ur'[Cc]ampe_ó_n_o', xpos=[ur'\]\]es', ]) + #159
+lema(ur'[Dd]ivisi_ó_n_o', pre=ur'(?:[Uu]na|[Cc]ada|[Ss]u|[Pp]rimera|[Ss]egunda|[Cc]uarta) ', xpos=[ur' [12]\b', ur'\.htm', ]) + #157
+lema(ur'[Ee]dici_ó_n(?!\]|\.cl)_o') + #148
+lema(ur'[Ii]nformaci_ó_n_o', xpos=[ur'(?: *[@\]]|\.(?:com|es))', ]) + #143
+lema(ur'[Cc]oraz_ó_n_o', xpre=[ur'Anya ', ur'D\'', ], xpos=[ur' (?:Productions|Aquino)', ur'(?:\]\][a-z]+|\.(?:pe|cl|com))', ]) + #142
+lema(ur'[Cc]omisi_ó_n_o', xpos=[ur'\]\]es', ]) + #137
+lema(ur'[Dd]irecci_ó_n_o', xpos=[ur'(?:\]|\.tytres)', ]) + #136
+lema(ur'[Rr]inc_ó_n_o', xpre=[ur'Beach ', ur'Bonaire\)\|', ur'California\)\|', ur'Chrysometa ', ur'Georgia\)\|', ur'Indiana\)\|', ur'Real ', ur'Rincon\]\] \(', ur'Vespo ', ur'Vespo\]\] \(', ur'\bs ', ur'cráter\)\|', ], xpos=[ur' (?:to|Valley|Beach|Mix|High|Center|Sapiencia|Point|Hill|Road|i Verdera|\((?:cráter|Georgia|Bonaire|California|Indiana))\b', ur'(?:, Bonaire|\]\]es)', ]) + #133
+lema(ur'[Dd]escripci_ó_n_o', xpre=[ur'cousa ', ], xpos=[ur' (?:Graphica|breue|Histórico Geografía|de todas las provincias, reynos)', ur'\]\]es', ]) + #123
+lema(ur'[Rr]az_ó_n_o', xpre=[ur'Bernard ', ur'Cynthia V\. ', ur'Meital de ', ], xpos=[ur' (?:and|Copa|de aquellas muchas cabeçuelas)', ur'\]\]es', ]) + #119
+lema(ur'[Vv]ersi_ó_n_o', pre=ur'(?:de|[Ll]a|[Uu]na|[Ee]sta|[Ee]sa|[Cc]ada|[Ss]u|[Ee]n|[Pp]rimera|[Ss]egunda|[Tt]ercera|[Cc]uarta|[ÚUúu]ltima|[Nn]ueva|cualquier) ', xpre=[ur'd\'après ', ur'pour ', ur'pour ', ], xpos=[ur' (?:Cue|thebaine|restaurée|en français|française)', ]) + #109
+lema(ur'[Ee]ducaci_ó_n_o', xpos=[ur' Salsa', ur'(?:\]|\.go[bv]|\.yucatan|\.es)', ]) + #106
+lema(ur'[Aa]sociaci_ó_n_o', xpos=[ur'\]|\.Civil', ]) + #104
+lema(ur'[Tt]elevisi_ó_n_o', pre=ur'[Dd]e ', xpos=[ur' (?:City|Without|Heaven)', ]) + #102
+lema(ur'[Rr]elaci_ó_n_o', xpos=[ur'\]\]es', ]) + #95
+lema(ur'_Venevisió_n_(venevisi[óo]|Venevisio)', xpre=[ur'\.', ], xpos=[ur'\.', ]) + #93
+lema(ur'[Rr]evoluci_ó_n_o', xpre=[ur'Zonda ', ], xpos=[ur'\]\]es', ]) + #89
+lema(ur'[Cc]añ_ó_n_o', xpre=[ur'Ipyahe ', ur'[Mm]icropolitana ', ], xpos=[ur' City', ur'\]\]es', ]) + #88
+lema(ur'[Ff]ederaci_ó_n_o', xpos=[ur' (?:de l|Galega|d)\b', ur'(?:\]|\.pe)', ]) + #84
+lema(ur'[Gg]esti_ó_n_o', xpre=[ur'Assurances ', ur'Contrôle de ', ur'Français de ', ur'Intercommunal de ', ur'Sciences de la ', ur'Societé de ', ur'Socièté de ', ur'Société de ', ur'Suisses de ', ur'Syndicat de ', ur'Système de ', ur'contrôle de ', ur'et ', ur'et de ', ur'européen de ', ur'française de ', ur'mauvaise ', ur'méthodes de ', ur'nouvelle ', ur'pour ', ur'pour la ', ur'structure, ', ur'supérieur de ', ur'École de ', ur'à la ', ur'économie, ', ], xpos=[ur' (?:(?:et|ou) |par|pour|forestière|Privee-SIB|informatisée|publique|Patrimoniale|Animation|Bonfire|stratégique|écologique|du|des|plus|Municipale|Intégrée|de (?:Genève|classe|la qualité|la relation|documents|contenu|l\'ArchiTEcture|l\'Entreprise)|Cinématographique)', ur'(?:[0-9\]]|\.org)', ]) + #83
+lema(ur'[Ii]nterpretaci_ó_n_o', xpos=[ur'\]\]es', ]) + #83
+lema(ur'[Oo]rganizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #82
+lema(ur'[Uu]ni_ó_n (?:Dem[oó]crata|Estepona|Sovi[eé]tica)_o') + #81
+lema(ur'[Pp]osici_ó_n_o', xpos=[ur'\]\]es', ]) + #80
+lema(ur'[Pp]resentaci_ó_n_o', xpos=[ur'\]\]es', ]) + #79
+lema(ur'[Cc]onservaci_ó_n_o', xpos=[ur'\]\](?:es|ista)', ]) + #77
+lema(ur'[Cc]reaci_ó_n_o', xpos=[ur'\]\]es', ]) + #76
+lema(ur'[Pp]roducci_ó_n_o', xpos=[ur'(?:\]|\.(?:com|gob)|\'s)', ]) + #76
+lema(ur'[Aa]vi_ó_n_o', xpre=[ur'CS ', ur'Calais\)\|', ur'Cantón de ', ur'Comme un ', ur'Europe en ', ur'Novi ', ur'Orchestra ', ur'Par ', ur'Paul ', ur'[Cc]antón de ', ur'[Cc]antón de Avion\|', ur'\b[LlDd]\'', ur'cet ', ur'yvate ', ], xpos=[ur' (?:Corporation|Travel|de (?:Transport|minuit|Combat)|Baker|Express|\(Paso|)', ur'(?:, (?:Pas|Grenay)|\]\]es)', ]) + #74
+lema(ur'[Cc]olecci_ó_n_o', xpos=[ur'\]\]es', ]) + #72
+lema(ur'[Cc]omunicaci_ó_n_o', xpos=[ur'(?:\,umh|\]\]es|\.senado)', ]) + #72
+lema(ur'[Pp]asi_ó_n_o', xpre=[ur'E\. ', ur'the ', ], xpos=[ur' (?:for|Wrestling|Dub|ni)\b', ur'\.demotilla', ]) + #72
+lema(ur'[Uu]ni_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Ee]st?a) ', xpre=[ur' á ', ur'Auto ', ur'Journal de la ', ur'Ridge ', ur'San Fernando de ', ur'of ', ], xpos=[ur' (?:Libérale|Académique|College|Women|Insurance|Catholique|anarchiste|County|Nazionale|Bordeaux|Sportive|Testament|Metallic|Anarco-communiste|Athletique|Avenue|Bay|Brazilian|Buildings|Carbide|Castle|Chapel|Church|City|Company|Cycliste|Elementary|Elevated|Evangelischer|Ferry|Fire|Flag|Française|Guilde|High|Hill|Internationale|Jack|League|List|Maçonnique|Mining|Mundial pro|Nationale|Oil|Pacific|Square|Station|Steamship|Stock|Street|Terminal|Theological|Trust|Turnpike|University|Vélocipédique|anarcho|calédonienne|des|fédérale|istorica|nationale|pour|socialiste|storica|de (?:Compositeurs|banques)|(?:of|do) )', ]) + #65
+lema(ur'[Aa]dministraci_ó_n_o', xpos=[ur'(?:@|\]\]es)', ]) + #63
+lema(ur'[Ii]lustraci_ó_n_o', xpos=[ur'\]\]es', ]) + #61
+lema(ur'[Oo]cupaci_ó_n_o', xpos=[ur'\]\]es', ]) + #61
+lema(ur'[Gg]eneraci_ó_n_o', xpre=[ur'@1', ], xpos=[ur'(?:\]|\.com)', ]) + #60
+lema(ur'[Ss]ecci_ó_n_o', xpos=[ur'[1-9\]]', ]) + #60
+lema(ur'[Ee]lecci_ó_n_o', xpos=[ur'\]\]es', ]) + #57
+lema(ur'[Ii]_nauguració_n_(?:gnauraci[oó]|naguraci[oó]|nauguracio)', xpos=[ur'\]\]es', ]) + #57
+lema(ur'[Rr]egi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na) ', xpos=[ur' (?:de|Mediterraneenne|Centrale|alpine|himalayenne|du |Sud et|Côtier|d\'Ambovombe)', ]) + #55
+lema(ur'[Tt]orre_ó_n_o', xpos=[ur'\]\]es', ]) + #55
+lema(ur'[Aa]probaci_ó_n_o', xpos=[ur'\]\]es', ]) + #54
+lema(ur'[Dd]ivisi_ó_n_o', pre=ur'[Ll]a ', xpos=[ur' (?:[12]|Interrégionale|me perd|navale|en France|of |du |politique|méthodique|Rosemont|One|Two|Three|Théorique|de l’intérieur|des |Skanderbeg, Histoire|Charlemagne|SS Das reich sème|[Oo]ne)\b', ]) + #53
+lema(ur'[Tt]radici_ó_n_o', xpos=[ur'\]\](?:al|es)', ]) + #53
+lema(ur'[Pp]abell_ó_n_o', xpos=[ur' As', ur'\]\]es', ]) + #51
+lema(ur'[Oo]peraci_ó_n_o', xpos=[ur'\]\]es', ]) + #50
+lema(ur'[Cc]ati_ó_n_o', xpre=[ur'putative ', ], xpos=[ur' (?:denatonium|exchange|channel|in|of)', ur'\]\]es', ]) + #49
+lema(ur'[Ee]xpedici_ó_n_o', xpos=[ur' Antarctic', ur'\]\]es', ]) + #49
+lema(ur'[Ii]nvestigaci_ó_n_o', xpos=[ur'\]\]es', ]) + #49
+lema(ur'[Ff]unci_ó_n_o', xpos=[ur'\]\]es', ]) + #48
+lema(ur'[Kk]ilot_ó_n_o', xpos=[ur'\]\]es', ]) + #48
+lema(ur'[Ee]xposici_ó_n_o', xpos=[ur' de la dotrina', ur'\]\]es', ]) + #47
+lema(ur'[Ss]ituaci_ó_n_o', xpre=[ur'Q[’\']', ], xpos=[ur' \(Abril de 1864', ur'\]\]es', ]) + #46
+lema(ur'[Uu]bicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #46
+lema(ur'[Tt]ibur_ó_n_o', xpre=[ur'(?:EA|[Ll]e|of|[Ii]n) ', ur'Arts ', ur'California\)\|', ur'Hyundai ', ], xpos=[ur' (?:Film|Chum|Boulevard|International|Challenger|y Belvedere|Center|Peninsula|\(California)', ur'(?:, \[|\]\]es)', ]) + #45
+lema(ur'[Cc]onvulsi_ó_n_o', xpos=[ur' (?:[Tt]herapy|Group)', ur'\]\]es', ]) + #44
+lema(ur'[Ii]nstituci_ó_n_o', xpos=[ur'\]\]es', ]) + #44
+lema(ur'[Dd]efinici_ó_n_o', xpos=[ur'(?:\]|\.org|\.de)', ]) + #42
+lema(ur'[Ff]usi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|de|y) ', xpre=[ur'énergie ', ], xpos=[ur' (?:Ford|Man|de deux|Systems|Rhône)', ur'\]\]es', ]) + #42
 lema(ur'[Oo]btenci_ó_n_o', xpos=[ur'\]\]es', ]) + #42
-lema(ur'[Rr]iñ_ó_n_o', xpos=[ur'\]\]es', ]) + #32
-lema(ur'[Ii]_nauguració_n_(?:gnauraci[oó]|naguraci[oó]|nauguracio)', xpos=[ur'\]\]es', ]) + #53
-lema(ur'[Nn]ataci_ó_n_o', xpos=[ur'\]\]es', ]) + #31
-lema(ur'[Ll]esi_ó_n (?:de|en|que)\b_o') + #23
-lema(ur'[Pp]rocesi_ó_n_o', xpos=[ur'\]\](?:es|al|ales)', ]) + #39
-lema(ur'[Rr]enovaci_ó_n_o', xpos=[ur'\]\]es', ]) + #34
-lema(ur'[Cc]oalici_ó_n(?![0-9\]])_o') + #26
-lema(ur'[Ee]voluci_ó_n_o', xpos=[ur' e desnreolo', ur'\]\]es', ]) + #33
-lema(ur'[Rr]esoluci_ó_n_o', xpos=[ur'\]\]es', ]) + #34
-lema(ur'[Tt]romb_ó_n_o', xpos=[ur'\]\](?:es|istas?)', ]) + #20
-lema(ur'[Cc]onvulsi_ó_n_o', xpos=[ur' (?:[Tt]herapy|Group)', ur'\]\]es', ]) + #41
-lema(ur'[Bb]alc_ó_n_o', xpre=[ur'(?:[Ll]e|du|au) ', ur'\b(?:por|mon) ', ur'M\. ', ur'Claudie ', ur'Michael ', ur'Jill ', ur'grand ', ur'relais de ', ur'siendo ', ], xpos=[ur' (?:à|sur|Zone|en forêt|renombró)\b', ur'(?:\]\](?:es|ada)|, (?:Sylvie|corridor))']) + #20
-lema(ur'[Cc]ati_ó_n_o', xpre=[ur'putative ', ], xpos=[ur' (?:denatonium|exchange|channel|in|of)', ur'\]\]es', ]) + #43
+lema(ur'[Rr]egi_ó_n de_o', xpre=[ur'Muscinees de la ', ]) + #42
+lema(ur'[Pp]rocesi_ó_n_o', xpos=[ur'\]\](?:es|al|ales)', ]) + #41
 lema(ur'[Ee]cuaci_ó_n_o', xpos=[ur'\]\]es', ]) + #40
-lema(ur'[Ll]adr_ó_n_o', xpos=[ur' Peak', ur'\]\]es', ]) + #25
-lema(ur'[Ss]axof_ó_n_o', xpos=[ur'\]\]es', ]) + #7
-lema(ur'[Oo]pini_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Ee]n|[Dd]e) ') + #31
-lema(ur'[Pp]iñ_ó_n_o', xpre=[ur'Jannis ', ur'Kusnezov ', ur'Led ', ur'Pine ', ur'Ramon ', ], xpos=[ur' (?:Hills|Pine)', ur'\]\]es', ]) + #23
-lema(ur'[Pp]risi_ó_n_o', xpre=[ur' In ', ur'Glass ', ], xpos=[ur' (?:ward|blues|Fellowship|Match)', ur'\]\]es', ]) + #23
-lema(ur'[Cc]onfederaci_ó_n_o', xpos=[ur'\]\]es', ]) + #27
-lema(ur'[Cc]orporaci_ó_n_o', xpos=[ur'\]\]es', ]) + #26
-lema(ur'[Dd]iputaci_ó_n_o', xpos=[ur'\]\]es', ]) + #34
-lema(ur'[Ee]misi_ó_n_o', xpos=[ur'\]\]es', ]) + #30
-lema(ur'[Tt]ransmisi_ó_n_o', xpos=[ur' (?:Eléktrika|kon)', ur'\]\]es', ]) + #32
+lema(ur'[Ff]ormaci_ó_n_o', xpos=[ur'\]\]es', ]) + #40
+lema(ur'[Pp]rogramaci_ó_n_o', xpos=[ur'\]\]es', ]) + #40
+lema(ur'[Dd]istribuci_ó_n_o', xpos=[ur'\]\]es', ]) + #39
+lema(ur'[Pp]articipaci_ó_n_o', xpos=[ur' ciutadana', ur'\]\]es', ]) + #39
+lema(ur'[Dd]iputaci_ó_n_o', xpos=[ur'\]\]es', ]) + #38
+lema(ur'[Dd]rag_ó_n_[oò]', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u) ', xpre=[ur'Dent ', ur'Europa ', ur'Rêve ', ], xpos=[ur' (?:Cry|Con|Dance|Hunters|Inn|Lancer|Psychic|Caesar|Ranger|School|dans|Festival|Hill|Lore|Fly|Queen|Rouge|Warrior|Boy|TV|City|Tales|Booster|Rock|Comics|Knight|Tour|Hawk|marin|[Bb]oat|Lee|[Bb]all|[Ss]layer|[Qq]uest|[Rr]apide|[Ff]all|[Aa]ge|[Ww]orld|[Gg]ate|Shot|Tail|Khan|Ash|Sound|Force|Mk\.IV|/ Falcon)', ur'(?:\]\]es|\'s)', ]) + #38
+lema(ur'[Ee]voluci_ó_n_o', xpos=[ur' e desnreolo', ur'\]\]es', ]) + #38
+lema(ur'[Rr]esoluci_ó_n_o', xpos=[ur'\]\]es', ]) + #38
+lema(ur'[Aa]viaci_ó_n_o', xpos=[ur'(?:\]\]es|\.mil)', ]) + #37
+lema(ur'[Tt]ransmisi_ó_n_o', xpos=[ur' (?:Eléktrika|kon)', ur'\]\]es', ]) + #37
+lema(ur'[Cc]uesti_ó_n_o', xpos=[ur'\]\]es', ]) + #36
+lema(ur'[Tt]raducci_ó_n_o', xpos=[ur'\]\]es', ]) + #36
+lema(ur'[Ii]ntroducci_ó_n_o', xpos=[ur'\]\]es', ]) + #35
+lema(ur'[Mm]anifestaci_ó_n_o', xpos=[ur'\]\]es', ]) + #35
+lema(ur'[Pp]laneaci_ó_n_o', xpos=[ur'\]\]es', ]) + #35
+lema(ur'[Cc]orporaci_ó_n_o', xpos=[ur'\]\]es', ]) + #34
+lema(ur'[Oo]pini_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Ee]n|[Dd]e) ') + #34
+lema(ur'[Ee]ncarnaci_ó_n_o', xpos=[ur'\]\]es', ]) + #33
+lema(ur'[Nn]ataci_ó_n_o', xpos=[ur'\]\]es', ]) + #33
+lema(ur'[Cc]olaboraci_ó_n_o', xpos=[ur'\]\]es', ]) + #32
+lema(ur'[Ee]misi_ó_n_o', xpos=[ur'\]\]es', ]) + #32
 lema(ur'[Ll]ocalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #32
-lema(ur'[Mm]anifestaci_ó_n_o', xpos=[ur'\]\]es', ]) + #32
-lema(ur'[Tt]raducci_ó_n_o', xpos=[ur'\]\]es', ]) + #34
-lema(ur'[Ii]n_s_cripciones_') + #4
-lema(ur'[Ii]ntroducci_ó_n_o', xpos=[ur'\]\]es', ]) + #31
-lema(ur'[Nn]ominaci_ó_n_o', xpos=[ur' indirècta', ur'\]\]es', ]) + #15
-lema(ur'[Mm]isi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Aa]|[Ee]st?a) ') + #15
-lema(ur'[Pp]atr_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u) ', xpre=[ur'repiè ', ur'vida ', ], xpos=[ur' (?:de presse|and|Saint|Advisory)', ]) + #15
-lema(ur'[Cc]esi_ó_n_o', xpos=[ur'\]\]es', ]) + #13
-lema(ur'[Cc]uesti_ó_n_o', xpos=[ur'\]\]es', ]) + #30
-lema(ur'[Oo]ca_sio_nes_(?:ci[oó]|sió)') + #20
-lema(ur'[Pp]untuaci_ó_n_o', xpos=[ur'\]\]es', ]) + #12
-lema(ur'[Cc]olaboraci_ó_n_o', xpos=[ur'\]\]es', ]) + #31
-lema(ur'[Ss]esi_ó_n_o', xpre=[ur'room ', ur'[Ii]n ', ur'jam ', ], xpos=[ur'\]\]es', ]) + #21
-lema(ur'[Vv]isi_ó_n_o', pre=ur'(?:[Uu]na|[Cc]ada|[Ss]u|[Ll]a|[Ee]sta) ', xpos=[ur' (?:City|mystique|érotique|romantique|qu|du|des|Gallery|après)\b', ]) + #15
-lema(ur'[Dd]uraci_ó_n_o', xpos=[ur'\]\]es', ]) + #21
-lema(ur'[Rr]evelaci_ó_n_o', xpos=[ur'\]\]es', ]) + #29
+lema(ur'[Rr]enovaci_ó_n_o', xpos=[ur'\]\]es', ]) + #32
+lema(ur'[Rr]iñ_ó_n_o', xpos=[ur'\]\]es', ]) + #32
+lema(ur'[Pp]ublicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #31
+lema(ur'[Cc]onvenci_ó_n_o', xpos=[ur'\]\]es', ]) + #30
 lema(ur'[Tt]ax_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u) ') + #30
-lema(ur'[Aa]tenci_ó_n_o', xpos=[ur'\]\]es', ]) + #14
-lema(ur'[Ss]al_ó_n_o', pre=ur'(?:[Ee]l|[Uu]n|[Cc]ada|[Ss]u) ', xpre=[ur'Entr\'acte: ', ], xpos=[ur' (?:Bovy|Indien|International|de (?:Provence|Mai|thé|la (?:Jeune|Correspondance|Société)|l\')|dans |des |d[\'’´]|du |Premium|[Rr][eé]alités?)', ur'(?:\]\]es|\.com)', ]) + #13
-lema(ur'[Aa]ctuaci_ó_n_o', xpos=[ur'\]\]es', ]) + #22
-lema(ur'[Ii]n_n_ovaciones_') + #4
-lema(ur'[Ii]nten_ció_n_si[oó]') + #20
-lema(ur'[Rr]econstrucci_ó_n_o', xpos=[ur'\]\]es', ]) + #27
-lema(ur'[Rr]estauraci_ó_n_o', xpos=[ur'\]\]es', ]) + #27
-lema(ur'[Cc]oncentraci_ó_n_o', xpos=[ur'\]\]es', ]) + #21
-lema(ur'[Ii]nscripci_ó_n_o', xpos=[ur'\]\]es', ]) + #24
-lema(ur'[Cc]a_n_ciones_') + #5
-lema(ur'[Ii]ntegraci_ó_n_o', xpos=[ur'\]\]es', ]) + #23
-lema(ur'[Oo]pci_ó_n_o', xpos=[ur'\]\]es', ]) + #12
-lema(ur'[Rr]ecepci_ó_n_o', xpos=[ur'\]\]es', ]) + #10
+lema(ur'[Aa]dhesi_ó_n_o', xpre=[ur'& ', ur'Macrophage ', ur'[Cc]ell ', ur'[Ff]ocal ', ur'[Ii]n ', ], xpos=[ur' (?:and|of|Prevention|molecules)', ur'\]\][a-z]+', ]) + #29
+lema(ur'[Aa]parici_ó_n_o', xpos=[ur'\]\]es', ]) + #29
+lema(ur'[Cc]onfederaci_ó_n_o', xpos=[ur'\]\]es', ]) + #29
+lema(ur'[Ee]lec_cio_nes_(?:i[oó]|cci[oó])') + #29
+lema(ur'[Rr]econstrucci_ó_n_o', xpos=[ur'\]\]es', ]) + #29
+lema(ur'[Rr]evelaci_ó_n_o', xpos=[ur'\]\]es', ]) + #29
+lema(ur'[Rr]estauraci_ó_n_o', xpos=[ur'\]\]es', ]) + #28
+lema(ur'[Aa]nimaci_ó_n_o', xpos=[ur'\]\]es', ]) + #27
+lema(ur'[Ii]nstrucci_ó_n_o', xpos=[ur' pastoral que el', ur'\]\]es', ]) + #27
+lema(ur'[Rr]at_ó_n_o', xpre=[ur'(?:Le|On) ', ur'[Mm]esa ', ur'[RB]oca ', ], xpos=[ur' (?:section|Mesa|Pass|Municipal Airport)', ur'[\'\]]', ]) + #27
+lema(ur'[Rr]emodelaci_ó_n_o', xpos=[ur'\]\]es', ]) + #27
+lema(ur'[Ss]ubcampe_ó_n_o', xpos=[ur'\]\]es', ]) + #27
+lema(ur'[Cc]oalici_ó_n(?![0-9\]])_o') + #26
+lema(ur'[Dd]uraci_ó_n_o', xpos=[ur'\]\]es', ]) + #26
+lema(ur'[Jj]urisdicci_ó_n_o', xpos=[ur'\]\]es', ]) + #26
+lema(ur'[Ll]adr_ó_n_o', xpos=[ur' Peak', ur'\]\]es', ]) + #26
+lema(ur'[Pp]risi_ó_n_o', xpre=[ur' In ', ur'Glass ', ], xpos=[ur' (?:ward|blues|Fellowship|Match)', ur'\]\]es', ]) + #26
+lema(ur'[Pp]romoci_ó_n_o', xpre=[ur'Ròker ', ], xpos=[ur'\]\]es', ]) + #26
+lema(ur'[Rr]edacci_ó_n_o', xpos=[ur'\]\]es', ]) + #26
+lema(ur'[Ss]esi_ó_n_o', xpre=[ur'[Ii]n ', ur'jam ', ur'room ', ], xpos=[ur'\]\]es', ]) + #26
+lema(ur'[Ss]ucesi_ó_n_o', xpos=[ur'\]\]es', ]) + #26
+lema(ur'[Ff]icci_ó_n_o', xpos=[ur'\]\]es', ]) + #25
+lema(ur'[Gg]obernaci_ó_n_o', xpos=[ur' de la Generalidad de Cataluna', ur'(?:\]|\.gob)', ]) + #25
+lema(ur'[Ii]ntegraci_ó_n_o', xpos=[ur'\]\]es', ]) + #25
+lema(ur'[Pp]iñ_ó_n_o', xpre=[ur'Jannis ', ur'Kusnezov ', ur'Led ', ur'Pine ', ur'Ramon ', ], xpos=[ur' (?:Hills|Pine)', ur'\]\]es', ]) + #25
+lema(ur'[Pp]roduc_c_i(?:ón|ones)_s?') + #25
 lema(ur'[Cc]ertificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #24
-lema(ur'[Cc]onvenci_ó_n_o', xpos=[ur'\]\]es', ]) + #25
-lema(ur'[Ff]inalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #13
-lema(ur'[Hh]abitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #12
-lema(ur'[Ii]nfecci_ó_n_o', xpos=[ur'\]\]es', ]) + #24
-lema(ur'[Ee]xten_sió_n_ci[oó]') + #7
-lema(ur'[Ii]nstrucci_ó_n_o', xpos=[ur' pastoral que el', ur'\]\]es', ]) + #22
-lema(ur'[Mm]utaci_ó_n_o', xpos=[ur'\]\]es', ]) + #21
-lema(ur'[Pp]osesi_ó_n_o', xpos=[ur'\]\]es', ]) + #14
-lema(ur'[Cc]allej_ó_n_o', xpos=[ur' \(banda', ur'\]\]es', ]) + #16
-lema(ur'[Cc]omposici_ó_n_o', xpos=[ur'\]\]es', ]) + #16
-lema(ur'[Ee]scuadr_ó_n_o', xpos=[ur'[\]0-9]', ]) + #12
-lema(ur'[Pp]rofesi_ó_n_o', xpos=[ur'\]\](?:es|al|ales|istas?|almente)', ]) + #9
-lema(ur'[Rr]eflexi_ó_n_o', xpre=[ur'Eine ', ur'Moment de ', ur'(?:für|und) ', ur'hermeneutische ', ur'banda\)\|', ur'kritischen ', ], xpos=[ur' (?:in|über|und|de[rs]|auf|Exhibition|Masterclass|\(banda)\b', ur', (?:Stargazery|Taste)', ur'\]\]es', ]) + #11
-lema(ur'[Ss]ucesi_ó_n_o', xpos=[ur'\]\]es', ]) + #21
-lema(ur'[Vv]ersi_ó_n en_o') + #16
-lema(ur'[Dd]elegaci_ó_n_o', xpos=[ur'\]\]es', ]) + #18
-lema(ur'[Dd]epresi_ó_n_o', xpos=[ur'\]\]es', ]) + #14
-lema(ur'[Gg]obernaci_ó_n_o', xpos=[ur' de la Generalidad de Cataluna', ur'(?:\]|\.gob)', ]) + #19
+lema(ur'[Cc]oncentraci_ó_n_o', xpos=[ur'\]\]es', ]) + #24
 lema(ur'[Hh]idroavi_ó_n_o', xpos=[ur'\]\]es', ]) + #24
-lema(ur'[Ii]nmigraci_ó_n_o', xpos=[ur'\]\]es', ]) + #20
-lema(ur'[Ii]nundaci_ó_n_o', xpos=[ur'\]\]es', ]) + #16
-lema(ur'[Ll]iberaci_ó_n_o', xpos=[ur'(?:\]|: Songs)', ]) + #16
-lema(ur'[Pp]antal_ó_n_o', xpre=[ur'San ', ur'[Ll]e ', ur'monsieur ', ], xpos=[ur' (?:est|trop|et )', ur'(?:\]\][a-zñ]+|\'])', ]) + #13
-lema(ur'[Pp]rotecci_ó_n_o') + #12
+lema(ur'[Ii]nfecci_ó_n_o', xpos=[ur'\]\]es', ]) + #24
+lema(ur'[Ii]nscripci_ó_n_o', xpos=[ur'\]\]es', ]) + #24
+lema(ur'[Dd]ifusi_ó_n_o', xpre=[ur'Fonogram ', ], xpos=[ur'\]\]es', ]) + #23
+lema(ur'[Ii]nquisici_ó_n_o', xpos=[ur' á ', ur'(?:\]|\.scd|, chronista)', ]) + #23
+lema(ur'[Ii]nten_ció_n_si[oó]') + #23
+lema(ur'[Ll]esi_ó_n (?:de|en|que)\b_o') + #23
+lema(ur'[Oo]ca_sio_nes_(?:ci[oó]|sió)') + #23
+lema(ur'[Tt]romb_ó_n_o', xpos=[ur'\]\](?:es|istas?)', ]) + #23
+lema(ur'[Aa]ctuaci_ó_n_o', xpos=[ur'\]\]es', ]) + #22
+lema(ur'[Bb]alc_ó_n_o', xpre=[ur'(?:[Ll]e|du|au) ', ur'Claudie ', ur'Jill ', ur'M\. ', ur'Michael ', ur'\b(?:por|mon) ', ur'grand ', ur'relais de ', ur'siendo ', ], xpos=[ur' (?:à|sur|Zone|en forêt|renombró)\b', ur'(?:\]\](?:es|ada)|, (?:Sylvie|corridor))', ]) + #22
+lema(ur'[Mm]utaci_ó_n_o', xpos=[ur'\]\]es', ]) + #22
 lema(ur'[Rr]ecaudaci_ó_n_o', xpos=[ur'\]\]es', ]) + #22
-lema(ur'[Rr]emodelaci_ó_n_o', xpos=[ur'\]\]es', ]) + #24
-lema(ur'[Ss]oluci_ó_n_o', xpos=[ur'\]\]es', ]) + #14
+lema(ur'[Vv]ersi_ó_n en_o') + #22
+lema(ur'[Ii]nmigraci_ó_n_o', xpos=[ur'\]\]es', ]) + #21
+lema(ur'[Vv]ag_ó_n_o', xpos=[ur'\]\]es', ]) + #21
+lema(ur'[Ee]recci_ó_n_o', xpos=[ur'\]\]es', ]) + #20
+lema(ur'[Pp]ante_ó_n_o', xpos=[ur'\]\]es', ]) + #20
+lema(ur'[Pp]ercusi_ó_n_o', xpre=[ur'and ', ], xpos=[ur' [Ss]et', ur'\]\]es', ]) + #20
+lema(ur'[Ss]ubregi_ó_n_o', xpre=[ur'Africa ', ur'Papuan ', ], xpos=[ur'\]\]es', ]) + #20
+lema(ur'[Vv]isi_ó_n_o', pre=ur'(?:[Uu]na|[Cc]ada|[Ss]u|[Ll]a|[Ee]sta) ', xpos=[ur' (?:City|mystique|érotique|romantique|qu|du|des|Gallery|après)\b', ]) + #20
+lema(ur'[Dd]elegaci_ó_n_o', xpos=[ur'\]\]es', ]) + #19
+lema(ur'[Ll]iberaci_ó_n_o', xpos=[ur'(?:\]|: Songs)', ]) + #19
+lema(ur'[Rr]euni_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Ee]st?a) ', xpre=[ur'Denis de ', ], xpos=[ur' Island', ]) + #19
+lema(ur'[Tt]elevisi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Ee]n|[Pp]or|Caracas) ', xpos=[ur' (?:Broadcasts?|Critics?|City|Parts|Preview)', ]) + #19
+lema(ur'[Aa]grupaci_ó_n_o', xpos=[ur'\]\]es', ]) + #18
+lema(ur'[Aa]tenci_ó_n_o', xpos=[ur'\]\]es', ]) + #18
+lema(ur'[Cc]ompetici_ó_n_o', xpos=[ur'\]\]es', ]) + #18
+lema(ur'[Dd]enominaci_ó_n_o', xpos=[ur'\]\]es', ]) + #18
+lema(ur'[Ii]nundaci_ó_n_o', xpos=[ur'\]\]es', ]) + #18
+lema(ur'[Mm]isi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Aa]|[Ee]st?a) ') + #18
+lema(ur'[Mm]oj_ó_n_o', xpre=[ur'Benedetto ', ur'Giuseppe ', ], xpos=[ur' Records', ur'\]\]es', ]) + #18
+lema(ur'[Pp]articipaci_o_nes_ó') + #18
+lema(ur'[Pp]end_ó_n_o', xpre=[ur'Dan y su ', ], xpos=[ur'\]\]es', ]) + #18
+lema(ur'[Pp]osesi_ó_n_o', xpos=[ur'\]\]es', ]) + #18
+lema(ur'[l]e_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u) ', xpre=[ur'Juusso ', ]) + #18
+lema(ur'[Cc]allej_ó_n_o', xpos=[ur' \(banda', ur'\]\]es', ]) + #17
 lema(ur'[Cc]icl_ó_n_o', xpos=[ur'\]\]es', ]) + #17
-lema(ur'[Cc]ompetici_ó_n_o', xpos=[ur'\]\]es', ]) + #17
-lema(ur'[Oo]posici_ó_n_o', xpos=[ur'\]\]es', ]) + #14
-lema(ur'[Rr]ei__vindicaciones_n') + #3
-lema(ur'[d]ecisi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Pp]or) ') + #8
-lema(ur'[l]e_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u) ', xpre=[ur'Juusso ', ]) + #14
-lema(ur'[Oo]ca_sió_n_(?:ci[oó]|sio)') + #7
-lema(ur'[Rr]eedici_ó_n_o', xpos=[ur'\]\]es', ]) + #14
-lema(ur'[Aa]dhesi_ó_n_o', xpre=[ur'& ', ur'Macrophage ', ur'[Ff]ocal ', ur'[Ii]n ', ur'[Cc]ell ', ], xpos=[ur' (?:and|of|Prevention|molecules)', ur'\]\][a-z]+', ]) + #17
-lema(ur'[Cc]ol__ecciones_l') + #4
-lema(ur'[Cc]onexi_ó_n(?!\]|\.com)_o', xpre=[ur'Madonna ', ur'Makarras ', ]) + #11
-lema(ur'[Cc]onstruc_ció_n_i[oó]', xpos=[ur' dun', ]) + #5
-lema(ur'[Pp]erd_ó_n_o', xpre=[ur'Gerald ', ur'Luana ', ur'Laurent ', ur'S[ae]nt ', ], xpos=[ur'\]\]es']) + #12
-lema(ur'[Tt]ransici_ó_n_o', xpos=[ur'\]\]es', ]) + #14
-lema(ur'[Uu]rbanizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #13
-lema(ur'[Vv]ag_ó_n_o', xpos=[ur'\]\]es', ]) + #19
-lema(ur'[Bb]ot_ó_n_o', xpre=[ur'Joaquín ', ], xpos=[ur'(?:\]|: Houghton)', ]) + #11
-lema(ur'[Cc]elebraci_ó_n_o', xpos=[ur'\]\]es', ]) + #12
-lema(ur'[Dd]ecisi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #8
-lema(ur'[Dd]enominaci_ó_n_o', xpos=[ur'\]\]es', ]) + #15
-lema(ur'[Jj]am_ó_n_o', xpre=[ur'DJ ', ur'Joss ', ur'Kyle ', ur'Nacional ', ur'bruja ', ], xpos=[ur' (?:llega|Alfred|Lucas|Meredith|Gordon)', ur'\]\]es', ]) + #13
-lema(ur'[Rr]eacci_ó_n_o', xpos=[ur'\]\]es', ]) + #14
-lema(ur'[Rr]ecopilaci_ó_n_o', xpos=[ur'\]\]es', ]) + #10
-lema(ur'[Rr]euni_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Ee]st?a) ', xpre=[ur'Denis de ', ], xpos=[ur' Island', ]) + #15
-lema(ur'[b]al_ó_n_o', xpos=[ur'\]\]es', ]) + #13
-lema(ur'[Aa]lgod_ó_n_o', xpos=[ur' Wine', ur'\]\](?:es|ero)', ]) + #10
-lema(ur'[Cc]aj_ó_n_o', xpos=[ur' (?:Jinbiao|Run|Blvd|[Pp]ass|Summit|Transit|Boulevard|\(California|Valley|Park)', ur'(?:\]|\'\', sin tilde)', ur', (?:California|Fresno)', ]) + #13
-lema(ur'[Cc]omparaci_ó_n_o', xpre=[ur'\bE ', ], xpos=[ur'\]\]es', ]) + #11
-lema(ur'[Cc]orrec_c_iones_') + #4
-lema(ur'[Cc]orrupci_ó_n_o', xpos=[ur'\]\]es', ]) + #11
-lema(ur'[Dd]e_cisió_n_(?:si[sc]i[oó]|cici[oó])') + #14
-lema(ur'[Dd]imensi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Oo]tra|[Ss]u|[Dd]e|[Ee]st?a|[Tt]ercera|[Cc]uarta) ', xpos=[ur' (?:psychique|Films|Records|Data)', ]) + #12
-lema(ur'[Ll]im_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpre=[ur'Ed\. ', ur'scorzeta ', ]) + #8
-lema(ur'[Pp]elot_ó_n_o', xpre=[ur'Oranje ', ur'Solidaires en ', ur'Tollo ', ur'[Tt]he ', ], xpos=[ur' (?:Association|d\')', ur'\]\][a-zñ]+', ]) + #11
-lema(ur'[Pp]resi_ó_n_o', xpos=[ur'\]\]es', ]) + #15
-lema(ur'[Rr]edacci_ó_n_o', xpos=[ur'\]\]es', ]) + #19
-lema(ur'[Ss]eparaci_ó_n_o', xpos=[ur'\]\]es', ]) + #12
-lema(ur'[Ss]ubregi_ó_n_o', xpre=[ur'Africa ', ur'Papuan ', ], xpos=[ur'\]\]es', ]) + #15
-lema(ur'[Uu]ni_ó_n (?:Dem[oó]crata|Estepona|Sovi[eé]tica)_o') + #19
-lema(ur'[Aa]daptaci_ó_n_o') + #13
-lema(ur'[Aa]par_i_ciones_a') + #4
-lema(ur'[Cc]olec_c_iones_') + #3
-lema(ur'[Cc]oncesi_ó_n_o', xpos=[ur'\]\]es', ]) + #15
-lema(ur'[Ee]recci_ó_n_o', xpos=[ur'\]\]es', ]) + #17
-lema(ur'[Ee]scorpi_ó_n_o', xpre=[ur'Di ', ur'Milo de ', ], xpos=[ur' and',ur'\]\]es', ]) + #12
-lema(ur'[Ee]valuaci_ó_n_o', xpos=[ur'\]\]es', ]) + #12
-lema(ur'[Ee]xcepci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
-lema(ur'[Pp]ante_ó_n_o', xpos=[ur'\]\]es', ]) + #19
-lema(ur'[Dd]ifusi_ó_n_o', xpre=[ur'Fonogram ', ], xpos=[ur'\]\]es', ]) + #19
-lema(ur'[Ee]liminaci_ó_n_o', xpos=[ur'\]\]es', ]) + #12
-lema(ur'[Ee]xpedici_ó_n_o', xpos=[ur' Antarctic', ur'\]\]es', ]) + #15
-lema(ur'[Ee]xportaci_ó_n_o', xpos=[ur'\]\]es', ]) + #15
-lema(ur'[Ii]ntervenci_ó_n_o', xpre=[ur'Ajoute ', ], xpos=[ur'\]\]es', ]) + #10
-lema(ur'[Oo]casi_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Pp]e_ó_n_o', xpre=[ur'Eddie ', ur'Dictyna ', ur'Carole ', ur'Domínguez ', ur'Lazy ', ur'Olatz ', ], xpos=[ur' – Batería', ur'\]\]es', ]) + #11
-lema(ur'[Pp]end_ó_n_o', xpre=[ur'Dan y su ', ], xpos=[ur'\]\]es', ]) + #16
-lema(ur'[Pp]etici_ó_n(?!\]|\.xsd)_o') + #15
-lema(ur'[Rr]ecuperaci_ó_n_o', xpos=[ur'\]\]es', ]) + #11
+lema(ur'[Ee]vasi_ó_n_o', xpre=[ur'Bridging ', ur'Cartwheel ', ur'Citro[eë]n ', ur'Disques ', ur'Filter ', ur'Her ', ur'Jailbreak ', ur'Matrix ', ur'Roman de ', ur'Somersault ', ur'[Ll]\'', ur'[Tt]ax ', ur'and ', ur'backflip ', ur'd\'', ur'legged ', ], xpos=[ur' (?:Films|of|par|Clause)', ur'(?:["\]]|, and)', ]) + #17
+lema(ur'[Ee]xportaci_ó_n_o', xpos=[ur'\]\]es', ]) + #17
+lema(ur'[Ll]egislaci_ó_n_o', xpre=[ur'Nueva Espana\. ', ], xpos=[ur'\]\]es', ]) + #17
+lema(ur'[Nn]ominaci_ó_n_o', xpos=[ur' indirècta', ur'\]\]es', ]) + #17
 lema(ur'[Ss]anci_ó_n_o', xpos=[ur'\]\]es', ]) + #17
-lema(ur'[Aa]grupaci_ó_n_o', xpos=[ur'\]\]es', ]) + #16
-lema(ur'[Cc]ongregaci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
-lema(ur'[Dd]estituci_ó_n_o', xpos=[ur'\]\]es', ]) + #10
-lema(ur'[Dd]etenci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
-lema(ur'[Jj]onr_ó_n_o', xpos=[ur'\]\]es', ]) + #9
-lema(ur'[Ll]egislaci_ó_n_o', xpre=[ur'Nueva Espana\. ', ], xpos=[ur'\]\]es', ]) + #14
-lema(ur'[Mm]igraci_ó_n_o', xpos=[ur'\]\]es', ]) + #13
-lema(ur'[Mm]ill_ó_n_o', pre=ur'([Mm]edio|[Uu]n|[Ee]l) ') + #5
-lema(ur'[Mm]oj_ó_n_o', xpre=[ur'Benedetto ', ur'Giuseppe '], xpos=[ur' Records', ur'\]\]es', ]) + #13
-lema(ur'[Ss]uspen_sió_n_ci[oó]') + #7
-lema(ur'[Vv]iolaci_ó_n_o', xpos=[ur'\]\]es', ]) + #12
-lema(ur'[Bb]omb_ó_n_o', xpos=[ur' Evolution', ur'(?:\. Aqua|\]\]es)', ]) + #11
-lema(ur'[Cc]amale_ó_n_o', xpos=[ur' Records', ur'\]\]es', ]) + #10
-lema(ur'[Cc]hampiñ_ó_n_o', xpos=[ur'\]\]es', ]) + #7
+lema(ur'[Ss]oluci_ó_n_o', xpos=[ur'\]\]es', ]) + #17
+lema(ur'[Uu]nificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #17
+lema(ur'[Cc]aj_ó_n_o', xpos=[ur' (?:Jinbiao|Run|Blvd|[Pp]ass|Summit|Transit|Boulevard|\(California|Valley|Park)', ur'(?:\]|\'\', sin tilde)', ur', (?:California|Fresno)', ]) + #16
 lema(ur'[Cc]ivilizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #16
-lema(ur'[Ii]nvasi_ó_n_o', pre=ur'\b(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|otra|de|[Pp]rimera|[Ss]egunda|[Tt]ercera|[Ss]éptima) ') + #7
-lema(ur'[Jj]urisdicci_ó_n_o', xpos=[ur'\]\]es', ]) + #10
-lema(ur'[Jj]uri_sdicció_n_dicci[oó]') + #4
-#lema(ur'[Jj]uri_sdiccio_nal(?:es|)_dicci[oó]') + #0
-lema(ur'[Mm]edall_ó_n_o', xpos=[ur'\]\]es', ]) + #11
-lema(ur'[Nn]utrici_ó_n_o', xpos=[ur'\]\]es', ]) + #12
-lema(ur'[Rr]eproducci_ó_n_o', xpos=[ur'\]\]es', ]) + #9
-lema(ur'[Uu]nificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #16
-lema(ur'[Cc]ombinaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Cc]onstelaci_ó_n_o', xpos=[ur'\]\]es', ]) + #9
-lema(ur'[Cc]ontinuaci_ó_n_o') + #10
-lema(ur'[Ee]scal_ó_n_o', xpre=[ur'California\)\|', ur'Max ', ], xpos=[ur' (?:de Fonton|\(California)', ur'\]\]es', ]) + #10
-lema(ur'[Ee]vasi_ó_n_o', xpre=[ur'Disques ', ur'Jailbreak ', ur'Bridging ', ur'Cartwheel ', ur'Citro[eë]n ', ur'Filter ', ur'Her ', ur'Matrix ', ur'Roman de ', ur'Somersault ', ur'[Ll]\'', ur'[Tt]ax ', ur'and ', ur'backflip ', ur'd\'', ur'legged ', ], xpos=[ur' (?:Films|of|par|Clause)', ur'(?:["\]]|, and)', ]) + #10
-lema(ur'[Mm]aldici_ó_n_o', xpos=[ur'\]\]es', ]) + #9
-lema(ur'[Oo]raci_ó_n_o', xpos=[ur'\]\]es', ]) + #11
-lema(ur'[Pp]rot_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpos=[ur' (?:Block|Prevé|Exora|Satria|en la clase|Synchrotron)', ur' *[1-9][0-9]*', ur'\]\]es', ]) + #14
-lema(ur'[Pp]royecci_ó_n_o', xpos=[ur'\]\]es', ]) + #10
-lema(ur'[Tt]elevisi_ó_n (?:por|[Ss]atelital|[Pp][uú]blica)_o') + #7
-lema(ur'[Tt]ransmi_sió_n_ci[oó]') + #6
-lema(ur'[Vv]egetaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Aa]d_aptació_n_pataci[oó]') + #2
-lema(ur'[Aa]limentaci_ó_n_o', xpos=[ur'(?:\]|\.es)', ]) + #8
-lema(ur'[Aa]nfitri_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Aa]nglosaj_ó_n_o', xpos=[ur'\]\](?:as?|es)', ]) + #10
-lema(ur'[Aa]plicaci_ó_n_o', pre=ur'(?:[Dd]e|[Ll]a|[Uu]na) ') + #5
-lema(ur'[Cc]ant_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el|[Uu]n|[Cc]ada|[Ss]u) ', xpre=[ur'estatjants ', ], xpos=[ur' (?:Tech|Hall|Ticino)', ]) + #7
-lema(ur'[Cc]om__unicaciones_m') + #4
-lema(ur'[Cc]onducci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Cc]onfesi_ó_n_o', xpre=[ur'A ', ur'Yô ', ], xpos=[ur'\]\]es', ]) + #12
-lema(ur'[Dd]edicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #11
-lema(ur'[Dd]esaparici_ó_n_o', xpos=[ur'\]\]es', ]) + #11
+lema(ur'[Cc]omposici_ó_n_o', xpos=[ur'\]\]es', ]) + #16
+lema(ur'[Cc]ongesti_ó_n_o', xpre=[ur'Hors ', ur'ease ', ur'of ', ur'the ', ur'traffic ', ur'venous ', ], xpos=[ur' (?:[Aa]voidance|[Hh]andling|[Tt]hreshold|[Pp]ricing|Tax|of|Relief|Window|charges?|window|[Nn]otification|[Mm]itigation|[Ii]nterpretation|[Rr]eduction|[Cc]osts|[Cc]ontrol)', ]) + #16
+lema(ur'[Dd]ivisi_ó_n_o', pre=ur'[Tt]ercera ', xpos=[ur'\.cl', ]) + #16
+lema(ur'[Ii]nnovaci_ó_n_o', xpos=[ur'\]\]es', ]) + #16
+lema(ur'[Pp]atr_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u) ', xpre=[ur'repiè ', ur'vida ', ], xpos=[ur' (?:de presse|and|Saint|Advisory)', ]) + #16
+lema(ur'[Pp]etici_ó_n(?!\]|\.xsd)_o') + #16
+lema(ur'[Pp]resi_ó_n_o', xpos=[ur'\]\]es', ]) + #16
+lema(ur'[Pp]rotecci_ó_n_o') + #16
+lema(ur'[Aa]daptaci_ó_n_o') + #15
+lema(ur'[Bb]omb_ó_n_o', xpos=[ur' Evolution', ur'(?:\. Aqua|\]\]es)', ]) + #15
+lema(ur'[Cc]elebraci_ó_n_o', xpos=[ur'\]\]es', ]) + #15
+lema(ur'[Cc]onexi_ó_n(?!\]|\.com)_o', xpre=[ur'Madonna ', ur'Makarras ', ]) + #15
+lema(ur'[Cc]ontinuaci_ó_n_o') + #15
+lema(ur'[Dd]e_cisió_n_(?:si[sc]i[oó]|cici[oó])') + #15
+lema(ur'[Dd]epresi_ó_n_o', xpos=[ur'\]\]es', ]) + #15
+lema(ur'[Oo]posici_ó_n_o', xpos=[ur'\]\]es', ]) + #15
+lema(ur'[Pp]rot_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpos=[ur' (?:Block|Prevé|Exora|Satria|en la clase|Synchrotron)', ur' *[1-9][0-9]*', ur'\]\]es', ]) + #15
+lema(ur'[Ss]al_ó_n_o', pre=ur'(?:[Ee]l|[Uu]n|[Cc]ada|[Ss]u) ', xpre=[ur'Entr\'acte: ', ], xpos=[ur' (?:Bovy|Indien|International|de (?:Provence|Mai|thé|la (?:Jeune|Correspondance|Société)|l\')|dans |des |d[\'’´]|du |Premium|[Rr][eé]alités?)', ur'(?:\]\]es|\.com)', ]) + #15
+lema(ur'[b]al_ó_n_o', xpos=[ur'\]\]es', ]) + #15
+lema(ur'[Cc]oncesi_ó_n_o', xpos=[ur'\]\]es', ]) + #14
+lema(ur'[Cc]orrupci_ó_n_o', xpos=[ur'\]\]es', ]) + #14
+lema(ur'[Ii]nstalaci_ó_n_o', xpos=[ur'\]\]es', ]) + #14
+lema(ur'[Ii]ntervenci_ó_n_o', xpre=[ur'Ajoute ', ], xpos=[ur'\]\]es', ]) + #14
+lema(ur'[Jj]am_ó_n_o', xpre=[ur'DJ ', ur'Joss ', ur'Kyle ', ur'Nacional ', ur'bruja ', ], xpos=[ur' (?:llega|Alfred|Lucas|Meredith|Gordon)', ur'\]\]es', ]) + #14
+lema(ur'[Mm]igraci_ó_n_o', xpos=[ur'\]\]es', ]) + #14
+lema(ur'[Nn]utrici_ó_n_o', xpos=[ur'\]\]es', ]) + #14
+lema(ur'[Oo]pci_ó_n_o', xpos=[ur'\]\]es', ]) + #14
+lema(ur'[Pp]erd_ó_n_o', xpre=[ur'Gerald ', ur'Laurent ', ur'Luana ', ur'S[ae]nt ', ], xpos=[ur'\]\]es', ]) + #14
+lema(ur'[Pp]untuaci_ó_n_o', xpos=[ur'\]\]es', ]) + #14
+lema(ur'[Rr]eedici_ó_n_o', xpos=[ur'\]\]es', ]) + #14
+lema(ur'[Ss]eparaci_ó_n_o', xpos=[ur'\]\]es', ]) + #14
+lema(ur'[Tt]ransici_ó_n_o', xpos=[ur'\]\]es', ]) + #14
+lema(ur'[Vv]iolaci_ó_n_o', xpos=[ur'\]\]es', ]) + #14
+lema(ur'[Dd]estrucci_ó_n_o', xpos=[ur'\]\]es', ]) + #13
 lema(ur'[Dd]imisi_ó_n_o', xpos=[ur'\]\]es', ]) + #13
-lema(ur'[Dd]ocumentaci_ó_n_o', xpre=[ur'Centre International de ', ], xpos=[ur'  e poder', ur'\]\]es', ]) + #10
-lema(ur'[Ee]dific__aciones_i') + #1
-lema(ur'[Ee]lecci_o_nes_ó') + #3
-lema(ur'[Ee]x_h_ibi(?:ó|ciones)_') + #4
-lema(ur'[Ee]xplotaci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
-lema(ur'[Ee]xposi_ci_ones_(?:|sici|si)') + #4
-lema(ur'[Ee]xpresi_ó_n_o', pre=ur'(?:[Dd]e|[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Aa]) ', xpre=[ur'L\'', ], xpos=[ur' t', ur'\.tv', ]) + #4
-lema(ur'[Gg]orri_ó_n_o', xpos=[ur'\]\]es', ]) + #9
-lema(ur'[Ii]nnovaci_ó_n_o', xpos=[ur'\]\]es', ]) + #13
-lema(ur'[Ii]nquisici_ó_n_o', xpos=[ur' á ', ur'(?:\]|\.scd|, chronista)', ]) + #15
-lema(ur'[Ii]nstalaci_ó_n_o', xpos=[ur'\]\]es', ]) + #11
-lema(ur'[Ss]alvaci_ó_n_o', xpos=[ur'\]\]es', ]) + #12
-lema(ur'[Tt]elecomunicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #11
-lema(ur'[Aa]fici_ó_n_o', xpos=[ur'\]\](?:es|ad[ao]s?)', ]) + #10
+lema(ur'[Ee]valuaci_ó_n_o', xpos=[ur'\]\]es', ]) + #13
+lema(ur'[Ee]xtinci_ó_n_o', xpos=[ur'\]\]es', ]) + #13
+lema(ur'[Ff]inalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #13
+lema(ur'[Hh]abitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #13
+lema(ur'[Ll]im_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpre=[ur'Ed\. ', ur'scorzeta ', ]) + #13
+lema(ur'[Pp]antal_ó_n_o', xpre=[ur'San ', ur'[Ll]e ', ur'monsieur ', ], xpos=[ur' (?:est|trop|et )', ur'(?:\]\][a-zñ]+|\'])', ]) + #13
+lema(ur'[Rr]eacci_ó_n_o', xpos=[ur'\]\]es', ]) + #13
+lema(ur'[Rr]eflexi_ó_n_o', xpre=[ur'(?:für|und) ', ur'Eine ', ur'Moment de ', ur'banda\)\|', ur'hermeneutische ', ur'kritischen ', ], xpos=[ur' (?:in|über|und|de[rs]|auf|Exhibition|Masterclass|\(banda)\b', ur', (?:Stargazery|Taste)', ur'\]\]es', ]) + #13
+lema(ur'[Ss]alvaci_ó_n_o', xpos=[ur'\]\]es', ]) + #13
+lema(ur'[Uu]rbanizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #13
+lema(ur'[Aa]fici_ó_n_o', xpos=[ur'\]\](?:es|ad[ao]s?)', ]) + #12
+lema(ur'[Aa]lgod_ó_n_o', xpos=[ur' Wine', ur'\]\](?:es|ero)', ]) + #12
 lema(ur'[Aa]lucinaci_ó_n_o', xpos=[ur'\]\]es', ]) + #12
-lema(ur'[Aa]mpliaci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
-lema(ur'[Cc]alificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Cc]anci_o_nes_ó') + #4
-lema(ur'[Cc]intur_ó_n_o', xpre=[ur'Ride ', ], xpos=[ur'\]\]es', ]) + #9
-lema(ur'[Cc]ontaminaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Cc]oordinaci_ó_n_o', xpos=[ur'\]\]es', ]) + #10
-lema(ur'[Cc]oronaci_ó_n_o', xpos=[ur'\]\]es', ]) + #11
-lema(ur'[Dd]emostraci_ó_n_o', xpos=[ur'\]\]es', ]) + #9
-lema(ur'[Ee]jecuci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Ee]stimaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Ee]xploraci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Ee]xtinci_ó_n_o', xpos=[ur'\]\]es', ]) + #11
-lema(ur'[Ff]abricaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Ii]luminaci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
-lema(ur'[Ii]ncorporaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Pp]articipaci_o_nes_ó') + #16
-lema(ur'[Pp]lanificaci_ó_n_o', xpos=[ur'(?:\]|\.gob)', ]) + #9
-lema(ur'[Pp]reparaci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
-lema(ur'[Tt]ransformaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Vv]otaci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
-lema(ur'[Aa]ctualizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
-lema(ur'[Aa]doraci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Aa]firmaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Cc]irculaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Cc]o_nmemoració_n_(?:nmemoracio|memoraci[oó])', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Cc]ompilaci_ó_n_o', xpos=[ur' curata', ur'\]\]es', ]) + #7
-lema(ur'[Cc]onformaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Dd]estrucci_ó_n_o', xpos=[ur'\]\]es', ]) + #10
-lema(ur'[Ee]mbri_ó_n_o', xpos=[ur'\]\](?:es|ari[ao]s?)', ]) + #10
-lema(ur'[Ff]acturaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Bb]ot_ó_n_o', xpre=[ur'Joaquín ', ], xpos=[ur'(?:\]|: Houghton)', ]) + #12
+lema(ur'[Cc]esi_ó_n_o', xpos=[ur'\]\]es', ]) + #12
+lema(ur'[Cc]omparaci_ó_n_o', xpre=[ur'\bE ', ], xpos=[ur'\]\]es', ]) + #12
+lema(ur'[Cc]onfesi_ó_n_o', xpre=[ur'A ', ur'Yô ', ], xpos=[ur'\]\]es', ]) + #12
+lema(ur'[Cc]oordinaci_ó_n_o', xpos=[ur'\]\]es', ]) + #12
+lema(ur'[Cc]oronaci_ó_n_o', xpos=[ur'\]\]es', ]) + #12
+lema(ur'[Dd]etenci_ó_n_o', xpos=[ur'\]\]es', ]) + #12
+lema(ur'[Dd]imensi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Oo]tra|[Ss]u|[Dd]e|[Ee]st?a|[Tt]ercera|[Cc]uarta) ', xpos=[ur' (?:psychique|Films|Records|Data)', ]) + #12
+lema(ur'[Dd]isposici_ó_n_o', xpos=[ur'\]\]es', ]) + #12
+lema(ur'[Ee]liminaci_ó_n_o', xpos=[ur'\]\]es', ]) + #12
+lema(ur'[Ee]scuadr_ó_n_o', xpos=[ur'[\]0-9]', ]) + #12
+lema(ur'[Ee]xtrusi_ó_n_o', xpre=[ur'Screw ', ur'The ', ], xpos=[ur'(?:\]\][a-z]+|: Battlehymns)', ]) + #12
+lema(ur'[Oo]raci_ó_n_o', xpos=[ur'\]\]es', ]) + #12
+lema(ur'[Pp]elot_ó_n_o', xpre=[ur'Oranje ', ur'Solidaires en ', ur'Tollo ', ur'[Tt]he ', ], xpos=[ur' (?:Association|d\')', ur'\]\][a-zñ]+', ]) + #12
+lema(ur'[Pp]royecci_ó_n_o', xpos=[ur'\]\]es', ]) + #12
+lema(ur'[Rr]ecopilaci_ó_n_o', xpos=[ur'\]\]es', ]) + #12
+lema(ur'[Aa]dmin_istració_n_(?:itraci[oó]|straci[oó]|istrac[ioó])') + #11
+lema(ur'[Cc]ombinaci_ó_n_o', xpos=[ur'\]\]es', ]) + #11
+lema(ur'[Cc]onsideraci_ó_n_o') + #11
+lema(ur'[Cc]onsideraci_ó_n_o', xpos=[ur'\]\]es', ]) + #11
+lema(ur'[Cc]onsolaci_ó_n_o', xpos=[ur'\]\]es', ]) + #11
+lema(ur'[Dd]edicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #11
+lema(ur'[Dd]emostraci_ó_n_o', xpos=[ur'\]\]es', ]) + #11
+lema(ur'[Dd]estituci_ó_n_o', xpos=[ur'\]\]es', ]) + #11
+lema(ur'[Dd]ocumentaci_ó_n_o', xpre=[ur'Centre International de ', ], xpos=[ur'  e poder', ur'\]\]es', ]) + #11
+lema(ur'[Ee]scorpi_ó_n_o', xpre=[ur'Di ', ur'Milo de ', ], xpos=[ur' and', ur'\]\]es', ]) + #11
+lema(ur'[Ee]xtensi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Aa]) ') + #11
 lema(ur'[Ff]ermi_ó_n_o', xpos=[ur'\]\]es', ]) + #11
-lema(ur'[Ff]racci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Hh]omogen_eizació_n_(?:izaci[oó]|eizacio)') + #3
-lema(ur'[Ii]ncisi_ó_n_o', xpre=[ur'Second ', ], xpos=[ur'\]\]es', ]) + #9
-lema(ur'[Mm]ansi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ', xpos=[ur' House', ]) + #5
-lema(ur'[Mm]edici_ó_n_o', xpos=[ur'\]\]es', ]) + #9
+lema(ur'[Ii]ncisi_ó_n_o', xpre=[ur'Second ', ], xpos=[ur'\]\]es', ]) + #11
+lema(ur'[Jj]onr_ó_n_o', xpos=[ur'\]\]es', ]) + #11
+lema(ur'[Ll]icitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #11
+lema(ur'[Mm]edall_ó_n_o', xpos=[ur'\]\]es', ]) + #11
+lema(ur'[Pp]e_ó_n_o', xpre=[ur'Carole ', ur'Dictyna ', ur'Domínguez ', ur'Eddie ', ur'Lazy ', ur'Olatz ', ], xpos=[ur' – Batería', ur'\]\]es', ]) + #11
+lema(ur'[Pp]lanificaci_ó_n_o', xpos=[ur'(?:\]|\.gob)', ]) + #11
 lema(ur'[Pp]recipitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #11
-lema(ur'[Rr]educci_ó_n_o', xpos=[ur'\.gov', ur'\]\]es', ]) + #6
+lema(ur'[Rr]ecuperaci_ó_n_o', xpos=[ur'\]\]es', ]) + #11
+lema(ur'[Tt]elecomunicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #11
+lema(ur'[Aa]dmiraci_ó_n_o', xpos=[ur'\]\]es', ]) + #10
+lema(ur'[Aa]dvocaci_ó_n_o', xpos=[ur'\]\]es', ]) + #10
+lema(ur'[Aa]nglosaj_ó_n_o', xpos=[ur'\]\](?:as?|es)', ]) + #10
+lema(ur'[Aa]rticulaci_ó_n_o', xpos=[ur'\]\]es', ]) + #10
+lema(ur'[Cc]amale_ó_n_o', xpos=[ur' Records', ur'\]\]es', ]) + #10
+lema(ur'[Cc]amar_ó_n_o', xpre=[ur'J\. ', ur'héros de ', ], xpos=[ur' (?:Marvel|Ochs|Jackson|Silverek)', ur'(?:\]|, la révolution)', ]) + #10
+lema(ur'[Cc]ongregaci_ó_n_o', xpos=[ur'\]\]es', ]) + #10
+lema(ur'[Cc]orrecci_ó_n_o', xpos=[ur'\]\]es', ]) + #10
+lema(ur'[Dd]emarcaci_ó_n_o', xpos=[ur'\]\]es', ]) + #10
+lema(ur'[Dd]esambiguaci_ó_n(?!\])_o') + #10
+lema(ur'[Dd]esaparici_ó_n_o', xpos=[ur'\]\]es', ]) + #10
+lema(ur'[Ee]jecuci_ó_n_o', xpos=[ur'\]\]es', ]) + #10
+lema(ur'[Ee]mbri_ó_n_o', xpos=[ur'\]\](?:es|ari[ao]s?)', ]) + #10
+lema(ur'[Ee]rupci_ó_n_o', xpos=[ur'\]\]es', ]) + #10
+lema(ur'[Ee]scal_ó_n_o', xpre=[ur'California\)\|', ur'Max ', ], xpos=[ur' (?:de Fonton|\(California)', ur'\]\]es', ]) + #10
+lema(ur'[Ee]xploraci_ó_n_o', xpos=[ur'\]\]es', ]) + #10
+lema(ur'[Ee]xten_sió_n_ci[oó]') + #10
+lema(ur'[Gg]orri_ó_n_o', xpos=[ur'\]\]es', ]) + #10
+lema(ur'[Ii]mpresi_ó_n_o', xpos=[ur' de Felipe Mey', ur'\]\]es', ]) + #10
+lema(ur'[Mm]edici_ó_n_o', xpos=[ur'\]\]es', ]) + #10
+lema(ur'[Rr]edenci_ó_n_o', xpos=[ur'\]\]es', ]) + #10
+lema(ur'[Rr]educci_ó_n_o', xpos=[ur'\.gov', ur'\]\]es', ]) + #10
+lema(ur'[Tt]ra_nsliteració_n_sliteraci[oó]') + #10
+lema(ur'[Tt]ransformaci_ó_n_o', xpos=[ur'\]\]es', ]) + #10
+lema(ur'[Tt]ripulaci_ó_n_o', xpos=[ur'\]\]es', ]) + #10
+lema(ur'[Aa]ctualizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #9
+lema(ur'[Bb]uf_ó_n_o', xpos=[ur'\]\]es', ]) + #9
+lema(ur'[Bb]uz_ó_n_o', xpre=[ur'Bernard ', ur'Beverlee ', ur'Freddy ', ur'du ', ], xpos=[ur'\]\]es', ]) + #9
+lema(ur'[Cc]hampiñ_ó_n_o', xpos=[ur'\]\]es', ]) + #9
+lema(ur'[Cc]intur_ó_n_o', xpre=[ur'Ride ', ], xpos=[ur'\]\]es', ]) + #9
+lema(ur'[Cc]onstelaci_ó_n_o', xpos=[ur'\]\]es', ]) + #9
+lema(ur'[Dd]ecisi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #9
+lema(ur'[Dd]evoci_ó_n_o', xpos=[ur'\]\]es', ]) + #9
+lema(ur'[Ee]stimaci_ó_n_o', xpos=[ur'\]\]es', ]) + #9
+lema(ur'[Ee]xcepci_ó_n_o', xpos=[ur'\]\]es', ]) + #9
+lema(ur'[Gg]raduaci_ó_n_o', xpos=[ur'\]\]es', ]) + #9
+lema(ur'[Ii]luminaci_ó_n_o', xpos=[ur'\]\]es', ]) + #9
+lema(ur'[Ii]nspiraci_ó_n_o', xpos=[ur'\]\]es', ]) + #9
+lema(ur'[Mm]enci_ó_n_o', xpos=[ur'\]\]es', ]) + #9
+lema(ur'[Nn]avegaci_ó_n_o', xpos=[ur'\]\]es', ]) + #9
+lema(ur'[Nn]otaci_ó_n_o', xpos=[ur'\]\]es', ]) + #9
+lema(ur'[Oo]ca_sió_n_(?:ci[oó]|sio)') + #9
+lema(ur'[Oo]casi_ó_n_o', xpos=[ur'\]\]es', ]) + #9
+lema(ur'[Pp]eregrinaci_ó_n_o', xpos=[ur'\]\]es', ]) + #9
+lema(ur'[Pp]rofesi_ó_n_o', xpos=[ur'\]\](?:es|al|ales|istas?|almente)', ]) + #9
+lema(ur'[Pp]urificaci_ó_n_o', xpos=[ur' \(Peñuelas', ur'\]\]es', ]) + #9
+lema(ur'[Rr]ecepci_ó_n_o', xpos=[ur'\]\]es', ]) + #9
 lema(ur'[Rr]eglamentaci_ó_n_o', xpos=[ur'\]\]es', ]) + #9
 lema(ur'[Rr]ehabilitaci_ó_n_o') + #9
-lema(ur'[Rr]otaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Ss]imulaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Tt]entaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Ss]aj_ó_n_o', xpos=[ur'\]\]es', ]) + #9
+lema(ur'[Vv]egetaci_ó_n_o', xpos=[ur'\]\]es', ]) + #9
 lema(ur'[b]ill_ó_n_o', xpos=[ur' (?:of)', ur'\]\][a-zñ]+', ]) + #9
-lema(ur'[Aa]probaci_ó_n_o', xpos=[ur'\]\]es', ]) + #49
-lema(ur'[Bb]uz_ó_n_o', xpre=[ur'Beverlee ', ur'Freddy ', ur'Bernard ', ur'du ', ], xpos=[ur'\]\]es', ]) + #7
-lema(ur'[Cc]ombusti_ó_n_o', pre=ur'(?:[Ll]a|[Dd]e) ', xpos=[ur' (?:et|en général)', ]) + #6
-lema(ur'[Cc]ongesti_ó_n_o', xpre=[ur'Hors ', ur'ease ', ur'of ', ur'the ', ur'traffic ', ur'venous ', ], xpos=[ur' (?:[Aa]voidance|[Hh]andling|[Tt]hreshold|[Pp]ricing|Tax|of|Relief|Window|charges?|window|[Nn]otification|[Mm]itigation|[Ii]nterpretation|[Rr]eduction|[Cc]osts|[Cc]ontrol)', ]) + #11
-lema(ur'[Cc]onspiraci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Cc]ooperaci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
-lema(ur'[Dd]esambiguaci_ó_n(?!\])_o') + #10
-lema(ur'[Dd]escalificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Ee]corregi_ó_n(?!\])_o') + #4
-lema(ur'[Ee]d_i_ciones_') + #3
-lema(ur'[Ee]spol_ó_n_o', xpos=[ur'\]\]es', ]) + #7
-#lema(ur'[Ii]__dentificaciones_n') + #0
-lema(ur'[Ii]dentificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
-lema(ur'[Ii]mpresi_ó_n_o', xpos=[ur' de Felipe Mey', ur'\]\]es', ]) + #8
-lema(ur'[Ii]nspiraci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Ll]icitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #11
-lema(ur'[Mm]unici_ó_n_o', xpos=[ur'(?:\]|\.org)', ]) + #5
-lema(ur'[Oo]bservaci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
-lema(ur'[Pp]ensi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ', xpre=[ur'Filles de ', ], xpos=[ur' des', ]) + #3
-lema(ur'[Rr]ecreaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Ss]umisi_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Tt]ap_ó_n_o', xpre=[ur'Michel ', ur'Serge ', ], xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Tt]ripulaci_ó_n_o', xpos=[ur'\]\]es', ]) + #9
-lema(ur'[Aa]ctuaci_o_nes_ó') + #6
+lema(ur'[d]ecisi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Pp]or) ') + #9
+lema(ur'[Aa]dici_ó_n_o', xpos=[ur'\]\]es', ]) + #8
+lema(ur'[Aa]doraci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
 lema(ur'[Aa]leaci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
-lema(ur'[Aa]rticulaci_ó_n_o', xpos=[ur'\]\]es', ]) + #9
-lema(ur'[Bb]uf_ó_n_o', xpos=[ur'\]\]es', ]) + #9
-lema(ur'[Cc]amar_ó_n_o', xpre=[ur'J\. ', ur'héros de ', ], xpos=[ur' (?:Marvel|Ochs|Jackson|Silverek)', ur'(?:\]|, la révolution)', ]) + #9
-lema(ur'[Cc]lasificaci_o_nes_ó') + #1
-lema(ur'[Cc]olisi_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Cc]ontrataci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Ee]levaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Ee]xaltaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Aa]mpliaci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
+lema(ur'[Cc]alificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
+lema(ur'[Cc]ant_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el|[Uu]n|[Cc]ada|[Ss]u) ', xpre=[ur'estatjants ', ], xpos=[ur' (?:Tech|Hall|Ticino)', ]) + #8
+lema(ur'[Cc]ircunvoluci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
+lema(ur'[Cc]olonizaci_ó_n_o', xpos=[ur'\.com', ]) + #8
+lema(ur'[Cc]onstruc_ció_n_i[oó]', xpos=[ur' dun', ]) + #8
+lema(ur'[Cc]onversaci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
+lema(ur'[Cc]ooperaci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
+lema(ur'[Dd]eterminaci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
+lema(ur'[Dd]ivisi_ó_n [Pp]ol[ií]tica_o') + #8
 lema(ur'[Ee]xplicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
-lema(ur'[Ee]xtensi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Aa]) ') + #10
-lema(ur'[Ee]xtrusi_ó_n_o', xpre=[ur'Screw ', ur'The ', ], xpos=[ur'(?:\]\][a-z]+|: Battlehymns)', ]) + #9
+lema(ur'[Ee]xplotaci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
+lema(ur'[Ff]og_ó_n_o', xpos=[ur'\]\]es', ]) + #8
+lema(ur'[Hh]ormig_ó_n_o', xpos=[ur'\]\](?:es|ad[ao]s?)', ]) + #8
+lema(ur'[Ii]dentificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
+lema(ur'[Mm]aldici_ó_n_o', xpos=[ur'\]\]es', ]) + #8
+lema(ur'[Oo]bservaci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
+lema(ur'[Oo]vaci_ó_n(?!\]|\.pe|\.com)_o') + #8
+lema(ur'[Pp]acificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
+lema(ur'[Pp]ort_ó_n_o', xpre=[ur'Pamela ', ], xpos=[ur' (?:d[\'’]|Down|Plantation)', ur'\]\]es', ]) + #8
+lema(ur'[Pp]reparaci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
+lema(ur'[Pp]reten_sio_nes_(?:sió|ci[oó])') + #8
+lema(ur'[Pp]rivatizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
+lema(ur'[Rr]epetici_ó_n_o', xpos=[ur'\]\]es', ]) + #8
+lema(ur'[Rr]eproducci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
+lema(ur'[Ss]axof_ó_n_o', xpos=[ur'\]\]es', ]) + #8
+lema(ur'[Ss]educci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
+lema(ur'[Tt]elevisi_ó_n (?:por|[Ss]atelital|[Pp][uú]blica)_o') + #8
+lema(ur'[Aa]firmaci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
+lema(ur'[Aa]lmid_ó_n_o', xpre=[ur'Rosales ', ], xpos=[ur'\]\]es', ]) + #7
+lema(ur'[Aa]nfitri_ó_n_o', xpos=[ur'\]\]es', ]) + #7
+lema(ur'[Aa]pag_ó_n_o', xpos=[ur'\]\]es', ]) + #7
+lema(ur'[Cc]irculaci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
+lema(ur'[Cc]ompilaci_ó_n_o', xpos=[ur' curata', ur'\]\]es', ]) + #7
+lema(ur'[Cc]onducci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
+lema(ur'[Cc]onfirmaci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
+lema(ur'[Cc]onspiraci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
+lema(ur'[Cc]ontrataci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
+lema(ur'[Dd]isoluci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
+lema(ur'[Ee]laboraci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
+lema(ur'[Ee]spol_ó_n_o', xpos=[ur'\]\]es', ]) + #7
 lema(ur'[Ff]ortificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
 lema(ur'[Gg]alp_ó_n_o', xpos=[ur'\]\]es', ]) + #7
-lema(ur'[Ii]nflexi_ó_n_o', xpre=[ur'd\'', ur'and '], xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Ii]ntera_c_ciones_') + #3
-lema(ur'[Ii]nvestigaci_o_nes_ó') + #3
-lema(ur'[Mm]elocot_ó_n_o', xpos=[ur'\]\](?:es|er[ao]s?)', ]) + #7
-lema(ur'[Mm]enci_ó_n_o', xpos=[ur'\]\]es', ]) + #9
-lema(ur'[Pp]roporci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-#lema(ur'[Pp]ublicaci_o_nes_ó') + #0
-lema(ur'[Pp]urificaci_ó_n_o', xpos=[ur' \(Peñuelas', ur'\]\]es', ]) + #8
-lema(ur'[Rr]ealizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Ss]educci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Tt]amp_ó_n_o', xpre=[ur'\bdu ', ur'Zombie ', ur'[Ll]e ', ], xpos=[ur' Disease', ur'\]\]es', ]) + #3
-lema(ur'[Vv]ersi_o_nes_ó') + #5
-lema(ur'[Aa]dvocaci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
-lema(ur'[Aa]gresi_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Aa]tracci_ó_n_o', xpos=[ur'[\]3]', ]) + #3
-lema(ur'[Aa]udici_ó_n_o', xpos=[ur' Irritable', ur'\]\]es', ]) + #3
-lema(ur'[Cc]anel_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Cc]ircunvalaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Cc]omputaci_ó_n_o', xpos=[ur'(?:\]|\.facyt)', ]) + #5
-lema(ur'[Cc]ondici_ó_n_o', pre=ur'(?:[Ll]as?|[Uu]nas?|[Ss]us?) ') + #2
-lema(ur'[Cc]onsolaci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
-lema(ur'[Cc]onversaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Cc]orrecci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
-lema(ur'[Dd]ecoraci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Dd]evoci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Dd]istinci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Dd]ivisi_ó_n [Pp]ol[ií]tica_o') + #8
-lema(ur'[Dd]onaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Ff]og_ó_n_o', xpos=[ur'\]\]es', ]) + #8
+lema(ur'[Ii]ncorporaci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
 lema(ur'[Ii]ndemnizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
-lema(ur'[Ii]ntenci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ii]nversi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Ll]ap_ó_n_o', xpre=[ur'Gúdar\+Hazte ', ur'Botaniques de ', ur'Parlons ', ur'\bDo ', ur'\bun ', ], xpos=[ur'\]\](?:as?|es)', ]) + #4
-lema(ur'[Mm]ont_ó_n_o', xpre=[ur'Julie ', ur'Leonard ', ur'de ', ], xpos=[ur' \(Eccles', ur'(?:\]|, (?:Canad[áa]|Gran|Bradley))', ]) + #5
-lema(ur'[Nn]avegaci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
-lema(ur'[Nn]otaci_ó_n_o', xpos=[ur'\]\]es', ]) + #9
-lema(ur'[Oo]vaci_ó_n(?!\]|\.pe|\.com)_o') + #8
-lema(ur'[Pp]ercepci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Pp]eregrinaci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
-lema(ur'[Pp]laneaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Pp]lantaci_ó_n(?!\])_o') + #5
-lema(ur'[Pp]ort_ó_n_o', xpre=[ur'Pamela '], xpos=[ur' (?:d[\'’]|Down|Plantation)', ur'\]\]es', ]) + #7
-lema(ur'[Pp]ropagaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Pp]rostituci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Rr]ecolecci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Rr]elaci_o_nes_ó') + #1
-lema(ur'[Rr]epetici_ó_n_o', xpos=[ur'\]\]es', ]) + #7
-lema(ur'[Ss]aj_ó_n_o', xpos=[ur'\]\]es', ]) + #8
-lema(ur'[Aa]dmisi_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Aa]lmid_ó_n_o', xpre=[ur'Rosales '], xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Aa]pag_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Cc]ertifi_cació_n_(?:a[cs]i[oó]|casi[oó])') + #1
-lema(ur'[Cc]hicharr_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Cc]ircunscripci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Cc]ircunvoluci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
-lema(ur'[Cc]olch_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Cc]olonizaci_ó_n_o', xpos=[ur'\.com', ]) + #7
-lema(ur'[Cc]onfirmaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Cc]ontribuci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Cc]onurbaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Cc]ulminaci_ó_n(?!\])_o') + #4
-lema(ur'[Dd]isertaci_ó_n_o', xpos=[ur'\]\]es', ur' physico']) + #4
-lema(ur'[Ee]quipaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Ee]rupci_ó_n_o', xpos=[ur'\]\]es', ]) + #9
-lema(ur'[Ee]xcavaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Ee]xpan_sió_n_ci[oó]') + #3
-lema(ur'[Hh]ormig_ó_n_o', xpos=[ur'\]\](?:es|ad[ao]s?)', ]) + #7
-lema(ur'[Ii]mportaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Ii]nvitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Jj]arr_ó_n_o', xpre=[ur'& ', ], xpos=[ur'\]', ur' (?:Collins|Vosburg)']) + #5
-lema(ur'[Mm]asterizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Pp]acificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Pp]enetraci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Pp]ersecuci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Pp]rivatizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #8
-lema(ur'[Rr]adiodifusi_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Rr]edenci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
-lema(ur'[Rr]eputaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Rr]espiraci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Ss]ensaci_ó_n_o') + #4
-lema(ur'[Ss]ensaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Tt]abl_ó_n_o', xpos=[ur'\]\]es', ]) + #7
-lema(ur'[Tt]raici_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Aa]decuaci_ó_n(?!\])_o') + #4
-lema(ur'[Aa]luvi_ó_n_o', xpos=[ur'\]\](?:es|al|ales)', ]) + #4
-lema(ur'[Aa]mputaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Aa]nexi_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Aa]nunciaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Aa]utorizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Cc]apacitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Cc]odificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Cc]ompetició_n__m?', xpos=[ur', reglamentacions']) + #3
-lema(ur'[Cc]ompresi_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Cc]omuni_ó_n_o', xpre=[ur'cathechismo de la ', ], xpos=[ur'(?:\]|\.org)', ]) + #2
-lema(ur'[Cc]onclusi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #5
-lema(ur'[Cc]osmovisi_ó_n_o', xpos=[ur' des', ur'\]\]es', ]) + #4
-lema(ur'[Dd]erivaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Dd]esignaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Dd]etecci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Dd]isposici_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Ee]migraci_ó_n_o', xpos=[ur'(?:\.ca|\]\]es)', ]) + #5
-lema(ur'[Ee]moci_ó_n(?![\]0-9])_o') + #5
-lema(ur'[Ee]staci_o_nes_ó') + #3
-lema(ur'[Ee]xplosi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Aa]) ') + #6
-lema(ur'[Ee]xpropiaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Ff]ermentaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Gg]raduaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Ii]mplementaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-#lema(ur'[Ii]nclusi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Aa]) ') + #0
-lema(ur'[Ii]nserci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Ii]ntersecci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Ii]ntoxicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Jj]ubilaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
 lema(ur'[Ll]ecci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
-lema(ur'[Ll]ocaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Mm]odificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Nn]acionalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Nn]egociaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Nn]umeraci_ó_n_o') + #5
-lema(ur'[Nn]umeraci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Oo]bsesi_ó_n_o', xpre=[ur'l[\'’]', ], xpos=[ur'(?:\])', ]) + #4
-lema(ur'[Oo]rej_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Oo]rientaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Oo]xidaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Pp]artici_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Pp]ercusi_o_nes_ó') + #1
-lema(ur'[Pp]ez_ó_n_o', xpre=[ur'Andre ', ur'Jean-Baptiste ', ], xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Pp]orci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Pp]romulgaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Rr]eelecci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Rr]eencarnaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Rr]egi_o_nes_ó') + #1
-lema(ur'[Rr]eligi_ó_n [Cc]at[oó]lica_o') + #3
-lema(ur'[Rr]eligi_ó_n_o', pre=ur'(?:[Uu]na|[Cc]ada|[Ss]u) ') + #3
-lema(ur'[Rr]eorganizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Rr]epresi_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Rr]eversi_ó_n_o', xpre=[ur';', ur'Series ', ur'bit ', ], xpos=[ur' to', ur'\]\]es', ]) + #4
-lema(ur'[Ss]elecci_o_nes_ó') + #4
-lema(ur'[Ss]eñalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Ss]if_ó_n(?!\])_o') + #3
-lema(ur'[Tt]if_ó_n_o', xpos=[ur'(?:[1-9\]])', ]) + #7
-lema(ur'[Tt]ra_nsliteracio_nes_(?:sliteraci[oó]|nsliteració)') + #1
-lema(ur'[Uu]tilizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Vv]inculaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Aa]creditaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Aa]cumulaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Aa]dicci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Aa]dici_ó_n_o', xpos=[ur'\]\]es', ]) + #6
-lema(ur'[Aa]djudicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Aa]gregaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Aa]ler_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-#lema(ur'[Aa]niquilaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-lema(ur'[Aa]notaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Aa]proximaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Aa]scensi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #2
-lema(ur'[Aa]utodeterminaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Aa]utomatizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-#lema(ur'[Bb]ar_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Aa]l?) ', xpre=[ur'\bpar ', ur'acuerdo ', ], xpos=[ur' (?:Michele|Reiter|Cohen|Corbin|Wolman|Samedi|Zemo|Gattoni)', ur', el', ]) + #0
-lema(ur'[Bb]eatificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Bb]endici_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Bb]odeg_ó_n(?!\])_o') + #1
-lema(ur'[Cc]aracterizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Cc]ivilizaci_o_nes_ó') + #3
+lema(ur'[Mm]arat_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u) ') + #7
+lema(ur'[Mm]elocot_ó_n_o', xpos=[ur'\]\](?:es|er[ao]s?)', ]) + #7
+lema(ur'[Oo]rientaci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
+lema(ur'[Pp]roclamaci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
+lema(ur'[Rr]ealizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
+lema(ur'[Rr]ecreaci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
+lema(ur'[Ss]uspen_sió_n_ci[oó]') + #7
+lema(ur'[Tt]abl_ó_n_o', xpos=[ur'\]\]es', ]) + #7
+lema(ur'[Tt]ap_ó_n_o', xpre=[ur'Michel ', ur'Serge ', ], xpos=[ur'\]\]es', ]) + #7
+lema(ur'[Tt]entaci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
+lema(ur'[Tt]ransmi_sió_n_ci[oó]') + #7
+lema(ur'[Vv]otaci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
+lema(ur'[Aa]claraci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Aa]ctuaci_o_nes_ó') + #6
+lema(ur'[Aa]gregaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Aa]limentaci_ó_n_o', xpos=[ur'(?:\]|\.es)', ]) + #6
+lema(ur'[Cc]hicharr_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Cc]ircunvalaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Cc]olch_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Cc]omputaci_ó_n_o', xpos=[ur'(?:\]|\.facyt)', ]) + #6
+lema(ur'[Cc]onclusi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #6
 lema(ur'[Cc]ondecoraci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Cc]onformaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Cc]ontribuci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Dd]istinci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Dd]onaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Ee]d_i_ciones_') + #6
+lema(ur'[Ee]lec_ció_n_i[oó]') + #6
+lema(ur'[Ee]levaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Ee]moci_ó_n(?![\]0-9])_o') + #6
+lema(ur'[Ee]xaltaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Ee]xcavaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Ee]xplosi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Aa]) ') + #6
+lema(ur'[Ee]xpresi_ó_n_o', pre=ur'(?:[Dd]e|[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Aa]) ', xpre=[ur'L\'', ], xpos=[ur' t', ur'\.tv', ]) + #6
+lema(ur'[Ff]il_ó_n_o', xpre=[ur' du ', ur' i ', ur'Augustin ', ur'L\. ', ur'Larese ', ur'Rick ', ur'Robert ', ur'solenaskitan ', ], xpos=[ur' (?:Kmita|réduit)', ur'\]\]es', ]) + #6
+lema(ur'[Ff]undici_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Ii]mitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Ii]mplementaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Ii]mportaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Ii]nvasi_ó_n_o', pre=ur'\b(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|otra|de|[Pp]rimera|[Ss]egunda|[Tt]ercera|[Ss]éptima) ') + #6
+lema(ur'[Ii]nversi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Jj]ap_o_nes_ó') + #6
+lema(ur'[Jj]uri_sdicció_n_dicci[oó]') + #6
+lema(ur'[Mm]ansi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ', xpos=[ur' House', ]) + #6
+lema(ur'[Mm]ill_ó_n_o', pre=ur'([Mm]edio|[Uu]n|[Ee]l) ') + #6
+lema(ur'[Mm]odificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Nn]umeraci_ó_n_o') + #6
+lema(ur'[Nn]umeraci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Pp]remiaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Pp]retensi_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Pp]romulgaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Pp]rostituci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Rr]adiodifusi_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Rr]ecolecci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Rr]eencarnaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Rr]epresi_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Rr]evisi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #6
+lema(ur'[Rr]otaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Ss]imulaci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Tt]if_ó_n_o', xpos=[ur'(?:[1-9\]])', ]) + #6
+lema(ur'[Tt]raici_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Tt]ransfiguraci_ó_n_o', xpos=[ur'\]\]es', ]) + #6
+lema(ur'[Vv]ersi_o_nes_ó') + #6
+lema(ur'[Aa]creditaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Aa]decuaci_ó_n(?!\])_o') + #5
+lema(ur'[Aa]dicci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Aa]gresi_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Aa]mputaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Aa]nunciaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Aa]plicaci_ó_n_o', pre=ur'(?:[Dd]e|[Ll]a|[Uu]na) ') + #5
+lema(ur'[Bb]eatificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Cc]a_n_ciones_') + #5
+lema(ur'[Cc]anci_o_nes_ó') + #5
+lema(ur'[Cc]ertifi_cacio_nes_(?:a[cs]i[oó]|casi[oó]|cació)') + #5
+lema(ur'[Cc]ircunscripci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Cc]odificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Cc]om__unicaciones_m') + #5
+lema(ur'[Cc]ompresi_ó_n_o', xpos=[ur'\]\]es', ]) + #5
 lema(ur'[Cc]onfiguraci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Dd]emarcaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Dd]etonaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-#lema(ur'[Dd]iapas_ó_n_o', xpre=[ur'[Ll]e ', ur'[Tt]he ', ur'revue ', ], xpos=[ur' (?:Découverte|Records|[Dd]|\(revista)\b', ur'(?:, Scherzo|’s|\'|\]\])', ]) + #0
-lema(ur'[Ee]scalaf_ó_n(?!\])_o') + #4
-lema(ur'[Ee]x_cepció_n_epci[oó]') + #2
+lema(ur'[Cc]onmoci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Cc]onsolidaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Cc]ontaminaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Cc]ontradicci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Cc]orrec_c_iones_') + #5
+lema(ur'[Dd]ecepci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Dd]ecoraci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Dd]efunci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Dd]etecci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Ee]corregi_ó_n(?!\])_o') + #5
+lema(ur'[Ee]migraci_ó_n_o', xpos=[ur'(?:\.ca|\]\]es)', ]) + #5
+lema(ur'[Ee]quipaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Ee]x_h_ibi(?:ó|ciones)_') + #5
+lema(ur'[Ff]racci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
 lema(ur'[Gg]laciaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Hh]ipertensi_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ii]maginaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ii]mitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #7
+lema(ur'[Ii]_o_nes_ó') + #5
+lema(ur'[Ii]mprovisaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
 lema(ur'[Ii]n_strucció_n_trucci[oó]', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Ii]nclinaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ii]nspecci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Ii]nten_cio_nes_si[oó]') + #2
-lema(ur'[Ii]ntimidaci_ó_n(?!\])_o') + #4
-lema(ur'[Ii]rrigaci_ó_n(?!\])_o') + #3
+lema(ur'[Ii]nten_cio_nes_si[oó]') + #5
+lema(ur'[Ii]ntoxicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Ii]nvitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Jj]arr_ó_n_o', xpre=[ur'& ', ], xpos=[ur' (?:Collins|Vosburg)', ur'\]', ]) + #5
 lema(ur'[Ll]egalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Mm]arat_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u) ') + #5
-lema(ur'[Mm]el_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u) ', xpre=[ur'Saye ', ur'abbati ', ur'listado ', ur'musicales ', ], xpos=[ur' (?:Music|Kinenbi)', ur', Naver', ]) + #3
-lema(ur'[Mm]odernizaci_ó_n_o', xpos=[ur'(?:\]|\.(?:cl|gob))', ]) + #1
+lema(ur'[Mm]ont_ó_n_o', xpre=[ur'Julie ', ur'Leonard ', ur'de ', ], xpos=[ur' \(Eccles', ur'(?:\]|, (?:Canad[áa]|Gran|Bradley))', ]) + #5
 lema(ur'[Mm]otivaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
 lema(ur'[Mm]ultiplicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Nn]ominaci_o_nes_ó') + #1
-lema(ur'[Oo]bligaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Oo]ca_sió_n_ci[oó]') + #2
-lema(ur'[Oo]rdenaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Oo]rganizaci_o_nes_ó') + #1
+lema(ur'[Mm]unici_ó_n_o', xpos=[ur'(?:\]|\.org)', ]) + #5
+lema(ur'[Nn]egociaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Oo]bsesi_ó_n_o', xpre=[ur'l[\'’]', ], xpos=[ur'(?:\])', ]) + #5
 lema(ur'[Pp]erdig_ó_n_o', xpre=[ur'Pierre ', ur'Troubadour ', ], xpos=[ur' d', ur'\]\][a-zñ]+', ]) + #5
-lema(ur'[Pp]ostulaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Pp]recisi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Cc]on| y| de) ', xpos=[ur' (?:Bass|Weapons)', ]) + #4
-lema(ur'[Pp]remiaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Rr]adiaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Rr]ebeli_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Ee]sta|[Ee]sa|[Ee]n) ', xpos=[ur'(?:\]|\.org)', ]) + #4
-lema(ur'[Rr]eestructuraci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Rr]efundaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Rr]egi_ó_n_o', pre=ur'(?:[Uu]na|[Cc]ada|[Ss]u) ', xpos=[ur' d\'Ambovombe', ]) + #4
-lema(ur'[Rr]egionalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Rr]egulaci_ó_n_o', xpos=[ur'(?:[\]1])', ]) + #3
-lema(ur'[Rr]estricci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Ss]alm_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u) ', xpre=[ur'templo ', ur'áerea ', ], xpos=[ur' (?:Bay|Leap|Chase)', ur' P\.', ]) + #3
-lema(ur'[Ss]ustituci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Tt]racci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Pp]ersecuci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Pp]ez_ó_n_o', xpre=[ur'Andre ', ur'Jean-Baptiste ', ], xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Pp]lantaci_ó_n(?!\])_o') + #5
+lema(ur'[Pp]ose_sió_n_ci[oó]') + #5
+lema(ur'[Pp]ositr_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ') + #5
+lema(ur'[Pp]recisi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Cc]on| y| de) ', xpos=[ur' (?:Bass|Weapons)', ]) + #5
+lema(ur'[Pp]revenci_ó_n_o') + #5
+lema(ur'[Pp]roporci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Rr]ebeli_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Ee]sta|[Ee]sa|[Ee]n) ', xpos=[ur'(?:\]|\.org)', ]) + #5
+lema(ur'[Rr]eorganizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Rr]eposici_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Rr]espiraci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Rr]etrotranspos_ó_n_o', xpos=[ur' superfamily', ur'\]\]es', ]) + #5
+lema(ur'[Rr]eversi_ó_n_o', xpre=[ur';', ur'Series ', ur'bit ', ], xpos=[ur' to', ur'\]\]es', ]) + #5
+lema(ur'[Ss]atisfacci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Ss]elecci_o_nes_ó') + #5
 lema(ur'[Tt]ranscripci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
 lema(ur'[Tt]urr_ó_n_o', xpos=[ur' Kofi', ur'\]\]es', ]) + #5
-lema(ur'[Vv]iolaci_o_nes_ó') + #3
-lema(ur'[g]asc_ó_n_o', xpre=[ur'[Ll]e ', ur'ritme ', ur'Gentilòme ', ur'[Cc]atonet ', ur'[Cc]atonet ritme ', ur'dialecte ', ur'gentilòme ', ], xpos=[ur' du\b', ur'"', ]) + #1
-lema(ur'Gab_ó_n_o', pre=ur'(?:[Dd]e|[Ee]n) ', xpos=[ur' [Aa]irlines', ]) + #2
-lema(ur'[Aa]bolici_ó_n_o', xpre=[ur'pola ', ], xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Aa]bsorci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Aa]claraci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Aa]dmiraci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Uu]tilizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Aa]cumulaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Aa]dmisi_ó_n_o', xpos=[ur'\]\]es', ]) + #4
 lema(ur'[Aa]dquisici_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Aa]glomeraci_ó_n_o', xpos=[ur' deu', ur'\]\]es', ]) + #2
 lema(ur'[Aa]lineaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Cc]alz_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Cc]anonizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Cc]apitulaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Cc]occi_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Cc]omprensi_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Cc]onsolidaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Cc]ontenci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Cc]ontradicci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Cc]oproducci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Cc]uraci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Dd]ataci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Dd]ecepci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Dd]educci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-#lema(ur'[Dd]eforestaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-lema(ur'[Dd]eformaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Dd]efunci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Dd]iscriminaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Dd]istinci_o_nes_ó') + #1
-lema(ur'[Dd]ivulgaci_ó_n_o', xpos=[ur'(?:\]\][a-zñ]+|\.famaf)', ]) + #2
-lema(ur'[Ee]dici_o_nes_ó') + #2
-lema(ur'[Ee]laboraci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Ee]lec_ció_n_i[oó]') + #2
-lema(ur'[Ee]quitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Ee]specificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ee]vangelizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Ee]xhibici_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ee]xposici_o_nes_ó') + #1
-lema(ur'[Ff]iltraci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ff]rancmas_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Ff]unci_o_nes_ó') + #1
+lema(ur'[Aa]lteraci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Aa]lusi_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Aa]luvi_ó_n_o', xpos=[ur'\]\](?:es|al|ales)', ]) + #4
+lema(ur'[Aa]notaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Aa]par_i_ciones_a') + #4
+lema(ur'[Aa]portaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Aa]tracci_ó_n_o', xpos=[ur'[\]3]', ]) + #4
+lema(ur'[Aa]utomoci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Aa]utorizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Cc]apitulaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Cc]aracterizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Cc]imarr_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpre=[ur'[Cc]ondado ', ur'[Mm]unicipio ', ], xpos=[ur' (?:Heritage|Cutoff)', ]) + #4
+lema(ur'[Cc]o_nmemoració_n_(?:nmemoracio|memoraci[oó])', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Cc]ol__ecciones_l') + #4
+lema(ur'[Cc]olocaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Cc]osmovisi_ó_n_o', xpos=[ur' des', ur'\]\]es', ]) + #4
+lema(ur'[Cc]ulminaci_ó_n(?!\])_o') + #4
+lema(ur'[Dd]egradaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Dd]eliberaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Dd]erivaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Dd]esamortizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Dd]esignaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Dd]etonaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Dd]isertaci_ó_n_o', xpos=[ur' physico', ur'\]\]es', ]) + #4
+lema(ur'[Ee]lecci_o_nes_ó') + #4
+lema(ur'[Ee]scalaf_ó_n(?!\])_o') + #4
+lema(ur'[Ee]staci_o_nes_ó') + #4
+lema(ur'[Ee]xpansi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Aa]) ', xpos=[ur' (?:Opposing|pak)', ]) + #4
+lema(ur'[Ee]xposi_ci_ones_(?:|sici|si)') + #4
+lema(ur'[Ee]xpropiaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Ff]abricaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Ff]ermentaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Ff]ijaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Ff]iliaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Ff]rustraci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
 lema(ur'[Hh]abilitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Ii]lustrac__iones_c') + #1
-lema(ur'[Ii]mprovisaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
+lema(ur'[Hh]omogen_eizació_n_(?:izaci[oó]|eizacio)') + #4
 lema(ur'[Ii]mputaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Ii]nducci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Ii]niciaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Ii]nstituci_o_nes_ó') + #2
-lema(ur'[Ii]nsurrecci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Mm]anipulaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Mm]editaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Mm]icrorregi_ó_n(?!\])_o') + #1
-lema(ur'[Mm]oci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Mm]otorizaci_ó_n(?!\])_o') + #3
+lema(ur'[Ii]n_n_ovaciones_') + #4
+lema(ur'[Ii]n_s_cripciones_') + #4
+lema(ur'[Ii]nclinaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Ii]nflexi_ó_n_o', xpre=[ur'and ', ur'd\'', ], xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Ii]nspecci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Ii]ntimidaci_ó_n(?!\])_o') + #4
+lema(ur'[Ii]nvestigaci_o_nes_ó') + #4
+lema(ur'[Jj]ubilaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Ll]ap_ó_n_o', xpre=[ur'Botaniques de ', ur'Gúdar\+Hazte ', ur'Parlons ', ur'\bDo ', ur'\bun ', ], xpos=[ur'\]\](?:as?|es)', ]) + #4
+lema(ur'[Mm]anipulaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Mm]edicaci_ó_n(?!\])_o') + #4
+lema(ur'[Mm]el_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u) ', xpre=[ur'Saye ', ur'abbati ', ur'listado ', ur'musicales ', ], xpos=[ur' (?:Music|Kinenbi)', ur', Naver', ]) + #4
+lema(ur'[Mm]otorizaci_ó_n(?!\])_o') + #4
+lema(ur'[Nn]acionalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
 lema(ur'[Nn]ormalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Oo]ca_s_ionando_c') + #2
-lema(ur'[Oo]ptimizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-#lema(ur'[Pp]o_sició_n_(?:ci[sc]i[oó]|sisi[oó]n)') + #0
-lema(ur'[Pp]ose_sió_n_ci[oó]') + #3
-lema(ur'[Pp]ositr_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ') + #5
-lema(ur'[Pp]recauci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Pp]revenci_ó_n_o') + #5
-lema(ur'[Pp]roclamaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Pp]roducci_o_nes_ó') + #1
-lema(ur'[Pp]rovisi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #1
-lema(ur'[Rr]atificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Rr]emoci_ó_n(?!\])_o') + #2
+lema(ur'[Oo]bligaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Pp]artici_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Pp]ensi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ', xpre=[ur'Filles de ', ], xpos=[ur' des', ]) + #4
+lema(ur'[Pp]ercepci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Pp]erfecci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Pp]orci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Pp]ropagaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Rr]adiaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Rr]eelecci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Rr]eestructuraci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Rr]egi_ó_n_o', pre=ur'(?:[Uu]na|[Cc]ada|[Ss]u) ', xpos=[ur' d\'Ambovombe', ]) + #4
+lema(ur'[Rr]egionalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Rr]egulaci_ó_n_o', xpos=[ur'(?:[\]1])', ]) + #4
 lema(ur'[Rr]eparaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Rr]eplicaci_ó_n(?!\])_o') + #2
-#lema(ur'[Rr]epresentaci_o_nes_ó') + #0
-lema(ur'[Rr]evisi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #6
+lema(ur'[Rr]estricci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
 lema(ur'[Rr]oset_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Ss]atisfacci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Ss]edimentaci_ó_n(?!\])_o') + #2
-lema(ur'[Ss]upervisi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Bb]ajo) ', xpre=[ur'sous ', ], xpos=[ur', Tequivo', ur'\]\]es', ]) + #2
-lema(ur'[Tt]ensi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|cierta) ', xpos=[ur' (?:narrative|érotique)', ]) + #2
-lema(ur'[Tt]ibur_o_nes_ó') + #1
-lema(ur'[Tt]ransfiguraci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Tt]raslaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Vv]ibraci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Vv]ocaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ss]ensaci_ó_n_o') + #4
+lema(ur'[Ss]ensaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Ss]ustituci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Tt]ransfusi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #4
+lema(ur'[Tt]raslaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Uu]nci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Vv]entilaci_ó_n_o', xpre=[ur'Sagunto\'\', con libre', ], xpos=[ur'\]\]es', ]) + #4
+lema(ur'[Vv]isitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
+lema(ur'[b]id_ó_n_o', xpre=[ur'Ville ', ur'beau un ', ], xpos=[ur'\]\]es', ]) + #4
 lema(ur'[p]ich_ó_n_o', xpos=[ur' quand', ur'\]\]es', ]) + #4
-lema(ur'[Aa]bstenci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Aa]bstracci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Aa]ceptaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Aa]ctivaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[r]ay_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpre=[ur'd\'', ], xpos=[ur' (?:croissant|de trois)', ]) + #4
+lema(ur'[Aa]bdicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Aa]bolici_ó_n_o', xpre=[ur'pola ', ], xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Aa]bsorci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Aa]celeraci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Aa]djudicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
 lema(ur'[Aa]gitaci_ó_n(?!\])_o') + #3
-#lema(ur'[Aa]nimaci_o_nes_ó') + #0
-#lema(ur'[Aa]parici_o_nes_ó') + #0
-lema(ur'[Aa]pelaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Aa]portaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Aa]spiraci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Aa]utomoci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Cc]alefacci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Cc]ampe_o_nes_ó') + #2
-lema(ur'[Cc]ancelaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Cc]añ_o_nes_ó') + #1
-lema(ur'[Cc]ertifi_cacio_nes_(?:a[cs]i[oó]|casi[oó]|cació)') + #5
-lema(ur'[Cc]imarr_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpre=[ur'[Cc]ondado ', ur'[Mm]unicipio ', ], xpos=[ur' (?:Heritage|Cutoff)', ]) + #3
-lema(ur'[Cc]o_mposició_n_(?:npo[cs]i[cs]i[oó]|mpoci[cs]i[oó]|mposisi[oó])') + #1
+lema(ur'[Aa]glomeraci_ó_n_o', xpos=[ur' deu', ur'\]\]es', ]) + #3
+lema(ur'[Aa]mbici_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Aa]nticipaci_ó_n(?!\])_o') + #3
+lema(ur'[Aa]proximaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Aa]utomatizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Bb]odeg_ó_n(?!\])_o') + #3
+lema(ur'[Cc]ampe_o_nes_ó') + #3
+lema(ur'[Cc]anel_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Cc]apacitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Cc]ivilizaci_o_nes_ó') + #3
 lema(ur'[Cc]oalici_o_nes_ó') + #3
+lema(ur'[Cc]occi_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Cc]olec_c_iones_') + #3
+lema(ur'[Cc]olisi_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Cc]ombusti_ó_n_o', pre=ur'(?:[Ll]a|[Dd]e) ', xpos=[ur' (?:et|en général)', ]) + #3
 lema(ur'[Cc]omercializaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
 lema(ur'[Cc]ompensaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-#lema(ur'[Cc]ompilaci_o_nes_ó') + #0
-lema(ur'[Cc]onciliaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Cc]ompetició_n__m?', xpos=[ur', reglamentacions', ]) + #3
 lema(ur'[Cc]ond_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el|[Uu]n|[Cc]ada|[Ss]u) ', xpos=[ur' Clú', ]) + #3
 lema(ur'[Cc]ondensaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Cc]onmoci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Cc]onsideraci_ó_n_o') + #5
-lema(ur'[Cc]onsideraci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Cc]onversi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ', xpos=[ur' (?:d|de l\'art|du|des)', ]) + #3
-lema(ur'[Cc]onvicci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Cc]oraz_o_nes_ó') + #1
-lema(ur'[Cc]reaci_o_nes_ó') + #1
-lema(ur'[Dd]esamortizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Dd]eserci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Dd]esolaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Dd]eterminaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Dd]icci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-#lema(ur'[Dd]iferenciaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-lema(ur'[Dd]ilataci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Dd]irecci_o_nes_ó') + #1
-lema(ur'[Dd]iscusi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Dd]isoluci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Dd]istracci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Dd]ivisi_o_nes_ó') + #2
-lema(ur'[Dd]ominaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Ee]mis_io_nes_(?:sió|ió)') + #1
-lema(ur'[Ee]misi_o_nes_ó') + #1
-lema(ur'[Ee]mulaci_ó_n(?!\])_o') + #3
-lema(ur'[Ee]ncuadernaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Ee]numeraci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ee]rudici_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Ee]xplo_sió_n_cio') + #1
-lema(ur'[Ee]xtorsi_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ff]alsificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ff]ijaci_ó_n_o', xpos=[ur'\]\]es', ]) + #5
-lema(ur'[Ff]ilmaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ff]inanciaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-#lema(ur'[Ff]lor_ó_n(?!\])_o') + #3
-lema(ur'[Ff]loraci_ó_n(?!\])_o') + #2
-lema(ur'[Ff]undici_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Gg]eolocalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Gg]estaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Gg]lobalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Gg]rabaci_o_nes_ó') + #3
-lema(ur'[Hh]ibridaci_ó_n(?!\])_o') + #3
-#lema(ur'[Ii]nstrumentaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-lema(ur'[Ii]nterconexi_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ii]nterrogaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ii]nva_sio_nes_(?:ci[oó]|sió)') + #1
-lema(ur'[Ii]nva_sió_nes_ci[oó]') + #1
-#lema(ur'[Ii]rritaci_ó_n(?!\])_o') + #0
-#lema(ur'[Jj]urisdicci_o_nes_ó') + #0
-lema(ur'[Ll]e_o_nes_ó') + #3
-lema(ur'[Mm]ediaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Mm]edicaci_ó_n(?!\])_o') + #4
-lema(ur'[Mm]ejill_ó_n(?!\])_o') + #2
-lema(ur'[Mm]enci_o_nes_ó') + #1
-lema(ur'[Mm]odulaci_ó_n(?!\])_o') + #3
-lema(ur'[Mm]orm_ó_n_o', pre=ur'(?:[Ee]l|[Uu]n|[Cc]ada|[Ss]u) ', xpre=[ur'Yu\'', ]) + #1
-lema(ur'[Nn]arraci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Nn]egaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Nn]otificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Oo]casi_o_nes_ó') + #0
-lema(ur'[Oo]peraci_o_nes_ó') + #2
-lema(ur'[Oo]scilaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Pp]ercu_sió_n_ci[oó]') + #0
-lema(ur'[Pp]erfecci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Pp]ersonificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Pp]ist_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpre=[ur'Sinfonía ', ur'coup ', ], xpos=[ur', Honegger', ]) + #3
-lema(ur'[Pp]oblaci_o_nes_ó') + #3
-lema(ur'[Pp]retensi_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Pp]ropulsi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Aa]) ', xpos=[ur' (?:par |Photonique)', ]) + #2
-lema(ur'[Rr]eactivaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Rr]ectificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Rr]epoblaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Rr]euni_o_nes_ó') + #1
-lema(ur'[Ss]ecesi_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ss]ubsecci_ó_n(?!\])_o') + #2
-lema(ur'[Ss]uspensi_ó_n(?! d[\'’]armes)_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #3
-#lema(ur'[Tt]elevisi_o_nes_ó') + #0
-lema(ur'[Tt]im_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u) ', xpos=[ur' (?:Screech|David|Menon|of)', ur'\]\]es', ]) + #1
-lema(ur'[Tt]ra_smisió_n_nsmicio') + #1
-lema(ur'[Tt]áx_ó_n(?!\])_o') + #1
-lema(ur'[Vv]aloraci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Vv]isitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Vv]ocalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[r]ay_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpre=[ur'd\'', ], xpos=[ur' (?:croissant|de trois)', ]) + #3
-lema(ur'[t]ac_ó_n_o') + #2
-#lema(ur'[Aa]bominaci_ó_n(?!\])_o') + #0
-lema(ur'[Aa]bsoluci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Aa]celeraci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-#lema(ur'[Aa]daptaci_o_nes_ó') + #0
-lema(ur'[Aa]daptaci_o_nes_ó') + #2
-lema(ur'[Aa]dopci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Aa]lteraci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-lema(ur'[Aa]mbici_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Aa]ntelaci_ó_n(?!\])_o') + #1
-lema(ur'[Aa]nticipaci_ó_n(?!\])_o') + #3
-lema(ur'[Aa]nulaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Aa]prehensi_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Aa]rgumentaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-#lema(ur'[Aa]rticulaci_o_nes_ó') + #0
-lema(ur'[Aa]signaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Aa]tol_ó_n(?!\])_o') + #2
-#lema(ur'[Aa]tracci_o_nes_ó') + #0
-lema(ur'[Aa]veriguaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Cc]allej_o_nes_ó') + #2
-#lema(ur'[Cc]ami_o_nes_ó') + #0
-lema(ur'[Cc]ant_ó_n_o', pre=ur'[Aa] ', xpre=[ur'franquicia ', ur'interpretar ', ur'permitió ', ], xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Cc]aptaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Cc]ard_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpos=[ur' Walker', ]) + #1
-lema(ur'[Cc]ircuncisi_ó_n_o', xpos=[ur' on\b', ur'\]\]es', ]) + #1
-lema(ur'[Cc]ircunnavegaci_ó_n_o', xpos=[ur'\]\](?:es|al|ales)', ]) + #1
-#lema(ur'[Cc]lonaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Cc]o_mposicio_nes_(?:npo[cs]i[cs]i[oó]|mpoci[cs]i[oó]|mposisi[oó]|mposició)') + #0
-lema(ur'[Cc]ol_o_nes_ó') + #2
-#lema(ur'[Cc]olecci_o_nes_ó') + #0
-lema(ur'[Cc]olocaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Cc]omisi_o_nes_ó') + #1
-lema(ur'[Cc]omplicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Cc]on_strucció_n_truccio') + #1
-lema(ur'[Cc]ondici_o_nes_ó') + #1
-#lema(ur'[Cc]onfecci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-lema(ur'[Cc]onfecci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Cc]onfes_io_nes_(?:si[oó]|ió)', xpos=[ur' sacerdotum', ]) + #1
-lema(ur'[Cc]onjugaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Cc]onmutaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Cc]ondici_ó_n_o', pre=ur'(?:[Ll]as?|[Uu]nas?|[Ss]us?) ') + #3
 lema(ur'[Cc]onsagraci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Cc]ontracci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Cc]onvecci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-lema(ur'[Cc]orrelaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Dd]_o_nes_ó') + #2
-#lema(ur'[Dd]eclaraci_o_nes_ó') + #0
-lema(ur'[Dd]egradaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Dd]eliberaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Dd]epredaci_ó_n(?!\])_o') + #2
-lema(ur'[Dd]epuraci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Dd]erogaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Dd]esaparici_o_nes_ó') + #0
-lema(ur'[Dd]escomposici_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Dd]eshidrataci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Dd]esnutrici_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-#lema(ur'[Dd]estilaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-lema(ur'[Dd]esviaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Cc]onurbaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Cc]onversi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ', xpos=[ur' (?:d|de l\'art|du|des)', ]) + #3
+lema(ur'[Dd]ataci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Dd]educci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Dd]eformaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Dd]escalificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Dd]eserci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Dd]esolaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
 lema(ur'[Dd]evastaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
 lema(ur'[Dd]evoluci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Dd]isyunci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Dd]iversi_o_nes_ó') + #0
-lema(ur'[Dd]iversi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #2
-lema(ur'[Ee]_o_nes_ó') + #1
-lema(ur'[Ee]moci_o_nes_ó') + #1
-lema(ur'[Ee]quivocaci_ó_n(?!\])_o') + #1
-lema(ur'[Ee]scisi_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Ee]speci_alizació_n(?!\]\])_(?:alizacio|lizaci[oó])') + #2
-#lema(ur'[Ee]specificaci_o_nes_ó') + #0
-#lema(ur'[Ee]sturi_ó_n(?!\])_o') + #0
-lema(ur'[Ee]vacuaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Ee]vacuaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ee]xcavaci_o_nes_ó') + #1
-lema(ur'[Ee]xclusi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Aa]) ') + #1
-lema(ur'[Ee]xcreci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ee]xcursi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Aa]) ') + #1
-lema(ur'[Ee]xpansi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Aa]) ', xpos=[ur' (?:Opposing|pak)', ]) + #3
-lema(ur'[Ee]xportaci_o_nes_ó') + #2
-lema(ur'[Ee]xpulsi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ', xpos=[ur' de los Moriscos', ur'\]\]es', ]) + #1
-lema(ur'[Ff]acci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ff]ascinaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Ff]il_ó_n_o', xpre=[ur' du ', ur' i ', ur'Augustin ', ur'L\. ', ur'Larese ', ur'Rick ', ur'Robert ', ur'solenaskitan ', ], xpos=[ur' (?:Kmita|réduit)', ur'\]\]es', ]) + #4
-lema(ur'[Ff]iliaci_ó_n_o', xpos=[ur'\]\]es', ]) + #4
-#lema(ur'[Ff]ortificaci_o_nes_ó') + #0
-lema(ur'[Ff]ragmentaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ff]ricci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ff]rustraci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Gg]al_ó_n_o', xpre=[ur'Ezio ', ur'Rémy ', ur'aventurero ', ], xpos=[ur' (?:hapus|lân)', ur'(?:\]|\'\' rebellion)', ]) + #2
-#lema(ur'[Gg]eneraci_o_nes_ó') + #0
-lema(ur'[Gg]uarnici_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Hh]umillaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Ii]_o_nes_ó') + #5
-lema(ur'[Ii]mplantaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ii]ndicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ii]nfiltraci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Ii]nflamaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Ii]nformaci_o_nes_ó') + #0
-#lema(ur'[Ii]ntenci_o_nes_ó') + #0
-lema(ur'[Ii]nteracci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-#lema(ur'[Ii]nterdicci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-lema(ur'[Ii]nternacionalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Ii]nterrupci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ii]ntuici_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Ii]nvocaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Ii]nyecci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Ll]imitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ll]iquidaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-#lema(ur'[Ll]ocaci_o_nes_ó') + #0
-lema(ur'[Ll]ocuci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Mm]aduraci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Mm]alformaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Mm]aquetaci_ó_n(?!\])_o') + #1
-#lema(ur'[Mm]asturbaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Mm]enstruaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-lema(ur'[Mm]orri_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Nn]aci_o_nes_ó') + #1
-lema(ur'[Nn]ivelaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-#lema(ur'[Oo]clusi_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Oo]presi_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-lema(ur'[Oo]rnamentaci_ó_n(?!\])_o') + #1
-#lema(ur'[Pp]abell_o_nes_ó') + #0
-lema(ur'[Pp]atr_o_nes_ó') + #1
+lema(ur'[Dd]icci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Dd]ilataci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Dd]iscusi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Dd]iversi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #3
+lema(ur'[Dd]ominaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Ee]dici_o_nes_ó') + #3
+lema(ur'[Ee]lectrificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Ee]mulaci_ó_n(?!\])_o') + #3
+lema(ur'[Ee]ncuadernaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Ee]numeraci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Ee]quitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Ee]rudici_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Ee]xcomuni_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Ee]xhibici_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Ee]xpan_sió_n_ci[oó]') + #3
+lema(ur'[Ff]acci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Ff]acturaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Ff]inanciaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Gg]al_ó_n_o', xpre=[ur'Ezio ', ur'Rémy ', ur'aventurero ', ], xpos=[ur' (?:hapus|lân)', ur'(?:\]|\'\' rebellion)', ]) + #3
+lema(ur'[Gg]eolocalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Gg]uarnici_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Hh]ibridaci_ó_n(?!\])_o') + #3
+lema(ur'[Ii]ndicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Ii]nflaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Ii]niciaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Ii]nserci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Ii]nsurrecci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Ii]ntera_c_ciones_') + #3
+lema(ur'[Ii]ntersecci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Ii]rrigaci_ó_n(?!\])_o') + #3
+lema(ur'[Ll]e_o_nes_ó') + #3
+lema(ur'[Ll]ocaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Mm]ediaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Mm]ill_o_nes_ó') + #3
+lema(ur'[Mm]oci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Mm]odulaci_ó_n(?!\])_o') + #3
+lema(ur'[Nn]arraci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Nn]egaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Oo]ptimizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Oo]rdenaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Oo]xidaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
 lema(ur'[Pp]enalizaci_ó_n(?!\])_o') + #3
 lema(ur'[Pp]erdici_ó_n_o') + #3
-lema(ur'[Pp]erforaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-#lema(ur'[Pp]ersonalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-lema(ur'[Pp]oci_o_nes_ó') + #1
-#lema(ur'[Pp]ortaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Pp]osici_o_nes_ó') + #0
+lema(ur'[Pp]ist_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpre=[ur'Sinfonía ', ur'coup ', ], xpos=[ur', Honegger', ]) + #3
+lema(ur'[Pp]oblaci_o_nes_ó') + #3
 lema(ur'[Pp]reposici_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Pp]rescripci_ó_n(?!\])_o') + #1
-#lema(ur'[Pp]reservaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-lema(ur'[Pp]revisi_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Pp]roces_io_nes_(?:si[oó]|ió)') + #2
-lema(ur'[Pp]rohibici_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Pp]resentaci_o_nes_ó') + #3
 lema(ur'[Pp]roliferaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Pp]ronunciaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Pp]roposici_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Pp]ronunciaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Rr]atificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Rr]efundaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Rr]efutaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Rr]ei__vindicaciones_n') + #3
+lema(ur'[Rr]eligi_ó_n [Cc]at[oó]lica_o') + #3
+lema(ur'[Ss]alm_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u) ', xpre=[ur'templo ', ur'áerea ', ], xpos=[ur' (?:Bay|Leap|Chase)', ur' P\.', ]) + #3
+lema(ur'[Ss]ecesi_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Ss]if_ó_n(?!\])_o') + #3
+lema(ur'[Ss]umisi_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Ss]upervisi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Bb]ajo) ', xpre=[ur'sous ', ], xpos=[ur', Tequivo', ur'\]\]es', ]) + #3
+lema(ur'[Ss]uspensi_ó_n(?! d[\'’]armes)_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #3
+lema(ur'[Tt]amp_ó_n_o', xpre=[ur'Zombie ', ur'[Ll]e ', ur'\bdu ', ], xpos=[ur' Disease', ur'\]\]es', ]) + #3
+lema(ur'[Tt]el_ó_n_o', xpre=[ur'Anagyrus ', ur'Ginintuan ', ]) + #3
+lema(ur'[Tt]ra_nsliteracio_nes_(?:sliteraci[oó]|nsliteració)') + #3
+lema(ur'[Tt]racci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Vv]ariaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Vv]inculaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
+lema(ur'[Vv]iolaci_o_nes_ó') + #3
+lema(ur'[Vv]isualizaci_o_nes_ó') + #3
+lema(ur'Gab_ó_n_o', pre=ur'(?:[Dd]e|[Ee]n) ', xpos=[ur' [Aa]irlines', ]) + #2
+lema(ur'[Aa]bsoluci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Aa]ceptaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Aa]ctivaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Aa]d_aptació_n_pataci[oó]') + #2
+lema(ur'[Aa]filiaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Aa]ler_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Aa]lfabetizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Aa]nexi_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Aa]nulaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Aa]pelaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Aa]rgumentaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Aa]scensi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #2
+lema(ur'[Aa]tol_ó_n(?!\])_o') + #2
+lema(ur'[Aa]udici_ó_n_o', xpos=[ur' Irritable', ur'\]\]es', ]) + #2
+lema(ur'[Aa]utodeterminaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Bb]ot_o_nes_ó') + #2
+lema(ur'[Cc]alefacci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Cc]allej_o_nes_ó') + #2
+lema(ur'[Cc]alz_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Cc]analizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Cc]ancelaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Cc]anonizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Cc]añ_o_nes_ó') + #2
+lema(ur'[Cc]lasificaci_o_nes_ó') + #2
+lema(ur'[Cc]o_mposició_n_(?:npo[cs]i[cs]i[oó]|mpoci[cs]i[oó]|mposisi[oó])') + #2
+lema(ur'[Cc]ol_o_nes_ó') + #2
+lema(ur'[Cc]oloraci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Cc]omplicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Cc]omuni_ó_n_o', xpre=[ur'cathechismo de la ', ], xpos=[ur'(?:\]|\.org)', ]) + #2
+lema(ur'[Cc]onciliaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Cc]onfes_io_nes_(?:si[oó]|ió)', xpos=[ur' sacerdotum', ]) + #2
+lema(ur'[Cc]onjugaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Cc]ontenci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Cc]onvicci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Cc]oraz_o_nes_ó') + #2
+lema(ur'[Cc]uraci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Dd]_o_nes_ó') + #2
+lema(ur'[Dd]epredaci_ó_n(?!\])_o') + #2
+lema(ur'[Dd]epuraci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Dd]erogaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Dd]esnutrici_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Dd]ivisi_o_nes_ó') + #2
+lema(ur'[Dd]ivulgaci_ó_n_o', xpos=[ur'(?:\]\][a-zñ]+|\.famaf)', ]) + #2
+lema(ur'[Dd]otaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ee]lectr_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ') + #2
+lema(ur'[Ee]mancipaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ee]speci_alizació_n(?!\]\])_(?:alizacio|lizaci[oó])') + #2
+lema(ur'[Ee]specificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ee]vangelizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ee]x_cepció_n_epci[oó]') + #2
+lema(ur'[Ee]xcreci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ee]xcursi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Aa]) ') + #2
+lema(ur'[Ee]xportaci_o_nes_ó') + #2
+lema(ur'[Ee]xtorsi_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ee]xtracci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ff]alsificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ff]iguraci_ó_n(?!\])_o') + #2
+lema(ur'[Ff]ilmaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ff]iltraci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ff]loraci_ó_n(?!\])_o') + #2
+lema(ur'[Ff]ormaci_o_nes_ó') + #2
+lema(ur'[Ff]ragmentaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ff]ricci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Gg]estaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Gg]lobalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Gg]rabaci_o_nes_ó') + #2
+lema(ur'[Hh]ipertensi_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Hh]umillaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ii]maginaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ii]mplantaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ii]nacci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ii]nstalaci_o_nes_ó') + #2
+lema(ur'[Ii]nstituci_o_nes_ó') + #2
+lema(ur'[Ii]ntenci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ii]nteracci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ii]ntercesi_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ii]nterconexi_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ii]nterrogaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ii]nterrupci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ii]ntuici_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ii]nva_sio_nes_(?:ci[oó]|sió)') + #2
+lema(ur'[Ii]nva_sió_nes_ci[oó]') + #2
+lema(ur'[Ii]nvocaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ll]amentaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ll]imitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ll]iquidaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ll]ocuci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Mm]alformaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Mm]asterizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Mm]editaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Mm]ejill_ó_n(?!\])_o') + #2
+lema(ur'[Mm]odernizaci_ó_n_o', xpos=[ur'(?:\]|\.(?:cl|gob))', ]) + #2
+lema(ur'[Mm]orri_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Mm]ovilizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Nn]ivelaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Oo]ca_s_ionando_c') + #2
+lema(ur'[Oo]peraci_o_nes_ó') + #2
+lema(ur'[Oo]rej_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Pp]erforaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Pp]ersonificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Pp]ostulaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Pp]recauci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Pp]revisi_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Pp]roces_io_nes_(?:si[oó]|ió)') + #2
+lema(ur'[Pp]roducci_o_nes_ó') + #2
+lema(ur'[Pp]rohibici_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Pp]roposici_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Pp]ropulsi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Aa]) ', xpos=[ur' (?:par |Photonique)', ]) + #2
+lema(ur'[Pp]rovisi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #2
 lema(ur'[Rr]aci_ó_n_o', xpos=[ur' kaj', ur'(?:\])', ]) + #2
-#lema(ur'[Rr]ai_o_nes_ó') + #0
+lema(ur'[Rr]eactivaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
 lema(ur'[Rr]eaparici_ó_n_o', xpos=[ur'\]\]es', ]) + #2
 lema(ur'[Rr]ecesi_ó_n_o', xpos=[ur'\]\]es', ]) + #2
 lema(ur'[Rr]eclamaci_ó_n(?!\])_o') + #2
-#lema(ur'[Rr]eclusi_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 lema(ur'[Rr]ecombinaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Rr]ecomendaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Rr]ecordaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Rr]egeneraci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Rr]econciliaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Rr]ectificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Rr]egresi_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Rr]eimpresi_ó_n_o', xpre=[ur'5th ', ], xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Rr]eligi_ó_n_o', pre=ur'(?:[Uu]na|[Cc]ada|[Ss]u) ') + #2
 lema(ur'[Rr]emisi_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Rr]endici_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Rr]engl_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Rr]epetici_o_nes_ó') + #1
-lema(ur'[Rr]eposici_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Rr]emoci_ó_n(?!\])_o') + #2
+lema(ur'[Rr]eplicaci_ó_n(?!\])_o') + #2
 lema(ur'[Rr]estituci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Rr]evoluci_o_nes_ó') + #1
 lema(ur'[Ss]anaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ss]egregaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Ss]esi_o_nes_ó') + #1
-#lema(ur'[Ss]ill_ó_n_o', xpre=[ur'\'', ur'& ', ur'(?:du|[Ll]e|et) ', ur'Au ', ur'Claude ', ur'Grand ', ur'Jean ', ur'Mon ', ur'Princesse de ', ur'Victor ', ], xpos=[ur' (?:rhodanien|de Talbert|beach|industriel|de Bretagne|Sambre)', ur'\]\]es', ]) + #0
+lema(ur'[Ss]aturaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ss]ecci_o_nes_ó') + #2
+lema(ur'[Ss]edimentaci_ó_n(?!\])_o') + #2
+lema(ur'[Ss]egregaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
 lema(ur'[Ss]indicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-#lema(ur'[Ss]ubcampe_o_nes_ó') + #0
 lema(ur'[Ss]ubdivisi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #2
 lema(ur'[Ss]ublevaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ss]ujeci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Ss]uperaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ss]upresi_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Ss]uscripci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Ss]ustentaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Tt]ap_o_nes_ó') + #1
-#lema(ur'[Tt]ej_o_nes_ó') + #0
-lema(ur'[Tt]ej_ó_n_o', pre=ur'[Ee]l ', xpos=[ur' Ranch', ]) + #1
-lema(ur'[Tt]el_ó_n_o', xpre=[ur'Anagyrus ', ur'Ginintuan ', ]) + #3
-lema(ur'[Tt]elevi_sió_n_cio') + #1
-#lema(ur'[Tt]if_o_nes_ó') + #0
+lema(ur'[Ss]ubordinaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ss]ubsecci_ó_n(?!\])_o') + #2
+lema(ur'[Ss]uplicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ss]uscripci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Ss]ustentaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Tt]elevi_sió_n_cio') + #2
+lema(ur'[Tt]ensi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|cierta) ', xpos=[ur' (?:narrative|érotique)', ]) + #2
+lema(ur'[Tt]ibur_o_nes_ó') + #2
+lema(ur'[Tt]im_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u) ', xpos=[ur' (?:Screech|David|Menon|of)', ur'\]\]es', ]) + #2
 lema(ur'[Tt]inci_ó_n(?!\])_o') + #2
-lema(ur'[Tt]radici_o_nes_ó') + #1
-lema(ur'[Tt]ransacci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Tt]ransformaci_o_nes_ó') + #1
-lema(ur'[Tt]ransfusi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #4
+lema(ur'[Tt]ransacci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
 lema(ur'[Tt]ranslocaci_ó_n(?!\])_o') + #2
-lema(ur'[Tt]ransmisi_o_nes_ó') + #1
 lema(ur'[Tt]ransportaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Tt]ransportaci_o_nes_ó') + #1
-lema(ur'[Uu]nci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-#lema(ur'[Vv]acaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-lema(ur'[Vv]ag_o_nes_ó') + #1
-lema(ur'[Vv]ariaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Vv]entilaci_ó_n_o', xpre=[ur'Sagunto\'\', con libre', ], xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Vv]ibraci_o_nes_ó') + #1
-lema(ur'[b]id_ó_n_o', xpre=[ur'Ville ', ur'beau un ', ], xpos=[ur'\]\]es', ]) + #3
-lema(ur'[m]at_ó_n_o', xpos=[ur' BB1200', ur'\]\]es', ]) + #1
-lema(ur'[Aa]bdicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Uu]bicaci_o_nes_ó') + #2
+lema(ur'[Vv]aloraci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Vv]ibraci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Vv]ocaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Vv]ocalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[g]asc_ó_n_o', xpre=[ur'Gentilòme ', ur'[Cc]atonet ', ur'[Cc]atonet ritme ', ur'[Ll]e ', ur'dialecte ', ur'gentilòme ', ur'ritme ', ], xpos=[ur' du\b', ur'"', ]) + #2
+lema(ur'[t]ac_ó_n_o') + #2
 lema(ur'[Aa]berraci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Aa]breviaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Aa]bstenci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Aa]bstracci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Aa]centuaci_ó_n(?!\])_o') + #1
-#lema(ur'[Aa]ctivaci_o_nes_ó') + #0
 lema(ur'[Aa]ctualizaci_o_nes_ó') + #1
 lema(ur'[Aa]cumulaci_o_nes_ó') + #1
-lema(ur'[Aa]cusaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-#lema(ur'[Aa]divinaci_ó_n(?!\])_o') + #0
-#lema(ur'[Aa]dministraci_o_nes_ó') + #0
+lema(ur'[Aa]cusaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Aa]dopci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Aa]fectaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Aa]filiaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
 lema(ur'[Aa]finaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Aa]gnaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Aa]gresi_o_nes_ó') + #1
 lema(ur'[Aa]guij_o_nes_ó') + #1
 lema(ur'[Aa]guij_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Aa]lfabetizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-#lema(ur'[Aa]lienaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 lema(ur'[Aa]locuci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Aa]lucinaci_o_nes_ó') + #0
-#lema(ur'[Aa]lusi_o_nes_ó') + #0
-lema(ur'[Aa]lusi_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Aa]mplificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 lema(ur'[Aa]mputaci_o_nes_ó') + #1
-#lema(ur'[Aa]nfitri_o_nes_ó') + #0
-#lema(ur'[Aa]pelaci_o_nes_ó') + #0
-#lema(ur'[Aa]plicaci_o_nes_ó') + #0
-#lema(ur'[Aa]preciaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+lema(ur'[Aa]ntelaci_ó_n(?!\])_o') + #1
+lema(ur'[Aa]prehensi_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Aa]rp_ó_n(?!\])_o') + #1
-#lema(ur'[Aa]sociaci_o_nes_ó') + #0
-#lema(ur'[Aa]tol_o_nes_ó') + #0
-#lema(ur'[Aa]udici_o_nes_ó') + #0
+lema(ur'[Aa]signaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Aa]spiraci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Aa]utenticaci_ó_n(?!\])_o') + #1
-#lema(ur'[Aa]utodestrucci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+lema(ur'[Aa]veriguaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Bb]al_o_nes_ó') + #1
-#lema(ur'[Bb]arrac_o_nes_ó') + #0
-#lema(ur'[Bb]arrac_ó_n(?!\])_o') + #0
-#lema(ur'[Bb]atall_o_nes_ó') + #0
-#lema(ur'[Bb]ifurcaci_o_nes_ó') + #0
+lema(ur'[Bb]endici_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Bb]onificaci_o_nes_ó') + #1
-#lema(ur'[Bb]oquer_o_nes_ó') + #0
-lema(ur'[Bb]ot_o_nes_ó') + #1
 lema(ur'[Bb]uf_o_nes_ó') + #1
-#lema(ur'[Bb]uz_o_nes_ó') + #0
-#lema(ur'[Cc]alificaci_o_nes_ó') + #0
-lema(ur'[Cc]analizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
+lema(ur'[Cc]ant_ó_n_o', pre=ur'[Aa] ', xpre=[ur'franquicia ', ur'interpretar ', ur'permitió ', ], xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Cc]aparaz_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Cc]arburaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+lema(ur'[Cc]aptaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Cc]ard_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpos=[ur' Walker', ]) + #1
 lema(ur'[Cc]ard_ó_n_o', pre=ur'[Dd]e ', xpre=[ur'Armand ', ], xpos=[ur' Walker', ]) + #1
 lema(ur'[Cc]ategorizaci_ó_n(?!\])_o') + #1
 lema(ur'[Cc]entralizaci_ó_n(?!\])_o') + #1
-#lema(ur'[Cc]hampiñ_o_nes_ó') + #0
+lema(ur'[Cc]ertifi_cació_n_(?:a[cs]i[oó]|casi[oó])') + #1
 lema(ur'[Cc]intur_o_nes_ó') + #1
-#lema(ur'[Cc]ircunscripci_o_nes_ó') + #0
-#lema(ur'[Cc]itaci_ó_n(?!\])_o') + #0
+lema(ur'[Cc]ircuncisi_ó_n_o', xpos=[ur' on\b', ur'\]\]es', ]) + #1
+lema(ur'[Cc]ircunnavegaci_ó_n_o', xpos=[ur'\]\](?:es|al|ales)', ]) + #1
 lema(ur'[Cc]oagulaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Cc]olaboraci_o_nes_ó') + #0
-lema(ur'[Cc]oloraci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-#lema(ur'[Cc]ombinaci_o_nes_ó') + #0
+lema(ur'[Cc]omisi_o_nes_ó') + #1
 lema(ur'[Cc]ompeti_ció_n_tco') + #1
-#lema(ur'[Cc]ompetici_o_nes_ó') + #0
-#lema(ur'[Cc]omplicaci_o_nes_ó') + #0
-#lema(ur'[Cc]omprobaci_ó_n(?!\])_o') + #0
+lema(ur'[Cc]omprensi_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Cc]on_strucció_n_truccio') + #1
 lema(ur'[Cc]oncatenaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Cc]oncentraci_o_nes_ó') + #0
-#lema(ur'[Cc]oncesi_o_nes_ó') + #0
-#lema(ur'[Cc]ondenaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Cc]onjugaci_o_nes_ó') + #0
+lema(ur'[Cc]ondici_o_nes_ó') + #1
 lema(ur'[Cc]onjunci_o_nes_ó') + #1
 lema(ur'[Cc]onjunci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Cc]onnotaci_ó_n(?!\])_o') + #0
+lema(ur'[Cc]onmutaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Cc]onsternaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Cc]onstituci_o_nes_ó') + #0
 lema(ur'[Cc]onsumaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Cc]ontemplaci_ó_n_o', xpre=[ur'Flor ', ], xpos=[ur'\]\][a-zñ]+', ]) + #1
 lema(ur'[Cc]ontestaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Cc]ontracci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Cc]ontraindicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Cc]ontraposici_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 lema(ur'[Cc]ontribuci_o_nes_ó') + #1
-#lema(ur'[Cc]onvenci_o_nes_ó') + #0
 lema(ur'[Cc]onversaci_o_nes_ó') + #1
-#lema(ur'[Cc]ooperaci_o_nes_ó') + #0
+lema(ur'[Cc]oproducci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Cc]ord_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Aa]) ') + #1
-#lema(ur'[Cc]orrelaci_o_nes_ó') + #0
+lema(ur'[Cc]orrelaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Cc]otizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Cc]ristianizaci_ó_n(?!\])_o') + #0
-#lema(ur'[Dd]ataci_o_nes_ó') + #0
+lema(ur'[Cc]reaci_o_nes_ó') + #1
 lema(ur'[Dd]efinici_o_nes_ó') + #1
 lema(ur'[Dd]eformaci_o_nes_ó') + #1
 lema(ur'[Dd]egollaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
@@ -5427,277 +5300,197 @@ lema(ur'[Dd]elimitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Dd]emocratizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Dd]emolici_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Dd]emostraci_o_nes_ó') + #1
-#lema(ur'[Dd]epilaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 lema(ur'[Dd]eposici_o_nes_ó') + #1
-#lema(ur'[Dd]epreciaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 lema(ur'[Dd]erivaci_o_nes_ó') + #1
 lema(ur'[Dd]escentralizaci_ó_n_o', xpos=[ur'(?:\]\][a-zñ]+|\.gov)', ]) + #1
-lema(ur'[Dd]escolonizaci_ó_n_o') + #2
+lema(ur'[Dd]escolonizaci_ó_n_o') + #1
+lema(ur'[Dd]escomposici_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Dd]esconexi_ó_n(?!\])_o') + #1
 lema(ur'[Dd]esesperaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Dd]eshidrataci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Dd]esilusi_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Dd]esintegraci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Dd]estinaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Dd]esvinculaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+lema(ur'[Dd]esviaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Dd]evaluaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Dd]evastaci_o_nes_ó') + #1
 lema(ur'[Dd]ifracci_ó_n(?!\])_o') + #1
 lema(ur'[Dd]imensi_o_nes_ó') + #1
 lema(ur'[Dd]iputaci_o_nes_ó') + #1
+lema(ur'[Dd]irecci_o_nes_ó') + #1
 lema(ur'[Dd]iscreci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Dd]isminuci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Dd]isposici_o_nes_ó') + #0
-#lema(ur'[Dd]isyunci_o_nes_ó') + #0
+lema(ur'[Dd]iscriminaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Dd]istinci_o_nes_ó') + #1
+lema(ur'[Dd]istracci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Dd]iversificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Dd]otaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Dd]r_o_n(?!\])_ó') + #0
-#lema(ur'[Dd]rag_o_nes_ó') + #0
-#lema(ur'[Dd]uplicaci_o_nes_ó') + #0
 lema(ur'[Dd]uplicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Ee]_o_nes_ó') + #1
+lema(ur'[Ee]dific__aciones_i') + #1
 lema(ur'[Ee]fusi_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Ee]lectr_o_nes_ó') + #0
-lema(ur'[Ee]lectr_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ') + #2
-lema(ur'[Ee]lectrificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-#lema(ur'[Ee]longaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-lema(ur'[Ee]mancipaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Ee]mis_ió_n_sió') + #0
+lema(ur'[Ee]mis_io_nes_(?:sió|ió)') + #1
+lema(ur'[Ee]misi_o_nes_ó') + #1
+lema(ur'[Ee]moci_o_nes_ó') + #1
 lema(ur'[Ee]ntonaci_ó_n(?!\])_o') + #1
 lema(ur'[Ee]ntronizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Ee]rupci_o_nes_ó') + #0
+lema(ur'[Ee]quivocaci_ó_n(?!\])_o') + #1
+lema(ur'[Ee]scisi_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Ee]specializaci_ó_n(?!\])_o') + #1
 lema(ur'[Ee]speculaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Ee]standarizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 lema(ur'[Ee]sterilizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Ee]stimulaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Ee]stratificaci_ó_n(?!\])_o') + #0
-#lema(ur'[Ee]vaporaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+lema(ur'[Ee]vacuaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Ee]vacuaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Ee]vocaci_ó_n(?!\])_o') + #1
 lema(ur'[Ee]xacci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Ee]xageraci_ó_n(?!\])_o') + #1
-#lema(ur'[Ee]xcitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Ee]xclamaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-lema(ur'[Ee]xcomuni_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Ee]xcursi_o_nes_ó') + #0
-#lema(ur'[Ee]xhibici_o_nes_ó') + #0
+lema(ur'[Ee]xcavaci_o_nes_ó') + #1
+lema(ur'[Ee]xclusi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Aa]) ') + #1
 lema(ur'[Ee]xpectaci_ó_n(?!\])_o') + #1
-#lema(ur'[Ee]xpedici_o_nes_ó') + #0
-#lema(ur'[Ee]xperimentaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 lema(ur'[Ee]xplicaci_o_nes_ó') + #1
+lema(ur'[Ee]xplo_sió_n_cio') + #1
+lema(ur'[Ee]xposici_o_nes_ó') + #1
 lema(ur'[Ee]xpresi_o_nes_ó') + #1
-lema(ur'[Ee]xtracci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-#lema(ur'[Ee]xtradici_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+lema(ur'[Ee]xpulsi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ', xpos=[ur' de los Moriscos', ur'\]\]es', ]) + #1
 lema(ur'[Ff]acci_o_nes_ó') + #1
-#lema(ur'[Ff]aj_ó_n(?!\])_o') + #0
 lema(ur'[Ff]ald_ó_n(?!\])_o') + #1
-#lema(ur'[Ff]ermi_o_nes_ó') + #0
-#lema(ur'[Ff]ertilizaci_ó_n(?!\])_o') + #0
-lema(ur'[Ff]iguraci_ó_n(?!\])_o') + #2
+lema(ur'[Ff]ascinaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Ff]iscalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Ff]isi_ó_n_o', xpre=[ur'Celibe ', ], xpos=[ur' boy', ur'\]\]es', ]) + #1
-#lema(ur'[Ff]lotaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 lema(ur'[Ff]luctuaci_ó_n(?!\])_o') + #1
 lema(ur'[Ff]onaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Ff]orestaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Ff]ormaci_o_nes_ó') + #2
-#lema(ur'[Ff]ot_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpre=[ur'oficial ', ], xpos=[ur' Motor', ]) + #0
-#lema(ur'[Ff]racci_o_nes_ó') + #0
-#lema(ur'[Ff]rustraci_o_nes_ó') + #0
-#lema(ur'[Ff]undaci_o_nes_ó') + #0
+lema(ur'[Ff]rancmas_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Ff]unci_o_nes_ó') + #1
 lema(ur'[Ff]undamentaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Ff]usi_o_nes_ó') + #0
 lema(ur'[Gg]ale_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ') + #1
-#lema(ur'[Gg]esti_o_nes_ó') + #0
-#lema(ur'[Gg]ravitaci_ó_n(?!\])_o') + #0
-#lema(ur'[Gg]uarnici_o_nes_ó') + #0
-#lema(ur'[Hh]adr_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ') + #0
 lema(ur'[Hh]alc_o_nes_ó') + #1
-#lema(ur'[Hh]ur_o_nes_ó') + #0
-#lema(ur'[Hh]ur_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpos=[ur' (?:University|forman|Band|Potawatomi)', ]) + #0
-#lema(ur'[Ii]lustraci_o_nes_ó') + #0
+lema(ur'[Ii]lustrac__iones_c') + #1
 lema(ur'[Ii]mplantaci_o_nes_ó') + #1
-#lema(ur'[Ii]mplicaci_o_nes_ó') + #0
 lema(ur'[Ii]mplicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Ii]mposici_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 lema(ur'[Ii]mprecisi_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Ii]mpresi_o_nes_ó') + #1
-lema(ur'[Ii]nacci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Ii]ncrustaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+lema(ur'[Ii]nducci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Ii]nervaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Ii]nfecci_o_nes_ó') + #0
-lema(ur'[Ii]nflaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-lema(ur'[Ii]nfracci_o_nes_ó') + #1
-#lema(ur'[Ii]nhalaci_ó_n(?!\])_o') + #0
+lema(ur'[Ii]nfiltraci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Ii]nhibici_o_nes_ó') + #1
 lema(ur'[Ii]nhibici_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Ii]niciaci_o_nes_ó') + #0
 lema(ur'[Ii]nicializaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Ii]nmediaci_ó_n_o', xpos=[ur' al Chaco', ur'\]\]es', ]) + #1
 lema(ur'[Ii]nmolaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Ii]nseminaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-lema(ur'[Ii]nstalaci_o_nes_ó') + #2
-#lema(ur'[Ii]nstauraci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Ii]nstrucci_o_nes_ó') + #0
 lema(ur'[Ii]nstrumentaci_o_nes_ó') + #1
 lema(ur'[Ii]ntegraci_o_nes_ó') + #1
 lema(ur'[Ii]ntensificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Ii]nterceptaci_o_nes_ó') + #0
-lema(ur'[Ii]ntercesi_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Ii]ntermediaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Ii]nterpretaci_o_nes_ó') + #0
+lema(ur'[Ii]nternacionalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Ii]nterrelaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Ii]ntervenci_o_nes_ó') + #1
-#lema(ur'[Ii]nvenci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 lema(ur'[Ii]nversi_o_nes_ó') + #1
 lema(ur'[Ii]nyecci_o_nes_ó') + #1
+lema(ur'[Ii]nyecci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Ii]onizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Ii]rradiaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Ii]teraci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Jj]ap_o_nes_ó') + #5
-#lema(ur'[Jj]arr_o_nes_ó') + #0
 lema(ur'[Jj]onr_o_nes_ó') + #1
 lema(ur'[Jj]ubilaci_o_nes_ó') + #1
 lema(ur'[Ll]adr_o_nes_ó') + #1
-lema(ur'[Ll]amentaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-#lema(ur'[Ll]ecci_o_nes_ó') + #0
-#lema(ur'[Ll]ept_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ') + #0
 lema(ur'[Ll]evitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Ll]iberalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Ll]imitaci_o_nes_ó') + #0
 lema(ur'[Ll]ist_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el|[Uu]n|[Cc]ada|[Ss]u) ', xpre=[ur'far ', ]) + #1
-#lema(ur'[Ll]ocalizaci_o_nes_ó') + #0
 lema(ur'[Mm]aceraci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Mm]anifestaci_o_nes_ó') + #0
+lema(ur'[Mm]aduraci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Mm]anutenci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Mm]arginaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Mm]arr_o_nes_ó') + #0
+lema(ur'[Mm]aquetaci_ó_n(?!\])_o') + #1
 lema(ur'[Mm]at_o_nes_ó') + #1
-#lema(ur'[Mm]ecanizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 lema(ur'[Mm]editaci_o_nes_ó') + #1
 lema(ur'[Mm]egat_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpos=[ur' Hit', ]) + #1
-#lema(ur'[Mm]esorregi_ó_n(?!\])_o') + #0
-#lema(ur'[Mm]icronaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+lema(ur'[Mm]enci_o_nes_ó') + #1
+lema(ur'[Mm]icrorregi_ó_n(?!\])_o') + #1
 lema(ur'[Mm]ilitarizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Mm]ill_o_nes_ó') + #3
 lema(ur'[Mm]isti_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Mm]ovilizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Mm]unici_o_nes_ó') + #0
-#lema(ur'[Mm]utaci_o_nes_ó') + #0
-#lema(ur'[Nn]aturalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Oo]bstrucci_o_nes_ó') + #0
-#lema(ur'[Oo]bstrucci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Oo]misi_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+lema(ur'[Mm]orm_ó_n_o', pre=ur'(?:[Ee]l|[Uu]n|[Cc]ada|[Ss]u) ', xpre=[ur'Yu\'', ]) + #1
+lema(ur'[Nn]aci_o_nes_ó') + #1
+lema(ur'[Nn]otificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Oo]pini_o_nes_ó') + #1
-#lema(ur'[Oo]posici_o_nes_ó') + #0
-#lema(ur'[Oo]raci_o_nes_ó') + #0
-#lema(ur'[Oo]rientaci_o_nes_ó') + #0
-#lema(ur'[Oo]rquestaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+lema(ur'[Oo]rganizaci_o_nes_ó') + #1
+lema(ur'[Oo]rnamentaci_ó_n(?!\])_o') + #1
+lema(ur'[Oo]scilaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Oo]stentaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Pp]alpitaci_ó_n(?!\])_o') + #1
 lema(ur'[Pp]antal_o_nes_ó') + #1
-#lema(ur'[Pp]asi_o_nes_ó') + #0
-#lema(ur'[Pp]eat_ó_n(?!\])_o') + #0
+lema(ur'[Pp]atr_o_nes_ó') + #1
+lema(ur'[Pp]ercusi_o_nes_ó') + #1
 lema(ur'[Pp]eriodizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Pp]ermutaci_o_nes_ó') + #1
 lema(ur'[Pp]ersonificaci_o_nes_ó') + #1
 lema(ur'[Pp]etici_o_nes_ó') + #1
-#lema(ur'[Pp]inz_o_nes_ó') + #0
-#lema(ur'[Pp]iñ_o_nes_ó') + #0
 lema(ur'[Pp]lantaci_o_nes_ó') + #1
-#lema(ur'[Pp]olarizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+lema(ur'[Pp]oci_o_nes_ó') + #1
 lema(ur'[Pp]olimerizaci_ó_n(?!\])_o') + #1
 lema(ur'[Pp]ose_sio_nes_ci[oó]') + #1
-#lema(ur'[Pp]redicaci_ó_n_o', xpos=[ur' de la Ley', ur'\]\]es', ]) + #0
 lema(ur'[Pp]redicci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Pp]redicci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Pp]reocupaci_o_nes_ó') + #0
-#lema(ur'[Pp]reparaci_o_nes_ó') + #0
+lema(ur'[Pp]rescripci_ó_n(?!\])_o') + #1
 lema(ur'[Pp]reselecci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Pp]resentaci_o_nes_ó') + #2
 lema(ur'[Pp]revisualizaci_ó_n(?!\])_o') + #1
-#lema(ur'[Pp]rofesi_o_nes_ó') + #0
 lema(ur'[Pp]roliferaci_o_nes_ó') + #1
-#lema(ur'[Pp]rolongaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Pp]rospecci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 lema(ur'[Pp]rovocaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Pp]udrici_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Pp]ulg_o_nes_ó') + #0
-#lema(ur'[Pp]ulsaci_o_nes_ó') + #0
 lema(ur'[Pp]unz_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Rr]abi_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Rr]adiaci_o_nes_ó') + #0
-#lema(ur'[Rr]amificaci_o_nes_ó') + #0
 lema(ur'[Rr]at_o_nes_ó') + #1
-lema(ur'[Rr]at_ó_n_o', xpre=[ur'(?:Le|On) ', ur'[Mm]esa ', ur'[RB]oca ', ], xpos=[ur' (?:section|Mesa|Pass|Municipal Airport)', ur'[\'\]]', ]) + #1
-#lema(ur'[Rr]eacci_o_nes_ó') + #0
-#lema(ur'[Rr]ecapitulaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Rr]ecepci_o_nes_ó') + #0
-#lema(ur'[Rr]eclamaci_o_nes_ó') + #0
-lema(ur'[Rr]econciliaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-#lema(ur'[Rr]econstituci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Rr]ecreaci_o_nes_ó') + #0
+lema(ur'[Rr]ecordaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Rr]efacci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Rr]efracci_ó_n(?!\])_o') + #1
-#lema(ur'[Rr]efrigeraci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-lema(ur'[Rr]efutaci_ó_n_o', xpos=[ur'\]\]es', ]) + #3
-lema(ur'[Rr]egresi_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Rr]egeneraci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Rr]egi_o_nes_ó') + #1
 lema(ur'[Rr]egularizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Rr]eimpresi_o_nes_ó') + #0
-lema(ur'[Rr]eimpresi_ó_n_o', xpre=[ur'5th ', ], xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Rr]eincorporaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Rr]einvenci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Rr]eligi_o_nes_ó') + #0
-#lema(ur'[Rr]emodelaci_o_nes_ó') + #0
+lema(ur'[Rr]elaci_o_nes_ó') + #1
+lema(ur'[Rr]endici_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Rr]engl_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Rr]epercusi_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Rr]eposici_o_nes_ó') + #0
+lema(ur'[Rr]epoblaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Rr]eproducci_o_nes_ó') + #1
-#lema(ur'[Rr]esoluci_o_nes_ó') + #0
+lema(ur'[Rr]eputaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Rr]estricci_o_nes_ó') + #1
-#lema(ur'[Rr]etroalimentaci_ó_n(?!\])_o') + #0
-lema(ur'[Rr]etrotranspos_ó_n_o', xpos=[ur' superfamily', ur'\]\]es', ]) + #1
+lema(ur'[Rr]euni_o_nes_ó') + #1
 lema(ur'[Rr]everberaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Rr]evisi_o_nes_ó') + #0
-#lema(ur'[Ss]alaz_ó_n(?!\])_o') + #0
-lema(ur'[Ss]aturaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Ss]ecci_o_nes_ó') + #2
-#lema(ur'[Ss]ecreci_ó_n_o', xpos=[ur'(?:\]|\.com)', ]) + #0
+lema(ur'[Rr]evoluci_o_nes_ó') + #1
 lema(ur'[Ss]edici_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Ss]emidesintegraci_ó_n(?!\])_o') + #0
-#lema(ur'[Ss]ensibilizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Ss]eñalizaci_o_nes_ó') + #0
-#lema(ur'[Ss]if_o_nes_ó') + #0
-#lema(ur'[Ss]implificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Ss]ocializaci_ó_n(?!\])_o') + #0
+lema(ur'[Ss]esi_o_nes_ó') + #1
+lema(ur'[Ss]eñalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Ss]oluci_o_nes_ó') + #1
 lema(ur'[Ss]ubestaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Ss]ubordinaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Ss]ubsecci_o_nes_ó') + #0
-#lema(ur'[Ss]ubvenci_ó_n(?!\])_o') + #0
+lema(ur'[Ss]uperaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Ss]uperposici_ó_n_o', xpos=[ur'\]\]es', ]) + #1
 lema(ur'[Ss]uperstici_ó_n(?!\])_o') + #1
-lema(ur'[Ss]uplicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Tt]ax_o_nes_ó') + #0
+lema(ur'[Ss]upresi_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Tt]ap_o_nes_ó') + #1
 lema(ur'[Tt]ej_ó_n_o', pre=ur'(?:[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ') + #1
+lema(ur'[Tt]ej_ó_n_o', pre=ur'[Ee]l ', xpos=[ur' Ranch', ]) + #1
 lema(ur'[Tt]elecomunicaci_o_nes_ó') + #1
 lema(ur'[Tt]ensi_o_nes_ó') + #1
-lema(ur'[Tt]erminaci_ó_n_o', xpos=[ur'\]\]es', ]) + #2
-#lema(ur'[Tt]eut_ó_n(?!\])_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada) ', xpos=[ur' de Neville', ]) + #0
-#lema(ur'[Tt]raducci_o_nes_ó') + #0
-#lema(ur'[Tt]ransliteraci_ó_n(?!\])_o') + #0
+lema(ur'[Tt]erminaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Tt]ra_smisió_n_nsmicio') + #1
+lema(ur'[Tt]radici_o_nes_ó') + #1
+lema(ur'[Tt]ransformaci_o_nes_ó') + #1
 lema(ur'[Tt]ransmigraci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Uu]bicaci_o_nes_ó') + #2
-#lema(ur'[Uu]rbanizaci_o_nes_ó') + #0
+lema(ur'[Tt]ransportaci_o_nes_ó') + #1
+lema(ur'[Tt]áx_ó_n(?!\])_o') + #1
 lema(ur'[Vv]acunaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Vv]alidaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Vv]alorizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Vv]ar_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ') + #0
-#lema(ur'[Vv]eneraci_ó_n_o', xpre=[ur'Ian ', ur'Jun ', ur'Luis ', ur'Ofilada ', ur'Ynez ', ], xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Vv]erificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
-#lema(ur'[Vv]isi_o_nes_ó') + #0
-lema(ur'[Vv]isualizaci_o_nes_ó') + #3
+lema(ur'[Vv]ag_o_nes_ó') + #1
+lema(ur'[Vv]ibraci_o_nes_ó') + #1
 lema(ur'[Vv]isualizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-#lema(ur'[Vv]otaci_o_nes_ó') + #0
 lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpre=[ur'\bd’', ], xpos=[ur' très', ]) + #1
-
+lema(ur'[m]at_ó_n_o', xpos=[ur' BB1200', ur'\]\]es', ]) + #1
+# lema(ur'[Aa]daptaci_o_nes_ó') + #0
+# lema(ur'[Cc]onfecci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Dd]isyunci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Ii]nfracci_o_nes_ó') + #0
+# lema(ur'[Nn]ominaci_o_nes_ó') + #0
+# lema(ur'[Oo]ca_sió_n_ci[oó]') + #0
+# lema(ur'[Pp]enetraci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Rr]ecomendaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Rr]epetici_o_nes_ó') + #0
+# lema(ur'[Ss]ujeci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Tt]ransmisi_o_nes_ó') + #0
 # lema(ur'[Aa]bdicaci_o_nes_ó') + #0
 # lema(ur'[Aa]bducci_o_nes_ó') + #0
 # lema(ur'[Aa]berraci_o_nes_ó') + #0
@@ -5707,6 +5500,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Aa]bluci_ó_n(?!\])_o') + #0
 # lema(ur'[Aa]bolici_o_nes_ó') + #0
 # lema(ur'[Aa]bominaci_o_nes_ó') + #0
+# lema(ur'[Aa]bominaci_ó_n(?!\])_o') + #0
 # lema(ur'[Aa]breviaci_o_nes_ó') + #0
 # lema(ur'[Aa]bsoluci_o_nes_ó') + #0
 # lema(ur'[Aa]bsorci_o_nes_ó') + #0
@@ -5724,15 +5518,19 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Aa]cotaci_o_nes_ó') + #0
 # lema(ur'[Aa]cotaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Aa]creditaci_o_nes_ó') + #0
+# lema(ur'[Aa]ctivaci_o_nes_ó') + #0
 # lema(ur'[Aa]cusaci_o_nes_ó') + #0
 # lema(ur'[Aa]cuñaci_o_nes_ó') + #0
 # lema(ur'[Aa]cuñaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Aa]daptaci_o_nes_ó') + #0
 # lema(ur'[Aa]decuaci_o_nes_ó') + #0
 # lema(ur'[Aa]dhesi_o_nes_ó') + #0
 # lema(ur'[Aa]dicci_o_nes_ó') + #0
 # lema(ur'[Aa]dici_o_nes_ó') + #0
 # lema(ur'[Aa]divinaci_o_nes_ó') + #0
+# lema(ur'[Aa]divinaci_ó_n(?!\])_o') + #0
 # lema(ur'[Aa]djudicaci_o_nes_ó') + #0
+# lema(ur'[Aa]dministraci_o_nes_ó') + #0
 # lema(ur'[Aa]dmiraci_o_nes_ó') + #0
 # lema(ur'[Aa]dopci_o_nes_ó') + #0
 # lema(ur'[Aa]doraci_o_nes_ó') + #0
@@ -5764,12 +5562,15 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Aa]lfabetizaci_o_nes_ó') + #0
 # lema(ur'[Aa]lgod_o_nes_ó') + #0
 # lema(ur'[Aa]lienaci_o_nes_ó') + #0
+# lema(ur'[Aa]lienaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Aa]limentaci_o_nes_ó') + #0
 # lema(ur'[Aa]lineaci_o_nes_ó') + #0
 # lema(ur'[Aa]lmid_o_nes_ó') + #0
 # lema(ur'[Aa]locuci_o_nes_ó') + #0
 # lema(ur'[Aa]lteraci_o_nes_ó') + #0
 # lema(ur'[Aa]lternaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Aa]lucinaci_o_nes_ó') + #0
+# lema(ur'[Aa]lusi_o_nes_ó') + #0
 # lema(ur'[Aa]luvi_o_nes_ó') + #0
 # lema(ur'[Aa]mbici_o_nes_ó') + #0
 # lema(ur'[Aa]mbientaci_o_nes_ó') + #0
@@ -5778,23 +5579,32 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Aa]monestaci_ó_n(?!\])_o') + #0
 # lema(ur'[Aa]mpliaci_o_nes_ó') + #0
 # lema(ur'[Aa]mplificaci_o_nes_ó') + #0
+# lema(ur'[Aa]mplificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Aa]nfitri_o_nes_ó') + #0
 # lema(ur'[Aa]nglosaj_o_nes_ó') + #0
 # lema(ur'[Aa]ni_o_nes_ó') + #0
 # lema(ur'[Aa]nidaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Aa]nimaci_o_nes_ó') + #0
 # lema(ur'[Aa]niquilaci_o_nes_ó') + #0
+# lema(ur'[Aa]niquilaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Aa]notaci_o_nes_ó') + #0
 # lema(ur'[Aa]ntelaci_o_nes_ó') + #0
 # lema(ur'[Aa]nticipaci_o_nes_ó') + #0
 # lema(ur'[Aa]nulaci_o_nes_ó') + #0
 # lema(ur'[Aa]pag_o_nes_ó') + #0
+# lema(ur'[Aa]parici_o_nes_ó') + #0
+# lema(ur'[Aa]pelaci_o_nes_ó') + #0
+# lema(ur'[Aa]plicaci_o_nes_ó') + #0
 # lema(ur'[Aa]portaci_o_nes_ó') + #0
 # lema(ur'[Aa]preciaci_o_nes_ó') + #0
+# lema(ur'[Aa]preciaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Aa]probaci_o_nes_ó') + #0
 # lema(ur'[Aa]propiaci_o_nes_ó') + #0
 # lema(ur'[Aa]propiaci_ó_n(?!\])_o') + #0
 # lema(ur'[Aa]proximaci_o_nes_ó') + #0
 # lema(ur'[Aa]rgumentaci_o_nes_ó') + #0
 # lema(ur'[Aa]rp_o_nes_ó') + #0
+# lema(ur'[Aa]rticulaci_o_nes_ó') + #0
 # lema(ur'[Aa]scensi_o_nes_ó') + #0
 # lema(ur'[Aa]serci_o_nes_ó') + #0
 # lema(ur'[Aa]serci_ó_n(?!\])_o') + #0
@@ -5803,14 +5613,19 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Aa]signaci_o_nes_ó') + #0
 # lema(ur'[Aa]similaci_o_nes_ó') + #0
 # lema(ur'[Aa]similaci_ó_n(?!\])_o') + #0
+# lema(ur'[Aa]sociaci_o_nes_ó') + #0
 # lema(ur'[Aa]spiraci_o_nes_ó') + #0
 # lema(ur'[Aa]tenci_o_nes_ó') + #0
 # lema(ur'[Aa]tenuaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Aa]tol_o_nes_ó') + #0
+# lema(ur'[Aa]tracci_o_nes_ó') + #0
 # lema(ur'[Aa]tribuci_o_nes_ó') + #0
 # lema(ur'[Aa]tribuci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Aa]udici_o_nes_ó') + #0
 # lema(ur'[Aa]utenticaci_o_nes_ó') + #0
 # lema(ur'[Aa]utocami_o_nes_ó') + #0
 # lema(ur'[Aa]utocompasi_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Aa]utodestrucci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Aa]utodeterminaci_o_nes_ó') + #0
 # lema(ur'[Aa]utomatizaci_o_nes_ó') + #0
 # lema(ur'[Aa]utor_regulació_n_egulacio') + #0
@@ -5823,14 +5638,19 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Aa]x_ó_n_o', xpre=[ur'Gen\. ', ur'Short ', ], xpos=[ur' (?:\(?of |compañía|initial|collaterals|guidance|Films|Jump)', ur'[\'\]]', ]) + #0
 # lema(ur'[Bb]alc_o_nes_ó') + #0
 # lema(ur'[Bb]ar_o_nes_ó') + #0
+# lema(ur'[Bb]ar_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Aa]l?) ', xpre=[ur'\bpar ', ur'acuerdo ', ], xpos=[ur' (?:Michele|Reiter|Cohen|Corbin|Wolman|Samedi|Zemo|Gattoni)', ur', el', ]) + #0
 # lema(ur'[Bb]ari_o_nes_ó') + #0
 # lema(ur'[Bb]ari_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpre=[ur'detrás ', ]) + #0
+# lema(ur'[Bb]arrac_o_nes_ó') + #0
+# lema(ur'[Bb]arrac_ó_n(?!\])_o') + #0
 # lema(ur'[Bb]ast_o_nes_ó') + #0
 # lema(ur'[Bb]asti_o_nes_ó') + #0
 # lema(ur'[Bb]asti_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #0
+# lema(ur'[Bb]atall_o_nes_ó') + #0
 # lema(ur'[Bb]eatificaci_o_nes_ó') + #0
 # lema(ur'[Bb]endici_o_nes_ó') + #0
 # lema(ur'[Bb]id_o_nes_ó') + #0
+# lema(ur'[Bb]ifurcaci_o_nes_ó') + #0
 # lema(ur'[Bb]ifurcaci_ó_n(?!\])_o') + #0
 # lema(ur'[Bb]ill_o_nes_ó') + #0
 # lema(ur'[Bb]las_o_nes_ó') + #0
@@ -5838,18 +5658,22 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Bb]odeg_o_nes_ó') + #0
 # lema(ur'[Bb]omb_o_nes_ó') + #0
 # lema(ur'[Bb]onificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Bb]oquer_o_nes_ó') + #0
 # lema(ur'[Bb]orb_o_nes_ó') + #0
 # lema(ur'[Bb]os_o_nes_ó') + #0
 # lema(ur'[Bb]os_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #0
 # lema(ur'[Bb]ret_o_nes_ó') + #0
+# lema(ur'[Bb]uz_o_nes_ó') + #0
 # lema(ur'[Cc]aj_o_nes_ó') + #0
 # lema(ur'[Cc]alefacci_o_nes_ó') + #0
 # lema(ur'[Cc]alibraci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Cc]alificaci_o_nes_ó') + #0
 # lema(ur'[Cc]alz_o_nes_ó') + #0
 # lema(ur'[Cc]amale_o_nes_ó') + #0
 # lema(ur'[Cc]amar_o_nes_ó') + #0
 # lema(ur'[Cc]amell_o_nes_ó') + #0
 # lema(ur'[Cc]amell_ó_n(?!\])_o') + #0
+# lema(ur'[Cc]ami_o_nes_ó') + #0
 # lema(ur'[Cc]analizaci_o_nes_ó') + #0
 # lema(ur'[Cc]ancelaci_o_nes_ó') + #0
 # lema(ur'[Cc]anel_o_nes_ó') + #0
@@ -5862,6 +5686,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Cc]aptaci_o_nes_ó') + #0
 # lema(ur'[Cc]aracterizaci_o_nes_ó') + #0
 # lema(ur'[Cc]arb_o_nes_ó') + #0
+# lema(ur'[Cc]arburaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Cc]ard_o_nes_ó') + #0
 # lema(ur'[Cc]art_o_nes_ó') + #0
 # lema(ur'[Cc]art_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #0
@@ -5874,6 +5699,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Cc]enturi_o_nes_ó') + #0
 # lema(ur'[Cc]enturi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #0
 # lema(ur'[Cc]esi_o_nes_ó') + #0
+# lema(ur'[Cc]hampiñ_o_nes_ó') + #0
 # lema(ur'[Cc]hicharr_o_nes_ó') + #0
 # lema(ur'[Cc]icl_o_nes_ó') + #0
 # lema(ur'[Cc]imarr_o_nes_ó') + #0
@@ -5881,9 +5707,13 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Cc]imentaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Cc]irculaci_o_nes_ó') + #0
 # lema(ur'[Cc]ircunnavegaci_o_nes_ó') + #0
+# lema(ur'[Cc]ircunscripci_o_nes_ó') + #0
 # lema(ur'[Cc]ircunvalaci_o_nes_ó') + #0
 # lema(ur'[Cc]itaci_o_nes_ó') + #0
+# lema(ur'[Cc]itaci_ó_n(?!\])_o') + #0
 # lema(ur'[Cc]lonaci_o_nes_ó') + #0
+# lema(ur'[Cc]lonaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Cc]o_mposicio_nes_(?:npo[cs]i[cs]i[oó]|mpoci[cs]i[oó]|mposisi[oó]|mposició)') + #0
 # lema(ur'[Cc]o_operació_n_peracio') + #0
 # lema(ur'[Cc]oacci_o_nes_ó') + #0
 # lema(ur'[Cc]oacci_ó_n(?!\])_o') + #0
@@ -5893,24 +5723,33 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Cc]odificaci_o_nes_ó') + #0
 # lema(ur'[Cc]oj_o_nes_ó') + #0
 # lema(ur'[Cc]oj_ó_n(?!\])_o') + #0
+# lema(ur'[Cc]olaboraci_o_nes_ó') + #0
 # lema(ur'[Cc]olaci_o_nes_ó') + #0
 # lema(ur'[Cc]olaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Cc]olch_o_nes_ó') + #0
+# lema(ur'[Cc]olecci_o_nes_ó') + #0
 # lema(ur'[Cc]olocaci_o_nes_ó') + #0
 # lema(ur'[Cc]olonizaci_o_nes_ó') + #0
 # lema(ur'[Cc]oloraci_o_nes_ó') + #0
+# lema(ur'[Cc]ombinaci_o_nes_ó') + #0
 # lema(ur'[Cc]omercializaci_o_nes_ó') + #0
 # lema(ur'[Cc]omparaci_o_nes_ó') + #0
 # lema(ur'[Cc]ompensaci_o_nes_ó') + #0
 # lema(ur'[Cc]ompetic_ió_n_cio') + #0
+# lema(ur'[Cc]ompetici_o_nes_ó') + #0
+# lema(ur'[Cc]ompilaci_o_nes_ó') + #0
+# lema(ur'[Cc]omplicaci_o_nes_ó') + #0
 # lema(ur'[Cc]omposici_o_nes_ó') + #0
 # lema(ur'[Cc]ompresi_o_nes_ó') + #0
 # lema(ur'[Cc]omprobaci_o_nes_ó') + #0
+# lema(ur'[Cc]omprobaci_ó_n(?!\])_o') + #0
 # lema(ur'[Cc]omputaci_o_nes_ó') + #0
 # lema(ur'[Cc]omunicaci_o_nes_ó') + #0
 # lema(ur'[Cc]on_struccio_nes_trucció') + #0
 # lema(ur'[Cc]oncatenaci_o_nes_ó') + #0
+# lema(ur'[Cc]oncentraci_o_nes_ó') + #0
 # lema(ur'[Cc]oncepci_o_nes_ó') + #0
+# lema(ur'[Cc]oncesi_o_nes_ó') + #0
 # lema(ur'[Cc]onciliaci_o_nes_ó') + #0
 # lema(ur'[Cc]onclusi_o_nes_ó') + #0
 # lema(ur'[Cc]oncreci_o_nes_ó') + #0
@@ -5919,6 +5758,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Cc]ondecoraci_o_nes_ó') + #0
 # lema(ur'[Cc]ondeferaci_o_nes_ó') + #0
 # lema(ur'[Cc]ondeferaci_ó_n_o') + #0
+# lema(ur'[Cc]ondenaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Cc]ondensaci_o_nes_ó') + #0
 # lema(ur'[Cc]onducci_o_nes_ó') + #0
 # lema(ur'[Cc]onecci_o_nes_ó') + #0
@@ -5926,6 +5766,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Cc]onfabulaci_o_nes_ó') + #0
 # lema(ur'[Cc]onfabulaci_ó_n(?!\])_o') + #0
 # lema(ur'[Cc]onfecci_o_nes_ó') + #0
+# lema(ur'[Cc]onfecci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Cc]onfederaci_o_nes_ó') + #0
 # lema(ur'[Cc]onfiguraci_o_nes_ó') + #0
 # lema(ur'[Cc]onfirmaci_o_nes_ó') + #0
@@ -5939,10 +5780,12 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Cc]ongelaci_o_nes_ó') + #0
 # lema(ur'[Cc]ongelaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Cc]ongregaci_o_nes_ó') + #0
+# lema(ur'[Cc]onjugaci_o_nes_ó') + #0
 # lema(ur'[Cc]onmemoraci_o_nes_ó') + #0
 # lema(ur'[Cc]onmoci_o_nes_ó') + #0
 # lema(ur'[Cc]onmutaci_o_nes_ó') + #0
 # lema(ur'[Cc]onnotaci_o_nes_ó') + #0
+# lema(ur'[Cc]onnotaci_ó_n(?!\])_o') + #0
 # lema(ur'[Cc]onsagraci_o_nes_ó') + #0
 # lema(ur'[Cc]onsecuci_o_nes_ó') + #0
 # lema(ur'[Cc]onsecuci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
@@ -5951,6 +5794,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Cc]onsolidaci_o_nes_ó') + #0
 # lema(ur'[Cc]onspiraci_o_nes_ó') + #0
 # lema(ur'[Cc]onstelaci_o_nes_ó') + #0
+# lema(ur'[Cc]onstituci_o_nes_ó') + #0
 # lema(ur'[Cc]onsumici_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Cc]ontaminaci_o_nes_ó') + #0
 # lema(ur'[Cc]ontemplaci_o_nes_ó') + #0
@@ -5961,22 +5805,27 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Cc]ontradicci_o_nes_ó') + #0
 # lema(ur'[Cc]ontraindicaci_o_nes_ó') + #0
 # lema(ur'[Cc]ontraposici_o_nes_ó') + #0
+# lema(ur'[Cc]ontraposici_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Cc]ontrataci_o_nes_ó') + #0
 # lema(ur'[Cc]ontravenci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Cc]ontusi_o_nes_ó') + #0
 # lema(ur'[Cc]ontusi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #0
 # lema(ur'[Cc]onurbaci_o_nes_ó') + #0
 # lema(ur'[Cc]onvecci_o_nes_ó') + #0
+# lema(ur'[Cc]onvecci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Cc]onvenci_o_nes_ó') + #0
 # lema(ur'[Cc]onversi_o_nes_ó') + #0
 # lema(ur'[Cc]onvicci_o_nes_ó') + #0
 # lema(ur'[Cc]onvocaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Cc]onvulsi_o_nes_ó') + #0
+# lema(ur'[Cc]ooperaci_o_nes_ó') + #0
 # lema(ur'[Cc]oordinaci_o_nes_ó') + #0
 # lema(ur'[Cc]oproducci_o_nes_ó') + #0
 # lema(ur'[Cc]ord_o_nes_ó') + #0
 # lema(ur'[Cc]oronaci_o_nes_ó') + #0
 # lema(ur'[Cc]orporaci_o_nes_ó') + #0
 # lema(ur'[Cc]orrecci_o_nes_ó') + #0
+# lema(ur'[Cc]orrelaci_o_nes_ó') + #0
 # lema(ur'[Cc]orrupci_o_nes_ó') + #0
 # lema(ur'[Cc]otiled_o_nes_ó') + #0
 # lema(ur'[Cc]otiled_ó_n(?!\])_o') + #0
@@ -5984,6 +5833,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Cc]ristalizaci_o_nes_ó') + #0
 # lema(ur'[Cc]ristalizaci_ó_n(?!\])_o') + #0
 # lema(ur'[Cc]ristianizaci_o_nes_ó') + #0
+# lema(ur'[Cc]ristianizaci_ó_n(?!\])_o') + #0
 # lema(ur'[Cc]rucifixi_o_nes_ó') + #0
 # lema(ur'[Cc]ualificaci_o_nes_ó') + #0
 # lema(ur'[Cc]ualificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
@@ -5994,10 +5844,12 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Cc]uesti_o_nes_ó') + #0
 # lema(ur'[Cc]ulminaci_o_nes_ó') + #0
 # lema(ur'[Cc]uraci_o_nes_ó') + #0
+# lema(ur'[Dd]ataci_o_nes_ó') + #0
 # lema(ur'[Dd]ecapitaci_o_nes_ó') + #0
 # lema(ur'[Dd]ecapitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Dd]ecepci_o_nes_ó') + #0
 # lema(ur'[Dd]ecisi_o_nes_ó') + #0
+# lema(ur'[Dd]eclaraci_o_nes_ó') + #0
 # lema(ur'[Dd]eclinaci_o_nes_ó') + #0
 # lema(ur'[Dd]eclinaci_ó_n(?!\])_o') + #0
 # lema(ur'[Dd]ecocci_o_nes_ó') + #0
@@ -6008,6 +5860,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Dd]educci_o_nes_ó') + #0
 # lema(ur'[Dd]efecci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Dd]eforestaci_o_nes_ó') + #0
+# lema(ur'[Dd]eforestaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Dd]efunci_o_nes_ó') + #0
 # lema(ur'[Dd]egeneraci_o_nes_ó') + #0
 # lema(ur'[Dd]egeneraci_ó_n_o', xpos=[ur' Rock', ur'[\]]', ]) + #0
@@ -6022,16 +5875,19 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Dd]enegaci_o_nes_ó') + #0
 # lema(ur'[Dd]enegaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Dd]enominaci_o_nes_ó') + #0
+# lema(ur'[Dd]epilaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Dd]eportaci_o_nes_ó') + #0
 # lema(ur'[Dd]eportaci_ó_n(?!\])_o') + #0
 # lema(ur'[Dd]eposici_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Dd]epravaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Dd]epreciaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Dd]epredaci_o_nes_ó') + #0
 # lema(ur'[Dd]epresi_o_nes_ó') + #0
 # lema(ur'[Dd]epuraci_o_nes_ó') + #0
 # lema(ur'[Dd]erogaci_o_nes_ó') + #0
 # lema(ur'[Dd]esambiguaci_o_nes_ó') + #0
 # lema(ur'[Dd]esamortizaci_o_nes_ó') + #0
+# lema(ur'[Dd]esaparici_o_nes_ó') + #0
 # lema(ur'[Dd]esaprobaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Dd]escalificaci_o_nes_ó') + #0
 # lema(ur'[Dd]escamaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
@@ -6056,10 +5912,13 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Dd]espoblaci_o_nes_ó') + #0
 # lema(ur'[Dd]espoblaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Dd]estilaci_o_nes_ó') + #0
+# lema(ur'[Dd]estilaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Dd]estinaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Dd]estituci_o_nes_ó') + #0
 # lema(ur'[Dd]estrucci_o_nes_ó') + #0
 # lema(ur'[Dd]esuni_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Dd]esviaci_o_nes_ó') + #0
+# lema(ur'[Dd]esvinculaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Dd]etecci_o_nes_ó') + #0
 # lema(ur'[Dd]etenci_o_nes_ó') + #0
 # lema(ur'[Dd]eterminaci_o_nes_ó') + #0
@@ -6068,10 +5927,12 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Dd]evoci_o_nes_ó') + #0
 # lema(ur'[Dd]evoluci_o_nes_ó') + #0
 # lema(ur'[Dd]iagramaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Dd]iapas_ó_n_o', xpre=[ur'[Ll]e ', ur'[Tt]he ', ur'revue ', ], xpos=[ur' (?:Découverte|Records|[Dd]|\(revista)\b', ur'(?:, Scherzo|’s|\'|\]\])', ]) + #0
 # lema(ur'[Dd]icci_o_nes_ó') + #0
 # lema(ur'[Dd]ifamaci_o_nes_ó') + #0
 # lema(ur'[Dd]ifamaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Dd]iferenciaci_o_nes_ó') + #0
+# lema(ur'[Dd]iferenciaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Dd]ifracci_o_nes_ó') + #0
 # lema(ur'[Dd]ifusi_o_nes_ó') + #0
 # lema(ur'[Dd]igresi_o_nes_ó') + #0
@@ -6097,15 +5958,19 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Dd]islocaci_o_nes_ó') + #0
 # lema(ur'[Dd]islocaci_ó_n(?!\])_o') + #0
 # lema(ur'[Dd]isminuci_o_nes_ó') + #0
+# lema(ur'[Dd]isminuci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Dd]isociaci_o_nes_ó') + #0
 # lema(ur'[Dd]isociaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Dd]isoluci_o_nes_ó') + #0
 # lema(ur'[Dd]ispensaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Dd]ispersion_o_nes_ó') + #0
 # lema(ur'[Dd]isposi_ció_n_sio') + #0
+# lema(ur'[Dd]isposici_o_nes_ó') + #0
 # lema(ur'[Dd]istracci_o_nes_ó') + #0
 # lema(ur'[Dd]istribuci_o_nes_ó') + #0
 # lema(ur'[Dd]isuasi_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Dd]isyunci_o_nes_ó') + #0
+# lema(ur'[Dd]iversi_o_nes_ó') + #0
 # lema(ur'[Dd]iversificaci_o_nes_ó') + #0
 # lema(ur'[Dd]ivulgaci_o_nes_ó') + #0
 # lema(ur'[Dd]ocumentaci_o_nes_ó') + #0
@@ -6114,8 +5979,11 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Dd]ominaci_o_nes_ó') + #0
 # lema(ur'[Dd]onaci_o_nes_ó') + #0
 # lema(ur'[Dd]otaci_o_nes_ó') + #0
+# lema(ur'[Dd]r_o_n(?!\])_ó') + #0
 # lema(ur'[Dd]r_o_nes_ó') + #0
+# lema(ur'[Dd]rag_o_nes_ó') + #0
 # lema(ur'[Dd]ramatizaci_o_nes_ó') + #0
+# lema(ur'[Dd]uplicaci_o_nes_ó') + #0
 # lema(ur'[Dd]uraci_o_nes_ó') + #0
 # lema(ur'[Ee]bullici_o_nes_ó') + #0
 # lema(ur'[Ee]bullici_ó_n(?!\])_o') + #0
@@ -6126,9 +5994,11 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Ee]ducaci_o_nes_ó') + #0
 # lema(ur'[Ee]jecuci_o_nes_ó') + #0
 # lema(ur'[Ee]laboraci_o_nes_ó') + #0
+# lema(ur'[Ee]lectr_o_nes_ó') + #0
 # lema(ur'[Ee]lectrificaci_o_nes_ó') + #0
 # lema(ur'[Ee]levaci_o_nes_ó') + #0
 # lema(ur'[Ee]liminaci_o_nes_ó') + #0
+# lema(ur'[Ee]longaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ee]manaci_o_nes_ó') + #0
 # lema(ur'[Ee]manaci_ó_n(?!\])_o') + #0
 # lema(ur'[Ee]mancipaci_o_nes_ó') + #0
@@ -6136,6 +6006,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Ee]mbarcaci_ó_n(?!\]|\.gov\.ar)_o') + #0
 # lema(ur'[Ee]mbri_o_nes_ó') + #0
 # lema(ur'[Ee]migraci_o_nes_ó') + #0
+# lema(ur'[Ee]mis_ió_n_sió') + #0
 # lema(ur'[Ee]mulaci_o_nes_ó') + #0
 # lema(ur'[Ee]mulsi_o_nes_ó') + #0
 # lema(ur'[Ee]mulsi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #0
@@ -6151,6 +6022,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Ee]rradicaci_o_nes_ó') + #0
 # lema(ur'[Ee]rradicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ee]rudici_o_nes_ó') + #0
+# lema(ur'[Ee]rupci_o_nes_ó') + #0
 # lema(ur'[Ee]scal_o_nes_ó') + #0
 # lema(ur'[Ee]scalaf_o_nes_ó') + #0
 # lema(ur'[Ee]scarificaci_o_nes_ó') + #0
@@ -6160,27 +6032,33 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Ee]scorpi_o_nes_ó') + #0
 # lema(ur'[Ee]scuadr_o_nes_ó') + #0
 # lema(ur'[Ee]specializaci_o_nes_ó') + #0
+# lema(ur'[Ee]specificaci_o_nes_ó') + #0
 # lema(ur'[Ee]speculaci_o_nes_ó') + #0
 # lema(ur'[Ee]spol_o_nes_ó') + #0
 # lema(ur'[Ee]stabilizaci_o_nes_ó') + #0
 # lema(ur'[Ee]stabilizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ee]standarizaci_o_nes_ó') + #0
+# lema(ur'[Ee]standarizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ee]sterilizaci_o_nes_ó') + #0
 # lema(ur'[Ee]stilizaci_o_nes_ó') + #0
 # lema(ur'[Ee]stimaci_o_nes_ó') + #0
 # lema(ur'[Ee]stimulaci_o_nes_ó') + #0
+# lema(ur'[Ee]stimulaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ee]stipulaci_o_nes_ó') + #0
 # lema(ur'[Ee]stipulaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ee]stratificaci_o_nes_ó') + #0
+# lema(ur'[Ee]stratificaci_ó_n(?!\])_o') + #0
 # lema(ur'[Ee]stribaci_o_nes_ó') + #0
 # lema(ur'[Ee]stribaci_ó_n_o', xpre=[ur'En una ', ], xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ee]structuraci_o_nes_ó') + #0
 # lema(ur'[Ee]structuraci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ee]sturi_o_nes_ó') + #0
+# lema(ur'[Ee]sturi_ó_n(?!\])_o') + #0
 # lema(ur'[Ee]vacuaci_o_nes_ó') + #0
 # lema(ur'[Ee]valuaci_o_nes_ó') + #0
 # lema(ur'[Ee]vangelizaci_o_nes_ó') + #0
 # lema(ur'[Ee]vaporaci_o_nes_ó') + #0
+# lema(ur'[Ee]vaporaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ee]vocaci_o_nes_ó') + #0
 # lema(ur'[Ee]voluci_o_nes_ó') + #0
 # lema(ur'[Ee]x_cepcio_nes_epci[oó]') + #0
@@ -6192,16 +6070,22 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Ee]xaptaci_ó_n(?!\])_o') + #0
 # lema(ur'[Ee]xcepci_o_nes_ó') + #0
 # lema(ur'[Ee]xcitaci_o_nes_ó') + #0
+# lema(ur'[Ee]xcitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ee]xclamaci_o_nes_ó') + #0
+# lema(ur'[Ee]xclamaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ee]xclusi_o_nes_ó') + #0
 # lema(ur'[Ee]xcreci_o_nes_ó') + #0
+# lema(ur'[Ee]xcursi_o_nes_ó') + #0
 # lema(ur'[Ee]xenci_o_nes_ó') + #0
 # lema(ur'[Ee]xenci_ó_n(?!\])_o') + #0
 # lema(ur'[Ee]xhalaci_o_nes_ó') + #0
+# lema(ur'[Ee]xhibici_o_nes_ó') + #0
 # lema(ur'[Ee]xpansi_o_nes_ó') + #0
 # lema(ur'[Ee]xpectaci_o_nes_ó') + #0
 # lema(ur'[Ee]xpectoraci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Ee]xpedici_o_nes_ó') + #0
 # lema(ur'[Ee]xperimentaci_o_nes_ó') + #0
+# lema(ur'[Ee]xperimentaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ee]xploraci_o_nes_ó') + #0
 # lema(ur'[Ee]xplosi_o_nes_ó') + #0
 # lema(ur'[Ee]xplotaci_o_nes_ó') + #0
@@ -6217,6 +6101,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Ee]xtorsi_o_nes_ó') + #0
 # lema(ur'[Ee]xtracci_o_nes_ó') + #0
 # lema(ur'[Ee]xtradici_o_nes_ó') + #0
+# lema(ur'[Ee]xtradici_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ee]xtravasaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ee]xtrusi_o_nes_ó') + #0
 # lema(ur'[Ff]abricaci_o_nes_ó') + #0
@@ -6224,6 +6109,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Ff]actorizaci_ó_n(?!\])_o') + #0
 # lema(ur'[Ff]acturaci_o_nes_ó') + #0
 # lema(ur'[Ff]aj_o_nes_ó') + #0
+# lema(ur'[Ff]aj_ó_n(?!\])_o') + #0
 # lema(ur'[Ff]ald_o_nes_ó') + #0
 # lema(ur'[Ff]alsificaci_o_nes_ó') + #0
 # lema(ur'[Ff]ara_o_nes_ó') + #0
@@ -6237,7 +6123,9 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Ff]eraci_o_nes_ó') + #0
 # lema(ur'[Ff]eraci_ó_n_o') + #0
 # lema(ur'[Ff]ermentaci_o_nes_ó') + #0
+# lema(ur'[Ff]ermi_o_nes_ó') + #0
 # lema(ur'[Ff]ertilizaci_o_nes_ó') + #0
+# lema(ur'[Ff]ertilizaci_ó_n(?!\])_o') + #0
 # lema(ur'[Ff]icci_o_nes_ó') + #0
 # lema(ur'[Ff]iguraci_o_nes_ó') + #0
 # lema(ur'[Ff]ijaci_o_nes_ó') + #0
@@ -6249,30 +6137,40 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Ff]inanciaci_o_nes_ó') + #0
 # lema(ur'[Ff]iscalizaci_o_nes_ó') + #0
 # lema(ur'[Ff]lor_o_nes_ó') + #0
+# lema(ur'[Ff]lor_ó_n(?!\])_o') + #3
 # lema(ur'[Ff]loraci_o_nes_ó') + #0
 # lema(ur'[Ff]lotaci_o_nes_ó') + #0
+# lema(ur'[Ff]lotaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ff]luctuaci_o_nes_ó') + #0
 # lema(ur'[Ff]og_o_nes_ó') + #0
 # lema(ur'[Ff]ormulaci_o_nes_ó') + #0
 # lema(ur'[Ff]ormulaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Ff]ortificaci_o_nes_ó') + #0
 # lema(ur'[Ff]ot_o_nes_ó') + #0
+# lema(ur'[Ff]ot_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpre=[ur'oficial ', ], xpos=[ur' Motor', ]) + #0
+# lema(ur'[Ff]racci_o_nes_ó') + #0
 # lema(ur'[Ff]ragmentaci_o_nes_ó') + #0
 # lema(ur'[Ff]rancmas_o_nes_ó') + #0
 # lema(ur'[Ff]ricci_o_nes_ó') + #0
 # lema(ur'[Ff]ris_o_nes_ó') + #0
 # lema(ur'[Ff]ront_o_nes_ó') + #0
 # lema(ur'[Ff]ruici_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Ff]rustraci_o_nes_ó') + #0
+# lema(ur'[Ff]undaci_o_nes_ó') + #0
 # lema(ur'[Ff]undici_o_nes_ó') + #0
+# lema(ur'[Ff]usi_o_nes_ó') + #0
 # lema(ur'[Gg]al_o_nes_ó') + #0
 # lema(ur'[Gg]ale_o_nes_ó') + #0
 # lema(ur'[Gg]alp_o_nes_ó') + #0
 # lema(ur'[Gg]asc_o_nes_ó') + #0
+# lema(ur'[Gg]eneraci_o_nes_ó') + #0
 # lema(ur'[Gg]eneralizaci_o_nes_ó') + #0
 # lema(ur'[Gg]eneralizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Gg]eolocalizaci_o_nes_ó') + #0
 # lema(ur'[Gg]erminaci_o_nes_ó') + #0
 # lema(ur'[Gg]erminaci_ó_n(?!\])_o') + #0
 # lema(ur'[Gg]estaci_o_nes_ó') + #0
+# lema(ur'[Gg]esti_o_nes_ó') + #0
 # lema(ur'[Gg]laciaci_o_nes_ó') + #0
 # lema(ur'[Gg]lobalizaci_o_nes_ó') + #0
 # lema(ur'[Gg]lot_o_nes_ó') + #0
@@ -6282,16 +6180,22 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Gg]radaci_ó_n(?!\])_o') + #0
 # lema(ur'[Gg]raduaci_o_nes_ó') + #0
 # lema(ur'[Gg]ravitaci_o_nes_ó') + #0
+# lema(ur'[Gg]ravitaci_ó_n(?!\])_o') + #0
+# lema(ur'[Gg]uarnici_o_nes_ó') + #0
 # lema(ur'[Gg]ui_o_nes_ó') + #0
 # lema(ur'[Hh]abilitaci_o_nes_ó') + #0
 # lema(ur'[Hh]abitaci_o_nes_ó') + #0
 # lema(ur'[Hh]adr_o_nes_ó') + #0
+# lema(ur'[Hh]adr_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ') + #0
 # lema(ur'[Hh]ibernaci_o_nes_ó') + #0
 # lema(ur'[Hh]ibernaci_ó_n(?!\])_o') + #0
 # lema(ur'[Hh]ibridaci_o_nes_ó') + #0
 # lema(ur'[Hh]idroavi_o_nes_ó') + #0
 # lema(ur'[Hh]ormig_o_nes_ó') + #0
 # lema(ur'[Hh]umillaci_o_nes_ó') + #0
+# lema(ur'[Hh]ur_o_nes_ó') + #0
+# lema(ur'[Hh]ur_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpos=[ur' (?:University|forman|Band|Potawatomi)', ]) + #0
+# lema(ur'[Ii]__dentificaciones_n') + #0
 # lema(ur'[Ii]dealizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ii]dentificaci_o_nes_ó') + #0
 # lema(ur'[Ii]gnici_o_nes_ó') + #0
@@ -6299,13 +6203,16 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Ii]luminaci_o_nes_ó') + #0
 # lema(ur'[Ii]lusi_o_nes_ó') + #0
 # lema(ur'[Ii]lusi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Aa]) ') + #0
+# lema(ur'[Ii]lustraci_o_nes_ó') + #0
 # lema(ur'[Ii]maginaci_o_nes_ó') + #0
 # lema(ur'[Ii]mitaci_o_nes_ó') + #0
 # lema(ur'[Ii]mperfecci_o_nes_ó') + #0
 # lema(ur'[Ii]mperfecci_ó_n(?!\])_o') + #0
 # lema(ur'[Ii]mplementaci_o_nes_ó') + #0
+# lema(ur'[Ii]mplicaci_o_nes_ó') + #0
 # lema(ur'[Ii]mportaci_o_nes_ó') + #0
 # lema(ur'[Ii]mposici_o_nes_ó') + #0
+# lema(ur'[Ii]mposici_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ii]mprecisi_o_nes_ó') + #0
 # lema(ur'[Ii]mpregnaci_o_nes_ó') + #0
 # lema(ur'[Ii]mpregnaci_ó_n(?!\])_o') + #0
@@ -6316,9 +6223,11 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Ii]ncisi_o_nes_ó') + #0
 # lema(ur'[Ii]nclinaci_o_nes_ó') + #0
 # lema(ur'[Ii]nclusi_o_nes_ó') + #0
+# lema(ur'[Ii]nclusi_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Aa]) ') + #0
 # lema(ur'[Ii]ncomprensi_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ii]ncorporaci_o_nes_ó') + #0
 # lema(ur'[Ii]ncrustaci_o_nes_ó') + #0
+# lema(ur'[Ii]ncrustaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ii]ncubaci_o_nes_ó') + #0
 # lema(ur'[Ii]ncubaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ii]ncursi_o_nes_ó') + #0
@@ -6332,16 +6241,21 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Ii]nducci_o_nes_ó') + #0
 # lema(ur'[Ii]ndustrializaci_o_nes_ó') + #0
 # lema(ur'[Ii]ndustrializaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Ii]nfecci_o_nes_ó') + #0
 # lema(ur'[Ii]nfiltraci_o_nes_ó') + #0
 # lema(ur'[Ii]nflaci_o_nes_ó') + #0
 # lema(ur'[Ii]nflamaci_o_nes_ó') + #0
+# lema(ur'[Ii]nflamaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ii]nflexi_o_nes_ó') + #0
+# lema(ur'[Ii]nformaci_o_nes_ó') + #0
 # lema(ur'[Ii]nfracci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ii]nfusi_o_nes_ó') + #0
 # lema(ur'[Ii]nfusi_ó_n(?!\]\][a-z]+|)_o') + #0
 # lema(ur'[Ii]nhalaci_o_nes_ó') + #0
+# lema(ur'[Ii]nhalaci_ó_n(?!\])_o') + #0
 # lema(ur'[Ii]nhumaci_o_nes_ó') + #0
 # lema(ur'[Ii]nhumaci_ó_n(?!\])_o') + #0
+# lema(ur'[Ii]niciaci_o_nes_ó') + #0
 # lema(ur'[Ii]nicializaci_o_nes_ó') + #0
 # lema(ur'[Ii]nmedaci_o_nes_ó') + #0
 # lema(ur'[Ii]nmediaci_o_nes_ó') + #0
@@ -6353,6 +6267,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Ii]nnovaci_o_nes_ó') + #0
 # lema(ur'[Ii]nscripci_o_nes_ó') + #0
 # lema(ur'[Ii]nseminaci_o_nes_ó') + #0
+# lema(ur'[Ii]nseminaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ii]nserci_o_nes_ó') + #0
 # lema(ur'[Ii]nsinuaci_o_nes_ó') + #0
 # lema(ur'[Ii]nsinuaci_ó_n(?!\])_o') + #0
@@ -6361,18 +6276,24 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Ii]nspecci_o_nes_ó') + #0
 # lema(ur'[Ii]nspiraci_o_nes_ó') + #0
 # lema(ur'[Ii]nstauraci_o_nes_ó') + #0
+# lema(ur'[Ii]nstauraci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ii]nstilaci_o_nes_ó') + #0
+# lema(ur'[Ii]nstrucci_o_nes_ó') + #0
+# lema(ur'[Ii]nstrumentaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ii]nsubordinaci_o_nes_ó') + #0
 # lema(ur'[Ii]nsurrecci_o_nes_ó') + #0
 # lema(ur'[Ii]nte_rpretació_n_pretacio') + #0
+# lema(ur'[Ii]ntenci_o_nes_ó') + #0
 # lema(ur'[Ii]ntensificaci_o_nes_ó') + #0
 # lema(ur'[Ii]nteracci_o_nes_ó') + #0
 # lema(ur'[Ii]ntercalaci_o_nes_ó') + #0
 # lema(ur'[Ii]ntercepci_o_nes_ó') + #0
 # lema(ur'[Ii]ntercepci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Ii]nterceptaci_o_nes_ó') + #0
 # lema(ur'[Ii]ntercomunicaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ii]nterconexi_o_nes_ó') + #0
 # lema(ur'[Ii]nterdicci_o_nes_ó') + #0
+# lema(ur'[Ii]nterdicci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ii]nterjecci_o_nes_ó') + #0
 # lema(ur'[Ii]nterjecci_ó_n(?!\])_o') + #0
 # lema(ur'[Ii]ntermediaci_o_nes_ó') + #0
@@ -6382,6 +6303,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Ii]nterpolaci_o_nes_ó') + #0
 # lema(ur'[Ii]nterpolaci_ó_n(?!\])_o') + #0
 # lema(ur'[Ii]nterposici_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Ii]nterpretaci_o_nes_ó') + #0
 # lema(ur'[Ii]nterrelaci_o_nes_ó') + #0
 # lema(ur'[Ii]nterrogaci_o_nes_ó') + #0
 # lema(ur'[Ii]nterrupci_o_nes_ó') + #0
@@ -6396,27 +6318,34 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Ii]ntuici_o_nes_ó') + #0
 # lema(ur'[Ii]nundaci_o_nes_ó') + #0
 # lema(ur'[Ii]nvenci_o_nes_ó') + #0
+# lema(ur'[Ii]nvenci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ii]nvitaci_o_nes_ó') + #0
 # lema(ur'[Ii]nvocaci_o_nes_ó') + #0
 # lema(ur'[Ii]onizaci_o_nes_ó') + #0
 # lema(ur'[Ii]rradiaci_o_nes_ó') + #0
 # lema(ur'[Ii]rrigaci_o_nes_ó') + #0
 # lema(ur'[Ii]rritaci_o_nes_ó') + #0
+# lema(ur'[Ii]rritaci_ó_n(?!\])_o') + #0
 # lema(ur'[Ii]rrupci_o_nes_ó') + #0
 # lema(ur'[Ii]rrupci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ii]teraci_o_nes_ó') + #0
 # lema(ur'[Jj]ab_o_nes_ó') + #0
 # lema(ur'[Jj]am_o_nes_ó') + #0
+# lema(ur'[Jj]arr_o_nes_ó') + #0
 # lema(ur'[Jj]uguet_o_nes_ó') + #0
+# lema(ur'[Jj]uri_sdiccio_nal(?:es|)_dicci[oó]') + #0
+# lema(ur'[Jj]urisdicci_o_nes_ó') + #0
 # lema(ur'[Jj]ustificaci_o_nes_ó') + #0
 # lema(ur'[Jj]ustificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Kk]ilot_o_nes_ó') + #0
 # lema(ur'[Ll]amentaci_o_nes_ó') + #0
 # lema(ur'[Ll]ap_o_nes_ó') + #0
+# lema(ur'[Ll]ecci_o_nes_ó') + #0
 # lema(ur'[Ll]egalizaci_o_nes_ó') + #0
 # lema(ur'[Ll]egi_o_nes_ó') + #0
 # lema(ur'[Ll]egislaci_o_nes_ó') + #0
 # lema(ur'[Ll]ept_o_nes_ó') + #0
+# lema(ur'[Ll]ept_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ') + #0
 # lema(ur'[Ll]esi_o_nes_ó') + #0
 # lema(ur'[Ll]et_o_nes_ó') + #0
 # lema(ur'[Ll]et_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ') + #0
@@ -6428,8 +6357,11 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Ll]icuefacci_o_nes_ó') + #0
 # lema(ur'[Ll]icuefacci_ó_n(?!\])_o') + #0
 # lema(ur'[Ll]im_o_nes_ó') + #0
+# lema(ur'[Ll]imitaci_o_nes_ó') + #0
 # lema(ur'[Ll]iquidaci_o_nes_ó') + #0
 # lema(ur'[Ll]ist_o_nes_ó') + #0
+# lema(ur'[Ll]ocaci_o_nes_ó') + #0
+# lema(ur'[Ll]ocalizaci_o_nes_ó') + #0
 # lema(ur'[Ll]oci_o_nes_ó') + #0
 # lema(ur'[Ll]oci_ó_n(?!\])_o') + #0
 # lema(ur'[Ll]ocomoci_o_nes_ó') + #0
@@ -6442,6 +6374,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Mm]alformaci_o_nes_ó') + #0
 # lema(ur'[Mm]alversaci_o_nes_ó') + #0
 # lema(ur'[Mm]alversaci_ó_n(?!\])_o') + #0
+# lema(ur'[Mm]anifestaci_o_nes_ó') + #0
 # lema(ur'[Mm]anipulaci_o_nes_ó') + #0
 # lema(ur'[Mm]ansi_o_nes_ó') + #0
 # lema(ur'[Mm]aquetaci_o_nes_ó') + #0
@@ -6449,11 +6382,15 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Mm]aquinaci_ó_n(?!\])_o') + #0
 # lema(ur'[Mm]arat_o_nes_ó') + #0
 # lema(ur'[Mm]arginaci_o_nes_ó') + #0
+# lema(ur'[Mm]arginaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Mm]arr_o_nes_ó') + #0
 # lema(ur'[Mm]as_o_nes_ó') + #0
 # lema(ur'[Mm]ascar_o_nes_ó') + #0
 # lema(ur'[Mm]asterizaci_o_nes_ó') + #0
+# lema(ur'[Mm]asturbaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Mm]aterializaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Mm]atriculaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Mm]ecanizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Mm]ech_o_nes_ó') + #0
 # lema(ur'[Mm]edall_o_nes_ó') + #0
 # lema(ur'[Mm]ediaci_o_nes_ó') + #0
@@ -6465,14 +6402,17 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Mm]elocot_o_nes_ó') + #0
 # lema(ur'[Mm]emorizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Mm]enstruaci_o_nes_ó') + #0
+# lema(ur'[Mm]enstruaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Mm]es_o_nes_ó') + #0
 # lema(ur'[Mm]esorregi_o_nes_ó') + #0
+# lema(ur'[Mm]esorregi_ó_n(?!\])_o') + #0
 # lema(ur'[Mm]icroacci_o_nes_ó') + #0
 # lema(ur'[Mm]icroacci_ó_n(?!\])_o') + #0
 # lema(ur'[Mm]icroficci_o_nes_ó') + #0
 # lema(ur'[Mm]icromutaci_o_nes_ó') + #0
 # lema(ur'[Mm]icromutaci_ó_n(?!\])_o') + #0
 # lema(ur'[Mm]icronaci_o_nes_ó') + #0
+# lema(ur'[Mm]icronaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Mm]icroregi_o_nes_ó') + #0
 # lema(ur'[Mm]icrorregi_o_nes_ó') + #0
 # lema(ur'[Mm]igraci_o_nes_ó') + #0
@@ -6495,13 +6435,16 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Mm]ovilizaci_o_nes_ó') + #0
 # lema(ur'[Mm]u_o_nes_ó') + #0
 # lema(ur'[Mm]ultiplicaci_o_nes_ó') + #0
+# lema(ur'[Mm]unici_o_nes_ó') + #0
 # lema(ur'[Mm]usicalizaci_o_nes_ó') + #0
 # lema(ur'[Mm]usicalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Mm]utaci_o_nes_ó') + #0
 # lema(ur'[Mm]utilaci_o_nes_ó') + #0
 # lema(ur'[Mm]utilaci_ó_n(?!\])_o') + #0
 # lema(ur'[Nn]acionalizaci_o_nes_ó') + #0
 # lema(ur'[Nn]arraci_o_nes_ó') + #0
 # lema(ur'[Nn]ataci_o_nes_ó') + #0
+# lema(ur'[Nn]aturalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Nn]avegaci_o_nes_ó') + #0
 # lema(ur'[Nn]egaci_o_nes_ó') + #0
 # lema(ur'[Nn]egociaci_o_nes_ó') + #0
@@ -6522,22 +6465,33 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Oo]bjeci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Oo]bligaci_o_nes_ó') + #0
 # lema(ur'[Oo]bservaci_o_nes_ó') + #0
+# lema(ur'[Oo]bstrucci_o_nes_ó') + #0
+# lema(ur'[Oo]bstrucci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Oo]bturaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Oo]casi_o_nes_ó') + #0
+# lema(ur'[Oo]clusi_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Oo]cultaci_o_nes_ó') + #0
 # lema(ur'[Oo]cultaci_ó_n(?!\])_o') + #0
 # lema(ur'[Oo]cupaci_o_nes_ó') + #0
 # lema(ur'[Oo]misi_o_nes_ó') + #0
+# lema(ur'[Oo]misi_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Oo]ndulaci_o_nes_ó') + #0
 # lema(ur'[Oo]ndulaci_ó_n(?!\])_o') + #0
 # lema(ur'[Oo]pci_o_nes_ó') + #0
+# lema(ur'[Oo]posici_o_nes_ó') + #0
+# lema(ur'[Oo]presi_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Oo]ptimizaci_o_nes_ó') + #0
+# lema(ur'[Oo]raci_o_nes_ó') + #0
 # lema(ur'[Oo]rdenaci_o_nes_ó') + #0
 # lema(ur'[Oo]rej_o_nes_ó') + #0
+# lema(ur'[Oo]rientaci_o_nes_ó') + #0
 # lema(ur'[Oo]rnamentaci_o_nes_ó') + #0
 # lema(ur'[Oo]rquestaci_o_nes_ó') + #0
+# lema(ur'[Oo]rquestaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Oo]scilaci_o_nes_ó') + #0
 # lema(ur'[Oo]vaci_o_nes_ó') + #0
 # lema(ur'[Oo]xidaci_o_nes_ó') + #0
+# lema(ur'[Pp]abell_o_nes_ó') + #0
 # lema(ur'[Pp]acificaci_o_nes_ó') + #0
 # lema(ur'[Pp]adr_o_nes_ó') + #0
 # lema(ur'[Pp]alpitaci_o_nes_ó') + #0
@@ -6546,10 +6500,12 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Pp]aralizaci_ó_n(?!\])_o') + #0
 # lema(ur'[Pp]arcelaci_o_nes_ó') + #0
 # lema(ur'[Pp]artici_o_nes_ó') + #0
+# lema(ur'[Pp]asi_o_nes_ó') + #0
 # lema(ur'[Pp]avimentaci_o_nes_ó') + #0
 # lema(ur'[Pp]avimentaci_ó_n(?!\])_o') + #0
 # lema(ur'[Pp]e_o_nes_ó') + #0
 # lema(ur'[Pp]eat_o_nes_ó') + #0
+# lema(ur'[Pp]eat_ó_n(?!\])_o') + #0
 # lema(ur'[Pp]eir_o_nes_ó') + #0
 # lema(ur'[Pp]elot_o_nes_ó') + #0
 # lema(ur'[Pp]enalizaci_o_nes_ó') + #0
@@ -6557,6 +6513,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Pp]enetraci_o_nes_ó') + #0
 # lema(ur'[Pp]ensi_o_nes_ó') + #0
 # lema(ur'[Pp]ercepci_o_nes_ó') + #0
+# lema(ur'[Pp]ercu_sió_n_ci[oó]') + #0
 # lema(ur'[Pp]erd_o_nes_ó') + #0
 # lema(ur'[Pp]erdig_o_nes_ó') + #0
 # lema(ur'[Pp]eregrinaci_o_nes_ó') + #0
@@ -6565,6 +6522,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Pp]ermutaci_ó_n(?!\])_o') + #0
 # lema(ur'[Pp]ersecuci_o_nes_ó') + #0
 # lema(ur'[Pp]ersonalizaci_o_nes_ó') + #0
+# lema(ur'[Pp]ersonalizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Pp]erturbaci_o_nes_ó') + #0
 # lema(ur'[Pp]erturbaci_ó_n(?!\])_o') + #0
 # lema(ur'[Pp]erversi_o_nes_ó') + #0
@@ -6572,12 +6530,16 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Pp]eñ_o_nes_ó') + #0
 # lema(ur'[Pp]ich_o_nes_ó') + #0
 # lema(ur'[Pp]il_o_nes_ó') + #0
+# lema(ur'[Pp]inz_o_nes_ó') + #0
 # lema(ur'[Pp]ist_o_nes_ó') + #0
+# lema(ur'[Pp]iñ_o_nes_ó') + #0
 # lema(ur'[Pp]laneaci_o_nes_ó') + #0
 # lema(ur'[Pp]lanificaci_o_nes_ó') + #0
 # lema(ur'[Pp]lant_o_nes_ó') + #0
+# lema(ur'[Pp]o_sició_n_(?:ci[sc]i[oó]|sisi[oó]n)') + #0
 # lema(ur'[Pp]oci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Pp]olarizaci_o_nes_ó') + #0
+# lema(ur'[Pp]olarizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Pp]olimerizaci_o_nes_ó') + #0
 # lema(ur'[Pp]olinizaci_o_nes_ó') + #0
 # lema(ur'[Pp]olinizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
@@ -6589,13 +6551,16 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Pp]orci_o_nes_ó') + #0
 # lema(ur'[Pp]orr_o_nes_ó') + #0
 # lema(ur'[Pp]ort_o_nes_ó') + #0
+# lema(ur'[Pp]ortaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Pp]osesi_o_nes_ó') + #0
+# lema(ur'[Pp]osici_o_nes_ó') + #0
 # lema(ur'[Pp]ositr_o_nes_ó') + #0
 # lema(ur'[Pp]ostulaci_o_nes_ó') + #0
 # lema(ur'[Pp]recauci_o_nes_ó') + #0
 # lema(ur'[Pp]recipitaci_o_nes_ó') + #0
 # lema(ur'[Pp]recisi_o_nes_ó') + #0
 # lema(ur'[Pp]redicaci_o_nes_ó') + #0
+# lema(ur'[Pp]redicaci_ó_n_o', xpos=[ur' de la Ley', ur'\]\]es', ]) + #0
 # lema(ur'[Pp]redicci_o_nes_ó') + #0
 # lema(ur'[Pp]redilecci_o_nes_ó') + #0
 # lema(ur'[Pp]redilecci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
@@ -6607,11 +6572,14 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Pp]remeditaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Pp]remiaci_o_nes_ó') + #0
 # lema(ur'[Pp]remonici_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Pp]reocupaci_o_nes_ó') + #0
 # lema(ur'[Pp]reocupaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Pp]reparaci_o_nes_ó') + #0
 # lema(ur'[Pp]reposici_o_nes_ó') + #0
 # lema(ur'[Pp]rescripci_o_nes_ó') + #0
 # lema(ur'[Pp]reselecci_o_nes_ó') + #0
 # lema(ur'[Pp]reservaci_o_nes_ó') + #0
+# lema(ur'[Pp]reservaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Pp]resi_o_nes_ó') + #0
 # lema(ur'[Pp]restaci_o_nes_ó') + #0
 # lema(ur'[Pp]restaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
@@ -6628,12 +6596,14 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Pp]rivatizaci_o_nes_ó') + #0
 # lema(ur'[Pp]roclamaci_o_nes_ó') + #0
 # lema(ur'[Pp]rofanaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Pp]rofesi_o_nes_ó') + #0
 # lema(ur'[Pp]rofundizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Pp]rogramaci_o_nes_ó') + #0
 # lema(ur'[Pp]rogresi_o_nes_ó') + #0
 # lema(ur'[Pp]rogresi_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Pp]rohibici_o_nes_ó') + #0
 # lema(ur'[Pp]rolongaci_o_nes_ó') + #0
+# lema(ur'[Pp]rolongaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Pp]romoci_o_nes_ó') + #0
 # lema(ur'[Pp]romulgaci_o_nes_ó') + #0
 # lema(ur'[Pp]ronunciaci_o_nes_ó') + #0
@@ -6645,6 +6615,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Pp]roscripci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Pp]rosecuci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Pp]rospecci_o_nes_ó') + #0
+# lema(ur'[Pp]rospecci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Pp]rostituci_o_nes_ó') + #0
 # lema(ur'[Pp]rot_o_nes_ó') + #0
 # lema(ur'[Pp]rotecci_o_nes_ó') + #0
@@ -6652,8 +6623,11 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Pp]rovisi_o_nes_ó') + #0
 # lema(ur'[Pp]rovocaci_o_nes_ó') + #0
 # lema(ur'[Pp]royecci_o_nes_ó') + #0
+# lema(ur'[Pp]ublicaci_o_nes_ó') + #0
+# lema(ur'[Pp]ulg_o_nes_ó') + #0
 # lema(ur'[Pp]ulg_ó_n_o', xpos=[ur' \(Kirguistán', ur'(?:[\'\]])', ]) + #0
 # lema(ur'[Pp]ulm_o_nes_ó') + #0
+# lema(ur'[Pp]ulsaci_o_nes_ó') + #0
 # lema(ur'[Pp]ulsaci_ó_n(?!\])_o') + #0
 # lema(ur'[Pp]ulsi_o_nes_ó') + #0
 # lema(ur'[Pp]unci_o_nes_ó') + #0
@@ -6665,27 +6639,37 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Pp]urificaci_o_nes_ó') + #0
 # lema(ur'[Pp]utrefacci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Rr]aci_o_nes_ó') + #0
+# lema(ur'[Rr]adiaci_o_nes_ó') + #0
+# lema(ur'[Rr]ai_o_nes_ó') + #0
+# lema(ur'[Rr]amificaci_o_nes_ó') + #0
 # lema(ur'[Rr]amificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Rr]atificaci_o_nes_ó') + #0
 # lema(ur'[Rr]ay_o_nes_ó') + #0
 # lema(ur'[Rr]az_o_nes_ó') + #0
+# lema(ur'[Rr]eacci_o_nes_ó') + #0
 # lema(ur'[Rr]eactivaci_o_nes_ó') + #0
 # lema(ur'[Rr]ealizaci_o_nes_ó') + #0
 # lema(ur'[Rr]eanudaci_o_nes_ó') + #0
 # lema(ur'[Rr]eanudaci_ó_n(?!\])_o') + #0
 # lema(ur'[Rr]eaparici_o_nes_ó') + #0
 # lema(ur'[Rr]ebeli_o_nes_ó') + #0
+# lema(ur'[Rr]ecapitulaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Rr]ecaptaci_o_nes_ó') + #0
 # lema(ur'[Rr]ecaptaci_ó_n(?!\])_o') + #0
 # lema(ur'[Rr]ecaudaci_o_nes_ó') + #0
+# lema(ur'[Rr]ecepci_o_nes_ó') + #0
 # lema(ur'[Rr]ecitaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Rr]eclamaci_o_nes_ó') + #0
+# lema(ur'[Rr]eclusi_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Rr]ecolecci_o_nes_ó') + #0
 # lema(ur'[Rr]ecolonizaci_ó_n_o') + #0
 # lema(ur'[Rr]ecombinaci_o_nes_ó') + #0
 # lema(ur'[Rr]ecomendaci_o_nes_ó') + #0
 # lema(ur'[Rr]econciliaci_o_nes_ó') + #0
+# lema(ur'[Rr]econstituci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Rr]econstrucci_o_nes_ó') + #0
 # lema(ur'[Rr]ecopilaci_o_nes_ó') + #0
+# lema(ur'[Rr]ecreaci_o_nes_ó') + #0
 # lema(ur'[Rr]ectificaci_o_nes_ó') + #0
 # lema(ur'[Rr]ecuperaci_o_nes_ó') + #0
 # lema(ur'[Rr]edacci_o_nes_ó') + #0
@@ -6705,18 +6689,24 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Rr]eformaci_o_nes_ó') + #0
 # lema(ur'[Rr]efracci_o_nes_ó') + #0
 # lema(ur'[Rr]efrigeraci_o_nes_ó') + #0
+# lema(ur'[Rr]efrigeraci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Rr]efundaci_o_nes_ó') + #0
 # lema(ur'[Rr]egeneraci_o_nes_ó') + #0
 # lema(ur'[Rr]eglamentaci_o_nes_ó') + #0
 # lema(ur'[Rr]egulaci_o_nes_ó') + #0
 # lema(ur'[Rr]ehabilitaci_o_nes_ó') + #0
+# lema(ur'[Rr]eimpresi_o_nes_ó') + #0
+# lema(ur'[Rr]eincorporaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Rr]einfecci_o_nes_ó') + #0
+# lema(ur'[Rr]einvenci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Rr]eivindicaci_o_nes_ó') + #0
 # lema(ur'[Rr]eivindicaci_ó_n(?!\])_o') + #0
 # lema(ur'[Rr]elajaci_o_nes_ó') + #0
 # lema(ur'[Rr]elajaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Rr]eligi_o_nes_ó') + #0
 # lema(ur'[Rr]emisi_o_nes_ó') + #0
 # lema(ur'[Rr]emoci_o_nes_ó') + #0
+# lema(ur'[Rr]emodelaci_o_nes_ó') + #0
 # lema(ur'[Rr]emuneraci_o_nes_ó') + #0
 # lema(ur'[Rr]emuneraci_ó_n(?!\])_o') + #0
 # lema(ur'[Rr]endici_o_nes_ó') + #0
@@ -6729,8 +6719,11 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Rr]epercusi_o_nes_ó') + #0
 # lema(ur'[Rr]eplicaci_o_nes_ó') + #0
 # lema(ur'[Rr]epoblaci_o_nes_ó') + #0
+# lema(ur'[Rr]eposici_o_nes_ó') + #0
+# lema(ur'[Rr]epresentaci_o_nes_ó') + #0
 # lema(ur'[Rr]epresi_o_nes_ó') + #0
 # lema(ur'[Rr]eputaci_o_nes_ó') + #0
+# lema(ur'[Rr]esoluci_o_nes_ó') + #0
 # lema(ur'[Rr]espiraci_o_nes_ó') + #0
 # lema(ur'[Rr]estauraci_o_nes_ó') + #0
 # lema(ur'[Rr]estituci_o_nes_ó') + #0
@@ -6744,6 +6737,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Rr]etribuci_o_nes_ó') + #0
 # lema(ur'[Rr]etribuci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Rr]etroalimentaci_o_nes_ó') + #0
+# lema(ur'[Rr]etroalimentaci_ó_n(?!\])_o') + #0
 # lema(ur'[Rr]etrotranspos_o_nes_ó') + #0
 # lema(ur'[Rr]eunificaci_o_nes_ó') + #0
 # lema(ur'[Rr]eunificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
@@ -6753,6 +6747,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Rr]evalidaci_ó_n(?!\])_o') + #0
 # lema(ur'[Rr]evelaci_o_nes_ó') + #0
 # lema(ur'[Rr]eversi_o_nes_ó') + #0
+# lema(ur'[Rr]evisi_o_nes_ó') + #0
 # lema(ur'[Rr]inc_o_nes_ó') + #0
 # lema(ur'[Rr]iñ_o_nes_ó') + #0
 # lema(ur'[Rr]omanizaci_o_nes_ó') + #0
@@ -6762,6 +6757,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Ss]aj_o_nes_ó') + #0
 # lema(ur'[Ss]al_o_nes_ó') + #0
 # lema(ur'[Ss]alaz_o_nes_ó') + #0
+# lema(ur'[Ss]alaz_ó_n(?!\])_o') + #0
 # lema(ur'[Ss]alm_o_nes_ó') + #0
 # lema(ur'[Ss]alvaci_o_nes_ó') + #0
 # lema(ur'[Ss]anci_o_nes_ó') + #0
@@ -6769,6 +6765,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Ss]aturaci_o_nes_ó') + #0
 # lema(ur'[Ss]axof_o_nes_ó') + #0
 # lema(ur'[Ss]ecreci_o_nes_ó') + #0
+# lema(ur'[Ss]ecreci_ó_n_o', xpos=[ur'(?:\]|\.com)', ]) + #0
 # lema(ur'[Ss]ecuenciaci_o_nes_ó') + #0
 # lema(ur'[Ss]ecuenciaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ss]ecularizaci_o_nes_ó') + #0
@@ -6779,17 +6776,23 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Ss]egmentaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ss]egregaci_o_nes_ó') + #0
 # lema(ur'[Ss]emidesintegraci_o_nes_ó') + #0
+# lema(ur'[Ss]emidesintegraci_ó_n(?!\])_o') + #0
 # lema(ur'[Ss]emiprotecci_o_nes_ó') + #0
 # lema(ur'[Ss]emiprotecci_ó_n(?!\])_o') + #0
 # lema(ur'[Ss]ensaci_o_nes_ó') + #0
 # lema(ur'[Ss]ensibilizaci_o_nes_ó') + #0
+# lema(ur'[Ss]ensibilizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ss]eparaci_o_nes_ó') + #0
 # lema(ur'[Ss]erm_o_nes_ó') + #0
 # lema(ur'[Ss]erm_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #0
+# lema(ur'[Ss]eñalizaci_o_nes_ó') + #0
+# lema(ur'[Ss]if_o_nes_ó') + #0
 # lema(ur'[Ss]ignificaci_o_nes_ó') + #0
 # lema(ur'[Ss]ignificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ss]ill_o_nes_ó') + #0
+# lema(ur'[Ss]ill_ó_n_o', xpre=[ur'\'', ur'& ', ur'(?:du|[Ll]e|et) ', ur'Au ', ur'Claude ', ur'Grand ', ur'Jean ', ur'Mon ', ur'Princesse de ', ur'Victor ', ], xpos=[ur' (?:rhodanien|de Talbert|beach|industriel|de Bretagne|Sambre)', ur'\]\]es', ]) + #0
 # lema(ur'[Ss]implificaci_o_nes_ó') + #0
+# lema(ur'[Ss]implificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ss]imulaci_o_nes_ó') + #0
 # lema(ur'[Ss]incronizaci_o_nes_ó') + #0
 # lema(ur'[Ss]incronizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
@@ -6799,7 +6802,9 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Ss]obregrabaci_o_nes_ó') + #0
 # lema(ur'[Ss]obretensi_o_nes_ó') + #0
 # lema(ur'[Ss]ocializaci_o_nes_ó') + #0
+# lema(ur'[Ss]ocializaci_ó_n(?!\])_o') + #0
 # lema(ur'[Ss]olidificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
+# lema(ur'[Ss]ubcampe_o_nes_ó') + #0
 # lema(ur'[Ss]ubdelegaci_o_nes_ó') + #0
 # lema(ur'[Ss]ubdelegaci_ó_n(?!\])_o') + #0
 # lema(ur'[Ss]ubdivisi_o_nes_ó') + #0
@@ -6807,8 +6812,10 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Ss]ublevaci_o_nes_ó') + #0
 # lema(ur'[Ss]ubordinaci_o_nes_ó') + #0
 # lema(ur'[Ss]ubregi_o_nes_ó') + #0
+# lema(ur'[Ss]ubsecci_o_nes_ó') + #0
 # lema(ur'[Ss]ubstituci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ss]ubvenci_o_nes_ó') + #0
+# lema(ur'[Ss]ubvenci_ó_n(?!\])_o') + #0
 # lema(ur'[Ss]ucesi_o_nes_ó') + #0
 # lema(ur'[Ss]ugesti_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Ss]ujeci_o_nes_ó') + #0
@@ -6830,12 +6837,17 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Tt]al_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u) ') + #0
 # lema(ur'[Tt]amp_o_nes_ó') + #0
 # lema(ur'[Tt]asaci_o_nes_ó') + #0
+# lema(ur'[Tt]ax_o_nes_ó') + #0
+# lema(ur'[Tt]ej_o_nes_ó') + #0
+# lema(ur'[Tt]elevisi_o_nes_ó') + #0
 # lema(ur'[Tt]embl_o_nes_ó') + #0
 # lema(ur'[Tt]end_o_nes_ó') + #0
 # lema(ur'[Tt]end_ó_n_o', xpre=[ur'Achilles\+', ur'Dr ', ], xpos=[ur' (?:hacia|\(receta)', ur'[\'\]]', ]) + #0
 # lema(ur'[Tt]entaci_o_nes_ó') + #0
 # lema(ur'[Tt]erminaci_o_nes_ó') + #0
 # lema(ur'[Tt]eut_o_nes_ó') + #0
+# lema(ur'[Tt]eut_ó_n(?!\])_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada) ', xpos=[ur' de Neville', ]) + #0
+# lema(ur'[Tt]if_o_nes_ó') + #0
 # lema(ur'[Tt]im_o_nes_ó') + #0
 # lema(ur'[Tt]inci_o_nes_ó') + #0
 # lema(ur'[Tt]itulaci_o_nes_ó') + #0
@@ -6843,6 +6855,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Tt]itulizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Tt]orre_o_nes_ó') + #0
 # lema(ur'[Tt]racci_o_nes_ó') + #0
+# lema(ur'[Tt]raducci_o_nes_ó') + #0
 # lema(ur'[Tt]raici_o_nes_ó') + #0
 # lema(ur'[Tt]ramitaci_o_nes_ó') + #0
 # lema(ur'[Tt]ramitaci_ó_n(?!\])_o') + #0
@@ -6854,6 +6867,7 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Tt]ransgresi_ó_n(?!\])_o') + #0
 # lema(ur'[Tt]ransici_o_nes_ó') + #0
 # lema(ur'[Tt]ranslaci_o_nes_ó') + #0
+# lema(ur'[Tt]ransliteraci_ó_n(?!\])_o') + #0
 # lema(ur'[Tt]ranslocaci_o_nes_ó') + #0
 # lema(ur'[Tt]ransposi_ció_n_sicio') + #0
 # lema(ur'[Tt]ransposici_o_nes_ó') + #0
@@ -6878,17 +6892,22 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Uu]ni_o_nes_ó') + #0
 # lema(ur'[Uu]ni_ó_n Pac[ií]fico_o', xpre=[ur'Times ', ur'[Ll][’\']', ur'et ', ]) + #0
 # lema(ur'[Uu]nificaci_o_nes_ó') + #0
+# lema(ur'[Uu]rbanizaci_o_nes_ó') + #0
 # lema(ur'[Uu]surpaci_o_nes_ó') + #0
 # lema(ur'[Uu]surpaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Uu]tilizaci_o_nes_ó') + #0
 # lema(ur'[Vv]acaci_o_nes_ó') + #0
+# lema(ur'[Vv]acaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Vv]acilaci_o_nes_ó') + #0
 # lema(ur'[Vv]acilaci_ó_n(?!\])_o') + #0
 # lema(ur'[Vv]acunaci_o_nes_ó') + #0
 # lema(ur'[Vv]al_o_nes_ó') + #0
 # lema(ur'[Vv]alidaci_o_nes_ó') + #0
+# lema(ur'[Vv]alidaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Vv]aloraci_o_nes_ó') + #0
+# lema(ur'[Vv]alorizaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Vv]ar_o_nes_ó') + #0
+# lema(ur'[Vv]ar_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ') + #0
 # lema(ur'[Vv]ariaci_o_nes_ó') + #0
 # lema(ur'[Vv]ectorizaci_o_nes_ó') + #0
 # lema(ur'[Vv]ectorizaci_ó_n(?!\])_o') + #0
@@ -6896,32 +6915,1538 @@ lema(ur'[b]ret_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ', xpr
 # lema(ur'[Vv]ejaci_o_nes_ó') + #0
 # lema(ur'[Vv]ejaci_ó_n(?!\])_o') + #0
 # lema(ur'[Vv]eneraci_o_nes_ó') + #0
+# lema(ur'[Vv]eneraci_ó_n_o', xpre=[ur'Ian ', ur'Jun ', ur'Luis ', ur'Ofilada ', ur'Ynez ', ], xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Vv]entilaci_o_nes_ó') + #0
 # lema(ur'[Vv]erificaci_o_nes_ó') + #0
+# lema(ur'[Vv]erificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Vv]ersificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #0
 # lema(ur'[Vv]inculaci_o_nes_ó') + #0
+# lema(ur'[Vv]isi_o_nes_ó') + #0
 # lema(ur'[Vv]ocaci_o_nes_ó') + #0
 # lema(ur'[Vv]ocalizaci_o_nes_ó') + #0
+# lema(ur'[Vv]otaci_o_nes_ó') + #0
 # lema(ur'[p]il_ó_n_o', pre=ur'(?:[Ee]l|[Dd]el?|[Uu]n|[Cc]ada|[Ss]u|[Aa]) ') + #0
 []][0]
 
-grupoPerfecto = [# Sin excepciones
-# lema(ur'[Cc]aminar_í_a[ns]_i') + #0
-# lema(ur'[Ll]abrar_í_a[ns]_i') + #0
-# lema(ur'[Pp]illar_í_a[ns]_i') + #0
-# lema(ur'[Vv]ersar_í_a[ns]_i') + #0
+grupo2Perfecto = [# Sin excepciones
+lema(ur'\b(?:[1-9]|[012][0-9]|3[01])_ de_ (?:[Ee]nero|[Ff]ebrero|[Mm]arzo|[Aa]bril|[Mm]ayo|[Jj]unio|[Jj]ulio|[Aa]gosto|[Ss]eptiembre|[Oo]ctubre|[Nn]oviembre|[Dd]iciembre)_') + #8409
+lema(ur'[Ee]__l_l e') + #1269
+lema(ur'[Mm]_á_s (?:accesible|agradable|alegre|amigable|artículo|asistencia|ataque|casilla|célebre|cosa|década|dominante|edificio|ejemplo|emocionante|estable|experiencia|fecha|fiable|fuerte|grande|hilarante|humilde|ilustre|importante|impresionante|minimalista|minutos|muerte|noble|noche|palabra|película|pista|problema|prueba|realista|reciente|resaltante|resistencia|salvaje|sociable|suave|tarde|temporada|vía|victoria|visible|visita|vuelta|vulnerable)s?\b_a') + #594
+lema(ur'[Pp]_á_gina (?:[Ww]eb|oficial|del?)_a') + #510
+lema(ur'[Uu]n_a_ (?:agencia|aldea|alternativa|amalgama|antigua|banda|barra|bomba|buena|cadena|caja|campaña|capa|carrera|casa|chica|cierta|cita|comedia|compañía|copia|corta|criatura|crítica|cuerda|derrota|distancia|empresa|escena|escuela|escultura|estatua|estrella|estructura|etapa|extensa|extraña|familia|fecha|fiesta|figura|franja|fuerza|guerra|historia|idea|iglesia|intensa|lanza|ligera|lucha|línea|manera|mezcla|misma|niña|nota|novela|nueva|obra|palabra|pareja|pelea|película|pequeña|persona|perspectiva|pieza|pista|placa|planta|plataforma|playa|plaza|política|potencia|profunda|prueba|página|pérdida|rama|raza|referencia|reserva|respuesta|revista|ruta|sala|secuencia|sola|tabla|tasa|temperatura|temporada|tienda|trama|técnica|verdadera|victoria|vida|zona|[eé]poca|[uú]nica)\b_') + #452
+lema(ur'_sobre la base de__en base a') + #394
+lema(ur'[Ll]__os_os l') + #374
+lema(ur'[Dd]__el_el d') + #338
+lema(ur'[Pp]a_í_ses(?! Baixos)_i') + #291
+lema(ur'[Qq]__ue_ue q') + #278
+lema(ur'_e_xternos_E', pre=ur'(?:[Ee]nlaces|[Vv]ínculos) ') + #257
+lema(ur'[Mm]usulm_á_n_a') + #225
+lema(ur'[Mm]_á_s (?:alt|amarg|amig|citad|competitiv|desconocid|distintiv|envejecid|equilibrad|ergonómic|insegur|lujos|notad|óptim|pequeñ|poblad|prolífic|rocker|select|sosegad|vendid|veteran|vigoros|violent|viv)[ao]s?\b_a') + #221
+lema(ur'[Uu]n_a_ (?:alerta|alianza|amiga|armadura|atmósfera|auténtica|avenida|barrera|batalla|bebida|beca|bella|biografía|bola|bolsa|brigada|broma|bóveda|caldera|carga|carretera|caída|ceremonia|cifra|cinta|clara|clínica|cola|colina|comarca|competencia|computadora|conferencia|corona|cubierta|cueva|curva|célula|cúpula|demanda|determinada|diferencia|disputa|dura|década|economía|entrada|ermita|escalera|escritora|esfera|estrategia|estrecha|experiencia|falla|famosa|feria|finca|flota|fotografía|futura|granja|hermana|hija|hora|huelga|inmensa|jugadora|junta|lengua|letra|leyenda|llamada|maestra|mancha|marcha|medalla|medida|mejora|mina|montaña|muestra|ofensiva|oferta|oficina|orquesta|pantalla|parada|parodia|partícula|pelota|piedra|pintura|pistola|postura|presencia|princesa|propuesta|protesta|proteína|provincia|pr[aá]ctica|r[eé]plica|rampa|reforma|regla|revuelta|rica|rueda|rápida|secuela|semana|silla|talla|tarjeta|tecnología|teoría|trampa|trenza|típica|vasta|ventaja|vieja|villa|visita|vista|vivienda|órbita|última)\b_') + #210
+lema(ur'_ú_ltima_u', pre=ur'(?:[Aa]|[Cc]omo|[Dd]el|[Ee]st[ao]s?|[Ll]as?|[Pp]or|[Qq]ueda[nsr]?|[Qq]uedó|[Ss]us?|[Uu]na|[Uu]nas|[Yy]) ') + #195
+lema(ur'[Dd]_ó_nde_o', pre=ur'¿ *') + #192
+lema(ur'[Ll]__as_as l') + #175
+lema(ur'[d]_í_as_i', pre=ur'(?:[Aa]lgunos|[Bb]uenos|[Ee]scasos|[Ee]stos|[Ll]os|[Nn]uestros|[UÚuú]ltimos|[Uu]nos|[Vv]arios|[Dd]os|[Tt]res|[Cc]uatro|[Cc]inco|[Ss]eis|[Ss]iete|[Oo]cho|[Nn]ueve|[Dd]iez|[0-9]+) ') + #175
+lema(ur'[Oo]r_i_gen_í') + #168
+lema(ur'[Rr]e_hu_sa[ns]?_(?:hu|[uú])') + #154
+lema(ur'_Estados U_nidos_(?:estados [Uu]|Estados u)', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #149
+lema(ur'_ de _[12][0-9]{3}_', pre=ur'(?:[Ee]nero|[Ff]ebrero|[Mm]arzo|[Aa]bril|[Mm]ayo|[Jj]unio|[Jj]ulio|[Aa]gosto|[Ss]eptiembre|[Oo]ctubre|[Nn]oviembre|[Dd]iciembre)') + #148
+lema(ur'[Pp]articip_ó_ (?:en|junto|como)_o') + #145
+lema(ur'[Cc]l_á_sic(?:o|[ao]s|amente)_a') + #141
+lema(ur'[Ii]nclu_i_d[ao]s?_í') + #138
+lema(ur'[t]_é_rmino_e', pre=ur'(?:[Aa]l?|[Dd]el?|[Uu]n|[Ss]u|[Ee]l) ') + #135
+lema(ur'[Vv]ol_u_men_ú') + #124
+lema(ur'_Pací_fico_(?:pac[ií]|Paci)', pre=ur'[Oo]c[eé]ano ') + #124
+lema(ur'[Pp]ol_í_ticos(?!\.html)_i') + #119
+lema(ur'[Jj]_ó_venes_o') + #118
+lema(ur'[Mm]_á_nager_a', pre=ur'(?:[Ee]l|[Dd]el?|[Ll]a|[Uu]n|[Ss]u|nuevo|antiguo|anterior|próximo) ') + #118
+lema(ur'Berm_ú_dez_u') + #113
+lema(ur'[Gg]r_á_fico_a', xpos=[ur' Editoriale', ]) + #112
+lema(ur'[Nn]orteam_é_rica(?!\]\])_e') + #110
+lema(ur'[Cc]l_á_sica_a', xpos=[ur'(?: do|maior)\b', ur'2\.com', ]) + #107
+lema(ur'[Ss]__e_e s') + #107
+lema(ur'_á_reas?_a', pre=ur'(?:[AaEe]l|[Ll]as|[Mm][aá]s|[Uu]nas|[Aa]lgunas|[Dd]el?|[Uu]n|[Cc]ada|[Ss]us|[Oo]tras?|[Dd]os|[Ee]stas?|[Ee]sas?|[Ee]n) ') + #105
+lema(ur'[Ss]istem_á_tic(?:[ao]s?|amente)_a') + #102
+lema(ur'Rep_ú_blica Dominicana_u') + #100
+lema(ur'[Ee]xtra_í_(?:a[ns]?|d[ao]s?)_i') + #94
+lema(ur'[Ee]xtra_í_d[ao]s?_i') + #94
+lema(ur'[Pp]or s_í so_l[ao]s?_(?:i s[oó]|í só)') + #90
+lema(ur'[Ll]o_s_ (?:habitantes|hechos|hermanos|héroes|hijos|hombres|huevos|indígenas|intereses|jóvenes|juegos|jugadores|líderes|límites|machos|medios|mercados|meses|métodos|miembros|modelos|momentos|motores|municipios|músicos|nazis|niños|niveles|ojos|otros|padres|países|partidos|pasos|períodos|personajes|pobladores|pocos|poderes|precios|premios|primeros|principales|principios|problemas|programas|pueblos|puntos|quales|relatos|resultados|reyes|ríos|sábados|sectores|seis|seres|servicios|siglos|siguientes|símbolos|sistemas|sitios|soldados|sucesos|suelos|territorios|tiempos|trabajos|trenes|tres|últimos|únicos|usuarios|valores|vascos|vecinos|votos)_') + #86
+lema(ur'[Cc]aracter_í_stic[ao]s?_i') + #85
+lema(ur'[Jj]ug_ó_ (?:un|dos|tres|cuatro|diez|cien|mil|unos|varios)_o') + #85
+lema(ur'[Mm]_á_scaras?_a', pre=ur'(?:[Ll]as?|[Uu]nas?|[Ss]us?) ') + #84
+lema(ur'[Cc]__omo_omo c') + #83
+lema(ur'_el á_rea_(?:el a|la [aá])') + #83
+lema(ur'[Ll]_í_deres_i') + #82
+lema(ur'[Mm]_ás allá__(?:as all[aá]|ás alla)') + #82
+lema(ur'[Vv][eé][aá]se _t_ambi[eé]n_T') + #82
+lema(ur'_É_xitos?_E') + #79
+lema(ur'[Mm]ayor_í_as?_i') + #78
+lema(ur'[Rr]eci_bió__(?:vi[oó]|bio)') + #78
+lema(ur'[Dd]esign_ó__o') + #76
+lema(ur'[Ii]n_i_cia(?:[rlns]|les|tivas?|lmente|ría[ns]?|ron|ndo|d[ao]s?|ción|ciones|)_') + #76
+lema(ur'_e_ste (?:último|primer)_é') + #76
+lema(ur'[Pp]ac_í_fico_i', pre=ur'([Ee]l|[Dd]el) ') + #74
+lema(ur'(?:[Ss]emid|[Ss]ubd|[Hh]iperd|[Dd])esa_rroll_(?:ó|os?|a[nrs]?|ad[ao]s?|ando|ador|adora|adores|arse|aron|ar[ií]a[ns]?|aba[ns]?)_(?:roll|rr?oy|rrol)') + #73
+lema(ur'_R_usia_r', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #73
+lema(ur'[Aa]rqueol_ó_gic[ao]s?_o') + #70
+lema(ur'[Ss]_o_la(?:s|mente|)_ó') + #70
+lema(ur'[t]rav_é_s_e', pre=ur'(?:[Aa]|[Dd]e) ') + #70
+lema(ur'[Ee]spect_á_culos?_a') + #68
+lema(ur'[Tt]ec_noló_gic[ao]_(?:nolo|onol[oó])') + #67
+lema(ur'_e_sto_é') + #67
+lema(ur'[Pp]rot_e_ic[ao]s?_é') + #66
+lema(ur'[Ss]it_ú_(?:a[ns]?|e[ns]?)_u') + #66
+lema(ur'[Cc]_ó_mo_o', pre=ur'¿ *') + #65
+lema(ur'[Ff]__ue_ue f') + #65
+lema(ur'[Uu]n_a_ (?:abogada|academia|aerolínea|alarma|aliada|apariencia|apertura|apuesta|arquitectura|asamblea|asesina|audiencia|aventura|bahía|balada|bandeja|bandera|bestia|biblioteca|bicicleta|botella|búsqueda|cabaña|cabina|cafetería|campeona|capilla|cascada|catarata|categoría|caña|chaqueta|charla|ciencia|cirugía|colonia|columna|completa|comuna|consola|copa|corneta|cota|cuarta|cuenca|cultura|cuota|cápsula|dama|danza|decena|densa|dependencia|destacada|desventaja|dieta|diseñadora|docena|droga|ejecutiva|elevada|embajadora|emboscada|emisora|empleada|encuesta|enfermera|era|escuadra|espada|estética|factoría|falda|falta|farsa|firma|flecha|fractura|fragata|fuga|gata|gigantesca|gorra|grieta|gruesa|hembra|hermosa|hierba|ideología|industria|invitada|jornada|liga|linterna)\b_') + #65
+lema(ur'[Bb]_ú_squedas?_u') + #64
+lema(ur'[Pp]__or_or p') + #63
+lema(ur'_ó_rdenes_o', pre=ur'(?:[Ll]as|[Uu]nas|[Ss]us|[Dd]ar|[Dd]ando|[Pp]or) ') + #63
+lema(ur'[Aa]p_ó_stol_o', pre=ur'(?:Andr[eé]s|Juan|Jaime|Pedro|Pablo|Santiago|Mateo|Mat[ií]as|Tom[aá]s|Bartolom[eé]) ') + #62
+lema(ur'[Hh]ab_í_a(?:n|mos)_i') + #62
+lema(ur'[Pp]r_é_stamo_e') + #61
+lema(ur'[Rr]e_ú_ne[ns]?_u') + #61
+lema(ur'[Dd]if_í_cil(?:es|mente|)_i') + #60
+lema(ur'[Ll]o_s_ (?:aires|alrededores|alumnos|antiguos|años|artistas|barrios|bienes|bosques|capítulos|casos|casos|cerros|chicos|ciudadanos|códigos|colores|conceptos|cuales|cuáles|cuartos|datos|derechos|días|dientes|dos|edificios|efectos|ejercicios|elementos|enemigos|equipos|españoles|estándares|estudiantes|eventos|fans|franceses|ganadores|generales|grupos)_') + #60
+lema(ur'[Uu]n_a_ (?:lujosa|lámina|lámpara|lápida|maestría|magnífica|maniobra|maqueta|mascota|materia|mayoría|memoria|mesa|meseta|minoría|mirada|molécula|moneda|máscara|máxima|música|norma|novia|olla|onda|palma|parcela|parroquia|partida|patrulla|pausa|pena|perfecta|pierna|pila|pionera|piscina|poca|poderosa|polémica|portada|prenda|presa|previa|proclama|profesora|prostituta|próxima|puesta|racha|rana|recarga|receta|recta|reina|reja|relativa|república|reseña|residencia|resistencia|retrospectiva|rotura|ruptura|ráfaga|saga|salida|sencilla|senda|sentencia|seria|sexta|significativa|suma|superheroína|supuesta|sustancia|sátira|tanda|tela|tendencia|terapia|textura|tormenta|treintena|trompeta|tropa|tía|túnica|vaina|vara|variada|ventana|vuelta|válvula|víctima|ópera)\b_') + #60
+lema(ur'Mosc_ú__u') + #59
+lema(ur'[Mm]_á_s (?:adelante|atrás|dos)\b_a') + #58
+lema(ur'[e]n_ _medio_') + #56
+lema(ur'[Ff]ilmograf_í_as?_i') + #55
+lema(ur'[Hh]idrograf_í_as?_i') + #55
+lema(ur'[Ii]m_a_gen_á') + #55
+lema(ur'[Mm]_á_s (?:actual|afinidad|calor|espectacular|fértil|gol|letal|posibilidad|principal|real|regular|septentrional|usual)(?:es|)\b_a') + #55
+lema(ur'[Cc]__on_on c') + #54
+lema(ur'[Mm]iner_í_as?_i') + #54
+lema(ur'[Pp]odr_í_a(?:[ns]?|mos)_i') + #54
+lema(ur'_C_olombia_c', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #54
+lema(ur'[Hh]u_i_(?:r(?:l[aeo]s?|se|)|d[ao]s?)_í') + #52
+lema(ur'[Cc]om_ú_nmente_u') + #51
+lema(ur'[Ff]_á_cil(?:mente|)_a') + #51
+lema(ur'[Vv]_í_ctimas?_i', pre=ur'(?:[Ee]s|[Ff]u[ée]|[Ff]ueron|[Ll]as?|[Ss]erá|[Ss]on|[Uu]nas?|[Oo]tras?|[Dd]e|[Ss]u) ') + #51
+lema(ur'[Hh]u_i_d[ao]s?_í') + #50
+lema(ur'[Pp]r_ó_xim(?:[ao]s|amente)_o') + #50
+lema(ur'[Tt]_e_sis_é') + #49
+lema(ur'[Ee]n e_l_ año_n') + #48
+lema(ur'[Ss]_í_ntesis_i') + #48
+lema(ur'[Cc]_é_sped_e') + #47
+lema(ur'[Vv]eh_í_culos?_i') + #47
+lema(ur'_Japó_n_(jap[oó]|Japo)', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #47
+lema(ur'[Dd]iecis_é_is_e') + #46
+lema(ur'[Jj]_o_ven_ó') + #46
+lema(ur'[Aa]m_é_rica (?:del [Nn]orte|del [Ss]ur|[Cc]entral|[Hh]ispana|[Aa]nglosajona|de Cali)_e') + #45
+lema(ur'T_ú_nez_u') + #44
+lema(ur'[Ee]spec_í_fic(?:[ao]s|amente)_i') + #44
+lema(ur'[Aa]rtiller_í_as?_i') + #43
+lema(ur'[Rr]_á_pid(?:[ao]s|amente)_a') + #42
+lema(ur'[Tt]en_í_an_i') + #42
+lema(ur'[Dd]_ó_lares_o', pre=ur'(?:[Ll]os|[Uu]nos|[Ee]n|[Dd]e) ') + #41
+lema(ur'[Ee]xclu_i_d[ao]s?_í') + #41
+lema(ur'[Aa]erol_í_neas?_i') + #40
+lema(ur'[Bb]_á_sic(?:as|os?|amente)_a') + #40
+lema(ur'[Dd]i_á_metros?_a') + #40
+lema(ur'[m]_á_s_a', pre=ur'(?:[Nn]o (?:cultivan?)|atendió|da|[Ll]ea|[Pp]ara|produciendo|espec[ií]fic(?:[ao]s?|amente)) ') + #40
+lema(ur'_d_estacados_D', pre=ur'[Jj]ugadores ') + #40
+lema(ur'[Dd]estru_i_d[ao]s?_í') + #39
+lema(ur'[Mm]_á_s (?:cambi|campeonat|dat|equip|fot|minut|reconocimient|refuerz|sencill|tir|trabaj|títul)os?\b_a') + #37
+lema(ur'_ú_nico_u', pre=ur'(?:[Ee]l|[Uu]n) ') + #37
+lema(ur'C_ú_cuta_u') + #36
+lema(ur'Emiratos _Á_rabes Unidos_A') + #36
+lema(ur'[Ll]a_s_ grandes_') + #36
+lema(ur'[Ll]leg_ó a s_er_(?:o a s|[oó] hac)') + #36
+lema(ur'_a_ (?:abrazar|abrir|acceder|aceptar|aclarar|actuar|admitir|adquirir|afectar|ahorrar|ampliar|andar|apalizar|aparecer|aprender|arreglar|asar|ascender|asistir|asumir|atacar|atender|atrapar|aumentar|averiguar|avisar|ayudar|añadir|buscar|caer|cambiar|cancelar|cantar|castigar|cazar|celebrar|cerrar|cobrar|coincidir|combinar|comer|comercializar|cometer|competir|completar|componer|comprar|comprender|conocer|conseguir|considerar|consolar|construir|consumir|convertir|cosechar|crear|cultivar|dar|decir|declarar|definir|dejar|demostrar|denunciar|derramar|desarrollar|desartillar|descender|descubrir|desempeñar|destacar|destruir|detener|devolver|disculpar|disertar|diseñar|disputar|doblar|dominar|efectuar|ejercer|elegir|empezar|emprender|enamorar|encontrar|enfrentar|engrosar|entender|entrar|enviar|esconder|escribir|esperar|estacionar|estar|estudiar|evitar|examinar|existir|experimentar|extraer|extrañar|fabricar|facturar|finalizar|firmar|forjar|formar|formar|ganar|generar|gestar|grabar|haber|hablar|hacer|impartir|implantar|destinar|impulsar|incrementar|informar|inmortalizar|interpretar|investigar|ir|jugar|labrar|levantar|licuar|llegar|llevar|lograr|mantener|marcar|matar|mencionar|morir|necesitar|notar|obtener|ocurrir|ofertar|oficiar|orar|parar|participar|partir|pasar|pesar|pensar|permitir|persistir|poder|poner|practicar|preparar|presentar|producir|promediar|promocionar|proporcionar|protagonizar|publicar|pulsar|quedar|quitar|realizar|recibir|reclamar|recoger|recolectar|reconocer|recopilar|recordar|reeditar|regresar|rellenar|renovar|renunciar|repetir|reprender|respetar|resurgir|retomar|saber|salir|seguir|sobredestacar|solicitar|sufrir|tabajar|tener|tomar|torturar|trabajar|transmitir|trazar|usar|utilizar|vejar|vender|ver|verificar|viajar|visitar|volar)_(?:ha|ah)') + #36
+lema(ur'_Ú_ltimas?_U', pre=ur'(?:[Ll]as?|[Uu]nas?) ') + #36
+lema(ur'[Gg]rupo_s__', pre=ur'[Ll]os ') + #35
+lema(ur'[Mm]_u_sical_ú') + #35
+lema(ur'_Á_rbitros?_A') + #35
+lema(ur'_álbu_m(?:es|)_albú') + #35
+lema(ur'[Aa]tribu_i_d[ao]s?_í') + #34
+lema(ur'[Cc]on_strui_d[ao]s?_(?:tru[ií]|struí)') + #34
+lema(ur'[Cc]on_strui_d[ao]s?_(?:tru[ií]|struí)') + #34
+lema(ur'[Dd]isput_ó_ en_o') + #34
+lema(ur'[Pp]r_á_ctic(?:os|amente)_a') + #34
+lema(ur'[Dd]_el á_rea_(?:el a|e la [aá])') + #33
+lema(ur'[Hh]elic_ó_pteros?_o') + #33
+lema(ur'[Hh]oland_é_s_e') + #33
+lema(ur'[p]ertene_nci_as?_c[ií]', pre=ur'(?:[Ll]as?|[Ss]us?|[Dd]e) ') + #33
+lema(ur'_á_guilas?_a') + #33
+lema(ur'_ú_nica_u', pre=ur'(?:[Ll]a|[Uu]na|[Ss]u|es|será) ') + #33
+lema(ur'[Ii]nclu_í_a[ns]?_i') + #32
+lema(ur'[g]_é_neros?_e', pre=ur'(?:[Ee]l|[Ll]os|[Uu]n|[Uu]nos) ') + #32
+lema(ur'[Aa]lien_í_genas?_i') + #31
+lema(ur'[Ee]con_ó_mic(?:[ao]s|amente)_o') + #31
+lema(ur'[Ss]__on_on s') + #31
+lema(ur'_E_spaña_e', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #31
+lema(ur'_E_sto_É') + #31
+lema(ur'Azerbaiy_á_n_a') + #30
+lema(ur'[Ee]mpe_zó__(?:s[oó]|zo)') + #30
+lema(ur'[Tt]ra_í_d[ao]s?_i') + #30
+lema(ur'[Cc]irug_í_as?_i') + #29
+lema(ur'[Ee]squ_í__i') + #29
+lema(ur'[Ff]_utbolí_stic(?:[ao]s?|amente)_útbol[ií]') + #29
+lema(ur'_ú_ltimas_u', pre=ur'(?:[Ll]as|dos|tres) ') + #29
+lema(ur'[Hh]_ú_med[ao]s?_u') + #28
+lema(ur'[Jj]uda_í_smo_i') + #28
+lema(ur'[Ll]a_s_ islas_') + #28
+lema(ur'[Ll]a_s_ obras_') + #28
+lema(ur'[Mm]ediod_í_as?_i') + #28
+lema(ur'[Aa]p_é_ndices?_e') + #27
+lema(ur'[Cc]an_c_i(?:ón|ones)_s', xpos=[ur' barias', ]) + #27
+lema(ur'[Rr]eci_é_n_e') + #27
+lema(ur'[v]iv(?:ir|)_í_a[ns]?_i') + #27
+lema(ur'_V_enezuela_v', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #27
+lema(ur'[Ll]a_s_ elecciones_') + #26
+lema(ur'[Ll]o_s_ (?:hinchas|hindúes|honores|hospitales|huecos|huertos|humanos|húngaros|indios|informes|ingleses|inicios|instrumentos|integrantes|isleños|jardines|jefes|jesuitas|judíos|jueces|juguetes|libros|llamados|lugareños|lugares|máximos|mensajes|miles|militares|monjes|motivos|muros|nombres|números|objetivos|oídos|organismos|órganos|pacientes|pájaros|paquetes|parámetros|participantes|peces|periódicos|pies|pilotos|pioneros|piratas|planes|prisioneros|productos|profesores|propietarios|propios|proyectos|puentes|puestos|radares|rayos|rebeldes|receptores|recursos|referentes|regalos|reinos|religiosos|requerimientos|requisitos|sacerdotes|sacrificios|santos|satélites|secretos|seguidores|segundos|sentidos|sentimientos|señoríos|servidores|sindicatos|síntomas|sobrevivientes|sonidos|sospechábamos|sueños|suministros|tallos|templos|terrenos|testigos|tipos|títulos|túneles|turistas|unos|valles|viajes|vídeos|vientos)_') + #26
+lema(ur'[d]esar_rolló__r?oll?o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #26
+lema(ur'[Cc]ercan_í_as?_i') + #25
+lema(ur'[Dd]istribu_i_d[ao]s?_í') + #25
+lema(ur'[m]_á_ximas?_a', pre=ur'(?:[Ll]as?|[Uu]nas?) ') + #25
+lema(ur'[Pp]ort_á_til(?:es|)_a') + #24
+lema(ur'[Ss]ubg_é_neros?_e') + #24
+lema(ur'[Ll]a_s_ ciudades_') + #23
+lema(ur'[Pp]_á_rrafos?_a') + #23
+lema(ur'[Pp]eriod_í_stic[ao]s?_i') + #23
+lema(ur'[Pp]rotag_ó_nic[ao]s?_o') + #23
+lema(ur'Kirguist_á_n_a') + #22
+lema(ur'[Cc]onclu_i_(?:r(?:l[aeo]s?|se|)|d[ao]s?)_í') + #22
+lema(ur'[Ee]__ntre_ntre e') + #22
+lema(ur'[Ee]__ntre_ntre e') + #22
+lema(ur'[Pp]odr_á_[ns]?_a') + #22
+lema(ur'[Ss]__er_er s') + #22
+lema(ur'[Ss]obre__nombre_ ') + #22
+lema(ur'[Ss]ustitu_i_d[ao]s?_í') + #22
+lema(ur'[Cc]onclu_i_d[ao]s?_í') + #21
+lema(ur'[Ff]_u_tbolistas?_ú') + #21
+lema(ur'[Ff]utbol_í_stic[ao]_i') + #21
+lema(ur'[Gg]eneral_í_sim[ao]s?_i') + #21
+lema(ur'[Ii]nstru_i_d[ao]s?_í') + #21
+lema(ur'[Bb]ioqu_í_mic[ao]s?_i') + #20
+lema(ur'[Cc]at_á_logo_a', pre=ur'(?:[Ee]l|[Uu]n|[Dd]e) ') + #20
+lema(ur'[Dd]_e_cimocuart[ao]_é') + #20
+lema(ur'[Dd]_e_cimoquint[ao]_é') + #20
+lema(ur'[Ll]__o_o l') + #20
+lema(ur'[Mm]ercanc_í_as?_i') + #20
+lema(ur'[Rr]e_í_r_i') + #20
+lema(ur'[Tt]_i_tulad[ao]s?_í') + #20
+lema(ur'[Aa]__ños_ños a') + #19
+lema(ur'[Ff]olcl_ó_ric[ao]s?_o') + #19
+lema(ur'[Hh]idrogr_á_fic[ao]s?_a') + #19
+lema(ur'[Ll]a_s_ cuales_') + #19
+lema(ur'[Ll]a_s_ fuerzas_') + #19
+lema(ur'[Ll]a_s_ primeras_') + #19
+lema(ur'[Mm]am_í_fer[ao]s?_i') + #19
+lema(ur'[Mm]ientra_s__') + #19
+lema(ur'[Nn]eocl_á_sic[ao]s?_a') + #19
+lema(ur'[Pp]rote_í_nas?_i') + #19
+lema(ur'(?:[Pp]|[Cc]op)rop__iedad(?:es|)_r') + #18
+lema(ur'[Cc]ie_mpié_s_(?:npi[eé]|mpie)') + #18
+lema(ur'[Cc]onv_i_rti(?:ó|endo|eron)_e') + #18
+lema(ur'[Ee]j_é_rcitos_e') + #18
+lema(ur'[Ll]a_s_ calles_') + #18
+lema(ur'[Ll]o_s_ (?:aborígenes|acontecimientos|actores|actos|acuerdos|admiradores|agentes|albores|alemanes|alimentos|andes|animales|anteriores|árboles|arcos|arqueólogos|arquitectos|arreglos|asuntos|ataques|autores|bancos|baños|beneficios|británicos|buques|cabellos|cambios|campeones|campos|canales|cánones|cargos|carros|centros|cimientos|clubes|colonizadores|concursantes|continentes|continuos|créditos|cronistas|cuadernos|cuadros|cuchillos|cursos|detalles|dibujos|documentos|donativos|ejecutivos|ejemplares|ejes|elfos|empleados|enamorados|encuentros|enérgicos|entes|episodios|escenarios|esclavos|esfuerzos|espectadores|estadounidenses|estilos|exámenes|extranjeros|extremos|factores|fallos|familiares|fanáticos|ferrocarriles|fines|firmantes|fondos|fundadores|gallegos|géneros|gobernadores|gobiernos|guerreros)_') + #18
+lema(ur'[Mm]_é_todos_e') + #18
+lema(ur'_consultado el__acessado em') + #18
+lema(ur'[Cc]a_m_pos_n') + #17
+lema(ur'[Cc]on_s_tru(?:ir(?:lo|se|á|án|ía|ían|)|cción|cciones)_') + #17
+lema(ur'[Cc]r_í_menes_i') + #17
+lema(ur'[Dd]ebutar_í_a[ns]?_i') + #17
+lema(ur'[Gg]anader_í_a_i') + #17
+lema(ur'[Oo]c_éano Í_ndico_(?:eano [iíIÍ]|éano [iIí])') + #17
+lema(ur'[Pp]erder_í_a[ns]?_i') + #17
+lema(ur'[Pp]ermit(?:ir|)_í_a[ns]?_i') + #17
+lema(ur'[Ss]imult_á_neamente_a') + #17
+lema(ur'[Tt]ie_m_po_n') + #17
+lema(ur'[Tt]ra_í_dos?_i') + #17
+lema(ur'[Vv]eintitr_é_s_e') + #17
+lema(ur'[Aa]g_o_sto_u', pre=ur'(?:[Dd]e|[0-9]+\.?) ') + #16
+lema(ur'[Aa]pro_b_ad[ao]s?_v') + #16
+lema(ur'[Cc]ontin_ú_(?:an|en)_u') + #16
+lema(ur'[Dd]_í_gitos?_i') + #16
+lema(ur'[Dd]ij_o__ó') + #16
+lema(ur'[Dd]iri_g_i(?:d[ao]s?|r(?:[tsm]e|á|ía[ns]|l[aeo]s?|))_j') + #16
+lema(ur'[Ll]a_s_ relaciones_') + #16
+lema(ur'[Mm]_á_gic(?:[ao]s|amente)_a') + #16
+lema(ur'[Nn]ecrol_ó_gic[ao]s?_o') + #16
+lema(ur'[Pp]ict_ó_ric[ao]s?_o') + #16
+lema(ur'[Pp]ing_ü_inos?_u') + #16
+lema(ur'[Ss]__obre_obre s') + #16
+lema(ur'_F_rancia_f', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #16
+lema(ur'_escándalo__escandalo') + #16
+lema(ur'Arbel_á_ez_a') + #15
+lema(ur'[Cc]onoc_í_a[ns]?_i') + #15
+lema(ur'[Cc]ont_ó_ (?:que|como|con)_o') + #15
+lema(ur'[Cc]ontra_í_(?:a[ns]?|d[ao]s?)_i') + #15
+lema(ur'[Ee]n_ _serio_') + #15
+lema(ur'[Ee]xist_í_a[ns]?_i') + #15
+lema(ur'[Ii]leg_í_tim(?:as?|os?|amente)_i') + #15
+lema(ur'[Ii]ncre_í_ble(?:s|mente)_i') + #15
+lema(ur'[Ll]a_s_ personas_') + #15
+lema(ur'[Nn]_á_useas_a') + #15
+lema(ur'[Pp]__rimer_rimer p') + #15
+lema(ur'[Pp]ri_n_cipal(?:es|mente|)_') + #15
+lema(ur'[Pp]roven_í_a[ns]?_i') + #15
+lema(ur'[Ss]__i_i s') + #15
+lema(ur'[Tt]el_é_fonos_e') + #15
+lema(ur'_(discográfica)__\(record label\)') + #15
+lema(ur'_I_talia_i', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #15
+lema(ur'_c_heco_C', pre=ur'\b(?:e[ln]|del|idioma|y) ') + #15
+lema(ur'[Aa]_ _partir_') + #14
+lema(ur'[Cc]_ó_nyuges?_o') + #14
+lema(ur'[Dd]eber_í_a(?:[ns]?|mos)_i') + #14
+lema(ur'[Dd]espose_í_d[ao]s?_i') + #14
+lema(ur'[Ee]st_á_ndares_a') + #14
+lema(ur'[Ee]xpl_í_cit(?:[ao]s|amente)_i') + #14
+lema(ur'[Ll]_á_piz_a') + #14
+lema(ur'[Ll]a_s_ provincias_') + #14
+lema(ur'[Ll]eg_í_tim(?:as|os|amente)_i') + #14
+lema(ur'[Nn]eum_á_tic[ao]s?_a') + #14
+lema(ur'[Tt]__ambién_ambién t') + #14
+lema(ur'[Vv]eintis_é_is_e') + #14
+lema(ur'[d]eb_í_a(?:s?|mos)_i') + #14
+lema(ur'_ó_mnibus_o', pre=ur'\b(?:y|[Ee]l|[Uu]n|de|en|trenes|Micro|son|transporte:|llamados|scientiis|formato|tomaran|Empresa|tituló) (?:["\']|\[\[|)') + #14
+lema(ur'[Aa]ntag_ó_nic[ao]s?_o') + #13
+lema(ur'[Cc]_ó_digos_o') + #13
+lema(ur'[Cc]h_á_rter_a', pre=ur'(?:aerolíneas?|vuelos?|tipos?|modos?)(?: de|) ') + #13
+lema(ur'[Cc]l_í_nic(?:[ao]s|amente)_i') + #13
+lema(ur'[Cc]r_á_neos?_a') + #13
+lema(ur'[Dd]_í_a a d[ií]a_i') + #13
+lema(ur'[Dd]eber_á_[ns]?_a') + #13
+lema(ur'[Dd]estitu_i_d[ao]s?_í') + #13
+lema(ur'[Dd]iri_gí_a[ns]?_(?:j[ií]|gi)') + #13
+lema(ur'[Ee]__ra_ra e') + #13
+lema(ur'[Ee]rr_ó_neamente_o') + #13
+lema(ur'[Ee]xcelent_í_sim[ao]s?_i') + #13
+lema(ur'[Hh]__a [a-záéíóúñ]+o_a h') + #13
+lema(ur'[Ll]a_s_ mujeres_') + #13
+lema(ur'[Ll]a_s_ series_') + #13
+lema(ur'[Ll]a_s_ siguientes_') + #13
+lema(ur'[Mm]_ú_ltiples?_u', pre=ur'\b(?:Monitores|en|por|creado|normales|reclutando|[Cc]opias| de|Tiene|esclerosis|[Ee]lectrica) ', xpre=[ur'Pénétrations ', ]) + #13
+lema(ur'[Pp]__uede_uede p') + #13
+lema(ur'[Rr]eco_g_(?:e[nrs]?|erl[aeo]s?|erán|id[ao]s?|iendo|ieron|imiento|ió|í)_j') + #13
+lema(ur'[Rr]egad_í_os?_i') + #13
+lema(ur'[Tt]__iene_iene t') + #13
+lema(ur'[Tt]_ó_xic(?:as|os?)_o') + #13
+lema(ur'[Tt]ransg_é_ner[ao]s?_e') + #13
+lema(ur'[Vv]erg_ü_enzas?_u') + #13
+lema(ur'[Vv]olver_í_a(?:n|mos|)_i') + #13
+lema(ur'Benalc_á_zar_a') + #12
+lema(ur'[Aa]_ _cabo_', pre=ur'[Ll]lev(?:[oó]|aron|a[ns]?) ') + #12
+lema(ur'[Aa]maz_ó_nic(?:as|os?)_o') + #12
+lema(ur'[Aa]rque_ó_log[ao]s?_o') + #12
+lema(ur'[Cc]__uando_uando c') + #12
+lema(ur'[Cc]ardiolog_í_as?_i') + #12
+lema(ur'[Dd]ec_í_a[ns]?_i', pre=ur'(?:[Qq]u[eé]|[Ss]e|[Ll]es?|[Mm]e|[Nn]os|[Ll]o|[Ss]eg[uú]n|[Dd]onde|[Cc]u[aá]l|[Cc][oó]mo|[Ss][oó]lo|[EeÉ]l|[Qq]ui[eé]n) ') + #12
+lema(ur'[Ee]nc_o_ntraba[ns]?_ue') + #12
+lema(ur'[Ee]stu_v_(?:[eo]|ieron|iese[ns]?|iera[ns]?)_b') + #12
+lema(ur'[Gg]eogr_á_fic(?:[ao]s|amente)_a') + #12
+lema(ur'[Hh]idr_á_ulic[ao]s?_a') + #12
+lema(ur'[Hh]idroel_é_ctric[ao]s?_e') + #12
+lema(ur'[Ii]_mpresió_n_(?:npre[sc]i[oó]|mpreci[oó]|mpresio)') + #12
+lema(ur'[Ll]a_s_ principales_') + #12
+lema(ur'[Mm]antendr_á_[ns]?_a') + #12
+lema(ur'[Qq]u_í_mic(?:[ao]s|amente)_i') + #12
+lema(ur'[Ss]iller_í_as?_i') + #12
+lema(ur'[Ss]in_ó_nimos?_o') + #12
+lema(ur'[Tt]endr_í_a[ns]?_i') + #12
+lema(ur'[Tt]ransmit(?:ir|)_í_a[ns]?_i') + #12
+lema(ur'[s]erv_í_a_i') + #12
+lema(ur'_E_ste (?:último|primer)_É') + #12
+lema(ur'_e_sta (afición|vez)_é') + #12
+lema(ur'[Cc]ron_ó_metros?_o') + #11
+lema(ur'[Hh]abr_í_as?_i') + #11
+lema(ur'[Ii]nstitu_i_d[ao]s?_í') + #11
+lema(ur'[Ii]nte_r_pretad[ao]s?_') + #11
+lema(ur'[Ll]a_s_ especies_') + #11
+lema(ur'[Ll]a_s_ leyes_') + #11
+lema(ur'[Ll]a_s_ listas_') + #11
+lema(ur'[Ll]a_s_ palabras_') + #11
+lema(ur'[Ll]a_s_ partes_') + #11
+lema(ur'[Ll]a_s_ regiones_') + #11
+lema(ur'[Mm]edi_a_nte_e') + #11
+lema(ur'[Mm]urci_é_lagos?_e') + #11
+lema(ur'[Oo]bst_á_culos?_a') + #11
+lema(ur'[Pp]_ó_lvoras?_o') + #11
+lema(ur'[Pp]ac_í_fic(?:as|os|amente)_i') + #11
+lema(ur'[Pp]or_ _ciento_') + #11
+lema(ur'[Pp]ro_b_ad[ao]s?_v') + #11
+lema(ur'[Ss]_i_guie(?:ron|ntes?)_e') + #11
+lema(ur'[Ss]egu(?:ir|)_í_a[ns]?_i') + #11
+lema(ur'[Tt]ao_í_s(?:tas?|mo)_i') + #11
+lema(ur'_é_tnic(?:[ao]s|amente)_e') + #11
+lema(ur'[Cc]arn_í_vor(os?|as)_i') + #10
+lema(ur'[Cc]ore_ó_graf[ao]s?_o') + #10
+lema(ur'[Cc]re_í_d[ao]s?_i') + #10
+lema(ur'[Ee]__pisodios?_s') + #10
+lema(ur'[Ee]st_ó_magos?_o') + #10
+lema(ur'[Ee]strat_é_gic[ao]_e') + #10
+lema(ur'[Hh]idr_ó_genos?_o') + #10
+lema(ur'[Hh]o_mó_nim[ao]s?_(?:mo|n[oó])') + #10
+lema(ur'[Ii]ncon_sc_ientes?_[sc]') + #10
+lema(ur'[Jj]ur_í_dicas(?!\.(?:com|unam\.mx))_i') + #10
+lema(ur'[Ll]a_s_ costas_') + #10
+lema(ur'[Ll]a_s_ fechas_') + #10
+lema(ur'[Ll]a_s_ líneas_') + #10
+lema(ur'[Mm]o_nstru_o_unstr') + #10
+lema(ur'[Pp]_í_ldoras?_i') + #10
+lema(ur'[Pp]u__dieron_e') + #10
+lema(ur'[Rr]ecib(?:ir|)_í_a[ns]?_i') + #10
+lema(ur'[Rr]eempla_zó__(?:s[oó]|zo)', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #10
+lema(ur'[Tt]_í_teres?_i') + #10
+lema(ur'[Tt]rig_é_sim[ao]s?_e') + #10
+lema(ur'[Uu]n_á_nime(?:mente|)_a') + #10
+lema(ur'[f]ranc_é_s[,.]_e') + #10
+lema(ur'[t]_é_rminos_e', pre=ur'[Ll]os ') + #10
+lema(ur'_ú_nicos_u', pre=ur'(?:[Ss]us|[Ll]os) ') + #10
+lema(ur'Ad_í_s Abeba_i') + #9
+lema(ur'[Aa]p_ó_stol (?:San|Andr[eé]s|Juan|Jaime|Pedro|Pablo|Santiago|Mateo|Mat[ií]as|Tom[aá]s|Bartolom[eé])_o') + #9
+lema(ur'[Aa]utom_á_tic(?:[ao]s|amente)_a') + #9
+lema(ur'[Cc]re_í_a(?:[ns]?|mos)_i') + #9
+lema(ur'[Cc]u_á_ntic[ao]s?_a') + #9
+lema(ur'[Dd]__esde_esde d') + #9
+lema(ur'[Ee]star_í_a(?:[ns]?|mos)_i') + #9
+lema(ur'[Gg]inecolog_í_as?(?! (?:Ospedalieri|e (?:Ostetricia|Obstétrícia)))_i') + #9
+lema(ur'[Hh]_á_bil(?:es|mente)_a') + #9
+lema(ur'[Hh]_í_gados?_i') + #9
+lema(ur'[Ii]lustr_í_sim[ao]s?_i') + #9
+lema(ur'[Ll]a_s_ bases_') + #9
+lema(ur'[Ll]a_s_ divisiones_') + #9
+lema(ur'[Ll]a_s_ iglesias_') + #9
+lema(ur'[Ll]a_s_ poblaciones_') + #9
+lema(ur'[Mm]_utua_mente_(?:útual?|utual)') + #9
+lema(ur'[Nn]ov_í_sim[ao]s?_i') + #9
+lema(ur'[Pp]irater_í_as?_i') + #9
+lema(ur'[Pp]opurr_í__i') + #9
+lema(ur'[Pp]rehisp_á_nic[ao]s?_a') + #9
+lema(ur'[Pp]s_í_quic[ao]s?_i') + #9
+lema(ur'[Rr]eco_g_e[ns]?_j') + #9
+lema(ur'[Rr]etra_í_(?:a[ns]?|d[ao]s?)_i') + #9
+lema(ur'[Rr]etra_í_d[ao]s?_i') + #9
+lema(ur'[Rr]eun_í_a[ns]?_i') + #9
+lema(ur'[Ss]em_á_foros?_a') + #9
+lema(ur'[Ss]i_s_temas?_') + #9
+lema(ur'[Ss]onr_í_e[ns]?_i') + #9
+lema(ur'[Tt]el_é_fono_e', pre=ur'(?:[Ee]l|[Ss]u|[Uu]n|como|por) ') + #9
+lema(ur'[Uu]n_a ré_plica_ r[eé]') + #9
+lema(ur'\(_álbum de \g<num>_\)_(?P<num>[0-9]{4}) album') + #9
+lema(ur'_É_l (?:anhela|pued[ae]|gana)_E') + #9
+lema(ur'_ú_ltimamente_u') + #9
+lema(ur'(?:[Cc]on|[Ss](?:ub|))igu_i_entes?_') + #8
+lema(ur'[Aa]cr_ó_nimos?_o') + #8
+lema(ur'[Aa]lfarer_í_as?_i') + #8
+lema(ur'[Aa]n_ó_nim(?:[ao]s|amente)_o') + #8
+lema(ur'[Aa]parec_í_a[ns]?_i') + #8
+lema(ur'[Aa]tra_í_d[ao]s?_i') + #8
+lema(ur'[Cc]ad_á_veres_a') + #8
+lema(ur'[Cc]atedr_á_tic[ao]s?_a') + #8
+lema(ur'[Cc]o_o_peraci(?:ón|ones)_') + #8
+lema(ur'[Cc]umpl(?:ir|)_í_a[ns]?_i') + #8
+lema(ur'[Dd]__urante_urante d') + #8
+lema(ur'[Dd]_e_cimosext[ao]_é') + #8
+lema(ur'[Dd]escalific_ó__o') + #8
+lema(ur'[Ee]__ste_ste e') + #8
+lema(ur'[Ee]mit(?:ir|)_í_a[ns]?_i') + #8
+lema(ur'[Ee]ncont_r_ar_') + #8
+lema(ur'[Ee]sc_é_nic[ao]s?_e') + #8
+lema(ur'[Ee]strat_é_gic(?:[ao]s|amente)_e') + #8
+lema(ur'[Ee]xit_o_s(?:[ao]s?|amente)_ó') + #8
+lema(ur'[Ff]__ueron_ueron f') + #8
+lema(ur'[Ff]_í_sicamente(?! esposta)_i') + #8
+lema(ur'[Hh]ect_á_reas?_a') + #8
+lema(ur'[Hh]istolog_í_as?_i') + #8
+lema(ur'[Ii]nform_á_tic[ao]s_a') + #8
+lema(ur'[Ll]a_s_ autoridades_') + #8
+lema(ur'[Ll]a_s_ condiciones_') + #8
+lema(ur'[Ll]a_s_ estaciones_') + #8
+lema(ur'[Ll]a_s_ ideas_') + #8
+lema(ur'[Ll]a_s_ letras_') + #8
+lema(ur'[Ll]a_s_ semifinales_') + #8
+lema(ur'[Ll]a_s_ últimas_') + #8
+lema(ur'[Ll]lam_a_d[ao]s?_') + #8
+lema(ur'[Mm]asoner_í_as?_i') + #8
+lema(ur'[Pp]oder_í_o_i') + #8
+lema(ur'[Pp]ose_í_d[ao]s?_i') + #8
+lema(ur'[Pp]r_á_cticas_a', pre=ur'(?:[Ll]as|[Uu]nas|[Ss]us) ') + #8
+lema(ur'[Pp]ri_me_r[ao]s?_em') + #8
+lema(ur'[Ss]eren_í_sim[ao]s?_i') + #8
+lema(ur'[Ss]igu_i_entes?_') + #8
+lema(ur'[Tt]elevis_i_ón_') + #8
+lema(ur'[Tt]endr_á_[ns]_a') + #8
+lema(ur'[Uu]n_a má_quina_ m[aá]') + #8
+lema(ur'[l]e_í_da_i') + #8
+lema(ur'_obstáculos__obstaculos') + #8
+lema(ur'Logroñ_é_s_e') + #7
+lema(ur'Pap_ú_a_u', pre=ur'(?:[Dd]e|[Ee]n) ') + #7
+lema(ur'Se_ú_l_u', pre=ur'(?:[Dd]e|[Ee]n) ') + #7
+lema(ur'Vig_í_a_i', pre=ur'El ') + #7
+lema(ur'[Aa]br(?:ir|)_í_a[ns]?_i') + #7
+lema(ur'[Aa]br_í_a[ns]?_i') + #7
+lema(ur'[Aa]ct_ú_(?:a[ns]|e[ns]?)_u') + #7
+lema(ur'[Aa]dquir_ió__(?:io|[oó])') + #7
+lema(ur'[Aa]n_ó_nim[ao]_o', pre=ur'(?:[Ss]ociedad|[Mm]ensaje) ') + #7
+lema(ur'[Aa]p_are_c(?:e(?:[ns]?|r(?:a[ns]?|[áé]|ía[ns]?|))|ieron)_(?:ara|re)') + #7
+lema(ur'[Aa]pocal_i_psis_í') + #7
+lema(ur'[Aa]rtific_i_al(?:es|)_') + #7
+lema(ur'[Cc]_á_lculo (?:del?|num[eé]rico|mental|según|estructural)_a') + #7
+lema(ur'[Cc]omp_i_tiera[ns]?_e') + #7
+lema(ur'[Cc]ontadur_í_as?_i') + #7
+lema(ur'[Cc]ontrar_r_evoluci(?:ón|onari[ao]s?)_') + #7
+lema(ur'[Cc]re_í_bles?_i') + #7
+lema(ur'[Dd]_é_biles(?! dignare)_e') + #7
+lema(ur'[Dd]es_ig_nad[ao]s?_gi') + #7
+lema(ur'[Dd]in_á_mic(?:[ao]s|amente)_a') + #7
+lema(ur'[Dd]ispon_í_a[ns]?_i') + #7
+lema(ur'[Ee]_m_perador_n') + #7
+lema(ur'[Ee]_x_pectativas?_s') + #7
+lema(ur'[Ee]sco_g_(?:e[nr]?|erl[aeo]s?|erá|es|id[aeo]s?|iendo|ieron|imos)_j') + #7
+lema(ur'[Ff]erreter_í_as?_i') + #7
+lema(ur'[Ff]lu_i_d[ao]s?_í') + #7
+lema(ur'[Ff]ue_r_zas?_') + #7
+lema(ur'[Gg]uitar_r_as?_') + #7
+lema(ur'[Jj]esu_í_tic[ao]s?_i') + #7
+lema(ur'[Jj]ugar_í_a[ns]?_i') + #7
+lema(ur'[Ll]_a_s (?:Marquesas|Reducciones|SS|Sombras|\(muchas|arcadas|batallas|características|casas|charofitas|ciudades|colecciones|costas|críticas|dehesas|diferencias|doctrinas|dos puertas|entonces todopoderosa|escenas|especies|espiguillas|esporas|faldas|flores|fronteras|frutas|fuentes|fuerzas|hembras|hojas|indicaciones|inflorescencias|iniciales|inmunoglobulinas|islas|lenguas|lesbianas|leyes|listas|manchas|masas|mayores|mesas|mezquitas|misiones|mulas|negociaciones|normas|novelizaciones|nubes|nuevas|obras|orillas|películas|personas|posesiones|prematuras|prescriptivas|primeras|proximas|proximidades|puntas|raíces|regiones|respuestas|semifinales|sierras|siguientes|tierras|torturas|traducciones|ubicaciones|víctimas|yemas|zonas|órdenes)_') + #7
+lema(ur'[Ll]_o_s (?:Agustinos|Caballeros|EE\.UU\.|Llanos|Mártires|Play offs|Reyes|Vertebrados|acompañantes|albores|ascensores|aumentos|años|barrios|bordes|casos|cetáceos|chicos|compañeros|críticos|cupones|cursos|descendientes|dialectos|enviados|episodios|extremos|ganadores|gemelos|grupos|hechiceros|hermanos|hijos|ingenieros|integrantes|intérpretes|investigadores|juegos|lados|lusitanos|machos|memorandos|monos|muchos|muertos|musicales|municipios|negativos|niños|nuevos|ojos|otros|parches|primeros|problemas|programas|pueblos|rebeldes|republicanos|restos|ríos|sacerdotes|seres|siete minutos|siglos|singles|sostenedores|temas|trabajos|trabajadores|tricomas|troncos|viejos)_') + #7
+lema(ur'[Ll]a_s_ canciones_') + #7
+lema(ur'[Ll]a_s_ inmediaciones_') + #7
+lema(ur'[Ll]a_s_ nuevas_') + #7
+lema(ur'[Ll]a_s_ otras_') + #7
+lema(ur'[Ll]a_s_ posiciones_') + #7
+lema(ur'[Ll]a_s_ revistas_') + #7
+lema(ur'[Ll]a_s_ temporadas_') + #7
+lema(ur'[Ll]a_s_ vías_') + #7
+lema(ur'[Ll]leva(rá|) a_ _cabo_') + #7
+lema(ur'[Mm]_u_sicales_ú') + #7
+lema(ur'[Mm]ec_á_nic(?:[ao]s|amente)_a') + #7
+lema(ur'[Mm]ercader_í_as?_i') + #7
+lema(ur'[Pp]__arte_arte p') + #7
+lema(ur'[Pp]r_á_cticas de_a') + #7
+lema(ur'[Pp]retend_í_a[ns]?_i') + #7
+lema(ur'[Pp]rovi_sio_(?:nal(?:es|)|nes)_ci[oó]') + #7
+lema(ur'[Pp]siqui_á_tric[ao]s?_a') + #7
+lema(ur'[Qq]uedar_í_a[ns]?_i') + #7
+lema(ur'[Qq]uer_í_amos_i') + #7
+lema(ur'[Qq]uer_í_amos_i') + #7
+lema(ur'[Qq]uiz_á_s_a') + #7
+lema(ur'[Rr]esid(?:ir|)_í_a[ns]?_i') + #7
+lema(ur'[Ss]__ido_ido s') + #7
+lema(ur'[Ss]aldr_á_[ns]?_a') + #7
+lema(ur'[Ss]onre_í_r_i') + #7
+lema(ur'[Tt]_í_pic(?:[ao]s|amente)_i') + #7
+lema(ur'[Tt]erminar_í_a[ns]?_i') + #7
+lema(ur'[Tt]itular_í_a[ns]?_i') + #7
+lema(ur'[Tt]uber_í_as?_i') + #7
+lema(ur'[Uu]t_ilizació_n_(?:lizaci[oó]|ilizacio)') + #7
+lema(ur'[h]_a_ce_e') + #7
+lema(ur'[m]_á_ximos?_a', pre=ur'(?:[Ee]l|[Uu]n|[Ll]os) ') + #7
+lema(ur'[s]ab_í_an_i') + #7
+lema(ur'_U_ruguay_u', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #7
+lema(ur'_e_spañol_E', pre=ur'ejército ') + #7
+lema(ur'_Á_ngel Gim[eé]nez_A') + #7
+lema(ur'_á_gil(?:es|mente|)_a') + #7
+lema(ur'[12][0-9]{3} _en cine__au cinéma', pre=ur'\[') + #6
+lema(ur'[Aa]_ñ_os (?:antes|después)_n') + #6
+lema(ur'[Aa]bsor_b_(e[rns]?|id[ao]s?)_v') + #6
+lema(ur'[Bb]r_ú_julas?_u') + #6
+lema(ur'[Cc]et_á_ceos?_a') + #6
+lema(ur'[Cc]omisar_í_as?_i', pre=ur'[Ee]n ') + #6
+lema(ur'[Cc]ongre_s_os?_') + #6
+lema(ur'[Cc]onsist_í_a[ns]?_i') + #6
+lema(ur'[Cc]onvert(?:ir|)_í_a[ns]?_i') + #6
+lema(ur'[Cc]ronol_ó_gic(?:[ao]s|amente)_o') + #6
+lema(ur'[Cc]ut_á_ne[ao]s?_a') + #6
+lema(ur'[Dd]isminu_i_d[ao]s?_í') + #6
+lema(ur'[Ee]mblem_á_tic(?:as|os?)_a') + #6
+lema(ur'[Ee]mit_í_a[ns]?_i') + #6
+lema(ur'[Ee]n_ _realidad_') + #6
+lema(ur'[Ee]st_é__e', pre=ur'(?:[Ss]e )') + #6
+lema(ur'[Hh]om_ó_nim[ao]s?_o') + #6
+lema(ur'[Ii]ncon_s_cientes?_') + #6
+lema(ur'[Ii]nt_é_rpretes_e', pre=ur'(?:[AaEe]l|[Uu]na?|[Ll][ao]s|[Pp]or|[Vv]ari[ao]s|[Ff]amos[ao]s?|[Aa]rtistas?|[Dd]estacad[ao]s?|[Oo]tr[ao]s?|[Mm]ejor(?:es|)|[Ee]st[ao]s?|[Mm]uch[ao]s?|[Cc]uy[ao]s?|[Aa]lgun[ao]s|[Aa]lgún|[Aa]lguna|[Cc]onocid[ao]s?|[Ss]us?|[0-9]+|[Pp]rimer|[Gg]ran|[Cc]on) ') + #6
+lema(ur'[Ii]nte_r_pretando_') + #6
+lema(ur'[Jj]ap_oné_s_óne') + #6
+lema(ur'[Jj]ard_í_n [Bb]otánico_i') + #6
+lema(ur'[Ll]a n_ó_mina(?! (?:di|al|a la|dubia|en|con))_o') + #6
+lema(ur'[Ll]a_s_ actividades_') + #6
+lema(ur'[Ll]a_s_ afueras_') + #6
+lema(ur'[Ll]a_s_ empresas_') + #6
+lema(ur'[Ll]a_s_ familias_') + #6
+lema(ur'[Ll]a_s_ fiestas_') + #6
+lema(ur'[Ll]a_s_ lenguas_') + #6
+lema(ur'[Ll]a_s_ manos_') + #6
+lema(ur'[Ll]a_s_ mismas_') + #6
+lema(ur'[Mm]_á_rgenes_a') + #6
+lema(ur'[Mm]a_m_postería_n') + #6
+lema(ur'[Mm]orir_í_a[ns]?_i') + #6
+lema(ur'[Mm]uch_í_sim[ao]s?_i') + #6
+lema(ur'[Mm]usic_ó_log[ao]s?_o') + #6
+lema(ur'[Nn]arcotr_á_ficos?_a') + #6
+lema(ur'[Oo]__tros_tros o') + #6
+lema(ur'[Oo]frec_í_a[ns]?_i') + #6
+lema(ur'[Pp]asar_í_a[ns]?_i') + #6
+lema(ur'[Pp]eluquer_í_as?_i') + #6
+lema(ur'[Pp]ose_í_a[ns]?_i') + #6
+lema(ur'[Pp]rofe_s_ional(?:es|)_c') + #6
+lema(ur'[Rr]adiolog_í_as?_i') + #6
+lema(ur'[Rr]eclu_i_d[ao]s?_í') + #6
+lema(ur'[Ss]emiolog_í_as?_i') + #6
+lema(ur'[Ss]eud_ó_nimos?_o') + #6
+lema(ur'[Ss]obrese_í_d[ao]s?_i') + #6
+lema(ur'[Ss]of_t_ware_') + #6
+lema(ur'[Ss]of_á_s?_a', pre=ur'(?:[Ss]u|[Ee]l|[Dd]el|[Uu]n|[Ll]os|como) ') + #6
+lema(ur'[Tt]_á_ctil(?:es|)_a') + #6
+lema(ur'[Tt]errest_r_es?_') + #6
+lema(ur'[Tt]rampol_í_n_i') + #6
+lema(ur'[s]ali_o__ó', pre=ur'[Ee]mperador ') + #6
+lema(ur'_G_recia_g', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #6
+lema(ur'_P_araguay_p', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #6
+lema(ur'_encontraba__encuentraba') + #6
+lema(ur'_Ú_ltimamente_U') + #6
+lema(ur'Car_ú_pano_u') + #5
+lema(ur'E_n_ (?:el|la|los|las)_N') + #5
+lema(ur'[Aa]dvers_a_rios?_á') + #5
+lema(ur'[Aa]gr_ó_nom[ao]s?_o') + #5
+lema(ur'[Aa]nal_ó_gic[ao]s?_o') + #5
+lema(ur'[Cc]a_cerí_as?_(?:zer[ií]|ceri)') + #5
+lema(ur'[Cc]ampeon_í_sim[ao]s?_i') + #5
+lema(ur'[Cc]apit_á_n Am[eé]rica_a') + #5
+lema(ur'[Cc]onti_n_gentes?_') + #5
+lema(ur'[Cc]ontribu_i_d[ao]s?_í') + #5
+lema(ur'[Cc]ontribu_i_d[ao]s?_í') + #5
+lema(ur'[Cc]onvertir_í_a[ns]?_i') + #5
+lema(ur'[Cc]onvi__rtieron_e') + #5
+lema(ur'[Dd]_ó_lar_o', pre=ur'(?:[Ee]l|[Uu]n|[Dd]el|[Aa]l) ') + #5
+lema(ur'[Dd]escend_í_(?:a[ns]?|)_i') + #5
+lema(ur'[Dd]esv_á_n_a') + #5
+lema(ur'[Dd]ur_an_te_na') + #5
+lema(ur'[Ee]_s_pectador(?:es|)_x') + #5
+lema(ur'[Ee]mitir_á_[ns]?_a') + #5
+lema(ur'[Ee]mpie_c_e[ns]?_z') + #5
+lema(ur'[Ee]nto_n_ces_') + #5
+lema(ur'[Ee]spont_á_ne(?:[ao]s|amente)_a') + #5
+lema(ur'[Ee]val_ú_(?:a[ns]?|e[ns]?)_u') + #5
+lema(ur'[Ff]eligres_í_as?_i') + #5
+lema(ur'[Ff]en_ó_menos_o') + #5
+lema(ur'[Ff]rigor_í_fic[ao]s?_i') + #5
+lema(ur'[Ff]utbol_í_stic(?:[ao]s|amente)_i') + #5
+lema(ur'[Gg]ustar_í_a[ns]?_i') + #5
+lema(ur'[Hh]ac_é_r[mts]el[aeo]s?_e') + #5
+lema(ur'[Hh]acer_s_e(?:lo|)_c') + #5
+lema(ur'[Hh]eredit_a_ri[ao]s?_á') + #5
+lema(ur'[Ii]mpart(?:ir|)_í_a[ns]?_i') + #5
+lema(ur'[Ii]ncre_í_blemente_i') + #5
+lema(ur'[Ii]ndic_ó_ que_o') + #5
+lema(ur'[Ii]nform_á_ticos?(?!\.com)_a') + #5
+lema(ur'[Ii]nstant_á_ne[ao]_a') + #5
+lema(ur'[Ii]nte_r_preta[ns]?_') + #5
+lema(ur'[Jj]ur_í_dic(?:os|amente)_i') + #5
+lema(ur'[Ll]_a_ (?:2a|BBC|Bandera|CIA|Ciudad|Confitería|Copa|Cumbre|Escuela|España|Familia|Fuerza|Isla|MLB|Mancomunidad|Nueva|Parada|Plaza|República|SFP|Sección|Serie|Siderurgia|Sinfónica|Soledad|UEFA|accesibilidad|amplitud|base|bebida|caja|ciudad|compositora|compra|corporación|delincuencia|derecha|derrota|designación|dificultad|discográfica|década|escuela|etiqueta|familia|fecha|formación|fuente|historia|iglesia|imagen|isla|justicia|medicina|más segura|música|normalización|nueva|oposición|organización|otra|pantalla|película|población|poesía|posibilidad|presidenta|primera|producción|promoción|provincia|prueba|psiquiatría|región|reina|revista|secuela|serranía|señorita|situación|sociedad|séptima|virgen|zona|única)_s') + #5
+lema(ur'[Ll]a_s_ células_') + #5
+lema(ur'[Ll]a_s_ filas_') + #5
+lema(ur'[Ll]a_s_ funciones_') + #5
+lema(ur'[Ll]a_s_ localidades_') + #5
+lema(ur'[Ll]a_s_ plantas_') + #5
+lema(ur'[Ll]a_s_ redes_') + #5
+lema(ur'[Ll]a_s_ tropas_') + #5
+lema(ur'[Ll]a_s_ unidades_') + #5
+lema(ur'[Ll]a_s_ universidades_') + #5
+lema(ur'[Mm]_é_dicamente_e') + #5
+lema(ur'[Nn]ari_c_es_[zs]') + #5
+lema(ur'[Oo]bten(?:dr|)_í_a[ns]?_i') + #5
+lema(ur'[Oo]btuv_o__ó') + #5
+lema(ur'[Oo]r_á_culos?_a') + #5
+lema(ur'[Pp]as_sio_n_i[oó]', pre=ur'of (?:the |)') + #5
+lema(ur'[Pp]ermane__ciendo_n') + #5
+lema(ur'[Pp]ermitir_á_[ns]?_a') + #5
+lema(ur'[Pp]ermitir_í_a[ns]?_i') + #5
+lema(ur'[Pp]ersoner_í_as?_i') + #5
+lema(ur'[Pp]re_s_enci(?:a[ns]?|[oó]|ar(?:[eé]|[aá][ns]?|ron))_s?c') + #5
+lema(ur'[Pp]roduc(?:ir|)_í_a[ns]?_i') + #5
+lema(ur'[Pp]rote_g_(?:e[nr]?|emos|erl[aeo]s?|erse|erá[ns]?|ería[ns]?|id[aeo]s?|iendo|iera|ieron|iese|ió)_j') + #5
+lema(ur'[Pp]rove_í_d[ao]s?_i') + #5
+lema(ur'[Pp]sicol_ó_gic[ao]s_o') + #5
+lema(ur'[Qq]ued_ó_ (?:sólo|sin|descubierto)_o') + #5
+lema(ur'[Rr]ecibir_á_[ns]?_a') + #5
+lema(ur'[Rr]econstru_i_d[ao]s?_í') + #5
+lema(ur'[Rr]ecorr_í_a[ns]?_i') + #5
+lema(ur'[Rr]efiner_í_as?_i') + #5
+lema(ur'[Rr]etribu_i_d[ao]s?_í') + #5
+lema(ur'[Ss]i_e_mpre_') + #5
+lema(ur'[Ss]ie_m_pre_n') + #5
+lema(ur'[Ss]obre_vi_vientes?_') + #5
+lema(ur'[Ss]uicid__ó_i') + #5
+lema(ur'[Uu]n_í_r[mts]el[aeo]s?_i') + #5
+lema(ur'[Uu]nir_á_[ns]?_a(?!\])') + #5
+lema(ur'[Uu]t_i_lizad[ao]s?_') + #5
+lema(ur'[Vv]er_sió_n_ci[oó]') + #5
+lema(ur'[m]_í_nimas?_i', pre=ur'(?:[Ll]as?|[Uu]nas?) ') + #5
+lema(ur'_e inglé_s_[ey] ingle', pre=ur'(?:quechua|franc[eé]s|español|coreano|japon[eé]s) ') + #5
+lema(ur'_Ú_nic(?:[ao]s|amente)_U') + #5
+lema(ur'_á_ngulos?_a', pre=ur'(?:[Ee][nl]|[Uu]n|[Ll]os|[Uu]nos) ') + #5
+lema(ur'_é_xodos?_e') + #5
+lema(ur'_í_ntimamente_i') + #5
+lema(ur'D_í_as_i', pre=ur'(?:[uúUÚ]ltimos|Mil|Nueve|Nuestros|Trece|Buenos) ') + #4
+lema(ur'Paraguan_á__a') + #4
+lema(ur'Teher_á_n_a', pre=ur'(?:[Dd]e|[Ee]n) ') + #4
+lema(ur'[Aa]_ _cargo_') + #4
+lema(ur'[Aa]cad_é_mic(?:as|amente)_e') + #4
+lema(ur'[Aa]dole_sc_entes?_[sc]') + #4
+lema(ur'[Aa]greg_á_r[mts]el[aeo]s?_a') + #4
+lema(ur'[Aa]l_í_an?_i', pre=ur'[Ss]e ') + #4
+lema(ur'[Aa]parecer_á_[ns]?_a') + #4
+lema(ur'[Aa]rquer_í_as?_i') + #4
+lema(ur'[Aa]sis__tieron_i') + #4
+lema(ur'[Aa]sum(?:ir|)_í_a[ns]?_i') + #4
+lema(ur'[Cc]_á_lid(?:[ao]s|amente)_a') + #4
+lema(ur'[Cc]_ó_mod(?:[ao]s|amente)_o') + #4
+lema(ur'[Cc]antar_í_a[ns]?_i') + #4
+lema(ur'[Cc]ar_ó_tid[ao]s?_o') + #4
+lema(ur'[Cc]at_á_logos_a') + #4
+lema(ur'[Cc]ombat(?:ir|)_í_a[ns]?_i') + #4
+lema(ur'[Cc]ompet_í_(?:a[ns]?|)_i') + #4
+lema(ur'[Cc]ompon_í_a[ns]?_i') + #4
+lema(ur'[Cc]u_m_plen_n') + #4
+lema(ur'[Dd]__espués_espués d') + #4
+lema(ur'[Dd]e__l_ la e') + #4
+lema(ur'[Dd]e_cisio_nes_(?:cisió|cici[oó]|si[sc]i[oó])') + #4
+lema(ur'[Dd]estru_i_r(?:l[aeo]s?|se|)_í') + #4
+lema(ur'[Dd]eval_ú_(?:a[ns]?|e[ns]?)_u') + #4
+lema(ur'[Dd]evolv_é_r[mts]el[aeo]s?_e') + #4
+lema(ur'[Dd]i_ó_xidos?_o') + #4
+lema(ur'[Dd]ise_ñ_a(?:d[ao]s?|dor(?:a|es|)|r)_n') + #4
+lema(ur'[Dd]isputar_í_a[ns]?_i') + #4
+lema(ur'[Ee]_m_pero_n') + #4
+lema(ur'[Ee]_s_trech(?:[ao]s?|amente)_x') + #4
+lema(ur'[Ee]l_e_gir(?:se|)_i') + #4
+lema(ur'[Ee]ntend_í_(?:a[ns]?|)_i') + #4
+lema(ur'[Ee]nv_í_o_i', pre=ur'(?:[Dd]el?|[Ee]l|[Uu]n|[Cc]ada) ') + #4
+lema(ur'[Ee]scrib(?:ir|)_í_a[ns]?_i') + #4
+lema(ur'[Ee]spr_í_nters?_i') + #4
+lema(ur'[Ee]st_é_tic(?:[ao]s|amente)_e') + #4
+lema(ur'[Ee]x_á_menes_a') + #4
+lema(ur'[Ee]xt__endió_i') + #4
+lema(ur'[Ff]il_á_ntropos?_a') + #4
+lema(ur'[Ff]luct_ú_(?:a[ns]?|e[ns]?)_u') + #4
+lema(ur'[Gg]uarder_í_as?_i') + #4
+lema(ur'[Hh]ig_ié_nic[ao]s?_(?:ie|[eé])') + #4
+lema(ur'[Ii]deol_ó_gic(?:[ao]s|amente)_o') + #4
+lema(ur'[Ii]mpon_í_a[ns]?_i') + #4
+lema(ur'[Ii]nal_á_mbric[ao]s?_a') + #4
+lema(ur'[Ii]ncon_s_ciencias?_') + #4
+lema(ur'[Ii]nflu_i_dos?_í') + #4
+lema(ur'[Ii]ngen_i_erías?_') + #4
+lema(ur'[Ii]nmo_v_iliz(?:[oó]|a(?:r?|r(?:l[aeo]s?|nos?)|d[ao]s?|ndo|ción|dor))_b') + #4
+lema(ur'[Ii]nte_r_pretación_') + #4
+lema(ur'[Jj]oyer_í_as?_i') + #4
+lema(ur'[Ll]a_s_ ciencias_') + #4
+lema(ur'[Ll]a_s_ diferencias_') + #4
+lema(ur'[Ll]a_s_ ruinas_') + #4
+lema(ur'[Ll]a_s_ tierras_') + #4
+lema(ur'[Ll]legar_í_a[ns]?_i') + #4
+lema(ur'[Ll]levar_í_a[ns]?_i') + #4
+lema(ur'[Mm]_é_dicos_e', pre=ur'(?:[Ll]os|[Ss]us|[Uu]nos) ') + #4
+lema(ur'[Mm]anten_í_a[ns]?_i') + #4
+lema(ur'[Mm]antendr_í_a[ns]?_i') + #4
+lema(ur'[Mm]atem_á_tic(?:os|amente)(?!\.unmsm)_a') + #4
+lema(ur'[Mm]ejorar_í_a[ns]?_i') + #4
+lema(ur'[Mm]ensajer_í_as?_i') + #4
+lema(ur'[Mm]ie_m_bros?_n') + #4
+lema(ur'[Mm]ism_í_sim[ao]s?_i') + #4
+lema(ur'[Mm]oment_á_ne(?:[ao]s|amente)_a') + #4
+lema(ur'[Nn]_áu_frag[ao]s?_aú') + #4
+lema(ur'[Nn]anotecnolog_í_as?_i') + #4
+lema(ur'[Nn]europsicolog_í_as?_i') + #4
+lema(ur'[Oo]currir_á_[ns]?_a') + #4
+lema(ur'[Oo]rtop_é_dic[ao]s?_e') + #4
+lema(ur'[Pp]__ero_ero p') + #4
+lema(ur'[Pp]_é_sim[ao]s?_e') + #4
+lema(ur'[Pp]adec_í_a[ns]?_i') + #4
+lema(ur'[Pp]aisaj_í_stic(?:[ao]s?|amente)_i') + #4
+lema(ur'[Pp]e_s_ca[rs]?_z') + #4
+lema(ur'[Pp]opulari_zó__(?:s[oó]|zo)') + #4
+lema(ur'[Pp]resentar_í_a[ns]?_i') + #4
+lema(ur'[Pp]romov_í_a[ns]?_i') + #4
+lema(ur'[Pp]ropon_í_a[ns]?_i') + #4
+lema(ur'[Qq]uir_ú_rgic[ao]s?_u') + #4
+lema(ur'[Qq]uit_á_r[mts]el[aeo]s?_a') + #4
+lema(ur'[Rr]epet_í_a[ns]?_i') + #4
+lema(ur'[Ss]upon_í_a[ns]?_i') + #4
+lema(ur'[Tt]_é_rmic(?:as|os?)_e') + #4
+lema(ur'[Tt]_ó_picos?_o') + #4
+lema(ur'[Tt]ardar_í_a[ns]?_i') + #4
+lema(ur'[Tt]ect_ó_nic(?:as|os?|amente)_o') + #4
+lema(ur'[Tt]err_e_motos?_o') + #4
+lema(ur'[Tt]ie_m_pos_n') + #4
+lema(ur'[Vv]_inculó__(?:íncul[oó]|inculo)', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #4
+lema(ur'[Vv]einti_ú_n_u') + #4
+lema(ur'[Vv]eintid_ó_s_o') + #4
+lema(ur'[l]e_í_dos_i') + #4
+lema(ur'[p]ondr_á_s?_a') + #4
+lema(ur'_E_ll[ao]s?_É') + #4
+lema(ur'_El__La el') + #4
+lema(ur'_é_nfasis_e') + #4
+lema(ur'(?:[Aa]erot|[Cc]rono|[Hh]eli|[Tt]elet|[Tt])ran_s_port(?:a(?:[ns]?|ba[ns]?|bles?|ción|d[ao]s?|dor(?:es|)|ndo|r(?:se|ía[ns]?|))|e[ns]?|istas?)_') + #3
+lema(ur'R_ó_terdam_o', pre=ur'(?:[Dd]e|[Ee]n) ') + #3
+lema(ur'[Aa]cced_í_a[ns]?_i') + #3
+lema(ur'[Aa]coger_á_[ns]?_a') + #3
+lema(ur'[Aa]daptar_í_a[ns]?_i') + #3
+lema(ur'[Aa]dmi_ni_stración_') + #3
+lema(ur'[Aa]er__opuertos?_e') + #3
+lema(ur'[Aa]l_ _menos_') + #3
+lema(ur'[Aa]ldeh_í_d[ao]s?_i') + #3
+lema(ur'[Aa]ngiograf_í_as?_i') + #3
+lema(ur'[Aa]rras_ó_ (?:en|con)_o') + #3
+lema(ur'[Aa]s_c_enso(?:[rs]|res)_') + #3
+lema(ur'[Aa]scend_í_(?:a[ns]?)_i') + #3
+lema(ur'[Aa]sist(?:ir|)_í_a[ns]?_i') + #3
+lema(ur'[Aa]utob_u_ses_ú') + #3
+lema(ur'[Bb]_á_ltic[ao]s_a') + #3
+lema(ur'[Cc]a_í_a[ns]_i') + #3
+lema(ur'[Cc]ardiopat_í_as?_i') + #3
+lema(ur'[Cc]ie_m_piés_n') + #3
+lema(ur'[Cc]o_m_prar_n') + #3
+lema(ur'[Cc]o_o_rdenad[ao]s?_') + #3
+lema(ur'[Cc]omenzar_í_a[ns]?_i') + #3
+lema(ur'[Cc]ompa_rtió__r?tio', pre=ur'(?:[Qq]ui[ée]n|[Qq]u[ée]|[Dd][óo]nde|[Cc]u[áa]ndo|[Tt]ambién|[Aa]demás|[Ss]e|[Ll][ao]s?|e) ') + #3
+lema(ur'[Cc]ompet_í_a[ns]?_i') + #3
+lema(ur'[Cc]ono_c_id[ao]s?_s') + #3
+lema(ur'[Cc]ons_i_guieron_e') + #3
+lema(ur'[Cc]onseguir_í_a[ns]?_i') + #3
+lema(ur'[Cc]onstruir_á_[ns]?_a') + #3
+lema(ur'[Cc]onte_m_poránea_n') + #3
+lema(ur'[Cc]onvertir_á_[ns]?_a') + #3
+lema(ur'[Cc]umplir_á_[ns]?_a') + #3
+lema(ur'[Dd]e_s_c(?:enso|iende[ns]?|end(?:er?|ido)|entrali(?:ce[ns]?|zar|zó|zació))_') + #3
+lema(ur'[Dd]ecid_í__i') + #3
+lema(ur'[Dd]ecimos_é_ptim[ao]s?_e') + #3
+lema(ur'[Dd]ejar_í_a[ns]?_i') + #3
+lema(ur'[Dd]escub_r_ir(?:se|)_') + #3
+lema(ur'[Dd]escubr_í__i') + #3
+lema(ur'[Dd]iab_ó_lic(?:as|os)_o') + #3
+lema(ur'[Dd]ilu_i_d[ao]s?_í') + #3
+lema(ur'[Dd]iscurr(?:ir|)_í_a[ns]?_i') + #3
+lema(ur'[Dd]isf_r_uta[nrs]?_') + #3
+lema(ur'[Dd]r_á_stic(?:[ao]s|amente)_a') + #3
+lema(ur'[Ee]jerc_í_a[ns]?_i') + #3
+lema(ur'[Ee]l_e_girá[ns]?_i') + #3
+lema(ur'[Ee]migrar_í_a[ns]?_i') + #3
+lema(ur'[Ee]n_é_rgic(?:[ao]s|amente)_e') + #3
+lema(ur'[Ee]nfrentar_í_a[ns]?_i') + #3
+lema(ur'[Ee]pis_ó_dic[ao]s?_o') + #3
+lema(ur'[Ee]scrib_í_a(?:[ns]?|mos)_i') + #3
+lema(ur'[Ee]scult_ó_ric[ao]s?_o') + #3
+lema(ur'[Ee]st_é_tica_e', pre=ur'(?:[Ll]a|[Uu]na|[Cc]on|[Dd]e|[Ee]n|[Mm]uy|[Ff]unción[Ff]orma|[Uu]nidad|y) ') + #3
+lema(ur'[Ee]studiar_í_a[ns]?_i') + #3
+lema(ur'[Ee]x_c_ept(?:o|uar)_') + #3
+lema(ur'[Ee]x_h_aust[ao]s?_') + #3
+lema(ur'[Ee]xigir_á_[ns]?_a') + #3
+lema(ur'[Ee]xten_sio_nes_ci[oó]') + #3
+lema(ur'[Ff]idel_í_sim[ao]s?_i') + #3
+lema(ur'[Ff]ormar_í_a[ns]?_i') + #3
+lema(ur'[Gg]erontolog_í_as?_i') + #3
+lema(ur'[Gg]rad_ú_(?:a[ns]|e[ns]?)_u') + #3
+lema(ur'[Hh]eterog_é_ne[ao]s?_e') + #3
+lema(ur'[Hh]ologr_á_fic[ao]s?_a') + #3
+lema(ur'[Hh]undir_á_[ns]?_a') + #3
+lema(ur'[Ii]_n_mortal(?:es|idad)_m') + #3
+lema(ur'[Ii]mpl_í_cit(?:[ao]s|amente)_i') + #3
+lema(ur'[Ii]n_j_erencias?_g') + #3
+lema(ur'[Ii]nclu_i_r(?:l[aeo]s?|se|)_í') + #3
+lema(ur'[Ii]ncluir_á_[ns]?_a') + #3
+lema(ur'[Ii]nstant_á_ne(?:[ao]s|amente)_a') + #3
+lema(ur'[Ii]nt_er_pretad[ao]s?_re') + #3
+lema(ur'[Ii]nterpretar_í_a[ns]?_i') + #3
+lema(ur'[Ii]nvad(?:ir|)_í_a[ns]?_i') + #3
+lema(ur'[Ii]r_ó_nic(?:[ao]s|amente)_o') + #3
+lema(ur'[Ll]_í_quenes_i') + #3
+lema(ur'[Ll]a_s_ bandas_') + #3
+lema(ur'[Ll]a_s_ décadas_') + #3
+lema(ur'[Ll]a_s_ estructuras_') + #3
+lema(ur'[Ll]a_s_ formas_') + #3
+lema(ur'[Ll]a_s_ orillas_') + #3
+lema(ur'[Ll]a_s_ posibilidades_') + #3
+lema(ur'[Ll]anzar_í_a[ns]?_i') + #3
+lema(ur'[Ll]encer_í_as?_i') + #3
+lema(ur'[M]_ó_naco_o', pre=ur'[Ee]n ') + #3
+lema(ur'[Mm]orir_á_[ns]?_a') + #3
+lema(ur'[Mm]u__rieron_e') + #3
+lema(ur'[Nn]ecrolog_í_as?_i') + #3
+lema(ur'[Nn]euroanatom_í_as?_i') + #3
+lema(ur'[Nn]i_ _siquiera_') + #3
+lema(ur'[Nn]icarag_ü_enses_u') + #3
+lema(ur'[Nn]itr_ó_genos?_o') + #3
+lema(ur'[Oo]bstru_i_d[ao]s?_í') + #3
+lema(ur'[Oo]btendr_á_[ns]?_a') + #3
+lema(ur'[Oo]cupar_í_a[ns]?_i') + #3
+lema(ur'[Pp]araca_í_das?_i') + #3
+lema(ur'[Pp]arad_ó_jic(?:[ao]s|amente)_o') + #3
+lema(ur'[Pp]esquer_í_as?_i') + #3
+lema(ur'[Pp]od_í_amos_i') + #3
+lema(ur'[Pp]rim_e_ras?_a', pre=ur'(?:[Ll]as?|[Ss]us|[Uu]nas?|[Ee]n|[Dd]e|[Pp]or) ') + #3
+lema(ur'[Pp]rincipalme_n_te_') + #3
+lema(ur'[Pp]roducir_í_a[ns]?_i') + #3
+lema(ur'[Pp]rol_í_fic(?:as|os?)_i') + #3
+lema(ur'[Qq]u_ie_n_ei') + #3
+lema(ur'[Rr]_í_e[ns]?_i', pre=ur'(?:[Ss]e) ') + #3
+lema(ur'[Rr]eci_b_id[ao]s?_v') + #3
+lema(ur'[Rr]econoc_í_a[ns]?_i') + #3
+lema(ur'[Rr]econstitu_i_d[ao]s?_í') + #3
+lema(ur'[Rr]espond_í_(?:a[ns]?|)_i') + #3
+lema(ur'[Rr]esultar_í_a[ns]?_i') + #3
+lema(ur'[Rr]ob_á_r[mts]el[aeo]s?_a') + #3
+lema(ur'[Ss]_á_dic(?:[ao]s?|amente)_a') + #3
+lema(ur'[Ss]aldr_í_a[ns]?_i') + #3
+lema(ur'[Ss]ervir_á_[ns]?_a') + #3
+lema(ur'[Ss]ignificar_í_a[ns]?_i') + #3
+lema(ur'[Ss]imb_ó_lic(?:[ao]s|amente)_o') + #3
+lema(ur'[Ss]imbi_ó_tic[ao]s?_o') + #3
+lema(ur'[Ss]uced_í_a[ns]?_i') + #3
+lema(ur'[Ss]ufr(?:ir|)_í_a[ns]?_i') + #3
+lema(ur'[Ss]ufr_í_a[ns]?_i') + #3
+lema(ur'[Ss]uperh_é_roes?_e', pre=ur'(?:[Uu]n|[Ee]l|[Ll]os| de| y) ') + #3
+lema(ur'[Ss]ustitu_i_r(?:l[aeo]s?|se|)_í') + #3
+lema(ur'[Ss]ustra_í_(?:a[ns]|d[ao]s?)_i') + #3
+lema(ur'[Ss]ustra_í_d[ao]s?_i') + #3
+lema(ur'[Tt]_ó_rax_o') + #3
+lema(ur'[Tt]e_m_porada_n') + #3
+lema(ur'[Tt]elevi_si_ón_') + #3
+lema(ur'[Tt]ent_á_culos?_a') + #3
+lema(ur'[Tt]omar_í_a[ns]?_i') + #3
+lema(ur'[Tt]rabajar_í_a[ns]?_i') + #3
+lema(ur'[Tt]ran_s_porte_') + #3
+lema(ur'[Tt]raumatolog_í_as?_i') + #3
+lema(ur'[Tt]ropical_í_sim[ao]s?_i') + #3
+lema(ur'[Uu]nir_í_a[ns]?_i') + #3
+lema(ur'[Uu]t_i_li(?:z(?:[ae]n?|[oó])|cen?)_') + #3
+lema(ur'[Uu]tilizar_í_a[ns]?_i') + #3
+lema(ur'[Vv]ender_á_[ns]?_a') + #3
+lema(ur'[a]_ _sus_') + #3
+lema(ur'[d]ivid_id_a_', pre=ur'(?:[Dd]ecisión|[Ss]er|[Ee]star|[Ee]staba|[Ee]st[aá]|estuvo|se encontraba|se encuentra|queda|quedó|quedará|es|fue|llanura|continuó|distancia|Austria|Actualmente|opinión) ') + #3
+lema(ur'[p]erd_í_a_i') + #3
+lema(ur'_e_quipos?_é') + #3
+lema(ur'_z_ona_s', pre=ur'(?:[Ll]a|[Uu]na|[Dd]e) ') + #3
+lema(ur'_Ó_rbitas?_O', pre=ur'(?:[Ll]as?|[Ss]us?|[Uu]nas?|[Ee]n) ') + #3
+lema(ur'_é_l (?:ante|cabe|con|desde|entre|según|sin|tras)\b_e', pre=ur'[Cc]on ') + #3
+lema(ur'[Aa]brir_á_[ns]?_a') + #2
+lema(ur'[Aa]co_g_(?:id[ao]s?|iera[ns]|erá?)_j') + #2
+lema(ur'[Aa]cud(?:ir|)_í_a[ns]?_i') + #2
+lema(ur'[Aa]cuñar_í_a[ns]?_i') + #2
+lema(ur'[Aa]eron_á_uticas_a') + #2
+lema(ur'[Aa]frontar_í_a[ns]?_i') + #2
+lema(ur'[Aa]gradecim_i_entos?_') + #2
+lema(ur'[Aa]lcan_c_e[ns]?_z') + #2
+lema(ur'[Aa]lica_í_d[ao]s?_i') + #2
+lema(ur'[Aa]notar_í_a[ns]?_i') + #2
+lema(ur'[Aa]ntagon_i_stas?_í') + #2
+lema(ur'[Aa]nti_i_nflamatori[ao]s?_') + #2
+lema(ur'[Aa]parecer_í_a[ns]?_i') + #2
+lema(ur'[Aa]s_c_ensor(?:es|)_') + #2
+lema(ur'[Aa]ten_ú_(?:a[ns]?|e[ns]?)_u') + #2
+lema(ur'[Aa]tl_é_tic(?:[ao]s|amente)_e') + #2
+lema(ur'[Aa]trev_í_a[ns]?_i') + #2
+lema(ur'[Aa]umentar_í_a[ns]?_i') + #2
+lema(ur'[Aa]vanzar_í_a[ns]?_i') + #2
+lema(ur'[Aa]ñad(?:ir|)_í_a[ns]?_i') + #2
+lema(ur'[Bb]ol_í_grafos?_i') + #2
+lema(ur'[Bb]oleter_í_as?_i') + #2
+lema(ur'[Bb]uen_í_sim[ao]s?_i') + #2
+lema(ur'[Bb]urocr_á_tic[ao]s?_a') + #2
+lema(ur'[Cc]__ada_ada c') + #2
+lema(ur'[Cc]_iu_dadan[ao]s?_ui') + #2
+lema(ur'[Cc]_á_todos?_a') + #2
+lema(ur'[Cc]alor_í_as?_i') + #2
+lema(ur'[Cc]ar_í_sim[ao]s?_i') + #2
+lema(ur'[Cc]ent_í_metros?_i') + #2
+lema(ur'[Cc]lasificar_í_a[ns]?_i') + #2
+lema(ur'[Cc]lav_á_r[mts]el[aeo]s?_a') + #2
+lema(ur'[Cc]o_m_paras_n') + #2
+lema(ur'[Cc]obrar_í_a[ns]?_i') + #2
+lema(ur'[Cc]oexist(?:ir|)_í_a[ns]?_i') + #2
+lema(ur'[Cc]ompart(?:ir|)_í_a[ns]?_i') + #2
+lema(ur'[Cc]ompart_í_a(?:[ns]?|mos)_i') + #2
+lema(ur'[Cc]omprend_í_a[ns]?_i') + #2
+lema(ur'[Cc]onfund(?:ir|)_í_a[ns]?_i') + #2
+lema(ur'[Cc]onocer_á_[ns]?_a') + #2
+lema(ur'[Cc]onocer_í_a(?:[ns]?|mos)_i') + #2
+lema(ur'[Cc]onocid_í_sim[ao]s?_i') + #2
+lema(ur'[Cc]onsagrar_í_a[ns]?_i') + #2
+lema(ur'[Cc]onseguir_á_[ns]?_a') + #2
+lema(ur'[Cc]onsens_ú_(?:a[ns]?|e[ns]?)_u') + #2
+lema(ur'[Cc]onstar_í_a[ns]?_i') + #2
+lema(ur'[Cc]onsumir_á_[ns]?_a') + #2
+lema(ur'[Cc]ontrar_r_estar(?:l[aeo]s?|ía[ns]?|)_') + #2
+lema(ur'[Cc]onv_irtié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_ertie') + #2
+lema(ur'[Cc]onvi_rtié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_ertie') + #2
+lema(ur'[Cc]re_é_r[mts]el[aeo]s?_e') + #2
+lema(ur'[Cc]re_í__i') + #2
+lema(ur'[Cc]u_m_pla_n') + #2
+lema(ur'[Cc]u_m_plir_n') + #2
+lema(ur'[Cc]ulminar_í_a[ns]?_i') + #2
+lema(ur'[Dd]_e_cidió_i') + #2
+lema(ur'[Dd]_e_cimoséptim[ao]_é') + #2
+lema(ur'[Dd]ec_í_r[mts]el[aeo]s?_i') + #2
+lema(ur'[Dd]efender_á_[ns]?_a') + #2
+lema(ur'[Dd]efin(?:ir|)_í_a[ns]?_i') + #2
+lema(ur'[Dd]emostrar_í_a[ns]?_i') + #2
+lema(ur'[Dd]epend_í_a[ns]?_i') + #2
+lema(ur'[Dd]esaparec_í_a[ns]?_i') + #2
+lema(ur'[Dd]esarrollar_í_a[ns]?_i') + #2
+lema(ur'[Dd]esconf_í_a[na]?_i') + #2
+lema(ur'[Dd]escub_ri_dor(?:[ae]s?|)_ir') + #2
+lema(ur'[Dd]escub_ri_mientos?_ir') + #2
+lema(ur'[Dd]escubi_e_rt[ao]s?_') + #2
+lema(ur'[Dd]escubrir_á_[ns]?_a') + #2
+lema(ur'[Dd]ese_m_peño_n') + #2
+lema(ur'[Dd]esempeñar_í_a[ns]?_i') + #2
+lema(ur'[Dd]esped_í_a[ns]?_i') + #2
+lema(ur'[Dd]iagn_osticó__(?:óstic[oó]|ostico)', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #2
+lema(ur'[Dd]ifund(?:ir|)_í_a[ns]?_i') + #2
+lema(ur'[Dd]ij__eron_i') + #2
+lema(ur'[Dd]ilatar_í_a[ns]?_i') + #2
+lema(ur'[Dd]irig_í__i') + #2
+lema(ur'[Dd]ividi_d_[ao]_', pre=ur'(?:[Ee]st[aá]|[Ff]u[eé]|[Ee]s) ') + #2
+lema(ur'[Dd]on_á_r[mts]el[aeo]s?_a') + #2
+lema(ur'[Dd]ram_á_tic(?:[ao]s|amente)_a') + #2
+lema(ur'[Dd]ur_í_sim[ao]s?_i') + #2
+lema(ur'[Ee]__quipo_quipo e') + #2
+lema(ur'[Ee]lectromagn_é_tic[ao]s?_e') + #2
+lema(ur'[Ee]liminar_í_a[ns]?_i') + #2
+lema(ur'[Ee]mp_i_eza[ns]?_') + #2
+lema(ur'[Ee]mp_r_esari(?:os?|al)_') + #2
+lema(ur'[Ee]mpatar_í_a[ns]?_i') + #2
+lema(ur'[Ee]mpezar_í_a[ns]?_i') + #2
+lema(ur'[Ee]mular_í_a[ns]?_i') + #2
+lema(ur'[Ee]namorar_í_a[ns]?_i') + #2
+lema(ur'[Ee]ncontrar_í_a(?:[ns]?|mos)_i') + #2
+lema(ur'[Ee]ntalp_í_as?_i') + #2
+lema(ur'[Ee]ntr_e_vista(?:s?|d[ao]s?)_') + #2
+lema(ur'[Ee]ntrenar_í_a[ns]?_i') + #2
+lema(ur'[Ee]nv_i_ad[ao]s?_í') + #2
+lema(ur'[Ee]pis_o_dios?_i') + #2
+lema(ur'[Ee]spor_á_dic(?:[ao]s|amente)_a') + #2
+lema(ur'[Ee]st_ú_pid(?:[ao]s?|amente)_u') + #2
+lema(ur'[Ee]stablec(?:er|)_í_a[ns]?_i') + #2
+lema(ur'[Ee]stablec_í_(?:a[ns]?|)_i') + #2
+lema(ur'[Ee]stanter_í_as?_i') + #2
+lema(ur'[Ee]ster_e_otipos?_i') + #2
+lema(ur'[Ee]strenar_í_a[ns]?_i') + #2
+lema(ur'[Ee]x_c_elentes?_') + #2
+lema(ur'[Ee]x_clui_d[ao]s?_luí') + #2
+lema(ur'[Ee]xhib(?:ir|)_í_a[ns]?_i') + #2
+lema(ur'[Ee]xi__tos[ao]s?_s') + #2
+lema(ur'[Ee]xpon_í_a[ns]?_i') + #2
+lema(ur'[Ee]xtend_í_(?:a[ns]?|)_i') + #2
+lema(ur'[Ee]xtin__tos?_c') + #2
+lema(ur'[Ee]xtra_ñ_[ao]_n') + #2
+lema(ur'[Ff]i_l_m_', pre=ur'(?:[Dd]el|[Ee]l) ') + #2
+lema(ur'[Ff]inal_í_sim[ao]s?_i') + #2
+lema(ur'[Ff]u_s_i(?:ón|ones|onó|ona[ns]?)_c') + #2
+lema(ur'[Ff]uncionar_í_an_i') + #2
+lema(ur'[Gg]anar_í_a[ns]?_i') + #2
+lema(ur'[Gg]en_é_tic[ao]s_e') + #2
+lema(ur'[Gg]enerar_í_a[ns]?_i') + #2
+lema(ur'[Gg]rabar_í_a[ns]?_i') + #2
+lema(ur'[Hh]aci_éndos_e_endoc') + #2
+lema(ur'[Hh]aci_éndos_e_endoc') + #2
+lema(ur'[Hh]ermos_í_sim[ao]s?_i') + #2
+lema(ur'[Hh]ipot_é_tic[ao]s?_e') + #2
+lema(ur'[Hh]onrar_í_a[ns]?_i') + #2
+lema(ur'[Hh]or_ó_scopos?_o') + #2
+lema(ur'[Ii]_m_portando_n') + #2
+lema(ur'[Ii]_m_pulsa_n') + #2
+lema(ur'[Ii]mbu_i_d[Ao]s?_í') + #2
+lema(ur'[Ii]mped_í_r[mts]el[aeo]s?_i') + #2
+lema(ur'[Ii]n_clui_d[ao]s?_luí') + #2
+lema(ur'[Ii]n_s_talaci(?:ón|ones)_') + #2
+lema(ur'[Ii]n_strui_d[ao]s?_truí') + #2
+lema(ur'[Ii]nic_i_ativas?_') + #2
+lema(ur'[Ii]nsin_ú_(?:a[ns]?|e[ns]?)_u') + #2
+lema(ur'[Ii]nte_r_pretar(?:l[ao]s?|se|[aá]|ía[ns]?|ron|)_') + #2
+lema(ur'[Ii]nterp_r_et(?:es?|ad[ao]s?)_') + #2
+lema(ur'[Ii]ntr_í_nsec(?:[ao]s|amente)_i') + #2
+lema(ur'[Ii]nventar_í_a[ns]?_i') + #2
+lema(ur'[Jj]er_á_rquic[ao]s?_a') + #2
+lema(ur'[Ll]a_s_ acciones_') + #2
+lema(ur'[Ll]a_s_ diferentes_') + #2
+lema(ur'[Ll]a_s_ figuras_') + #2
+lema(ur'[Ll]a_s_ mejores_') + #2
+lema(ur'[Ll]a_s_ montañas_') + #2
+lema(ur'[Ll]a_s_ rutas_') + #2
+lema(ur'[Ll]a_s_ sierras_') + #2
+lema(ur'[Ll]anz_á_r[mts]el[aeo]s?_a') + #2
+lema(ur'[Ll]exicolog_í_as?_i') + #2
+lema(ur'[Ll]inf_á_tic[ao]s?_a') + #2
+lema(ur'[Ll]lamar_í_a(?:[ns]?|mos)_i') + #2
+lema(ur'[Ll]ograr_í_a[ns]?_i') + #2
+lema(ur'[Mm]ostr_á_r[mts]el[aeo]s?_a') + #2
+lema(ur'[Mm]ultiprop_ó_sitos?_o') + #2
+lema(ur'[Nn]ecesitar_í_a(?:[ns]?|mos)_i') + #2
+lema(ur'[Oo]btendr_í_a(?:[ns]?|mos)_i') + #2
+lema(ur'[Oo]fend_í_a[ns]?_i') + #2
+lema(ur'[Oo]pon_í_a[ns]?_i') + #2
+lema(ur'[Oo]ptometr_í_as?_i') + #2
+lema(ur'[Oo]rg_á_nic(?:[ao]s|amente)_a') + #2
+lema(ur'[Oo]torrinolaringolog_í_as?_i') + #2
+lema(ur'[Pp]_ro_gramas?_or') + #2
+lema(ur'[Pp]ar_á_lisis_a') + #2
+lema(ur'[Pp]aran_o_ic[ao]s?_ó') + #2
+lema(ur'[Pp]artic_i_par(?:on|)_') + #2
+lema(ur'[Pp]atol_ó_gic[ao]s?_o') + #2
+lema(ur'[Pp]e_r_manece(?:[nr]|ría[ns]?|)_') + #2
+lema(ur'[Pp]elear_í_a[ns]?_i') + #2
+lema(ur'[Pp]erder_á_[ns]?_a') + #2
+lema(ur'[Pp]ermanecer_á_[ns]?_a') + #2
+lema(ur'[Pp]ermit_í__i') + #2
+lema(ur'[Pp]olin_ó_mic[ao]_o') + #2
+lema(ur'[Pp]ortug_ué_s_e') + #2
+lema(ur'[Pp]resum(?:ir|)_í_a[ns]?_i') + #2
+lema(ur'[Pp]rim_e_r[ao]s?_') + #2
+lema(ur'[Pp]rohib_í_a[ns]?_i') + #2
+lema(ur'[Pp]romet_í_(?:a[ns]?|)_i') + #2
+lema(ur'[Pp]romover_á_[ns]?_a') + #2
+lema(ur'[Pp]rotagonizar_í_a[ns]?_i') + #2
+lema(ur'[Pp]roteg_í_a[ns]?_i') + #2
+lema(ur'[Pp]roveer_á_[ns]?_a') + #2
+lema(ur'[Qq]ued_á_r[mts]el[aeo]s?_a') + #2
+lema(ur'[Rr]e_s_ponde[ns]?_') + #2
+lema(ur'[Rr]e_s_pondió_') + #2
+lema(ur'[Rr]eca_í_d[ao]s?_i') + #2
+lema(ur'[Rr]eci_b_(?:e|ió|[íI]a|ir[eé])_v') + #2
+lema(ur'[Rr]eci_b_iendo_v') + #2
+lema(ur'[Rr]ecortar_í_a[ns]?_i') + #2
+lema(ur'[Rr]edu_j_eron_ci') + #2
+lema(ur'[Rr]egrabar_í_a[ns]?_i') + #2
+lema(ur'[Rr]emontar_í_a[ns]?_i') + #2
+lema(ur'[Rr]epart(?:ir|)_í_a[ns]?_i') + #2
+lema(ur'[Rr]estitu_i_d[ao]s?_í') + #2
+lema(ur'[Rr]eunir_á_[ns]?_a') + #2
+lema(ur'[Rr]omper_á_[ns]?_a') + #2
+lema(ur'[Ss]_ú_per (?:Vedette|Humor|Pesad[ao]s?)_u') + #2
+lema(ur'[Ss]inverg_ü_enzas?_u') + #2
+lema(ur'[Ss]ismol_ó_gic[ao]s?_o') + #2
+lema(ur'[Ss]obrevi_vi_do_') + #2
+lema(ur'[Ss]u_stitui_d[ao]s?_tituí') + #2
+lema(ur'[Ss]uperar_í_a[ns]?_i') + #2
+lema(ur'[Tt]_é_rmino_e', pre=ur'[Pp]rimer ') + #2
+lema(ur'[Tt]elev_i_sión_') + #2
+lema(ur'[Tt]elev_i_sión_e') + #2
+lema(ur'[Tt]om_á_r[mts]el[aeo]s?_a') + #2
+lema(ur'[Tt]ran_s_formar(?:se|)_') + #2
+lema(ur'[Tt]ransitar_í_a[ns]?_i') + #2
+lema(ur'[Tt]ransportar_í_a[ns]?_i') + #2
+lema(ur'[Uu]bicar_í_a[ns]?_i') + #2
+lema(ur'[Uu]ng_ü_entos?_u') + #2
+lema(ur'[Uu]til_í_sim[ao]s?_i') + #2
+lema(ur'[Vv]encer_í_a[ns]?_i') + #2
+lema(ur'[Vv]estir_á_[ns]?_a') + #2
+lema(ur'[Vv]ig_ésimo sé_ptima_esimose') + #2
+lema(ur'[a]lbergar_í_a[ns]?_i') + #2
+lema(ur'[n]_ó_mina_o', pre=ur'(?:[Ss]u|[Ee]n|[Uu]na|misma|primera|en|de) ') + #2
+lema(ur'[v]er_á_n_a') + #2
+lema(ur'_C_ercan[ao]s?_S') + #2
+lema(ur'_E_sta vez_É') + #2
+lema(ur'_S_uecia_s', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #2
+lema(ur'__a sus?_h') + #2
+lema(ur'[Aa]_ _gusto_', pre=ur'(?:[Ee]st[aá]|estaba|sintió|muy|m[aá]s) ') + #1
+lema(ur'[Aa]_ _menudo_') + #1
+lema(ur'[Aa]bsorb_í_a[ns]?_i') + #1
+lema(ur'[Aa]cceder_á_[ns]?_a') + #1
+lema(ur'[Aa]cerc_á_r[mts]el[aeo]s?_a') + #1
+lema(ur'[Aa]cetaldeh_í_d[ao]s?_i') + #1
+lema(ur'[Aa]clar_á_r[mts]el[aeo]s?_a') + #1
+lema(ur'[Aa]compa_ñ_antes?_n') + #1
+lema(ur'[Aa]compañar_í_a[ns]?_i') + #1
+lema(ur'[Aa]credit_á_(?:ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)|rsel[aeo]s?)_a') + #1
+lema(ur'[Aa]credit_á_r[mts]el[aeo]s?_a') + #1
+lema(ur'[Aa]dministrar_í_a[ns]?_i') + #1
+lema(ur'[Aa]dmit(?:ir|)_í_a[ns]?_i') + #1
+lema(ur'[Aa]dquirir_á_[ns]?_a') + #1
+lema(ur'[Aa]er_ó_bic[ao]s?_o') + #1
+lema(ur'[Aa]gradar_í_a[ns]?_i') + #1
+lema(ur'[Aa]gradec_é_r[mts]el[aeo]s?_e') + #1
+lema(ur'[Aa]gregar_í_a[ns]?_i') + #1
+lema(ur'[Aa]grupar_í_a[ns]?_i') + #1
+lema(ur'[Aa]jonjol_í__i') + #1
+lema(ur'[Aa]leg_ó_ric[ao]s?_o') + #1
+lema(ur'[Aa]lgori_t_mos?_') + #1
+lema(ur'[Aa]lm_í_bar(?:es|)_i') + #1
+lema(ur'[Aa]mbientar_í_a[ns]?_i') + #1
+lema(ur'[Aa]n_áli_sis_alí') + #1
+lema(ur'[Aa]ntinarc_ó_ticos?_o') + #1
+lema(ur'[Aa]p_í_col[ao]s?_i') + #1
+lema(ur'[Aa]plic_á_r[mts]el[aeo]s?_a') + #1
+lema(ur'[Aa]portar_í_a[ns]?_i') + #1
+lema(ur'[Aa]rregl_á_r[mts]el[aeo]s?_a') + #1
+lema(ur'[Aa]sociar_í_a[ns]?_i') + #1
+lema(ur'[Aa]t_ribui_d[ao]s?_tribuí') + #1
+lema(ur'[Aa]tacar_í_a[ns]?_i') + #1
+lema(ur'[Aa]tar_í_an_i') + #1
+lema(ur'[Aa]tend_í_(?:a[ns]?|)_i') + #1
+lema(ur'[Aa]tribu_i_r(?:l[aeo]s?|se|)_í') + #1
+lema(ur'[Aa]tribu_í_r[mts]el[aeo]s?_i') + #1
+lema(ur'[Bb]_á_ltico(?! S\.)_a') + #1
+lema(ur'[Bb]acteriolog_í_as?_i') + #1
+lema(ur'[Bb]ailar_í_a[ns]?_i') + #1
+lema(ur'[Bb]al_ompié__ónpie') + #1
+lema(ur'[Bb]eneficiar_í_an?_i', pre=ur'[Ss]e ') + #1
+lema(ur'[Bb]iof_í_sic[ao]s?_i') + #1
+lema(ur'[Bb]iomec_á_nic[ao]s?_a') + #1
+lema(ur'[Bb]iotecnol_ó_gic[ao]s?_o') + #1
+lema(ur'[Bb]ut_í_ric[ao]s?_i') + #1
+lema(ur'[Cc]_á_nceres_a') + #1
+lema(ur'[Cc]_áno_nes_anó') + #1
+lema(ur'[Cc]_ó_moda_o') + #1
+lema(ur'[Cc]a_m_panas?_n') + #1
+lema(ur'[Cc]ancer_í_gen[ao]s?_i') + #1
+lema(ur'[Cc]aracterí_s_ticas?_') + #1
+lema(ur'[Cc]at_alogó__ologo') + #1
+lema(ur'[Cc]ed_í_a[ns]?_i') + #1
+lema(ur'[Cc]elebrar_í_a[ns]?_i') + #1
+lema(ur'[Cc]err_á_r[mts]el[aeo]s?_a') + #1
+lema(ur'[Cc]errar_í_a[ns]?_i') + #1
+lema(ur'[Cc]ircular_í_a[ns]?_i') + #1
+lema(ur'[Cc]lorh_í_dric[ao]s?_i') + #1
+lema(ur'[Cc]o_m_pañía_n') + #1
+lema(ur'[Cc]o_m_pendio_n') + #1
+lema(ur'[Cc]o_m_pensada_n') + #1
+lema(ur'[Cc]o_m_petencia_n') + #1
+lema(ur'[Cc]o_m_plejo_n') + #1
+lema(ur'[Cc]o_m_port(arse|amiento)_n') + #1
+lema(ur'[Cc]o_m_pre_n') + #1
+lema(ur'[Cc]o_m_puertas_n') + #1
+lema(ur'[Cc]o_nstrui_d[ao]s?_sntruí') + #1
+lema(ur'[Cc]ol_a_boró_o') + #1
+lema(ur'[Cc]oloc_á_r[mts]el[aeo]s?_a') + #1
+lema(ur'[Cc]olocar_í_a[ns]?_i') + #1
+lema(ur'[Cc]om__pañeros_n') + #1
+lema(ur'[Cc]omp_itió__etio') + #1
+lema(ur'[Cc]ompar_á_r[mts]el[aeo]s?_a') + #1
+lema(ur'[Cc]ompetiti__v[ao]s?_t') + #1
+lema(ur'[Cc]ompetitiv_id_ad_') + #1
+lema(ur'[Cc]ompletar_í_a[ns]?_i') + #1
+lema(ur'[Cc]ompondr_á_[ns]?_a') + #1
+lema(ur'[Cc]ompromet_í_a[ns]?_i') + #1
+lema(ur'[Cc]on_s_titu(?:ye|y[oó]|ción|ciones|id[ao]s?)_') + #1
+lema(ur'[Cc]on_s_truyeron_') + #1
+lema(ur'[Cc]on_struyó__truyo') + #1
+lema(ur'[Cc]oncretar_í_a[ns]?_i') + #1
+lema(ur'[Cc]onectar_í_a[ns]?_i') + #1
+lema(ur'[Cc]onfes_á_r[mts]el[aeo]s?_a') + #1
+lema(ur'[Cc]onfundir_á_[ns]?_a') + #1
+lema(ur'[Cc]onsegu_í_a[ns]?_i') + #1
+lema(ur'[Cc]onservar_í_a[ns]?_i') + #1
+lema(ur'[Cc]onsider_á_r[mts]el[aeo]s?_a') + #1
+lema(ur'[Cc]onsiderar_í_a[ns]?_i') + #1
+lema(ur'[Cc]onsigu_ió__o') + #1
+lema(ur'[Cc]onstru_i_r(?! (?:a paz|unha))_í') + #1
+lema(ur'[Cc]onsum(?:ir|)_í_a[ns]?_i') + #1
+lema(ur'[Cc]onte_m_poráneo_n') + #1
+lema(ur'[Cc]ontemplar_í_a[ns]?_i') + #1
+lema(ur'[Cc]onten_í_a[ns]_i') + #1
+lema(ur'[Cc]ontendr_á_[ns]?_a') + #1
+lema(ur'[Cc]onvi_rtió__tio') + #1
+lema(ur'[Cc]onvirt_ió__o') + #1
+lema(ur'[Cc]onviv_í_a[ns]_i') + #1
+lema(ur'[Cc]onvivir_á_[ns]?_a') + #1
+lema(ur'[Cc]oquetear_í_a[ns]?_i') + #1
+lema(ur'[Cc]orr_í_an_i') + #1
+lema(ur'[Cc]orrespond(?:er|)_í_an?_i') + #1
+lema(ur'[Cc]orrespond_í_a[ns]?_i') + #1
+lema(ur'[Cc]ortar_í_a[ns]?_i') + #1
+lema(ur'[Cc]ri_a_turas?_') + #1
+lema(ur'[Cc]ub_r_ir(?:se|)_') + #1
+lema(ur'[Cc]umpl_í__i') + #1
+lema(ur'[Cc]urar_í_a[ns]?_i') + #1
+lema(ur'[Dd]_ecimo_ctav[ao]_écimoo') + #1
+lema(ur'[Dd]_é_bilmente_e') + #1
+lema(ur'[Dd]_ú_ctil_u') + #1
+lema(ur'[Dd]e__cidió_i') + #1
+lema(ur'[Dd]e__l (?:2006|Amparo|Cauca|Club|Commonwealth|Consejo|Ejército|Estado|Norte|Working|archipiélago|año|calentamiento|canal|catálogo|condado|cuento|cuerpo|gobierno|himno|museo|oeste|peón|prestigioso|profesor|punto|siglo|éter)_e') + #1
+lema(ur'[Dd]eci__dió_ci') + #1
+lema(ur'[Dd]eclar_á_r[mts]el[aeo]s?_a') + #1
+lema(ur'[Dd]econstru_i_d[ao]s?_í') + #1
+lema(ur'[Dd]ema_s_iados?_c') + #1
+lema(ur'[Dd]emostr_á_r[mts]el[aeo]s?_a') + #1
+lema(ur'[Dd]enominar_í_a(?:[ns]?|mos)_i') + #1
+lema(ur'[Dd]erivar_í_a[ns]?_i') + #1
+lema(ur'[Dd]errotar_í_a[ns]?_i') + #1
+lema(ur'[Dd]erru_i_d[ao]s?_í') + #1
+lema(ur'[Dd]escubr(?:ir|)_í_a[ns]?_i') + #1
+lema(ur'[Dd]esignar_í_a[ns]?_i') + #1
+lema(ur'[Dd]esinter_é_s_e') + #1
+lema(ur'[Dd]eslumbrar_í_a[ns]?_i') + #1
+lema(ur'[Dd]esplazar_s_e(?:lo|)_c') + #1
+lema(ur'[Dd]esprend_í_a[ns]?_i') + #1
+lema(ur'[Dd]esta_ca_d[ao]s?_') + #1
+lema(ur'[Dd]estitu_i_r(?:l[aeo]s?|se|)_í') + #1
+lema(ur'[Dd]etendr_á_[ns]?_a') + #1
+lema(ur'[Dd]eterminar_í_a[ns]?_i') + #1
+lema(ur'[Dd]i_stribui_d[ao]s?_tribuí') + #1
+lema(ur'[Dd]ic_ié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_e') + #1
+lema(ur'[Dd]ici_en_do_ne') + #1
+lema(ur'[Dd]ilu_i_r(?:l[aeo]s?|se|)_í') + #1
+lema(ur'[Dd]irigir_á_[ns]?_a') + #1
+lema(ur'[Dd]is_cí_pul[ao]s?_i') + #1
+lema(ur'[Dd]isolver_á__a') + #1
+lema(ur'[Dd]istingu(?:ir|)_í_a[ns]?_i') + #1
+lema(ur'[Dd]istingu_i_d[ao]s?_í') + #1
+lema(ur'[Dd]istribu_i_r(?:l[aeo]s?|se|)_í') + #1
+lema(ur'[Dd]iál_o_gos?_') + #1
+lema(ur'[Dd]ominar_í_a[ns]_i') + #1
+lema(ur'[Dd]ominar_í_an_i') + #1
+lema(ur'[Dd]otar_í_a[ns]?_i') + #1
+lema(ur'[Dd]udar_í_a[ns]?_i') + #1
+lema(ur'[Dd]urar_í_a[ns]?_i') + #1
+lema(ur'[Ee]_jem_plo_njen') + #1
+lema(ur'[Ee]_m_pezó_n') + #1
+lema(ur'[Ee]_m_plear_n') + #1
+lema(ur'[Ee]_m_presa_n') + #1
+lema(ur'[Ee]jecutar_í_a[ns]?_i') + #1
+lema(ur'[Ee]jerci_cio__o', pre=ur'[Ee]l ') + #1
+lema(ur'[Ee]lectrohidr_á_ulic[ao]s?_a') + #1
+lema(ur'[Ee]legir_á_[ns]?_a') + #1
+lema(ur'[Ee]mbest_í_a[ns]?_i') + #1
+lema(ur'[Ee]mparejar_í_a[ns]?_i') + #1
+lema(ur'[Ee]mpe_z_ar(?:on|)_s') + #1
+lema(ur'[Ee]n don_d_e_') + #1
+lema(ur'[Ee]ncaminar_í_a[ns]?_i') + #1
+lema(ur'[Ee]ncend_í_(?:a[ns]?|)_i') + #1
+lema(ur'[Ee]nco_g_(?:e[nr]?|imiento|í)_j') + #1
+lema(ur'[Ee]nfrent_á_r[mts]el[aeo]s?_a') + #1
+lema(ur'[Ee]nfurecer_á_[ns]?_a') + #1
+lema(ur'[Ee]nojar_í_a[ns]?_i') + #1
+lema(ur'[Ee]ntender_í_a(?:[ns]?|mos)_i') + #1
+lema(ur'[Ee]nv_iá_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_ía') + #1
+lema(ur'[Ee]scap_á_r[mts]el[aeo]s?_a') + #1
+lema(ur'[Ee]scond_í_a[ns]?_i') + #1
+lema(ur'[Ee]sculp(?:ir|)_í_a[ns]?_i') + #1
+lema(ur'[Ee]scup(?:ir|)_í_a[ns]?_i') + #1
+lema(ur'[Ee]sperar_í_a[ns]?_i') + #1
+lema(ur'[Ee]stablecer_á_[ns]?_a') + #1
+lema(ur'[Ee]x_entá_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_senta') + #1
+lema(ur'[Ee]xc_é_ntric(?:[ao]s|amente)_e') + #1
+lema(ur'[Ee]xced_í_a[ns]?_i') + #1
+lema(ur'[Ee]xcept_ú_(?:a[ns]?|e[ns]?)_u') + #1
+lema(ur'[Ee]xhibir_á_[ns]?_a') + #1
+lema(ur'[Ee]xim_í_as?_i', pre=ur'(?:[Ll]o|[Qq]ue|[Dd]onde) ') + #1
+lema(ur'[Ee]xpel_í_a[ns]?_i') + #1
+lema(ur'[Ee]xpondr_á_[ns]?_a') + #1
+lema(ur'[Ff]_ó_lic[ao]s?_o') + #1
+lema(ur'[Ff]acilitar_í_a[ns]?_i') + #1
+lema(ur'[Ff]ichar_í_a[ns]?_i') + #1
+lema(ur'[Ff]inalizar_í_a[ns]?_i') + #1
+lema(ur'[Ff]irmar_í_a[ns]?_i') + #1
+lema(ur'[Ff]isiograf_í_a_i') + #1
+lema(ur'[Ff]lorecer_á_[ns]?_a') + #1
+lema(ur'[Ff]renar_í_a[ns]?_i') + #1
+lema(ur'[Ff]ruter_í_as?_i') + #1
+lema(ur'[Ff]und(?:ir|)_í_a[ns]?_i') + #1
+lema(ur'[Ff]unda__d[ao]s?_da') + #1
+lema(ur'[Gg]eod_é_sic[ao]s?_e') + #1
+lema(ur'[Gg]olp_eá_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_éa') + #1
+lema(ur'[Gg]ran_ _partido_') + #1
+lema(ur'[Gg]u_i_ad[ao]s?_í') + #1
+lema(ur'[Hh]a_ll_(?:adas|ados?|ando|arse|éis)_y') + #1
+lema(ur'[Hh]eredar_í_a[ns]?_i') + #1
+lema(ur'[Hh]iper_ví_nculos?_(?: v[ií]|vi)') + #1
+lema(ur'[Hh]ipod_é_rmic[ao]s?_e') + #1
+lema(ur'[Hh]umor_í_stic(?:[ao]s|amente)_i') + #1
+lema(ur'[Ii]_m_pertinencia_n') + #1
+lema(ur'[Ii]_m_portante_n') + #1
+lema(ur'[Ii]_m_prácticos_n') + #1
+lema(ur'[Ii]_m_pulsaba_n') + #1
+lema(ur'[Ii]_m_pulso_n') + #1
+lema(ur'[Ii]_ns_pirado_sn') + #1
+lema(ur'[Ii]m_portan_tes?_(?:ortan|porta)') + #1
+lema(ur'[Ii]mperar_í_a[ns]?_i') + #1
+lema(ur'[Ii]n_c_identes?_s') + #1
+lema(ur'[Ii]n_s_titu(?:ye|y[oó]|ción|ciones|id[ao]s?)_') + #1
+lema(ur'[Ii]nclu_i_rl[aeo]s?_í') + #1
+lema(ur'[Ii]ncorporar_í_a[ns]?_i') + #1
+lema(ur'[Ii]ncumpl(?:ir|)_í_a[ns]?_i') + #1
+lema(ur'[Ii]ncur_s_i(?:onar|ón|ones|on[oó]|ona[ns]?)_c') + #1
+lema(ur'[Ii]nde__pendencia_n') + #1
+lema(ur'[Ii]ndepend__encias?_i') + #1
+lema(ur'[Ii]nequ_í_voc(?:[ao]s|amente)_i') + #1
+lema(ur'[Ii]ngresar_í_a[ns]?_i') + #1
+lema(ur'[Ii]nhib(?:ir|)_í_a[ns]?_i') + #1
+lema(ur'[Ii]ntegrar_í_a[ns]?_i') + #1
+lema(ur'[Ii]ntentar_í_a[ns]?_i') + #1
+lema(ur'[Ii]ntercalar_í_a[ns]?_i') + #1
+lema(ur'[Ii]nvalidar_í_a[ns]?_i') + #1
+lema(ur'[Ii]nvertir_á_[ns]?_a') + #1
+lema(ur'[Ii]nvolucrar_í_a[ns]?_i') + #1
+lema(ur'[Jj]untar_í_a[ns]?_i') + #1
+lema(ur'[K]atmand_ú__u', pre=ur'(?:[Dd]e|[Ee]n) ') + #1
+lema(ur'[Ll]a_s_ sociedades_') + #1
+lema(ur'[Ll]a_s_ ventas_') + #1
+lema(ur'[Ll]avar_í_a[ns]?_i') + #1
+lema(ur'[Ll]e_é_r[mts]el[aeo]s?_e') + #1
+lema(ur'[Ll]i_m_piamente_n') + #1
+lema(ur'[Ll]iberar_í_a[ns]?_i') + #1
+lema(ur'[Ll]lam_á_r[mts]el[aeo]s?_a') + #1
+lema(ur'[Mm]_éto_dos?_etó') + #1
+lema(ur'[Mm]_ú_ltiple (?:accidente|álbumes|asesinato|cambio|campeón|con|de |instrumentos|interpretación|mediante|ocasiones|por|productores|que|significa|variantes|vol[uú]menes|y )_u') + #1
+lema(ur'[Mm]a_m_posteros_n') + #1
+lema(ur'[Mm]a_mposterí_a_nposteri') + #1
+lema(ur'[Mm]aci_z_os?_c') + #1
+lema(ur'[Mm]agn_í_fica_i', pre=ur'(?:una (?:banda|vista|forma|defensa natural|escritora)| (?:durante|a) la|de forma|sólida y) ') + #1
+lema(ur'[Mm]arisquer_í_as?_i') + #1
+lema(ur'[Mm]ecatr_ó_nicas?_o') + #1
+lema(ur'[Mm]et_é_r[mts]el[aeo]s?_e') + #1
+lema(ur'[Mm]etereol_ó_gic[ao]s?_o') + #1
+lema(ur'[Mm]irar_í_a[ns]?_i') + #1
+lema(ur'[Mm]ostrar_í_a[ns]?_i') + #1
+lema(ur'[Mm]ovilizar_í_a[ns]?_i') + #1
+lema(ur'[Nn]efr_ó_tic[ao]s?_o') + #1
+lema(ur'[Nn]eur_á_lgic[ao]s?_a') + #1
+lema(ur'[Nn]eurofenomenolog_í_as?_i') + #1
+lema(ur'[Nn]eutralizar_í_a[ns]?_i') + #1
+lema(ur'[Nn]inf_ó_manas?_o') + #1
+lema(ur'[Nn]ombrar_í_a[ns]?_i') + #1
+lema(ur'[Nn]orirland_é_s_e') + #1
+lema(ur'[Nn]um_é_ric(?:[ao]s|amente)_e') + #1
+lema(ur'[Oo]_b_t(?:en(?:er|gan?|dr[ií]a[ns]?)|ienen?|uvo)_p') + #1
+lema(ur'[Oo]bedecer_á_[ns]?_a') + #1
+lema(ur'[Oo]bservar_í_a[ns]?_i') + #1
+lema(ur'[Oo]clu_i_d[ao]s?_í') + #1
+lema(ur'[Oo]dontopediatr_í_as?_i') + #1
+lema(ur'[Oo]frecer_á_[ns]?_a') + #1
+lema(ur'[Oo]mit(?:ir|)_í_a[ns]?_i') + #1
+lema(ur'[Oo]rdenar_í_a[ns]?_i') + #1
+lema(ur'[Oo]rgani_zacio_nes_sació') + #1
+lema(ur'[Pp]_e_rtenece[nrs]?_a') + #1
+lema(ur'[Pp]_á_ginas?_a', pre=ur'(?:[Ll]as?)') + #1
+lema(ur'[Pp]_é_rtigas?_e') + #1
+lema(ur'[Pp]aleogeograf_í_a_i') + #1
+lema(ur'[Pp]articipar_í_a[ns]?_i') + #1
+lema(ur'[Pp]artir_á_[ns]_a') + #1
+lema(ur'[Pp]asant_í_as?_i') + #1
+lema(ur'[Pp]atolog_í_as_i') + #1
+lema(ur'[Pp]atrocinar_í_a[ns]?_i') + #1
+lema(ur'[Pp]ed_í_r[mts]el[aeo]s?_i') + #1
+lema(ur'[Pp]edagog_í_as_i') + #1
+lema(ur'[Pp]edir_á_[ns]?_a') + #1
+lema(ur'[Pp]equeñ_í_sim[ao]s?_i') + #1
+lema(ur'[Pp]ercan_c_es?_s') + #1
+lema(ur'[Pp]erci_b_id[ao]s?_v') + #1
+lema(ur'[Pp]ermit_ié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_íe') + #1
+lema(ur'[Pp]ermit_í_r[mts]el[aeo]s?_i') + #1
+lema(ur'[Pp]erten_e_cer(?:á[ns]?|ía[ns]?|)_') + #1
+lema(ur'[Pp]etrograf_í_as?_i') + #1
+lema(ur'[Pp]lanear_í_a[ns]?_i') + #1
+lema(ur'[Pp]od_ó_log[ao]s?_o') + #1
+lema(ur'[Pp]odolog_í_a(?!\.cl)_i') + #1
+lema(ur'[Pp]on_é_r[mts]el[aeo]s?_e') + #1
+lema(ur'[Pp]orquer_í_as?_i') + #1
+lema(ur'[Pp]osi_c_ionada_s') + #1
+lema(ur'[Pp]osi_c_ionamiento_s') + #1
+lema(ur'[Pp]osi_c_iones_s') + #1
+lema(ur'[Pp]osi_ci_ón_sic') + #1
+lema(ur'[Pp]r_a_cticar(?:se|lo|le|on|an|)_á') + #1
+lema(ur'[Pp]rescribir_á_[ns]?_a') + #1
+lema(ur'[Pp]resupon_í_a[ns]?_i') + #1
+lema(ur'[Pp]rivar_í_a[ns]?_i') + #1
+lema(ur'[Pp]romocionar_í_a[ns]?_i') + #1
+lema(ur'[Pp]ropon_é_r[mts]el[aeo]s?_e') + #1
+lema(ur'[Pp]roporcionar_í_a[ns]?_i') + #1
+lema(ur'[Qq]uitar_í_a[ns]?_i') + #1
+lema(ur'[Rr]_í_gida_i', pre=ur'(?:hacer|una|Máscara|persona|cola|está) ') + #1
+lema(ur'[Rr]ar_í_sim[ao]s?_i') + #1
+lema(ur'[Rr]e_ú_sa[ns]_u') + #1
+lema(ur'[Rr]eanudar_í_a[ns]?_i') + #1
+lema(ur'[Rr]eclutar_í_a[ns]?_i') + #1
+lema(ur'[Rr]ecog_í_a[ns]?_i') + #1
+lema(ur'[Rr]econo_z_ca[ns]?_s') + #1
+lema(ur'[Rr]econquistar_í_a[ns]?_i') + #1
+lema(ur'[Rr]ecordar_í_a[ns]?_i') + #1
+lema(ur'[Rr]ecorrer_á_[ns]?_a') + #1
+lema(ur'[Rr]edefin(?:ir|)_í_a[ns]?_i') + #1
+lema(ur'[Rr]edise_ñ_ad[ao]s?_n') + #1
+lema(ur'[Rr]educir_á_[ns]?_a') + #1
+lema(ur'[Rr]eemplazar_í_a[ns]?_i') + #1
+lema(ur'[Rr]eescrib(?:ir|)_í_a[ns]?_i') + #1
+lema(ur'[Rr]eferir_s_e(?:lo|)_c') + #1
+lema(ur'[Rr]egistrar_í_a[ns]?_i') + #1
+lema(ur'[Rr]egres_á_r[mts]el[aeo]s?_a') + #1
+lema(ur'[Rr]elatar_í_a[ns]?_i') + #1
+lema(ur'[Rr]emit(?:ir|)_í_a[ns]?_i') + #1
+lema(ur'[Rr]eparar_í_a[ns]?_i') + #1
+lema(ur'[Rr]eposar_í_a[ns]?_i') + #1
+lema(ur'[Rr]equer_í_(?:a[ns]?|)_i') + #1
+lema(ur'[Rr]escatar_í_a[ns]?_i') + #1
+lema(ur'[Rr]esucitar_í_a[ns]?_i') + #1
+lema(ur'[Rr]etomar_í_a[ns]?_i') + #1
+lema(ur'[Rr]etransmit(?:ir|)_í_a[ns]?_i') + #1
+lema(ur'[Rr]evel_á_r[mts]el[aeo]s?_a') + #1
+lema(ur'[Rr]iqu_í_sim[ao]s?_i') + #1
+lema(ur'[Rr]odear_í_a[ns]?_i') + #1
+lema(ur'[Rr]ondar_í_a[ns]?_i') + #1
+lema(ur'[Ss]_ó_tanos_o') + #1
+lema(ur'[Ss]_ú_bit(?:[ao]s|amente)_u') + #1
+lema(ur'[Ss]ac_á_r[mts]el[aeo]s?_a') + #1
+lema(ur'[Ss]alt_á_r[mts]el[aeo]s?_a') + #1
+lema(ur'[Ss]alvar_í_a[ns]?_i') + #1
+lema(ur'[Ss]emidestru_i_d[ao]s?_í') + #1
+lema(ur'[Ss]er_í_amos_i') + #1
+lema(ur'[Ss]ervi_c_ios?_s') + #1
+lema(ur'[Ss]inverg_ü_enzada_u') + #1
+lema(ur'[Ss]iquiatr_í_as?_i') + #1
+lema(ur'[Ss]obresal(?:dr|)_í_a[ns]?_i') + #1
+lema(ur'[Ss]ocorr_í_a[ns]?_i') + #1
+lema(ur'[Ss]ol_í_amos_i') + #1
+lema(ur'[Ss]oltar_í_a[ns]?_i') + #1
+lema(ur'[Ss]olventar_í_a[ns]?_i') + #1
+lema(ur'[Ss]oportar_í_a[ns]?_i') + #1
+lema(ur'[Ss]u_é_teres_e') + #1
+lema(ur'[Ss]ubir_á_[ns]_a') + #1
+lema(ur'[Ss]ubordinar_í_a[ns]?_i') + #1
+lema(ur'[Ss]ubstitu_i_r(?:l[aeo]s?|se|)_í') + #1
+lema(ur'[Ss]urgir_á_[ns]?_a') + #1
+lema(ur'[Ss]ustituir_á_[ns]?_a') + #1
+lema(ur'[Tt]__igre_r') + #1
+lema(ur'[Tt]a_m_poco_n') + #1
+lema(ur'[Tt]e_m_plo_n') + #1
+lema(ur'[Tt]e_m_poral_n') + #1
+lema(ur'[Tt]e_m_prana_n') + #1
+lema(ur'[Tt]em__porada_n') + #1
+lema(ur'[Tt]em_ié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_e') + #1
+lema(ur'[Tt]en_í_amos_i') + #1
+lema(ur'[Tt]eni_en_do_ne') + #1
+lema(ur'[Tt]estar_í_a[ns]?_i') + #1
+lema(ur'[Tt]ocar_í_an_i') + #1
+lema(ur'[Tt]ra_ns_curr(?:e[ns]?|ió)_sn') + #1
+lema(ur'[Tt]ra_ns_portado_sn') + #1
+lema(ur'[Tt]ran_s_paren(?:cias?|tes?)_') + #1
+lema(ur'[Tt]ran_s_parencia_') + #1
+lema(ur'[Tt]ranscurr(?:ir|)_í_a[ns]?_i') + #1
+lema(ur'[Tt]ranscurrir_á_[ns]?_a') + #1
+lema(ur'[Tt]rasladar_í_a[ns]?_i') + #1
+lema(ur'[Tt]reintaid_ó_s_o') + #1
+lema(ur'[Tt]ro_m_peta_n') + #1
+lema(ur'[Uu]gand_é_s_e') + #1
+lema(ur'[Uu]ltras_ó_nic[ao]s?_o') + #1
+lema(ur'[Uu]sar_í_a[ns]?_i') + #1
+lema(ur'[Vv]_ié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_íe') + #1
+lema(ur'[Vv]al_ú_(?:a[ns]?|en)_u') + #1
+lema(ur'[Vv]aldr_á_[ns]?_a') + #1
+lema(ur'[Vv]endr_í_a[ns]?_i') + #1
+lema(ur'[Vv]ivir_á_[ns]?_a') + #1
+lema(ur'[Vv]olvi_éndos_e_endoc') + #1
+lema(ur'[Vv]olvi_éndos_e_endoc') + #1
+lema(ur'[a]rd_í_an_i') + #1
+lema(ur'[c]ern_í__i') + #1
+lema(ur'[c]orr_í_as_i') + #1
+lema(ur'_A_quel_Á') + #1
+lema(ur'_E_quipos?_É') + #1
+lema(ur'_Latinoamé_rica_[Ll](?:ationoame|atínoame|ationoamé|ationame|atioamé|atinooamé|atínoamé)') + #1
+lema(ur'_a_quel_á') + #1
+lema(ur'_hu_esos?_u') + #1
+lema(ur'_marzo__[Mm]arço', pre=ur'acessado em [0-9]+ de ') + #1
+lema(ur'_É_nfasis_E') + #1
 # lema(ur'[A]_r_gentina_t') + #0
 # lema(ur'[A]lbergar_í_a[ns]_i') + #0
 # lema(ur'[A]rrastrar_í_a[ns]_i') + #0
-# lema(ur'[B]ajar_í_an_i') + #0
-# lema(ur'[B]arr_í_an_i') + #0
-# lema(ur'[B]esar_í_a[ns]_i') + #0
-# lema(ur'[E]tiop_í_a_y') + #0
-# lema(ur'[L]e_í_a[ns]_i') + #0
-# lema(ur'[L]e_í_da el acta_i') + #0
-# lema(ur'[P]artir_í_a[ns]?_i') + #0
-# lema(ur'[V]ivir_í_as?_i') + #0
-# lema(ur'[Y]aund_é__e') + #0
 # lema(ur'[Aa]__compañará_a') + #0
 # lema(ur'[Aa]_djudicá_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_judica') + #0
 # lema(ur'[Aa]_sis_tirá_isi') + #0
@@ -7013,6 +8538,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Aa]garr_á_r[mts]el[aeo]s?_a') + #0
 # lema(ur'[Aa]garrar_í_a[ns]?_i') + #0
 # lema(ur'[Aa]gasajar_í_a[ns]?_i') + #0
+# lema(ur'[Aa]gitar_í_a[ns]?_i') + #0
 # lema(ur'[Aa]glutinar_í_a[ns]?_i') + #0
 # lema(ur'[Aa]grandar_í_a[ns]?_i') + #0
 # lema(ur'[Aa]gravar_í_a[ns]?_i') + #0
@@ -7071,6 +8597,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Aa]niquilar_í_a[ns]?_i') + #0
 # lema(ur'[Aa]nonadar_í_a[ns]?_i') + #0
 # lema(ur'[Aa]nteced_í_a[ns]?_i') + #0
+# lema(ur'[Aa]ntepen_ú_ltim[ao]s?_u') + #0
 # lema(ur'[Aa]ntepon_í_a[ns]?_i') + #0
 # lema(ur'[Aa]nticipar_í_a[ns]?_i') + #0
 # lema(ur'[Aa]ntimon_o_polios_') + #0
@@ -7103,6 +8630,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Aa]presurar_í_a[ns]?_i') + #0
 # lema(ur'[Aa]prisionar_í_a[ns]?_i') + #0
 # lema(ur'[Aa]probar_í_a[ns]?_i') + #0
+# lema(ur'[Aa]provechar_í_a[ns]?_i') + #0
 # lema(ur'[Aa]proximar_í_a[ns]?_i') + #0
 # lema(ur'[Aa]puntar_í_a[ns]?_i') + #0
 # lema(ur'[Aa]purar_í_a[ns]?_i') + #0
@@ -7135,6 +8663,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Aa]sc_endió__iendio') + #0
 # lema(ur'[Aa]scendi_d_o_', pre=ur'[Ss]iendo ') + #0
 # lema(ur'[Aa]sear_í_a[ns]?_i') + #0
+# lema(ur'[Aa]segur_á_r[mts]el[aeo]s?_a') + #0
 # lema(ur'[Aa]semejar_í_a[ns]?_i') + #0
 # lema(ur'[Aa]sent_ándos_e_andoc') + #0
 # lema(ur'[Aa]sesorar_í_a[ns]?_i') + #0
@@ -7192,6 +8721,10 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Aa]y_udá_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_úda') + #0
 # lema(ur'[Aa]zotar_í_a[ns]?_i') + #0
 # lema(ur'[Aa]ñ_adié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_idie') + #0
+# lema(ur'[Aa]ñad_í_r[mts]el[aeo]s?_i') + #0
+# lema(ur'[B]ajar_í_an_i') + #0
+# lema(ur'[B]arr_í_an_i') + #0
+# lema(ur'[B]esar_í_a[ns]_i') + #0
 # lema(ur'[Bb]abear_í_a[ns]?_i') + #0
 # lema(ur'[Bb]aj_á_r[mts]el[aeo]s?_a') + #0
 # lema(ur'[Bb]albucear_í_a[ns]?_i') + #0
@@ -7227,6 +8760,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Bb]roncear_í_a[ns]?_i') + #0
 # lema(ur'[Bb]rotar_í_a[ns]?_i') + #0
 # lema(ur'[Bb]ucear_í_a[ns]?_i') + #0
+# lema(ur'[C]amer_ú_n_u', pre=ur'(?:[Ee]n) ') + #0
 # lema(ur'[Cc]_ausá_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_uasa') + #0
 # lema(ur'[Cc]_onclui_d[ao]s?_ncluí') + #0
 # lema(ur'[Cc]_ontá_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_ónta') + #0
@@ -7249,6 +8783,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Cc]allar_í_a[ns]_i') + #0
 # lema(ur'[Cc]am__paña_n') + #0
 # lema(ur'[Cc]ambi_á_r[mts]el[aeo]s?_a') + #0
+# lema(ur'[Cc]aminar_í_a[ns]_i') + #0
 # lema(ur'[Cc]amuflar_í_a[ns]?_i') + #0
 # lema(ur'[Cc]anali_c_e[ns]?_[zs]') + #0
 # lema(ur'[Cc]anjear_í_a[ns]?_i') + #0
@@ -7289,6 +8824,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Cc]ircunscrib(?:ir|)_í_a[ns]?_i') + #0
 # lema(ur'[Cc]ircunscribir_á_[ns]?_a') + #0
 # lema(ur'[Cc]itar_í_a[ns]?_i') + #0
+# lema(ur'[Cc]l_ás_ic[ao]s?_[aá]c') + #0
 # lema(ur'[Cc]lamar_í_a[ns]?_i') + #0
 # lema(ur'[Cc]lausur_á_r[mts]el[aeo]s?_a') + #0
 # lema(ur'[Cc]lausurar_í_a[ns]?_i') + #0
@@ -7411,6 +8947,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Cc]onfigurac_io_nes_ó') + #0
 # lema(ur'[Cc]onfigurar_í_a[ns]?_i') + #0
 # lema(ur'[Cc]onfinar_í_a[ns]?_i') + #0
+# lema(ur'[Cc]onfirmar_í_a[ns]?_i') + #0
 # lema(ur'[Cc]onflu_i_d[ao]s?_í') + #0
 # lema(ur'[Cc]onflu_i_r(?:l[aeo]s?|se|)_í') + #0
 # lema(ur'[Cc]onfrontar_í_a[ns]?_i') + #0
@@ -7454,6 +8991,10 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Cc]onverti_d_o_', pre=ur'(?:[Ff]ue|[Ee]s|[Ss]er) ') + #0
 # lema(ur'[Cc]onvirt_ié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_e') + #0
 # lema(ur'[Cc]onvirti_en_do_ne') + #0
+# lema(ur'[Cc]onvirti_éndos_e_endoc') + #0
+# lema(ur'[Cc]onvirti_éndos_e_endoc') + #0
+# lema(ur'[Cc]onvirti_éndos_e_endoc') + #0
+# lema(ur'[Cc]onvirti_éndos_e_endoc') + #0
 # lema(ur'[Cc]onvirti_ó__oo') + #0
 # lema(ur'[Cc]onvirti_ó__rtio') + #0
 # lema(ur'[Cc]onvivir_í_a[ns]?_i') + #0
@@ -7499,6 +9040,8 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Cc]ursar_í_a[ns]?_i') + #0
 # lema(ur'[Dd]_ecimosé_ptimo_écimose') + #0
 # lema(ur'[Dd]_ejá_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_éja') + #0
+# lema(ur'[Dd]_icié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_ecie') + #0
+# lema(ur'[Dd]_uodé_cimo_úode') + #0
 # lema(ur'[Dd]_é_cimos_e', pre=ur'(?:[Ll]os|[Uu]nos) ') + #0
 # lema(ur'[Dd]atar_í_an_i') + #0
 # lema(ur'[Dd]e__pendiendo_n') + #0
@@ -7561,6 +9104,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Dd]esalojar_í_a[ns]?_i') + #0
 # lema(ur'[Dd]esangr_ándos_e_andoc') + #0
 # lema(ur'[Dd]esanimar_í_a[ns]?_i') + #0
+# lema(ur'[Dd]esapare_c_er?_s') + #0
 # lema(ur'[Dd]esapare_c_ería_s') + #0
 # lema(ur'[Dd]esapare_cerí_a[ns]?_seri') + #0
 # lema(ur'[Dd]esaprovechar_í_a[ns]?_i') + #0
@@ -7577,6 +9121,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Dd]esbloquear_í_a[ns]?_i') + #0
 # lema(ur'[Dd]esbordar_í_a[ns]?_i') + #0
 # lema(ur'[Dd]escalificar_í_a[ns]?_i') + #0
+# lema(ur'[Dd]escansar_í_a[ns]?_i') + #0
 # lema(ur'[Dd]escarar_í_a[ns]?_i') + #0
 # lema(ur'[Dd]escarg_á_r[mts]el[aeo]s?_a') + #0
 # lema(ur'[Dd]escarrilar_í_a[ns]?_i') + #0
@@ -7590,6 +9135,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Dd]esconcept_ú_(?:a[ns]?|e[ns]?)_u') + #0
 # lema(ur'[Dd]esconcertar_í_a[ns]?_i') + #0
 # lema(ur'[Dd]esconectar_í_a[ns]?_i') + #0
+# lema(ur'[Dd]escono_c_id[ao]s?_s') + #0
 # lema(ur'[Dd]escono_z_cas_s') + #0
 # lema(ur'[Dd]escontrolar_í_a[ns]?_i') + #0
 # lema(ur'[Dd]escorr_í_a[ns]?_i') + #0
@@ -7735,6 +9281,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Dd]ocumentar_í_an_i') + #0
 # lema(ur'[Dd]renar_í_a[ns]?_i') + #0
 # lema(ur'[Dd]urmi_en_do_ne') + #0
+# lema(ur'[E]tiop_í_a_y') + #0
 # lema(ur'[Ee]_cuacio_nes_quació') + #0
 # lema(ur'[Ee]_jem_plo_gen') + #0
 # lema(ur'[Ee]_m_paque_n') + #0
@@ -7743,6 +9290,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Ee]_m_paquetamiento_n') + #0
 # lema(ur'[Ee]_m_parejados_n') + #0
 # lema(ur'[Ee]_m_parentada_n') + #0
+# lema(ur'[Ee]_m_parentados_n') + #0
 # lema(ur'[Ee]_m_peoraba_n') + #0
 # lema(ur'[Ee]_m_pequeñecida_n') + #0
 # lema(ur'[Ee]_m_peradores_n') + #0
@@ -7953,6 +9501,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Ee]xperimentar_í_a[ns]?_i') + #0
 # lema(ur'[Ee]xpirar_í_a[ns]?_i') + #0
 # lema(ur'[Ee]xplic_á_r[mts]el[aeo]s?_a') + #0
+# lema(ur'[Ee]xplicar_í_a[ns]?_i') + #0
 # lema(ur'[Ee]xplotar_í_a[ns]?_i') + #0
 # lema(ur'[Ee]xportar_í_a[ns]?_i') + #0
 # lema(ur'[Ee]xposi_c_ión_s') + #0
@@ -8033,12 +9582,14 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Gg]ran_ _popularidad_') + #0
 # lema(ur'[Gg]ranjear_í_a[ns]?_i') + #0
 # lema(ur'[Gg]ritar_í_a[ns]?_i') + #0
+# lema(ur'[Gg]uard_á_r[mts]el[aeo]s?_a') + #0
 # lema(ur'[Gg]uardar_í_a[ns]?_i') + #0
 # lema(ur'[Gg]uerrear_í_a[ns]?_i') + #0
 # lema(ur'[Gg]uillar_í_a[ns]?_i') + #0
 # lema(ur'[Gg]uisar_í_a[ns]?_i') + #0
 # lema(ur'[Gg]uiñar_í_a[ns]?_i') + #0
 # lema(ur'[Hh]a_lla_rse_yá') + #0
+# lema(ur'[Hh]ab_é_r[mts]el[aeo]s?_e') + #0
 # lema(ur'[Hh]abi_en_do_ne') + #0
 # lema(ur'[Hh]abi_éndos_e_endoc') + #0
 # lema(ur'[Hh]abilitar_í_a[ns]?_i') + #0
@@ -8100,6 +9651,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Ii]_m_pugnado_n') + #0
 # lema(ur'[Ii]_m_pugnó_n') + #0
 # lema(ur'[Ii]_m_pulsado_n') + #0
+# lema(ur'[Ii]_m_punemente_n') + #0
 # lema(ur'[Ii]_m_punidad_n') + #0
 # lema(ur'[Ii]_m_puntual_n') + #0
 # lema(ur'[Ii]_m_puso_n') + #0
@@ -8197,6 +9749,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Ii]nfundir_á_[ns]?_a') + #0
 # lema(ur'[Ii]nfundir_í_a[ns]?_i') + #0
 # lema(ur'[Ii]ngen_ierí_as?_ería') + #0
+# lema(ur'[Ii]ngeni_á_r[mts]el[aeo]s?_a') + #0
 # lema(ur'[Ii]nhabilitar_í_a[ns]?_i') + #0
 # lema(ur'[Ii]nhibir_á_[ns]?_a') + #0
 # lema(ur'[Ii]ninterru_m_pidamente_n') + #0
@@ -8237,8 +9790,10 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Ii]ntimar_í_a[ns]?_i') + #0
 # lema(ur'[Ii]ntitular_í_a[ns]?_i') + #0
 # lema(ur'[Ii]ntu_i_r(?:l[aeo]s?|se|)_í') + #0
+# lema(ur'[Ii]nundar_í_a[ns]?_i') + #0
 # lema(ur'[Ii]nva_sio_nes_ció') + #0
 # lema(ur'[Ii]nvadir_á_[ns]?_a') + #0
+# lema(ur'[Ii]nven_c_ibles?_s') + #0
 # lema(ur'[Ii]nvent_á_r[mts]el[aeo]s?_a') + #0
 # lema(ur'[Ii]nvest_í_a[ns]_i') + #0
 # lema(ur'[Ii]nvestigar_í_a[ns]?_i') + #0
@@ -8255,8 +9810,12 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Jj]ug_ándos_e_andoc') + #0
 # lema(ur'[Jj]uramentar_í_a[ns]?_i') + #0
 # lema(ur'[Jj]urar_í_a[ns]?_i') + #0
+# lema(ur'[Jj]ustificar_í_a[ns]?_i') + #0
+# lema(ur'[L]e_í_a[ns]_i') + #0
+# lema(ur'[L]e_í_da el acta_i') + #0
 # lema(ur'[Ll]_egislacio_nes_slegislació') + #0
 # lema(ur'[Ll]_lamá_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_ama') + #0
+# lema(ur'[Ll]abrar_í_a[ns]_i') + #0
 # lema(ur'[Ll]agrimear_í_a[ns]?_i') + #0
 # lema(ur'[Ll]amentar_í_a[ns]_i') + #0
 # lema(ur'[Ll]anzar_s_e_z') + #0
@@ -8264,6 +9823,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Ll]egislar_í_a[ns]?_i') + #0
 # lema(ur'[Ll]egitimar_í_an_i') + #0
 # lema(ur'[Ll]esionar_í_a[ns]?_i') + #0
+# lema(ur'[Ll]evantar_í_a[ns]?_i') + #0
 # lema(ur'[Ll]evitar_í_a[ns]?_i') + #0
 # lema(ur'[Ll]i_m_pia_n') + #0
 # lema(ur'[Ll]i_m_pio_n') + #0
@@ -8310,6 +9870,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Mm]asturbar_í_a[ns]?_i') + #0
 # lema(ur'[Mm]ateralizar_í_a[ns]?_i') + #0
 # lema(ur'[Mm]atiz_á_r[mts]el[aeo]s?_a') + #0
+# lema(ur'[Mm]atricul_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
 # lema(ur'[Mm]atricular_í_a[ns]?_i') + #0
 # lema(ur'[Mm]editar_í_a[ns]?_i') + #0
 # lema(ur'[Mm]encion_á_r[mts]el[aeo]s?_a') + #0
@@ -8329,6 +9890,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Mm]oldear_í_a[ns]?_i') + #0
 # lema(ur'[Mm]olest_á_r[mts]el[aeo]s?_a') + #0
 # lema(ur'[Mm]olestar_í_a[ns]?_i') + #0
+# lema(ur'[Mm]oment_á_ne[ao]_a') + #0
 # lema(ur'[Mm]ontar_í_a[ns]_i') + #0
 # lema(ur'[Mm]os_trá_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_ntra') + #0
 # lema(ur'[Mm]otivar_í_a[ns]?_i') + #0
@@ -8336,6 +9898,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Mm]ovilizar_s_e_z') + #0
 # lema(ur'[Mm]ultar_í_a[ns]?_i') + #0
 # lema(ur'[Mm]ultilingü_í_stic(?:[ao]s|amente)_i') + #0
+# lema(ur'[Mm]ultilingü_í_stic[ao]_i') + #0
 # lema(ur'[Mm]urmurar_í_a[ns]?_i') + #0
 # lema(ur'[Mm]utar_í_a[ns]?_i') + #0
 # lema(ur'[Mm]utilar_í_a[ns]?_i') + #0
@@ -8391,6 +9954,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Oo]scilar_í_a[ns]?_i') + #0
 # lema(ur'[Oo]stentar_í_a[ns]?_i') + #0
 # lema(ur'[Oo]vacionar_í_a[ns]?_i') + #0
+# lema(ur'[P]artir_í_a[ns]?_i') + #0
 # lema(ur'[Pp]_idié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_edie') + #0
 # lema(ur'[Pp]actar_í_a[ns]?_i') + #0
 # lema(ur'[Pp]ag_á_r[mts]el[aeo]s?_a') + #0
@@ -8446,6 +10010,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Pp]esar_í_a[ns]?_i') + #0
 # lema(ur'[Pp]i_ fiá_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_fia') + #0
 # lema(ur'[Pp]ic_á_r[mts]el[aeo]s?_a') + #0
+# lema(ur'[Pp]illar_í_a[ns]_i') + #0
 # lema(ur'[Pp]inchar_í_a[ns]?_i') + #0
 # lema(ur'[Pp]intar_í_a[ns]?_i') + #0
 # lema(ur'[Pp]irarse_í_a[ns]?_i') + #0
@@ -8501,6 +10066,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Pp]reocupar_í_a[ns]?_i') + #0
 # lema(ur'[Pp]repar_á_r[mts]el[aeo]s?_a') + #0
 # lema(ur'[Pp]repar_ándos_e_andoc') + #0
+# lema(ur'[Pp]reparar_í_a[ns]?_i') + #0
 # lema(ur'[Pp]rescind(?:ir|)_í_a[ns]?_i') + #0
 # lema(ur'[Pp]rescindir_á_[ns]?_a') + #0
 # lema(ur'[Pp]rescrib(?:ir|)_í_a[ns]?_i') + #0
@@ -8540,6 +10106,8 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Pp]roscrib(?:ir|)_í_a[ns]?_i') + #0
 # lema(ur'[Pp]roscribir_á_[ns]?_a') + #0
 # lema(ur'[Pp]rosegu_i_d[ao]s?_í') + #0
+# lema(ur'[Pp]rosperar_í_a[ns]?_i') + #0
+# lema(ur'[Pp]rostitu_i_d[ao]s?_í') + #0
 # lema(ur'[Pp]rostitu_i_r(?:l[aeo]s?|se|)_í') + #0
 # lema(ur'[Pp]rot_ég_el[aeo]s?_ej') + #0
 # lema(ur'[Pp]rote_gers_e_jerc') + #0
@@ -8630,6 +10198,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Rr]ecrear_í_a[ns]?_i') + #0
 # lema(ur'[Rr]ecrimin_á_r[mts]el[aeo]s?_a') + #0
 # lema(ur'[Rr]ecriminar_í_a[ns]?_i') + #0
+# lema(ur'[Rr]ecub__rimientos?_i') + #0
 # lema(ur'[Rr]ecub_r_ir(?:se|)_') + #0
 # lema(ur'[Rr]ecub_ri_mientos?_ir') + #0
 # lema(ur'[Rr]ecubi_e_rt[ao]s?_') + #0
@@ -8685,6 +10254,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Rr]eincidir_á_[ns]?_a') + #0
 # lema(ur'[Rr]eincorporar_í_a[ns]?_i') + #0
 # lema(ur'[Rr]eingresar_í_a[ns]?_i') + #0
+# lema(ur'[Rr]einiciar_í_a[ns]?_i') + #0
 # lema(ur'[Rr]einstalar_í_a[ns]?_i') + #0
 # lema(ur'[Rr]einstaurar_í_a[ns]?_i') + #0
 # lema(ur'[Rr]eintegrar_í_a[ns]?_i') + #0
@@ -8753,6 +10323,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Rr]etrotra_í_(?:a[ns]?|d[ao]s?)_i') + #0
 # lema(ur'[Rr]euni_en_do_ne') + #0
 # lema(ur'[Rr]evalidar_í_a[ns]?_i') + #0
+# lema(ur'[Rr]evelar_í_a[ns]?_i') + #0
 # lema(ur'[Rr]evend_í_a[ns]?_i') + #0
 # lema(ur'[Rr]evert_í_r[mts]el[aeo]s?_i') + #0
 # lema(ur'[Rr]everter_á_[ns]_a') + #0
@@ -8768,6 +10339,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Ss]abotear_í_a[ns]?_i') + #0
 # lema(ur'[Ss]acud(?:ir|)_í_a[ns]?_i') + #0
 # lema(ur'[Ss]acudir_á_[ns]?_a') + #0
+# lema(ur'[Ss]aldar_í_a[ns]?_i') + #0
 # lema(ur'[Ss]altar_í_a[ns]?_i') + #0
 # lema(ur'[Ss]altear_í_a[ns]?_i') + #0
 # lema(ur'[Ss]aludar_í_a[ns]?_i') + #0
@@ -8874,6 +10446,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Tt]ararear_í_a[ns]?_i') + #0
 # lema(ur'[Tt]artamudear_í_a[ns]?_i') + #0
 # lema(ur'[Tt]e_m_peratura_n') + #0
+# lema(ur'[Tt]e_m_poradas_n') + #0
 # lema(ur'[Tt]e_rminarí_a[ns]?_minari') + #0
 # lema(ur'[Tt]ect_ónica_mente_onicá') + #0
 # lema(ur'[Tt]ele_v_isión_b') + #0
@@ -8994,6 +10567,7 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Uu]rdir_á_[ns]?_a') + #0
 # lema(ur'[Uu]surpar_í_a[ns]?_i') + #0
 # lema(ur'[Uu]tilizar_s_e_z') + #0
+# lema(ur'[V]ivir_í_as?_i') + #0
 # lema(ur'[Vv]aciar_í_a[ns]?_i') + #0
 # lema(ur'[Vv]acilar_í_a[ns]?_i') + #0
 # lema(ur'[Vv]alidar_í_a[ns]?_i') + #0
@@ -9004,7 +10578,9 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Vv]aticinar_í_a[ns]?_i') + #0
 # lema(ur'[Vv]end_é_r[mts]el[aeo]s?_e') + #0
 # lema(ur'[Vv]enerar_í_a[ns]?_i') + #0
+# lema(ur'[Vv]engar_í_a[ns]?_i') + #0
 # lema(ur'[Vv]eranear_í_a[ns]?_i') + #0
+# lema(ur'[Vv]ersar_í_a[ns]_i') + #0
 # lema(ur'[Vv]ersionar_í_a[ns]?_i') + #0
 # lema(ur'[Vv]erter_á_[ns]?_a') + #0
 # lema(ur'[Vv]est_í_r[mts]el[aeo]s?_i') + #0
@@ -9023,13 +10599,24 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'[Vv]omitar_í_a[ns]?_i') + #0
 # lema(ur'[Vv]otar_í_a[ns]?_i') + #0
 # lema(ur'[Vv]ulnerar_í_an_i') + #0
+# lema(ur'[Y]aund_é__e') + #0
 # lema(ur'[Yy]uxtapon_í_a[ns]?_i') + #0
 # lema(ur'[Zz]afar_í_a[ns]?_i') + #0
 # lema(ur'[Zz]anjar_í_a[ns]?_i') + #0
 # lema(ur'[Zz]arpar_í_a[ns]?_i') + #0
 # lema(ur'[Zz]ozobrar_í_a[ns]?_i') + #0
 # lema(ur'[Zz]urrar_í_a[ns]?_i') + #0
+# lema(ur'[a]ll_á__a', pre=ur'(?:[Ee]stando|[Ee]speraba|[Ll]egaron) ') + #0
+# lema(ur'[a]m_á_ndola_a') + #0
+# lema(ur'[a]rrastrar_í_a[ns]?_i') + #0
+# lema(ur'[b]esar_í_a[ns]?_i') + #0
+# lema(ur'[c]avar_í_a_i') + #0
+# lema(ur'[c]omisionar_í_an_i') + #0
 # lema(ur'[eHh]aciéndo_s_e_c') + #0
+# lema(ur'[f]a_s_cina_') + #0
+# lema(ur'[r]everter_á__a') + #0
+# lema(ur'[s]_o_lido_ó', pre=ur'[Hh]a ') + #0
+# lema(ur'[t]ender_á_ a_a') + #0
 # lema(ur'__Acerca(?:r|rse|)_H') + #0
 # lema(ur'_acostumbrando__aconstumbrando', pre=ur'[Ee]stán? ') + #0
 # lema(ur'_adentrando__adrentrando', pre=ur'[Ee]stán? ') + #0
@@ -9046,6 +10633,8 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'_evaluando__valutando de', pre=ur'[Ee]stán? ') + #0
 # lema(ur'_fingiendo__fingiando', pre=ur'[Ee]stán? ') + #0
 # lema(ur'_h_aciéndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_') + #0
+# lema(ur'_ha_sta ahora_a') + #0
+# lema(ur'_hu_ndi(?:d[ao]s?|dimiento)_u') + #0
 # lema(ur'_julio__[Jj]ulho', pre=ur'acessado em [0-9]+ de ') + #0
 # lema(ur'_junio__[Jj]uin', pre=ur'acessado em [0-9]+ de ') + #0
 # lema(ur'_mayo__[Mm]aio', pre=ur'acessado em [0-9]+ de ') + #0
@@ -9058,838 +10647,158 @@ grupoPerfecto = [# Sin excepciones
 # lema(ur'_volviendo viable__viabilizando', pre=ur'[Ee]stán? ') + #0
 # lema(ur'_Í_ntegramente_I') + #0
 # lema(ur'_í_r[mts]el[aeo]s?_i') + #0
-# lema(ur'[a]ll_á__a', pre=ur'(?:[Ee]stando|[Ee]speraba|[Ll]egaron) ') + #0
-# lema(ur'[a]m_á_ndola_a') + #0
-# lema(ur'[a]rrastrar_í_a[ns]?_i') + #0
-# lema(ur'[b]esar_í_a[ns]?_i') + #0
-# lema(ur'[c]avar_í_a_i') + #0
-# lema(ur'[c]omisionar_í_an_i') + #0
-# lema(ur'[f]a_s_cina_') + #0
-# lema(ur'[r]everter_á__a') + #0
-# lema(ur'[s]_o_lido_ó', pre=ur'[Hh]a ') + #0
-# lema(ur'[t]ender_á_ a_a') + #0
-
-lema(ur'[Cc]ie_mpié_s_(?:npi[eé]|mpie)') + #15
-lema(ur'[Dd]ebutar_í_a[ns]?_i') + #15
-lema(ur'[Pp]erder_í_a[ns]?_i') + #17
-lema(ur'[Uu]n_í_r[mts]el[aeo]s?_i') + #5
-lema(ur'[Cc]ongre_s_os?_') + #7
-lema(ur'[Mm]_é_dicamente_e') + #6
-lema(ur'[Pp]eluquer_í_as?_i') + #7
-lema(ur'[Qq]uit_á_r[mts]el[aeo]s?_a') + #5
-lema(ur'[Cc]omp_i_tiera[ns]?_e') + #9
-lema(ur'[Pp]resentar_í_a[ns]?_i') + #6
-lema(ur'[Aa]cced_í_a[ns]?_i') + #3
-lema(ur'[Aa]s_c_enso(?:[rs]|res)_') + #4
-lema(ur'[Pp]rincipalme_n_te_') + #4
-lema(ur'[Tt]elev_i_sión_') + #2
-lema(ur'[Tt]itular_í_a[ns]?_i') + #6
-lema(ur'[Dd]_e_cidió_i') + #2
-lema(ur'[Ee]xhib(?:ir|)_í_a[ns]?_i') + #2
-lema(ur'[Tt]rabajar_í_a[ns]?_i') + #3
-lema(ur'[Cc]u_m_plen_n') + #5
-lema(ur'[Cc]ub_r_ir(?:se|)_') + #1
-lema(ur'[Dd]ividi_d_[ao]_', pre=ur'(?:[Ee]st[aá]|[Ff]u[eé]|[Ee]s) ') + #2
-lema(ur'[Ii]_m_portante_n') + #1
-lema(ur'[Ii]mpart(?:ir|)_í_a[ns]?_i') + #6
-lema(ur'[Ii]nterpretar_í_a[ns]?_i') + #3
-lema(ur'[Rr]epet_í_a[ns]?_i') + #4
-lema(ur'[Tt]e_m_porada_n') + #3
-lema(ur'[Aa]daptar_í_a[ns]?_i') + #3
-lema(ur'[Aa]eron_á_uticas_a') + #2
-lema(ur'[Aa]ngiograf_í_as?_i') + #3
-lema(ur'[Aa]umentar_í_a[ns]?_i') + #3
-lema(ur'[Cc]o_nstrui_d[ao]s?_sntruí') + #1
-lema(ur'[Cc]onsens_ú_(?:a[ns]?|e[ns]?)_u') + #2
-lema(ur'[Cc]onsumir_á_[ns]?_a') + #2
-lema(ur'[Dd]evolv_é_r[mts]el[aeo]s?_e') + #4
-lema(ur'[Dd]isf_r_uta[nrs]?_') + #3
-lema(ur'[Ee]xpon_í_a[ns]?_i') + #2
-lema(ur'[Gg]rabar_í_a[ns]?_i') + #2
-lema(ur'[Hh]ac_é_r[mts]el[aeo]s?_e') + #5
-lema(ur'[Ii]mpon_í_a[ns]?_i') + #4
-#lema(ur'[Ii]ndicar_í_a[ns]_i') + #0
-lema(ur'[Mm]ejorar_í_a[ns]?_i') + #4
-lema(ur'[Mm]ostrar_í_a[ns]?_i') + #1
-lema(ur'[Oo]cupar_í_a[ns]?_i') + #4
-lema(ur'[Ss]inverg_ü_enzas?_u') + #1
-lema(ur'[Tt]ardar_í_a[ns]?_i') + #5
-lema(ur'[Tt]elev_i_sión_e') + #1
-lema(ur'[Tt]ransitar_í_a[ns]?_i') + #2
-lema(ur'_e_quipos?_é') + #4
-lema(ur'[M]_ó_naco_o', pre=ur'[Ee]n ') + #3
-lema(ur'[Aa]frontar_í_a[ns]?_i') + #1
-lema(ur'[Aa]greg_á_r[mts]el[aeo]s?_a') + #4
-lema(ur'[Aa]s_c_ensor(?:es|)_') + #2
-lema(ur'[Aa]sis__tieron_i') + #4
-lema(ur'[Aa]ñad(?:ir|)_í_a[ns]?_i') + #1
-#lema(ur'[Cc]o_m_parte_n') + #0
-lema(ur'[Cc]oexist(?:ir|)_í_a[ns]?_i') + #2
-lema(ur'[Cc]ol_a_boró_o') + #1
-#lema(ur'[Cc]ompeti_ci_ones_') + #0
-lema(ur'[Cc]onectar_í_a[ns]?_i') + #1
-#lema(ur'[Cc]ons_titui_d[ao]s?_ituí') + #0
-#lema(ur'[Cc]onsolidar_í_a[ns]?_i') + #0
-lema(ur'[Cc]ulminar_í_a[ns]?_i') + #2
-lema(ur'[Dd]e__cidió_i') + #1
-lema(ur'[Dd]escubi_e_rt[ao]s?_') + #2
-lema(ur'[Dd]esempeñar_í_a[ns]?_i') + #2
-lema(ur'[Dd]eterminar_í_a[ns]?_i') + #1
-#lema(ur'[Ee]_s_culturas?_') + #0
-lema(ur'[Ee]migrar_í_a[ns]?_i') + #2
-lema(ur'[Ee]namorar_í_a[ns]?_i') + #2
-lema(ur'[Ee]ncend_í_(?:a[ns]?|)_i') + #1
-lema(ur'[Ee]ntrenar_í_a[ns]?_i') + #2
-#lema(ur'[Ee]st_á dividid_a_a divid') + #0
-lema(ur'[Hh]undir_á_[ns]?_a') + #4
-lema(ur'[Ii]n_strui_d[ao]s?_truí') + #2
-lema(ur'[Ii]ntentar_í_a[ns]?_i') + #2
-lema(ur'[Ii]nventar_í_a[ns]?_i') + #2
-lema(ur'[Ll]lam_á_r[mts]el[aeo]s?_a') + #1
-lema(ur'[Mm]oment_á_ne[ao]_a') + #1
-lema(ur'[Mm]ostr_á_r[mts]el[aeo]s?_a') + #2
-lema(ur'[Oo]clu_i_d[ao]s?_í') + #1
-lema(ur'[Oo]dontopediatr_í_as?_i') + #1
-lema(ur'[Oo]ptometr_í_as?_i') + #2
-lema(ur'[Pp]erci_b_id[ao]s?_v') + #1
-lema(ur'[Pp]olin_ó_mic[ao]_o') + #2
-lema(ur'[Pp]roporcionar_í_a[ns]?_i') + #2
-lema(ur'[Pp]rotagonizar_í_a[ns]?_i') + #2
-lema(ur'[Rr]etransmit(?:ir|)_í_a[ns]?_i') + #1
-lema(ur'[Rr]ob_á_r[mts]el[aeo]s?_a') + #3
-lema(ur'[Tt]ie_m_pos_n') + #3
-#lema(ur'[Tt]raumat_ó_log[ao]s?_o') + #0
-#lema(ur'[l]ic_ú_an_u') + #0
-lema(ur'[K]atmand_ú__u', pre=ur'(?:[Dd]e|[Ee]n) ') + #1
-lema(ur'[Aa]cerc_á_r[mts]el[aeo]s?_a') + #1
-lema(ur'[Aa]credit_á_r[mts]el[aeo]s?_a') + #1
-lema(ur'[Aa]cuñar_í_a[ns]?_i') + #2
-lema(ur'[Aa]dmi_ni_stración_') + #2
-lema(ur'[Aa]gregar_í_a[ns]?_i') + #1
-#lema(ur'[Aa]lejar_í_a[ns]?_i') + #0
-lema(ur'[Aa]lica_í_d[ao]s?_i') + #2
-lema(ur'[Aa]trev_í_a[ns]?_i') + #2
-lema(ur'[Aa]vanzar_í_a[ns]?_i') + #2
-lema(ur'[Cc]elebrar_í_a[ns]?_i') + #1
-lema(ur'[Cc]errar_í_a[ns]?_i') + #1
-lema(ur'[Cc]lav_á_r[mts]el[aeo]s?_a') + #2
-lema(ur'[Cc]oloc_á_r[mts]el[aeo]s?_a') + #1
-lema(ur'[Cc]olocar_í_a[ns]?_i') + #1
-lema(ur'[Cc]ompetiti__v[ao]s?_t') + #1
-lema(ur'[Cc]oncretar_í_a[ns]?_i') + #1
-lema(ur'[Cc]onfund(?:ir|)_í_a[ns]?_i') + #2
-lema(ur'[Cc]onfundir_á_[ns]?_a') + #1
-lema(ur'[Cc]onsiderar_í_a[ns]?_i') + #2
-#lema(ur'[Cc]onst_itui_d[ao]s?_uí') + #0
-lema(ur'[Cc]onstar_í_a[ns]?_i') + #2
-#lema(ur'[Cc]onvirti_éndos_e_endoc') + #0
-lema(ur'[Cc]onvirti_éndos_e_endoc') + #2
-lema(ur'[Cc]onvirti_éndos_e_endoc') + #2
-lema(ur'[Cc]onvirti_éndos_e_endoc') + #2
-lema(ur'[Cc]onvirti_éndos_e_endoc') + #2
-lema(ur'[Cc]re_é_r[mts]el[aeo]s?_e') + #1
-lema(ur'[Cc]u_m_plir_n') + #2
-lema(ur'[Dd]eclar_á_r[mts]el[aeo]s?_a') + #1
-lema(ur'[Dd]esapare_c_er?_s') + #1
-lema(ur'[Dd]escub_ri_dor(?:[ae]s?|)_ir') + #2
-lema(ur'[Dd]esignar_í_a[ns]?_i') + #1
-#lema(ur'[Dd]ividir_í_a[ns]?_i') + #0
-lema(ur'[Dd]on_á_r[mts]el[aeo]s?_a') + #2
-#lema(ur'[Ee]_m_parentado_n') + #0
-#lema(ur'[Ee]fica_z__s') + #0
-#lema(ur'[Ee]m_blemá_tic[ao]s?_plem[aá]') + #0
-#lema(ur'[Ee]ncantar_í_a[ns]?_i') + #0
-lema(ur'[Ee]scup(?:ir|)_í_a[ns]?_i') + #1
-lema(ur'[Ff]isiograf_í_a_i') + #2
-lema(ur'[Ff]uncionar_í_an_i') + #2
-lema(ur'[Gg]enerar_í_a[ns]?_i') + #2
-#lema(ur'[Hh]ablar_í_a[ns]?_i') + #0
-#lema(ur'[Ii]_m_prescindible_n') + #0
-lema(ur'[Ii]mped_í_r[mts]el[aeo]s?_i') + #2
-#lema(ur'[Ii]ncrementar_í_a[ns]?_i') + #0
-lema(ur'[Ii]ntegrar_í_a[ns]?_i') + #1
-#lema(ur'[Ii]nterrump(?:ir|)_í_a[ns]?_i') + #0
-lema(ur'[Jj]er_á_rquic[ao]s?_a') + #2
-lema(ur'[Ll]iberar_í_a[ns]?_i') + #2
-#lema(ur'[Ll]ogar_í_tmic[ao]s?_i') + #0
-#lema(ur'[Nn]eg_á_r[mts]el[aeo]s?_a') + #0
-lema(ur'[Pp]artir_á_[ns]_a') + #1
-lema(ur'[Pp]ermit_í_r[mts]el[aeo]s?_i') + #1
-lema(ur'[Pp]od_ó_log[ao]s?_o') + #1
-lema(ur'[Pp]rescribir_á_[ns]?_a') + #1
-lema(ur'[Pp]ropon_é_r[mts]el[aeo]s?_e') + #1
-lema(ur'[Pp]rostitu_i_d[ao]s?_í') + #1
-lema(ur'[Qq]ued_á_r[mts]el[aeo]s?_a') + #2
-lema(ur'[Rr]eci_b_iendo_v') + #2
-lema(ur'[Rr]econstitu_i_d[ao]s?_í') + #3
-lema(ur'[Rr]edise_ñ_ad[ao]s?_n') + #1
-lema(ur'[Rr]egistrar_í_a[ns]?_i') + #1
-lema(ur'[Rr]egrabar_í_a[ns]?_i') + #2
-lema(ur'[Rr]egres_á_r[mts]el[aeo]s?_a') + #1
-lema(ur'[Rr]emontar_í_a[ns]?_i') + #2
-#lema(ur'[Rr]enovar_í_a[ns]?_i') + #0
-#lema(ur'[Rr]esum(?:ir|)_í_a[ns]?_i') + #0
-#lema(ur'[Ss]ellar_í_a[ns]_i') + #0
-#lema(ur'[Ss]emiderru_i_d[ao]s?_í') + #0
-lema(ur'[Ss]olventar_í_a[ns]?_i') + #1
-#lema(ur'[Ss]ubsist(?:ir|)_í_a[ns]?_i') + #0
-lema(ur'[Ss]uperar_í_a[ns]?_i') + #2
-lema(ur'[Tt]e_m_poradas_n') + #1
-lema(ur'[Tt]ro_m_peta_n') + #1
-lema(ur'[Uu]bicar_í_a[ns]?_i') + #2
-#lema(ur'[Vv]iajar_í_a[ns]?_i') + #0
-lema(ur'_C_ercan[ao]s?_S') + #2
-lema(ur'[a]lbergar_í_a[ns]?_i') + #2
-#lema(ur'[t]en_ido__dio', pre=ur'[Hh]a(?:n?|bían?|ber) ') + #0
-lema(ur'[C]amer_ú_n_u', pre=ur'(?:[Ee]n) ') + #1
-#lema(ur'[Aa]_m_parar_n') + #0
-#lema(ur'[Aa]cab_a_rá_') + #0
-lema(ur'[Aa]clar_á_r[mts]el[aeo]s?_a') + #1
-#lema(ur'[Aa]consejar_í_a[ns]?_i') + #0
-#lema(ur'[Aa]copl_á_r[mts]el[aeo]s?_a') + #0
-lema(ur'[Aa]dministrar_í_a[ns]?_i') + #1
-lema(ur'[Aa]gitar_í_a[ns]?_i') + #1
-lema(ur'[Aa]gradec_é_r[mts]el[aeo]s?_e') + #1
-#lema(ur'[Aa]griar_í_a[ns]?_i') + #0
-lema(ur'[Aa]grupar_í_a[ns]?_i') + #1
-#lema(ur'[Aa]lertar_í_a[ns]?_i') + #0
-#lema(ur'[Aa]liar_s_e_z') + #0
-lema(ur'[Aa]mbientar_í_a[ns]?_i') + #1
-lema(ur'[Aa]ntepen_ú_ltim[ao]s?_u') + #1
-#lema(ur'[Aa]pare_z_ca[ns]?_s') + #0
-#lema(ur'[Aa]parec_é_r[mts]el[aeo]s?_e') + #0
-lema(ur'[Aa]plic_á_r[mts]el[aeo]s?_a') + #1
-#lema(ur'[Aa]poderar_í_a[ns]?_i') + #0
-lema(ur'[Aa]portar_í_a[ns]?_i') + #1
-#lema(ur'[Aa]prehend_í_a[ns]?_i') + #0
-#lema(ur'[Aa]rrebat_á_r[mts]el[aeo]s?_a') + #0
-lema(ur'[Aa]rregl_á_r[mts]el[aeo]s?_a') + #1
-#lema(ur'[Aa]rremet_í_a[ns]?_i') + #0
-#lema(ur'[Aa]rruinar_í_a[ns]?_i') + #0
-lema(ur'[Aa]segur_á_r[mts]el[aeo]s?_a') + #1
-#lema(ur'[Aa]segurar_í_a[ns]?_i') + #0
-lema(ur'[Aa]t_ribui_d[ao]s?_tribuí') + #1
-lema(ur'[Aa]tacar_í_a[ns]?_i') + #2
-lema(ur'[Aa]tar_í_an_i') + #1
-#lema(ur'[Aa]udicionar_í_a[ns]?_i') + #0
-lema(ur'[Aa]ñad_í_r[mts]el[aeo]s?_i') + #1
-lema(ur'[Bb]al_ompié__ónpie') + #1
-#lema(ur'[Bb]ibliograf_í_as_i') + #0
-#lema(ur'[Bb]urlar_í_a[ns]?_i') + #0
-lema(ur'[Cc]_áno_nes_anó') + #1
-lema(ur'[Cc]a_m_panas?_n') + #1
-#lema(ur'[Cc]a_é_r[mts]el[aeo]s?_e') + #0
-#lema(ur'[Cc]almar_í_a[ns]_i') + #0
-#lema(ur'[Cc]atapultar_í_a[ns]?_i') + #0
-lema(ur'[Cc]err_á_r[mts]el[aeo]s?_a') + #1
-#lema(ur'[Cc]hurrasquer_í_as?_i') + #0
-lema(ur'[Cc]ircular_í_a[ns]?_i') + #1
-#lema(ur'[Cc]o_m_patriotas_n') + #0
-lema(ur'[Cc]o_m_pañía_n') + #1
-lema(ur'[Cc]o_m_pendio_n') + #1
-lema(ur'[Cc]o_m_pensada_n') + #1
-lema(ur'[Cc]o_m_plejo_n') + #1
-#lema(ur'[Cc]o_m_positor_n') + #0
-lema(ur'[Cc]o_m_puertas_n') + #1
-#lema(ur'[Cc]o_m_puesta_n') + #0
-#lema(ur'[Cc]ol_a_borador_o') + #0
-#lema(ur'[Cc]olaborar_í_a[ns]?_i') + #0
-lema(ur'[Cc]om__pañeros_n') + #1
-#lema(ur'[Cc]ombatir_á_[ns]?_a') + #0
-#lema(ur'[Cc]oment_á_r[mts]el[aeo]s?_a') + #0
-lema(ur'[Cc]omp_itió__etio') + #1
-lema(ur'[Cc]ompar_á_r[mts]el[aeo]s?_a') + #1
-#lema(ur'[Cc]ompeti_ci_ón_') + #0
-#lema(ur'[Cc]ompeticio_ne_s_en') + #0
-lema(ur'[Cc]ompromet_í_a[ns]?_i') + #1
-#lema(ur'[Cc]onceb_í_a[ns]?_i') + #0
-#lema(ur'[Cc]onced_é_r[mts]el[aeo]s?_e') + #0
-lema(ur'[Cc]onfes_á_r[mts]el[aeo]s?_a') + #1
-lema(ur'[Cc]onfirmar_í_a[ns]?_i') + #1
-#lema(ur'[Cc]onoci_éndos_e_endoc') + #0
-lema(ur'[Cc]onservar_í_a[ns]?_i') + #1
-#lema(ur'[Cc]onst_itui_d[ao]s?_rituí') + #0
-#lema(ur'[Cc]ontactar_í_a[ns]?_i') + #0
-lema(ur'[Cc]onte_m_poráneo_n') + #1
-lema(ur'[Cc]ontemplar_í_a[ns]?_i') + #1
-#lema(ur'[Cc]ontestar_í_a[ns]?_i') + #0
-#lema(ur'[Cc]onvi_r_tieron_') + #0
-lema(ur'[Cc]onvi_rtió__tio') + #1
-lema(ur'[Cc]onvivir_á_[ns]?_a') + #2
-#lema(ur'[Cc]ooperar_í_a[ns]?_i') + #0
-lema(ur'[Cc]oquetear_í_a[ns]?_i') + #1
-lema(ur'[Cc]ortar_í_a[ns]?_i') + #1
-#lema(ur'[Cc]ua_d_rad[ao]s?_') + #0
-#lema(ur'[Cc]ubi_e_rt[ao]s?_') + #0
-#lema(ur'[Cc]ultivar_í_a[ns]?_i') + #0
-lema(ur'[Cc]urar_í_a[ns]?_i') + #1
-lema(ur'[Dd]_icié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_ecie') + #1
-lema(ur'[Dd]_uodé_cimo_úode') + #1
-lema(ur'[Dd]econstru_i_d[ao]s?_í') + #1
-#lema(ur'[Dd]edic_á_r[mts]el[aeo]s?_a') + #0
-#lema(ur'[Dd]egenerar_í_a[ns]_i') + #0
-#lema(ur'[Dd]ej_á_r[mts]el[aeo]s?_a') + #0
-lema(ur'[Dd]emostr_á_r[mts]el[aeo]s?_a') + #1
-lema(ur'[Dd]emostrar_í_a[ns]?_i') + #1
-#lema(ur'[Dd]enominar_í_a[ns]?_i') + #0
-#lema(ur'[Dd]errumbar_í_a[ns]?_i') + #0
-#lema(ur'[Dd]esaperci_b_id[ao]s?_v') + #0
-lema(ur'[Dd]esarrollar_í_a[ns]?_i') + #2
-lema(ur'[Dd]escansar_í_a[ns]?_i') + #1
-#lema(ur'[Dd]escub_ri_eron_ir') + #0
-#lema(ur'[Dd]escub_ri_r_ir') + #0
-lema(ur'[Dd]esinter_é_s_e') + #1
-lema(ur'[Dd]eslumbrar_í_a[ns]?_i') + #1
-#lema(ur'[Dd]estapar_í_a[ns]?_i') + #0
-lema(ur'[Dd]estitu_i_r(?:l[aeo]s?|se|)_í') + #1
-lema(ur'[Dd]i_stribui_d[ao]s?_tribuí') + #1
-lema(ur'[Dd]ic_ié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_e') + #1
-lema(ur'[Dd]ici_en_do_ne') + #1
-lema(ur'[Dd]ifund(?:ir|)_í_a[ns]?_i') + #3
-lema(ur'[Dd]ilatar_í_a[ns]?_i') + #1
-lema(ur'[Dd]ilu_i_r(?:l[aeo]s?|se|)_í') + #1
-#lema(ur'[Dd]isfrutar_í_a[ns]?_i') + #0
-lema(ur'[Dd]ominar_í_a[ns]_i') + #1
-lema(ur'[Dd]ominar_í_an_i') + #1
-lema(ur'[Dd]otar_í_a[ns]?_i') + #1
-lema(ur'[Ee]_m_parentados_n') + #1
-lema(ur'[Ee]_m_pezó_n') + #1
-#lema(ur'[Ee]conom_é_tric(?:as|os?)_e') + #0
-#lema(ur'[Ee]fectuar_í_a[ns]?_i') + #0
-#lema(ur'[Ee]fica_c_es_s') + #0
-lema(ur'[Ee]jecutar_í_a[ns]?_i') + #2
-lema(ur'[Ee]liminar_í_a[ns]?_i') + #1
-#lema(ur'[Ee]lud(?:ir|)_í_a[ns]?_i') + #0
-lema(ur'[Ee]mbest_í_a[ns]?_i') + #1
-lema(ur'[Ee]mparejar_í_a[ns]?_i') + #1
-#lema(ur'[Ee]mpe_zarí_a[ns]?_sari') + #0
-lema(ur'[Ee]ncaminar_í_a[ns]?_i') + #1
-#lema(ur'[Ee]ncender_á_[ns]?_a') + #0
-lema(ur'[Ee]nfurecer_á_[ns]?_a') + #1
-#lema(ur'[Ee]nlistar_í_a[ns]?_i') + #0
-lema(ur'[Ee]nojar_í_a[ns]?_i') + #1
-#lema(ur'[Ee]nseñ_á_r[mts]el[aeo]s?_a') + #0
-lema(ur'[Ee]nv_iá_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_ía') + #1
-#lema(ur'[Ee]nvi_á_r[mts]el[aeo]s?_a') + #0
-lema(ur'[Ee]scap_á_r[mts]el[aeo]s?_a') + #1
-#lema(ur'[Ee]specular_í_a[ns]?_i') + #0
-lema(ur'[Ee]sperar_í_a[ns]?_i') + #1
-lema(ur'[Ee]studiar_í_a[ns]?_i') + #1
-#lema(ur'[Ee]timol_ó_gic(?:[ao]s|amente)_o') + #0
-#lema(ur'[Ee]vitar_í_a[ns]?_i') + #0
-lema(ur'[Ee]x_entá_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_senta') + #1
-lema(ur'[Ee]xc_é_ntric(?:[ao]s|amente)_e') + #1
-lema(ur'[Ee]xhibir_á_[ns]?_a') + #1
-#lema(ur'[Ee]xig_í_r[mts]el[aeo]s?_i') + #0
-lema(ur'[Ee]xim_í_as?_i', pre=ur'(?:[Ll]o|[Qq]ue|[Dd]onde) ') + #1
-#lema(ur'[Ee]xplorar_í_a[ns]?_i') + #0
-#lema(ur'[Ee]xtra_ñ_(?:[ao]s|amente)_n') + #0
-#lema(ur'[Ff]ijar_í_a[ns]?_i') + #0
-#lema(ur'[Ff]lu_i_r(?:l[aeo]s?|se|)_í') + #0
-lema(ur'[Ff]renar_í_a[ns]?_i') + #1
-lema(ur'[Ff]und(?:ir|)_í_a[ns]?_i') + #1
-#lema(ur'[Ff]usionar_í_a[ns]?_i') + #0
-#lema(ur'[Gg]an_á_r[mts]el[aeo]s?_a') + #0
-#lema(ur'[Gg]erontolog_í_as?_i') + #0
-lema(ur'[Gg]olp_eá_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_éa') + #1
-lema(ur'[Gg]uard_á_r[mts]el[aeo]s?_a') + #1
-lema(ur'[Hh]aci_éndos_e_endoc') + #2
-lema(ur'[Hh]aci_éndos_e_endoc') + #1
-lema(ur'[Hh]eredar_í_a[ns]?_i') + #1
-#lema(ur'[Ii]_m_pacto_n') + #0
-#lema(ur'[Ii]_m_plantación_n') + #0
-#lema(ur'[Ii]_m_plica_n') + #0
-#lema(ur'[Ii]_m_popularidad_n') + #0
-#lema(ur'[Ii]_m_previsto_n') + #0
-lema(ur'[Ii]_m_prácticos_n') + #1
-lema(ur'[Ii]_m_pulsa_n') + #2
-lema(ur'[Ii]_m_pulsaba_n') + #1
-#lema(ur'[Ii]_m_pulsó_n') + #0
-lema(ur'[Ii]_m_punemente_n') + #1
-#lema(ur'[Ii]_nclui_d[ao]s?_cluí') + #0
-lema(ur'[Ii]_ns_pirado_sn') + #1
-#lema(ur'[Ii]gualar_í_a[ns]?_i') + #0
-#lema(ur'[Ii]mprimir_á_[ns]?_a') + #0
-lema(ur'[Ii]n_c_identes?_s') + #1
-#lema(ur'[Ii]n_s_pector_') + #0
-#lema(ur'[Ii]ncendiar_í_an_i') + #0
-lema(ur'[Ii]nclu_i_rl[aeo]s?_í') + #1
-#lema(ur'[Ii]nclu_irá_[ns]?_íra') + #0
-#lema(ur'[Ii]nclu_irí_a[ns]?_íri') + #0
-lema(ur'[Ii]ncorporar_í_a[ns]?_i') + #1
-lema(ur'[Ii]ncumpl(?:ir|)_í_a[ns]?_i') + #1
-lema(ur'[Ii]ncur_s_i(?:onar|ón|ones|on[oó]|ona[ns]?)_c') + #1
-#lema(ur'[Ii]nflu_i_r(?:l[aeo]s?|se|)_í') + #0
-lema(ur'[Ii]ngeni_á_r[mts]el[aeo]s?_a') + #1
-lema(ur'[Ii]nhib(?:ir|)_í_a[ns]?_i') + #1
-#lema(ur'[Ii]nsinu_á_r[mts]el[aeo]s?_a') + #0
-#lema(ur'[Ii]nstalar_í_a[ns]?_i') + #0
-#lema(ur'[Ii]nstitu_i_r(?:l[aeo]s?|se|)_í') + #0
-lema(ur'[Ii]ntercalar_í_a[ns]?_i') + #1
-lema(ur'[Ii]ntr_í_nsec(?:[ao]s|amente)_i') + #1
-lema(ur'[Ii]nundar_í_a[ns]?_i') + #1
-lema(ur'[Ii]nvalidar_í_a[ns]?_i') + #1
-#lema(ur'[Jj]ug_á_r[mts]el[aeo]s?_a') + #0
-lema(ur'[Jj]untar_í_a[ns]?_i') + #1
-lema(ur'[Jj]ustificar_í_a[ns]?_i') + #1
-#lema(ur'[Ll]am_ié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_bie') + #0
-lema(ur'[Ll]anz_á_r[mts]el[aeo]s?_a') + #2
-lema(ur'[Ll]avar_í_a[ns]?_i') + #1
-lema(ur'[Ll]e_é_r[mts]el[aeo]s?_e') + #1
-lema(ur'[Ll]evantar_í_a[ns]?_i') + #2
-#lema(ur'[Ll]evar_í_a[ns]?_i') + #0
-lema(ur'[Ll]i_m_piamente_n') + #1
-#lema(ur'[Ll]lenar_í_a[ns]?_i') + #0
-#lema(ur'[Mm]a_m_posteados_n') + #0
-#lema(ur'[Mm]and_á_r[mts]el[aeo]s?_a') + #0
-#lema(ur'[Mm]anejar_í_a[ns]?_i') + #0
-#lema(ur'[Mm]anten_é_r[mts]el[aeo]s?_e') + #0
-lema(ur'[Mm]arisquer_í_as?_i') + #1
-lema(ur'[Mm]et_é_r[mts]el[aeo]s?_e') + #1
-#lema(ur'[Mm]ezclar_í_a[ns]?_i') + #0
-lema(ur'[Mm]irar_í_a[ns]?_i') + #1
-lema(ur'[Mm]ovilizar_í_a[ns]?_i') + #1
-lema(ur'[Mm]ultilingü_í_stic[ao]_i') + #1
-lema(ur'[Nn]efr_ó_tic[ao]s?_o') + #1
-lema(ur'[Nn]eutralizar_í_a[ns]?_i') + #1
-lema(ur'[Nn]ombrar_í_a[ns]?_i') + #1
-lema(ur'[Oo]bedecer_á_[ns]?_a') + #1
-lema(ur'[Oo]bservar_í_a[ns]?_i') + #1
-#lema(ur'[Oo]bstru_i_r(?:l[aeo]s?|se|)_í') + #0
-lema(ur'[Oo]mit(?:ir|)_í_a[ns]?_i') + #1
-lema(ur'[Oo]rgani_zacio_nes_sació') + #1
-lema(ur'[Pp]atrocinar_í_a[ns]?_i') + #1
-lema(ur'[Pp]ed_í_r[mts]el[aeo]s?_i') + #1
-lema(ur'[Pp]edagog_í_as_i') + #1
-#lema(ur'[Pp]ens_á_r[mts]el[aeo]s?_a') + #0
-lema(ur'[Pp]ercan_c_es?_s') + #1
-lema(ur'[Pp]ermit_ié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_íe') + #1
-#lema(ur'[Pp]ersist(?:ir|)_í_a[ns]?_i') + #0
-#lema(ur'[Pp]erten_ecerí_a_ceri') + #0
-lema(ur'[Pp]etrograf_í_as?_i') + #1
-#lema(ur'[Pp]itar_í_a[ns]?_i') + #0
-lema(ur'[Pp]lanear_í_a[ns]?_i') + #1
-#lema(ur'[Pp]oni_en_do_ne') + #0
-lema(ur'[Pp]orquer_í_as?_i') + #1
-#lema(ur'[Pp]osi__ción_si') + #0
-#lema(ur'[Pp]osi_c_ionado_s') + #0
-lema(ur'[Pp]osi_c_iones_s') + #1
-#lema(ur'[Pp]osi_c_ionó_s') + #0
-lema(ur'[Pp]osi_ci_ón_sic') + #1
-#lema(ur'[Pp]reced_í_a[ns]?_i') + #0
-#lema(ur'[Pp]refi__riendo_e') + #0
-#lema(ur'[Pp]rend_í_a[ns]?_i') + #0
-lema(ur'[Pp]reparar_í_a[ns]?_i') + #1
-lema(ur'[Pp]resupon_í_a[ns]?_i') + #1
-lema(ur'[Pp]rivar_í_a[ns]?_i') + #1
-#lema(ur'[Pp]ro_v_ocando_b') + #0
-#lema(ur'[Pp]ro_v_ocar_b') + #0
-#lema(ur'[Pp]roclamar_í_a[ns]?_i') + #0
-#lema(ur'[Pp]rogramar_í_a[ns]?_i') + #0
-#lema(ur'[Pp]romet_ié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_íe') + #0
-lema(ur'[Pp]romocionar_í_a[ns]?_i') + #1
-lema(ur'[Pp]rosperar_í_a[ns]?_i') + #1
-#lema(ur'[Pp]royectar_í_a[ns]?_i') + #0
-#lema(ur'[Qq]uin_c_e(?:nal|nalmente)_[sz]') + #0
-lema(ur'[Qq]uitar_í_a[ns]?_i') + #1
-lema(ur'[Rr]eanudar_í_a[ns]?_i') + #1
-lema(ur'[Rr]eclutar_í_a[ns]?_i') + #1
-lema(ur'[Rr]econo_z_ca[ns]?_s') + #1
-lema(ur'[Rr]econquistar_í_a[ns]?_i') + #1
-#lema(ur'[Rr]econv_i_rtió_e') + #0
-lema(ur'[Rr]ecordar_í_a[ns]?_i') + #1
-lema(ur'[Rr]ecortar_í_a[ns]?_i') + #1
-lema(ur'[Rr]ecub__rimientos?_i') + #1
-#lema(ur'[Rr]edactar_í_a[ns]?_i') + #0
-lema(ur'[Rr]edefin(?:ir|)_í_a[ns]?_i') + #1
-lema(ur'[Rr]eescrib(?:ir|)_í_a[ns]?_i') + #1
-#lema(ur'[Rr]efundar_í_a[ns]?_i') + #0
-lema(ur'[Rr]einiciar_í_a[ns]?_i') + #1
-lema(ur'[Rr]elatar_í_a[ns]?_i') + #2
-lema(ur'[Rr]emit(?:ir|)_í_a[ns]?_i') + #1
-lema(ur'[Rr]eparar_í_a[ns]?_i') + #1
-lema(ur'[Rr]escatar_í_a[ns]?_i') + #1
-#lema(ur'[Rr]escind(?:ir|)_í_a[ns]?_i') + #0
-#lema(ur'[Rr]espaldar_í_a[ns]?_i') + #0
-lema(ur'[Rr]esucitar_í_a[ns]?_i') + #1
-#lema(ur'[Rr]etir_á_r[mts]el[aeo]s?_a') + #0
-lema(ur'[Rr]etomar_í_a[ns]?_i') + #1
-#lema(ur'[Rr]etornar_í_a[ns]?_i') + #0
-lema(ur'[Rr]evel_á_r[mts]el[aeo]s?_a') + #1
-lema(ur'[Rr]odear_í_a[ns]?_i') + #1
-lema(ur'[Rr]ondar_í_a[ns]?_i') + #1
-lema(ur'[Ss]ac_á_r[mts]el[aeo]s?_a') + #2
-lema(ur'[Ss]alt_á_r[mts]el[aeo]s?_a') + #1
-lema(ur'[Ss]alvar_í_a[ns]?_i') + #1
-#lema(ur'[Ss]ecu_e_ncial(?:es|)_a') + #0
-#lema(ur'[Ss]eleccionar_í_a[ns]?_i') + #0
-lema(ur'[Ss]emidestru_i_d[ao]s?_í') + #1
-lema(ur'[Ss]ocorr_í_a[ns]?_i') + #1
-lema(ur'[Ss]oltar_í_a[ns]?_i') + #1
-lema(ur'[Ss]oportar_í_a[ns]?_i') + #1
-lema(ur'[Ss]u_é_teres_e') + #1
-#lema(ur'[Ss]ubdivid(?:ir|)_í_a[ns]?_i') + #0
-lema(ur'[Ss]ubir_á_[ns]_a') + #1
-lema(ur'[Ss]ubordinar_í_a[ns]?_i') + #1
-lema(ur'[Ss]ubstitu_i_r(?:l[aeo]s?|se|)_í') + #1
-#lema(ur'[Ss]ubstra_í_(?:a[ns]?|d[ao]s?)_i') + #0
-#lema(ur'[Ss]ucumb(?:ir|)_í_a[ns]?_i') + #0
-#lema(ur'[Ss]urt(?:ir|)_í_a[ns]?_i') + #0
-lema(ur'[Tt]a_m_poco_n') + #2
-#lema(ur'[Tt]apar_í_a[ns]?_i') + #0
-lema(ur'[Tt]e_m_plo_n') + #1
-lema(ur'[Tt]e_m_poral_n') + #1
-#lema(ur'[Tt]ej_í_a[ns]?_i') + #0
-lema(ur'[Tt]em__porada_n') + #1
-lema(ur'[Tt]em_ié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_e') + #1
-lema(ur'[Tt]eni_en_do_ne') + #1
-lema(ur'[Tt]estar_í_a[ns]?_i') + #1
-#lema(ur'[Tt]iem__po_n') + #0
-lema(ur'[Tt]ocar_í_an_i') + #1
-#lema(ur'[Tt]olerar_í_a[ns]?_i') + #0
-lema(ur'[Tt]om_á_r[mts]el[aeo]s?_a') + #1
-#lema(ur'[Tt]ra_ns_parente_sn') + #0
-#lema(ur'[Tt]ra_ns_portaba_sn') + #0
-lema(ur'[Tt]ra_ns_portado_sn') + #1
-#lema(ur'[Tt]ra_ns_portes_sn') + #0
-lema(ur'[Tt]ran_s_parencia_') + #1
-#lema(ur'[Tt]ran_s_portador_') + #0
-#lema(ur'[Tt]ran_s_portarse_') + #0
-#lema(ur'[Tt]ranscender_á_[ns]?_a') + #0
-#lema(ur'[Tt]ranscrib(?:ir|)_í_a[ns]?_i') + #0
-lema(ur'[Tt]ranscurrir_á_[ns]?_a') + #1
-lema(ur'[Tt]rasladar_í_a[ns]?_i') + #1
-#lema(ur'[Tt]ratar_í_a[ns]?_i') + #0
-#lema(ur'[Uu]n_ _papel_') + #0
-#lema(ur'[Uu]n_ _periodista_') + #0
-lema(ur'[Vv]engar_í_a[ns]?_i') + #1
-lema(ur'[Vv]ig_ésimo sé_ptima_esimose') + #2
-#lema(ur'[Vv]olar_í_a[ns]?_i') + #0
-lema(ur'[Vv]olvi_éndos_e_endoc') + #1
-lema(ur'[Vv]olvi_éndos_e_endoc') + #1
-#lema(ur'[ee]_m_pacad[ao]s?_n') + #0
-lema(ur'_marzo__[Mm]arço', pre=ur'acessado em [0-9]+ de ') + #1
-lema(ur'[a]rd_í_an_i') + #1
-#lema(ur'[b]ajar_í_a[ns]?_i') + #0
-lema(ur'[c]ern_í__i') + #1
-lema(ur'[c]orr_í_as_i') + #1
-
-#lema(ur'[Aa]firmar_í_a[ns]?_i') + #0
-#lema(ur'[Aa]gotar_í_a[ns]?_i') + #0
-#lema(ur'[Aa]mabil_í_sim[ao]s?_i') + #0
-#lema(ur'[Aa]mad_í_sim[ao]s?_i') + #0
-lema(ur'\b(?:[1-9]|[012][0-9]|3[01])_ de_ (?:[Ee]nero|[Ff]ebrero|[Mm]arzo|[Aa]bril|[Mm]ayo|[Jj]unio|[Jj]ulio|[Aa]gosto|[Ss]eptiembre|[Oo]ctubre|[Nn]oviembre|[Dd]iciembre)_') + #6180
-lema(ur'_ de _[12][0-9]{3}_', pre=ur'(?:[Ee]nero|[Ff]ebrero|[Mm]arzo|[Aa]bril|[Mm]ayo|[Jj]unio|[Jj]ulio|[Aa]gosto|[Ss]eptiembre|[Oo]ctubre|[Nn]oviembre|[Dd]iciembre)') + #117
-lema(ur'(?:[Aa]erot|[Cc]rono|[Hh]eli|[Tt]elet|[Tt])ran_s_port(?:a(?:[ns]?|ba[ns]?|bles?|ción|d[ao]s?|dor(?:es|)|ndo|r(?:se|ía[ns]?|))|e[ns]?|istas?)_') + #1
-lema(ur'(?:[Cc]on|[Ss](?:ub|))igu_i_entes?_') + #3
-lema(ur'(?:[Pp]|[Cc]op)rop__iedad(?:es|)_r') + #12
-lema(ur'(?:[Ss]emid|[Ss]ubd|[Hh]iperd|[Dd])esa_rroll_(?:ó|os?|a[nrs]?|ad[ao]s?|ando|ador|adora|adores|arse|aron|ar[ií]a[ns]?|aba[ns]?)_(?:roll|rr?oy|rrol)') + #53
-lema(ur'Ad_í_s Abeba_i') + #6
-lema(ur'Arbel_á_ez_a') + #13
-lema(ur'Azerbaiy_á_n_a') + #18
-lema(ur'Berm_ú_dez_u') + #78
-lema(ur'C_ú_cuta_u') + #25
-lema(ur'Car_ú_pano_u') + #4
-lema(ur'D_í_as_i', pre=ur'(?:[uúUÚ]ltimos|Mil|Nueve|Nuestros|Trece|Buenos) ') + #1
-lema(ur'E_n_ (?:el|la|los|las)_N') + #3
-lema(ur'Emiratos _Á_rabes Unidos_A') + #30
-lema(ur'Benalc_á_zar_a') + #10
-lema(ur'Kirguist_á_n_a') + #20
-lema(ur'Logroñ_é_s_e') + #6
-lema(ur'Mosc_ú__u') + #47
-lema(ur'Pap_ú_a_u', pre=ur'(?:[Dd]e|[Ee]n) ') + #4
-lema(ur'Paraguan_á__a') + #4
-lema(ur'R_ó_terdam_o', pre=ur'(?:[Dd]e|[Ee]n) ') + #2
-lema(ur'Rep_ú_blica Dominicana_u') + #78
 #lema(ur'Sajcabaj_á__a') + #0
-lema(ur'Se_ú_l_u', pre=ur'(?:[Dd]e|[Ee]n) ') + #5
 #lema(ur'Sud_á_n\]\]_a', pre=ur'\[\[') + #0
 #lema(ur'T_á_riba_a') + #0
-lema(ur'T_ú_nez_u') + #33
 #lema(ur'Taf_í_ del Valle_i') + #0
-lema(ur'Teher_á_n_a', pre=ur'(?:[Dd]e|[Ee]n) ') + #4
-lema(ur'Vig_í_a_i', pre=ur'El ') + #7
-lema(ur'[12][0-9]{3} _en cine__au cinéma', pre=ur'\[') + #6
-lema(ur'[Aa]_ _cabo_', pre=ur'[Ll]lev(?:[oó]|aron|a[ns]?) ') + #6
-lema(ur'[Aa]_ _gusto_', pre=ur'(?:[Ee]st[aá]|estaba|sintió|muy|m[aá]s) ') + #1
-lema(ur'[Aa]_ _menudo_') + #1
-lema(ur'[Aa]_ _partir_') + #8
 #lema(ur'[Aa]_ _punto_', pre=ur'[Ee]st(?:a(?:[ns]|ba[ns]?|)|uvo)') + #0
+#lema(ur'[Aa]_m_parar_n') + #0
 #lema(ur'[Aa]_m_paro_n') + #0
 #lema(ur'[Aa]_s_cendencias?_') + #0
-lema(ur'[Aa]_ñ_os (?:antes|después)_n') + #3
 #lema(ur'[Aa]bandonar_í_a[ns]?_i') + #0
 #lema(ur'[Aa]barcar_í_a[ns]?_i') + #0
-lema(ur'[Aa]br(?:ir|)_í_a[ns]?_i') + #5
-lema(ur'[Aa]br_í_a[ns]?_i') + #5
-lema(ur'[Aa]brir_á_[ns]?_a') + #2
-lema(ur'[Aa]bsor_b_(e[rns]?|id[ao]s?)_v') + #4
-lema(ur'[Aa]bsorb_í_a[ns]?_i') + #1
 #lema(ur'[Aa]bstra_í_(?:a[ns]?|d[ao]s?)_i') + #0
 #lema(ur'[Aa]c__ompañará_c') + #0
-lema(ur'[Aa]cad_é_mic(?:as|amente)_e') + #3
-lema(ur'[Aa]cceder_á_[ns]?_a') + #1
+#lema(ur'[Aa]cab_a_rá_') + #0
 #lema(ur'[Aa]celerar_í_a[ns]?_i') + #0
 #lema(ur'[Aa]cent_ú_(?:a[ns]?|e[ns]?)_u') + #0
 #lema(ur'[Aa]ceptar_í_a[ns]?_i') + #0
 #lema(ur'[Aa]cercar_s_e(?:lo|)_c') + #0
-lema(ur'[Aa]cetaldeh_í_d[ao]s?_i') + #1
-lema(ur'[Aa]co_g_(?:id[ao]s?|iera[ns]|erá?)_j') + #1
-lema(ur'[Aa]coger_á_[ns]?_a') + #1
-lema(ur'[Aa]compa_ñ_antes?_n') + #1
-lema(ur'[Aa]compañar_í_a[ns]?_i') + #1
-lema(ur'[Aa]cr_ó_nimos?_o') + #7
-lema(ur'[Aa]credit_á_(?:ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)|rsel[aeo]s?)_a') + #1
-lema(ur'[Aa]ct_ú_(?:a[ns]|e[ns]?)_u') + #3
-lema(ur'[Aa]cud(?:ir|)_í_a[ns]?_i') + #2
+#lema(ur'[Aa]consejar_í_a[ns]?_i') + #0
+#lema(ur'[Aa]copl_á_r[mts]el[aeo]s?_a') + #0
 #lema(ur'[Aa]cudir_á_[ns]?_a') + #0
 #lema(ur'[Aa]cusar_í_a[ns]?_i') + #0
-lema(ur'[Aa]dmit(?:ir|)_í_a[ns]?_i') + #1
 #lema(ur'[Aa]dmit_í__i') + #0
 #lema(ur'[Aa]dmitir_á_[ns]?_a') + #0
-lema(ur'[Aa]dole_sc_entes?_[sc]') + #4
 #lema(ur'[Aa]doptar_í_a[ns]?_i') + #0
-lema(ur'[Aa]dquir_ió__(?:io|[oó])') + #5
 #lema(ur'[Aa]dquir_í_a[ns]?_i') + #0
-lema(ur'[Aa]dquirir_á_[ns]?_a') + #1
-lema(ur'[Aa]dvers_a_rios?_á') + #5
 #lema(ur'[Aa]dvi__rti(?:endo|eron|éndole|éndoles|éndose|ó)_e') + #0
-lema(ur'[Aa]er__opuertos?_e') + #3
-lema(ur'[Aa]er_ó_bic[ao]s?_o') + #1
-lema(ur'[Aa]erol_í_neas?_i') + #33
 #lema(ur'[Aa]fectar_í_a[ns]?_i') + #0
-lema(ur'[Aa]g_o_sto_u', pre=ur'(?:[Dd]e|[0-9]+\.?) ') + #4
-lema(ur'[Aa]gr_ó_nom[ao]s?_o') + #5
-lema(ur'[Aa]gradar_í_a[ns]?_i') + #1
-lema(ur'[Aa]gradecim_i_entos?_') + #2
-lema(ur'[Aa]jonjol_í__i') + #1
+#lema(ur'[Aa]firmar_í_a[ns]?_i') + #0
+#lema(ur'[Aa]gotar_í_a[ns]?_i') + #0
+#lema(ur'[Aa]griar_í_a[ns]?_i') + #0
 #lema(ur'[Aa]justad_í_sim[ao]s?_i') + #0
-lema(ur'[Aa]l_ _menos_') + #3
-lema(ur'[Aa]l_í_an?_i', pre=ur'[Ss]e ') + #1
-lema(ur'[Aa]lcan_c_e[ns]?_z') + #2
 #lema(ur'[Aa]lcanzar_í_a[ns]?_i') + #0
-lema(ur'[Aa]ldeh_í_d[ao]s?_i') + #3
-lema(ur'[Aa]leg_ó_ric[ao]s?_o') + #1
-lema(ur'[Aa]lfarer_í_as?_i') + #7
+#lema(ur'[Aa]lejar_í_a[ns]?_i') + #0
+#lema(ur'[Aa]lertar_í_a[ns]?_i') + #0
 #lema(ur'[Aa]lgor_í_tmicas?_i') + #0
-lema(ur'[Aa]lgori_t_mos?_') + #1
-lema(ur'[Aa]lien_í_genas?_i') + #22
-lema(ur'[Aa]lm_í_bar(?:es|)_i') + #1
+#lema(ur'[Aa]liar_s_e_z') + #0
 #lema(ur'[Aa]lt_í_sim[ao]s?_i') + #0
-lema(ur'[Aa]m_é_rica (?:del [Nn]orte|del [Ss]ur|[Cc]entral|[Hh]ispana|[Aa]nglosajona|de Cali)_e') + #38
-lema(ur'[Aa]maz_ó_nic(?:as|os?)_o') + #10
+#lema(ur'[Aa]mabil_í_sim[ao]s?_i') + #0
+#lema(ur'[Aa]mad_í_sim[ao]s?_i') + #0
 #lema(ur'[Aa]maz_ó_nica_o', pre=ur'(?:apariencia|especie|[Ss]elva|tribu|Lengua|medicinal|Cuenca|Guayaba|[Rr]egi[oó]n|cultural|dulce..|Colombia..| y) ') + #0
 #lema(ur'[Aa]mpl_í_sim[ao]s?_i') + #0
-lema(ur'[Aa]n_áli_sis_alí') + #1
-lema(ur'[Aa]n_ó_nim(?:[ao]s|amente)_o') + #6
-lema(ur'[Aa]n_ó_nim[ao]_o', pre=ur'(?:[Ss]ociedad|[Mm]ensaje) ') + #6
-lema(ur'[Aa]nal_ó_gic[ao]s?_o') + #6
 #lema(ur'[Aa]nexar_í_a[ns]?_i') + #0
 #lema(ur'[Aa]nexion_á_r[mts]el[aeo]s?_a') + #0
-lema(ur'[Aa]notar_í_a[ns]?_i') + #1
-lema(ur'[Aa]ntag_ó_nic[ao]s?_o') + #8
-lema(ur'[Aa]ntagon_i_stas?_í') + #2
-lema(ur'[Aa]nti_i_nflamatori[ao]s?_') + #1
-lema(ur'[Aa]ntinarc_ó_ticos?_o') + #1
 #lema(ur'[Aa]ntiqu_í_sim[ao]s?_i') + #0
 #lema(ur'[Aa]ntropom_ó_rfic[ao]s?_o') + #0
-lema(ur'[Aa]p_are_c(?:e(?:[ns]?|r(?:a[ns]?|[áé]|ía[ns]?|))|ieron)_(?:ara|re)') + #5
-lema(ur'[Aa]p_é_ndices?_e') + #18
-lema(ur'[Aa]p_í_col[ao]s?_i') + #2
-lema(ur'[Aa]p_ó_stol (?:San|Andr[eé]s|Juan|Jaime|Pedro|Pablo|Santiago|Mateo|Mat[ií]as|Tom[aá]s|Bartolom[eé])_o') + #5
-lema(ur'[Aa]p_ó_stol_o', pre=ur'(?:Andr[eé]s|Juan|Jaime|Pedro|Pablo|Santiago|Mateo|Mat[ií]as|Tom[aá]s|Bartolom[eé]) ') + #47
 #lema(ur'[Aa]pagar_í_a[ns]?_i') + #0
-lema(ur'[Aa]parec_í_a[ns]?_i') + #4
-lema(ur'[Aa]parecer_á_[ns]?_a') + #2
-lema(ur'[Aa]parecer_í_a[ns]?_i') + #1
-lema(ur'[Aa]pocal_i_psis_í') + #4
+#lema(ur'[Aa]pare_z_ca[ns]?_s') + #0
+#lema(ur'[Aa]parec_é_r[mts]el[aeo]s?_e') + #0
 #lema(ur'[Aa]poderar_s_e(?:lo|)_c') + #0
+#lema(ur'[Aa]poderar_í_a[ns]?_i') + #0
 #lema(ur'[Aa]poyar_í_a[ns]?_i') + #0
+#lema(ur'[Aa]prehend_í_a[ns]?_i') + #0
 #lema(ur'[Aa]prend_í_a[ns]?_i') + #0
 #lema(ur'[Aa]prender_á_[ns]?_a') + #0
-lema(ur'[Aa]pro_b_ad[ao]s?_v') + #36
-lema(ur'[Aa]provechar_í_a[ns]?_i') + #1
 #lema(ur'[Aa]rist_ó_cratas?_o') + #0
-lema(ur'[Aa]rque_ó_log[ao]s?_o') + #10
-lema(ur'[Aa]rqueol_ó_gic[ao]s?_o') + #60
-lema(ur'[Aa]rquer_í_as?_i') + #3
-lema(ur'[Aa]rras_ó_ (?:en|con)_o') + #3
+#lema(ur'[Aa]rrebat_á_r[mts]el[aeo]s?_a') + #0
+#lema(ur'[Aa]rremet_í_a[ns]?_i') + #0
+#lema(ur'[Aa]rruinar_í_a[ns]?_i') + #0
 #lema(ur'[Aa]rt_í_sticamente_i') + #0
-lema(ur'[Aa]rtific_i_al(?:es|)_') + #3
-lema(ur'[Aa]rtiller_í_as?_i') + #30
 #lema(ur'[Aa]sar_í_as?_i') + #0
 #lema(ur'[Aa]sc_ó_rbic[ao]s?_o') + #0
-lema(ur'[Aa]scend_í_(?:a[ns]?)_i') + #2
 #lema(ur'[Aa]scender_á_[ns]?_a') + #0
+#lema(ur'[Aa]segurar_í_a[ns]?_i') + #0
 #lema(ur'[Aa]sesinar_í_a[ns]?_i') + #0
 #lema(ur'[Aa]sis__tió_i') + #0
-lema(ur'[Aa]sist(?:ir|)_í_a[ns]?_i') + #1
 #lema(ur'[Aa]sistir_á_[ns]?_a') + #0
-lema(ur'[Aa]sociar_í_a[ns]?_i') + #1
-lema(ur'[Aa]sum(?:ir|)_í_a[ns]?_i') + #2
 #lema(ur'[Aa]sumir_á_[ns]?_a') + #0
-lema(ur'[Aa]ten_ú_(?:a[ns]?|e[ns]?)_u') + #1
-lema(ur'[Aa]tend_í_(?:a[ns]?|)_i') + #1
 #lema(ur'[Aa]tender_á_[ns]?_a') + #0
 #lema(ur'[Aa]terrar_í_a[ns]?_i') + #0
-lema(ur'[Aa]tl_é_tic(?:[ao]s|amente)_e') + #2
-lema(ur'[Aa]tra_í_d[ao]s?_i') + #4
 #lema(ur'[Aa]trap_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Mm]atricul_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
-lema(ur'[Aa]tribu_i_d[ao]s?_í') + #28
-lema(ur'[Aa]tribu_i_r(?:l[aeo]s?|se|)_í') + #1
-lema(ur'[Aa]tribu_í_r[mts]el[aeo]s?_i') + #1
 #lema(ur'[Aa]u_té_ntic[ao]s?_nte') + #0
+#lema(ur'[Aa]udicionar_í_a[ns]?_i') + #0
 #lema(ur'[Aa]ut_ó_dromos_o') + #0
 #lema(ur'[Aa]uto_o_xida(?:ción|ciones|ntes?)_') + #0
-lema(ur'[Aa]utob_u_ses_ú') + #2
-lema(ur'[Aa]utom_á_tic(?:[ao]s|amente)_a') + #5
 #lema(ur'[Aa]van_z_(?:ando|ad[ao]s?|[aoó])_s') + #0
 #lema(ur'[Aa]verg_ü_enza[ns]?_u') + #0
 #lema(ur'[Aa]yudar_í_a[ns]?_i') + #0
 #lema(ur'[Aa]ñad_í__i') + #0
 #lema(ur'[Aa]ñadir_á_[ns]?_a') + #0
 #lema(ur'[Bb]_ri_tánic[ao]s?_ir') + #0
-lema(ur'[Bb]_á_ltic[ao]s_a') + #3
-lema(ur'[Bb]_á_ltico(?! S\.)_a') + #1
-lema(ur'[Bb]_á_sic(?:as|os?|amente)_a') + #30
-lema(ur'[Bb]_ú_squedas?_u') + #53
-lema(ur'[Bb]acteriolog_í_as?_i') + #1
-lema(ur'[Bb]ailar_í_a[ns]?_i') + #1
 #lema(ur'[Bb]aj_í_sim[ao]s?_i') + #0
 #lema(ur'[Bb]astar_í_a[ns]?_i') + #0
 #lema(ur'[Bb]endec_í_a[ns]?_i') + #0
-lema(ur'[Bb]eneficiar_í_an?_i', pre=ur'[Ss]e ') + #1
-lema(ur'[Bb]iof_í_sic[ao]s?_i') + #1
-lema(ur'[Bb]iomec_á_nic[ao]s?_a') + #1
+#lema(ur'[Bb]ibliograf_í_as_i') + #0
 #lema(ur'[Bb]iopol_í_tix[ao]s?_i') + #0
-lema(ur'[Bb]ioqu_í_mic[ao]s?_i') + #9
-lema(ur'[Bb]iotecnol_ó_gic[ao]s?_o') + #1
 #lema(ur'[Bb]lanqu_í_sim[ao]s?_i') + #0
-lema(ur'[Bb]ol_í_grafos?_i') + #1
-lema(ur'[Bb]oleter_í_as?_i') + #2
-lema(ur'[Bb]r_ú_julas?_u') + #5
 #lema(ur'[Bb]rindar_í_a[ns]?_i') + #0
-lema(ur'[Bb]uen_í_sim[ao]s?_i') + #2
-lema(ur'[Bb]urocr_á_tic[ao]s?_a') + #1
+#lema(ur'[Bb]urlar_í_a[ns]?_i') + #0
 #lema(ur'[Bb]uscar_í_a[ns]?_i') + #0
-lema(ur'[Bb]ut_í_ric[ao]s?_i') + #1
 #lema(ur'[Bb]utanodi_ó_lic[ao]s?_o') + #0
-lema(ur'[Cc]_iu_dadan[ao]s?_ui') + #2
-lema(ur'[Cc]_á_lculo (?:del?|num[eé]rico|mental|según|estructural)_a') + #5
 #lema(ur'[Cc]_á_lculo_a', pre=ur'(?:[Ee]l|[Uu]n|[Dd]el?|[Aa]l|y)') + #0
-lema(ur'[Cc]_á_lid(?:[ao]s|amente)_a') + #1
-lema(ur'[Cc]_á_nceres_a') + #1
-lema(ur'[Cc]_á_todos?_a') + #2
-lema(ur'[Cc]_é_sped_e') + #44
-lema(ur'[Cc]_ó_digos_o') + #12
-lema(ur'[Cc]_ó_mo_o', pre=ur'¿ *') + #56
-lema(ur'[Cc]_ó_mod(?:[ao]s|amente)_o') + #2
-lema(ur'[Cc]_ó_moda_o') + #1
 #lema(ur'[Cc]_ó_nic(?:as|os?)_o') + #0
-lema(ur'[Cc]_ó_nyuges?_o') + #11
-lema(ur'[Cc]a_cerí_as?_(?:zer[ií]|ceri)') + #1
-lema(ur'[Cc]a_m_pos_n') + #17
 #lema(ur'[Cc]a_y_endo_ll') + #0
-lema(ur'[Cc]a_í_a[ns]_i') + #2
+#lema(ur'[Cc]a_é_r[mts]el[aeo]s?_e') + #0
 #lema(ur'[Cc]acer_í_as?_i') + #0
-lema(ur'[Cc]ad_á_veres_a') + #2
-lema(ur'[Cc]alor_í_as?_i') + #3
+#lema(ur'[Cc]almar_í_a[ns]_i') + #0
 #lema(ur'[Cc]am_é_lid[ao]s?_e') + #0
 #lema(ur'[Cc]ambiar_í_a_i', pre=ur'(?:[Nn]o|[Ll][ao]) ') + #0
 #lema(ur'[Cc]ambiar_í_an_i') + #0
-lema(ur'[Cc]ampeon_í_sim[ao]s?_i') + #2
 #lema(ur'[Cc]anadi_e_nse_é') + #0
-lema(ur'[Cc]ancer_í_gen[ao]s?_i') + #1
 #lema(ur'[Cc]ant_one_s_óne') + #0
-lema(ur'[Cc]antar_í_a[ns]?_i') + #4
-lema(ur'[Cc]apit_á_n Am[eé]rica_a') + #2
-lema(ur'[Cc]ar_í_sim[ao]s?_i') + #2
-lema(ur'[Cc]ar_ó_tid[ao]s?_o') + #4
 #lema(ur'[Cc]aracter_í_stc[ao]s?_i') + #0
-lema(ur'[Cc]aracter_í_stic[ao]s?_i') + #68
 #lema(ur'[Cc]aracteri_z_(?:a[nrs]?|d[ao]s?|[oó])_s') + #0
-lema(ur'[Cc]aracterí_s_ticas?_') + #1
-lema(ur'[Cc]ardiolog_í_as?_i') + #12
-lema(ur'[Cc]ardiopat_í_as?_i') + #3
-lema(ur'[Cc]arn_í_vor(os?|as)_i') + #10
 #lema(ur'[Cc]asar_s_e(?:lo|)_c') + #0
-lema(ur'[Cc]at_alogó__ologo') + #1
-lema(ur'[Cc]at_á_logo_a', pre=ur'(?:[Ee]l|[Uu]n|[Dd]e) ') + #13
-lema(ur'[Cc]at_á_logos_a') + #2
+#lema(ur'[Cc]atapultar_í_a[ns]?_i') + #0
 #lema(ur'[Cc]atastr_ó_fic(?:[ao]s?|amente)_o') + #0
-lema(ur'[Cc]atedr_á_tic[ao]s?_a') + #5
 #lema(ur'[Cc]ausar_í_a[ns]?_i') + #0
 #lema(ur'[Cc]e_ntroamé_rica_troam[eé]') + #0
-lema(ur'[Cc]ed_í_a[ns]?_i') + #1
-lema(ur'[Cc]ent_í_metros?_i') + #1
 #lema(ur'[Cc]entrar_í_a[ns]?_i') + #0
-lema(ur'[Cc]ercan_í_as?_i') + #20
-lema(ur'[Cc]et_á_ceos?_a') + #6
-lema(ur'[Cc]h_á_rter_a', pre=ur'(?:aerolíneas?|vuelos?|tipos?|modos?)(?: de|) ') + #10
-lema(ur'[Cc]ie_m_piés_n') + #3
+#lema(ur'[Cc]hurrasquer_í_as?_i') + #0
 #lema(ur'[Cc]ircu_n_stacias_') + #0
 #lema(ur'[Cc]ircu_n_stancia(?:l|les|)_') + #0
 #lema(ur'[Cc]ircun_s_pección_') + #0
 #lema(ur'[Cc]ircun_s_tancias?_') + #0
-lema(ur'[Cc]irug_í_as?_i') + #22
 #lema(ur'[Cc]iudad__es_d') + #0
-lema(ur'[Cc]l_á_sic(?:o|[ao]s|amente)_a') + #113
-lema(ur'[Cc]l_í_nic(?:[ao]s|amente)_i') + #9
-lema(ur'[Cc]lasificar_í_a[ns]?_i') + #2
-lema(ur'[Cc]lorh_í_dric[ao]s?_i') + #1
-lema(ur'[Cc]o_m_paras_n') + #2
-lema(ur'[Cc]o_m_petencia_n') + #1
-lema(ur'[Cc]o_m_port(arse|amiento)_n') + #1
-lema(ur'[Cc]o_m_prar_n') + #1
-lema(ur'[Cc]o_m_pre_n') + #1
+#lema(ur'[Cc]o_m_parte_n') + #0
+#lema(ur'[Cc]o_m_patriotas_n') + #0
+#lema(ur'[Cc]o_m_positor_n') + #0
+#lema(ur'[Cc]o_m_puesta_n') + #0
 #lema(ur'[Cc]o_m_puesto_n') + #0
 #lema(ur'[Cc]o_m_puso_n') + #0
 #lema(ur'[Cc]o_nvirtió__virtio') + #0
-lema(ur'[Cc]o_o_peraci(?:ón|ones)_') + #5
-lema(ur'[Cc]o_o_rdenad[ao]s?_') + #1
-lema(ur'[Cc]obrar_í_a[ns]?_i') + #2
 #lema(ur'[Cc]octeler_í_as?_i') + #0
 #lema(ur'[Cc]oincidir_á_[ns]?_a') + #0
 #lema(ur'[Cc]ol_a_boración_o') + #0
+#lema(ur'[Cc]ol_a_borador_o') + #0
 #lema(ur'[Cc]ol_é_ric[ao]s?_e') + #0
+#lema(ur'[Cc]olaborar_í_a[ns]?_i') + #0
+#lema(ur'[Cc]olor___ color', xpos=[ur'\'\'']) + #0
 #lema(ur'[Cc]om_é_r[mts]el[aeo]s?_e') + #0
-lema(ur'[Cc]om_ú_nmente_u') + #37
-lema(ur'[Cc]ombat(?:ir|)_í_a[ns]?_i') + #2
-lema(ur'[Cc]omenzar_í_a[ns]?_i') + #3
-lema(ur'[Cc]ompa_rtió__r?tio', pre=ur'(?:[Qq]ui[ée]n|[Qq]u[ée]|[Dd][óo]nde|[Cc]u[áa]ndo|[Tt]ambién|[Aa]demás|[Ss]e|[Ll][ao]s?|e) ') + #3
-lema(ur'[Cc]ompart(?:ir|)_í_a[ns]?_i') + #1
-lema(ur'[Cc]ompart_í_a(?:[ns]?|mos)_i') + #1
+#lema(ur'[Cc]ombatir_á_[ns]?_a') + #0
+#lema(ur'[Cc]oment_á_r[mts]el[aeo]s?_a') + #0
 #lema(ur'[Cc]ompartir_á_[ns]?_a') + #0
-lema(ur'[Cc]ompet_í_(?:a[ns]?|)_i') + #3
-lema(ur'[Cc]ompet_í_a[ns]?_i') + #3
+#lema(ur'[Cc]ompeti_ci_ones_') + #0
+#lema(ur'[Cc]ompeti_ci_ón_') + #0
 #lema(ur'[Cc]ompetic_i_ón_í?') + #0
+#lema(ur'[Cc]ompeticio_ne_s_en') + #0
 #lema(ur'[Cc]ompetir_á_n?_a') + #0
 #lema(ur'[Cc]ompetir_í_a[ns]?_i') + #0
-lema(ur'[Cc]ompetitiv_id_ad_') + #1
-lema(ur'[Cc]ompletar_í_a[ns]?_i') + #1
 #lema(ur'[Cc]omplic_á_r[mts]el[aeo]s?_a') + #0
 #lema(ur'[Cc]ompo_s_itor(?:as?|es|)_c') + #0
-lema(ur'[Cc]ompon_í_a[ns]?_i') + #3
-lema(ur'[Cc]ompondr_á_[ns]?_a') + #1
 #lema(ur'[Cc]omposi_c_ión_s') + #0
-lema(ur'[Cc]omprend_í_a[ns]?_i') + #1
 #lema(ur'[Cc]omprender_á_[ns]?_a') + #0
 #lema(ur'[Cc]omunic_á_r[mts]el[aeo]s?_a') + #0
 #lema(ur'[Cc]on __el_el con ') + #0
 #lema(ur'[Cc]on_cedié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_sedie') + #0
 #lema(ur'[Cc]on_s_ecuencias?_c') + #0
 #lema(ur'[Cc]on_s_iderad[ao]s?_c') + #0
-lema(ur'[Cc]on_s_titu(?:ye|y[oó]|ción|ciones|id[ao]s?)_') + #1
-lema(ur'[Cc]on_s_tru(?:ir(?:lo|se|á|án|ía|ían|)|cción|cciones)_') + #7
-lema(ur'[Cc]on_s_truyeron_') + #1
-lema(ur'[Cc]on_strui_d[ao]s?_(?:tru[ií]|struí)') + #17
-lema(ur'[Cc]on_strui_d[ao]s?_(?:tru[ií]|struí)') + #80
-lema(ur'[Cc]on_struyó__truyo') + #1
+#lema(ur'[Cc]onceb_í_a[ns]?_i') + #0
+#lema(ur'[Cc]onced_é_r[mts]el[aeo]s?_e') + #0
 #lema(ur'[Cc]onced_í_a[ns]?_i') + #0
 #lema(ur'[Cc]onceder_á_[ns]?_a') + #0
-lema(ur'[Cc]onclu_i_(?:r(?:l[aeo]s?|se|)|d[ao]s?)_í') + #21
-lema(ur'[Cc]onclu_i_d[ao]s?_í') + #20
 #lema(ur'[Cc]oncluir_á_[ns]?_a') + #0
 #lema(ur'[Cc]oncurr(?:ir|)_í_a[ns]?_i') + #0
 #lema(ur'[Cc]oncurrir_á_[ns]?_a') + #0
@@ -9901,1045 +10810,461 @@ lema(ur'[Cc]onclu_i_d[ao]s?_í') + #20
 #lema(ur'[Cc]onfia_n_zas?_') + #0
 #lema(ur'[Cc]onfie_s_a[ns]?_z') + #0
 #lema(ur'[Cc]onformar_í_a[ns]?_i') + #0
-lema(ur'[Cc]ono_c_id[ao]s?_s') + #2
-lema(ur'[Cc]onoc_í_a[ns]?_i') + #11
 #lema(ur'[Cc]onocer_s_e(?:lo|)_c') + #0
-lema(ur'[Cc]onocer_á_[ns]?_a') + #1
-lema(ur'[Cc]onocer_í_a(?:[ns]?|mos)_i') + #2
-lema(ur'[Cc]onocid_í_sim[ao]s?_i') + #2
+#lema(ur'[Cc]onoci_éndos_e_endoc') + #0
 #lema(ur'[Cc]onocim_ie_ntos?_ei') + #0
-lema(ur'[Cc]ons_i_guieron_e') + #2
 #lema(ur'[Cc]ons_iguió__eguio') + #0
-lema(ur'[Cc]onsagrar_í_a[ns]?_i') + #1
+#lema(ur'[Cc]ons_titui_d[ao]s?_ituí') + #0
 #lema(ur'[Cc]onsecu_e_ncias?_a') + #0
-lema(ur'[Cc]onsegu_í_a[ns]?_i') + #1
-lema(ur'[Cc]onseguir_á_[ns]?_a') + #1
-lema(ur'[Cc]onseguir_í_a[ns]?_i') + #1
-lema(ur'[Cc]onsider_á_r[mts]el[aeo]s?_a') + #1
 #lema(ur'[Cc]onsig_uió__i[oó]') + #0
-lema(ur'[Cc]onsigu_ió__o') + #1
-lema(ur'[Cc]onsist_í_a[ns]?_i') + #4
 #lema(ur'[Cc]onsistir_á_[ns]?_a') + #0
+#lema(ur'[Cc]onsolidar_í_a[ns]?_i') + #0
+#lema(ur'[Cc]onst_itui_d[ao]s?_rituí') + #0
+#lema(ur'[Cc]onst_itui_d[ao]s?_uí') + #0
 #lema(ur'[Cc]onst_r_uye[ns]?_') + #0
 #lema(ur'[Cc]onstituir_á_[ns]?_a') + #0
-lema(ur'[Cc]onstru_i_r(?! (?:a paz|unha))_í') + #1
 #lema(ur'[Cc]onstru_í_as?_i') + #0
-lema(ur'[Cc]onstruir_á_[ns]?_a') + #2
-lema(ur'[Cc]onsum(?:ir|)_í_a[ns]?_i') + #1
 #lema(ur'[Cc]ont_á_r[mts]el[aeo]s?_a') + #0
-lema(ur'[Cc]ont_ó_ (?:que|como|con)_o') + #12
-lema(ur'[Cc]ontadur_í_as?_i') + #5
+#lema(ur'[Cc]ontactar_í_a[ns]?_i') + #0
 #lema(ur'[Cc]ontar_í_a[ns]?_i') + #0
-lema(ur'[Cc]onte_m_poránea_n') + #3
-lema(ur'[Cc]onten_í_a[ns]_i') + #1
 #lema(ur'[Cc]ontend_í_(?:a[ns]?|)_i') + #0
-lema(ur'[Cc]ontendr_á_[ns]?_a') + #1
 #lema(ur'[Cc]onteni_en_do_ne') + #0
-lema(ur'[Cc]onti_n_gentes?_') + #4
-lema(ur'[Cc]ontin_ú_(?:an|en)_u') + #12
+#lema(ur'[Cc]ontestar_í_a[ns]?_i') + #0
 #lema(ur'[Cc]ontinuar_í_a[ns]?_i') + #0
-lema(ur'[Cc]ontra_í_(?:a[ns]?|d[ao]s?)_i') + #7
-lema(ur'[Cc]ontrar_r_estar(?:l[aeo]s?|ía[ns]?|)_') + #2
-lema(ur'[Cc]ontrar_r_evoluci(?:ón|onari[ao]s?)_') + #3
 #lema(ur'[Cc]ontrar_restará__estara') + #0
-lema(ur'[Cc]ontribu_i_d[ao]s?_í') + #3
-lema(ur'[Cc]ontribu_i_d[ao]s?_í') + #5
 #lema(ur'[Cc]ontribu_i_r(?:l[aeo]s?|se|)_í') + #0
 #lema(ur'[Cc]ontribuir_á_[ns]?_a') + #0
 #lema(ur'[Cc]onv_erti_rían_ierte') + #0
-lema(ur'[Cc]onv_i_rti(?:ó|endo|eron)_e') + #13
-lema(ur'[Cc]onv_irtié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_ertie') + #1
 #lema(ur'[Cc]onven_c_er(?:se|l[ao]s?|[mt]e|nos|á[ns]?)_s') + #0
 #lema(ur'[Cc]onvencer_á_[ns]?_a') + #0
-lema(ur'[Cc]onvert(?:ir|)_í_a[ns]?_i') + #3
-lema(ur'[Cc]onvertir_á_[ns]?_a') + #1
-lema(ur'[Cc]onvertir_í_a[ns]?_i') + #2
-lema(ur'[Cc]onvi__rtieron_e') + #5
-lema(ur'[Cc]onvi_rtié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_ertie') + #2
+#lema(ur'[Cc]onvi_r_tieron_') + #0
 #lema(ur'[Cc]onvi_rtió__ertio') + #0
 #lema(ur'[Cc]onvi_rtió__erto', pre=ur'[Ss]e ') + #0
 #lema(ur'[Cc]onvir_tió__itio') + #0
-lema(ur'[Cc]onvirt_ió__o') + #1
-lema(ur'[Cc]onviv_í_a[ns]_i') + #1
+#lema(ur'[Cc]onvirti_éndos_e_endoc') + #0
+#lema(ur'[Cc]ooperar_í_a[ns]?_i') + #0
 #lema(ur'[Cc]or_respondí_a_espondi') + #0
-lema(ur'[Cc]ore_ó_graf[ao]s?_o') + #10
 #lema(ur'[Cc]oronar_s_e(?:lo|)_c') + #0
-lema(ur'[Cc]orr_í_an_i') + #1
 #lema(ur'[Cc]orre_spondí_a_pondi') + #0
 #lema(ur'[Cc]orrer_í_a[ns]?_i') + #0
-lema(ur'[Cc]orrespond(?:er|)_í_an?_i') + #1
-lema(ur'[Cc]orrespond_í_a[ns]?_i') + #1
 #lema(ur'[Cc]orresponder_á_[ns]?_a') + #0
 #lema(ur'[Cc]orresponder_í_a[ns]?_i') + #0
 #lema(ur'[Cc]r_i_men_') + #0
-lema(ur'[Cc]r_á_neos?_a') + #11
-lema(ur'[Cc]r_í_menes_i') + #14
-lema(ur'[Cc]re_í__i') + #1
-lema(ur'[Cc]re_í_a(?:[ns]?|mos)_i') + #3
-lema(ur'[Cc]re_í_bles?_i') + #7
-lema(ur'[Cc]re_í_d[ao]s?_i') + #6
 #lema(ur'[Cc]rear_í_a[ns]?_i') + #0
 #lema(ur'[Cc]recer_á_[ns]?_a') + #0
-lema(ur'[Cc]ri_a_turas?_') + #1
-lema(ur'[Cc]ron_ó_metros?_o') + #9
-lema(ur'[Cc]ronol_ó_gic(?:[ao]s|amente)_o') + #4
 #lema(ur'[Cc]u[aá]_nd_o_dn') + #0
-lema(ur'[Cc]u_m_pla_n') + #1
 #lema(ur'[Cc]u_m_pliéndose_n') + #0
-lema(ur'[Cc]u_á_ntic[ao]s?_a') + #8
+#lema(ur'[Cc]ua_d_rad[ao]s?_') + #0
 #lema(ur'[Cc]ua_n_do (?:se|ven?|el|es|eran?|fue|llegan?|hay|el|la|sale|sus?|este)_') + #0
 #lema(ur'[Cc]uadrag_é_sim[ao]s?_e') + #0
+#lema(ur'[Cc]ubi_e_rt[ao]s?_') + #0
 #lema(ur'[Cc]ubrir_á_[ns]?_a') + #0
 #lema(ur'[Cc]ulpar_í_a[ns]?_i') + #0
-lema(ur'[Cc]umpl(?:ir|)_í_a[ns]?_i') + #4
-lema(ur'[Cc]umpl_í__i') + #1
-lema(ur'[Cc]umplir_á_[ns]?_a') + #2
-lema(ur'[Cc]ut_á_ne[ao]s?_a') + #4
+#lema(ur'[Cc]ultivar_í_a[ns]?_i') + #0
 #lema(ur'[Dd]]_ú_os_u') + #0
-lema(ur'[Dd]_e_cimocuart[ao]_é') + #11
-lema(ur'[Dd]_e_cimoquint[ao]_é') + #12
-lema(ur'[Dd]_e_cimosext[ao]_é') + #6
-lema(ur'[Dd]_e_cimoséptim[ao]_é') + #2
-lema(ur'[Dd]_ecimo_ctav[ao]_écimoo') + #1
+#lema(ur'[Dd]__onde_onde d') + #0
 #lema(ur'[Dd]_á_r[mts]el[aeo]s?_a') + #0
-lema(ur'[Dd]_é_biles(?! dignare)_e') + #7
-lema(ur'[Dd]_é_bilmente_e') + #2
-lema(ur'[Dd]_í_a a d[ií]a_i') + #12
-lema(ur'[Dd]_í_gitos?_i') + #14
-lema(ur'[Dd]_ó_lar_o', pre=ur'(?:[Ee]l|[Uu]n|[Dd]el|[Aa]l) ') + #4
-lema(ur'[Dd]_ó_lares_o', pre=ur'(?:[Ll]os|[Uu]nos|[Ee]n|[Dd]e) ') + #33
-lema(ur'[Dd]_ó_nde_o', pre=ur'¿ *') + #174
-lema(ur'[Dd]_ú_ctil_u') + #1
 #lema(ur'[Dd]añar_í_a[ns]?_i') + #0
 #lema(ur'[Dd]e_ _pronto_') + #0
-lema(ur'[Dd]e__l (?:2006|Amparo|Cauca|Club|Commonwealth|Consejo|Ejército|Estado|Norte|Working|archipiélago|año|calentamiento|canal|catálogo|condado|cuento|cuerpo|gobierno|himno|museo|oeste|peón|prestigioso|profesor|punto|siglo|éter)_e') + #1
-lema(ur'[Dd]e_cisio_nes_(?:cisió|cici[oó]|si[sc]i[oó])') + #3
-lema(ur'[Dd]e_s_c(?:enso|iende[ns]?|end(?:er?|ido)|entrali(?:ce[ns]?|zar|zó|zació))_') + #2
 #lema(ur'[Dd]e_s_cifrar_') + #0
 #lema(ur'[Dd]ebat(?:ir|)_í_a[ns]?_i') + #0
 #lema(ur'[Dd]ebatir_á_[ns]?_a') + #0
-lema(ur'[Dd]eber_á_[ns]?_a') + #9
-lema(ur'[Dd]eber_í_a(?:[ns]?|mos)_i') + #11
 #lema(ur'[Dd]ebilitad_í_sim[ao]s?_i') + #0
-lema(ur'[Dd]ec_í_a[ns]?_i', pre=ur'(?:[Qq]u[eé]|[Ss]e|[Ll]es?|[Mm]e|[Nn]os|[Ll]o|[Ss]eg[uú]n|[Dd]onde|[Cc]u[aá]l|[Cc][oó]mo|[Ss][oó]lo|[EeÉ]l|[Qq]ui[eé]n) ') + #5
 #lema(ur'[Dd]ec_í_amos_i') + #0
-lema(ur'[Dd]ec_í_r[mts]el[aeo]s?_i') + #2
 #lema(ur'[Dd]eca_í_do_i') + #0
-lema(ur'[Dd]eci__dió_ci') + #1
-lema(ur'[Dd]ecid_í__i') + #3
 #lema(ur'[Dd]ecidir_á_[ns]?_a') + #0
-lema(ur'[Dd]ecimos_é_ptim[ao]s?_e') + #1
 #lema(ur'[Dd]ecimos_é_ptimo_e') + #0
 #lema(ur'[Dd]eclarar_í_a[ns]?_i') + #0
+#lema(ur'[Dd]edic_á_r[mts]el[aeo]s?_a') + #0
 #lema(ur'[Dd]educir_á__a') + #0
 #lema(ur'[Dd]ef__endió_i') + #0
-lema(ur'[Dd]efender_á_[ns]?_a') + #2
-lema(ur'[Dd]efin(?:ir|)_í_a[ns]?_i') + #2
 #lema(ur'[Dd]efinir_á_[ns]?_a') + #0
-lema(ur'[Dd]ejar_í_a[ns]?_i') + #3
+#lema(ur'[Dd]egenerar_í_a[ns]_i') + #0
+#lema(ur'[Dd]ej_á_r[mts]el[aeo]s?_a') + #0
 #lema(ur'[Dd]em_ócra_tas?_[oó]cr') + #0
-lema(ur'[Dd]ema_s_iados?_c') + #1
 #lema(ur'[Dd]emandar_í_a[ns]?_i') + #0
 #lema(ur'[Dd]emost_r_ar(?:le|on|se|)_') + #0
-lema(ur'[Dd]enominar_í_a(?:[ns]?|mos)_i') + #1
-lema(ur'[Dd]epend_í_a[ns]?_i') + #2
+#lema(ur'[Dd]enominar_í_a[ns]?_i') + #0
 #lema(ur'[Dd]epender_á_[ns]?_a') + #0
-lema(ur'[Dd]erivar_í_a[ns]?_i') + #1
-lema(ur'[Dd]errotar_í_a[ns]?_i') + #1
-lema(ur'[Dd]erru_i_d[ao]s?_í') + #1
-lema(ur'[Dd]es_ig_nad[ao]s?_gi') + #7
+#lema(ur'[Dd]errumbar_í_a[ns]?_i') + #0
 #lema(ur'[Dd]es_é_rtic[ao]s?_e') + #0
 #lema(ur'[Dd]esaf_i_ar_í') + #0
 #lema(ur'[Dd]esap_are_r(?:e(?:[ns]?|r(?:a[ns]?|[áé]|ía[ns]?|))|ieron)c_(?:ara|re)') + #0
 #lema(ur'[Dd]esapare_z_ca[ns]?_s') + #0
-lema(ur'[Dd]esaparec_í_a[ns]?_i') + #2
 #lema(ur'[Dd]esaparecer_á_[ns]?_a') + #0
+#lema(ur'[Dd]esaperci_b_id[ao]s?_v') + #0
 #lema(ur'[Dd]esastro_s_[ao]s?_z') + #0
 #lema(ur'[Dd]escan_s_(?:os?|ar)_z') + #0
-lema(ur'[Dd]escend_í_(?:a[ns]?|)_i') + #5
 #lema(ur'[Dd]escender_á_[ns]?_a') + #0
-lema(ur'[Dd]esconf_í_a[na]?_i') + #2
-lema(ur'[Dd]escono_c_id[ao]s?_s') + #1
 #lema(ur'[Dd]escrib(?:ir|)_í_a[ns]?_i') + #0
 #lema(ur'[Dd]escrib_í__i') + #0
 #lema(ur'[Dd]escub__rir_i') + #0
 #lema(ur'[Dd]escub_r_ieron_') + #0
-lema(ur'[Dd]escub_r_ir(?:se|)_') + #2
-lema(ur'[Dd]escub_ri_mientos?_ir') + #2
-lema(ur'[Dd]escubr(?:ir|)_í_a[ns]?_i') + #1
-lema(ur'[Dd]escubr_í__i') + #3
-lema(ur'[Dd]escubrir_á_[ns]?_a') + #1
+#lema(ur'[Dd]escub_ri_eron_ir') + #0
+#lema(ur'[Dd]escub_ri_r_ir') + #0
 #lema(ur'[Dd]ese_m_peñarlos_n') + #0
-lema(ur'[Dd]ese_m_peño_n') + #2
 #lema(ur'[Dd]esear_í_a[ns]?_i') + #0
 #lema(ur'[Dd]eshacer_s_e(?:lo|)_c') + #0
 #lema(ur'[Dd]esp_i_dió_e') + #0
-lema(ur'[Dd]esped_í_a[ns]?_i') + #2
-lema(ur'[Dd]esplazar_s_e(?:lo|)_c') + #1
-lema(ur'[Dd]espose_í_d[ao]s?_i') + #9
-lema(ur'[Dd]esprend_í_a[ns]?_i') + #1
-lema(ur'[Dd]esta_ca_d[ao]s?_') + #1
 #lema(ur'[Dd]estacad_í_sim[ao]s?_i') + #0
+#lema(ur'[Dd]estapar_í_a[ns]?_i') + #0
 #lema(ur'[Dd]estinar_í_a[ns]?_i') + #0
-lema(ur'[Dd]estitu_i_d[ao]s?_í') + #11
-lema(ur'[Dd]estru_i_d[ao]s?_í') + #28
-lema(ur'[Dd]estru_i_r(?:l[aeo]s?|se|)_í') + #3
 #lema(ur'[Dd]estru_í__i') + #0
 #lema(ur'[Dd]estruir_á_[ns]?_a') + #0
-lema(ur'[Dd]esv_á_n_a') + #4
 #lema(ur'[Dd]esverg_ü_enza[ns]?_u') + #0
-lema(ur'[Dd]etendr_á_[ns]?_a') + #1
-lema(ur'[Dd]eval_ú_(?:a[ns]?|e[ns]?)_u') + #3
 #lema(ur'[Dd]evolver_á_[ns]?_a') + #0
 #lema(ur'[Dd]evorar_í_a[ns]?_i') + #0
 #lema(ur'[Dd]i_scí_pul[ao]s?_ci') + #0
 #lema(ur'[Dd]i_sminui_d[ao]s?_minuí') + #0
-lema(ur'[Dd]i_á_metros?_a') + #27
 #lema(ur'[Dd]i_é_ramos_e') + #0
-lema(ur'[Dd]i_ó_xidos?_o') + #2
-lema(ur'[Dd]iab_ó_lic(?:as|os)_o') + #3
-lema(ur'[Dd]iagn_osticó__(?:óstic[oó]|ostico)', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #1
 #lema(ur'[Dd]ibujar_í_a[ns]?_i') + #0
-lema(ur'[Dd]iecis_é_is_e') + #28
 #lema(ur'[Dd]iet_é_tic[ao]s?_e') + #0
-lema(ur'[Dd]if_í_cil(?:es|mente|)_i') + #40
 #lema(ur'[Dd]ifer_í_a[ns]?_i') + #0
 #lema(ur'[Dd]ign_í_sim[ao]s?_i') + #0
-lema(ur'[Dd]ij__eron_i') + #1
-lema(ur'[Dd]ij_o__ó') + #8
-lema(ur'[Dd]ilu_i_d[ao]s?_í') + #2
-lema(ur'[Dd]in_á_mic(?:[ao]s|amente)_a') + #5
 #lema(ur'[Dd]ir_e_ctamente_é') + #0
 #lema(ur'[Dd]ir_í_amos_i') + #0
-lema(ur'[Dd]iri_g_i(?:d[ao]s?|r(?:[tsm]e|á|ía[ns]|l[aeo]s?|))_j') + #13
-lema(ur'[Dd]iri_gí_a[ns]?_(?:j[ií]|gi)') + #7
 #lema(ur'[Dd]irig_id_o por_') + #0
-lema(ur'[Dd]irig_í__i') + #1
-lema(ur'[Dd]irigir_á_[ns]?_a') + #1
-lema(ur'[Dd]is_cí_pul[ao]s?_i') + #1
-lema(ur'[Dd]iscurr(?:ir|)_í_a[ns]?_i') + #3
 #lema(ur'[Dd]iscut(?:ir|)_í_a[ns]?_i') + #0
-lema(ur'[Dd]ise_ñ_a(?:d[ao]s?|dor(?:a|es|)|r)_n') + #1
 #lema(ur'[Dd]isfra_c_es_z') + #0
-lema(ur'[Dd]isminu_i_d[ao]s?_í') + #5
+#lema(ur'[Dd]isfrutar_í_a[ns]?_i') + #0
 #lema(ur'[Dd]isminu_i_r(?:l[aeo]s?|se|)_í') + #0
 #lema(ur'[Dd]isminuir_á_[ns]?_a') + #0
-lema(ur'[Dd]isolver_á__a') + #1
 #lema(ur'[Dd]isparar_í_a[ns]?_i') + #0
-lema(ur'[Dd]ispon_í_a[ns]?_i') + #5
 #lema(ur'[Dd]ispondr_á_[ns]?_a') + #0
 #lema(ur'[Dd]isputad_í_sim[ao]s?_i') + #0
-lema(ur'[Dd]isputar_í_a[ns]?_i') + #2
 #lema(ur'[Dd]isten_s_ión_c') + #0
-lema(ur'[Dd]istingu(?:ir|)_í_a[ns]?_i') + #1
-lema(ur'[Dd]istingu_i_d[ao]s?_í') + #1
 #lema(ur'[Dd]istinguir_á_[ns]?_a') + #0
-lema(ur'[Dd]istribu_i_d[ao]s?_í') + #17
-lema(ur'[Dd]istribu_i_r(?:l[aeo]s?|se|)_í') + #1
 #lema(ur'[Dd]istribu_í_a[ns]?_i') + #0
 #lema(ur'[Dd]istribuir_á_[ns]?_a') + #0
 #lema(ur'[Dd]isuad(?:ir|)_í_a[ns]?_i') + #0
 #lema(ur'[Dd]ivi_sio_n_ci[oó]') + #0
 #lema(ur'[Dd]ividir_á_[ns]?_a') + #0
+#lema(ur'[Dd]ividir_í_a[ns]?_i') + #0
 #lema(ur'[Dd]ivorciar_s_e(?:lo|)_c') + #0
-lema(ur'[Dd]iál_o_gos?_') + #1
 #lema(ur'[Dd]onar_í_an_i') + #0
-lema(ur'[Dd]r_á_stic(?:[ao]s|amente)_a') + #2
-lema(ur'[Dd]ram_á_tic(?:[ao]s|amente)_a') + #1
-lema(ur'[Dd]udar_í_a[ns]?_i') + #1
-lema(ur'[Dd]ur_an_te_na') + #3
-lema(ur'[Dd]ur_í_sim[ao]s?_i') + #2
-lema(ur'[Dd]urar_í_a[ns]?_i') + #1
-lema(ur'[Ee]__pisodios?_s') + #7
-lema(ur'[Ee]_jem_plo_njen') + #1
 #lema(ur'[Ee]_m_parejado_n') + #0
-lema(ur'[Ee]_m_perador_n') + #4
-lema(ur'[Ee]_m_pero_n') + #2
+#lema(ur'[Ee]_m_parentado_n') + #0
 #lema(ur'[Ee]_m_pieza_n') + #0
-lema(ur'[Ee]_m_plear_n') + #1
-lema(ur'[Ee]_m_presa_n') + #1
 #lema(ur'[Ee]_nvolverá_[ns]?_(?:mbolver[aá]|nbolver[aá]|nvolvera)') + #0
-lema(ur'[Ee]_s_pectador(?:es|)_x') + #4
-lema(ur'[Ee]_s_trech(?:[ao]s?|amente)_x') + #3
+#lema(ur'[Ee]_s_culturas?_') + #0
 #lema(ur'[Ee]_x_celencias?_s?') + #0
-lema(ur'[Ee]_x_pectativas?_s') + #6
 #lema(ur'[Ee]char_í_a[ns]?_i') + #0
-lema(ur'[Ee]con_ó_mic(?:[ao]s|amente)_o') + #19
+#lema(ur'[Ee]conom_é_tric(?:as|os?)_e') + #0
+#lema(ur'[Ee]fectuar_í_a[ns]?_i') + #0
+#lema(ur'[Ee]fica_c_es_s') + #0
+#lema(ur'[Ee]fica_z__s') + #0
 #lema(ur'[Ee]g_ó_latras?_o') + #0
 #lema(ur'[Ee]goc_é_ntric[ao]s?_e') + #0
-lema(ur'[Ee]j_é_rcitos_e') + #9
-lema(ur'[Ee]jerc_í_a[ns]?_i') + #3
 #lema(ur'[Ee]jercer_á_[ns]?_a') + #0
-lema(ur'[Ee]jerci_cio__o', pre=ur'[Ee]l ') + #1
-lema(ur'[Ee]l_e_gir(?:se|)_i') + #2
-lema(ur'[Ee]l_e_girá[ns]?_i') + #3
 #lema(ur'[Ee]l_i_minad[ao]s?_') + #0
-lema(ur'[Ee]lectrohidr_á_ulic[ao]s?_a') + #1
-lema(ur'[Ee]lectromagn_é_tic[ao]s?_e') + #2
-lema(ur'[Ee]legir_á_[ns]?_a') + #2
 #lema(ur'[Ee]levad_í_sim[ao]s?_i') + #0
-lema(ur'[Ee]mblem_á_tic(?:as|os?)_a') + #2
-lema(ur'[Ee]mit(?:ir|)_í_a[ns]?_i') + #4
-lema(ur'[Ee]mit_í_a[ns]?_i') + #2
-lema(ur'[Ee]mitir_á_[ns]?_a') + #4
-lema(ur'[Ee]mp_i_eza[ns]?_') + #1
-lema(ur'[Ee]mp_r_esari(?:os?|al)_') + #2
-lema(ur'[Ee]mpatar_í_a[ns]?_i') + #1
-lema(ur'[Ee]mpe_z_ar(?:on|)_s') + #1
-lema(ur'[Ee]mpe_zó__(?:s[oó]|zo)') + #16
-lema(ur'[Ee]mpezar_í_a[ns]?_i') + #2
-lema(ur'[Ee]mpie_c_e[ns]?_z') + #3
+#lema(ur'[Ee]lud(?:ir|)_í_a[ns]?_i') + #0
+#lema(ur'[Ee]m_blemá_tic[ao]s?_plem[aá]') + #0
+#lema(ur'[Ee]mpe_zarí_a[ns]?_sari') + #0
 #lema(ur'[Ee]mpie_z_a[ns]?_s') + #0
 #lema(ur'[Ee]mprend_í_a[ns]?_i') + #0
 #lema(ur'[Ee]mprender_á_[ns]?_a') + #0
-lema(ur'[Ee]mular_í_a[ns]?_i') + #2
-lema(ur'[Ee]n don_d_e_') + #1
-lema(ur'[Ee]n_é_rgic(?:[ao]s|amente)_e') + #3
 #lema(ur'[Ee]n_ó_log[ao]s?_o') + #0
 #lema(ur'[Ee]namorad_í_sim[ao]s?_i') + #0
-lema(ur'[Ee]nc_o_ntraba[ns]?_ue') + #6
+#lema(ur'[Ee]ncantar_í_a[ns]?_i') + #0
 #lema(ur'[Ee]ncargar_í_a[ns]?_i') + #0
-lema(ur'[Ee]nco_g_(?:e[nr]?|imiento|í)_j') + #1
-lema(ur'[Ee]ncont_r_ar_') + #6
-lema(ur'[Ee]ncontrar_í_a(?:[ns]?|mos)_i') + #2
+#lema(ur'[Ee]ncender_á_[ns]?_a') + #0
 #lema(ur'[Ee]ncubr(?:ir|)_í_a[ns]?_i') + #0
-lema(ur'[Ee]nfrent_á_r[mts]el[aeo]s?_a') + #1
 #lema(ur'[Ee]nfrentar_s_e(?:lo|)_c') + #0
-lema(ur'[Ee]nfrentar_í_a[ns]?_i') + #2
 #lema(ur'[Ee]ngre_í_d[ao]s?_i') + #0
 #lema(ur'[Ee]nlazar_s_e(?:lo|)_c') + #0
+#lema(ur'[Ee]nlistar_í_a[ns]?_i') + #0
 #lema(ur'[Ee]nojad_í_sim[ao]s?_i') + #0
-lema(ur'[Ee]ntalp_í_as?_i') + #2
-lema(ur'[Ee]ntend_í_(?:a[ns]?|)_i') + #1
+#lema(ur'[Ee]nseñ_á_r[mts]el[aeo]s?_a') + #0
 #lema(ur'[Ee]ntender_á_[ns]?_a') + #0
-lema(ur'[Ee]ntender_í_a(?:[ns]?|mos)_i') + #1
-lema(ur'[Ee]nto_n_ces_') + #3
 #lema(ur'[Ee]ntr_e_ (?:l[ao]s|otros)_é') + #0
 #lema(ur'[Ee]ntr_e_gad[ao]s?_a') + #0
-lema(ur'[Ee]ntr_e_vista(?:s?|d[ao]s?)_') + #2
 #lema(ur'[Ee]ntrar_í_a[ns]?_i') + #0
 #lema(ur'[Ee]ntreg_á_r[mts]el[aeo]s?_a') + #0
 #lema(ur'[Ee]ntregar_í_a[ns]?_i') + #0
-lema(ur'[Ee]nv_i_ad[ao]s?_í') + #1
-lema(ur'[Ee]nv_í_o_i', pre=ur'(?:[Dd]e|[Ee]l|[Uu]n|[Cc]ada) ') + #3
-lema(ur'[Ee]pis_o_dios?_i') + #1
-lema(ur'[Ee]pis_ó_dic[ao]s?_o') + #3
-lema(ur'[Ee]rr_ó_neamente_o') + #8
-lema(ur'[Ee]sc_é_nic[ao]s?_e') + #7
+#lema(ur'[Ee]nvi_á_r[mts]el[aeo]s?_a') + #0
 #lema(ur'[Ee]scalar_í_a[ns]?_i') + #0
 #lema(ur'[Ee]scas_í_sim[ao]s?_i') + #0
-lema(ur'[Ee]sco_g_(?:e[nr]?|erl[aeo]s?|erá|es|id[aeo]s?|iendo|ieron|imos)_j') + #4
 #lema(ur'[Ee]sco_j_a[ns]?_g') + #0
 #lema(ur'[Ee]scoger_á_[ns]?_a') + #0
-lema(ur'[Ee]scond_í_a[ns]?_i') + #1
-lema(ur'[Ee]scrib(?:ir|)_í_a[ns]?_i') + #3
-lema(ur'[Ee]scrib_í_a(?:[ns]?|mos)_i') + #2
 #lema(ur'[Ee]scribir_á_[ns]?_a') + #0
 #lema(ur'[Ee]scribir_á_[ns]?_a') + #0
-lema(ur'[Ee]sculp(?:ir|)_í_a[ns]?_i') + #1
-lema(ur'[Ee]scult_ó_ric[ao]s?_o') + #2
-lema(ur'[Ee]spec_í_fic(?:[ao]s|amente)_i') + #34
 #lema(ur'[Ee]spec_í_fica_i', pre=ur'(?:[Ee]s|[Mm][aá]s) ') + #0
-lema(ur'[Ee]spect_á_culos?_a') + #39
-lema(ur'[Ee]spont_á_ne(?:[ao]s|amente)_a') + #4
-lema(ur'[Ee]spor_á_dic(?:[ao]s|amente)_a') + #2
+#lema(ur'[Ee]specular_í_a[ns]?_i') + #0
 #lema(ur'[Ee]spor_á_dic[ao]_a') + #0
-lema(ur'[Ee]spr_í_nters?_i') + #4
-lema(ur'[Ee]squ_í__i') + #22
-lema(ur'[Ee]st_á_ndares_a') + #13
-lema(ur'[Ee]st_é__e', pre=ur'(?:[Ss]e )') + #3
-lema(ur'[Ee]st_é_tic(?:[ao]s|amente)_e') + #2
-lema(ur'[Ee]st_é_tica_e', pre=ur'(?:[Ll]a|[Uu]na|[Cc]on|[Dd]e|[Ee]n|[Mm]uy|[Ff]unción[Ff]orma|[Uu]nidad|y) ') + #2
-lema(ur'[Ee]st_ó_magos?_o') + #7
-lema(ur'[Ee]st_ú_pid(?:[ao]s?|amente)_u') + #2
-lema(ur'[Ee]stablec(?:er|)_í_a[ns]?_i') + #2
-lema(ur'[Ee]stablec_í_(?:a[ns]?|)_i') + #2
+#lema(ur'[Ee]st_á dividid_a_a divid') + #0
 #lema(ur'[Ee]stablecer_s_e(?:lo|)_c') + #0
-lema(ur'[Ee]stablecer_á_[ns]?_a') + #1
-lema(ur'[Ee]stanter_í_as?_i') + #1
-lema(ur'[Ee]star_í_a(?:[ns]?|mos)_i') + #7
 #lema(ur'[Ee]statu_i_d[Ao]s?_í') + #0
-lema(ur'[Ee]ster_e_otipos?_i') + #2
-lema(ur'[Ee]strat_é_gic(?:[ao]s|amente)_e') + #6
-lema(ur'[Ee]strat_é_gic[ao]_e') + #8
-lema(ur'[Ee]strenar_í_a[ns]?_i') + #1
-lema(ur'[Ee]stu_v_(?:[eo]|ieron|iese[ns]?|iera[ns]?)_b') + #6
-lema(ur'[Ee]val_ú_(?:a[ns]?|e[ns]?)_u') + #5
-lema(ur'[Ee]x_c_elentes?_') + #2
-lema(ur'[Ee]x_c_ept(?:o|uar)_') + #2
-lema(ur'[Ee]x_clui_d[ao]s?_luí') + #2
-lema(ur'[Ee]x_h_aust[ao]s?_') + #2
-lema(ur'[Ee]x_á_menes_a') + #3
-lema(ur'[Ee]xced_í_a[ns]?_i') + #1
-lema(ur'[Ee]xcelent_í_sim[ao]s?_i') + #10
-lema(ur'[Ee]xcept_ú_(?:a[ns]?|e[ns]?)_u') + #1
-lema(ur'[Ee]xclu_i_d[ao]s?_í') + #34
+#lema(ur'[Ee]stuv_o__ó') + #0
+#lema(ur'[Ee]timol_ó_gic(?:[ao]s|amente)_o') + #0
+#lema(ur'[Ee]vitar_í_a[ns]?_i') + #0
 #lema(ur'[Ee]xclu_i_r(?:l[aeo]s?|se|)_í') + #0
-lema(ur'[Ee]xi__tos[ao]s?_s') + #1
 #lema(ur'[Ee]xig_í_a[ns]?_i') + #0
-lema(ur'[Ee]xigir_á_[ns]?_a') + #1
-lema(ur'[Ee]xist_í_a[ns]?_i') + #11
+#lema(ur'[Ee]xig_í_r[mts]el[aeo]s?_i') + #0
 #lema(ur'[Ee]xistir_á_[ns]?_a') + #0
-lema(ur'[Ee]xit_o_s(?:[ao]s?|amente)_ó') + #8
 #lema(ur'[Ee]xitos_í_sim[ao]s?_i') + #0
 #lema(ur'[Ee]xpand(?:ir|)_í_a[ns]?_i') + #0
-lema(ur'[Ee]xpel_í_a[ns]?_i') + #1
-lema(ur'[Ee]xpl_í_cit(?:[ao]s|amente)_i') + #8
-lema(ur'[Ee]xplicar_í_a[ns]?_i') + #1
-lema(ur'[Ee]xpondr_á_[ns]?_a') + #1
-lema(ur'[Ee]xt__endió_i') + #2
-lema(ur'[Ee]xten_sio_nes_ci[oó]') + #2
-lema(ur'[Ee]xtend_í_(?:a[ns]?|)_i') + #1
+#lema(ur'[Ee]xplorar_í_a[ns]?_i') + #0
 #lema(ur'[Ee]xtender_á_[ns]?_a') + #0
 #lema(ur'[Ee]xtender_í_a[ns]?_i') + #0
 #lema(ur'[Ee]xtens_í_sim[ao]s?_i') + #0
-lema(ur'[Ee]xtin__tos?_c') + #2
-lema(ur'[Ee]xtra_í_(?:a[ns]?|d[ao]s?)_i') + #80
-lema(ur'[Ee]xtra_í_d[ao]s?_i') + #80
-lema(ur'[Ee]xtra_ñ_[ao]_n') + #1
+#lema(ur'[Ee]xtra_ñ_(?:[ao]s|amente)_n') + #0
 #lema(ur'[Ee]xtrater_r_estres?_') + #0
 #lema(ur'[Ee]xtru_i_d[ao]s?_í') + #0
 #lema(ur'[Ff]_r_ustrad[ao]s?_') + #0
-lema(ur'[Ff]_u_tbolistas?_ú') + #14
-lema(ur'[Ff]_á_cil(?:mente|)_a') + #33
-lema(ur'[Ff]_í_sicamente(?! esposta)_i') + #5
-lema(ur'[Ff]_ó_lic[ao]s?_o') + #1
-lema(ur'[Ff]acilitar_í_a[ns]?_i') + #1
 #lema(ur'[Ff]allar_í_a[ns]?_i') + #0
 #lema(ur'[Ff]allecer_á_[ns]?_a') + #0
 #lema(ur'[Ff]als_í_sim[ao]s?_i') + #0
 #lema(ur'[Ff]amos_í_sim[ao]s?_i') + #0
 #lema(ur'[Ff]avorecer_á_[ns]?_a') + #0
-lema(ur'[Ff]eligres_í_as?_i') + #4
-lema(ur'[Ff]en_ó_menos_o') + #4
-lema(ur'[Ff]erreter_í_as?_i') + #7
-lema(ur'[Ff]ichar_í_a[ns]?_i') + #1
-lema(ur'[Ff]idel_í_sim[ao]s?_i') + #1
-lema(ur'[Ff]il_á_ntropos?_a') + #3
+#lema(ur'[Ff]ijar_í_a[ns]?_i') + #0
 #lema(ur'[Ff]ilmar_í_a[ns]?_i') + #0
-lema(ur'[Ff]ilmograf_í_as?_i') + #39
 #lema(ur'[Ff]ilud_í_sim[ao]s?_i') + #0
 #lema(ur'[Ff]in_í_sim[ao]s?_i') + #0
-lema(ur'[Ff]inal_í_sim[ao]s?_i') + #1
-lema(ur'[Ff]inalizar_í_a[ns]?_i') + #1
 #lema(ur'[Ff]ing_í_a[ns]?_i') + #0
-lema(ur'[Ff]irmar_í_a[ns]?_i') + #1
-lema(ur'[Ff]lorecer_á_[ns]?_a') + #1
-lema(ur'[Ff]lu_i_d[ao]s?_í') + #6
-lema(ur'[Ff]luct_ú_(?:a[ns]?|e[ns]?)_u') + #3
-lema(ur'[Ff]olcl_ó_ric[ao]s?_o') + #16
+#lema(ur'[Ff]lu_i_r(?:l[aeo]s?|se|)_í') + #0
 #lema(ur'[Ff]ora_j_id[ao]s?_g') + #0
-lema(ur'[Ff]ormar_í_a[ns]?_i') + #3
 #lema(ur'[Ff]ort_í_sim[ao]s?_i') + #0
 #lema(ur'[Ff]ot_ó_graf[ao]s?_') + #0
-lema(ur'[Ff]rigor_í_fic[ao]s?_i') + #5
-lema(ur'[Ff]ruter_í_as?_i') + #1
-lema(ur'[Ff]u_s_i(?:ón|ones|onó|ona[ns]?)_c') + #2
-lema(ur'[Ff]ue_r_zas?_') + #6
 #lema(ur'[Ff]uer_o_n_ó') + #0
-lema(ur'[Ff]unda__d[ao]s?_da') + #1
 #lema(ur'[Ff]undar_í_a[ns]?_i') + #0
-lema(ur'[Ff]utbol_í_stic(?:[ao]s|amente)_i') + #4
-lema(ur'[Ff]utbol_í_stic[ao]_i') + #15
+#lema(ur'[Ff]usionar_í_a[ns]?_i') + #0
 #lema(ur'[Gg]_é_rmenes_e') + #0
-lema(ur'[Gg]anader_í_a_i') + #15
-lema(ur'[Gg]anar_í_a[ns]?_i') + #1
+#lema(ur'[Gg]an_á_r[mts]el[aeo]s?_a') + #0
 #lema(ur'[Gg]en_é_ric(?:[ao]s|amente)_e') + #0
-lema(ur'[Gg]en_é_tic[ao]s_e') + #1
 #lema(ur'[Gg]en_é_ticamente(?! modificato)_e') + #0
-lema(ur'[Gg]eneral_í_sim[ao]s?_i') + #20
 #lema(ur'[Gg]enial_í_sim[ao]s?_i') + #0
-lema(ur'[Gg]eod_é_sic[ao]s?_e') + #1
-lema(ur'[Gg]eogr_á_fic(?:[ao]s|amente)_a') + #8
-lema(ur'[Gg]erontolog_í_as?_i') + #1
-lema(ur'[Gg]inecolog_í_as?(?! (?:Ospedalieri|e (?:Ostetricia|Obstétrícia)))_i') + #8
+#lema(ur'[Gg]erontolog_í_as?_i') + #0
 #lema(ur'[Gg]olear_í_a[ns]?_i') + #0
-lema(ur'[Gg]rad_ú_(?:a[ns]|e[ns]?)_u') + #3
 #lema(ur'[Gg]raduar_s_e(?:lo|)_c') + #0
-lema(ur'[Gg]ran_ _partido_') + #1
 #lema(ur'[Gg]rav_í_sim[ao]s?_i') + #0
-lema(ur'[Gg]rupo_s__', pre=ur'[Ll]os ') + #23
-lema(ur'[Gg]u_i_ad[ao]s?_í') + #1
 #lema(ur'[Gg]uap_í_sim[ao]s?_i') + #0
-lema(ur'[Gg]uarder_í_as?_i') + #3
-lema(ur'[Gg]uitar_r_as?_') + #4
-lema(ur'[Gg]ustar_í_a[ns]?_i') + #3
-lema(ur'[Hh]_á_bil(?:es|mente)_a') + #5
 #lema(ur'[Hh]_á_bil_a', pre=ur'(?:[Ee]s|[Ee]ra|[Ff]ue) ') + #0
-lema(ur'[Hh]_í_gados?_i') + #9
-lema(ur'[Hh]_ú_med[ao]s?_u') + #18
-lema(ur'[Hh]a_ll_(?:adas|ados?|ando|arse|éis)_y') + #1
 #lema(ur'[Hh]ab_ié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_íe') + #0
-lema(ur'[Hh]ab_é_r[mts]el[aeo]s?_e') + #1
-lema(ur'[Hh]ab_í_a(?:n|mos)_i') + #36
 #lema(ur'[Hh]aber_s_e(?:lo|)_c') + #0
-lema(ur'[Hh]abr_í_as?_i') + #10
+#lema(ur'[Hh]ablar_í_a[ns]?_i') + #0
 #lema(ur'[Hh]ac_ié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_íe') + #0
-lema(ur'[Hh]acer_s_e(?:lo|)_c') + #4
 #lema(ur'[Hh]allar_í_a(?:[ns]?|mos)_i') + #0
-lema(ur'[Hh]ect_á_reas?_a') + #7
-lema(ur'[Hh]elic_ó_pteros?_o') + #27
-lema(ur'[Hh]eredit_a_ri[ao]s?_á') + #16
-lema(ur'[Hh]ermos_í_sim[ao]s?_i') + #1
-lema(ur'[Hh]eterog_é_ne[ao]s?_e') + #3
 #lema(ur'[Hh]ialur_ó_nic[ao]s?_o') + #0
 #lema(ur'[Hh]ic_i_eron_') + #0
-lema(ur'[Hh]idr_á_ulic[ao]s?_a') + #7
-lema(ur'[Hh]idr_ó_genos?_o') + #11
-lema(ur'[Hh]idroel_é_ctric[ao]s?_e') + #11
-lema(ur'[Hh]idrogr_á_fic[ao]s?_a') + #17
-lema(ur'[Hh]idrograf_í_as?_i') + #50
-lema(ur'[Hh]ig_ié_nic[ao]s?_(?:ie|[eé])') + #3
-lema(ur'[Hh]iper_ví_nculos?_(?: v[ií]|vi)') + #1
 #lema(ur'[Hh]ipn_ó_tic[ao]s?_o') + #0
-lema(ur'[Hh]ipod_é_rmic[ao]s?_e') + #1
-lema(ur'[Hh]ipot_é_tic[ao]s?_e') + #2
 #lema(ur'[Hh]ispa_noamé_rica_(?:noam|oamé|ñoamé)') + #0
-lema(ur'[Hh]istolog_í_as?_i') + #7
-lema(ur'[Hh]o_mó_nim[ao]s?_(?:mo|n[oó])') + #4
 #lema(ur'[Hh]oland_e_s[ae]s_é') + #0
-lema(ur'[Hh]ologr_á_fic[ao]s?_a') + #3
-lema(ur'[Hh]om_ó_nim[ao]s?_o') + #3
 #lema(ur'[Hh]onr__os[ao]s?_r') + #0
-lema(ur'[Hh]onrar_í_a[ns]?_i') + #2
-lema(ur'[Hh]or_ó_scopos?_o') + #2
-lema(ur'[Hh]u_i_(?:r(?:l[aeo]s?|se|)|d[ao]s?)_í') + #32
-lema(ur'[Hh]u_i_d[ao]s?_í') + #30
-lema(ur'[Hh]umor_í_stic(?:[ao]s|amente)_i') + #1
 #lema(ur'[Hh]umor_í_stic[ao]_i') + #0
 #lema(ur'[Hh]umor_í_stic[ao]s?_') + #0
 #lema(ur'[Hh]und(?:ir|)_í_a[ns]?_i') + #0
 #lema(ur'[Hh]urac_a_nes_á') + #0
+#lema(ur'[Ii]_m_pacto_n') + #0
 #lema(ur'[Ii]_m_perceptible_n') + #0
 #lema(ur'[Ii]_m_perfecto_n') + #0
-lema(ur'[Ii]_m_pertinencia_n') + #1
+#lema(ur'[Ii]_m_plantación_n') + #0
 #lema(ur'[Ii]_m_plementaron_n') + #0
+#lema(ur'[Ii]_m_plica_n') + #0
 #lema(ur'[Ii]_m_popular_n') + #0
-lema(ur'[Ii]_m_portando_n') + #2
+#lema(ur'[Ii]_m_popularidad_n') + #0
 #lema(ur'[Ii]_m_portantes_n') + #0
-lema(ur'[Ii]_m_pulso_n') + #1
-lema(ur'[Ii]_mpresió_n_(?:npre[sc]i[oó]|mpreci[oó]|mpresio)') + #8
-lema(ur'[Ii]_n_mortal(?:es|idad)_m') + #3
-lema(ur'[Ii]deol_ó_gic(?:[ao]s|amente)_o') + #4
+#lema(ur'[Ii]_m_prescindible_n') + #0
+#lema(ur'[Ii]_m_previsto_n') + #0
+#lema(ur'[Ii]_m_pulsó_n') + #0
+#lema(ur'[Ii]_nclui_d[ao]s?_cluí') + #0
 #lema(ur'[Ii]diom_á_tic[ao]s?_') + #0
-lema(ur'[Ii]leg_í_tim(?:as?|os?|amente)_i') + #12
-lema(ur'[Ii]lustr_í_sim[ao]s?_i') + #5
-lema(ur'[Ii]m_a_gen_á') + #38
-lema(ur'[Ii]m_portan_tes?_(?:ortan|porta)') + #1
-lema(ur'[Ii]mbu_i_d[Ao]s?_í') + #1
+#lema(ur'[Ii]gualar_í_a[ns]?_i') + #0
 #lema(ur'[Ii]mp_idié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_edie') + #0
 #lema(ur'[Ii]mpedir_á_[ns]?_a') + #0
-lema(ur'[Ii]mperar_í_a[ns]?_i') + #1
-lema(ur'[Ii]mpl_í_cit(?:[ao]s|amente)_i') + #1
 #lema(ur'[Ii]mplicar_í_a[ns]?_i') + #0
 #lema(ur'[Ii]mpondr_á_[ns]?_a') + #0
 #lema(ur'[Ii]mportant_í_sim[ao]s?_i') + #0
 #lema(ur'[Ii]mportar_í_a[ns]?_i') + #0
 #lema(ur'[Ii]mprim(?:ir|)_í_a[ns]?_i') + #0
-lema(ur'[Ii]n_clui_d[ao]s?_luí') + #2
-lema(ur'[Ii]n_i_cia(?:[rlns]|les|tivas?|lmente|ría[ns]?|ron|ndo|d[ao]s?|ción|ciones|)_') + #56
-lema(ur'[Ii]n_j_erencias?_g') + #3
+#lema(ur'[Ii]mprimir_á_[ns]?_a') + #0
+#lema(ur'[Ii]n_s_pector_') + #0
 #lema(ur'[Ii]n_s_pirado_') + #0
-lema(ur'[Ii]n_s_talaci(?:ón|ones)_') + #1
 #lema(ur'[Ii]n_s_tancias?_') + #0
-lema(ur'[Ii]n_s_titu(?:ye|y[oó]|ción|ciones|id[ao]s?)_') + #1
 #lema(ur'[Ii]n_struccio_nes_s?trucció') + #0
-lema(ur'[Ii]nal_á_mbric[ao]s?_a') + #3
-lema(ur'[Ii]nclu_i_d[ao]s?_í') + #105
-lema(ur'[Ii]nclu_i_r(?:l[aeo]s?|se|)_í') + #1
+#lema(ur'[Ii]ncendiar_í_an_i') + #0
 #lema(ur'[Ii]nclu_i_r_í') + #0
 #lema(ur'[Ii]nclu_i_ría[ns]?_í') + #0
-lema(ur'[Ii]nclu_í_a[ns]?_i') + #23
-lema(ur'[Ii]ncluir_á_[ns]?_a') + #1
+#lema(ur'[Ii]nclu_irá_[ns]?_íra') + #0
+#lema(ur'[Ii]nclu_irí_a[ns]?_íri') + #0
 #lema(ur'[Ii]ncluir_í_a[ns]?_i') + #0
-lema(ur'[Ii]ncon_s_ciencias?_') + #4
-lema(ur'[Ii]ncon_s_cientes?_') + #4
-lema(ur'[Ii]ncon_sc_ientes?_[sc]') + #6
 #lema(ur'[Ii]ncorporar_s_e(?:lo|)_c') + #0
-lema(ur'[Ii]ncre_í_ble(?:s|mente)_i') + #13
-lema(ur'[Ii]ncre_í_blemente_i') + #3
-lema(ur'[Ii]nde__pendencia_n') + #1
-lema(ur'[Ii]ndepend__encias?_i') + #1
-lema(ur'[Ii]ndic_ó_ que_o') + #3
+#lema(ur'[Ii]ncrementar_í_a[ns]?_i') + #0
+#lema(ur'[Ii]ndicar_í_a[ns]_i') + #0
 #lema(ur'[Ii]ndivid_u_os_') + #0
-lema(ur'[Ii]nequ_í_voc(?:[ao]s|amente)_i') + #1
-lema(ur'[Ii]nflu_i_dos?_í') + #3
+#lema(ur'[Ii]nflu_i_r(?:l[aeo]s?|se|)_í') + #0
 #lema(ur'[Ii]nfluir_á_[ns]?_a') + #0
-lema(ur'[Ii]nform_á_ticos?(?!\.com)_a') + #6
 #lema(ur'[Ii]nfrac_c_ión_') + #0
-lema(ur'[Ii]ngen_i_erías?_') + #4
-lema(ur'[Ii]ngresar_í_a[ns]?_i') + #1
-lema(ur'[Ii]nic_i_ativas?_') + #1
 #lema(ur'[Ii]nmiscu_i_d[ao]s?_í') + #0
-lema(ur'[Ii]nmo_v_iliz(?:[oó]|a(?:r?|r(?:l[aeo]s?|nos?)|d[ao]s?|ndo|ción|dor))_b') + #2
 #lema(ur'[Ii]nscrib(?:ir|)_í_a[ns]?_i') + #0
-lema(ur'[Ii]nsin_ú_(?:a[ns]?|e[ns]?)_u') + #2
+#lema(ur'[Ii]nsect_ó_log[ao]s?_o') + #0
+#lema(ur'[Ii]nsinu_á_r[mts]el[aeo]s?_a') + #0
 #lema(ur'[Ii]nsist(?:ir|)_í_a[ns]?_i') + #0
 #lema(ur'[Ii]nspirad_í_sim[ao]s?_i') + #0
 #lema(ur'[Ii]nspirar_í_a[ns]?_i') + #0
-lema(ur'[Ii]nstant_á_ne(?:[ao]s|amente)_a') + #2
-lema(ur'[Ii]nstant_á_ne[ao]_a') + #5
-lema(ur'[Ii]nstitu_i_d[ao]s?_í') + #8
-lema(ur'[Ii]nstru_i_d[ao]s?_í') + #12
-lema(ur'[Ii]nt_er_pretad[ao]s?_re') + #1
-lema(ur'[Ii]nt_é_rpretes_e', pre=ur'(?:[AaEe]l|[Uu]na?|[Ll][ao]s|[Pp]or|[Vv]ari[ao]s|[Ff]amos[ao]s?|[Aa]rtistas?|[Dd]estacad[ao]s?|[Oo]tr[ao]s?|[Mm]ejor(?:es|)|[Ee]st[ao]s?|[Mm]uch[ao]s?|[Cc]uy[ao]s?|[Aa]lgun[ao]s|[Aa]lgún|[Aa]lguna|[Cc]onocid[ao]s?|[Ss]us?|[0-9]+|[Pp]rimer|[Gg]ran|[Cc]on) ') + #6
+#lema(ur'[Ii]nstalar_í_a[ns]?_i') + #0
+#lema(ur'[Ii]nstitu_i_r(?:l[aeo]s?|se|)_í') + #0
 #lema(ur'[Ii]nte__grad[ao]s?_n') + #0
 #lema(ur'[Ii]nte_r_pret[oó]_') + #0
-lema(ur'[Ii]nte_r_preta[ns]?_') + #2
 #lema(ur'[Ii]nte_r_pretaba[ns]?_') + #0
 #lema(ur'[Ii]nte_r_pretaciones_') + #0
-lema(ur'[Ii]nte_r_pretación_') + #3
-lema(ur'[Ii]nte_r_pretad[ao]s?_') + #7
-lema(ur'[Ii]nte_r_pretando_') + #1
-lema(ur'[Ii]nte_r_pretar(?:l[ao]s?|se|[aá]|ía[ns]?|ron|)_') + #2
 #lema(ur'[Ii]nteligent_í_sim[ao]s?_i') + #0
 #lema(ur'[Ii]nteresar_í_a[ns]?_i') + #0
-lema(ur'[Ii]nterp_r_et(?:es?|ad[ao]s?)_') + #2
+#lema(ur'[Ii]nterrump(?:ir|)_í_a[ns]?_i') + #0
 #lema(ur'[Ii]ntervendr_á_[ns]?_a') + #0
 #lema(ur'[Ii]ntroducir_á_[ns]?_a') + #0
 #lema(ur'[Ii]ntu_i_d[ao]s?_í') + #0
-lema(ur'[Ii]nvad(?:ir|)_í_a[ns]?_i') + #3
-lema(ur'[Ii]nven_c_ibles?_s') + #1
-lema(ur'[Ii]nvertir_á_[ns]?_a') + #1
 #lema(ur'[Ii]nvestigaci_ón|investigaciones]]__[óo]n\]\]es') + #0
-lema(ur'[Ii]nvolucrar_í_a[ns]?_i') + #1
-lema(ur'[Ii]r_ó_nic(?:[ao]s|amente)_o') + #2
-lema(ur'[Jj]_o_ven_ó') + #28
-lema(ur'[Jj]_ó_venes_o') + #80
-lema(ur'[Jj]ap_oné_s_óne') + #4
-lema(ur'[Jj]ard_í_n [Bb]otánico_i') + #6
-lema(ur'[Jj]esu_í_tic[ao]s?_i') + #6
 #lema(ur'[Jj]ovenc_í_sim[ao]s?_i') + #0
-lema(ur'[Jj]oyer_í_as?_i') + #1
-lema(ur'[Jj]uda_í_smo_i') + #21
 #lema(ur'[Jj]ueg_u_e[ns]?_') + #0
-lema(ur'[Jj]ugar_í_a[ns]?_i') + #8
-lema(ur'[Jj]ur_í_dic(?:os|amente)_i') + #3
-lema(ur'[Jj]ur_í_dicas(?!\.(?:com|unam\.mx))_i') + #5
-lema(ur'[Ll]_a_ (?:2a|BBC|Bandera|CIA|Ciudad|Confitería|Copa|Cumbre|Escuela|España|Familia|Fuerza|Isla|MLB|Mancomunidad|Nueva|Parada|Plaza|República|SFP|Sección|Serie|Siderurgia|Sinfónica|Soledad|UEFA|accesibilidad|amplitud|base|bebida|caja|ciudad|compositora|compra|corporación|delincuencia|derecha|derrota|designación|dificultad|discográfica|década|escuela|etiqueta|familia|fecha|formación|fuente|historia|iglesia|imagen|isla|justicia|medicina|más segura|música|normalización|nueva|oposición|organización|otra|pantalla|película|población|poesía|posibilidad|presidenta|primera|producción|promoción|provincia|prueba|psiquiatría|región|reina|revista|secuela|serranía|señorita|situación|sociedad|séptima|virgen|zona|única)_s') + #3
-lema(ur'[Ll]_a_s (?:Marquesas|Reducciones|SS|Sombras|\(muchas|arcadas|batallas|características|casas|charofitas|ciudades|colecciones|costas|críticas|dehesas|diferencias|doctrinas|dos puertas|entonces todopoderosa|escenas|especies|espiguillas|esporas|faldas|flores|fronteras|frutas|fuentes|fuerzas|hembras|hojas|indicaciones|inflorescencias|iniciales|inmunoglobulinas|islas|lenguas|lesbianas|leyes|listas|manchas|masas|mayores|mesas|mezquitas|misiones|mulas|negociaciones|normas|novelizaciones|nubes|nuevas|obras|orillas|películas|personas|posesiones|prematuras|prescriptivas|primeras|proximas|proximidades|puntas|raíces|regiones|respuestas|semifinales|sierras|siguientes|tierras|torturas|traducciones|ubicaciones|víctimas|yemas|zonas|órdenes)_') + #4
-lema(ur'[Ll]_o_s (?:Agustinos|Caballeros|EE\.UU\.|Llanos|Mártires|Play offs|Reyes|Vertebrados|acompañantes|albores|ascensores|aumentos|años|barrios|bordes|casos|cetáceos|chicos|compañeros|críticos|cupones|cursos|descendientes|dialectos|enviados|episodios|extremos|ganadores|gemelos|grupos|hechiceros|hermanos|hijos|ingenieros|integrantes|intérpretes|investigadores|juegos|lados|lusitanos|machos|memorandos|monos|muchos|muertos|musicales|municipios|negativos|niños|nuevos|ojos|otros|parches|primeros|problemas|programas|pueblos|rebeldes|republicanos|restos|ríos|sacerdotes|seres|siete minutos|siglos|singles|sostenedores|temas|trabajos|trabajadores|tricomas|troncos|viejos)_') + #8
-lema(ur'[Ll]_á_piz_a') + #10
-lema(ur'[Ll]_í_deres_i') + #64
-lema(ur'[Ll]_í_quenes_i') + #2
-lema(ur'[Ll]a n_ó_mina(?! (?:di|al|a la|dubia|en|con))_o') + #4
+#lema(ur'[Jj]ug_á_r[mts]el[aeo]s?_a') + #0
 #lema(ur'[Ll]a_ _misma_') + #0
 #lema(ur'[Ll]a_s_ [aá]reas_') + #0
-lema(ur'[Ll]a_s_ acciones_') + #1
-lema(ur'[Ll]a_s_ actividades_') + #5
-lema(ur'[Ll]a_s_ afueras_') + #5
-lema(ur'[Ll]a_s_ autoridades_') + #2
-lema(ur'[Ll]a_s_ bandas_') + #1
-lema(ur'[Ll]a_s_ bases_') + #6
-lema(ur'[Ll]a_s_ calles_') + #11
-lema(ur'[Ll]a_s_ canciones_') + #4
 #lema(ur'[Ll]a_s_ caracter[ií]sticas_') + #0
 #lema(ur'[Ll]a_s_ cercanías_') + #0
-lema(ur'[Ll]a_s_ ciencias_') + #3
-lema(ur'[Ll]a_s_ ciudades_') + #16
 #lema(ur'[Ll]a_s_ compañ[ií]as_') + #0
 #lema(ur'[Ll]a_s_ comunidades_') + #0
-lema(ur'[Ll]a_s_ condiciones_') + #8
-lema(ur'[Ll]a_s_ costas_') + #8
-lema(ur'[Ll]a_s_ cuales_') + #14
-lema(ur'[Ll]a_s_ células_') + #4
-lema(ur'[Ll]a_s_ diferencias_') + #3
-lema(ur'[Ll]a_s_ diferentes_') + #2
 #lema(ur'[Ll]a_s_ distintas_') + #0
-lema(ur'[Ll]a_s_ divisiones_') + #6
-lema(ur'[Ll]a_s_ décadas_') + #3
-lema(ur'[Ll]a_s_ elecciones_') + #16
-lema(ur'[Ll]a_s_ empresas_') + #5
-lema(ur'[Ll]a_s_ especies_') + #7
-lema(ur'[Ll]a_s_ estaciones_') + #5
-lema(ur'[Ll]a_s_ estructuras_') + #3
-lema(ur'[Ll]a_s_ familias_') + #5
-lema(ur'[Ll]a_s_ fechas_') + #9
-lema(ur'[Ll]a_s_ fiestas_') + #6
-lema(ur'[Ll]a_s_ figuras_') + #2
-lema(ur'[Ll]a_s_ filas_') + #4
-lema(ur'[Ll]a_s_ formas_') + #2
-lema(ur'[Ll]a_s_ fuerzas_') + #15
-lema(ur'[Ll]a_s_ funciones_') + #5
-lema(ur'[Ll]a_s_ grandes_') + #28
-lema(ur'[Ll]a_s_ ideas_') + #6
-lema(ur'[Ll]a_s_ iglesias_') + #3
 #lema(ur'[Ll]a_s_ im[aá]genes_') + #0
 #lema(ur'[Ll]a_s_ industrias_') + #0
-lema(ur'[Ll]a_s_ inmediaciones_') + #4
-lema(ur'[Ll]a_s_ islas_') + #27
-lema(ur'[Ll]a_s_ lenguas_') + #5
-lema(ur'[Ll]a_s_ letras_') + #7
-lema(ur'[Ll]a_s_ leyes_') + #8
-lema(ur'[Ll]a_s_ listas_') + #8
-lema(ur'[Ll]a_s_ localidades_') + #4
-lema(ur'[Ll]a_s_ líneas_') + #9
-lema(ur'[Ll]a_s_ manos_') + #6
-lema(ur'[Ll]a_s_ mejores_') + #1
 #lema(ur'[Ll]a_s_ minas_') + #0
-lema(ur'[Ll]a_s_ mismas_') + #2
-lema(ur'[Ll]a_s_ montañas_') + #2
-lema(ur'[Ll]a_s_ mujeres_') + #9
-lema(ur'[Ll]a_s_ nuevas_') + #3
-lema(ur'[Ll]a_s_ obras_') + #21
-lema(ur'[Ll]a_s_ orillas_') + #2
-lema(ur'[Ll]a_s_ otras_') + #6
-lema(ur'[Ll]a_s_ palabras_') + #11
-lema(ur'[Ll]a_s_ partes_') + #6
 #lema(ur'[Ll]a_s_ pel[ií]culas_') + #0
-lema(ur'[Ll]a_s_ personas_') + #12
-lema(ur'[Ll]a_s_ plantas_') + #4
-lema(ur'[Ll]a_s_ poblaciones_') + #5
-lema(ur'[Ll]a_s_ posibilidades_') + #3
-lema(ur'[Ll]a_s_ posiciones_') + #4
-lema(ur'[Ll]a_s_ primeras_') + #12
-lema(ur'[Ll]a_s_ principales_') + #9
-lema(ur'[Ll]a_s_ provincias_') + #13
-lema(ur'[Ll]a_s_ redes_') + #2
-lema(ur'[Ll]a_s_ regiones_') + #7
-lema(ur'[Ll]a_s_ relaciones_') + #9
-lema(ur'[Ll]a_s_ revistas_') + #2
-lema(ur'[Ll]a_s_ ruinas_') + #3
-lema(ur'[Ll]a_s_ rutas_') + #1
-lema(ur'[Ll]a_s_ semifinales_') + #7
-lema(ur'[Ll]a_s_ series_') + #8
-lema(ur'[Ll]a_s_ sierras_') + #2
-lema(ur'[Ll]a_s_ siguientes_') + #10
-lema(ur'[Ll]a_s_ sociedades_') + #1
-lema(ur'[Ll]a_s_ temporadas_') + #4
 #lema(ur'[Ll]a_s_ teor[ií]as_') + #0
-lema(ur'[Ll]a_s_ tierras_') + #1
-lema(ur'[Ll]a_s_ tropas_') + #2
-lema(ur'[Ll]a_s_ unidades_') + #3
-lema(ur'[Ll]a_s_ universidades_') + #4
-lema(ur'[Ll]a_s_ ventas_') + #1
-lema(ur'[Ll]a_s_ vías_') + #2
-lema(ur'[Ll]a_s_ últimas_') + #6
-lema(ur'[Ll]anzar_í_a[ns]?_i') + #3
+#lema(ur'[Ll]am_ié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_bie') + #0
 #lema(ur'[Ll]argu_í_sim[ao]s?_i') + #0
 #lema(ur'[Ll]as [uú]ltima_s__') + #0
-lema(ur'[Ll]eg_í_tim(?:as|os|amente)_i') + #8
-lema(ur'[Ll]encer_í_as?_i') + #2
-lema(ur'[Ll]exicolog_í_as?_i') + #2
+#lema(ur'[Ll]evar_í_a[ns]?_i') + #0
 #lema(ur'[Ll]iger_í_sim[ao]s?_i') + #0
-lema(ur'[Ll]inf_á_tic[ao]s?_a') + #2
-lema(ur'[Ll]lam_a_d[ao]s?_') + #9
 #lema(ur'[Ll]lamar_s_e(?:lo|)_c') + #0
-lema(ur'[Ll]lamar_í_a(?:[ns]?|mos)_i') + #1
-lema(ur'[Ll]legar_í_a[ns]?_i') + #4
 #lema(ur'[Ll]len_í_sim[ao]s?_i') + #0
+#lema(ur'[Ll]lenar_í_a[ns]?_i') + #0
 #lema(ur'[Ll]lev_á_r[mts]el[aeo]s?_a') + #0
-lema(ur'[Ll]leva(rá|) a_ _cabo_') + #4
-lema(ur'[Ll]levar_í_a[ns]?_i') + #2
 #lema(ur'[Ll]ocalizar_s_e(?:lo|)_c') + #0
-lema(ur'[Ll]ograr_í_a[ns]?_i') + #2
+#lema(ur'[Ll]ogar_í_tmic[ao]s?_i') + #0
 #lema(ur'[Ll]uchar_í_a[ns]?_i') + #0
-lema(ur'[Mm]_u_sical_ú') + #23
-lema(ur'[Mm]_u_sicales_ú') + #3
-lema(ur'[Mm]_utua_mente_(?:útual?|utual)') + #9
-lema(ur'[Mm]_á_gic(?:[ao]s|amente)_a') + #11
-lema(ur'[Mm]_á_nager_a', pre=ur'(?:[Ee]l|[Dd]el?|[Ll]a|[Uu]n|[Ss]u|nuevo|antiguo|anterior|próximo) ') + #92
-lema(ur'[Mm]_á_rgenes_a') + #3
-lema(ur'[Mm]_á_s (?:accesible|agradable|alegre|amigable|artículo|asistencia|ataque|casilla|célebre|cosa|década|dominante|edificio|ejemplo|emocionante|estable|experiencia|fecha|fiable|fuerte|grande|hilarante|humilde|ilustre|importante|impresionante|minimalista|minutos|muerte|noble|noche|palabra|película|pista|problema|prueba|realista|reciente|resaltante|resistencia|salvaje|sociable|suave|tarde|temporada|vía|victoria|visible|visita|vuelta|vulnerable)s?\b_a') + #406
-lema(ur'[Mm]_á_s (?:actual|afinidad|calor|espectacular|fértil|gol|letal|posibilidad|principal|real|regular|septentrional|usual)(?:es|)\b_a') + #45
-lema(ur'[Mm]_á_s (?:adelante|atrás|dos)\b_a') + #30
-lema(ur'[Mm]_á_s (?:alt|amarg|amig|citad|competitiv|desconocid|distintiv|envejecid|equilibrad|ergonómic|insegur|lujos|notad|óptim|pequeñ|poblad|prolífic|rocker|select|sosegad|vendid|veteran|vigoros|violent|viv)[ao]s?\b_a') + #154
-lema(ur'[Mm]_á_s (?:cambi|campeonat|dat|equip|fot|minut|reconocimient|refuerz|sencill|tir|trabaj|títul)os?\b_a') + #31
-lema(ur'[Mm]_á_scaras?_a', pre=ur'(?:[Ll]as?|[Uu]nas?|[Ss]us?) ') + #73
-lema(ur'[Mm]_ás allá__(?:as all[aá]|ás alla)') + #19
-lema(ur'[Mm]_é_dicos_e', pre=ur'(?:[Ll]os|[Ss]us|[Uu]nos) ') + #3
-lema(ur'[Mm]_é_todos_e') + #14
-lema(ur'[Mm]_éto_dos?_etó') + #1
 #lema(ur'[Mm]_í_nimamente_i') + #0
-lema(ur'[Mm]_ú_ltiple (?:accidente|álbumes|asesinato|cambio|campeón|con|de |instrumentos|interpretación|mediante|ocasiones|por|productores|que|significa|variantes|vol[uú]menes|y )_u') + #1
-lema(ur'[Mm]_ú_ltiples?_u', pre=ur'\b(?:Monitores|en|por|creado|normales|reclutando|[Cc]opias| de|Tiene|esclerosis|[Ee]lectrica) ', xpre=[ur'Pénétrations ']) + #10
-lema(ur'[Mm]a_m_posteros_n') + #1
-lema(ur'[Mm]a_m_postería_n') + #4
-lema(ur'[Mm]a_mposterí_a_nposteri') + #1
-lema(ur'[Mm]aci_z_os?_c') + #1
+#lema(ur'[Mm]a_m_posteados_n') + #0
 #lema(ur'[Mm]acrosc_ó_pic[ao]s?_o') + #0
-lema(ur'[Mm]agn_í_fica_i', pre=ur'(?:una (?:banda|vista|forma|defensa natural|escritora)| (?:durante|a) la|de forma|sólida y) ') + #1
 #lema(ur'[Mm]al_í_sim[ao]s?_i') + #0
-lema(ur'[Mm]am_í_fer[ao]s?_i') + #14
-lema(ur'[Mm]anten_í_a[ns]?_i') + #3
-lema(ur'[Mm]antendr_á_[ns]?_a') + #3
-lema(ur'[Mm]antendr_í_a[ns]?_i') + #2
+#lema(ur'[Mm]and_á_r[mts]el[aeo]s?_a') + #0
+#lema(ur'[Mm]anejar_í_a[ns]?_i') + #0
+#lema(ur'[Mm]anten_é_r[mts]el[aeo]s?_e') + #0
 #lema(ur'[Mm]archar_í_a[ns]?_i') + #0
-lema(ur'[Mm]asoner_í_as?_i') + #8
-lema(ur'[Mm]atem_á_tic(?:os|amente)(?!\.unmsm)_a') + #3
-lema(ur'[Mm]ayor_í_as?_i') + #64
 #lema(ur'[Mm]e_n_sajes?_') + #0
-lema(ur'[Mm]ec_á_nic(?:[ao]s|amente)_a') + #6
-lema(ur'[Mm]ecatr_ó_nicas?_o') + #1
-lema(ur'[Mm]edi_a_nte_e') + #3
-lema(ur'[Mm]ediod_í_as?_i') + #18
 #lema(ur'[Mm]edir_á_[ns]?_a') + #0
 #lema(ur'[Mm]egafon_í_as?_i') + #0
 #lema(ur'[Mm]elodram_á_tic[ao]s?_a') + #0
-lema(ur'[Mm]ensajer_í_as?_i') + #3
-lema(ur'[Mm]ercader_í_as?_i') + #3
-lema(ur'[Mm]ercanc_í_as?_i') + #14
 #lema(ur'[Mm]ere_ció__scio') + #0
-lema(ur'[Mm]etereol_ó_gic[ao]s?_o') + #1
 #lema(ur'[Mm]exican_í_sim[ao]s?_i') + #0
-lema(ur'[Mm]ie_m_bros?_n') + #2
-lema(ur'[Mm]ientra_s__') + #14
-lema(ur'[Mm]iner_í_as?_i') + #45
+#lema(ur'[Mm]ezclar_í_a[ns]?_i') + #0
 #lema(ur'[Mm]inusv_á_lid[ao]s?_a') + #0
-lema(ur'[Mm]ism_í_sim[ao]s?_i') + #3
 #lema(ur'[Mm]o_n_struos?_') + #0
-lema(ur'[Mm]o_nstru_o_unstr') + #8
-lema(ur'[Mm]oment_á_ne(?:[ao]s|amente)_a') + #2
 #lema(ur'[Mm]onol_í_tic[ao]s?_i') + #0
-lema(ur'[Mm]orir_á_[ns]?_a') + #3
-lema(ur'[Mm]orir_í_a[ns]?_i') + #5
-lema(ur'[Mm]u__rieron_e') + #2
 #lema(ur'[Mm]u_n_icipios?__') + #0
-lema(ur'[Mm]uch_í_sim[ao]s?_i') + #4
-lema(ur'[Mm]ultiprop_ó_sitos?_o') + #2
-lema(ur'[Mm]urci_é_lagos?_e') + #10
 #lema(ur'[Mm]uri_á_tic[ao]s?_a') + #0
-lema(ur'[Mm]usic_ó_log[ao]s?_o') + #4
-lema(ur'[Mm]usulm_á_n_a') + #169
-lema(ur'[Nn]_á_useas_a') + #14
-lema(ur'[Nn]_áu_frag[ao]s?_aú') + #2
 #lema(ur'[Nn]acional_ de_ Yosemite\]\]_') + #0
-lema(ur'[Nn]anotecnolog_í_as?_i') + #4
-lema(ur'[Nn]arcotr_á_ficos?_a') + #4
-lema(ur'[Nn]ari_c_es_[zs]') + #1
-lema(ur'[Nn]ecesitar_í_a(?:[ns]?|mos)_i') + #1
-lema(ur'[Nn]ecrol_ó_gic[ao]s?_o') + #14
-lema(ur'[Nn]ecrolog_í_as?_i') + #3
+#lema(ur'[Nn]eg_á_r[mts]el[aeo]s?_a') + #0
 #lema(ur'[Nn]egoc_i_aci(?:ón|ones)_') + #0
-lema(ur'[Nn]eocl_á_sic[ao]s?_a') + #15
-lema(ur'[Nn]eum_á_tic[ao]s?_a') + #12
-lema(ur'[Nn]eur_á_lgic[ao]s?_a') + #1
-lema(ur'[Nn]euroanatom_í_as?_i') + #3
-lema(ur'[Nn]europsicolog_í_as?_i') + #1
-lema(ur'[Nn]i_ _siquiera_') + #3
-lema(ur'[Nn]icarag_ü_enses_u') + #3
-lema(ur'[Nn]inf_ó_manas?_o') + #1
-lema(ur'[Nn]itr_ó_genos?_o') + #3
 #lema(ur'[Nn]iv_e_l(?:es|)_é') + #0
 #lema(ur'[Nn]oqu_eó__io') + #0
-lema(ur'[Nn]orirland_é_s_e') + #1
-lema(ur'[Nn]orteam_é_rica(?!\]\])_e') + #107
 #lema(ur'[Nn]otar_í_an_i') + #0
-lema(ur'[Nn]ov_í_sim[ao]s?_i') + #7
 #lema(ur'[Nn]uest_r_o_') + #0
-lema(ur'[Nn]um_é_ric(?:[ao]s|amente)_e') + #1
-lema(ur'[Oo]_b_t(?:en(?:er|gan?|dr[ií]a[ns]?)|ienen?|uvo)_p') + #1
 #lema(ur'[Oo]_b_tenido_p') + #0
-lema(ur'[Oo]bst_á_culos?_a') + #11
-lema(ur'[Oo]bstru_i_d[ao]s?_í') + #3
-lema(ur'[Oo]bten(?:dr|)_í_a[ns]?_i') + #2
-lema(ur'[Oo]btendr_á_[ns]?_a') + #1
-lema(ur'[Oo]btendr_í_a(?:[ns]?|mos)_i') + #2
-lema(ur'[Oo]c_éano Í_ndico_(?:eano [iíIÍ]|éano [iIí])') + #6
+#lema(ur'[Oo]bstru_i_r(?:l[aeo]s?|se|)_í') + #0
 #lema(ur'[Oo]casionar_í_a[ns]?_i') + #0
 #lema(ur'[Oo]curr(?:ir|)_í_a[ns]?_i') + #0
 #lema(ur'[Oo]curr_í_a[ns]?_i') + #0
-lema(ur'[Oo]currir_á_[ns]?_a') + #4
 #lema(ur'[Oo]dontol_ó_gic[ao]s?_o') + #0
-lema(ur'[Oo]fend_í_a[ns]?_i') + #2
-lema(ur'[Oo]frec_í_a[ns]?_i') + #4
-lema(ur'[Oo]frecer_á_[ns]?_a') + #1
-lema(ur'[Oo]pon_í_a[ns]?_i') + #3
 #lema(ur'[Oo]ptar_í_a[ns]?_i') + #0
-lema(ur'[Oo]r_i_gen_í') + #146
-lema(ur'[Oo]r_á_culos?_a') + #3
-lema(ur'[Oo]rdenar_í_a[ns]?_i') + #1
-lema(ur'[Oo]rg_á_nic(?:[ao]s|amente)_a') + #1
 #lema(ur'[Oo]rgani_z_ad[ao]s?_s') + #0
 #lema(ur'[Oo]rganizar_s_e(?:lo|)_c') + #0
 #lema(ur'[Oo]riginal_í_sim[ao]s?_i') + #0
-lema(ur'[Oo]rtop_é_dic[ao]s?_e') + #3
 #lema(ur'[Oo]torg_á_r[mts]el[aeo]s?_a') + #0
-lema(ur'[Oo]torrinolaringolog_í_as?_i') + #1
-lema(ur'[Pp]_e_rtenece[nrs]?_a') + #1
-lema(ur'[Pp]_ro_gramas?_or') + #2
-lema(ur'[Pp]_á_gina (?:[Ww]eb|oficial|del?)_a') + #418
-lema(ur'[Pp]_á_ginas?_a', pre=ur'(?:[Ll]as?)') + #1
-lema(ur'[Pp]_á_rrafos?_a') + #20
-lema(ur'[Pp]_é_rtigas?_e') + #1
-lema(ur'[Pp]_é_sim[ao]s?_e') + #3
-lema(ur'[Pp]_í_ldoras?_i') + #7
-lema(ur'[Pp]_ó_lvoras?_o') + #8
-lema(ur'[Pp]a_í_ses(?! Baixos)_i') + #223
-lema(ur'[Pp]ac_í_fic(?:as|os|amente)_i') + #3
-lema(ur'[Pp]ac_í_fico_i', pre=ur'([Ee]l|[Dd]el) ') + #49
 #lema(ur'[Pp]acient_í_sim[ao]s?_i') + #0
-lema(ur'[Pp]adec_í_a[ns]?_i') + #3
 #lema(ur'[Pp]agar_í_a[ns]?_i') + #0
-lema(ur'[Pp]aisaj_í_stic(?:[ao]s?|amente)_i') + #4
-lema(ur'[Pp]aleogeograf_í_a_i') + #1
-lema(ur'[Pp]ar_á_lisis_a') + #3
-lema(ur'[Pp]araca_í_das?_i') + #1
-lema(ur'[Pp]arad_ó_jic(?:[ao]s|amente)_o') + #1
-lema(ur'[Pp]aran_o_ic[ao]s?_ó') + #1
 #lema(ur'[Pp]arecer_s_e(?:lo|)_c') + #0
 #lema(ur'[Pp]arecer_á_[ns]?_a') + #0
 #lema(ur'[Pp]arente_s_cos?_z') + #0
 #lema(ur'[Pp]arlanch_í_n_i') + #0
-lema(ur'[Pp]artic_i_par(?:on|)_') + #2
-lema(ur'[Pp]articip_ó_ (?:en|junto|como)_o') + #116
-lema(ur'[Pp]articipar_í_a[ns]?_i') + #1
-lema(ur'[Pp]as_sio_n_i[oó]', pre=ur'of (?:the |)') + #4
 #lema(ur'[Pp]as_á_r[mts]el[aeo]s?_a') + #0
-lema(ur'[Pp]asant_í_as?_i') + #1
-lema(ur'[Pp]asar_í_a[ns]?_i') + #4
-lema(ur'[Pp]atol_ó_gic[ao]s?_o') + #2
-lema(ur'[Pp]atolog_í_as_i') + #1
-lema(ur'[Pp]e_r_manece(?:[nr]|ría[ns]?|)_') + #2
-lema(ur'[Pp]e_s_ca[rs]?_z') + #3
-lema(ur'[Pp]edir_á_[ns]?_a') + #1
 #lema(ur'[Pp]elear_s_e_z') + #0
-lema(ur'[Pp]elear_í_a[ns]?_i') + #1
-lema(ur'[Pp]equeñ_í_sim[ao]s?_i') + #1
+#lema(ur'[Pp]ens_á_r[mts]el[aeo]s?_a') + #0
 #lema(ur'[Pp]er__iodista_d') + #0
 #lema(ur'[Pp]er__iodo_d') + #0
 #lema(ur'[Pp]er_imetró__(?:ímetr[oó]|imetro)', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #0
 #lema(ur'[Pp]ercib(?:ir|)_í_a[ns]?_i') + #0
 #lema(ur'[Pp]ercl_ó_ric[ao]s?_o') + #0
-lema(ur'[Pp]erder_á_[ns]?_a') + #1
 #lema(ur'[Pp]erdurar_í_a[ns]?_i') + #0
 #lema(ur'[Pp]eri_ó_dic(?:as|amente)_o', pre=ur'\.edu') + #0
-lema(ur'[Pp]eriod_í_stic[ao]s?_i') + #20
-lema(ur'[Pp]ermane__ciendo_n') + #4
 #lema(ur'[Pp]ermanec_í__i') + #0
-lema(ur'[Pp]ermanecer_á_[ns]?_a') + #1
 #lema(ur'[Pp]ermanecer_í_a[ns]?_i') + #0
-lema(ur'[Pp]ermit(?:ir|)_í_a[ns]?_i') + #8
-lema(ur'[Pp]ermit_í__i') + #2
-lema(ur'[Pp]ermitir_á_[ns]?_a') + #3
-lema(ur'[Pp]ermitir_í_a[ns]?_i') + #2
 #lema(ur'[Pp]erseguir_á_[ns]?_a') + #0
+#lema(ur'[Pp]ersist(?:ir|)_í_a[ns]?_i') + #0
 #lema(ur'[Pp]ersonal_í_sim[ao]s?_i') + #0
-lema(ur'[Pp]ersoner_í_as?_i') + #5
-lema(ur'[Pp]erten_e_cer(?:á[ns]?|ía[ns]?|)_') + #1
+#lema(ur'[Pp]erten_ecerí_a_ceri') + #0
 #lema(ur'[Pp]ertenecer_á_[ns]?_a') + #0
-lema(ur'[Pp]esquer_í_as?_i') + #2
-lema(ur'[Pp]ict_ó_ric[ao]s?_o') + #6
-lema(ur'[Pp]ing_ü_inos?_u') + #11
-lema(ur'[Pp]irater_í_as?_i') + #8
+#lema(ur'[Pp]itar_í_a[ns]?_i') + #0
 #lema(ur'[Pp]luric_é_ntric[ao]s?_e') + #0
 #lema(ur'[Pp]neumatol_ó_gic[ao]s?_o') + #0
 #lema(ur'[Pp]nuematolog_í_as?_i') + #0
-lema(ur'[Pp]od_í_amos_i') + #1
-lema(ur'[Pp]oder_í_o_i') + #7
 #lema(ur'[Pp]odiatr_í_as?_i') + #0
-lema(ur'[Pp]odolog_í_a(?!\.cl)_i') + #1
-lema(ur'[Pp]odr_á_[ns]?_a') + #16
-lema(ur'[Pp]odr_í_a(?:[ns]?|mos)_i') + #38
 #lema(ur'[Pp]ol_í_ticas_') + #0
-lema(ur'[Pp]ol_í_ticos(?!\.html)_i') + #66
 #lema(ur'[Pp]olicl_í_nicas?_i') + #0
-lema(ur'[Pp]on_é_r[mts]el[aeo]s?_e') + #1
 #lema(ur'[Pp]ondr_á_n_a') + #0
 #lema(ur'[Pp]ondr_í_a(?:[ns]?|mos)_i') + #0
 #lema(ur'[Pp]oner_s_e(?:lo|)_c') + #0
+#lema(ur'[Pp]oni_en_do_ne') + #0
 #lema(ur'[Pp]opular_í_sim[ao]s?_i') + #0
-lema(ur'[Pp]opulari_zó__(?:s[oó]|zo)') + #3
-lema(ur'[Pp]opurr_í__i') + #7
 #lema(ur'[Pp]oqu_í_sim[ao]s?_i') + #0
-lema(ur'[Pp]or s_í so_l[ao]s?_(?:i s[oó]|í só)') + #71
-lema(ur'[Pp]or_ _ciento_') + #9
-lema(ur'[Pp]ort_á_til(?:es|)_a') + #18
-lema(ur'[Pp]ortug_ué_s_e') + #2
-lema(ur'[Pp]ose_í_a[ns]?_i') + #5
-lema(ur'[Pp]ose_í_d[ao]s?_i') + #6
 #lema(ur'[Pp]oseer_á_[ns]?_a') + #0
-lema(ur'[Pp]osi_c_ionada_s') + #1
-lema(ur'[Pp]osi_c_ionamiento_s') + #1
+#lema(ur'[Pp]osi__ción_si') + #0
+#lema(ur'[Pp]osi_c_ionado_s') + #0
+#lema(ur'[Pp]osi_c_ionó_s') + #0
 #lema(ur'[Pp]osicionar_s_e(?:lo|)_c') + #0
-lema(ur'[Pp]r_a_cticar(?:se|lo|le|on|an|)_á') + #1
-lema(ur'[Pp]r_á_ctic(?:os|amente)_a') + #25
-lema(ur'[Pp]r_á_cticas de_a') + #3
-lema(ur'[Pp]r_á_cticas_a', pre=ur'(?:[Ll]as|[Uu]nas|[Ss]us) ') + #7
-lema(ur'[Pp]r_é_stamo_e') + #50
-lema(ur'[Pp]r_ó_xim(?:[ao]s|amente)_o') + #71
-lema(ur'[Pp]re_s_enci(?:a[ns]?|[oó]|ar(?:[eé]|[aá][ns]?|ron))_s?c') + #4
+#lema(ur'[Pp]reced_í_a[ns]?_i') + #0
+#lema(ur'[Pp]refi__riendo_e') + #0
 #lema(ur'[Pp]refi__rieron_e') + #0
 #lema(ur'[Pp]refi__rió_e') + #0
-lema(ur'[Pp]rehisp_á_nic[ao]s?_a') + #5
+#lema(ur'[Pp]rend_í_a[ns]?_i') + #0
 #lema(ur'[Pp]reparar_s_e(?:lo|)_c') + #0
 #lema(ur'[Pp]resent_á_r[mts]el[aeo]s?_a') + #0
 #lema(ur'[Pp]residir_á_[ns]?_a') + #0
 #lema(ur'[Pp]residir_í_a[ns]?_i') + #0
 #lema(ur'[Pp]restar_í_a[ns]?_i') + #0
-lema(ur'[Pp]resum(?:ir|)_í_a[ns]?_i') + #1
-lema(ur'[Pp]retend_í_a[ns]?_i') + #3
 #lema(ur'[Pp]revalecer_á_[ns]?_a') + #0
 #lema(ur'[Pp]reve_í_a[ns]?_i') + #0
-lema(ur'[Pp]ri_me_r[ao]s?_em') + #6
-lema(ur'[Pp]ri_n_cipal(?:es|mente|)_') + #9
-lema(ur'[Pp]rim_e_r[ao]s?_') + #2
-lema(ur'[Pp]rim_e_ras?_a', pre=ur'(?:[Ll]as?|[Ss]us|[Uu]nas?|[Ee]n|[Dd]e|[Pp]or) ') + #3
 #lema(ur'[Pp]rimar_i_a_', pre=ur'(?:[Ee]scuelas?|formas?|[Ee]nseñanzas?|[Ee]ducación|[Ee]lecciones|[Ee]lección|[Aa]tención|Estudió) ') + #0
 #lema(ur'[Pp]rimer_í_sim[ao]s?_i') + #0
 #lema(ur'[Pp]rimi_c_ias?_s') + #0
-lema(ur'[Pp]ro_b_ad[ao]s?_v') + #5
 #lema(ur'[Pp]ro_v_oca[ns]?_b') + #0
+#lema(ur'[Pp]ro_v_ocando_b') + #0
+#lema(ur'[Pp]ro_v_ocar_b') + #0
 #lema(ur'[Pp]roceder_á_[ns]?_a') + #0
+#lema(ur'[Pp]roclamar_í_a[ns]?_i') + #0
 #lema(ur'[Pp]rodu_jo__ci[oó]') + #0
-lema(ur'[Pp]roduc(?:ir|)_í_a[ns]?_i') + #1
 #lema(ur'[Pp]roducir_s_e(?:lo|)_c') + #0
 #lema(ur'[Pp]roducir_á_[ns]?_a') + #0
-lema(ur'[Pp]roducir_í_a[ns]?_i') + #1
-lema(ur'[Pp]rofe_s_ional(?:es|)_c') + #5
-lema(ur'[Pp]rohib_í_a[ns]?_i') + #2
-lema(ur'[Pp]rol_í_fic(?:as|os?)_i') + #3
-lema(ur'[Pp]romet_í_(?:a[ns]?|)_i') + #2
-lema(ur'[Pp]romov_í_a[ns]?_i') + #2
-lema(ur'[Pp]romover_á_[ns]?_a') + #2
+#lema(ur'[Pp]rogramar_í_a[ns]?_i') + #0
+#lema(ur'[Pp]romet_ié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_íe') + #0
 #lema(ur'[Pp]ropi_ó_nic[ao]s?_o') + #0
-lema(ur'[Pp]ropon_í_a[ns]?_i') + #4
 #lema(ur'[Pp]ropondr_á_[ns]?_a') + #0
 #lema(ur'[Pp]rot_é_sic[ao]s?_e') + #0
-lema(ur'[Pp]rotag_ó_nic[ao]s?_o') + #23
-lema(ur'[Pp]rote_g_(?:e[nr]?|emos|erl[aeo]s?|erse|erá[ns]?|ería[ns]?|id[aeo]s?|iendo|iera|ieron|iese|ió)_j') + #3
-lema(ur'[Pp]rote_í_nas?_i') + #15
-lema(ur'[Pp]roteg_í_a[ns]?_i') + #1
 #lema(ur'[Pp]roteger_á_[ns]?_a') + #0
 #lema(ur'[Pp]rove_í_a[ns]?_i') + #0
-lema(ur'[Pp]rove_í_d[ao]s?_i') + #3
-lema(ur'[Pp]roveer_á_[ns]?_a') + #1
-lema(ur'[Pp]roven_í_a[ns]?_i') + #13
-lema(ur'[Pp]rovi_sio_(?:nal(?:es|)|nes)_ci[oó]') + #4
-lema(ur'[Pp]s_í_quic[ao]s?_i') + #7
+#lema(ur'[Pp]royectar_í_a[ns]?_i') + #0
 #lema(ur'[Pp]sicoanal_í_tic[ao]s?_i') + #0
-lema(ur'[Pp]sicol_ó_gic[ao]s_o') + #4
-lema(ur'[Pp]siqui_á_tric[ao]s?_a') + #7
-lema(ur'[Pp]u__dieron_e') + #8
 #lema(ur'[Pp]ublicar_í_a[ns]?_i') + #0
 #lema(ur'[Qq]u_eri_endo_ier') + #0
-lema(ur'[Qq]u_ie_n_ei') + #3
-lema(ur'[Qq]u_í_mic(?:[ao]s|amente)_i') + #12
-lema(ur'[Qq]ued_ó_ (?:sólo|sin|descubierto)_o') + #5
 #lema(ur'[Qq]uedar_s_e(?:lo|)_c') + #0
-lema(ur'[Qq]uedar_í_a[ns]?_i') + #6
-lema(ur'[Qq]uer_í_amos_i') + #3
-lema(ur'[Qq]uer_í_amos_i') + #5
+#lema(ur'[Qq]uin_c_e(?:nal|nalmente)_[sz]') + #0
 #lema(ur'[Qq]uincuag_é_sim[ao]s?_e') + #0
-lema(ur'[Qq]uir_ú_rgic[ao]s?_u') + #4
 #lema(ur'[Qq]uis_o__ó') + #0
-lema(ur'[Qq]uiz_á_s_a') + #5
-lema(ur'[Rr]_á_pid(?:[ao]s|amente)_a') + #35
 #lema(ur'[Rr]_é_plica_', pre=ur'(?:[Uu]na|1) ') + #0
-lema(ur'[Rr]_í_e[ns]?_i', pre=ur'(?:[Ss]e) ') + #4
-lema(ur'[Rr]_í_gida_i', pre=ur'(?:hacer|una|Máscara|persona|cola|está) ') + #1
 #lema(ur'[Rr]adiofon_í_as?_i') + #0
 #lema(ur'[Rr]apid_í_sim[ao]s?_i') + #0
-lema(ur'[Rr]ar_í_sim[ao]s?_i') + #1
 #lema(ur'[Rr]e__levantes?_e') + #0
-lema(ur'[Rr]e_hu_sa[ns]?_(?:hu|[uú])') + #140
 #lema(ur'[Rr]e_presá_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_gresa') + #0
 #lema(ur'[Rr]e_s_pectiv[ao]s?_') + #0
-lema(ur'[Rr]e_s_ponde[ns]?_') + #1
-lema(ur'[Rr]e_s_pondió_') + #1
-lema(ur'[Rr]e_í_r_i') + #14
-lema(ur'[Rr]e_ú_ne[ns]?_u') + #41
-lema(ur'[Rr]e_ú_sa[ns]_u') + #1
 #lema(ur'[Rr]eabrir_á_[ns]?_a') + #0
 #lema(ur'[Rr]ealizar_s_e(?:lo|)_c') + #0
 #lema(ur'[Rr]ealizar_í_a[ns]?_i') + #0
@@ -10947,46 +11272,27 @@ lema(ur'[Rr]e_ú_sa[ns]_u') + #1
 #lema(ur'[Rr]eap_are_c(?:e(?:[ns]?|r(?:a[ns]?|[áé]|ía[ns]?|))|ieron)_(?:ara|re)') + #0
 #lema(ur'[Rr]eaparecer_á_[ns]?_a') + #0
 #lema(ur'[Rr]earmar_í_a[ns]?_i') + #0
-lema(ur'[Rr]eca_í_d[ao]s?_i') + #2
 #lema(ur'[Rr]ecaudar_í_a[ns]?_i') + #0
-lema(ur'[Rr]eci_b_(?:e|ió|[íI]a|ir[eé])_v') + #2
-lema(ur'[Rr]eci_b_id[ao]s?_v') + #3
-lema(ur'[Rr]eci_bió__(?:vi[oó]|bio)') + #60
-lema(ur'[Rr]eci_é_n_e') + #23
-lema(ur'[Rr]ecib(?:ir|)_í_a[ns]?_i') + #5
-lema(ur'[Rr]ecibir_á_[ns]?_a') + #4
 #lema(ur'[Rr]ecibir_í_a[ns]?_i') + #0
-lema(ur'[Rr]eclu_i_d[ao]s?_í') + #5
-lema(ur'[Rr]eco_g_(?:e[nrs]?|erl[aeo]s?|erán|id[ao]s?|iendo|ieron|imiento|ió|í)_j') + #5
-lema(ur'[Rr]eco_g_e[ns]?_j') + #2
-lema(ur'[Rr]ecog_í_a[ns]?_i') + #1
 #lema(ur'[Rr]ecoger_á_[ns]?_a') + #0
 #lema(ur'[Rr]econ_s_truir(?:l[ao]s?|se)_') + #0
 #lema(ur'[Rr]econciliar_s_e(?:lo|)_c') + #0
-lema(ur'[Rr]econoc_í_a[ns]?_i') + #1
 #lema(ur'[Rr]econocer_á_[ns]?_a') + #0
 #lema(ur'[Rr]econocid_í_sim[ao]s?_i') + #0
 #lema(ur'[Rr]econocim_ie_ntos?_ei') + #0
-lema(ur'[Rr]econstru_i_d[ao]s?_í') + #1
 #lema(ur'[Rr]econstru_i_r(?:l[aeo]s?|se|)_í') + #0
-lema(ur'[Rr]ecorr_í_a[ns]?_i') + #3
-lema(ur'[Rr]ecorrer_á_[ns]?_a') + #1
+#lema(ur'[Rr]econv_i_rtió_e') + #0
 #lema(ur'[Rr]ecuperar_í_a[ns]?_i') + #0
 #lema(ur'[Rr]ecurr(?:ir|)_í_a[ns]?_i') + #0
 #lema(ur'[Rr]ecurrir_á_[ns]?_a') + #0
+#lema(ur'[Rr]edactar_í_a[ns]?_i') + #0
 #lema(ur'[Rr]edistribu_i_d[ao]s?_í') + #0
-lema(ur'[Rr]edu_j_eron_ci') + #2
 #lema(ur'[Rr]educir_s_e(?:lo|)_c') + #0
-lema(ur'[Rr]educir_á_[ns]?_a') + #1
 #lema(ur'[Rr]eeditar_í_a[ns]?_i') + #0
-lema(ur'[Rr]eempla_zó__(?:s[oó]|zo)', pre=ur'(?:[Ll]o|[Ss]e(?: me| te| l[aeo]s?|)) ') + #7
-lema(ur'[Rr]eemplazar_í_a[ns]?_i') + #1
 #lema(ur'[Rr]eenv_í_a[ns]?_i') + #0
 #lema(ur'[Rr]ef_e_rencias?_') + #0
-lema(ur'[Rr]eferir_s_e(?:lo|)_c') + #1
-lema(ur'[Rr]efiner_í_as?_i') + #4
 #lema(ur'[Rr]eflejar_í_a[ns]?_i') + #0
-lema(ur'[Rr]egad_í_os?_i') + #13
+#lema(ur'[Rr]efundar_í_a[ns]?_i') + #0
 #lema(ur'[Rr]egir_á_[ns]?_a') + #0
 #lema(ur'[Rr]egresar_í_a[ns]?_i') + #0
 #lema(ur'[Rr]ei_m_preso_n') + #0
@@ -10994,528 +11300,241 @@ lema(ur'[Rr]egad_í_os?_i') + #13
 #lema(ur'[Rr]ele_í_d[ao]s?_i') + #0
 #lema(ur'[Rr]elocalizar_s_e(?:lo|)_c') + #0
 #lema(ur'[Rr]enombrar_í_a[ns]?_i') + #0
-lema(ur'[Rr]epart(?:ir|)_í_a[ns]?_i') + #1
+#lema(ur'[Rr]enovar_í_a[ns]?_i') + #0
 #lema(ur'[Rr]epetir_á_[ns]?_a') + #0
-lema(ur'[Rr]eposar_í_a[ns]?_i') + #1
 #lema(ur'[Rr]epresentar_í_a[ns]?_i') + #0
-lema(ur'[Rr]equer_í_(?:a[ns]?|)_i') + #1
 #lema(ur'[Rr]equerir_á_[ns]?_a') + #0
+#lema(ur'[Rr]escind(?:ir|)_í_a[ns]?_i') + #0
 #lema(ur'[Rr]esguardar_í_a[ns]?_i') + #0
-lema(ur'[Rr]esid(?:ir|)_í_a[ns]?_i') + #4
 #lema(ur'[Rr]esidir_á_[ns]?_a') + #0
 #lema(ur'[Rr]esist(?:ir|)_í_a[ns]?_i') + #0
 #lema(ur'[Rr]esistir_á_[ns]?_a') + #0
+#lema(ur'[Rr]espaldar_í_a[ns]?_i') + #0
 #lema(ur'[Rr]espetabil_í_sim[ao]s?_i') + #0
-lema(ur'[Rr]espond_í_(?:a[ns]?|)_i') + #3
 #lema(ur'[Rr]esponder_á_[ns]?_a') + #0
 #lema(ur'[Rr]est_á_r[mts]el[aeo]s?_a') + #0
-lema(ur'[Rr]estitu_i_d[ao]s?_í') + #1
 #lema(ur'[Rr]estitu_i_r(?:l[aeo]s?|se|)_í') + #0
-lema(ur'[Rr]esultar_í_a[ns]?_i') + #2
+#lema(ur'[Rr]esum(?:ir|)_í_a[ns]?_i') + #0
+#lema(ur'[Rr]etir_á_r[mts]el[aeo]s?_a') + #0
 #lema(ur'[Rr]etirar_s_e(?:lo|)_c') + #0
 #lema(ur'[Rr]etirar_í_a[ns]?_i') + #0
-lema(ur'[Rr]etra_í_(?:a[ns]?|d[ao]s?)_i') + #5
-lema(ur'[Rr]etra_í_d[ao]s?_i') + #5
+#lema(ur'[Rr]etornar_í_a[ns]?_i') + #0
 #lema(ur'[Rr]etractar_í_a[ns]?_i') + #0
-lema(ur'[Rr]etribu_i_d[ao]s?_í') + #4
-lema(ur'[Rr]eun_í_a[ns]?_i') + #7
-lema(ur'[Rr]eunir_á_[ns]?_a') + #2
-lema(ur'[Rr]evelar_í_a[ns]?_i') + #1
 #lema(ur'[Rr]eviv(?:ir|)_í_a[ns]?_i') + #0
 #lema(ur'[Rr]eñid_í_sim[ao]s?_i') + #0
-lema(ur'[Rr]iqu_í_sim[ao]s?_i') + #1
 #lema(ur'[Rr]omp_í_a[ns]?_i') + #0
-lema(ur'[Rr]omper_á_[ns]?_a') + #2
 #lema(ur'[Rr]ud_í_sim[ao]s?_i') + #0
 #lema(ur'[Ss]_i_do_í') + #0
-lema(ur'[Ss]_i_guie(?:ron|ntes?)_e') + #6
-lema(ur'[Ss]_o_la(?:s|mente|)_ó') + #54
-lema(ur'[Ss]_á_dic(?:[ao]s?|amente)_a') + #2
-lema(ur'[Ss]_í_ntesis_i') + #39
-lema(ur'[Ss]_ó_tanos_o') + #1
-lema(ur'[Ss]_ú_bit(?:[ao]s|amente)_u') + #1
-lema(ur'[Ss]_ú_per (?:Vedette|Humor|Pesad[ao]s?)_u') + #2
 #lema(ur'[Ss]ab_í_amos_i') + #0
 #lema(ur'[Ss]acrificar_í_a[ns]?_i') + #0
-lema(ur'[Ss]aldar_í_a[ns]?_i') + #1
-lema(ur'[Ss]aldr_á_[ns]?_a') + #7
-lema(ur'[Ss]aldr_í_a[ns]?_i') + #3
 #lema(ur'[Ss]ali_en_do_ne') + #0
 #lema(ur'[Ss]at_í_roc[ao]s?_i') + #0
 #lema(ur'[Ss]e_ri_es?_ir', pre=ur'(?:[Ll]as?|[Dd]e) ') + #0
 #lema(ur'[Ss]ecu_e_ncia_a') + #0
+#lema(ur'[Ss]ecu_e_ncial(?:es|)_a') + #0
 #lema(ur'[Ss]ecu_e_ncias?_a') + #0
 #lema(ur'[Ss]ecue_s_trad[ao]s?_') + #0
-lema(ur'[Ss]egu(?:ir|)_í_a[ns]?_i') + #3
 #lema(ur'[Ss]egu_í_amos_i') + #0
 #lema(ur'[Ss]eguir_í_a(?:[ns]?|mos)_i') + #0
 #lema(ur'[Ss]eguir_í_amos_i') + #0
-lema(ur'[Ss]em_á_foros?_a') + #9
-lema(ur'[Ss]emiolog_í_as?_i') + #6
+#lema(ur'[Ss]eleccionar_í_a[ns]?_i') + #0
+#lema(ur'[Ss]ellar_í_a[ns]_i') + #0
+#lema(ur'[Ss]emiderru_i_d[ao]s?_í') + #0
 #lema(ur'[Ss]enadur_í_as?_i') + #0
 #lema(ur'[Ss]ent_í_amos_i') + #0
 #lema(ur'[Ss]eparar_í_a[ns]?_i') + #0
-lema(ur'[Ss]er_í_amos_i') + #1
-lema(ur'[Ss]eren_í_sim[ao]s?_i') + #6
 #lema(ur'[Ss]erializar_s_e(?:lo|)_c') + #0
-lema(ur'[Ss]ervi_c_ios?_s') + #1
-lema(ur'[Ss]ervir_á_[ns]?_a') + #2
 #lema(ur'[Ss]ervir_í_a[ns]?_i') + #0
-lema(ur'[Ss]eud_ó_nimos?_o') + #5
-lema(ur'[Ss]i_e_mpre_') + #3
 #lema(ur'[Ss]i_no má_s bien_ no m[aá]') + #0
-lema(ur'[Ss]i_s_temas?_') + #5
 #lema(ur'[Ss]icol_ó_gic[ao]s?_o') + #0
-lema(ur'[Ss]ie_m_pre_n') + #2
-lema(ur'[Ss]ignificar_í_a[ns]?_i') + #3
-lema(ur'[Ss]igu_i_entes?_') + #3
-lema(ur'[Ss]iller_í_as?_i') + #7
-lema(ur'[Ss]imb_ó_lic(?:[ao]s|amente)_o') + #1
-lema(ur'[Ss]imbi_ó_tic[ao]s?_o') + #3
 #lema(ur'[Ss]impatiqu_í_sim[ao]s?_i') + #0
-lema(ur'[Ss]imult_á_neamente_a') + #12
-lema(ur'[Ss]in_ó_nimos?_o') + #8
 #lema(ur'[Ss]intomatolog_í_as?_i') + #0
-lema(ur'[Ss]inverg_ü_enzada_u') + #1
 #lema(ur'[Ss]iqui_á_tric[ao]s?_a') + #0
-lema(ur'[Ss]iquiatr_í_as?_i') + #1
-lema(ur'[Ss]ismol_ó_gic[ao]s?_o') + #2
-lema(ur'[Ss]istem_á_tic(?:[ao]s?|amente)_a') + #53
-lema(ur'[Ss]it_ú_(?:a[ns]?|e[ns]?)_u') + #43
 #lema(ur'[Ss]o_r_prendió_') + #0
-lema(ur'[Ss]obre_vi_vientes?_') + #4
-lema(ur'[Ss]obresal(?:dr|)_í_a[ns]?_i') + #1
-lema(ur'[Ss]obrese_í_d[ao]s?_i') + #3
-lema(ur'[Ss]obrevi_vi_do_') + #2
 #lema(ur'[Ss]obreviv(?:ir|)_í_a[ns]?_i') + #0
 #lema(ur'[Ss]obrevivir_á_[ns]?_a') + #0
-lema(ur'[Ss]of_t_ware_') + #5
-lema(ur'[Ss]of_á_s?_a', pre=ur'(?:[Ss]u|[Ee]l|[Dd]el|[Uu]n|[Ll]os|como) ') + #5
-lema(ur'[Ss]ol_í_amos_i') + #1
 #lema(ur'[Ss]omet_é_r[mts]el[aeo]s?_e') + #0
 #lema(ur'[Ss]omet_í_a[ns]?_i') + #0
 #lema(ur'[Ss]ometer_á_[ns]?_a') + #0
-lema(ur'[Ss]onr_í_e[ns]?_i') + #3
-lema(ur'[Ss]onre_í_r_i') + #3
 #lema(ur'[Ss]orprend_í_a[ns]?_i') + #0
-lema(ur'[Ss]u_stitui_d[ao]s?_tituí') + #2
 #lema(ur'[Ss]ub_í_an_i') + #0
-lema(ur'[Ss]ubg_é_neros?_e') + #22
-lema(ur'[Ss]uced_í_a[ns]?_i') + #2
+#lema(ur'[Ss]ubdivid(?:ir|)_í_a[ns]?_i') + #0
+#lema(ur'[Ss]ubsist(?:ir|)_í_a[ns]?_i') + #0
+#lema(ur'[Ss]ubstra_í_(?:a[ns]?|d[ao]s?)_i') + #0
 #lema(ur'[Ss]uceder_á_[ns]?_a') + #0
 #lema(ur'[Ss]uceder_í_a[ns]?_i') + #0
-lema(ur'[Ss]ufr(?:ir|)_í_a[ns]?_i') + #2
-lema(ur'[Ss]ufr_í_a[ns]?_i') + #2
+#lema(ur'[Ss]ucumb(?:ir|)_í_a[ns]?_i') + #0
 #lema(ur'[Ss]ufrir_á_[ns]?_a') + #0
 #lema(ur'[Ss]uger_í_a[ns]?_i') + #0
-lema(ur'[Ss]uicid__ó_i') + #3
-lema(ur'[Ss]uperh_é_roes?_e', pre=ur'(?:[Uu]n|[Ee]l|[Ll]os| de| y) ') + #3
-lema(ur'[Ss]upon_í_a[ns]?_i') + #3
 #lema(ur'[Ss]upondr_á_[ns]?_a') + #0
 #lema(ur'[Ss]uponi_en_do_ne') + #0
-lema(ur'[Ss]urgir_á_[ns]?_a') + #1
+#lema(ur'[Ss]urt(?:ir|)_í_a[ns]?_i') + #0
 #lema(ur'[Ss]urtir_á_[ns]?_a') + #0
 #lema(ur'[Ss]uspend_í_a[ns]?_i') + #0
 #lema(ur'[Ss]ust_itui_d[ao]s?_uí') + #0
-lema(ur'[Ss]ustitu_i_d[ao]s?_í') + #14
-lema(ur'[Ss]ustitu_i_r(?:l[aeo]s?|se|)_í') + #3
-lema(ur'[Ss]ustituir_á_[ns]?_a') + #1
-lema(ur'[Ss]ustra_í_(?:a[ns]|d[ao]s?)_i') + #2
-lema(ur'[Ss]ustra_í_d[ao]s?_i') + #2
-lema(ur'[Tt]__igre_r') + #1
-lema(ur'[Tt]_e_sis_é') + #40
-lema(ur'[Tt]_i_tulad[ao]s?_í') + #14
-lema(ur'[Tt]_á_ctil(?:es|)_a') + #4
-lema(ur'[Tt]_é_rmic(?:as|os?)_e') + #4
-lema(ur'[Tt]_é_rmino_e', pre=ur'[Pp]rimer ') + #2
-lema(ur'[Tt]_í_pic(?:[ao]s|amente)_i') + #6
-lema(ur'[Tt]_í_teres?_i') + #8
-lema(ur'[Tt]_ó_picos?_o') + #3
-lema(ur'[Tt]_ó_rax_o') + #3
-lema(ur'[Tt]_ó_xic(?:as|os?)_o') + #10
 #lema(ur'[Tt]ant_í_sim[ao]s?_i') + #0
-lema(ur'[Tt]ao_í_s(?:tas?|mo)_i') + #11
-lema(ur'[Tt]e_m_prana_n') + #1
+#lema(ur'[Tt]apar_í_a[ns]?_i') + #0
 #lema(ur'[Tt]e_r_minar(?:se|l[ao]s?|ron|ría[ns]?|)_') + #0
-lema(ur'[Tt]ec_noló_gic[ao]_(?:nolo|onol[oó])') + #51
-lema(ur'[Tt]ect_ó_nic(?:as|os?|amente)_o') + #2
-lema(ur'[Tt]el_é_fono_e', pre=ur'(?:[Ee]l|[Ss]u|[Uu]n|como|por) ') + #8
-lema(ur'[Tt]el_é_fonos_e') + #12
+#lema(ur'[Tt]ej_í_a[ns]?_i') + #0
 #lema(ur'[Tt]elevi_s_ión_c') + #0
-lema(ur'[Tt]elevi_si_ón_') + #2
-lema(ur'[Tt]elevis_i_ón_') + #5
 #lema(ur'[Tt]elevis_i_ón_í') + #0
 #lema(ur'[Tt]elevisi__ón_s') + #0
 #lema(ur'[Tt]em_í_a[ns]_i') + #0
-lema(ur'[Tt]en_í_amos_i') + #1
-lema(ur'[Tt]en_í_an_i') + #23
 #lema(ur'[Tt]end_í_a[ns]?_i') + #0
 #lema(ur'[Tt]ende_n_cias?_') + #0
-lema(ur'[Tt]endr_á_[ns]_a') + #8
-lema(ur'[Tt]endr_í_a[ns]?_i') + #4
-lema(ur'[Tt]ent_á_culos?_a') + #3
-lema(ur'[Tt]erminar_í_a[ns]?_i') + #5
-lema(ur'[Tt]err_e_motos?_o') + #5
-lema(ur'[Tt]errest_r_es?_') + #6
 #lema(ur'[Tt]exte_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #0
-lema(ur'[Tt]ie_m_po_n') + #7
+#lema(ur'[Tt]iem__po_n') + #0
 #lema(ur'[Tt]ioci_á_nic[ao]s?_a') + #0
 #lema(ur'[Tt]itular_í_sim[ao]s?_i') + #0
 #lema(ur'[Tt]odoter_r_enos?_') + #0
-lema(ur'[Tt]omar_í_a[ns]?_i') + #3
+#lema(ur'[Tt]olerar_í_a[ns]?_i') + #0
 #lema(ur'[Tt]opolog_í_as?_i') + #0
 #lema(ur'[Tt]or_á_xoc[ao]s?_a') + #0
-lema(ur'[Tt]ra_ns_curr(?:e[ns]?|ió)_sn') + #1
+#lema(ur'[Tt]ra_ns_parente_sn') + #0
+#lema(ur'[Tt]ra_ns_portaba_sn') + #0
 #lema(ur'[Tt]ra_ns_porte[ns]_s?n') + #0
-lema(ur'[Tt]ra_í_d[ao]s?_i') + #23
-lema(ur'[Tt]ra_í_dos?_i') + #15
+#lema(ur'[Tt]ra_ns_portes_sn') + #0
 #lema(ur'[Tt]raducir_á_[ns]?_a') + #0
 #lema(ur'[Tt]raer_á_[ns]?_a') + #0
 #lema(ur'[Tt]raicionar_í_a[ns]?_i') + #0
-lema(ur'[Tt]rampol_í_n_i') + #6
-lema(ur'[Tt]ran_s_formar(?:se|)_') + #1
-lema(ur'[Tt]ran_s_paren(?:cias?|tes?)_') + #1
+#lema(ur'[Tt]ran_s_portador_') + #0
 #lema(ur'[Tt]ran_s_portados_') + #0
-lema(ur'[Tt]ran_s_porte_') + #1
-lema(ur'[Tt]ranscurr(?:ir|)_í_a[ns]?_i') + #1
+#lema(ur'[Tt]ran_s_portarse_') + #0
+#lema(ur'[Tt]ranscender_á_[ns]?_a') + #0
+#lema(ur'[Tt]ranscrib(?:ir|)_í_a[ns]?_i') + #0
 #lema(ur'[Tt]ransformar_s_e(?:lo|)_c') + #0
 #lema(ur'[Tt]ransformar_í_a[ns]?_i') + #0
-lema(ur'[Tt]ransmit(?:ir|)_í_a[ns]?_i') + #6
 #lema(ur'[Tt]ransmitir_á_[ns]?_a') + #0
-lema(ur'[Tt]ransportar_í_a[ns]?_i') + #2
 #lema(ur'[Tt]rasladar_s_e(?:lo|)_c') + #0
 #lema(ur'[Tt]rasmit(?:ir|)_í_a[ns]?_i') + #0
 #lema(ur'[Tt]rasmitir_á_[ns]?_a') + #0
 #lema(ur'[Tt]raspi_é_s?_e') + #0
+#lema(ur'[Tt]ratar_í_a[ns]?_i') + #0
 #lema(ur'[Tt]raum_á_tic[ao]s?_') + #0
-lema(ur'[Tt]raumatolog_í_as?_i') + #3
+#lema(ur'[Tt]raumat_ó_log[ao]s?_o') + #0
 #lema(ur'[Tt]reintai_ú_n_u') + #0
-lema(ur'[Tt]reintaid_ó_s_o') + #1
 #lema(ur'[Tt]reintais_é_is_e') + #0
 #lema(ur'[Tt]reintaitr_é_s_e') + #0
 #lema(ur'[Tt]remend_í_sim[ao]s?_i') + #0
-lema(ur'[Tt]rig_é_sim[ao]s?_e') + #7
-lema(ur'[Tt]ropical_í_sim[ao]s?_i') + #2
-lema(ur'[Tt]uber_í_as?_i') + #6
-lema(ur'[Uu]gand_é_s_e') + #1
-lema(ur'[Uu]ltras_ó_nic[ao]s?_o') + #1
+#lema(ur'[Uu]n_ _papel_') + #0
 #lema(ur'[Uu]n_ _partido_') + #0
-lema(ur'[Uu]n_á_nime(?:mente|)_a') + #7
-lema(ur'[Uu]ng_ü_entos?_u') + #1
+#lema(ur'[Uu]n_ _periodista_') + #0
+#lema(ur'[Uu]n_a fá_brica_ f[aá]') + #0
+#lema(ur'[Uu]n_a magní_fica_ magn[ií]') + #0
+#lema(ur'[Uu]n_a pé_rdida_ p[eé]') + #0
 #lema(ur'[Uu]nir_s_e(?:lo|)_c') + #0
-lema(ur'[Uu]nir_á_[ns]?_a(?!\])') + #3
-lema(ur'[Uu]nir_í_a[ns]?_i') + #3
-lema(ur'[Uu]sar_í_a[ns]?_i') + #1
-lema(ur'[Uu]t_i_li(?:z(?:[ae]n?|[oó])|cen?)_') + #3
-lema(ur'[Uu]t_i_lizad[ao]s?_') + #2
-lema(ur'[Uu]t_ilizació_n_(?:lizaci[oó]|ilizacio)') + #3
-lema(ur'[Uu]til_í_sim[ao]s?_i') + #2
 #lema(ur'[Uu]tiler_í_as?_i') + #0
 #lema(ur'[Uu]tilizar_s_e(?:lo|)_c') + #0
-lema(ur'[Uu]tilizar_í_a[ns]?_i') + #2
-lema(ur'[Vv][eé][aá]se _t_ambi[eé]n_T') + #1
-lema(ur'[Vv]_inculó__(?:íncul[oó]|inculo)', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #3
-lema(ur'[Vv]_ié_ndo(?:(?:[mts]e|nos|se)(?:l[aeo]s?|)|l[aeo]s?)_íe') + #1
-lema(ur'[Vv]_í_ctimas?_i', pre=ur'(?:[Ee]s|[Ff]u[ée]|[Ff]ueron|[Ll]as?|[Ss]erá|[Ss]on|[Uu]nas?|[Oo]tras?|[Dd]e|[Ss]u) ') + #33
-lema(ur'[Vv]al_ú_(?:a[ns]?|en)_u') + #1
-lema(ur'[Vv]aldr_á_[ns]?_a') + #1
 #lema(ur'[Vv]alios_í_sim[ao]s?_i') + #0
 #lema(ur'[Vv]e_í_amos_i') + #0
-lema(ur'[Vv]eh_í_culos?_i') + #33
-lema(ur'[Vv]einti_ú_n_u') + #3
-lema(ur'[Vv]eintid_ó_s_o') + #2
-lema(ur'[Vv]eintis_é_is_e') + #13
-lema(ur'[Vv]eintitr_é_s_e') + #15
-lema(ur'[Vv]encer_í_a[ns]?_i') + #1
-lema(ur'[Vv]ender_á_[ns]?_a') + #2
-lema(ur'[Vv]endr_í_a[ns]?_i') + #1
 #lema(ur'[Vv]enerad_í_sim[ao]s?_i') + #0
 #lema(ur'[Vv]engar_s_e(?:lo|)_c') + #0
 #lema(ur'[Vv]engar_s_e_z') + #0
 #lema(ur'[Vv]entajos_í_sim[ao]s?_i') + #0
-lema(ur'[Vv]er_sió_n_ci[oó]') + #2
 #lema(ur'[Vv]er_í_amos_i') + #0
-lema(ur'[Vv]erg_ü_enzas?_u') + #9
-lema(ur'[Vv]estir_á_[ns]?_a') + #2
 #lema(ur'[Vv]estir_í_a[ns]?_i') + #0
+#lema(ur'[Vv]iajar_í_a[ns]?_i') + #0
 #lema(ur'[Vv]ideogr_á_fic[ao]s?_a') + #0
 #lema(ur'[Vv]illan_í_sim[ao]s?_i') + #0
 #lema(ur'[Vv]irar_í_a[ns]?_i') + #0
 #lema(ur'[Vv]iv_í_amos_i') + #0
 #lema(ur'[Vv]ivir_í_a[ns]?_i') + #0
-lema(ur'[Vv]ol_u_men_ú') + #94
+#lema(ur'[Vv]olar_í_a[ns]?_i') + #0
 #lema(ur'[Vv]olv_í_(?:a[ns]?)_i') + #0
-lema(ur'[Vv]olver_í_a(?:n|mos|)_i') + #7
 #lema(ur'[Vv]uelt_a_s?_á') + #0
 #lema(ur'[Zz]oledr_ó_nic[ao]s?_o') + #0
-lema(ur'[p]ertene_nci_as?_c[ií]', pre=ur'(?:[Ll]as?|[Ss]us?|[Dd]e) ') + #1
-lema(ur'_Pací_fico_(?:pac[ií]|Paci)', pre=ur'[Oo]c[eé]ano ') + #2
-lema(ur'[Ff]i_l_m_', pre=ur'(?:[Dd]el|[Ee]l) ') + #2
-lema(ur'[a]_ _sus_') + #1
+#lema(ur'[b]ajar_í_a[ns]?_i') + #0
 #lema(ur'[c]omprendi_do__[óo]', pre=ur'[Pp]er[ií]odo ') + #0
-lema(ur'[d]_í_as_i', pre=ur'(?:[Aa]lgunos|[Bb]uenos|[Ee]scasos|[Ee]stos|[Ll]os|[Nn]uestros|[UÚuú]ltimos|[Uu]nos|[Vv]arios|[Dd]os|[Tt]res|[Cc]uatro|[Cc]inco|[Ss]eis|[Ss]iete|[Oo]cho|[Nn]ueve|[Dd]iez|[0-9]+) ') + #131
 #lema(ur'[d]e l_ongitud__largària') + #0
-lema(ur'[d]eb_í_a(?:s?|mos)_i') + #11
-lema(ur'[d]esar_rolló__r?oll?o', pre=ur'[Ss]e(?: me| te| l[aeo]s?|) ') + #17
-lema(ur'[d]ivid_id_a_', pre=ur'(?:[Dd]ecisión|[Ss]er|[Ee]star|[Ee]staba|[Ee]st[aá]|estuvo|se encontraba|se encuentra|queda|quedó|quedará|es|fue|llanura|continuó|distancia|Austria|Actualmente|opinión) ') + #3
 #lema(ur'[e]st_á_(?:[.,;]| (?:el|la|un|una) )_a', pre=ur'donde ') + #0
-lema(ur'[f]ranc_é_s[,.]_e') + #8
+#lema(ur'[ee]_m_pacad[ao]s?_n') + #0
 #lema(ur'[f]ranc_é_s_e', pre=ur'[Ii]dioma [Ff]ranc[eé]s\|') + #0
-lema(ur'[g]_é_neros?_e', pre=ur'(?:[Ee]l|[Ll]os|[Uu]n|[Uu]nos) ') + #16
 #lema(ur'[h]ar_á_s_a', pre=ur'(?:[Qq]u[eé]|dinero|te|carrera) ') + #0
-lema(ur'[l]e_í_da_i') + #6
-lema(ur'[l]e_í_dos_i') + #4
-lema(ur'[m]_á_ximas?_a', pre=ur'(?:[Ll]as?|[Uu]nas?) ') + #6
-lema(ur'[m]_á_ximos?_a', pre=ur'(?:[Ee]l|[Uu]n|[Ll]os) ') + #5
-lema(ur'[m]_í_nimas?_i', pre=ur'(?:[Ll]as?|[Uu]nas?) ') + #2
+#lema(ur'[l]ic_ú_an_u') + #0
 #lema(ur'[m]ir_á_ndol[ae]_a') + #0
-lema(ur'[n]_ó_mina_o', pre=ur'(?:[Ss]u|[Ee]n|[Uu]na|misma|primera|en|de) ') + #1
-lema(ur'[p]erd_í_a_i') + #2
-lema(ur'[p]ondr_á_s?_a') + #3
 #lema(ur'[q]_ue_ le_') + #0
-lema(ur'[s]ab_í_an_i') + #5
-lema(ur'[s]ali_o__ó', pre=ur'[Ee]mperador ') + #6
-lema(ur'[s]erv_í_a_i') + #8
-lema(ur'[t]_é_rmino_e', pre=ur'(?:[Aa]l?|[Dd]el?|[Uu]n|[Ss]u|[Ee]l) ') + #91
-lema(ur'[t]_é_rminos_e', pre=ur'[Ll]os ') + #7
-lema(ur'[t]rav_é_s_e', pre=ur'(?:[Aa]|[Dd]e) ') + #46
-lema(ur'[v]er_á_n_a') + #2
-lema(ur'[v]iv(?:ir|)_í_a[ns]?_i') + #16
+#lema(ur'[t]en_ido__dio', pre=ur'[Hh]a(?:n?|bían?|ber) ') + #0
+#lema(ur'[Áá]__lbum_lbum á') + #0
 #lema(ur'[Áá]lbum_e_s_(?:ne|)') + #0
-lema(ur'\(_álbum de \g<num>_\)_(?P<num>[0-9]{4}) album') + #8
-lema(ur'_(discográfica)__\(record label\)') + #15
-lema(ur'_A_quel_Á') + #1
+#lema(ur'[Úú]ltim[ao]_s__', pre=ur'[Ll][ao]s ') + #0
 #lema(ur'_Club de Futbol Igualada__Club de Fútbol Igualada') + #0
 #lema(ur'_D_inamarca_d', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or|y) ') + #0
-lema(ur'_E_ll[ao]s?_É') + #3
-lema(ur'_E_quipos?_É') + #2
-lema(ur'_E_spaña_e', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #18
-lema(ur'_E_sta vez_É') + #1
-lema(ur'_E_ste (?:último|primer)_É') + #6
-lema(ur'_E_sto_É') + #24
-lema(ur'_Estados U_nidos_(?:estados [Uu]|Estados u)', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #157
-lema(ur'_F_rancia_f', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #12
-lema(ur'_G_recia_g', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #5
 #lema(ur'_Ha_sta ahora_A') + #0
 #lema(ur'_Hu_esos?_U') + #0
 #lema(ur'_Hu_ndi(?:d[ao]s?|dimiento)_U') + #0
-lema(ur'_I_talia_i', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #11
-lema(ur'_Japó_n_(jap[oó]|Japo)', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #23
-lema(ur'_Latinoamé_rica_[Ll](?:ationoame|atínoame|ationoamé|ationame|atioamé|atinooamé|atínoamé)') + #1
 #lema(ur'_Murphy Pacific Corporation__Murphy Pacific Corporacion') + #0
-lema(ur'_P_araguay_p', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #2
-lema(ur'_R_usia_r', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #72
-lema(ur'_S_uecia_s', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #1
-lema(ur'_U_ruguay_u', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #5
-lema(ur'_V_enezuela_v', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #23
-lema(ur'__a sus?_h') + #1
 #lema(ur'__acerca(?:r|rse|)_h') + #0
-lema(ur'_a_ (?:abrazar|abrir|acceder|aceptar|aclarar|actuar|admitir|adquirir|afectar|ahorrar|ampliar|andar|apalizar|aparecer|aprender|arreglar|asar|ascender|asistir|asumir|atacar|atender|atrapar|aumentar|averiguar|avisar|ayudar|añadir|buscar|caer|cambiar|cancelar|cantar|castigar|cazar|celebrar|cerrar|cobrar|coincidir|combinar|comer|comercializar|cometer|competir|completar|componer|comprar|comprender|conocer|conseguir|considerar|consolar|construir|consumir|convertir|cosechar|crear|cultivar|dar|decir|declarar|definir|dejar|demostrar|denunciar|derramar|desarrollar|desartillar|descender|descubrir|desempeñar|destacar|destruir|detener|devolver|disculpar|disertar|diseñar|disputar|doblar|dominar|efectuar|ejercer|elegir|empezar|emprender|enamorar|encontrar|enfrentar|engrosar|entender|entrar|enviar|esconder|escribir|esperar|estacionar|estar|estudiar|evitar|examinar|existir|experimentar|extraer|extrañar|fabricar|facturar|finalizar|firmar|forjar|formar|formar|ganar|generar|gestar|grabar|haber|hablar|hacer|impartir|implantar|destinar|impulsar|incrementar|informar|inmortalizar|interpretar|investigar|ir|jugar|labrar|levantar|licuar|llegar|llevar|lograr|mantener|marcar|matar|mencionar|morir|necesitar|notar|obtener|ocurrir|ofertar|oficiar|orar|parar|participar|partir|pasar|pesar|pensar|permitir|persistir|poder|poner|practicar|preparar|presentar|producir|promediar|promocionar|proporcionar|protagonizar|publicar|pulsar|quedar|quitar|realizar|recibir|reclamar|recoger|recolectar|reconocer|recopilar|recordar|reeditar|regresar|rellenar|renovar|renunciar|repetir|reprender|respetar|resurgir|retomar|saber|salir|seguir|sobredestacar|solicitar|sufrir|tabajar|tener|tomar|torturar|trabajar|transmitir|trazar|usar|utilizar|vejar|vender|ver|verificar|viajar|visitar|volar)_(?:ha|ah)') + #22
-lema(ur'_a_quel_á') + #3
 #lema(ur'_c_ercan[ao]s?_s') + #0
-lema(ur'_consultado el__acessado em') + #19
-lema(ur'_d_estacados_D', pre=ur'[Jj]ugadores ') + #4
-lema(ur'_e inglé_s_[ey] ingle', pre=ur'(?:quechua|franc[eé]s|español|coreano|japon[eé]s) ') + #4
-lema(ur'_e_spañol_E', pre=ur'ejército ') + #7
-lema(ur'_e_sta (afición|vez)_é') + #9
-lema(ur'_e_ste (?:último|primer)_é') + #192
-lema(ur'_e_sto_é') + #233
-lema(ur'_e_xternos_E', pre=ur'(?:[Ee]nlaces|[Vv]ínculos) ') + #74
-lema(ur'_encontraba__encuentraba') + #2
-lema(ur'_escándalo__escandalo') + #13
 #lema(ur'_esperando__esparando', pre=ur'[Ee]stán? ') + #0
 #lema(ur'_febrero__[Ff]evereiro', pre=ur'acessado em [0-9]+ de ') + #0
 #lema(ur'_ha_ dicho (?: a |el |de |en |que|antes|ser )_ah?') + #0
-lema(ur'_ha_sta ahora_a') + #1
-lema(ur'_hu_esos?_u') + #2
-lema(ur'_hu_ndi(?:d[ao]s?|dimiento)_u') + #2
 #lema(ur'_increíble__íncreible') + #0
 #lema(ur'_increíbles__íncreibles') + #0
 #lema(ur'_noviembre__[Nn]ovembro', pre=ur'acessado em [0-9]+ de ') + #0
-lema(ur'_obstáculos__obstaculos') + #7
 #lema(ur'_sali_an?_(?:Sal[ií]|salí)', pre=ur'[Dd]inast[ií]a ') + #0
-lema(ur'_sobre la base de__en base a') + #1093
 #lema(ur'_v_oleibol_b') + #0
-lema(ur'_z_ona_s', pre=ur'(?:[Ll]a|[Uu]na|[Dd]e) ') + #1
 #lema(ur'_Á_gil(?:es|mente)_A') + #0
-lema(ur'_Á_ngel Gim[eé]nez_A') + #4
-lema(ur'_Á_rbitros?_A') + #27
 #lema(ur'_Á_ure[ao]s_A') + #0
-lema(ur'_É_l (?:anhela|pued[ae]|gana)_E') + #7
-lema(ur'_É_nfasis_E') + #1
 #lema(ur'_É_tnic(?:[ao]s|amente)_E') + #0
-lema(ur'_É_xitos?_E') + #59
-lema(ur'_Ó_rbitas?_O', pre=ur'(?:[Ll]as?|[Ss]us?|[Uu]nas?|[Ee]n) ') + #3
-lema(ur'_Ú_ltimamente_U') + #4
-lema(ur'_Ú_ltimas?_U', pre=ur'(?:[Ll]as?|[Uu]nas?) ') + #32
-lema(ur'_Ú_nic(?:[ao]s|amente)_U') + #5
-lema(ur'_á_gil(?:es|mente|)_a') + #6
-lema(ur'_á_guilas?_a') + #28
-lema(ur'_á_ngulos?_a', pre=ur'(?:[Ee][nl]|[Uu]n|[Ll]os|[Uu]nos) ') + #4
-lema(ur'_á_reas?_a', pre=ur'(?:[AaEe]l|[Ll]as|[Mm][aá]s|[Uu]nas|[Aa]lgunas|[Dd]el?|[Uu]n|[Cc]ada|[Ss]us|[Oo]tras?|[Dd]os|[Ee]stas?|[Ee]sas?|[Ee]n) ') + #85
-lema(ur'_álbu_m(?:es|)_albú') + #27
 #lema(ur'_álbumes__albums', pre=ur'(?:[Ll]os|[Ss]us)') + #0
-lema(ur'_é_l (?:ante|cabe|con|desde|entre|según|sin|tras)\b_e', pre=ur'[Cc]on ') + #1
-lema(ur'_é_nfasis_e') + #11
-lema(ur'_é_tnic(?:[ao]s|amente)_e') + #13
-lema(ur'_é_xodos?_e') + #2
-lema(ur'_í_ntimamente_i') + #3
-lema(ur'_ó_mnibus_o', pre=ur'\b(?:y|[Ee]l|[Uu]n|de|en|trenes|Micro|son|transporte:|llamados|scientiis|formato|tomaran|Empresa|tituló) (?:["\']|\[\[|)') + #11
 #lema(ur'_ó_pticas_o') + #0
-lema(ur'_ó_rdenes_o', pre=ur'(?:[Ll]as|[Uu]nas|[Ss]us|[Dd]ar|[Dd]ando|[Pp]or) ') + #34
-lema(ur'_ú_ltima_u', pre=ur'(?:[Aa]|[Cc]omo|[Dd]el|[Ee]st[ao]s?|[Ll]as?|[Pp]or|[Qq]ueda[nsr]?|[Qq]uedó|[Ss]us?|[Uu]na|[Uu]nas|[Yy]) ') + #146
-lema(ur'_ú_ltimamente_u') + #25
-lema(ur'_ú_ltimas_u', pre=ur'(?:[Ll]as|dos|tres) ') + #17
-lema(ur'_ú_nica_u', pre=ur'(?:[Ll]a|[Uu]na|[Ss]u|es|será) ') + #28
-lema(ur'_ú_nico_u', pre=ur'(?:[Ee]l|[Uu]n) ') + #25
 #lema(ur'_ú_nico_u', pre=ur'(?:[Ee]l|[Uu]n)] ') + #0
-lema(ur'_ú_nicos_u', pre=ur'(?:[Ss]us|[Ll]os) ') + #10
-lema(ur'[Ff]_utbolí_stic(?:[ao]s?|amente)_útbol[ií]') + #14
-lema(ur'[Dd]_el á_rea_(?:el a|e la [aá])') + #12
-lema(ur'_el á_rea_(?:el a|la [aá])') + #14
-lema(ur'[e]n_ _medio_') + #44
-lema(ur'[Oo]btuv_o__ó') + #4
-#lema(ur'[Ee]stuv_o__ó') + #0
-lema(ur'[Hh]oland_é_s_e') + #26
-lema(ur'[Ii]nform_á_tic[ao]s_a') + #8
-lema(ur'[Vv]ivir_á_[ns]?_a') + #1
-lema(ur'_c_heco_C', pre=ur'\b(?:e[ln]|del|idioma|y) ') + #14
-lema(ur'[Cc]l_ás_ic[ao]s?_[aá]c') + lema(ur'[Cc]l_á_sica_a', xpos=[ur'(?: do|maior)\b', ur'2\.com']) + #97
-lema(ur'[Dd]escalific_ó__o') + #8
-lema(ur'[h]_a_ce_e') + #6
-lema(ur'[Ll]leg_ó a s_er_(?:o a s|[oó] hac)') + #17
-#lema(ur'[Úú]ltim[ao]_s__', pre=ur'[Ll][ao]s ') + #0
-lema(ur'[Cc]omisar_í_as?_i', pre=ur'[Ee]n ') + #6
-lema(ur'_C_olombia_c', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #48
-lema(ur'[Rr]adiolog_í_as?_i') + #6
-#lema(ur'[Ii]nsect_ó_log[ao]s?_o') + #0
-lema(ur'[Jj]ug_ó_ (?:un|dos|tres|cuatro|diez|cien|mil|unos|varios)_o') + #77
-lema(ur'[Pp]rot_e_ic[ao]s?_é') + #63
-lema(ur'[Tt]ransg_é_ner[ao]s?_e') + #13
-lema(ur'[Dd]esign_ó__o') + #66
-lema(ur'[Cc]an_c_i(?:ón|ones)_s', xpos=[ur' barias']) + #25
-lema(ur'[Gg]r_á_fico_a', xpos=[ur' Editoriale']) + #96
-lema(ur'[Dd]isput_ó_ en_o') + #3
-lema(ur'[Nn]eurofenomenolog_í_as?_i') + #1
-lema(ur'[Ss]obre__nombre_ ') + #19
-lema(ur'[m]_á_s_a', pre=ur'(?:[Nn]o (?:cultivan?)|atendió|da|[Ll]ea|[Pp]ara|produciendo|espec[ií]fic(?:[ao]s?|amente)) ') + #33
-lema(ur'[Uu]n_a_ (?:agencia|aldea|alternativa|amalgama|antigua|banda|barra|bomba|buena|cadena|caja|campaña|capa|carrera|casa|chica|cierta|cita|comedia|compañía|copia|corta|criatura|crítica|cuerda|derrota|distancia|empresa|escena|escuela|escultura|estatua|estrella|estructura|etapa|extensa|extraña|familia|fecha|fiesta|figura|franja|fuerza|guerra|historia|idea|iglesia|intensa|lanza|ligera|lucha|línea|manera|mezcla|misma|niña|nota|novela|nueva|obra|palabra|pareja|pelea|película|pequeña|persona|perspectiva|pieza|pista|placa|planta|plataforma|playa|plaza|política|potencia|profunda|prueba|página|pérdida|rama|raza|referencia|reserva|respuesta|revista|ruta|sala|secuencia|sola|tabla|tasa|temperatura|temporada|tienda|trama|técnica|verdadera|victoria|vida|zona|[eé]poca|[uú]nica)\b_') + #347
-lema(ur'[Uu]n_a_ (?:alerta|alianza|amiga|armadura|atmósfera|auténtica|avenida|barrera|batalla|bebida|beca|bella|biografía|bola|bolsa|brigada|broma|bóveda|caldera|carga|carretera|caída|ceremonia|cifra|cinta|clara|clínica|cola|colina|comarca|competencia|computadora|conferencia|corona|cubierta|cueva|curva|célula|cúpula|demanda|determinada|diferencia|disputa|dura|década|economía|entrada|ermita|escalera|escritora|esfera|estrategia|estrecha|experiencia|falla|famosa|feria|finca|flota|fotografía|futura|granja|hermana|hija|hora|huelga|inmensa|jugadora|junta|lengua|letra|leyenda|llamada|maestra|mancha|marcha|medalla|medida|mejora|mina|montaña|muestra|ofensiva|oferta|oficina|orquesta|pantalla|parada|parodia|partícula|pelota|piedra|pintura|pistola|postura|presencia|princesa|propuesta|protesta|proteína|provincia|pr[aá]ctica|r[eé]plica|rampa|reforma|regla|revuelta|rica|rueda|rápida|secuela|semana|silla|talla|tarjeta|tecnología|teoría|trampa|trenza|típica|vasta|ventaja|vieja|villa|visita|vista|vivienda|órbita|última)\b_') + #154
-lema(ur'[Uu]n_a_ (?:lujosa|lámina|lámpara|lápida|maestría|magnífica|maniobra|maqueta|mascota|materia|mayoría|memoria|mesa|meseta|minoría|mirada|molécula|moneda|máscara|máxima|música|norma|novia|olla|onda|palma|parcela|parroquia|partida|patrulla|pausa|pena|perfecta|pierna|pila|pionera|piscina|poca|poderosa|polémica|portada|prenda|presa|previa|proclama|profesora|prostituta|próxima|puesta|racha|rana|recarga|receta|recta|reina|reja|relativa|república|reseña|residencia|resistencia|retrospectiva|rotura|ruptura|ráfaga|saga|salida|sencilla|senda|sentencia|seria|sexta|significativa|suma|superheroína|supuesta|sustancia|sátira|tanda|tela|tendencia|terapia|textura|tormenta|treintena|trompeta|tropa|tía|túnica|vaina|vara|variada|ventana|vuelta|válvula|víctima|ópera)\b_') + #46
-lema(ur'[Uu]n_a_ (?:abogada|academia|aerolínea|alarma|aliada|apariencia|apertura|apuesta|arquitectura|asamblea|asesina|audiencia|aventura|bahía|balada|bandeja|bandera|bestia|biblioteca|bicicleta|botella|búsqueda|cabaña|cabina|cafetería|campeona|capilla|cascada|catarata|categoría|caña|chaqueta|charla|ciencia|cirugía|colonia|columna|completa|comuna|consola|copa|corneta|cota|cuarta|cuenca|cultura|cuota|cápsula|dama|danza|decena|densa|dependencia|destacada|desventaja|dieta|diseñadora|docena|droga|ejecutiva|elevada|embajadora|emboscada|emisora|empleada|encuesta|enfermera|era|escuadra|espada|estética|factoría|falda|falta|farsa|firma|flecha|fractura|fragata|fuga|gata|gigantesca|gorra|grieta|gruesa|hembra|hermosa|hierba|ideología|industria|invitada|jornada|liga|linterna)\b_') + #52
-#lema(ur'[Uu]n_a fá_brica_ f[aá]') + #0
-#lema(ur'[Uu]n_a magní_fica_ magn[ií]') + #0
-lema(ur'[Uu]n_a má_quina_ m[aá]') + #2
-#lema(ur'[Uu]n_a pé_rdida_ p[eé]') + #0
-lema(ur'[Uu]n_a ré_plica_ r[eé]') + #6
-lema(ur'[Aa]_ _cargo_') + #3
-lema(ur'[Aa]__ños_ños a') + #14
-lema(ur'[Cc]__ada_ada c') + #1
-#lema(ur'[Cc]olor___ color', xpos=[ur'\'\'']) + #0
-lema(ur'[Cc]__omo_omo c') + #67
-lema(ur'[Cc]__on_on c') + #36
-lema(ur'[Cc]__uando_uando c') + #10
-lema(ur'[Dd]__el_el d') + #308
-lema(ur'[Dd]__esde_esde d') + #7
-lema(ur'[Dd]__espués_espués d') + #4
-#lema(ur'[Dd]__onde_onde d') + #0
-lema(ur'[Dd]__urante_urante d') + #6
-lema(ur'[Dd]e__l_ la e') + #2
-lema(ur'[Ee]__l_l e') + #1145
-lema(ur'[Ee]n_ _realidad_') + #5
-lema(ur'[Ee]n_ _serio_') + #12
-lema(ur'[Ee]n e_l_ año_n') + #42
-lema(ur'[Ee]__ntre_ntre e') + #18
-lema(ur'[Ee]__ntre_ntre e') + #1
-lema(ur'[Ee]__quipo_quipo e') + #2
-lema(ur'[Ee]__ra_ra e') + #8
-lema(ur'[Ee]__ste_ste e') + #7
-lema(ur'[Ff]__ue_ue f') + #52
-lema(ur'[Ff]__ueron_ueron f') + #7
-lema(ur'[Hh]__a [a-záéíóúñ]+o_a h') + #9
-lema(ur'[Ll]__as_as l') + #161
-lema(ur'[Ll]__o_o l') + #18
-lema(ur'[Ll]__os_os l') + #348
-lema(ur'[Ll]o_s_ (?:aires|alrededores|alumnos|antiguos|años|artistas|barrios|bienes|bosques|capítulos|casos|casos|cerros|chicos|ciudadanos|códigos|colores|conceptos|cuales|cuáles|cuartos|datos|derechos|días|dientes|dos|edificios|efectos|ejercicios|elementos|enemigos|equipos|españoles|estándares|estudiantes|eventos|fans|franceses|ganadores|generales|grupos)_') + #43
-lema(ur'[Ll]o_s_ (?:habitantes|hechos|hermanos|héroes|hijos|hombres|huevos|indígenas|intereses|jóvenes|juegos|jugadores|líderes|límites|machos|medios|mercados|meses|métodos|miembros|modelos|momentos|motores|municipios|músicos|nazis|niños|niveles|ojos|otros|padres|países|partidos|pasos|períodos|personajes|pobladores|pocos|poderes|precios|premios|primeros|principales|principios|problemas|programas|pueblos|puntos|quales|relatos|resultados|reyes|ríos|sábados|sectores|seis|seres|servicios|siglos|siguientes|símbolos|sistemas|sitios|soldados|sucesos|suelos|territorios|tiempos|trabajos|trenes|tres|últimos|únicos|usuarios|valores|vascos|vecinos|votos)_') + #71
-lema(ur'[Ll]o_s_ (?:aborígenes|acontecimientos|actores|actos|acuerdos|admiradores|agentes|albores|alemanes|alimentos|andes|animales|anteriores|árboles|arcos|arqueólogos|arquitectos|arreglos|asuntos|ataques|autores|bancos|baños|beneficios|británicos|buques|cabellos|cambios|campeones|campos|canales|cánones|cargos|carros|centros|cimientos|clubes|colonizadores|concursantes|continentes|continuos|créditos|cronistas|cuadernos|cuadros|cuchillos|cursos|detalles|dibujos|documentos|donativos|ejecutivos|ejemplares|ejes|elfos|empleados|enamorados|encuentros|enérgicos|entes|episodios|escenarios|esclavos|esfuerzos|espectadores|estadounidenses|estilos|exámenes|extranjeros|extremos|factores|fallos|familiares|fanáticos|ferrocarriles|fines|firmantes|fondos|fundadores|gallegos|géneros|gobernadores|gobiernos|guerreros)_') + #10
-lema(ur'[Ll]o_s_ (?:hinchas|hindúes|honores|hospitales|huecos|huertos|humanos|húngaros|indios|informes|ingleses|inicios|instrumentos|integrantes|isleños|jardines|jefes|jesuitas|judíos|jueces|juguetes|libros|llamados|lugareños|lugares|máximos|mensajes|miles|militares|monjes|motivos|muros|nombres|números|objetivos|oídos|organismos|órganos|pacientes|pájaros|paquetes|parámetros|participantes|peces|periódicos|pies|pilotos|pioneros|piratas|planes|prisioneros|productos|profesores|propietarios|propios|proyectos|puentes|puestos|radares|rayos|rebeldes|receptores|recursos|referentes|regalos|reinos|religiosos|requerimientos|requisitos|sacerdotes|sacrificios|santos|satélites|secretos|seguidores|segundos|sentidos|sentimientos|señoríos|servidores|sindicatos|síntomas|sobrevivientes|sonidos|sospechábamos|sueños|suministros|tallos|templos|terrenos|testigos|tipos|títulos|túneles|turistas|unos|valles|viajes|vídeos|vientos)_') + #22
-lema(ur'[Oo]__tros_tros o') + #5
-lema(ur'[Pp]__arte_arte p') + #7
-lema(ur'[Pp]__ero_ero p') + #3
-lema(ur'[Pp]__or_or p') + #47
-lema(ur'[Pp]__rimer_rimer p') + #10
-lema(ur'[Pp]__uede_uede p') + #11
-lema(ur'[Qq]__ue_ue q') + #201
-lema(ur'[Ss]__e_e s') + #86
-lema(ur'[Ss]__er_er s') + #19
-lema(ur'[Ss]__i_i s') + #15
-lema(ur'[Ss]__ido_ido s') + #7
-lema(ur'[Ss]__obre_obre s') + #13
-lema(ur'[Ss]__on_on s') + #23
-lema(ur'[Tt]__ambién_ambién t') + #10
-lema(ur'[Tt]__iene_iene t') + #9
-#lema(ur'[Áá]__lbum_lbum á') + #0
-lema(ur'_El__La el') + #4
 []][0]
 
-grupo2 = grupoPerfecto + grupoAccion + [# 500-999
-lema(ur'[Ii]ndicar_í_a_i', xpre=[ur'Tractatus de astrologia ']) + #2
-lema(ur'[Ss]ellar_í_a_i', xpre=[ur'della ']) + #1
-lema(ur'(?:[Ss]emi|[Ss]ub|[Hh]iper|[Dd])esarrollar_í_a[ns]?_i') + #1
-#lema(ur'[Aa]rchivar_í_a[ns]?_i', xpos=[ur', [1-9][0-9]+']) + #0
-#lema(ur'[Aa]rd_í_as_i', xpre=[ur'de ']) + #0
-#lema(ur'[Cc]almar_í_a_i', xpre=[ur'\ba ']) + #0
-lema(ur'[Cc]aminar_í_a_i', xpre=[ur'Hexatoma ']) + #1
-lema(ur'[Dd]egenerar_í_a_i', xpre=[ur'Idaea ']) + #1
-#lema(ur'[Ee]x_ces_iv[ao]s?_', xpre=[ur'Aucula ']) + #0
-#lema(ur'[Ll]abrar_í_a_i', xpre=[ur'Abraxas ']) + #0
-#lema(ur'[Mm]orfol_ó_gic(?:[ao]s|amente)_o', xpos=[ur' e\b']) + #0
-#lema(ur'[Oo]sar_í_as?_i', xpos=[ur'\'\'']) + #0
-#lema(ur'[Pp]illar_í_a_i', xpre=[ur'Cycloclypeus ']) + #0
-#lema(ur'[Vv]ersar_í_a_i', xpre=[ur'Flagrospira ']) + #0
+grupo2 = grupo2Perfecto + grupo2Accion + [# 500-999
+lema(ur'(?:[Aa]|[Dd]e)__l (?:equipo|resto|primer|grupo|pueblo|personaje|nombre|[Rr]ey|programa|club|presidente|nuevo|álbum|municipio|planeta|número|estado|centro|trabajo|productor|padre|mundo|lugar|jugador|gobierno|país|margen|juego|incremento|gran|estudio|elenco|desarrollo|cuarto|antiguo|verdadero|usuario|[uú]ltimo|tema|poder|oeste|momento|español|otro|entonces)_ e', xpre=[ur'(?:[Ll]ado|[Cc]ara) ', ur'\.', ]) + #287
 lema(ur'(?:[Ee]nero|[Ff]ebrero|[Mm]arzo|[Aa]bril|[Mm]ayo|[Jj]unio|[Jj]ulio|[Aa]gosto|[Ss]eptiembre|[Oo]ctubre|[Nn]oviembre|[Dd]iciembre)_ de_ (?:\[\[|)[1-9][0-9][0-9][0-9]_(?:,|)', xpre=[ur'Ediciones del 4 de '], xpos=[ur' sullo']) + #29662
+lema(ur'(?:[Ss]emi|[Ss]ub|[Hh]iper|[Dd])esarrollar_í_a[ns]?_i') + #1
 lema(ur'Gim_é_nez_e', xpre=[ur'Antônio ']) + #166
 lema(ur'Hait_í__i', pre=ur'(?:\||(?:[Dd]e|[Ee]n) )', xpre=[ur'Démocratie ', ur'Volleyball '], xpos=[ur' (?:Sings|and)']) + #51
 lema(ur'Jim_é_nez_e', xpre=[ur'Cláudia ']) + #420
+lema(ur'M_é_xico_e', pre=ur'(?:[Dd]e|[Ee]n|[Ss]obre|[Pp]ara|[Pp]or|[Tt]odo) ', xpre=[ur'Chanteur ', ur'Audrain ', ur'Bassin ', ur'Humaines ', ur'Histoire ', ], xpos=[ur' (?:Herpetology|City|Beach)', ur'[\']s', ]) + #476
 lema(ur'Medell_í_n_i', xpre=[ur'in ', ur'366272\) ']) + #312
 lema(ur'Ocean_í_a_i', pre=ur'(?:[Dd]e|[Ee]n) ', xpos=[ur' (?:Cruises|Rugby)']) + #5
 lema(ur'[Aa]bogac_í_as?_i', xpos=[ur'\.es']) + #2
 lema(ur'[Aa]d_h_esivos?_', xpre=[ur'[Cc]aso ']) + #6
 lema(ur'[Aa]narqu_í_as?_i', xpre=[ur'amor i ']) + #13
 lema(ur'[Aa]nomal_í_as?_i', xpre=[ur'Pichia ']) + #10
+lema(ur'[Aa]rt_í_culo_i', xpos=[ur' (?:mortis|meni)', ]) + #465
 lema(ur'[Aa]scen_s_ión_c', xpos=[ur' (?:Aguilera|[AÁ]lvarez|Alcalá|Andrade|Bonet|De los Santos|Farreras|García|Gómez|Hernández|Lencina|López|Martínez|Negrón|Nicol|Orihuela|Saucedo|Soto|Solórsano|Tepal|Vázquez)']) + #16
 lema(ur'[Aa]utom_ó_vil(?:es|)_o', xpos=[ur' Gesellschaft']) + #57
+lema(ur'[Bb]ater_í_as?_i', xpre=[ur'[Rr]ainha de ']) + #171
 lema(ur'[Bb]iogeogr_á_fic[ao]s?_a', xpre=[ur'\bdi ']) + #8
 lema(ur'[Bb]istur_í__i', xpre=[ur'\bO '], xpos=[ur' - La', ur', la']) + #1
+lema(ur'[Cc]_ó_digo_o', xpre=[ur'<'], xpos=[ur' (?:Group|commercial|Manuelino|Afonsino)']) + #164
 lema(ur'[Cc]_ó_ptic[ao]s?_o', xpre=[ur'Ptychotis ']) + #1
+lema(ur'[Cc]aminar_í_a_i', xpre=[ur'Hexatoma ']) + #1
 lema(ur'[Cc]armes_í__i', xpre=[ur'filla del ']) + #2
 lema(ur'[Cc]enar_í_a[ns]?_i', xpre=[ur'(?:[Dd]e|[Ee]n)', ur'[Ii]slote ']) + #5
+lema(ur'[Cc]r_é_dito_e', xpre=[ur'\bdi ', ], xpos=[ur' (?:in|Italiano|Artigiano|Valtellinese|Bergamasco|Emiliano|and|per|Varessino|Esattorie)', ]) + lema(ur'[Cc]r_é_ditos_e', xpre=[ur'\blo ', ur'Pizze a '], xpos=[ur' in\b', ]) + #26
 lema(ur'[Cc]rec_í__i', xpre=[ur'Enrique ']) + #2
 lema(ur'[Cc]ronol_ó_gic[ao]_o', xpre=[ur'Storia '], xpos=[ur' (?:dei|della|das)']) + #11
 lema(ur'[Dd]_í_a_i', pre=ur'(?:[Hh]oy(?: en|)|[Uu]n (?:buen|cierto|duro|gran|largo|nuevo|s[oó]lo)|[Pp]rimer|[Ss]egundo|[Tt]ercer|[Cc]uarto|[Qq]uinto|[Ss]exto|[Ss][eé]ptimo) ', xpos=[ur' (?:da|e meio)']) + #52
+lema(ur'[Dd]egenerar_í_a_i', xpre=[ur'Idaea ']) + #1
+lema(ur'[Dd]emogr_á_fic[ao]s?_a', xpre=[ur'Bilancio ', ur'storia ', ]) + #588
 lema(ur'[Dd]ep_ó_sitos?_o', xpre=[ur'(?:[Ii]l|[Ll]a) ', ur'Cardili, ', ur'sepulcro '], xpos=[ur' (?:Giordani|da)']) + #114
 lema(ur'[Dd]iscogr_á_fic[ao]s?_a', xpre=[ur'della Critica ']) + #167
 lema(ur'[Ee]_x_tendid[ao]s?_s?', xpre=[ur'onde ']) + #4
 lema(ur'[Ee]nfermer_í_as?_i', xpos=[ur'\.uady']) + #22
 lema(ur'[Ee]sf_é_ric[ao]s?_e', xpre=[ur'Vorticella ', ur'Lepidocyclina ']) + #7
-#lema(ur'[Ff]icolog_í_as?_i', xpre=[ur'Brasileira de ']) + #0
+lema(ur'[Ff]_ó_rmulas?_o', pre=ur'(?:[Ll]as?|[Uu]nas?|[Dd]e) ', xpre=[ur'quién '], xpos=[ur' (?:One|Romani|della)', ]) + #67
 lema(ur'[Ff]or_á_ne[ao]s?_a', xpre=[ur'battello ', ur'Mythimna ']) + #3
 lema(ur'[Ff]re_í_r_i', xpre=[ur'Frey\|']) + #3
-#lema(ur'[Ff]renes_í__i', xpre=[ur'Coleção '], xpos=[ur' \(Lisboa', ur': história']) + #0
+lema(ur'[Gg]_é_nero_e', pre=ur'(?:[Ee]l|[Ee]ste|[Un]|[Dd]el?) ', xpre=[ur'[Rr]ío '], xpos=[ur'(?:…|\.com)']) + #146
 lema(ur'[Gg]e_ó_log[ao]s?_o', xpre=[ur'Professione ']) + #3
 lema(ur'[Gg]rad_ú_a_u', xpos=[ur'\'t']) + #3
+lema(ur'[Hh]ist_ó_ricos?_o', xpre=[ur'Boletim ', ur'romànico ', ur'Illimani ', ur'Études ', ur'medicorum ', ur'Estudo ', ur'Lesbio ', ur'[Aa]no ', ur'do Patrimonio ', ], xpos=[ur' (?:Naturalia|do|no|[Aa]sturiensia)\b', ur', biographico', ur' et ', ]) + #429
 lema(ur'[Hh]oland_é_s_e', xpre=[ur'permitió que el ']) + #26
 lema(ur'[Ii]c_ó_nic[ao]s?_o', xpre=[ur'Glycyrrhiza ', ur'Cousinia ', ur'Conchologica ', ur'Conchologia ']) + #14
+lema(ur'[Ii]m_á_genes_a', xpos=[ur' Librorum']) + #115
+lema(ur'[Ii]ndicar_í_a_i', xpre=[ur'Tractatus de astrologia ']) + #2
 lema(ur'[Ii]nfanter_í_as?_i', xpre=[ur'd\''], xpos=[ur' de marinha']) + #38
-#lema(ur'[Ii]nic_i_os?_', xpos=[ur' d[\'’]Avalos', ur'\'\'\'']) + #0
 lema(ur'[Jj]erarqu_í_as?_i', xpos=[ur' a la Responsabilitat']) + #4
 lema(ur'[Ll]_á_mparas?_a', xpre=[ur'[A]\. ', ur'Astronesthes ', ur'Wishing ']) + #36
 lema(ur'[Ll]_á_tigos?_a', xpre=[ur'for ', ur'George '], xpos=[ur' Means']) + #4
 lema(ur'[Ll]_é_sbic[ao]s?_e', xpre=[ur'[AI]\. ', ur'Aphaenogaster ', ur'Isoperla '], xpos=[ur' e gay']) + #4
 lema(ur'[Ll]_ó_gic(?:os|amente)_o', xpos=[ur' Aristotelis']) + #2
 lema(ur'[Ll]_ó_gic[ao]_o', pre=ur'(?:[Ll]a|[Uu]na) ', xpos=[ur' (?:d[iu]|del)\b']) + #4
-#lema(ur'[Ll]exicograf_í_as?_i', xpre=[ur'Lexicologia y '], xpos=[ur' (?:e os|catalana|catalanes)\b']) + #0
 lema(ur'[Ll]oter_í_as?_i', xpre=[ur'Caixa '], xpos=[ur' (?:Vella|sem)']) + #24
 lema(ur'[Mm]agn_í_fica_i', pre=ur'(?:[Ll]a|[Uu]na|[Dd]e|[Ee]sta|[Ss]u|[Tt]an) ', xpos=[ur' (?:Cure|ni)\b']) + #9
 lema(ur'[Mm]al_é_vol[ao]s?_e', xpre=[ur'Euphorbia ']) + #1
@@ -11524,25 +11543,26 @@ lema(ur'[Mm]ani_á_tic[ao]s?_a', xpre=[ur'[Ii]l ']) + #1
 lema(ur'[Mm]ariner_í_as?_i', xpos=[ur' degli']) + #2
 lema(ur'[Mm]iscel_á_ne[ao]s?_a', xpos=[ur' (?:Antwerpiensia|Barcinonensia|taxinomica)']) + #17
 lema(ur'[Mm]o_v_ilidad_b', xpos=[ur' Bahía']) + #9
+lema(ur'[Nn]_ú_meros?_u', pre=ur'(?:[Ll]a|[Ee]l|[UuEe]n|[Ll]os|[Uu]nos|[Ss]u|[Ss]in|[Gg]ran|[Cc]iertos?|[Ee]s(?:te|tos|se)) ', xpre=[ur' il '], xpos=[ur' (?:Piccoli|indefinito)']) + #134
 lema(ur'[Oo]rfebrer_í_as?_i', xpos=[ur' i\b']) + #5
 lema(ur'[Pp]_á_jaros?_a', xpos=[ur' Dunes']) + #36
+lema(ur'[Pp]_ú_lico_u', pre=ur'(?:[Aa]cceso|[Aa]cto|[Aa]seo|[Aa]cusador|[Aa]gente|[Aa]lumbrado|[Aa]l|[Aa]lboroto|[Aa]rtículo|[Áá]mbito|[Bb]achillerato|[Bb]alneario|[Bb]astante|[Bb]ien|[Cc]amino|[Cc]argo|[Cc]ar[áa]cter|[Cc][ée]sped|[Cc]olegio|[Cc]omponente|[Cc]oncurso|[Cc]onocimiento|[Cc]ontador|[Cc]on|[Cc]r[ée]dito|[Cc]rematorio|[Cc]ulto|[Dd]ebate|[Dd]el?(?: difícil|)|[Dd]erecho|[Dd]esorden|[Dd]inero|[Dd]ominio|[Dd]éficit|[Ee]dificio|[Ee]l(?: gran|)|[Ee]mpleado|[Ee]ndeudamiento|[Ee]n|[Ee]nte|[Ee]nemigo|[Ee]spacio|[Ee]spejo|[Ee]ste|[Gg]asto|[Ff]in|[Ff]uncionario|[Ii]nterés|[Ii]nstituto|[Ii]nvestigación|[Ll]lamamiento|[Ll]ugar|[Mm]anifiesto|[Mm]ercado|[Mm]inisterio|[Mm]irador|[Mm]ucho|[Nn]otario|[Nn]umeroso|[Oo]brero|[Oo]jo|[Oo]rden|[Oo]rganismo|[Pp]arking|[Pp]arque|[Pp]ersonaje|[Pp]oder|[Pp]resupuesto|[Pp]roblema|[Pp]roceso|[Pp]uesto|[Rr]egistro|[Rr]astro|[Rr]eloj|[Ss]ector|[Ss]ervicio|[Ss]ervidor|[Ss]in|[Ss]u(?: propio|)|[Tt]el[ée]fono|[Tt]ecnológico|[Tt]odo|[Tt]ransporte(?: urbano|)|[Tt]rabajo|[Uu]n|[Uu]so|entre|frontón|hacer?|hará|haría|hecho|hiciera|hicieron|hizo|mayor|más|mismo|nuevo|numeroso|para|tenía) ', xpos=[ur'\.es']) + #1
+lema(ur'[Pp]a_í_s_i', pre=ur'(?:[Aa]l|[Cc]ada|[Dd]el|[Ee]l|[Uu]n|[Ss]u|[Mm]i|[Nn]uestro|gran|pequeño|[Ee]ste|[Dd]icho|[Pp]or|[Cc]ualquier) ', xpre=[ur'd\' ', ur'd\'D\'Amics ', ], xpos=[ur'\.es', ur' (?:dels|Valenci[aàá]|Basc|de les caramelles)', ]) + #505
 lema(ur'[Pp]anader_í_as?_i', xpos=[ur'\.blogspot']) + #8
 lema(ur'[Pp]arasitolog_í_as?_i', xpre=[ur'\be ']) + #7
 lema(ur'[Pp]atri_ó_tic[ao]s?_o', xpre=[ur'Ação '], xpos=[ur' di\b']) + #21
 lema(ur'[Pp]edi_á_tric[ao]s?_a', xpos=[ur' Bambino']) + #4
+lema(ur'[Pp]el_í_culas?_i', xpos=[ur'(?:\.disneylatino|\.info|9)']) + #669
 lema(ur'[Pp]ertenec_í_(?:a[ns]?|)_i', xpre=[ur'(?:[Ll]a|[Dd]e|[Ss]u) ', ur'(?:[Ll]as|[Ss]us) ']) + #16
 lema(ur'[Pp]olicl_í_nicos?_i', xpre=[ur'estación\)\|\'\'\'', ur'Viale del ', ur'Nápoles\)\|', ur'estación\)\|'], xpos=[ur' \((?:Metro de Nápoles|estación)']) + #5
 lema(ur'[Pp]on_í_a[ns]?_i', xpre=[ur'Adiós ']) + #8
 lema(ur'[Pp]resb_í_ter[ao]s?_i', xpre=[ur'F\. ']) + #17
 lema(ur'[Pp]resid_í_a[ns]?_i', xpre=[ur'fueron ', ur'plural \'\'\'']) + #8
-#lema(ur'[Pp]ris_o_n_i[oó]', pre=ur'[Ii]n ') + #0
 lema(ur'[Rr]adiograf_í_as?_i', xpos=[ur' (?:d´una|di)\b']) + #6
-#lema(ur'[Ss]_ó_tano_o', xpre=[ur'\'', ur'Zorocrates ', ur'Piaggine ']) + #0
-#lema(ur'[Ss]_ú_per As_u', xpos=[ur' d’Or']) + #0
 lema(ur'[Ss]acrist_í_as?_i', xpos=[ur' Vecchia']) + #6
+lema(ur'[Ss]ellar_í_a_i', xpre=[ur'della ']) + #1
 lema(ur'[Ss]entir_á_[ns]?_a', xpre=[ur'\bet ']) + #1
 lema(ur'[Ss]ovi_é_tic[ao]s?_e', xpre=[ur'E\. ', ur'Saussurea ', ur'Euglossa ', ur'Unione ']) + #49
-#lema(ur'[Ss]ulf_ú_ric[ao]s?_u', xpre=[ur'Dipoena ']) + #0
 lema(ur'[Ss]upremac_í_as?_i', xpre=[ur'\be ']) + #9
 lema(ur'[Tt]_é_rmica_e', xpre=[ur'Centrale ']) + #11
 lema(ur'[Tt]ar_j_etas?_g', xpre=[ur'amb ']) + #1
@@ -11550,314 +11570,308 @@ lema(ur'[Tt]elefon_í_as?_i', xpos=[ur' Nas']) + #9
 lema(ur'[Vv]en_z_(?:a[ns]?|o)_s', xpre=[ur'Sant '], xpos=[ur' (?:Klicic|Dolonc)']) + #1
 lema(ur'[l]e_í_a_i', xpre=[ur'Wo ', ur'Doriopsilla ']) + #3
 lema(ur'[t]ra_í_an_i', xpos=[ur' in\b']) + #2
+lema(ur'_h_oland[eé]s_H', pre=ur'\b(?:e[ln]|del?|idioma|y) ', xpre=[ur'Diplomado '], xpos=[ur' (?:[Ee]rrante|[Vv]olador)']) + #2
+lema(ur'_ha_ (?:jugado|labrado|lanzado|liberado|limitado|llegado|llenado|llevado|logrado|manejado|marcado|mantenido|matado|mejorado|mencionado|modelado|modernizado|mostrado|multiplicado|nacido|obtenido|observado|ocupado|ofrecido|ordenado|participado|peleado|perdido|permanecido|permitido|perseguido|pertenecido|podido|pose[ií]do|presentado|probado|promovido|propagado|prosperado|provocado|publicado|quedado|realizado|recibido|recuperado|regresado|registrado|renunciado|repercutido|replanteado|representado|respondido|restaurado|retenido|retratado|reunido|revelado|revisado|revolucionado|sabido|sacado|salido|señalado|separado|sido|sobrevivido|sostenido|sufrido|sugerido|superado|suspendido|sustituido|tenido|terminado|tocado|tomado|trabajado|tra[ií]do|transcurrido|transformado|trasladado|tratado|ubicado|usado|utilizado|variado|vendido|venido|viajado|visto|vivido|vuelto)_ah?', xpre=[ur'[0-9]', ]) + #160
 lema(ur'_Á_rea (?:[Mm]etropolitana|[Cc]hica|Natural|Local|[Cc]onurbada|[Bb]iogeogr[áa]fica|[Rr]ecreativa)\b_A', xpre=[ur'l\'']) + #79
 lema(ur'_Á_rea de\b_A', xpre=[ur'Council ']) + #58
 lema(ur'_Ú_ric(?:as|os?)_U', xpos=[ur' Schmitdt']) + #1
 lema(ur'_é_l (?:anhela|pued[ae]|gana)_e', xpre=[ur'l\'']) + #59
 lema(ur'_é_l (?:est(?:ar|)[aá]n?|estaba|estará|estuvo|estar[ií]an?|dijo|dir[aá]|dice|vienen?|fu[ée]|fueron|vendr[aá]n?|tiene|tuvo|ten[ií]a[ns]?|tendrán?|es|era|serán?|fue|hab[ií]a|sabe|sab[ií]a|no le)_e', xpre=[ur'l\'']) + #112
 lema(ur'_é_l ha_e', xpre=[ur'(?:ch\'|Af\')']) + #3
+lema(ur'_é_l[,]_e', pre=ur'(?:[Aa]|[Dd]e|[Cc]on|[Ee]n|[Pp]or|[Hh]acia) ', xpos=[ur' (?:este|ya|hoy|entonces|abarrotado|en ese|relativamente|ahora|por)']) + #208
+lema(ur'_é_l[.]_e', pre=ur'(?:[Aa]|[Dd]e|[Cc]on|[Ee]n|[Pp]or|[Hh]acia) ', xpos=[ur'\.\.']) + #207
 lema(ur'_é_l[:]_e', pre=ur'(?:[Aa]|[Dd]e|[Cc]on|[Ee]n|[Pp]or|[Hh]acia) ', xpre=[ur'limita ']) + #11
 lema(ur'_é_l[;]_e', pre=ur'(?:[Aa]|[Dd]e|[Cc]on|[Ee]n|[Pp]or|[Hh]acia) ', xpre=[ur'limita ']) + #5
 lema(ur'_é_pic(?:as|os?)_e', xpre=[ur'Scontro ']) + #1
-[(ur'(?P<ii>[=]+ *)(?P<tt>(?:Cabezas de Serie|Jugadores Destacados|Rondas Finales|Selección Nacional|Cuadro Inferior|Cuadro Superior|Enlaces Externos|Lista de Canciones))(?P<dd> *[=])', titulo),  
-   (ur'(?P<ii>[=]+ *)(?P<tt>(?:Características Técnicas|Centros Comerciales|Centros de Salud|Cine y Televisión|Clasificación General|Como Productor|Cooperación Internacional|Cuadrangular Final|Cuarta Temporada|Disco Dos|Disco Uno|Edición Especial|El Edificio|Especificaciones Técnicas|Exposiciones Individuales|Fiesta Patronal|Formación Académica|Goleadores Históricos|Gran Final|Grupo Norte|Grupo Único|Historia Antigua|Instituciones Educativas|Mecanismo de Acción|Modo Batalla|Obras de Teatro|Otras Actividades|Otras Canciones|Otros Proyectos|Otros Trabajos|Partidos Internacionales|Posiciones en Liga|Premios Individuales|Premios y Distinciones|Primera Generación|Primera Parte|Quinta Temporada|Recepción de La crítica|Origen del Nombre|Referencias Bibliográficas|Segunda Generación|Segunda Parte|Su Obra|Vida Profesional|Álbum de Estudio|Álbumes Recopilatorios))(?P<dd> *[=])', titulo),  
-(ur'(?P<ii>[=]+ *)(?P<tt>(?:Campeonatos Nacionales|Dobles Masculino|Fase Final|Fase de Grupos|Individual Masculino|Media Distancia|Premios y Nominaciones|Primera Ronda|Vida Personal))(?P<dd> *[=])', titulo),  
-(ur'(?P<ii>[=]+ *)(?P<tt>(?:Banda Sonora|Campeonatos Internacionales|Campeonatos Mundiales|Carrera Profesional|Copa del Mundo|Cuadro Final|Cuartos de Final|Distinciones Individuales|Equipos Participantes|Lista de Episodios|Lista de Temas|Medios de Comunicación|Personajes Principales|Primera Fase|Primeros Años|Segunda Fase|Segunda Ronda|Series de Televisión|Series de Tv|Tabla de Posiciones|Tercer Lugar|Video Musical|Véase También|Álbumes de Estudio))(?P<dd> *[=])', titulo),
-(ur'(?P<ii>[=]+ *)(?P<tt>(?:Aerolíneas y Destinos|Artistas Invitados|Carrera Musical|Carrera Política|Ciudades Hermanadas|Ciudades Hermanas|Como Entrenador|Como Jugador|Copas Internacionales|Cuadros Finales|Datos del Club|Dobles Femenino|Dobles Masculinos|Ficha Técnica|Fiestas Patronales|Flora y Fauna|Individuales Masculino|Individuales Masculinos|Información General|Larga Distancia|Listado de Canciones|Lugares de Interés|Medio Ambiente|Miembros Actuales|Notas y Referencias|Orden de Batalla|Organizaciones Multilaterales|Participaciones Internacionales|Personajes Ilustres|Personajes Recurrentes|Personajes Secundarios|Premios Especiales|Primera División|Primera Etapa|Primera Fecha|Primera Temporada|Puntos de Interés|Referencias Externas|Ronda Final|Ronda Preliminar|Récord Europeo|Segunda Fecha|Segunda Temporada|Tabla General|Tercera Fecha|Torneos Nacionales|Videos Musicales|Vídeo Musical|Zona Norte|Zona Residencial|Zona Sur))(?P<dd> *[=])', titulo),
-(ur'(?P<ii>[=]+ *)(?P<tt>(?:Actividad Económica|Actividades Políticas|Antiguos Miembros|Ascensos y Descensos|Atractivos Turísticos|Barrios Servidos|Cabeza de Serie|Campeonato Mundial|Campeonato de Pilotos|Carrera Deportiva|Carrera Internacional|Carrera Militar|Clasificación Final|Clubes Afiliados|Composición del Distrito|Consejo de Administración|Cuadro Principal|Cuadro de Honor|Cuerpo Técnico|Cultura Popular|Destinos Internacionales|Destinos Nacionales|Distribución y Hábitat|División Administrativa|División Política|Dobles Femeninos|Ediciones Anteriores|Emisión Internacional|Enlace Externo|Entrenadores Destacados|Estrellas Invitadas|Evolución de la Clasificación|Exposiciones Colectivas|Exposiciones Personales|Finales de División|Formación Actual|Formato del Torneo|Galería de Imágenes|Goles en la Selección|Individual Femenino|Individuales Femenino|Individuales Femeninos|Infancia y Juventud|Junta Directiva|La Batalla|Liga Dominicana|Lista de Campeones|Lugares que Atraviesa|Medallero Total|Medallero por Género|Modos de Juego|Movimientos Divisionales|Máximos Goleadores|Músicos Invitados|Números Retirados|Octavos de Final|Otras Versiones|Otros Personajes|Otros Premios|Parte Alta|Parte Baja|Paso por Carrera Oficial|Poderes y Habilidades|Posiciones Finales|Prehistoria y edad Antigua|Premios Internacionales|Premios Nacionales|Premios y Reconocimientos|Presentación Previa|Programas de Tv|Recursos Naturales|Referencias Culturales|Reseña Histórica|Resultados Electorales|Roles Interpretados|Segunda División|Segunda Etapa|Semifinales de División|Servicios Ferroviarios|Servicios Públicos|Sistema de Competencia|Sitios de Interés|Sitios de Referencia|Tabla Acumulada|Temporada Regular|Tercera Ronda|Tercera Temporada|Territorio y Población|Torneos Internacionales|Trayectoria Política|Trayectoria Profesional|Trayectoria en TV|Ubicación Geográfica|Vialidad y Transporte|Vida Política|Vida Privada|Vida y Carrera|Vida y Obra|Vías de Comunicación|Vídeos Musicales))(?P<dd> *[=])', titulo),
- (ur'(?P<ii>[=]+ *)(?:Best [Aa]lbums)(?P<dd> *[=])', ur'\g<ii>Mejores álbumes\g<dd>'),  
- (ur'(?P<ii>[=]+ *)(?:Bonus [Tt]racks)(?P<dd> *[=])', ur'\g<ii>Pistas adicionales\g<dd>'),  
- (ur'(?P<ii>[=]+ *)(?:Track [Ll]isting)(?P<dd> *[=])', ur'\g<ii>Lista de canciones\g<dd>'),  
- (ur'(?P<ii>[=]+ *)(?:edad [Mm]oderna|Edad moderna)(?P<dd> *[=])', ur'\g<ii>Edad Moderna\g<dd>'),  
- (ur'(?P<ii>[=]+ *)(?:edad [Aa]ntigua|Edad Antigua)(?P<dd> *[=])', ur'\g<ii>Edad Antigua\g<dd>'),  
- (ur'(?P<ii>[=]+ *)(?:edad [Mm]edia|Edad media)(?P<dd> *[=])', ur'\g<ii>Edad Media\g<dd>'),  
- (ur'(?P<ii>[=]+ *)(?:edad [Cc]ontempor[áa]nea|Edad contempor[áa]mea|Edad Contemporanea)(?P<dd> *[=])', ur'\g<ii>Edad Contemporánea\g<dd>'),  
-] + #1
-lema(ur'_é_l[.]_e', pre=ur'(?:[Aa]|[Dd]e|[Cc]on|[Ee]n|[Pp]or|[Hh]acia) ', xpos=[ur'\.\.']) + #207
-lema(ur'_é_l[,]_e', pre=ur'(?:[Aa]|[Dd]e|[Cc]on|[Ee]n|[Pp]or|[Hh]acia) ', xpos=[ur' (?:este|ya|hoy|entonces|abarrotado|en ese|relativamente|ahora|por)']) + #208
 lema(ur'_é_xitos?_e', xpos=[ur'\.com']) + #123
-lema(ur'[Cc]_ó_digo_o', xpre=[ur'<'], xpos=[ur' (?:Group|commercial|Manuelino|Afonsino)']) + #164
-lema(ur'[Ff]_ó_rmulas?_o', pre=ur'(?:[Ll]as?|[Uu]nas?|[Dd]e) ', xpre=[ur'quién '], xpos=[ur' (?:One|Romani|della)', ]) + #67
-lema(ur'_h_oland[eé]s_H', pre=ur'\b(?:e[ln]|del?|idioma|y) ', xpre=[ur'Diplomado '], xpos=[ur' (?:[Ee]rrante|[Vv]olador)']) + #2
-lema(ur'M_é_xico_e', pre=ur'(?:[Dd]e|[Ee]n|[Ss]obre|[Pp]ara|[Pp]or|[Tt]odo) ', xpre=[ur'Chanteur ', ur'Audrain ', ur'Bassin ', ur'Humaines ', ur'Histoire ', ], xpos=[ur' (?:Herpetology|City|Beach)', ur'[\']s', ]) + #476
-lema(ur'[Aa]rt_í_culo_i', xpos=[ur' (?:mortis|meni)', ]) + #465
-lema(ur'[Gg]_é_nero_e', pre=ur'(?:[Ee]l|[Ee]ste|[Un]|[Dd]el?) ', xpre=[ur'[Rr]ío '], xpos=[ur'(?:…|\.com)']) + #146
-lema(ur'[Pp]a_í_s_i', pre=ur'(?:[Aa]l|[Cc]ada|[Dd]el|[Ee]l|[Uu]n|[Ss]u|[Mm]i|[Nn]uestro|gran|pequeño|[Ee]ste|[Dd]icho|[Pp]or|[Cc]ualquier) ', xpre=[ur'd\' ', ur'd\'D\'Amics ', ], xpos=[ur'\.es', ur' (?:dels|Valenci[aàá]|Basc|de les caramelles)', ]) + #505
 lema(ur'_ú_ltima_u', pre=ur'[Dd]e ', xpos=[ur' ratio']) + #8
-lema(ur'[Pp]_ú_lico_u', pre=ur'(?:[Aa]cceso|[Aa]cto|[Aa]seo|[Aa]cusador|[Aa]gente|[Aa]lumbrado|[Aa]l|[Aa]lboroto|[Aa]rtículo|[Áá]mbito|[Bb]achillerato|[Bb]alneario|[Bb]astante|[Bb]ien|[Cc]amino|[Cc]argo|[Cc]ar[áa]cter|[Cc][ée]sped|[Cc]olegio|[Cc]omponente|[Cc]oncurso|[Cc]onocimiento|[Cc]ontador|[Cc]on|[Cc]r[ée]dito|[Cc]rematorio|[Cc]ulto|[Dd]ebate|[Dd]el?(?: difícil|)|[Dd]erecho|[Dd]esorden|[Dd]inero|[Dd]ominio|[Dd]éficit|[Ee]dificio|[Ee]l(?: gran|)|[Ee]mpleado|[Ee]ndeudamiento|[Ee]n|[Ee]nte|[Ee]nemigo|[Ee]spacio|[Ee]spejo|[Ee]ste|[Gg]asto|[Ff]in|[Ff]uncionario|[Ii]nterés|[Ii]nstituto|[Ii]nvestigación|[Ll]lamamiento|[Ll]ugar|[Mm]anifiesto|[Mm]ercado|[Mm]inisterio|[Mm]irador|[Mm]ucho|[Nn]otario|[Nn]umeroso|[Oo]brero|[Oo]jo|[Oo]rden|[Oo]rganismo|[Pp]arking|[Pp]arque|[Pp]ersonaje|[Pp]oder|[Pp]resupuesto|[Pp]roblema|[Pp]roceso|[Pp]uesto|[Rr]egistro|[Rr]astro|[Rr]eloj|[Ss]ector|[Ss]ervicio|[Ss]ervidor|[Ss]in|[Ss]u(?: propio|)|[Tt]el[ée]fono|[Tt]ecnológico|[Tt]odo|[Tt]ransporte(?: urbano|)|[Tt]rabajo|[Uu]n|[Uu]so|entre|frontón|hacer?|hará|haría|hecho|hiciera|hicieron|hizo|mayor|más|mismo|nuevo|numeroso|para|tenía) ', xpos=[ur'\.es']) + #1
-lema(ur'[Hh]ist_ó_ricos?_o', xpre=[ur'Boletim ', ur'romànico ', ur'Illimani ', ur'Études ', ur'medicorum ', ur'Estudo ', ur'Lesbio ', ur'[Aa]no ', ur'do Patrimonio ', ], xpos=[ur' (?:Naturalia|do|no|[Aa]sturiensia)\b', ur', biographico', ur' et ', ]) + #429
-lema(ur'[Dd]emogr_á_fic[ao]s?_a', xpre=[ur'Bilancio ', ur'storia ', ]) + #588
-lema(ur'(?:[Aa]|[Dd]e)__l (?:equipo|resto|primer|grupo|pueblo|personaje|nombre|[Rr]ey|programa|club|presidente|nuevo|álbum|municipio|planeta|número|estado|centro|trabajo|productor|padre|mundo|lugar|jugador|gobierno|país|margen|juego|incremento|gran|estudio|elenco|desarrollo|cuarto|antiguo|verdadero|usuario|[uú]ltimo|tema|poder|oeste|momento|español|otro|entonces)_ e', xpre=[ur'(?:[Ll]ado|[Cc]ara) ', ur'\.', ]) + #287
-lema(ur'[Ii]m_á_genes_a', xpos=[ur' Librorum']) + #115
-lema(ur'[Bb]ater_í_as?_i', xpre=[ur'[Rr]ainha de ']) + #171
-lema(ur'_ha_ (?:jugado|labrado|lanzado|liberado|limitado|llegado|llenado|llevado|logrado|manejado|marcado|mantenido|matado|mejorado|mencionado|modelado|modernizado|mostrado|multiplicado|nacido|obtenido|observado|ocupado|ofrecido|ordenado|participado|peleado|perdido|permanecido|permitido|perseguido|pertenecido|podido|pose[ií]do|presentado|probado|promovido|propagado|prosperado|provocado|publicado|quedado|realizado|recibido|recuperado|regresado|registrado|renunciado|repercutido|replanteado|representado|respondido|restaurado|retenido|retratado|reunido|revelado|revisado|revolucionado|sabido|sacado|salido|señalado|separado|sido|sobrevivido|sostenido|sufrido|sugerido|superado|suspendido|sustituido|tenido|terminado|tocado|tomado|trabajado|tra[ií]do|transcurrido|transformado|trasladado|tratado|ubicado|usado|utilizado|variado|vendido|venido|viajado|visto|vivido|vuelto)_ah?', xpre=[ur'[0-9]', ]) + #160
-lema(ur'[Nn]_ú_meros?_u', pre=ur'(?:[Ll]a|[Ee]l|[UuEe]n|[Ll]os|[Uu]nos|[Ss]u|[Ss]in|[Gg]ran|[Cc]iertos?|[Ee]s(?:te|tos|se)) ', xpre=[ur' il '], xpos=[ur' (?:Piccoli|indefinito)']) + #134
-lema(ur'[Pp]el_í_culas?_i', xpos=[ur'(?:\.disneylatino|\.info|9)']) + #669
-lema(ur'[Cc]r_é_dito_e', xpre=[ur'\bdi ', ], xpos=[ur' (?:in|Italiano|Artigiano|Valtellinese|Bergamasco|Emiliano|and|per|Varessino|Esattorie)', ]) + lema(ur'[Cc]r_é_ditos_e', xpre=[ur'\blo ', ur'Pizze a '], xpos=[ur' in\b', ]) + #26
+
+#lema(ur'[Aa]rchivar_í_a[ns]?_i', xpos=[ur', [1-9][0-9]+']) + #0
+#lema(ur'[Aa]rd_í_as_i', xpre=[ur'de ']) + #0
+#lema(ur'[Cc]almar_í_a_i', xpre=[ur'\ba ']) + #0
+#lema(ur'[Ee]x_ces_iv[ao]s?_', xpre=[ur'Aucula ']) + #0
+#lema(ur'[Ff]icolog_í_as?_i', xpre=[ur'Brasileira de ']) + #0
+#lema(ur'[Ff]renes_í__i', xpre=[ur'Coleção '], xpos=[ur' \(Lisboa', ur': história']) + #0
+#lema(ur'[Ii]nic_i_os?_', xpos=[ur' d[\'’]Avalos', ur'\'\'\'']) + #0
+#lema(ur'[Ll]abrar_í_a_i', xpre=[ur'Abraxas ']) + #0
+#lema(ur'[Ll]exicograf_í_as?_i', xpre=[ur'Lexicologia y '], xpos=[ur' (?:e os|catalana|catalanes)\b']) + #0
+#lema(ur'[Mm]orfol_ó_gic(?:[ao]s|amente)_o', xpos=[ur' e\b']) + #0
+#lema(ur'[Oo]sar_í_as?_i', xpos=[ur'\'\'']) + #0
+#lema(ur'[Pp]illar_í_a_i', xpre=[ur'Cycloclypeus ']) + #0
+#lema(ur'[Pp]ris_o_n_i[oó]', pre=ur'[Ii]n ') + #0
+#lema(ur'[Ss]_ó_tano_o', xpre=[ur'\'', ur'Zorocrates ', ur'Piaggine ']) + #0
+#lema(ur'[Ss]_ú_per As_u', xpos=[ur' d’Or']) + #0
+#lema(ur'[Ss]ulf_ú_ric[ao]s?_u', xpre=[ur'Dipoena ']) + #0
+#lema(ur'[Vv]ersar_í_a_i', xpre=[ur'Flagrospira ']) + #0
 []][0]
 
 grupo3 = [# 250-499
-lema(ur'[Hh]ac_í_a[ns]?_i', pre=ur'(?<!\])(?:[Ss]e|[Ll][aeo]s?|[Nn]os|[Mm]e|[Ee]so) ', xpre=[ur'por ', ur'reyno ', ]) + #373
-lema(ur'[Ff]_á_brica_a', pre=ur'[Dd]e ', xpos=[ur' (?:Mvndi|[Mm]undi|Machinarum)']) + #447
-lema(ur'[Ff]_á_brica_a', pre=ur'(?:[Ll]a|[Uu]na?|nueva|antigua) ', xpre=[ur'[Ss]e ', ur'[Qq]ui[eé]n ', ur'[Qq]u[eé] ']) + #447
-lema(ur'[Cc]ar_á_tulas?_a', xpre=[ur'[Ss] e'], xpos=[ur'\.net']) + #363
-lema(ur'Bogot_á__a', xpre=[ur'12325\) ', ur'Royal ', ur'Illinois\)\|', ur'Tennessee\)\|', ur'Labama ', ur'[Ff]rom ', ur'd[\'’]Or de ', ur'\b(?:in|of) ', ur'\bthe ', ], xpos=[ur'\.gov\.co|: From|[\'’]s| (?:[Ii]n|Film|Beer|Wildlife|[Pp]roject|Laser|\((?:Tennessee|Illinois)Telephone)', ]) + #493
-lema(ur'[Hh]ab_í_a_i', xpos=[ur' (?:atrimaxillaris|rubra|rubica|fuscicauda|cristata|copetona|ceniza|gutteralis|Carinegra|de garganta|que chusar|gutturalis|\[\[Rosa|sombría|gorjirroja|coronirroja|carinegra)', ur'(?:\]\]|\'\')', ]) + #498
-lema(ur'[Jj]apon_é_s_e', xpre=[ur'dos '], xpos=[ur'(?:\]\][a-zñ]+|\.cl)', ]) + #461
-lema(ur'[Ss]_é_ptim[ao]s?_e', xpre=[ur'Anne ', ur'Dissertation ', ur'Drepanosticta ', ur'Et ', ur'Franca ', ur'Legio ', ur'Limnoria ', ur'Macromia ', ur'Triacanthagyna ', ur'vicesima ', ], xpos=[ur' (?:Vector|Gemina|saeculo|Basiano|Severo|Arts|editio|ab )', ur'\.cl', ]) + #450
-lema(ur'[Bb]_é_isbol_e', xpre=[ur'Camp de ', ur'française de ', ur'Politics, ', ], xpos=[ur' (?:Elkartea|i Softbol|Viladecans|i Sofbol)', ur'(?:\.com|\]\]istas?)', ]) + #443
-lema(ur'[e]st_á__a', pre=ur'[Nn]o ', xpre=[ur' [yo] ', ur'precisamente ', ], xpos=[ur' (?:vez|Corte|noche)', ]) + #418
-lema(ur'_é_l se_e', xpre=[ur'l\'', ur'Har\'', ur'Yisra’', ]) + #408
-lema(ur'Hungr_í_a_i', xpos=[ur', M\.', ]) + #402
-lema(ur'[Cc]at_ó_lic[ao]s?_o', xpre=[ur'Missão ', ur'Rei ', ur'dos Siriacos ', ur'Escola ', ur'Universidade '], xpos=[ur'do\b', ur'\.edu', ]) + #396
-lema(ur'M_ú_nich_u', pre=ur'(?:[Dd]e|[Ee]n) ', xpre=[ur'accord ', ur'Biennale ', ur'Français ', ur'Souvenirs ', ], xpos=[ur' (?:[Mm]achine|My|Kurt)', ]) + #384
-lema(ur'[Ee]stad_í_sticas_i', xpre=[ur'CD '], xpos=[ur'(?:\.sport)']) + #355
-lema(ur'[Cc]a_í_d[ao]s?_i', xpre=[ur'Naga ', ]) + #337
-lema(ur'_Á_msterdam_A', pre=ur'(?:[Dd]e|[Ee]n) ', xpre=[ur'[Mm]icropolitana ', ur'[Mm]unicipio ', ], xpos=[ur' (?:Midkap|Zuidoost|Pride)', ur' Street', ur' Vallon', ]) + #324
-lema(ur'[Pp]olic_í_as?_i', xpre=[ur'\bda ', ur'deputado ', ur'bon ', ], xpos=[ur' (?:de la Generalitat|armat|in)\b', ur'(?:\.gov|[\]])', ]) + #313
-lema(ur'[Ee]stad_í_stic(?:a|os?|amente)_i', xpos=[ur'(?:\.(?:ad|net))']) + #307
-lema(ur'M_á_nchester_a', pre=ur'(?:[Dd]e|[Ee]n) ', xpre=[ur'Clay ', ur'[Cc]ondado ', ur'[Mm]unicipio ', ur'[Rr]esidiendo ', ur'electoral ', ], xpos=[ur' (?:Square|City|Academy|United|Central|Apollo|University|Magic|terrier)', ]) + #295
-lema(ur'C_á_diz_a', xpre=[ur'\b(?:at|of) ', ur'von ', ur'Ohio\)\|', ur'Amoco ', ur'John ', ur'Roberto ', ur'[Mm]unicipio de ', ], xpos=[ur' (?:& Hedges|\((?:California|Ohio)|Bay|Island|Geneviève)', ]) + #292
-lema(ur'[Dd]iscograf_í_as?_i', xpre=[ur'Uma ', ], xpos=[ur' (?:brasileira|Illustrata)', ]) + #288
-lema(ur'Am_é_rica_e', pre=ur'[Dd]e ', xpre=[ur'[Mm]unicipio ', ur'electoral ', ur'álbum ', ], xpos=[ur' (?:Online|Jackson|One|West|East)', ur'[\'’]s', ]) + #282
-lema(ur'[Ss]_á_bados?_a', xpre=[ur'Laugh ']) + #272
-lema(ur'M_á_laga_a', xpre=[ur'\b(?:í|a) ', ur'\bin ', ur'Gustave ', ur'[Mm]unicipio de ', ], xpos=[ur' (?:Auditorium|Airport)', ur'\.es', ]) + #265
-lema(ur'Tucum_á_n_a', xpre=[ur'Ayres y ', ur'[0-9]', ur'and ', ], xpos=[ur' (?:und|Lawn|Pygmy-owl|Parrot)', ]) + #261
-lema(ur'M_é_rida_e', xpre=[ur'el \'\'', ur'escocesa ', ur'Bahr[ae]in[- ]', ur'Lampre–', ur'Reyna ', ur'[Pp]rincesa ', ur'Joker ', ur'Trencin ', ur'Trenčín ', ur'[Jj]uan ', ur'bicicletas ', ur'con ', ur'from ', ur'of ', ur'the Cordillera de ', ], xpos=[ur' (?:Maxillaria|Sunangel|Cycling|Biking|inicia|una nueva|va con|matar|incapaz|Roman|Ladies|Island|Europe|solicita|aprende|Small-eared)', ur', personaje']) + #260
-lema(ur'_C_(hina)_c', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ', xpos=[ur' poblana', ur'\.(?:org|com)']) + #424
-lema(ur'_A_lemania_a', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ', xpre=[ur'\]']) + #150
-lema(ur'_A_rgentina_a', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ', xpre=[ur'\]', ur'\bA ']) + #150
-lema(ur'_N_oruega_n', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ', xpre=[ur'Serie [A-C] ']) + #10
-lema(ur'[Ss]eñor_í_[ao]s?_i', xpre=[ur'Nobiliario de los reinos y ']) + #327
-lema(ur'B_é_lgica_e', xpre=[ur'Fort ', ur'Scripta botanica ', ur'Janseniana ', ur'nombre de \'\'', ur'S\.Y\. ', ur'RV \'\'', ur'Linneana ', ur'llamándolo \'\'', ur'1884\)\|', ur'1884\)\|\'\'', ur'Neurologica ', ur'María ', ur'género\)\|', ur'navío "', ur'navío ', ur'Nova ', ur'Psychiatrica ', ur'velero ', ur'Florula ', ur'RV ', ur'de la ', ur' (?:du|el) ', ur' (?:du|el) \'\'', ur'del \'\'', ur'del ', ur'[Ll]a ', ur'[ae]l ', ur'el "', ur'The ', ur'Botanica ', ur'Galia ', ur'Gallia ', ur'expédition "', ur'Scripta Bot\. ', ur'\(1052\) ', ], xpos=[ur' (?:Nova|prima|secunda|de Nassau|antarctica|Diary|FC|Edegem|Universe|Prima|Secunda|Historiae|Nostri|Flemish|Wallonian|Edegem|Select|Albums|Top|\(género)', ]) + #489
-lema(ur'[Pp]ol_í_tica_i', xpre=[ur'\b(?:d[ai]|De) ', ur'\b[ei] ', ur'\by \'\'', ur'\be la ', ur'e Cultura ', ur'Carità ', ur'libertate ', ur'dell[\'’]Economia ', ur'Palingenesi ', ur'in "Filosofia ', ur'distinzione ', ur'Zero ', ur'Societá italiana de Filosofia ', ur'Renovacio ', ur'[Rr]egio ', ur'di teoria ', ur'riflessione ', ur'dalla mafia ', ur'Scienza ', ur'Commentatio ', ur'vita ', ur'il Magnifico: ', ur'democrazia ', ur'\buma ', ur'Lege ', ur'passione ', ur'Exercitatio ', ur'giurisdizione ', ur'Studia ', ur'Principia ', ur'scienza ', ur'Comunicacao & ', ur'[Ss]cienza & ', ur'Vita ', ur'vita la ', ur'alla ', ur'capitale ', ur'elettorale ', ur'concepire la ', ur'dell\'economía ', ur'dell[ae] ', ur'della filosofia ', ur'di Economia ', ur'eclesiastica: ', ur'et ', ur'di economia ', ur'legittimazione ', ur'nuova ', ur'partecipazione ', ur'rappresentanza ', ur'nella ', ur'sulla ', ur'trias ', ], xpos=[ur' (?:del diritto|Educacional No|del novecento|autoritară|sapientia|nazionale|hermetica|mineaza|ostile|estera|xxi|contro|Oeconomica|sotterranea|Methodicae|and|nell|[Ee] (?:morte|cultura|nuove|verità|utopia|letteratura|dissimulazione|la|[Hh]istoria)|italiana di|seu|Logica|perduta|ecclesiatica|Hermetica|e |(?:ed|in) |come|razzista|occidentale|internazionale|d[aio] |dell|della|al tempo|del (?:Regno|corpo)|tedesca|de Acalmação)', ur'(?:, (?:mafia e giustizia|Corsica)|: Logica e Metodo|\.Ambiental)', ]) + #468
-lema(ur'[Pp]eri_ó_dic[ao]_o', xpre=[ur'Il sistema ', ur'Publicatio ', ur'Christiana ', ], xpos=[ur' (?:della|dell|evangeliorum|Constantiniana|internazionale|national|\(sic|di )', ur'\.cnt']) + lema(ur'[Pp]eri_ó_dicos_o', xpre=[ur'dos ', ]) + #450
-lema(ur'Valpara_í_so_i', xpre=[ur'Valley ', ur'DTP ', ur'etre a ', ur'Porter en ', ur'College\|', ur'college = ', ur'Florida\)\|', ur'Vickers ', ur'à ', ur'Indiana\)\|'], xpos=[ur' (?:Artizan|School|High|Region|athletic|Crusaders|College|Male|Crusaders|Muntanya|Platja|University|\((?:in spanish|Indiana|Florida|Nebraska))', ur'(?:, ?(?:\[\[|)(?:IN|décembre|Indiana|Florida|Nebraska)|[\]\}])', ]) + #437
-lema(ur'Crist_ó_bal_o', pre=ur'San ', xpre=[ur' ng ', ur'[Ff]rom ', ur' [Tt]o '], xpos=[ur' (?:Thrush|Starling|Mockingbird|Melidectes|Leaf)', ur'(?:\.jpg|, Columbus)', ]) + #386
-lema(ur'[Ee]conom_í_as?_i', xpre=[ur'\b(?:e[dm]|na) ', ur'\b[Aa] ', ur'[Ll][`’\']', ur'llamado \'\'', ur'Facultade de ', ur'Societat, ', ur' y \'\'', ur'[Uu]ma ', ur'Història, ', ur'Nodal ', ur'Outra ', ur'Societat i ', ur'UOL ', ur'[dl]\'', ur'\bd[ai] ', ur'dell\'', ur'\be ', ur'il Magnifico: politica, ', ur'Pensiero – ', ur'nostra ', ur'nuova ', ], xpos=[ur' (?:non|Fechada|rustica per|d[aio]|dell|Internazionale|canaglia|Brasileira|pubblica|mundial em|Política do|Solidária|\(editorial|e (?:sviluppo|[Ss]ociedade|società|[Tt]eologia|[Pp]olítica|[Gg]estão|Storia|Retórica|Finanze)|i|popular e solidária|- Itália marca)\b', ur'(?:[]0-9]+|, (?:cultura i|planejamento|producció|Internazionale|Management|Administração)|\.(?:gob|uady)|: O novo)\b', ]) + #317
-lema(ur'[Hh]ist_ó_ric(?:as?|amente)_o', xpre=[ur'De ', ur' e[nt] ', ur'Folia Linguistica ', ur'Militaria & ', ur'Commentatio ', ur'Studia ', ur'Recerca ', ur'Fragmenta ', ur'Romaniae ', ur'Miscellanea ', ur'Epitome ', ur'Flora ', ur'De arte ', ur'panta: ', ur'Geographica ', ur'Opera ', ur'Germaniæ ', ur'Germanica ', ur'Folia Lingüística ', ur'Geographia ', 'Exquisitio ', ur'Acta ', ur'Bibliotheca ', ur'Augustiniana ', ur'Dissertatio ', ur'Synopsis ', ur'Germaniae ', ur'Monumenta ', ur'Relatio ', ur'Studia ', ], xpos=[ur' (?:Minutes|facultate|Constantiniana|Bohemica|da|del Rei|e [Gg]eneal[oó]gicas|Hungariam|Asturiensia|Didactica|Foundation|Russiae|Lwów|et)\b', ur'(?:\] project|\.(?:ejercito|unam)|\'\')', ]) + #317
-lema(ur'[Ee]lectr_ó_nic[ao]s?_o', xpre=[ur' de \'\'', ur' (?:to|of) ', ur'Intreprinderea ', ur'Ethnic ', ur'Palaeontologia ', ur'Veronica ', ur'[Aa][Rr][Ss] ', ur'Jay ', ur'New ', ], xpos=[ur' (?:[1-9]|Mix|[Bb]y|Classica|Version|remixe)', ur'(?:\.es|\'s)', ]) + #291
-lema(ur'Par_í_s_i', pre=ur'[Ee]n ', xpre=[ur'semanal '], xpos=[ur' (?:Hill|Review|Parade|Photo|Conservatoire|et al)', ur'\.fr', ]) + #291
-lema(ur'[Aa]qu_í__i', xpre=[ur'[Ff]ique ', ur'Vem ', ur'Ficar Por ', ur'prá ', ur'Eis ', ur'Ara i ', ur'Keith ', ur'Senta ', ur'Voc[eê] Está ', ur'Ele Está ', ur'Esteve ', ur'Ter ', ur'Isto ', ur'jogam ', ur'Estou ', ur'Político ', ur'[Vv]eja ', ur'[Éé] ', ur'foram ', ur'Chegar ', ur'pouco ', ur'se Faz, ', ur'soc ', ur'[Dd]\'', ], xpos=[ur' (?:Tão|Portugal|Chegamos|comiença|lladas|yaze|fasemos|restringido à|[Nn][aã]o|Há|D\'El|s\'Acaba|se Faz|Tá|Ness|iace|de Novo|jaz|Strange|Without|havia|[áeé] |na |tudo|tem |entre nós|Estou|começa|o R[íi]o|a (?:palavra|emoção))', ur'(?:[\|\)\']|, (?:ali|Buytrago|Mato Grosso se vê))']) + #283
-lema(ur'[s]abr_á_[ns]?_a', xpre=[ur'eddar '], xpos=[ur' y ', ur'[\]\']']) + #289
-lema(ur'Almer_í_a_i', xpre=[ur' di ', ur'Nebraska\)\|', ur'5879\) '], xpos=[ur' (?:Star|Lykes|Teatre|Basin|province|\((?:Alabama|Nebraska|Urban))', ]) + #265
-lema(ur'[Aa]lem_á_n_a', xpre=[ur'Roberto ', ur'Antonio ', ur'Allan ', ur'[Dl][\'’]', ur'Selva ', ], xpos=[ur' (?:Cardona|Grup)', ur'\]\]es']) + #469
+lema(ur'B_é_lgica_e', xpre=[ur' (?:du|el) ', ur' (?:du|el) \'\'', ur'1884\)\|', ur'1884\)\|\'\'', ur'Botanica ', ur'Florula ', ur'Fort ', ur'Galia ', ur'Gallia ', ur'Janseniana ', ur'Linneana ', ur'María ', ur'Neurologica ', ur'Nova ', ur'Psychiatrica ', ur'RV ', ur'RV \'\'', ur'S\.Y\. ', ur'Scripta Bot\. ', ur'Scripta botanica ', ur'The ', ur'[Ll]a ', ur'[ae]l ', ur'\(1052\) ', ur'de la ', ur'del ', ur'del \'\'', ur'el "', ur'expédition "', ur'género\)\|', ur'llamándolo \'\'', ur'navío ', ur'navío "', ur'nombre de \'\'', ur'velero ', ], xpos=[ur' (?:Nova|prima|secunda|de Nassau|antarctica|Diary|FC|Edegem|Universe|Prima|Secunda|Historiae|Nostri|Flemish|Wallonian|Edegem|Select|Albums|Top|\(género)', ]) + #336
+lema(ur'[Hh]ist_ó_ric(?:as?|amente)_o', xpre=[ur' e[nt] ', ur'Acta ', ur'Augustiniana ', ur'Bibliotheca ', ur'Commentatio ', ur'De ', ur'De arte ', ur'Dissertatio ', ur'Epitome ', ur'Exquisitio ', ur'Flora ', ur'Folia Linguistica ', ur'Folia Lingüística ', ur'Fragmenta ', ur'Geographia ', ur'Geographica ', ur'Germaniae ', ur'Germanica ', ur'Germaniæ ', ur'Militaria & ', ur'Miscellanea ', ur'Monumenta ', ur'Opera ', ur'Recerca ', ur'Relatio ', ur'Romaniae ', ur'Studia ', ur'Studia ', ur'Synopsis ', ur'panta: ', ], xpos=[ur' (?:Minutes|facultate|Constantiniana|Bohemica|da|del Rei|e [Gg]eneal[oó]gicas|Hungariam|Asturiensia|Didactica|Foundation|Russiae|Lwów|et)\b', ur'(?:\] project|\.(?:ejercito|unam)|\'\')', ]) + #333
+lema(ur'[Pp]eri_ó_dic[ao]_o', xpre=[ur'Christiana ', ur'Il sistema ', ur'Publicatio ', ], xpos=[ur' (?:della|dell|evangeliorum|Constantiniana|internazionale|national|\(sic|di )', ur'\.cnt', ]) + #316
+lema(ur'[Ee]conom_í_as?_i', xpre=[ur'Facultade de ', ur'Història, ', ur'Nodal ', ur'Outra ', ur'Parlem de ', ur'Pensiero – ', ur'Societat i ', ur'Societat, ', ur'UOL ', ur'[Ll][`’\']', ur'[Uu]ma ', ur'[dl]\'', ur'\b(?:e[dm]|na) ', ur'\b[Aa] ', ur'\bd[ai] ', ur'\be ', ur'\by \'\'', ur'dell\'', ur'il Magnifico: politica, ', ur'llamado \'\'', ur'nostra ', ur'nuova ', ], xpos=[ur' (?:non|Fechada|rustica per|d[aio]|dell|Internazionale|canaglia|Brasileira|pubblica|mundial em|Política do|Solidária|\(editorial|e (?:sviluppo|[Ss]ociedade|società|[Tt]eologia|[Pp]olítica|[Gg]estão|Storia|Retórica|Finanze)|i|popular e solidária|- Itália marca)\b', ur'(?:[]0-9]+|, (?:cultura i|planejamento|producció|Internazionale|Management|Administração)|\.(?:gob|uady)|: O novo)\b', ]) + #313
+lema(ur'Bogot_á__a', xpre=[ur'12325\) ', ur'Illinois\)\|', ur'Labama ', ur'Royal ', ur'Tennessee\)\|', ur'[Ff]rom ', ur'\b(?:in|of) ', ur'\bthe ', ur'd[\'’]Or de ', ], xpos=[ur'\.gov\.co|: From|[\'’]s| (?:[Ii]n|Film|Beer|Wildlife|[Pp]roject|Laser|\((?:Tennessee|Illinois)|Telephone)', ]) + #307
+lema(ur'M_á_laga_a', xpre=[ur'Gustave ', ur'[Mm]unicipio de ', ur'\b(?:í|a) ', ur'\bin ', ], xpos=[ur' (?:Auditorium|Airport)', ur'\.es', ]) + #286
+lema(ur'[Pp]ol_í_tica_i', xpre=[ur'Carità ', ur'Commentatio ', ur'Comunicacao & ', ur'Exercitatio ', ur'Lege ', ur'Palingenesi ', ur'Principia ', ur'Renovacio ', ur'Scienza ', ur'Societá italiana de Filosofia ', ur'Studia ', ur'Vita ', ur'Zero ', ur'[Rr]egio ', ur'[Ss]cienza & ', ur'\b(?:d[ai]|De) ', ur'\b[Aaei] ', ur'\be la ', ur'\buma ', ur'\by \'\'', ur'alla ', ur'capitale ', ur'concepire la ', ur'dalla mafia ', ur'dell[\'’][Ee]conomia ', ur'dell[ae] ', ur'della filosofia ', ur'democrazia ', ur'di Economia ', ur'di [Ee]conomía ', ur'di economia ', ur'di teoria ', ur'distinzione ', ur'e Cultura ', ur'eclesiastica: ', ur'elettorale ', ur'et ', ur'giurisdizione ', ur'il Magnifico: ', ur'in "Filosofia ', ur'legittimazione ', ur'libertate ', ur'nella ', ur'nuova ', ur'partecipazione ', ur'passione ', ur'rappresentanza ', ur'riflessione ', ur'scienza ', ur'sulla ', ur'trias ', ur'vita ', ur'vita la ', ], xpos=[ur' (?:del diritto|Educacional No|del novecento|autoritară|sapientia|nazionale|hermetica|mineaza|ostile|estera|xxi|contro|Oeconomica|sotterranea|Methodicae|and|nell|[Ee] (?:morte|cultura|nuove|verità|utopia|letteratura|dissimulazione|la|[Hh]istoria)|italiana di|seu|Logica|perduta|ecclesiatica|Hermetica|e |(?:ed|in) |come|razzista|occidentale|internazionale|d[aio] |dell|della|al tempo|del (?:Regno|corpo)|tedesca|de Acalmação)', ur'(?:, (?:mafia e giustizia|Corsica)|: Logica e Metodo|\.Ambiental)', ]) + #286
+lema(ur'[Ee]stad_í_sticas_i', xpre=[ur'CD ', ], xpos=[ur'(?:\.sport)', ]) + #272
+lema(ur'[Hh]ab_í_a_i', xpos=[ur' (?:atrimaxillaris|rubra|rubica|fuscicauda|cristata|copetona|ceniza|gutteralis|Carinegra|de garganta|que chusar|gutturalis|\[\[Rosa|sombría|gorjirroja|coronirroja|carinegra)', ur'(?:\]\]|\'\')', ]) + #266
+lema(ur'[Bb]_é_isbol_e', xpre=[ur'Camp de ', ur'Politics, ', ur'française de ', ], xpos=[ur' (?:Elkartea|i Softbol|Viladecans|i Sofbol)', ur'(?:\.com|\]\]istas?)', ]) + #261
+lema(ur'[Ss]_é_ptim[ao]s?_e', xpre=[ur'Anne ', ur'Dissertation ', ur'Drepanosticta ', ur'Et ', ur'Franca ', ur'Legio ', ur'Limnoria ', ur'Macromia ', ur'Triacanthagyna ', ur'vicesima ', ], xpos=[ur' (?:Vector|Gemina|saeculo|Basiano|Severo|Arts|editio|ab )', ur'\.cl', ]) + #254
+lema(ur'M_ú_nich_u', pre=ur'(?:[Dd]e|[Ee]n) ', xpre=[ur'Biennale ', ur'Français ', ur'Souvenirs ', ur'accord ', ], xpos=[ur' (?:[Mm]achine|My|Kurt)', ]) + #253
+lema(ur'[Cc]at_ó_lic[ao]s?_o', xpre=[ur'Escola ', ur'Missão ', ur'Rei ', ur'Universidade ', ur'dos Siriacos ', ], xpos=[ur'\.edu', ur'do\b', ]) + #251
+lema(ur'_Á_msterdam_A', pre=ur'(?:[Dd]e|[Ee]n) ', xpre=[ur'[Mm]icropolitana ', ur'[Mm]unicipio ', ], xpos=[ur' (?:Midkap|Zuidoost|Pride)', ur' Street', ur' Vallon', ]) + #245
+lema(ur'[Dd]iscograf_í_as?_i', xpre=[ur'Uma ', ], xpos=[ur' (?:brasileira|Illustrata)', ]) + #241
+lema(ur'[Pp]olic_í_as?_i', xpre=[ur'\bda ', ur'bon ', ur'deputado ', ], xpos=[ur' (?:de la Generalitat|armat|in)\b', ur'(?:\.gov|[\]])', ]) + #235
+lema(ur'[Ee]stad_í_stic(?:a|os?|amente)_i', xpos=[ur'(?:\.(?:ad|net))', ]) + #234
+lema(ur'[Aa]qu_í__i', xpre=[ur'Ara i ', ur'Chegar ', ur'Eis ', ur'Ele Está ', ur'Esteve ', ur'Estou ', ur'Ficar Por ', ur'Isto ', ur'Keith ', ur'Político ', ur'Senta ', ur'Ter ', ur'Vem ', ur'Voc[eê] Está ', ur'[Dd]\'', ur'[Ff]ique ', ur'[Vv]eja ', ur'[Éé] ', ur'foram ', ur'jogam ', ur'pouco ', ur'prá ', ur'se Faz, ', ur'soc ', ], xpos=[ur' (?:Huec[oó]|Tão|Portugal|Chegamos|comiença|lladas|yaze|fasemos|restringido à|[Nn][aã]o|Há|D\'El|s\'Acaba|se Faz|Tá|Ness|iace|de Novo|jaz|Strange|Without|havia|[áeé] |na |tudo|tem |entre nós|Estou|começa|o R[íi]o|a (?:palavra|emoção))', ur'(?:[\|\)\']|, (?:ali|Buytrago|Mato Grosso se vê))', ]) + #232
+lema(ur'M_á_nchester_a', pre=ur'(?:[Dd]e|[Ee]n) ', xpre=[ur'Clay ', ur'[Cc]ondado ', ur'[Mm]unicipio ', ur'[Rr]esidiendo ', ur'electoral ', ], xpos=[ur' (?:Square|City|Academy|United|Central|Apollo|University|Magic|terrier)', ]) + #227
+lema(ur'Crist_ó_bal_o', pre=ur'San ', xpre=[ur' [Tt]o ', ur' ng ', ur'[Ff]rom ', ], xpos=[ur' (?:Thrush|Starling|Mockingbird|Melidectes|Leaf)', ur'(?:\.jpg|, Columbus)', ]) + #218
+lema(ur'C_á_diz_a', xpre=[ur'Amoco ', ur'John ', ur'Ohio\)\|', ur'Roberto ', ur'[Mm]unicipio de ', ur'\b(?:at|of) ', ur'von ', ], xpos=[ur' (?:& Hedges|\((?:California|Ohio)|Bay|Island|Geneviève)', ]) + #216
+lema(ur'Hungr_í_a_i', xpos=[ur', M\.', ]) + #214
+lema(ur'_é_l se_e', xpre=[ur'Har\'', ur'Yisra’', ur'l\'', ]) + #201
+lema(ur'Valpara_í_so_i', xpre=[ur'College\|', ur'DTP ', ur'Florida\)\|', ur'Indiana\)\|', ur'Porter en ', ur'Valley ', ur'Vickers ', ur'college = ', ur'etre a ', ur'à ', ], xpos=[ur' (?:Artizan|School|High|Region|athletic|Crusaders|College|Male|Crusaders|Muntanya|Platja|University|\((?:in spanish|Indiana|Florida|Nebraska))', ur'(?:, ?(?:\[\[|)(?:IN|décembre|Indiana|Florida|Nebraska)|[\]\}])', ]) + #177
+lema(ur'[e]st_á__a', pre=ur'[Nn]o ', xpre=[ur' [yo] ', ur'precisamente ', ], xpos=[ur' (?:vez|Corte|noche)', ]) + #167
+lema(ur'Tucum_á_n_a', xpre=[ur'Ayres y ', ur'[0-9]', ur'and ', ], xpos=[ur' (?:und|Lawn|Pygmy-owl|Parrot)', ]) + #159
+lema(ur'[Aa]lem_á_n_a', xpre=[ur'Allan ', ur'Antonio ', ur'Roberto ', ur'Selva ', ur'[Dl][\'’]', ], xpos=[ur' (?:Cardona|Grup)', ur'\]\]es', ]) + #158
+lema(ur'[Cc]a_í_d[ao]s?_i', xpre=[ur'Naga ', ]) + #158
+lema(ur'[Ee]lectr_ó_nic[ao]s?_o', xpre=[ur' (?:to|of) ', ur' de \'\'', ur'Ethnic ', ur'Intreprinderea ', ur'Jay ', ur'New ', ur'Palaeontologia ', ur'Project\|', ur'Veronica ', ur'[Aa][Rr][Ss] ', ], xpos=[ur' (?:[1-9]|Mix|[Bb]y|World|Project|Classica|Version|remixe)', ur'(?:\.es|\'s)', ]) + #158
+lema(ur'[Jj]apon_é_s_e', xpre=[ur'dos ', ], xpos=[ur'(?:\]\][a-zñ]+|\.cl)', ]) + #150
+lema(ur'M_é_rida_e', xpre=[ur'Bahr[ae]in[- ]', ur'Joker ', ur'Lampre–', ur'Reyna ', ur'Trencin ', ur'Trenčín ', ur'[Jj]uan ', ur'[Pp]rincesa ', ur'bicicletas ', ur'con ', ur'el \'\'', ur'escocesa ', ur'from ', ur'of ', ur'the Cordillera de ', ], xpos=[ur' (?:Maxillaria|Sunangel|Cycling|Biking|inicia|una nueva|va con|matar|incapaz|Roman|Ladies|Island|Europe|solicita|aprende|Small-eared)', ur', personaje', ]) + #147
+lema(ur'Almer_í_a_i', xpre=[ur' di ', ur'5879\) ', ur'Nebraska\)\|', ], xpos=[ur' (?:Star|Lykes|Teatre|Basin|province|\((?:Alabama|Nebraska|Urban))', ]) + #142
+lema(ur'[Ss]_á_bados?_a', xpre=[ur'Laugh ', ]) + #139
+lema(ur'[Ss]eñor_í_[ao]s?_i', xpre=[ur'Nobiliario de los reinos y ', ]) + #122
+lema(ur'Am_é_rica_e', pre=ur'[Dd]e ', xpre=[ur'[Mm]unicipio ', ur'electoral ', ur'álbum ', ], xpos=[ur' (?:Online|Jackson|One|West|East)', ur'[\'’]s', ]) + #115
+lema(ur'Par_í_s_i', pre=ur'[Ee]n ', xpre=[ur'semanal ', ], xpos=[ur' (?:Hill|Review|Parade|Photo|Conservatoire|et al)', ur'\.fr', ]) + #110
+lema(ur'[Cc]ar_á_tulas?_a', xpre=[ur'[Ss] e', ], xpos=[ur'\.net', ]) + #98
+lema(ur'_C_(hina)_c', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ', xpos=[ur' poblana', ur'\.(?:org|com)', ]) + #73
+lema(ur'_A_rgentina_a', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ', xpre=[ur'\]', ur'\b[Ll]a ', ]) + #69
+lema(ur'[Hh]ac_í_a[ns]?_i', pre=ur'(?<!\])(?:[Ss]e|[Ll][aeo]s?|[Nn]os|[Mm]e|[Ee]so) ', xpre=[ur'por ', ur'reyno ', ]) + #66
+lema(ur'[Ff]_á_brica_a', pre=ur'(?:[Ll]a|[Uu]na?|nueva|antigua) ', xpre=[ur'[Qq]u[eé] ', ur'[Qq]ui[eé]n ', ur'[Ss]e ', ]) + #59
+lema(ur'[Ff]_á_brica_a', pre=ur'[Dd]e ', xpos=[ur' (?:Mvndi|[Mm]undi|Machinarum)', ]) + #37
+lema(ur'[Pp]eri_ó_dicos_o', xpre=[ur'dos ', ]) + #14
+lema(ur'_A_lemania_a', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ', xpre=[ur'\]', ]) + #14
+lema(ur'_N_oruega_n', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ', xpre=[ur'Serie [A-C] ', ]) + #4
+lema(ur'[s]abr_á_[ns]?_a', xpre=[ur'eddar ', ], xpos=[ur' y ', ur'[\]\']', ]) + #3
 []][0]
 
 grupo4 = [# 100-249
-lema(ur'[Gg]astronom_í_as?_i', xpre=[ur'\be ', ur'Art i '], xpos=[ur' Elkartea']) + #100
-lema(ur'[Ee]scenograf_í_as?_i', xpre=[ur'[DdLl]\'']) + #122
-lema(ur'[Mm]_ás tarde__(?:as tardes?|ás tardes)', xpre=[ur'vivió ', ur'[Nn]o habrá ']) + #180
-lema(ur'[Cc]_í_rculos?_i', pre=ur'(?:[Dd]el|[Ee]l|[Ll]os|[Uu]n|[Uu]nos|[Aa]lgunos) ', xpos=[ur' sportivo']) + #194
-lema(ur'[Cc]_iu_dad(?:es|)_ui', xpre=[ur'Fabrice '], xpos=[ur' de hacerle']) + #163
-lema(ur'Z_ú_rich_u', pre=ur'(?:[Ee]n|y|o) ', xpos=[ur' (?:Zentralbibliothek|Afore)']) + #136
-lema(ur'[Rr]a_í_z_i', xpre=[ur'\b[dn]a ', ur'in una ', ur'músico\)\|', ur'Playsson ', ur'minha ', ], xpos=[ur' (?:Records|Music|Tape|madrugada|de Orvalho|Afectuosa|d[aio]|\((?:músico|60))\b', ]) + #249
-lema(ur'[Aa]ll_í__i', xpre=[ur'& ', ur'et ', ur'Pier\'', ur'Jermaine ', ur'Dele ', ur'Bamidele ', ur'Cruz ', ur'Jiménez ', ur'Pier’', ur'Terrence ', ur'Tom y ', ur'Ubbas ', ur'Waheed ', ur'Yusuf ', ur'ki ', ur'þa ', ], xpos=[ur' (?:[0-9]+|y Tom|Forsythe|Mauzey|Jonathan|fue|Ewichkeit|Kinzel|Abdullahi|Web|Simpson|Nimaiya|Arjuna|[Ll]ettori|Butterman|qarwasha|Mustapha|huomini|Thanda|Biggs|Truch|N\'Dri|Häjänen|Mtinge|Mia|os |gara|Bhandari|kawananchikpaq|Monti|willacuynin|\(novia)', ur'(?:\]|"\'* Bhandari|\'s)', ]) + #241
-lema(ur'l_í_mites?_i', pre=ur'(?:[Aa]l|[Dd]el|[Ee]l|[Ll]os) ', xpre=[ur'Mondi ', ur'signore ', ]) + #238
-lema(ur'[Pp]odr?_í_a[ns]?_i', xpos=[ur' Acabar o Mundo', ]) + #231
-lema(ur'[Jj]ud_í_[ao]s?_i', xpre=[ur'A ', ur'Als ', ur'Kentucky\)\|', ], xpos=[ur' \(Kentucky', ]) + #220
-lema(ur'[Ss]eg_ú_n_u', xpre=[ur'Mabel '], xpos=[ur' (?:Owobowale|James|Adeniyi|Lazkano|Adefila|Atere|Amoo|Odegbani|Odegbami|Oluwaniyi|Olumodeji|Michael|Toriola)', ]) + #219
-lema(ur'[Pp]roh_í_be[ns]?_i', xpos=[ur' el Emmo']) + #217
-lema(ur'[Ee]sp_í_ritus?_i', xpre=[ur'\bdo ', ur'Jett C\. ', ur'Dark ', ur'Nadia ', ur'Sancti ', ], xpos=[ur' (?:vite|da )', ]) + #215
-lema(ur'Potos_í__i', xpre=[ur'from San Luis ', ur'Wisconsin\)\|', ur'Misuri\)\|', ur'[Mm]unicipio de ', ], xpos=[ur' (?:Township|Mountain|Décembre|\(Wisconsin|\(condado|\(Misuri|\(Texas)', ur'(?:\]|, le temps)', ]) + #214
-lema(ur'_ha_ (?:ca[ií]do|calculado|calificado|cambiado|cantado|capacitado|capturado|caracteri[sz]ado|cargado|casado|catalogado|catapultado|categorizado|catequizado|causado|cedido|celebrado|cerrado|clasificado|cobrado|coincidido|colaborado|colgado|colocado|colonizado|combatido|comentado|cometido|comenzado|compaginado|compartido|compensado|competido|complacido|comprobado|comunicado|concedido|condenado|conducido|confesado|confiado|confirmado|conformando|confundido|congelado|congregado|conquistado|consagrado|conseguido|conservado|considerado|consolidado|consumido|contactado|contestado|continuado|contribu[ií]do|convenido|convertido|convocado|cooperado|copiado|coreografiado|coronado|corregido|correspondido|cortado|cosechado|cotizado|creado|crecido|cre[ií]do|cruzado|cumplido|cursado)_ah?', xpre=[ur'[0-9]', ]) + #200
-lema(ur'[Aa]uditor_í_as?_i', xpre=[ur' of ', ]) + #191
-lema(ur'_Á_lbum(?:es|)_A', pre=ur'(?:[Aa]l|[Dd]el?|[Ee]ste|[Ee]stos|[Ee]l|[Ee]n|[Ll]os|[Uu]n|[Dd]os|[Tt]res|[Cc]uatro|[Ss]us?|[Pp]rimer|[Ss]egundo|[Tt]ercer|[UuÚú]ltimo|[Nn]ing[uú]n|[Nn]uevo) ', xpos=[ur' famille', ]) + #184
-lema(ur'[Nn]um_é_ric[ao]_e', xpre=[ur'T\. '], xpos=[ur' delle', ur', T\. y']) + #184
-lema(ur'[Rr]a_í_ces_i', xpre=[ur'and Musica ']) + #184
-lema(ur'_Á_frica_[Aaá]', pre=ur'(?:[Dd]e|[Ee]n|[Aa]l?|y) ', xpos=[ur' (?:Korps|Sports|House|Data|One|Race|Star|Magic|desde o )', ]) + #178
-lema(ur'Andr_é_s_e', pre=ur'San ', xpre=[ur'\bof ', ur'Fort ']) + #178
-lema(ur'_ha_ (?:dado|debilitado|debutado|deca[ií]do|declarado|decrecido|decretado|dedicado|defendido|dejado|demostrado|denominado|denunciado|derivado|derrotado|desaparecido|desarrollado|descansado|des?cendido|deseado|desclasificado|deseado|desempeñado|desconectado|desfilado|desmentido|desovado|desperdiciado|despertado|despreciado|destacado|detectado|destinado|destruido|detenido|dibujado|dictado|diri[gj]ido|discriminado|disminuido|disputado|distribuido|diversificado|domesticado|dominado|drenado|durado)_ah?', xpre=[ur'[0-9]', ]) + #174
-lema(ur'Bol_í_var_i', pre=ur'(?:Ciudad|[Ee]stado|[Dd]e|[Ee]n|Edo\.) ', xpre=[ur'Estación ', ur'Marin ', ur'Avenue Simon ', ur'[Cc]ondado ', ur'[Mm]unicipio ', ur'[Pp]enínsula ', ], xpos=[ur' (?:Trask|Award|à Castro)', ur', Australia', ]) + #173
-lema(ur'[Aa]h_í__i', xpre=[ur'(?:Lē|Pe)[´\'ʻ]', ur'Elton ', ur'\b(?:ke|di|nā) ', ur'religioso, ', ], xpos=[ur' (?:[\']|che|lasso|poke|Evran|Nazaret|Acre|Ka|dispietata)', ur'(?:\'ezer|quanto|, (?:amors|dispietata)|[\|\'\]]|!(?: Amors|!\'))', ]) + #171
-lema(ur'Mal_í__i', pre=ur'(?:[Dd]e|[Ee]n) ', xpre=[ur'Culture '], xpos=[ur' (?:Ajún|Lo[šs]inj|Ston|Ždrelac|Pek|Shpati|Brezovec|Bukovec|Chekon|Kichmái|Vuković|Tabor|Utrish|Raznokol|Obljaj|Komor|Kozinac|Gradac)', ]) + #170
-lema(ur'Taip_é_i_e', pre=ur'(?:[Dd]e|[Ee]n) ', xpos=[ur' (?:City|Fine)']) + #169
-lema(ur'L_í_bano_i', xpre=[ur'\bdal ', ur'\bin ', ur'Il cedro del ', ur'Giulio ', ur'Bilbao ', ur'Medaglia [Cc]ommemorativa ONU ', ], xpos=[ur' Noruega']) + #164
-lema(ur'[Cc]ronolog_í_as?_i', xpre=[ur'\b[ei] ', ur'Barça del canvi\. Una ', ur'amb la ', ur'd’una ', ur'su una ', ur'per a una ', ur'sulla ', ], xpos=[ur' (?:Ornitologica|Histórica|dei|dell|: les causes|[Cc]ronografia e [Cc]alendario|de Tyrteu|e (?:documentaçom|fortuna)|Prototipi|d\'|d[io] )', ur', [Cc]ronografia e [Cc]alendario', ]) + #163
-lema(ur'[Rr]_á_pid[ao]_a', xpre=[ur'Euophrys ', ur'Qual ', ur'Roman ', ur'Treno ', ur'plej ', ], xpos=[ur' (?:Trains|carriera|Rock|delle)', ]) + #163
-lema(ur'[Aa]z_ú_car(?:es|)_u', xpre=[ur' at ', ], xpos=[ur'\]\]ad[ao]s?']) + #158
-lema(ur'[Cc]ient_í_fic(?:as|os?|amente)_i', xpre=[ur'trabalhos '], xpos=[ur' classe']) + #158
-lema(ur'[Rr]e_í_r(?:se|)_i', xpos=[ur'\'']) + #157
-lema(ur'N_á_poles_a', xpre=[ur'secondo, ', ], xpos=[ur', Liguori Editore', ]) + #145
-lema(ur'[Dd]elf_í_n_i', xpre=[ur'L-29 ', ur'Rietumu-', ur'montti\'\' ', ur'Colecciâon Ancora y ', ], xpos=[ur' (?:Vigil|visszanézett|Clutch|Sarl|S\.A\.R\.L)', ur'(?:\]\][a-z]+|\.quishpe)', ]) + #143
-lema(ur'Yucat_á_n_a', xpre=[ur' (?:in|au|of|du) ', ur', & ', ur'Celebrity Mole: ', ur'Chichen Itza, ', ur'Colonial ', ur'Municipio de ', ur'Northern ', ur'Northwest ', ur'[Tt]he ', ur'and ', ur'from ', ], xpos=[ur' (?:peninsula|portal|and|Salamander|Flycatcher|before|pendant|World|Peninsula|[Kk]illifish|Adventure|Township|Jay|Bill|Poorwill|Nightjar|[Vv]ireo)', ur'(?:\.(?:svg|gob)|, & the|[’\']s)', ]) + #132
-lema(ur'_ha_ (?:absorbido|acabado|aceptado|acercado|acertado|acordado|acosado|acostado|actuado|actualizado|acogido|acompañado|acreditado|adoptado|acudido|acumulado|acusado|adaptado|adjudicado|adquirido|afectado|afiliado|afirmado|agotado|agredido|albergado|alcanzado|alternado|amado|ampliado|anotado|anunciado|aparecido|aplicado|aportado|apostado|apoyado|aprendido|argumentado|armado|atrapado|arrojado|ascendido|asegurado|asesinado|asistido|atendido|atormentado|atra[ií]do|at(?:ar|ra)vesado|atribuido|aumentado|ayudado)_ah?', xpre=[ur'[0-9]', ]) + #128
-lema(ur'[Aa]lcald_í_as?_i', xpos=[ur' del Concello', ur'\.santiagoyzaraiche', ]) + #125
-lema(ur'_ha_ (?:fallecido|favorecido|formado|funcionado|fundado|fusionado|generado|grabado|habido|habilitado|hablado|hecho|implementado|identificado|ido|igualado|impregnado|implementado|impulsado|incendiado|incluido|incrementado|indicado|inducido|informado|ingresado|iniciado|inspirado|instalado|intentado|interesado|interpretado|investigado)_ah?', xpre=[ur'[0-9]', ]) + #119
-lema(ur'[Vv]_í_nculos?_i', xpre=[ur'[Ss]e ', ], xpos=[ur' Caritatis', ]) + #118
-lema(ur'[Ss]_í_ndromes?_i', xpre=[ur'Ltd ', ur'Tunnel ', ], xpos=[ur' (?:da|di|florais|Association|lunare)\b', ur'(?:\+|’, ‘Wait)', ]) + #117
-lema(ur'_á_rbol(?:es|)_a', pre=ur'(?:[Ee]l|[Ll]os|[Uu]n|[Uu]nos|[Ee]ste[Ee]stos|[Cc]on|[Dd]e) ', xpos=[ur' que produze', ]) + #111
-lema(ur'[Dd]iagn_ó_sticos?_o', xpos=[ur' da\b']) + #109
-lema(ur'[Cc]_á_mara_a', pre=ur'(?:[Dd]e|[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Oo]tra) ', xpre=[ur'Sierra ', ], xpos=[ur' (?:Degli|real del prinçipe|de su Magestad)', ]) + #107
-lema(ur'[Aa]uditor_í_as?_i', xpre=[ur' of ', ur'en el ', ]) + #174
-lema(ur'[Aa]utor_í_as?_i', xpre=[ur'sua ', ur'1985, ', ur'[dl][’\']', ur'd\'Autor 2014 - ', ur'disputam ', ], xpos=[ur' e produção', ]) + #135
-lema(ur'[Ss]ant_í_sim[ao]s?_i', xpos=[ur' Anunziata', ]) + #129
-lema(ur'[Ff]iscal_í_as?_i', xpos=[ur'\.(?:com|go[bv])', ]) + #167
-lema(ur'[Ee]limin_ó__o', xpre=[ur'[Yy]o ', ur'[Yy]o los ']) + #102
-lema(ur'[Ll]a_s_ versiones_', xpos=[ur' ufficiale', ]) + #105
-lema(ur'_Perú__(?:per[uú]|Peru)', pre=ur'(?:[Aa]|[AaEe]l|[Aa]nte|[Dd]el?|[Ee]n|[Pp]ara|[Pp]or|[Ss]omos) ', xpre=[ur'Reynos ', ur'[Mm]icropolitana ', ur'[Mm]unicipio ', ], xpos=[ur'(?:\.com|[0-9]+)', ur' \((?:condado|Iowa)']) + #190
-lema(ur'[Dd]ur_ó_ (?:m[aá]s |[0-9+]+)_o', xpre=['de un ', ur'de a ', ur'golpeó ', ur'metal ', ur'caparazón ', ur'[Dd]isco ', ur'[Rr]ock ', ]) + #100
-lema(ur'[Dd]ur_ó_ (?:una?|dos|tres|diez|cien|mil)_o', xpre=['Seguimiento ', ur'molde ', ur'muy ']) + #100
-lema(ur'[Hh]abr_á_[ns]?_a', xpre=[ur'\b(?:de|[Ee]l|[Ll]a) ', ur'Doctor ', ur'Pearl ', ur'Pieris ', ur'Las '], xpos=[ur' (?:Nuñez|Bongaon|Romain)', ur'[\'\]]']) + #230
-lema(ur'[Dd]ar_á_[ns]_a', xpre=[ur' (?:de|et|[Nn]e) ', ur'Denk ', ur'Navarro ', ur'José ', ur'Charles ', ur'Barb\' ', ur'Dee ', ur'Bayt ', ur'Beit ', ur'André ', ur'Glaub\' ', ur'[Nn]ichts '], xpos=[ur' (?:dice|Bina|Norris|Little|Holt|Morrison|V\.|Maisutā|hindert|erinnert|Publishing)', ur'(?:[\)\]]|, (?:al|Clémansin|dass|gavilán|presidente|che))']) + lema(ur'[Dd]ar_á_ (?:marcha|origen|inicio|declaración|monedas|acceso|como|fuego|una?|en|de|el|las?|los|a)_a', xpre=[ur'\bde ', ur'Chahar ', ur'Olu ', ur'CL y ']) + #219
-lema(ur'[Dd]ir_á_[ns]?_a', xpre=[ur' (?:on|El|ne) ', ur' nun ', ur'ne le ', ur'Elle le ', ur'Qui ', ur'qui la ', ur'arindu ', ur'matxinatu ', ur'aipatzekoak ', ur'Oya ', ur'Tal\'', ur'Ledisi, ', ur'kontuak ', ur'Plaza ', ur'vous ', ur'errian ', ], xpos=[ur' (?:cristau|inoiz|Hitzak|Lehaskir|Paes|miraballesen|egiazko|besteak|notre|pezetan|ito|Yulianti|Sugandi|Alexanian|Stevsson|Oyelade|Kelekian|Noubar|Sarkissian|Airways|de lui)', ur'(?:[\'\)]|, (?:huato|"muchos|che))']) + #172
-lema(ur'[Ss]er_á_n_a', xpre=[ur'llamada \'\'', ur'Deadlands ', ur'Sanjay ']) + lema(ur'[s]er_á__a', pre=ur'(?:[Qq]ui[ée]n|[Qq]u[ée]|[Dd][óo]nde|[Cc]u[áa]ndo|[Tt]ambién|[Aa]demás|[Ss]e|[Ll]os?) ', xpre=[ur'de ', ], xpos=[ur' (?:Marz|[Ss]era)', ur', sera', ]) + lema(ur'[s]er_á__a', xpre=[ur'(?:da|ne|où|\'a) ', ur'Ades ', ur'Alla ', ur'Aussi ', ur'Buona ', ur'Bona ', ur'Caledanapis ', ur'Campanile ', ur'Domenica ', ur'Elle ', ur'L\'ultima ', ur'La ', ur'Pissarrachampsa ', ur'Prima ', ur'Quando viene ', ur'Quando viene la ', ur'Quella ', ur'Questa ', ur'Stampa ', ur'Verso ', ur'Viene ', ur'[\' ](?:[Ff]a|[Ii]l|[Dd][ei]|[Cc]e|[Nn]a|[Ll]a) ', ur'[Qq]ue ', ur'[Qq]ui ', ur'[Ss]abato ', ur'[Ss]er[aá] ', ur'[Ss]er[aá], ', ur'[Tt]out ', ur'[Tt]oyota ', ur'[Uu]na ', ur'[Uu]na ', ur'c\'', ur'che ', ur'come ', ur'culotte ', ur'dell\'ultima ', ur'della ', ur'devoir ', ur'domenica ', ur'dur ', ur'esce la ', ur'grande ', ur'idioma ', ur'ieri ', ur'mezza ', ur'n\'ata ', ur'nella ', ur'nous ', ur'quel ', ur'quella ', ur'questa ', ur'stessa ', ur'subito ', ur'vie ', ], xpos=[ur' (?:a [cz]ena|admis|assimilée|aussi|calme|como antes: MPB anos|complet|del grande|di|définitivement|démocratique|reprise|dépassé|désormais|en retard|facilement|fait|fiesolana|fuku|gentile|impitoyable|jamais|l\'aurore|le mois|liberté|longue|l´alba|mon|notre|pas|plus|pour|quando|tamen|toujours|tournée|une|unité|à )', ur', (?:ser[aá]|aussi|amen)', ]) + #198
-lema(ur'[Ll]ibrer_í_as?_i', xpre=[ur'Istituto Propaganda ', ur'U[Tt][Ee][Tt] ', ], xpos=[ur' (?:Universitària|Piani|Aeronautica\. Milano|d[\'’]|[Mm]usicale|Cattolica|Serret|Piccolomini|del Mercurio|Milanese|Antiquaria|Gregoriana estense|Internazionale|Scientifica|dello|del Excelentissimo|Croce|Tres i Quatre|Miguel-Creus|[Ee]ditrice|dell|Ed\.)', ]) + #185
-lema(ur'_é_pocas?_e', xpre=[ur' (?:di|ed|in) ', ur' din ', ur'2\.a ', ur'[Aa]ll[\'’]', ur'[Ll]\'', ur'[dl][\'´]', ur'dall[\'’]', ur'nell\'', ur'un\'', ], xpos=[ur' di', ]) + #164
-lema(ur'[Tt]ipograf_í_as?_i', xpre=[ur'Regia ', ur'Antica ', ur'Milán ', ur'Verona, ', ], xpos=[ur' (?:L|do|F\. Grossi|E\. Voghera|dei|Editrice|Rattero|Cipriani, Pescia|Governativa|Pontificia nell|Lo Statuto|Chirio e Mina|M\. Ricci|R\. Istituto|Paccasassi|Savini|Porta|Thurst|Bonazzi|A\.Tomatis|\'Giolitti|classica|Successori|editrice|Luigi Niccolai|dei|dell|della|delle|provinciale|Lineagrafica|Traversa|dellAquila|Bertelli|Guasti|Centrală|Cartea|Macarello|G\. B\. Messaggi|Francesco|Beneditina|seminario|Benedettina|Cardoni|Osservatore|[Nn]azionale|del Reale|Carmignani|del (?:Seminario|Comune)|Giuseppe|Emiliana|Torinese|italo-orientale|Laurenziana|Poliglotta|di|Pioda)\b', ur'\.cl']) + #152
-lema(ur'[Aa]ut_ó_nom[ao]s?_o', xpre=[ur'1465\) ', ur'comune ', ur'Komando ', ur'Regiöes ', ur'Universitat ', ur'[Rr]egiao ', ur'Comunicació de la Universidad ', ur'[Rr]egioes ', ur'[Rr]egione ', ur'teritoriala ', ], xpos=[ur' (?:dei|Volturno|Caccia|carri|delle|Zacatensis|di|recibió|orbita)\b', ur'\]', ]) + #192
+lema(ur'[s]er_á__a', xpre=[ur'(?:da|ne|où|\'a) ', ur'Ades ', ur'Alla ', ur'Aussi ', ur'Bona ', ur'Buona ', ur'Caledanapis ', ur'Campanile ', ur'Domenica ', ur'Elle ', ur'L\'ultima ', ur'La ', ur'Pissarrachampsa ', ur'Prima ', ur'Quando viene ', ur'Quando viene la ', ur'Quella ', ur'Questa ', ur'Stampa ', ur'Verso ', ur'Viene ', ur'[\' ](?:[Ff]a|[Ii]l|[Dd][ei]|[Cc]e|[Nn]a|[Ll]a) ', ur'[Qq]ue ', ur'[Qq]ui ', ur'[Ss]abato ', ur'[Ss]er[aá] ', ur'[Ss]er[aá], ', ur'[Tt]out ', ur'[Tt]oyota ', ur'[Uu]na ', ur'[Uu]na ', ur'c\'', ur'che ', ur'come ', ur'culotte ', ur'dell\'ultima ', ur'della ', ur'devoir ', ur'domenica ', ur'dur ', ur'esce la ', ur'grande ', ur'idioma ', ur'ieri ', ur'mezza ', ur'n\'ata ', ur'nella ', ur'nous ', ur'quel ', ur'quella ', ur'questa ', ur'stessa ', ur'subito ', ur'vie ', ], xpos=[ur' (?:a [cz]ena|admis|assimilée|aussi|calme|como antes: MPB anos|complet|del grande|di|définitivement|démocratique|reprise|dépassé|désormais|en retard|facilement|fait|fiesolana|fuku|gentile|impitoyable|jamais|l\'aurore|le mois|liberté|longue|l´alba|mon|notre|pas|plus|pour|quando|tamen|toujours|tournée|une|unité|à )', ur', (?:ser[aá]|aussi|amen)', ]) + #315
+lema(ur'_Perú__(?:per[uú]|Peru)', pre=ur'(?:[Aa]|[AaEe]l|[Aa]nte|[Dd]el?|[Ee]n|[Pp]ara|[Pp]or|[Ss]omos) ', xpre=[ur'Reynos ', ur'[Mm]icropolitana ', ur'[Mm]unicipio ', ], xpos=[ur' \((?:condado|Iowa)', ur'(?:\.com|[0-9]+)', ]) + #255
+lema(ur'_Á_frica_[Aaá]', pre=ur'(?:[Dd]e|[Ee]n|[Aa]l?|y) ', xpos=[ur' (?:Korps|Sports|House|Data|One|Race|Star|Magic|desde o )', ]) + #234
+lema(ur'[Mm]_ás tarde__(?:as tardes?|ás tardes)', xpre=[ur'[Nn]o habrá ', ur'vivió ', ]) + #218
+lema(ur'[Jj]ud_í_[ao]s?_i', xpre=[ur'A ', ur'Als ', ur'Kentucky\)\|', ], xpos=[ur' \(Kentucky', ]) + #211
+lema(ur'[Tt]ipograf_í_as?_i', xpre=[ur'Antica ', ur'Milán ', ur'Regia ', ur'Verona, ', ], xpos=[ur' (?:L|do|F\. Grossi|E\. Voghera|dei|Editrice|Rattero|Cipriani, Pescia|Governativa|Pontificia nell|Lo Statuto|Chirio e Mina|M\. Ricci|R\. Istituto|Paccasassi|Savini|Porta|Thurst|Bonazzi|A\.Tomatis|\'Giolitti|classica|Successori|editrice|Luigi Niccolai|dei|dell|della|delle|provinciale|Lineagrafica|Traversa|dellAquila|Bertelli|Guasti|Centrală|Cartea|Macarello|G\. B\. Messaggi|Francesco|Beneditina|seminario|Benedettina|Cardoni|Osservatore|[Nn]azionale|del Reale|Carmignani|del (?:Seminario|Comune)|Giuseppe|Emiliana|Torinese|italo-orientale|Laurenziana|Poliglotta|di|Pioda)', ur'\.cl', ]) + #192
+lema(ur'[Ee]sp_í_ritus?_i', xpre=[ur'do ', ur'Dark ', ur'Jett C\. ', ur'Nadia ', ur'Sancti ', ], xpos=[ur' (?:vite|da )', ]) + #179
+lema(ur'L_í_bano_i', xpre=[ur'dal ', ur'in ', ur'Bilbao ', ur'Giulio ', ur'Il cedro del ', ur'Medaglia [Cc]ommemorativa ONU ', ], xpos=[ur' Noruega', ]) + #170
+lema(ur'[Cc]ronolog_í_as?_i', xpre=[ur'[ei] ', ur'Barça del canvi\. Una ', ur'amb la ', ur'd’una ', ur'per a una ', ur'su una ', ur'sulla ', ], xpos=[ur' (?:Ornitologica|Histórica|dei|dell|: les causes|[Cc]ronografia e [Cc]alendario|de Tyrteu|e (?:documentaçom|fortuna)|Prototipi|d\'|d[io] )', ur', [Cc]ronografia e [Cc]alendario', ]) + #167
+lema(ur'[Ss]eg_ú_n_u', xpre=[ur'Mabel ', ], xpos=[ur' (?:Owobowale|James|Adeniyi|Lazkano|Adefila|Atere|Amoo|Odegbani|Odegbami|Oluwaniyi|Olumodeji|Michael|Toriola)', ]) + #167
+lema(ur'[Aa]ut_ó_nom[ao]s?_o', xpre=[ur'1465\) ', ur'Comunicació de la Universidad ', ur'Komando ', ur'Regiöes ', ur'Universitat ', ur'[Rr]egiao ', ur'[Rr]egioes ', ur'[Rr]egione ', ur'comune ', ur'teritoriala ', ], xpos=[ur' (?:dei|Volturno|Caccia|carri|delle|Zacatensis|di|recibió|orbita)', ur'\]', ]) + #162
+lema(ur'[Aa]ll_í__i', xpre=[ur'& ', ur'Bamidele ', ur'Cruz ', ur'Dele ', ur'Jermaine ', ur'Jiménez ', ur'Pier\'', ur'Pier’', ur'Terrence ', ur'Tom y ', ur'Ubbas ', ur'Waheed ', ur'Yusuf ', ur'et ', ur'ki ', ur'þa ', ], xpos=[ur' (?:[0-9]+|y Tom|Forsythe|Mauzey|Jonathan|fue|Ewichkeit|Kinzel|Abdullahi|Web|Simpson|Nimaiya|Arjuna|[Ll]ettori|Butterman|qarwasha|Mustapha|huomini|Thanda|Biggs|Truch|N\'Dri|Häjänen|Mtinge|Mia|os |gara|Bhandari|kawananchikpaq|Monti|willacuynin|\(novia)', ur'(?:\]|"\'* Bhandari|\'s)', ]) + #160
+lema(ur'[Pp]odr?_í_a[ns]?_i', xpos=[ur' Acabar o Mundo', ]) + #158
+lema(ur'Andr_é_s_e', pre=ur'San ', xpre=[ur'of ', ur'Fort ', ]) + #134
+lema(ur'[Ll]ibrer_í_as?_i', xpre=[ur'Istituto Propaganda ', ur'U[Tt][Ee][Tt] ', ], xpos=[ur' (?:Universitària|Piani|Aeronautica\. Milano|d[\'’]|[Mm]usicale|Cattolica|Serret|Piccolomini|del Mercurio|Milanese|Antiquaria|Gregoriana estense|Internazionale|Scientifica|dello|del Excelentissimo|Croce|Tres i Quatre|Miguel-Creus|[Ee]ditrice|dell|Ed\.)', ]) + #130
+lema(ur'[Rr]a_í_z_i', xpre=[ur'[dn]a ', ur'Playsson ', ur'in una ', ur'minha ', ur'músico\)\|', ], xpos=[ur' (?:Records|Music|Tape|madrugada|de Orvalho|Afectuosa|d[aio]|\((?:músico|60))', ]) + #124
+lema(ur'Yucat_á_n_a', xpre=[ur' (?:in|au|of|du) ', ur', & ', ur'Celebrity Mole: ', ur'Chichen Itza, ', ur'Colonial ', ur'Municipio de ', ur'Northern ', ur'Northwest ', ur'[Tt]he ', ur'and ', ur'from ', ], xpos=[ur' (?:peninsula|portal|and|Salamander|Flycatcher|before|pendant|World|Peninsula|[Kk]illifish|Adventure|Township|Jay|Bill|Poorwill|Nightjar|[Vv]ireo)', ur'(?:\.(?:svg|gob)|, & the|[’\']s)', ]) + #115
+lema(ur'Potos_í__i', xpre=[ur'Misuri\)\|', ur'Wisconsin\)\|', ur'[Mm]unicipio de ', ur'from San Luis ', ], xpos=[ur' (?:Township|Mountain|Décembre|\(Wisconsin|\(condado|\(Misuri|\(Texas)', ur'(?:\]|, le temps)', ]) + #114
+lema(ur'_é_pocas?_e', xpre=[ur' (?:di|ed|in) ', ur' din ', ur'2\.a ', ur'[Aa]ll[\'’]', ur'[Ll]\'', ur'[dl][\'´]', ur'dall[\'’]', ur'nell\'', ur'un\'', ], xpos=[ur' di', ]) + #113
+lema(ur'[Dd]elf_í_n_i', xpre=[ur'Colecciâon Ancora y ', ur'L-29 ', ur'Rietumu-', ur'montti\'\' ', ], xpos=[ur' (?:Vigil|visszanézett|Clutch|Sarl|S\.A\.R\.L)', ur'(?:\]\][a-z]+|\.quishpe)', ]) + #111
+lema(ur'Mal_í__i', pre=ur'(?:[Dd]e|[Ee]n) ', xpre=[ur'Culture ', ], xpos=[ur' (?:Ajún|Lo[šs]inj|Ston|Ždrelac|Pek|Shpati|Brezovec|Bukovec|Chekon|Kichmái|Vuković|Tabor|Utrish|Raznokol|Obljaj|Komor|Kozinac|Gradac)', ]) + #107
+lema(ur'[Aa]lcald_í_as?_i', xpos=[ur' del Concello', ur'\.santiagoyzaraiche', ]) + #105
+lema(ur'[Aa]h_í__i', xpre=[ur'(?:ke|di|nā) ', ur'(?:Lē|Pe)[´\'ʻ]', ur'Elton ', ur'religioso, ', ], xpos=[ur' (?:[\']|che|lasso|poke|Evran|Nazaret|Acre|Ka|dispietata)', ur'(?:\'ezer|quanto|, (?:amors|dispietata)|[\|\'\]]|!(?: Amors|!\'))', ]) + #102
+lema(ur'N_á_poles_a', xpre=[ur'secondo, ', ], xpos=[ur', Liguori Editore', ]) + #101
+lema(ur'[Rr]a_í_ces_i', xpre=[ur'and Musica ', ]) + #98
+lema(ur'[Ss]er_á_n_a', xpre=[ur'Deadlands ', ur'Sanjay ', ur'llamada \'\'', ]) + #97
+lema(ur'[Rr]_á_pid[ao]_a', xpre=[ur'Euophrys ', ur'Qual ', ur'Roman ', ur'Treno ', ur'plej ', ], xpos=[ur' (?:Trains|carriera|Rock|delle)', ]) + #96
+lema(ur'[Dd]iagn_ó_sticos?_o', xpos=[ur' da', ]) + #93
+lema(ur'Taip_é_i_e', pre=ur'(?:[Dd]e|[Ee]n) ', xpos=[ur' (?:City|Fine)', ]) + #92
+lema(ur'[Cc]ient_í_fic(?:as|os?|amente)_i', xpre=[ur'trabalhos ', ], xpos=[ur' (?:classe|da)\b', ]) + #91
+lema(ur'[Vv]_í_nculos?_i', xpre=[ur'[Ss]e ', ], xpos=[ur' Caritatis', ]) + #82
+lema(ur'[Aa]z_ú_car(?:es|)_u', xpre=[ur' at ', ], xpos=[ur'\]\]ad[ao]s?', ]) + #75
+lema(ur'_ha_ (?:dado|debilitado|debutado|deca[ií]do|declarado|decrecido|decretado|dedicado|defendido|dejado|demostrado|denominado|denunciado|derivado|derrotado|desaparecido|desarrollado|descansado|des?cendido|deseado|desclasificado|deseado|desempeñado|desconectado|desfilado|desmentido|desovado|desperdiciado|despertado|despreciado|destacado|detectado|destinado|destruido|detenido|dibujado|dictado|diri[gj]ido|discriminado|disminuido|disputado|distribuido|diversificado|domesticado|dominado|drenado|durado)_ah?', xpre=[ur'[0-9]', ]) + #75
+lema(ur'[Aa]uditor_í_as?_i', xpre=[ur' of ', ]) + #71
+lema(ur'[Aa]uditor_í_as?_i', xpre=[ur' of ', ur'en el ', ]) + #71
+lema(ur'[Ss]_í_ndromes?_i', xpre=[ur'Ltd ', ur'Tunnel ', ], xpos=[ur' (?:da|di|florais|Association|lunare)', ur'(?:\+|’, ‘Wait)', ]) + #67
+lema(ur'[Ss]ant_í_sim[ao]s?_i', xpos=[ur' Anunziata', ]) + #67
+lema(ur'l_í_mites?_i', pre=ur'(?:[Aa]l|[Dd]el|[Ee]l|[Ll]os) ', xpre=[ur'Mondi ', ur'signore ', ]) + #67
+lema(ur'Bol_í_var_i', pre=ur'(?:Ciudad|[Ee]stado|[Dd]e|[Ee]n|Edo\.) ', xpre=[ur'Avenue Simon ', ur'Estación ', ur'Marin ', ur'[Cc]ondado ', ur'[Mm]unicipio ', ur'[Pp]enínsula ', ], xpos=[ur' (?:Trask|Award|à Castro)', ur', Australia', ]) + #66
+lema(ur'[Cc]_á_mara_a', pre=ur'(?:[Dd]e|[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Oo]tra) ', xpre=[ur'Sierra ', ], xpos=[ur' (?:Degli|real del prinçipe|de su Magestad)', ]) + #65
+lema(ur'[Ff]iscal_í_as?_i', xpos=[ur'\.(?:com|go[bv])', ]) + #63
+lema(ur'[Hh]abr_á_[ns]?_a', xpre=[ur'(?:de|[Ee]l|[Ll]a) ', ur'Doctor ', ur'Las ', ur'Pearl ', ur'Pieris ', ], xpos=[ur' (?:Nuñez|Bongaon|Romain)', ur'[\'\]]', ]) + #61
+lema(ur'_ha_ (?:fallecido|favorecido|formado|funcionado|fundado|fusionado|generado|grabado|habido|habilitado|hablado|hecho|implementado|identificado|ido|igualado|impregnado|implementado|impulsado|incendiado|incluido|incrementado|indicado|inducido|informado|ingresado|iniciado|inspirado|instalado|intentado|interesado|interpretado|investigado)_ah?', xpre=[ur'[0-9]', ]) + #61
+lema(ur'_á_rbol(?:es|)_a', pre=ur'(?:[Ee]l|[Ll]os|[Uu]n|[Uu]nos|[Ee]ste[Ee]stos|[Cc]on|[Dd]e) ', xpos=[ur' que produze', ]) + #58
+lema(ur'_ha_ (?:ca[ií]do|calculado|calificado|cambiado|cantado|capacitado|capturado|caracteri[sz]ado|cargado|casado|catalogado|catapultado|categorizado|catequizado|causado|cedido|celebrado|cerrado|clasificado|cobrado|coincidido|colaborado|colgado|colocado|colonizado|combatido|comentado|cometido|comenzado|compaginado|compartido|compensado|competido|complacido|comprobado|comunicado|concedido|condenado|conducido|confesado|confiado|confirmado|conformando|confundido|congelado|congregado|conquistado|consagrado|conseguido|conservado|considerado|consolidado|consumido|contactado|contestado|continuado|contribu[ií]do|convenido|convertido|convocado|cooperado|copiado|coreografiado|coronado|corregido|correspondido|cortado|cosechado|cotizado|creado|crecido|cre[ií]do|cruzado|cumplido|cursado)_ah?', xpre=[ur'[0-9]', ]) + #53
+lema(ur'[Gg]astronom_í_as?_i', xpre=[ur'e ', ur'Art i ', ], xpos=[ur' Elkartea', ]) + #50
+lema(ur'_Á_lbum(?:es|)_A', pre=ur'(?:[Aa]l|[Dd]el?|[Ee]ste|[Ee]stos|[Ee]l|[Ee]n|[Ll]os|[Uu]n|[Dd]os|[Tt]res|[Cc]uatro|[Ss]us?|[Pp]rimer|[Ss]egundo|[Tt]ercer|[UuÚú]ltimo|[Nn]ing[uú]n|[Nn]uevo) ', xpos=[ur' famille', ]) + #50
+lema(ur'[Cc]_í_rculos?_i', pre=ur'(?:[Dd]el|[Ee]l|[Ll]os|[Uu]n|[Uu]nos|[Aa]lgunos) ', xpos=[ur' sportivo', ]) + #49
+lema(ur'[Aa]utor_í_as?_i', xpre=[ur'1985, ', ur'[dl][’\']', ur'd\'Autor 2014 - ', ur'disputam ', ur'sua ', ], xpos=[ur' e produção', ]) + #44
+lema(ur'[Cc]_iu_dad(?:es|)_ui', xpre=[ur'Fabrice ', ], xpos=[ur' de hacerle', ]) + #42
+lema(ur'_ha_ (?:absorbido|acabado|aceptado|acercado|acertado|acordado|acosado|acostado|actuado|actualizado|acogido|acompañado|acreditado|adoptado|acudido|acumulado|acusado|adaptado|adjudicado|adquirido|afectado|afiliado|afirmado|agotado|agredido|albergado|alcanzado|alternado|amado|ampliado|anotado|anunciado|aparecido|aplicado|aportado|apostado|apoyado|aprendido|argumentado|armado|atrapado|arrojado|ascendido|asegurado|asesinado|asistido|atendido|atormentado|atra[ií]do|at(?:ar|ra)vesado|atribuido|aumentado|ayudado)_ah?', xpre=[ur'[0-9]', ]) + #42
+lema(ur'[Pp]roh_í_be[ns]?_i', xpos=[ur' el Emmo', ]) + #37
+lema(ur'[s]er_á__a', pre=ur'(?:[Qq]ui[ée]n|[Qq]u[ée]|[Dd][óo]nde|[Cc]u[áa]ndo|[Tt]ambién|[Aa]demás|[Ss]e|[Ll]os?) ', xpre=[ur'de ', ], xpos=[ur' (?:Marz|[Ss]era)', ur', sera', ]) + #34
+lema(ur'[Ee]limin_ó__o', xpre=[ur'[Yy]o ', ur'[Yy]o los ', ]) + #33
+lema(ur'[Rr]e_í_r(?:se|)_i', xpos=[ur'\'', ]) + #32
+lema(ur'[Dd]ir_á_[ns]?_a', xpre=[ur' (?:on|El|ne) ', ur' nun ', ur'Elle le ', ur'Ledisi, ', ur'Oya ', ur'Plaza ', ur'Qui ', ur'Tal\'', ur'aipatzekoak ', ur'arindu ', ur'errian ', ur'kontuak ', ur'matxinatu ', ur'ne le ', ur'qui la ', ur'vous ', ], xpos=[ur' (?:cristau|inoiz|Hitzak|Lehaskir|Paes|miraballesen|egiazko|besteak|notre|pezetan|ito|Yulianti|Sugandi|Alexanian|Stevsson|Oyelade|Kelekian|Noubar|Sarkissian|Airways|de lui)', ur'(?:[\'\)]|, (?:huato|"muchos|che))', ]) + #31
+lema(ur'[Dd]ar_á_[ns]_a', xpre=[ur' (?:de|et|[Nn]e) ', ur'André ', ur'Barb\' ', ur'Bayt ', ur'Beit ', ur'Charles ', ur'Dee ', ur'Denk ', ur'Glaub\' ', ur'José ', ur'Navarro ', ur'[Nn]ichts ', ], xpos=[ur' (?:dice|Bina|Norris|Little|Holt|Morrison|V\.|Maisutā|hindert|erinnert|Publishing)', ur'(?:[\)\]]|, (?:al|Clémansin|dass|gavilán|presidente|che))', ]) + #29
+lema(ur'[Dd]ur_ó_ (?:m[aá]s |[0-9+]+)_o', xpre=[ur'[Dd]isco ', ur'[Rr]ock ', ur'caparazón ', ur'de a ', ur'de un ', ur'golpeó ', ur'metal ', ]) + #23
+lema(ur'[Dd]ar_á_ (?:marcha|origen|inicio|declaración|monedas|acceso|como|fuego|una?|en|de|el|las?|los|a)_a', xpre=[ur'de ', ur'CL y ', ur'Chahar ', ur'Olu ', ]) + #18
+lema(ur'Z_ú_rich_u', pre=ur'(?:[Ee]n|y|o) ', xpos=[ur' (?:Zentralbibliothek|Afore)', ]) + #14
+lema(ur'[Dd]ur_ó_ (?:una?|dos|tres|diez|cien|mil)_o', xpre=[ur'Seguimiento ', ur'molde ', ur'muy ', ]) + #13
+lema(ur'[Nn]um_é_ric[ao]_e', xpre=[ur'T\. ', ], xpos=[ur' delle', ur', T\. y', ]) + #10
+lema(ur'[Ll]a_s_ versiones_', xpos=[ur' ufficiale', ]) + #9
+lema(ur'[Ee]scenograf_í_as?_i', xpre=[ur'[DdLl]\'', ]) + #3
 []][0]
 
 grupo5 = [# 50-99
-lema(ur'[Hh]_á_bitat_a', pre=ur'(?:[Ee]l|[Ss]u|[Uu]n|[Ee]s) ', xpos=[ur' (?:collectif|magdalénien)']) + #58
-lema(ur'[Ee]p_í_tetos?_i', xpos=[ur' (?:Botánicos|Melesigenes)']) + #55
-lema(ur'[Dd]i_á_logo_a', pre=ur'(?:[Ee]l|[Uu]n|[Ss]u) ', xpos=[ur' (?:di|scientifico)']) + #93
-lema(ur'[Cc]oreograf_í_as?_i', xpre=[ur'\bi ', ur'com ']) + #83
-lema(ur'[Cc]_á_psulas?_a', xpre=[ur'\b[O]\. ', ur'Ogasawarana ', ur'Romeo ', ur'Stelis ', ur'polilla\)\|', ur'Capsula\|', ur'Italdesign ', ur'Zelotes ', ur'City '], xpos=[ur' (?:articularis|subflava|sparganii|algae|oblonga|alaeta|lameda|\(polilla)']) + #84
-lema(ur'[Aa]rt_í_culos_i', xpre=[ur'XXXIX ']) + #85
-lema(ur'[Aa]_ _pesar_', xpos=[ur' (?:do|de você)\b', ur'\'\'']) + #69
-lema(ur'[Aa]ct_ú_a_u', xpos=[ur' (?:Sports|Pool|Golf|Ice|[Ss]occer|Tennis)', ]) + #98
-lema(ur'Ben_í_n_i', pre=ur'(?:[Dd]e|[Ee]n) ', xpre=[ur'et '], xpos=[ur' (?:City|Golf|jusqu)']) + #98
-lema(ur'Ben_í_n\]\]_i', xpre=[ur'(?:[Dd]e|[Ee]n) ', ur'Aero ', ur'Dag ', ur'Air ', ur'Airways ', ur'Morice ', ur'Joey '], xpos=[ur'\'s']) + #218
-lema(ur'[Aa]_ travé_s_trav[eé]', xpos=[ur' (?:da|dos?|editora|de um)\b', ]) + #93
-lema(ur'[Aa]n_á_lisis_a', xpre=[ur'Pattern ', ], xpos=[ur'[0-9]']) + #92
-lema(ur'_Á_rboles_A', xpre=[ur'[0-9]'], xpos=[ur' \(Colorado', ur'\]', ]) + #87
-lema(ur'(?:[Aa]|[Dd]e) _é_l (?:y|como|a|después|la|lo|con)_e', xpos=[ur' Avenue', ]) + #86
-lema(ur'[Aa]tl_á_nticos?_a', xpre=[ur'Grande ', ur'369-Vela ', ur'Balco ', ur'Espaço ', ur'Passei ', ur'Passeio ', ur'Pavilhao ', ur'l[\'’]', ur'vapor \'', ], xpos=[ur' (?:ao |in |Sul)', ur'\.gov\.co', ]) + #83
-lema(ur'_Á_cid[ao]s?_A', xpre=[ur'Monte ', ur'Probierstein de ', ur'\bdi ', ur'sine ', ], xpos=[ur' (?:220|Mc|pyro-tartarico pars I|remix|Clhoe)\b', ]) + lema(ur'_á_cid(?:as|os?)_a', xpre=[ur'l[’\']', ur'\bdi '], xpos=[ur' pyro-tartarico pars I']) + #57
-lema(ur'[Ll]_í_quidos?_i', xpre=[ur'\bnel ', ur'iusto ', ur'phosphoro ']) + #82
-lema(ur'[Ff]otograf_í_as_i', xpre=[ur'Mostra de ', ur'Três ', ur'[nd]ella ', ], xpos=[ur' (?:e Músicas|com|pittorica|commentata|e non|[Dd][io] |[dn]a )']) + #81
-lema(ur'[Ss]u[dr]am_é_rica_e', xpre=[ur'[Ff]rom ', ur'animal\)\|'], xpos=[ur' (?:Oggi|\((?:género|animal)|ameghinoi)', ur'\]\][a-zñ]+', ]) + #80
-lema(ur'[Ll]_á_grimas?_a', xpre=[ur' e ', ur'[Ff]urtiva ', ], xpos=[ur' Dolly', ]) + #79
-lema(ur'[Oo]l_í_mpico_i', xpre=[ur'Palasport ', ur'Palau ', ur'Profilo ', ur'Stadio ', ], xpos=[ur' (?:di|Nazionale)', ur'\.es', ]) + #79
-lema(ur'_Á_reas?_A', pre=ur'[Dd]e ', xpre=[ur'María ', ur'[Ee]stación ', ur'[Pp]arroquia ', ur'Punta ', ur'praia ', ur'[Ii]nsua ', ur'[Ii]sla ', ur'[Pp]laya ', ]) + #78
-lema(ur'[Hh]_é_roes? del?_e', xpre=[ur'Als', ur'Sonic ', ], xpos=[ur'Reborn ']) + #76
-lema(ur'[Mm]atem_á_tic[ao]_a', xpre=[ur'\bin ', ur'viaggio con la ', ur'L’officina ', ur'and: ', ur'Unione ', ur'Composito ', ur'esposizione ', ur'Analisi ', ur'Incontri con la ', ur'ricerca ', ur'analisi ', ur'della ', ur'\bdi ', ur'\be ', ur'speculativo ', ur'\btra ', ], xpos=[ur' (?:dell|italiana|Applicata|nella|la Realta|e (?:a|di|la sua|Cultura) |a scuola|napoletano|nella|oggi|di)\b', ur'(?:[+]|", A: Roero|: (?:I Numeri|La Geometr[ií]a)|\. (?:Scandicci|6 volumetti)|\'\' \(Burali)']) + #75
-lema(ur'[Aa]yud_ó__o', xpre=[ur'Nunca ', ur'Vengo y ', ur'(?:[Yy]o|[Tt]e) ', ], xpos=[ur' (?:a (?:porque|papá a|mi madre|Fabri|verte|mamá a|limpiar la|un extranjero|armar los|la gente|mi señor|las libreras)|porque|Gutiérrez)', ur', javier']) + #73
-lema(ur'[Mm]_á_xim[ao]s?_a', pre=ur'(?:[Ee]l|[Ll][ao]s?|[Ss]u|[Uu]na?|[Pp]unto) ', xpos=[ur' (?:debutó|anteriores)', ]) + #72
-lema(ur'[Qq]uer_í_a[ns]?_i', xpre=[ur'Eu ', ur'Homem que '], xpos=[ur' (?:Te Amar|Ventura|dizer|ouvir)', ur'\'']) + #71
-lema(ur'Turqu_í_a_i', xpos=[ur' e Síria', ]) + #70
-lema(ur'[Hh]urac_á_n_a', xpos=[ur'\]', ur' (?:Studio|Dive)']) + #68
-lema(ur'[Mm]ec_á_nic[ao]_a', xpre=[ur'scienza ', ur' é ', ], xpos=[ur' Records']) + #68
-lema(ur'Han_ó_i_o', pre=ur'(?:[Dd]e|[Ee]n) ', xpos=[ur' (?:Rocks|Jane|Securities|Road)', ]) + #67
-lema(ur'[Ii]nterpret_ó_ (?:el|las?|los|a|por|sus?)_o', xpre=[ur'[Yy]o ', ]) + #66
-lema(ur'Berl_í_n_i', pre=ur'[Dd]e ', xpre=[ur'Universitat ', ur'mur ', ur'près ', ur'Française ', ur'obra ', ur'Gemäldegalerie ', ur'démons ', ur'chute ', ur'Homme ', ur'Cour ', ur'Contrats ', ur'La Dame ', ur'Mon enfant ', ur'[Mm]icropolitana ', ur'[Mm]unicipio ', ur'canción ', ur'commune ', ur'cumpleaños ', ur'secrètes ', ], xpos=[ur' (?:Silaen|pour|et|Classics|Dahlem|\([Cc]ondado|Air|Zoologischer)', ur'\.de', ]) + #62
-lema(ur'[Tt]_í_pic[ao]_i', xpre=[ur'Capocollo ', ur'Crycosaura ', ur'Grana ', ur'L\. ', ur'Schwibbogen ', ur'Upogebia ', ur'[Gg]eografica ', ur'[Ii]ndicazione ', ur'terra ', ], xpos=[ur' (?:Sondor|Borgo)', ]) + #62
-lema(ur'_ha_ (?:editado|eliminado|embarcado|empezado|encajado|encontrado|enfocado|enfrentado|enseñado|entendido|entrado|enviado|enviudado|esculpido|especializado|especulado|estudiado|evolucionado|expandido|experimentado|expresado)_ah?', xpre=[ur'[0-9]', ]) + #61
-lema(ur'[Aa]rqueolog_í_as?_i', xpre=[ur'd ́', ur' [ei] ', ur'\bda ', ur'Museude ', ur'Congresso de ', ur'Consell de ', ur'Història Antiga y ', ur'Museu Nacional de ', ur'Museu de ', ur'Português de ', ur'[LlDd][`’´\']', ur'[Pp]ortuguesa de ', ], xpos=[ur' (?:[Ee]m|da|i|d\'una|es lestiu|de la Generalitat|de Rescat|de Piaçagüera|de Puigcerdà|del paisatge|funerària|I (?:documentació|Universitat)|& Indústria|medieval a Catalunya|medievais|industrial\. Actes|Pré-Histórica|e Etnologia)\b', ur', Arte e História', ]) + #58
-lema(ur'[Tt]ur_í_stica_i', xpre=[ur'Promozione ', ur'Consociazione ', ], xpos=[ur' (?:della|del Tigullio)', ]) + #57
-lema(ur'[Cc]ad_á_ver_a', xpre=[ur'(?:and| ac) ', ur'tanquam ', ur'Abra ', ur'Polkadot ', ur'[Tt]he ', ur'male ', ur'petit ', ], xpos=[ur' (?:lover|[Ii]n|Productions|decomposition|barroc|\(banda|\(videojuego)', ur'\]', ]) + #56
-lema(ur'[Cc]aser_í_o_i', xpre=[ur'Alberto ', ur'Ulderino ', ur'italiano ', ur'Nick ', ur'Carlos ', ur'Ger[óo]nimo ', ur'Jesús ', ur'Jorge ', ur'Mathías ', ur'Sante ', ur'a ', ], xpos=[ur' (?:vivió|acuchilló|describiría|fue)', ur'[]|\']', ]) + #56
-lema(ur'[Ee]con_ó_mico_o', xpre=[ur'sviluppo ', ur'Barometro ', ur'stato ', ], xpos=[ur' (?:Brasileiro|della|in|di|e (?:downturn LGD|nel))']) + #56
-lema(ur'[Ff]an_á_tic[ao]s?_a', xpre=[ur'1589\) ', ur'Il ', ], xpos=[ur' (?:se designó|orbita|Films|per|\(Club)', ur'\]', ]) + #56
-lema(ur'[Oo]rg_á_nic[ao]_a', xpre=[ur'Modulatio ', ur'pianificazione ', ur'sostanza ', ur'e materia ', ur'Lei ', ]) + #56
+lema(ur'[Pp]resent_ó__o', xpre=[ur'(?:[Mm]e|[Ll]e|[Ll]o|[Tt]e|Vi|Ti|[Oo]s|[Yy]o) ', ur'[Cc][oó]mo ', ur'[Ll]es ', ]) + #165
+lema(ur'[Ss]u[dr]am_é_rica_e', xpre=[ur'[Ff]rom ', ur'animal\)\|', ], xpos=[ur' (?:Oggi|\((?:género|animal)|ameghinoi)', ur'\]\][a-zñ]+', ]) + #152
+lema(ur'Turqu_í_a_i', xpos=[ur' e Síria', ]) + #151
+lema(ur'[Oo]l_í_mpico_i', xpre=[ur'Palasport ', ur'Palau ', ur'Profilo ', ur'Stadio ', ], xpos=[ur' (?:di|Nazionale)', ur'\.es', ]) + #140
+lema(ur'[Ff]otograf_í_an?_i', xpre=[ur' (?:[Dd][ai]) ', ur' e ', ur' i la ', ur'Curs de ', ur'Fragmenta ', ur'I ', ur'Lleida de ', ur'Nuova ', ur'Português de ', ur'Prêmio Nacional de ', ur'da Terra: ', ur'della ', ur'nuova ', ur'ricerche ', ], xpos=[ur' (?:e (?:non|a Agricultura)|Aéreas do|Oltre|[Nn]o |[Dd]i |pittorica|commentata|dell|a Catalunya|\(música|na )', ur'(?:\]\][a-zñ]+|" \(Jobim|\.Islamoriente)', ]) + #138
+lema(ur'T_á_chira_a', xpos=[ur' (?:Emerald|Antpitta)', ]) + #137
+lema(ur'[Cc]om_ú_n_u', xpre=[ur'D\'Mente ', ur'\bdi ', ], xpos=[ur' (?:Nuovo|françois)', ]) + #125
+lema(ur'[Aa]n_á_lisis_a', xpre=[ur'Pattern ', ], xpos=[ur'[0-9]', ]) + #117
+lema(ur'[Pp]rop__i[ao]s?_r', xpre=[ur' [Èè] ', ur'(?:in|ad|ac) ', ur'Albionella ', ur'Cryptantha ', ur'Dubiaranea ', ur'Hogna ', ur'Hogna ', ur'Lithuania ', ur'Lituania ', ur'Meioneta ', ur'Nomina ', ur'Officia ', ur'Rus\' ', ur'T\. ', ur'Tasiocera ', ur'Tous ', ur'Vita ', ur'[Ll][aá]mina ', ur'[Mm]otu ', ur'[Mm]otus ', ur'\be ', ur'calcáreo ', ur'dal ', ur'ecclesia ', ur'ecclessia ', ur'ha una ', ur'hepatica ', ur'hepática ', ur'industria ', ur'iure ', ur'l\'oggetto', ur'manu ', ur'moto ', ur'per ', ur'sei ', ur'spargimento del ', ], xpos=[ur' (?:Tu|orbati|come|Cures|Fiorentina|Sanctorum|SummorumPontificum|come|danno|nombre|albergo|motu|palazzo|vita|giornalismo|teatro, sì|persona|passato|Ecclesia|y Vigarolo|vocat|vigore|pluribus|male|l\')', ur'\]', ]) + #110
+lema(ur'Berl_í_n_i', pre=ur'[Dd]e ', xpre=[ur'Contrats ', ur'Cour ', ur'Française ', ur'Gemäldegalerie ', ur'Homme ', ur'La Dame ', ur'Mon enfant ', ur'Universitat ', ur'[Mm]icropolitana ', ur'[Mm]unicipio ', ur'canción ', ur'chute ', ur'commune ', ur'cumpleaños ', ur'démons ', ur'mur ', ur'obra ', ur'près ', ur'secrètes ', ], xpos=[ur' (?:Silaen|pour|et|Classics|Dahlem|\([Cc]ondado|Air|Zoologischer)', ur'\.de', ]) + #105
+lema(ur'[Rr]_é_gimen_e', xpre=[ur'Ecclesiae ', ur'[Dd]osage ', ur'quo ', ], xpos=[ur' (?:[Ss]anitatis|optimum|Almeriae)', ur', and', ]) + #102
+lema(ur'[Ll]_á_grimas?_a', xpre=[ur' e ', ur'[Ff]urtiva ', ], xpos=[ur' Dolly', ]) + #98
+lema(ur'[Dd]_é_ficits?_e', xpre=[ur'Attention: ', ur'Democratic ', ur'Trade ', ur'[Aa]ttention[+ ]', ur'[Bb]udget ', ur'[Tt]he ', ur'\b(?:et|to) ', ur'et non ', ur'polar ', ur'pollination ', ur'this ', ur'totum ', ur'water ', ], xpos=[ur' (?:in|of|angles?|needs|Reduction|Hyperactivity|de Atencao|Review|Tuscana et)\b', ]) + #96
+lema(ur'Taiw_á_n_a', pre=ur'(?:[Dd]e|[Ee]n) ', xpre=[ur'Pont ', ], xpos=[ur' (?:Taoyuan International|zhi)', ]) + #89
+lema(ur'[Tt]ecnolog_í_as?_i', xpre=[ur' [aei&] ', ur' in ', ur'Català de ', ur'Ciência e ', ur'Contemporâneo de ', ur'Faculdade de ', ur'Fòrum Nord de la ', ur'Investigação para ', ur'Mauá de ', ur'Mediterrani de la ', ur'Mix ', ur'Museu de Ciencia y ', ur'Transferência de ', ur'd[ae]lla ', ur'd[ai] ', ur'e Alta ', ur'e la ', ur'e raciocínio', ur'em ', ur'i la ', ur'importação de ', ur'outras ', ], xpos=[ur' (?:na|ao|em|d[ao]|dei|dell|della|pelo|\(UNIFOR|restauro conservazione|y Ciências|nella|para produzir|Avanzata|educacional: política, histórias|de Informação|del design|de (?:produção|Sementes)|e (?:Ensino|[Gg]overnabilidade|Sociedade|[Gg]estão|Inovação|Políticas|materiali|o homen)|i (?:Cultura|educació))', ur', comunicazione', ur'\. Atti del convegno', ]) + #87
+lema(ur'[Hh]urac_á_n_a', xpos=[ur' (?:Studio|Dive)', ur'\]', ]) + #85
+lema(ur'[Aa]rqueolog_í_as?_i', xpre=[ur' [ei] ', ur'Congresso de ', ur'Consell de ', ur'Història Antiga y ', ur'Museu Nacional de ', ur'Museu de ', ur'Museude ', ur'Português de ', ur'[LlDd][`’´\']', ur'[Pp]ortuguesa de ', ur'\bda ', ur'd ́', ], xpos=[ur' (?:[Ee]m|da|i|d\'una|es lestiu|de la Generalitat|de Rescat|de Piaçagüera|de Puigcerdà|del paisatge|funerària|I (?:documentació|Universitat)|& Indústria|medieval a Catalunya|medievais|industrial\. Actes|Pré-Histórica|e Etnologia)\b', ur', Arte e História', ]) + #79
+lema(ur'[Aa]tl_á_nticos?_a', xpre=[ur'369-Vela ', ur'Balco ', ur'Espaço ', ur'Grande ', ur'Passei ', ur'Passeio ', ur'Pavilhao ', ur'l[\'’]', ur'vapor \'', ], xpos=[ur' (?:ao |in |Sul)', ur'\.gov\.co', ]) + #75
+lema(ur'[Cc]ad_á_ver_a', xpre=[ur'(?:and| ac) ', ur'Abra ', ur'Polkadot ', ur'[Tt]he ', ur'male ', ur'petit ', ur'tanquam ', ], xpos=[ur' (?:lover|[Ii]n|Productions|decomposition|barroc|\(banda|\(videojuego)', ur'\]', ]) + #65
+lema(ur'[Pp]_ú_blicas_u', xpre=[ur'Divers[õő]es ', ur'T[uú] ', ur'[Qq]ue ', ], xpos=[ur' (?:federais|e Proteção)', ]) + #64
+lema(ur'[Qq]uer_í_a[ns]?_i', xpre=[ur'Eu ', ur'Homem que ', ], xpos=[ur' (?:Te Amar|Ventura|dizer|ouvir)', ur'\'', ]) + #64
+lema(ur'(?:[Aa]|[Dd]e) _é_l (?:y|como|a|después|la|lo|con)_e', xpos=[ur' Avenue', ]) + #63
+lema(ur'[Tt]_í_pic[ao]_i', xpre=[ur'Capocollo ', ur'Crycosaura ', ur'Grana ', ur'L\. ', ur'Schwibbogen ', ur'Upogebia ', ur'[Gg]eografica ', ur'[Ii]ndicazione ', ur'terra ', ], xpos=[ur' (?:Sondor|Borgo)', ]) + #63
+lema(ur'[Hh]_é_roes? del?_e', xpre=[ur'Als', ur'Sonic ', ], xpos=[ur'Reborn ', ]) + #62
+lema(ur'[Ii]nterpret_ó_ (?:el|las?|los|a|por|sus?)_o', xpre=[ur'[Yy]o ', ]) + #62
+lema(ur'[Ll]_í_quidos?_i', xpre=[ur'\bnel ', ur'iusto ', ur'phosphoro ', ]) + #58
+lema(ur'[Mm]atem_á_tic[ao]_a', xpre=[ur'Analisi ', ur'Composito ', ur'Incontri con la ', ur'L’officina ', ur'Unione ', ur'\bdi ', ur'\be ', ur'\bin ', ur'\btra ', ur'analisi ', ur'and: ', ur'della ', ur'esposizione ', ur'ricerca ', ur'speculativo ', ur'viaggio con la ', ], xpos=[ur' (?:dell|italiana|Applicata|nella|la Realta|e (?:a|di|la sua|Cultura) |a scuola|napoletano|nella|oggi|di)\b', ur'(?:[+]|", A: Roero|: (?:I Numeri|La Geometr[ií]a)|\. (?:Scandicci|6 volumetti)|\'\' \(Burali)', ]) + #55
+lema(ur'[Ee]con_ó_mico_o', xpre=[ur'Barometro ', ur'stato ', ur'sviluppo ', ], xpos=[ur' (?:Brasileiro|della|in|di|e (?:downturn LGD|nel))', ]) + #54
+lema(ur'_Á_cid[ao]s?_A', xpre=[ur'Monte ', ur'Probierstein de ', ur'\bdi ', ur'sine ', ], xpos=[ur' (?:220|Mc|pyro-tartarico pars I|remix|Clhoe)\b', ]) + #48
+lema(ur'[Ii]deolog_í_as?_i', xpre=[ur' i ', ur'L\' ', ur'Primário e ', ur'[Pp]assione e ', ur'com a ', ur'dell[\'’]', ur'di Nuraghe. Simbolismo e ', ur'edició, ', ur'id "', ur'scienze e ', ], xpos=[ur' (?:garaikide|della|nell|dominante na|i (?:cultura|il\.lustrada|la)|e (?:politica|[Pp]rática)|(?:d[ao]|in|ou) )', ur'\'\', cortometraje', ]) + #47
+lema(ur'[Mm]ec_á_nic[ao]_a', xpre=[ur' é ', ur'scienza ', ], xpos=[ur' Records', ]) + #47
+lema(ur'_Á_rboles_A', xpre=[ur'[0-9]', ], xpos=[ur' \(Colorado', ur'\]', ]) + #47
+lema(ur'[Ff]otograf_í_as_i', xpre=[ur'Mostra de ', ur'Três ', ur'[nd]ella ', ], xpos=[ur' (?:e Músicas|com|pittorica|commentata|e non|[Dd][io] |[dn]a )', ]) + #46
+lema(ur'[Aa]ct_ú_a_u', xpos=[ur' (?:Sports|Pool|Golf|Ice|[Ss]occer|Tennis)', ]) + #44
+lema(ur'[Aa]rt_í_culos_i', xpre=[ur'XXXIX ', ]) + #44
+lema(ur'Ben_í_n_i', pre=ur'(?:[Dd]e|[Ee]n) ', xpre=[ur'et ', ], xpos=[ur' (?:City|Golf|jusqu)', ]) + #43
+lema(ur'Han_ó_i_o', pre=ur'(?:[Dd]e|[Ee]n) ', xpos=[ur' (?:Rocks|Jane|Securities|Road)', ]) + #43
+lema(ur'[Ff]_é_rtil(?:es|)_e', xpre=[ur'J\. ', ur'Reprod ', ur'Terres ', ur'[Yy]eux ', ur'plu ', ur'vallées ', ], xpos=[ur' (?:Grass|Steril|Women|SteriI)', ur'\. Steril', ]) + #43
+lema(ur'[Oo]_í_dos?_i', xpos=[ur' \(Metro', ]) + #43
+lema(ur'[Mm]_á_xim[ao]s?_a', pre=ur'(?:[Ee]l|[Ll][ao]s?|[Ss]u|[Uu]na?|[Pp]unto) ', xpos=[ur' (?:debutó|anteriores)', ]) + #42
+lema(ur'[Oo]rg_á_nic[ao]_a', xpre=[ur'Lei ', ur'Modulatio ', ur'e materia ', ur'pianificazione ', ur'sostanza ', ]) + #42
+lema(ur'[Tt]endr_á__a', xpre=[ur'Barcelona ', ur'Golfo ', ur'[Ii]sla ', ur'de ', ], xpos=[ur' Risant', ur'\]\]', ]) + #42
+lema(ur'[Aa]_ _pesar_', xpos=[ur' (?:do|de você)\b', ur'\'\'', ]) + #38
+lema(ur'[Cc]aser_í_o_i', xpre=[ur'Alberto ', ur'Carlos ', ur'Ger[óo]nimo ', ur'Jesús ', ur'Jorge ', ur'Mathías ', ur'Nick ', ur'Sante ', ur'Ulderino ', ur'a ', ur'italiano ', ], xpos=[ur' (?:vivió|acuchilló|describiría|fue)', ur'[]|\']', ]) + #38
+lema(ur'[Aa]_ travé_s_trav[eé]', xpos=[ur' (?:da|dos?|editora|de um)\b', ]) + #35
+lema(ur'[Ee]star_á_[ns]?_a', xpre=[ur'Xiphias ', ], xpos=[ur' Ferragut', ]) + #35
+lema(ur'[Pp]roblem_á_tic[ao]s?_a', xpre=[ur'Cypraea ', ur'Jivaromyia ', ur'Leedsia ', ur'Lygrommatoides ', ur'Marginulina ', ur'Mordellina ', ur'Propercarina ', ur'Purcelliana ', ur'R\. Brickellia ', ur'Rhophodon ', ur'Thopeutica ', ], xpos=[ur'\'', ]) + #34
+lema(ur'[Tt]ur_í_stica_i', xpre=[ur'Consociazione ', ur'Promozione ', ], xpos=[ur' (?:della|del Tigullio)', ]) + #32
+lema(ur'_Á_reas?_A', pre=ur'[Dd]e ', xpre=[ur'María ', ur'Punta ', ur'[Ee]stación ', ur'[Ii]nsua ', ur'[Ii]sla ', ur'[Pp]arroquia ', ur'[Pp]laya ', ur'praia ', ]) + #30
+lema(ur'[Aa]sesor_í_as?_i', xpre=[ur'polaco: \'\'', ]) + #29
+lema(ur'[Aa]yud_ó__o', xpre=[ur'(?:[Yy]o|[Tt]e) ', ur'Nunca ', ur'Vengo y ', ], xpos=[ur' (?:a (?:porque|papá a|mi madre|Fabri|verte|mamá a|limpiar la|un extranjero|armar los|la gente|mi señor|las libreras)|porque|Gutiérrez)', ur', javier', ]) + #29
+lema(ur'_B_rasil_b', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ', xpre=[ur'viene ', ], xpos=[ur' natal', ]) + #29
+lema(ur'_Á_reas?_A', pre=ur'(?:[AaEe]l|[Ll]as?|[Uu]nas|[Dd]el|[Uu]n|[Cc]ada|[Ss]us|[Oo]tras?) ', xpos=[ur' (?:Council|Mix|Sacra)', ]) + #29
+lema(ur'[Dd]i_á_logo_a', pre=ur'(?:[Ee]l|[Uu]n|[Ss]u) ', xpos=[ur' (?:di|scientifico)', ]) + #27
+lema(ur'[Tt]_á_ndems?_a', pre=ur'\b(?:[Ee]l|[Uu]n|del|en|tipo|con|haciendo|formando|formó|equipos|Velocidad|legendario|gran|cabinas|club|[Bb]uses|ajedrez) (?:\[\[||)', xpre=[ur'Tm para ', ], xpos=[ur' (?:Fundazioa|open|Computers)', ]) + #27
+lema(ur'_á_cid(?:as|os?)_a', xpre=[ur'\bdi ', ur'l[’\']', ], xpos=[ur' pyro-tartarico pars I', ]) + #25
+lema(ur'est_á__a', pre=ur'(?:él|ella) ', xpre=[ur' (?:de|en) ', ur' a ', ur'[Cc]on ', ur'[Pp]ara ', ur'[Ss]egún ', ]) + #24
+lema(ur'[Ff]an_á_tic[ao]s?_a', xpre=[ur'1589\) ', ur'Il ', ], xpos=[ur' (?:se designó|orbita|Films|per|\(Club)', ur'\]', ]) + #23
+lema(ur'[Vv]olver_á_[ns]?_a', xpre=[ur'Gilberto ', ], xpos=[ur'\]', ]) + #22
+lema(ur'[Cc]_á_psulas?_a', xpre=[ur'Capsula\|', ur'City ', ur'Italdesign ', ur'Ogasawarana ', ur'Romeo ', ur'Stelis ', ur'Zelotes ', ur'\b[O]\. ', ur'polilla\)\|', ], xpos=[ur' (?:articularis|subflava|sparganii|algae|oblonga|alaeta|lameda|\(polilla)', ]) + #19
+lema(ur'_ha_ (?:editado|eliminado|embarcado|empezado|encajado|encontrado|enfocado|enfrentado|enseñado|entendido|entrado|enviado|enviudado|esculpido|especializado|especulado|estudiado|evolucionado|expandido|experimentado|expresado)_ah?', xpre=[ur'[0-9]', ]) + #14
+lema(ur'[Aa]rmer_í_as?_i', xpre=[ur' in ', ur'Byzantine ', ur'Dianthus ', ur'Glomérulo de ', ur'HMS ', ur'L\'', ur'Limonium, ', ur'Silene ', ur'antica ', ur'presencia de la ', ], xpos=[ur' (?:alboi|alliacea|alliana|allioides|alpina|arcuata|arenaria|australis|baetica|beirana|berlengensis|bigerrensis|bupleuroides|bourgaei|bubanii|caballeroi|capitella|cariensis|carratracensis|castellana|castroviejoi|ciliata|caespitosa|colorata|cantabrica|cephalotes|Confessionis|daveaui|de (?:convenientia|ivstificatione|la Borrida|roca|[Ss]egovia)|del Rey Don|denticulata|depilata|dianthoides|duriaei|duriensis|e profezia|elongata|eriophylla|euscadiensis|expansa|filicaulis|fasciculata|gaditana|genesiana|girardii|hirta|hispalensis|humilis|juncea|juniperifolia|lacaitae|lanceobracteata|langei|leucantha|leucocephala|linkiana|littoralis|longiaristata|losae|macrophylla|maderensis|maritima|maritime|matritensis|miscella|montana|muelleri|nebrodensis|pinifolia|plantaginea|platyphyla|pubescens|purpurea|pseudarmeria|pseudoarmeria|pubigera|pubinervis|pungens|Reale|rigida|rivasmartinezii|rumelica|sampaioi|sabulosa|sardoa|scorzonerifolia|segoviensis|seticeps|sicorisiensis|splendens|stenophylla|sulcitana|trachyphyla|trachyphylla|transmontana|trigoloides|undulata|velutina|vestita|villosa|vulgaris|welwitschii|Eskola|rhodopaea|var|x )', ur'(?:[|:\'\]]|\.gob|, (?:césped|Limonium))', ]) + #12
+lema(ur'[Ee]p_í_tetos?_i', xpos=[ur' (?:Botánicos|Melesigenes)', ]) + #12
+lema(ur'[Ss]epar_ó__o', xpre=[ur'(?:[Mm]e|[Uu]n|[Yy]o) ', ], xpos=[ur' tus', ]) + #11
+lema(ur'[Hh]_á_bitat_a', pre=ur'(?:[Ee]l|[Ss]u|[Uu]n|[Ee]s) ', xpos=[ur' (?:collectif|magdalénien)', ]) + #9
+lema(ur'[Cc]oreograf_í_as?_i', xpre=[ur'\bi ', ur'com ', ]) + #8
+lema(ur'[h]ar_á_n_a', xpos=[ur' (?:bat|hua|Al-Awamid|no |\'*\(valle)', ur'\'', ]) + #6
+lema(ur'_É_pic(?:as|os)_E', xpre=[ur'Colón\|', ur'[y&] ', ]) + #1
+lema(ur'Ben_í_n\]\]_i', xpre=[ur'(?:[Dd]e|[Ee]n) ', ur'Aero ', ur'Air ', ur'Airways ', ur'Dag ', ur'Joey ', ur'Morice ', ], xpos=[ur'\'s', ]) + #0
 #lema(ur'_Centroamé_rica_[Cc]entroame', xpos=[ur'\]\]n[ao]s?', ]) + #55
-lema(ur'Taiw_á_n_a', pre=ur'(?:[Dd]e|[Ee]n) ', xpre=[ur'Pont ', ], xpos=[ur' (?:Taoyuan International|zhi)', ]) + #55
-lema(ur'[Rr]_é_gimen_e', xpre=[ur'quo ', ur'Ecclesiae ', ur'[Dd]osage ', ], xpos=[ur' (?:[Ss]anitatis|optimum|Almeriae)', ur', and']) + #54
-lema(ur'[Cc]om_ú_n_u', xpre=[ur'D\'Mente ', ur'\bdi ', ], xpos=[ur' (?:Nuovo|françois)', ]) + #53
-lema(ur'[Oo]_í_dos?_i', xpos=[ur' \(Metro', ]) + #53
-lema(ur'[Pp]resent_ó__o', xpre=[ur'(?:[Mm]e|[Ll]e|[Ll]o|[Tt]e|Vi|Ti|[Oo]s|[Yy]o) ', ur'[Cc][oó]mo ', ur'[Ll]es ', ]) + #53
-lema(ur'T_á_chira_a', xpos=[ur' (?:Emerald|Antpitta)', ]) + #52
-lema(ur'est_á__a', pre=ur'(?:él|ella) ', xpre=[ur' (?:de|en) ', ur' a ', ur'[Cc]on ', ur'[Pp]ara ', ur'[Ss]egún ', ]) + #51
-lema(ur'[Tt]endr_á__a', xpre=[ur'Barcelona ', ur'[Ii]sla ', ur'Golfo ', ur'de ', ], xpos=[ur'\]\]', ur' Risant', ]) + #51
-lema(ur'[Ii]deolog_í_as?_i', xpre=[ur' i ', ur'L\' ', ur'[Pp]assione e ', ur'Primário e ', ur'com a ', ur'dell[\'’]', ur'edició, ', ur'di Nuraghe. Simbolismo e ', ur'id "', ur'scienze e ', ], xpos=[ur' (?:garaikide|della|nell|dominante na|i (?:cultura|il\.lustrada|la)|e (?:politica|[Pp]rática)|(?:d[ao]|in|ou) )', ur'\'\', cortometraje']) + #59
-lema(ur'[Aa]rmer_í_as?_i', xpre=[ur'antica ', ur'L\'', ur' in ', ur'Byzantine ', ur'Dianthus ', ur'Glomérulo de ', ur'HMS ', ur'Limonium, ', ur'Silene ', ur'presencia de la ', ], xpos=[ur' (?:alboi|alliacea|alliana|allioides|alpina|arcuata|arenaria|australis|baetica|beirana|berlengensis|bigerrensis|bupleuroides|bourgaei|bubanii|caballeroi|capitella|cariensis|carratracensis|castellana|castroviejoi|ciliata|caespitosa|colorata|cantabrica|cephalotes|Confessionis|daveaui|de (?:convenientia|ivstificatione|la Borrida|roca|[Ss]egovia)|del Rey Don|denticulata|depilata|dianthoides|duriaei|duriensis|e profezia|elongata|eriophylla|euscadiensis|expansa|filicaulis|fasciculata|gaditana|genesiana|girardii|hirta|hispalensis|humilis|juncea|juniperifolia|lacaitae|lanceobracteata|langei|leucantha|leucocephala|linkiana|littoralis|longiaristata|losae|macrophylla|maderensis|maritima|maritime|matritensis|miscella|montana|muelleri|nebrodensis|pinifolia|plantaginea|platyphyla|pubescens|purpurea|pseudarmeria|pseudoarmeria|pubigera|pubinervis|pungens|Reale|rigida|rivasmartinezii|rumelica|sampaioi|sabulosa|sardoa|scorzonerifolia|segoviensis|seticeps|sicorisiensis|splendens|stenophylla|sulcitana|trachyphyla|trachyphylla|transmontana|trigoloides|undulata|velutina|vestita|villosa|vulgaris|welwitschii|Eskola|rhodopaea|var|x )', ur'(?:[|:\'\]]|\.gob|, (?:césped|Limonium))', ]) + #116
-lema(ur'[Tt]ecnolog_í_as?_i', xpre=[ur' [aei&] ', ur' in ', ur'Mix ', ur'Català de ', ur'Ciência e ', ur'Contemporâneo de ', ur'Faculdade de ', ur'Fòrum Nord de la ', ur'Investigação para ', ur'Mauá de ', ur'Mediterrani de la ', ur'Museu de Ciencia y ', ur'Transferência de ', ur'd[ae]lla ', ur'd[ai] ', ur'e Alta ', ur'e la ', ur'e raciocínio', ur'em ', ur'i la ', ur'importação de ', ur'outras ', ], xpos=[ur' (?:na|ao|em|d[ao]|dei|dell|della|pelo|\(UNIFOR|restauro conservazione|y Ciências|nella|para produzir|Avanzata|educacional: política, histórias|de Informação|del design|de (?:produção|Sementes)|e (?:Ensino|[Gg]overnabilidade|Sociedade|[Gg]estão|Inovação|Políticas|materiali|o homen)|i (?:Cultura|educació))', ur', comunicazione', ur'\. Atti del convegno', ]) + #92
-lema(ur'[Pp]roblem_á_tic[ao]s?_a', xpre=[ur'R\. ' ur'Brickellia ', ur'Cypraea ', ur'Jivaromyia ', ur'Leedsia ', ur'Lygrommatoides ', ur'Marginulina ', ur'Mordellina ', ur'Propercarina ', ur'Purcelliana ', ur'Rhophodon ', ur'Thopeutica '], xpos=[ur'\'']) + #84
-lema(ur'[Ss]epar_ó__o', xpre=[ur'(?:[Mm]e|[Uu]n|[Yy]o) ', ], xpos=[r' tus']) + #70
-lema(ur'[Aa]sesor_í_as?_i', xpre=[ur'polaco: \'\'']) + #69
-lema(ur'_B_rasil_b', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ', xpre=[ur'viene '], xpos=[ur' natal']) + #71
-lema(ur'[Ff]otograf_í_an?_i', xpre=[ur' i la ', ur'da Terra: ', ur'Lleida de ', ur'nuova ', ur'Curs de ', ur'I ', ur' e ', ur' (?:[Dd][ai]) ', ur'Português de ', ur'Prêmio Nacional de ', ur'Fragmenta ', ur'Nuova ', ur'della ', ur'ricerche ', ], xpos=[ur' (?:e (?:non|a Agricultura)|Aéreas do|Oltre|[Nn]o |[Dd]i |pittorica|commentata|dell|a Catalunya|\(música|na )', ur'(?:\]\][a-zñ]+|" \(Jobim|\.Islamoriente)', ]) + #92
-lema(ur'[Vv]olver_á_[ns]?_a', xpre=[ur'Gilberto '], xpos=[ur'\]']) + #62
-lema(ur'[Ee]star_á_[ns]?_a', xpre=[ur'Xiphias '], xpos=[ur' Ferragut']) + #59
-lema(ur'[h]ar_á_n_a', xpos=[ur' (?:bat|hua|Al-Awamid|no |\'*\(valle)', ur'\'']) + #65
-lema(ur'_Á_reas?_A', pre=ur'(?:[AaEe]l|[Ll]as?|[Uu]nas|[Dd]el|[Uu]n|[Cc]ada|[Ss]us|[Oo]tras?) ', xpos=[ur' (?:Council|Mix|Sacra)', ]) + #79
-lema(ur'[Dd]_é_ficits?_e', xpre=[ur'\b(?:et|to) ', ur'this ', ur'[Tt]he ', ur'Trade ', ur'totum ', ur'pollination ', ur'Attention: ', ur'et non ', ur'polar ', ur'water ', ur'Democratic ', ur'[Aa]ttention[+ ]', ur'[Bb]udget ', ], xpos=[ur' (?:in|of|angles?|needs|Reduction|Hyperactivity|de Atencao|Review|Tuscana et)\b', ]) + #75
-lema(ur'[Pp]_ú_blicas_u', xpre=[ur'Divers[õő]es ', ur'T[uú] ', ur'[Qq]ue ', ], xpos=[ur' (?:federais|e Proteção)', ]) + #55
-lema(ur'[Pp]rop__i[ao]s?_r', xpre=[ur'\be ', ur'(?:in|ad|ac) ', ur'T\. ', ur'industria ', ur'dal ', ur'sei ', ur'ecclesia ', ur'Nomina ', ur'Officia ', ur'spargimento del ', ur'Tasiocera ', ur'Vita ', ur'Rus\' ', ur'Lithuania ', ur'per ', ur'ha una ', ur'Hogna ', ur'calcáreo ', ur'Cryptantha ', ur'Hogna ', ur'Dubiaranea ', ur'ecclessia ', ur'iure ', ur'hepática ', ur'l\'oggetto', ur' [Èè] ', ur'Albionella ', ur'Lituania ', ur'Meioneta ', ur'Tous ', ur'[Ll][aá]mina ', ur'[Mm]otu ', ur'[Mm]otus ', ur'hepatica ', ur'moto ', ur'manu ', ], xpos=[ur' (?:Tu|orbati|come|Cures|Fiorentina|Sanctorum|SummorumPontificum|come|danno|nombre|albergo|motu|palazzo|vita|giornalismo|teatro, sì|persona|passato|Ecclesia|y Vigarolo|vocat|vigore|pluribus|male|l\')', ur'\]']) + #54
-lema(ur'[Ff]_é_rtil(?:es|)_e', xpre=[ur'J\. ', ur'plu ', ur'Reprod ', ur'Terres ', ur'vallées ', ur'[Yy]eux ', ], xpos=[ur' (?:Grass|Steril|Women|SteriI)', ur'\. Steril']) + #88
-lema(ur'[Tt]_á_ndems?_a', pre=ur'\b(?:[Ee]l|[Uu]n|del|en|tipo|con|haciendo|formando|formó|equipos|Velocidad|legendario|gran|cabinas|club|[Bb]uses|ajedrez) (?:\[\[|''|)', xpre=[ur'Tm para '], xpos=[ur' (?:Fundazioa|open|Computers)']) + #78
-lema(ur'_É_pic(?:as|os)_E', xpre=[ur'[y&] ', ur'Colón\|']) + #50
 []][0]
 
 grupo6 = [# 25-49
-lema(ur'[Ee]stad_í_as?_i', xpos=[ur' y Telquinis']) + #38
-lema(ur'[Ee]str_é_s_e', xpos=[ur'(?:\]\]or|\'\'s)']) + #33
-lema(ur'[Cc]_á_scaras?_a', xpos=[ur' Sagrado']) + #36
-lema(ur'[Aa]utob_ú_s_u', pre=ur'(?:[Ee]l|[Uu]n|[Ee]n) ', xpos=[ur' tutto']) + #26
-lema(ur'[Aa]s_c_enso_', xpre=[ur'González ', ur'Jacobo ', ur'real ', ], xpos=[ur' Ampim']) + #49
-lema(ur'[Ff]en_ó_meno_o', xpre=[ur'\bO ', ur'\b[Ii]l ', ur'NIFO‑', ur'come ', ur'sviluppo del ', ur'comesviluppo del ', ], xpos=[ur' (?:di|Esperanto|paranormale|radiante cerebropsichico|sociale)\b', ur'\.com', ]) + #49
-lema(ur'_Japó_n_(?:Japo|jap[oó])', pre=ur'(?:[Aa]l?|[Dd]el?|[Pp]ara|[Ee][nl]|[Hh]acia|[Yy]|[Cc]on) ', xpos=[ur' y China desde el anno']) + #49
-lema(ur'[Aa]rtesan_í_as?_i', xpre=[ur'Asociació ', ur'l[\'’]'], xpos=[ur'(?:, (?:Alcantara|Almansa|Via|C/)|: Art )']) + #48
-lema(ur'[Mm]_á_gico_a', xpre=[ur'amico ', ur'Il totem ', ur'Occhio ', ur'flauto ', ur'uccello ', ur'Il carillon ', ur'Il momento ', ur'L\'anello ', ur'L\'astro ', ur'Tocco ', ur'Tripp ', ur'Veicolo ', ur'[Mm]ondo ', ur'[Tt]reno ', ur'antro ', ur'cerchio ', ur'corno ', ur'regno ', ur'storia del Pifferaio ', ], xpos=[ur' (?:di|eroe|Lilo|Vento|Bonding|connubio|Veneto|Antico Oriente|e altri)', ]) + #48
-lema(ur'[Pp]ur_í_sim[ao]s?_i', xpre=[ur'Cesar ', ur'Mission La '], xpos=[ur' Mission']) + #47
-lema(ur'[Gg]r_á_fic(?:[ao]s|amente)_a', xpre=[ur'escribe o ', ur'Comunicacio ', ur'Nos ', ur'escribe o '], xpos=[ur' (?:del Parteolla|Five)']) + #46
-lema(ur'[Pp]erif_é_ric[ao]s?_e', xpre=[ur'troppo ', ]) + #46
-lema(ur'[Tt]ra_í_as?_i', xpre=[ur'Is '], xpos=[ur' del Gofio']) + #46
-lema(ur'[Cc]_á_maras_a', xpre=[ur' as ', ]) + #45
-lema(ur'[Gg]arant_í_as?_i', xpre=[ur' e ', ur' em ', ur'Banco ', ]) + #45
-lema(ur'[Pp]rop_ó_sitos?_o', xpre=[ur'fermo ', ], xpos=[ur' (?:dell|di|pellimur)', ]) + #45
-lema(ur'[Dd]esaf_í_o de_i', xpre=[ur'O '], xpos=[ur' Criar']) + #43
-lema(ur'[Rr]ob_ó_tic[ao]s?_o', xpre=[ur'Toccata ', ], xpos=[ur' (?:\(juego|earthensis)', ur': Cybernation', ]) + #43
-lema(ur'[Ff]el_i_(?:z|ces)_í', xpre=[ur'San ', ]) + #42
-lema(ur'[Gg]r_á_fica_a', xpre=[ur'\be ', ur'\b(?:di|[Ss]e) ', ur'[Nn]os ', ur'que mejor ', ur'Edizioni ', ur'Nova Tecnica ', ur'Torino ', ur'[Oo]pera ', ur'alla ', ur'della ', ur'estudio ', ur'per la ', ], xpos=[ur' (?:a cura|una? |l[ao]s? |e Editora|European|Gazeta|i disseny|contro|e[ln] )', ]) + #41
-lema(ur'[Aa]si_á_tic(?:as|os?)_a', xpre=[ur'ad Plantas ', ]) + #40
-lema(ur'[Aa]rchidi_ó_cesis_o', xpos=[ur' (?:Turritanus|Praetoriensis|Bisuntinis|Limanus)', ]) + #39
-lema(ur'[Pp]aleontolog_í_as?_i', xpre=[ur' da ', ur' e ', ur'Brasileir[ao] de ', ur'Català de ', ur'Institut de ', ur'Trabalho de ', ur'di ', ur'i la ', ], xpos=[ur' (?:em |Electronica|Africana|Lombarda|E Stratigrafia|i Evolució\')', ]) + #39
-lema(ur'[Zz]ool_ó_gicos?_o', xpre=[ur'Monitore ', ur' e ',], xpos=[ur' (?:dell|La Specola|di )', ]) + #39
-lema(ur'[Jj]ur_í_dic[ao]_i', xpre=[ur'[Oo]pera ', ur'esperienza ', ]) + #38
-lema(ur'[Aa]cu_á_tic[ao]s?_a', xpre=[ur'f\. ', ], xpos=[ur' Milan', ]) + #37
-lema(ur'[Pp]arec_í_a[ns]?_i', xpos=[ur' Não', ]) + #37
-lema(ur'[Zz]oolog_í_as?_i', xpre=[ur' e ', ur' (?:di|in) ', ur'Arquivos de ', ur'Avulsos de ', ur'Boletim de ', ur'Botanica ', ur'Brasileir[ao] de ', ur'Centrali-Americana, ', ur'Goeldiana ', ur'Iheringia \(', ur'Museu Nacional Rio de Janeiro ', ur'Museu de ', ur'Noções de ', ur'Sér\. ', ur'Série ', ur'avulsos de ', ur'do Departamento de ', ur'séries ', ], xpos=[ur' (?:e a|do |krótko|degli|post |kansalaisille|medicinalis|Baetica|fantástica do|Neocaledonica|i ecologia|Adriatica, ossia|specialis)', ur', Lisboa', ]) + #37
-lema(ur'Lan_ú_s_u', xpos=[ur'\.com', ]) + #36
-lema(ur'[Pp]_ú_blic(?:os|amente)_u', xpos=[ur' hostes', ur'\'']) + #36
-lema(ur'[Ss]u_é_ter_e', xpre=[ur'Murray ', ur'banda\)\|', ur'escrito como ', ], xpos=[ur' (?:5|Book)']) + #36
-lema(ur'[Ii]n_é_dita_e', xpre=[ur'maximum ', ur'Carmina ', ur'Lettera ', ur'corrispondenza ', ur'tum ', ur'Problemata ', ur'Opera ', ur'ricerca sociologica ', ur'Pelecopsis ', ur'Vallesia ', ur'[Ss]acra ', ur'adhuc ', ur'lettera ', ur'quam ', ], xpos=[ur' (?:di |a cura di|e due|grammatica|Discorso|Editores)', ]) + #35
-lema(ur'[Ii]nform_á_tica_a', xpre=[ur'Acta ', ur'Athenas ', ur'Contabilitate si ', ur'Sociaal-Wetenschappelijke ', ur'Wiskunde & ', ], xpos=[ur' (?:i |Particolare|Corporation|per )', ur' e (?:Diritto|internet per)', ]) + #35
-lema(ur'Berl_í_n_i', pre=ur'(?:[Ee]n|y|o) ', xpos=[ur' (?:Dahlem|Air)', ur'\.de', ]) + #34
-lema(ur'[Ee]ntomolog_í_as?_i', xpre=[ur' (?:et|di) ', ur'sull\'', ur'[Bb]rasileira de ', ], xpos=[ur' (?:African|agraria e biologia applicata|[Ss]ystematica|Parisiensis|applicata|generale|[Cc]arniolica|nella|Americana|Experimentalis|de Mocambique)', ur'\.?\'']) + #34
-lema(ur'[Ff]_í_sic[ao]s_i', xpre=[ur'difetto '], xpos=[ur' (?:i politica|e matematica|riduzione)', ur'(?:\.ru|\.png|" e "Del)', ]) + #34
-lema(ur'[Dd]isc_í_pul[ao]s?_i', xpre=[ur'[Ss]uo '], xpos=[ur' (?:eique|perusinos|fidelissime)', ]) + #33
-lema(ur'est_á__a', pre=ur'(?:Él|[ÉE]lla) ', xpos=[ur' comunidad', ]) + #33
-lema(ur'[Hh]onor_í_fic[ao]s?_i', xpre=[ur'T\. ', ur'Tipula ', ur'[Ss]e ', ]) + #33
-lema(ur'[Ii]n_é_dit[ao]s_e', xpre=[ur'corrispondenza ', ur'tum ', ]) + #33
-lema(ur'Afganist_á_n_a', xpre=[ur'L\'', ur'Azadi ']) + #32
-lema(ur'[Dd]ecidi_ó_(?! Saxa)_o', xpre=[ur'un ', ]) + #32
-lema(ur'[Ll]og_í_sticas?_i', xpre=[ur'Rad ', ur'Cecchi ', ur'Fruit ', ur'Varig ', ], xpos=[ur' até', ]) + #32
-lema(ur'[Cc]onf_í_a[ns]?_i', xpre=[ur'proceedings‚ ', ur'DTU ', ur'\be '], xpos=[ur' em ', ]) + #31
-lema(ur'[Dd]ram_á_tic[ao]_a', xpre=[ur'Lento e ', ur'mezzosoprano ', ur'Encyclopedia ', ur'Encyclopædia ', ur'Ouverture ', ur'favola ', ], xpos=[ur'Cascais ', ]) + #31
-lema(ur'[Vv]_á_lvulas?_a', xpre=[ur'Elaver ', ], xpos=[ur' venae', ]) + #31
-lema(ur'[Aa]lfab_é_tic(?:[ao]s?|amente)_e', xpre=[ur'Sull\'']) + #30
-lema(ur'[Ee]vang_é_lica_e', xpre=[ur'Harmonia ', ur'Chiesa ', ur'Demonstratio ', ur'Iosephina ', ur'Lux ', ur'Perfectione ', ur'Praeparatio ', ur'Preparatio ', ur'Studia ', ur'praedicatione ', ], xpos=[ur' (?:Beati|Praeparatione|libertate|et|e Documentazione|a Georgio)', ]) + #30
-lema(ur'[Mm]edi_á_tic[ao]s?_a', xpre=[ur'democrazia ', ]) + #30
-lema(ur'est_á_ bajo_a', xpre=[ur'[Aa] ', ]) + #29
-lema(ur'[Ff]isiolog_í_as?_i', xpre=[ur'\b[ei] ', ], xpos=[ur' (?:umana|vegetale|comparate|dell|dos|aeroespacial : conhecimentos)', ur', taxonomia, ecologia e gen[eé]tica']) + #29
-lema(ur'[Mm]inor_í_as?_i', xpre=[ur'Fusulina ', ], xpos=[ur' [Aa]bsoluta', ]) + #29
-lema(ur'[Hh]_é_roes?_e', pre=ur'(?:[Uu]n|[Ee]l|[Ll]os|[Dd]e|en) ', xpos=[ur' [Oo]f', ]) + #28
-lema(ur'[Pp]orter_í_as?_i', xpre=[ur'Diari de la ', ur'OJ ', ], xpos=[ur' (?:albopunctata|escapulada està)', ]) + #28
-lema(ur'[Aa]ut_ó_dromo_o', xpre=[ur'dell\'', ur'spider ', ], xpos=[ur' (?:di|Nazionale|Internazionale|Enzo e Dino Ferrari|de (?:Portimao|Umbria))', ]) + #27
-lema(ur'[Mm]ar_í_tim(?:as|os?)_i', xpre=[ur'Museu ', ]) + #27
-lema(ur'[Mm]icr_ó_fonos?_o', xpos=[ur' (?:è|d)', ]) + #27
-lema(ur'[Pp]art_í_culas?_i', xpre=[ur'historiae ', ur'novem ', ], xpos=[ur' (?:prima|secunda)']) + #27
-lema(ur'[Pp]_ó_stum[ao]_o', xpre=[ur'Lucio ', ur'Apologo ', ur'Atilio ', ur'Cephaloleia ', ur'Poenio ', ur'Vibio ', ur'pubblicato ', ], xpos=[ur' (?:dello|Megelo|se suicidó|Dardano)', ]) + #27
-lema(ur'[Rr]om_á_ntico_a', xpre=[ur' e ', ur' rom ', ur'Concerto ', ur'Essere ', ur'Operachi ', ur'[Mm]elodramma ', ur'[Qq]uartetto ', ur'[Tt]rio ', ur'amore ', ur'bacio ', ur'belcanto ', ], xpos=[ur' (?:blues|Rock|Bosanova|e mistico)', ]) + #27
-lema(ur'[Tt]en_í_as?_i', xpre=[ur'\ba ', ur'\bde ', ur'\bcon ', ur'entre ', ur'Estas ', ur'Mario ', ur'[Ee]l ', ur'[Ll]as ', ur'Ram[oó]n ', ur'curar la ', ur'excepto ', ur'llamado ', ], xpos=[ur' (?:\((?:adulta|arquitectura)|E\. granulosus|o lombriz|de la que|saginata|del rumiante|dues cases|del (?:pez|género)|raor|els|[Mm]ortal)', ur'(?:[\'\|\]]|, amiba)', ]) + #27
-lema(ur'[Aa]post_ó_lico_o', xpre=[ur'Pellegrino ', ur'Nunzio ', ur'Missionario ', ur'Palazzo ', ur'amministratore ', ur'ex ', ], xpos=[ur' (?:[Mm]uneri|Seggio|di Bologna|San Michele)', ]) + #26
-lema(ur'[Ee]tnograf_í_as?_i', xpre=[ur' e ', ur'd[\'’]', ur'falações de variantes ', ], xpos=[ur' (?:[Pp]ortuguesa|religiosa e psicanálise|brasileira|e Folclore|del tarantismo pugliese|do )', ]) + #26
-lema(ur'[Ff]armac_é_utic[ao]s?_e', xpre=[ur'di Botanica ', ur'Palestra ', ur'Tribuna ', ], xpos=[ur' (?:di |e tossicologica)', ]) + #26
-lema(ur'[Bb]_é_same_e', xpos=[ur'\.fm', ]) + #25
-lema(ur'[Hh]_í_brid(?:as|os?)_i', xpos=[ur' di ', ]) + #25
-lema(ur'Ir_á_n_a', pre=ur'(?:[Dd]e|[Ee]n) ', xpre=[ur'Francaises ', ur'Française ', ur'Pasquier ', ur'Recherche ', ur'Recherches ', ur'San Clemente ', ur'historiques ', ur'peinture ', ], xpos=[ur' (?:Air|Aseman|Chamber|Telecommunications|et)', ]) + #25
-lema(ur'[Mm]etaf_í_sic[ao]s?_i', xpre=[ur' d[ai] ', ur'Giornale de ', ur'suono ', ur'della ', ur'di una ', ur'scuola ', ], xpos=[ur' (?:[Aa]perta|classica|das|di )', ur'\'\' di', ]) + #25
-lema(ur'[Aa]utonom_í_as?_i', xpre=[ur'\b[aei] ', ur'per \'', ur'Euskal ', ur'[DdLl][’\']', ], xpos=[ur' (?:and|e (?:solidarietà|socialismo)|i (?:Benestar|centralisme)|Integrale|Operaia|possible|galega)', ur'(?:\.­htm|: Post-Political)', ]) + #41
-lema(ur'[Pp]eque_ñ_[ao]s? (?:formato|gran|países|[Ss]uite|Democracias|Italia|Jerusalen|Larousse|Maravilla|Mundo|Odessa|Polonia|Reyes|Veneta)_n', xpos=[ur' de Marcos']) + #35
-lema(ur'[Pp]siquiatr_í_as?_i', xpre=[ur' e ', ur'A ', ur' em ', ur'Brasileira de ', ur'antropològica existencial de la ', ur'questões de ', ], xpos=[ur' (?:fonamental|e psicanálise| (?:do|em) )', ur'\.com', ]) + #25
-lema(ur'[Cc]orrer_á_[ns]?_a', xpre=[ur'son ', ur'Camila ', ur'Azalia ', ur'Luigi ']) + #39
-lema(ur'[Cc]aer_á_[ns]?_a', xpre=[ur' (?:of|be) ', ur'Denk ', ur'Cerrig y ', ur'Camila '], xpos=[ur' O\'Shaughneey', ur'\'']) + #30
-lema(ur'[Qq]uerr_á_[ns]?_a', xpre=[ur'en la ']) + #26
-lema(ur'[Tt]ur_í_stico_i', xpre=[ur'Consorzio ', ur'Guida ', ur'Porto ', ur'Società Incremento ', ], xpos=[ur' (?:ufficiale|della|Cinque|Acores)', ]) + #32
-lema(ur'[Aa]c_ú_stic[ao]s?_u', xpre=[ur'Versione ', ur'dell\'', ur'Ars '], xpos=[ur' for', ur'\'\'']) + #48
-lema(ur'[Cc]l_í_max_i', pre=ur'(?:[Ee]l|[Uu]n|de|en|su) ', xpre=[ur'residiendo ', ur'Situación ', ur'[Mm]unicipio ', ur'anual ', ur'cartucho ', ur'fama ']) + #25
+lema(ur'[Tt]en_í_as?_i', xpre=[ur'Estas ', ur'Mario ', ur'Ram[oó]n ', ur'[Ee]l ', ur'[Ll]as ', ur'\ba ', ur'\bcon ', ur'\bde ', ur'curar la ', ur'entre ', ur'excepto ', ur'llamado ', ], xpos=[ur' (?:\((?:adulta|arquitectura)|E\. granulosus|o lombriz|de la que|saginata|del rumiante|dues cases|del (?:pez|género)|raor|els|[Mm]ortal)', ur'(?:[\'\|\]]|, amiba)', ]) + #794
+lema(ur'[Pp]_ú_blic(?:os|amente)_u', xpos=[ur' hostes', ur'\'', ]) + #88
+lema(ur'[Hh]_é_roes?_e', pre=ur'(?:[Uu]n|[Ee]l|[Ll]os|[Dd]e|en) ', xpos=[ur' [Oo]f', ]) + #78
+lema(ur'[Gg]r_á_fica_a', xpre=[ur'Edizioni ', ur'Nova Tecnica ', ur'Torino ', ur'[Nn]os ', ur'[Oo]pera ', ur'\b(?:di|[Ss]e) ', ur'\be ', ur'alla ', ur'della ', ur'estudio ', ur'per la ', ur'que mejor ', ], xpos=[ur' (?:a cura|una? |l[ao]s? |e Editora|European|Gazeta|i disseny|contro|e[ln] )', ]) + #69
+lema(ur'_Japó_n_(?:Japo|jap[oó])', pre=ur'(?:[Aa]l?|[Dd]el?|[Pp]ara|[Ee][nl]|[Hh]acia|[Yy]|[Cc]on) ', xpos=[ur' y China desde el anno', ]) + #69
+lema(ur'[Zz]oolog_í_as?_i', xpre=[ur' (?:di|in) ', ur' e ', ur'Arquivos de ', ur'Avulsos de ', ur'Boletim de ', ur'Botanica ', ur'Brasileir[ao] de ', ur'Centrali-Americana, ', ur'Goeldiana ', ur'Iheringia \(', ur'Museu Nacional Rio de Janeiro ', ur'Museu de ', ur'Noções de ', ur'Sér\. ', ur'Série ', ur'avulsos de ', ur'do Departamento de ', ur'séries ', ], xpos=[ur' (?:e a|do |krótko|degli|post |kansalaisille|medicinalis|Baetica|fantástica do|Neocaledonica|i ecologia|Adriatica, ossia|specialis)', ur', Lisboa', ]) + #58
+lema(ur'Afganist_á_n_a', xpre=[ur'Azadi ', ur'L\'', ]) + #56
+lema(ur'[Aa]c_ú_stic[ao]s?_u', xpre=[ur'Ars ', ur'Versione ', ur'dell\'', ], xpos=[ur' for', ur'\'\'', ]) + #56
+lema(ur'Lan_ú_s_u', xpos=[ur'\.com', ]) + #55
+lema(ur'[Ii]nform_á_tica_a', xpre=[ur'Acta ', ur'Athenas ', ur'Contabilitate si ', ur'Sociaal-Wetenschappelijke ', ur'Wiskunde & ', ], xpos=[ur' (?:i |Particolare|Corporation|per )', ur' e (?:Diritto|internet per)', ]) + #54
+lema(ur'[Mm]ar_í_tim(?:as|os?)_i', xpre=[ur'Museu ', ]) + #53
+lema(ur'[Pp]aleontolog_í_as?_i', xpre=[ur' da ', ur' e ', ur'Brasileir[ao] de ', ur'Català de ', ur'Institut de ', ur'Trabalho de ', ur'di ', ur'i la ', ], xpos=[ur' (?:em |Electronica|Africana|Lombarda|E Stratigrafia|i Evolució\')', ]) + #53
+lema(ur'[Hh]onor_í_fic[ao]s?_i', xpre=[ur'T\. ', ur'Tipula ', ur'[Ss]e ', ]) + #51
+lema(ur'[Mm]_á_gico_a', xpre=[ur'Il carillon ', ur'Il momento ', ur'Il totem ', ur'L\'anello ', ur'L\'astro ', ur'Occhio ', ur'Tocco ', ur'Tripp ', ur'Veicolo ', ur'[Mm]ondo ', ur'[Tt]reno ', ur'amico ', ur'antro ', ur'cerchio ', ur'corno ', ur'flauto ', ur'regno ', ur'storia del Pifferaio ', ur'uccello ', ], xpos=[ur' (?:di|eroe|Lilo|Vento|Bonding|connubio|Veneto|Antico Oriente|e altri)', ]) + #46
+lema(ur'[Jj]ur_í_dic[ao]_i', xpre=[ur'[Oo]pera ', ur'esperienza ', ]) + #44
+lema(ur'est_á_ bajo_a', xpre=[ur'[Aa] ', ]) + #44
+lema(ur'Berl_í_n_i', pre=ur'(?:[Ee]n|y|o) ', xpos=[ur' (?:Dahlem|Air)', ur'\.de', ]) + #43
+lema(ur'[Pp]_ó_stum[ao]_o', xpre=[ur'Apologo ', ur'Atilio ', ur'Cephaloleia ', ur'Lucio ', ur'Poenio ', ur'Vibio ', ur'pubblicato ', ], xpos=[ur' (?:dello|Megelo|se suicidó|Dardano)', ]) + #43
+lema(ur'[Dd]ecidi_ó_(?! Saxa)_o', xpre=[ur'un ', ]) + #42
+lema(ur'[Aa]si_á_tic(?:as|os?)_a', xpre=[ur'ad Plantas ', ]) + #41
+lema(ur'[Pp]rop_ó_sitos?_o', xpre=[ur'fermo ', ], xpos=[ur' (?:dell|di|pellimur)', ]) + #41
+lema(ur'[Aa]utonom_í_as?_i', xpre=[ur'Euskal ', ur'[DdLl][’\']', ur'\b[aei] ', ur'per \'', ], xpos=[ur' (?:and|e (?:solidarietà|socialismo)|i (?:Benestar|centralisme)|Integrale|Operaia|possible|galega)', ur'(?:\.­htm|: Post-Political)', ]) + #38
+lema(ur'[Tt]ur_í_stico_i', xpre=[ur'Consorzio ', ur'Guida ', ur'Porto ', ur'Società Incremento ', ], xpos=[ur' (?:ufficiale|della|Cinque|Acores)', ]) + #38
+lema(ur'[Aa]rtesan_í_as?_i', xpre=[ur'Asociació ', ur'l[\'’]', ], xpos=[ur'(?:, (?:Alcantara|Almansa|Via|C/)|: Art )', ]) + #35
+lema(ur'[Pp]ur_í_sim[ao]s?_i', xpre=[ur'Cesar ', ur'Mission La ', ], xpos=[ur' Mission', ]) + #35
+lema(ur'[Aa]ut_ó_dromo_o', xpre=[ur'dell\'', ur'spider ', ], xpos=[ur' (?:di|Nazionale|Internazionale|Enzo e Dino Ferrari|de (?:Portimao|Umbria))', ]) + #33
+lema(ur'[Ee]vang_é_lica_e', xpre=[ur'Chiesa ', ur'Demonstratio ', ur'Harmonia ', ur'Iosephina ', ur'Lux ', ur'Perfectione ', ur'Praeparatio ', ur'Preparatio ', ur'Studia ', ur'praedicatione ', ], xpos=[ur' (?:Beati|Praeparatione|libertate|et|e Documentazione|a Georgio)', ]) + #33
+lema(ur'[Aa]post_ó_lico_o', xpre=[ur'Missionario ', ur'Nunzio ', ur'Palazzo ', ur'Pellegrino ', ur'amministratore ', ur'ex ', ], xpos=[ur' (?:[Mm]uneri|Seggio|di Bologna|San Michele)', ]) + #31
+lema(ur'[Cc]_á_maras_a', xpre=[ur' as ', ]) + #31
+lema(ur'[Dd]isc_í_pul[ao]s?_i', xpre=[ur'[Ss]uo ', ], xpos=[ur' (?:eique|perusinos|fidelissime)', ]) + #28
+lema(ur'[Gg]r_á_fic(?:[ao]s|amente)_a', xpre=[ur'Comunicacio ', ur'Nos ', ur'escribe o ', ur'escribe o ', ], xpos=[ur' (?:del Parteolla|Five)', ]) + #28
+lema(ur'[Ff]_í_sic[ao]s_i', xpre=[ur'difetto ', ], xpos=[ur' (?:i politica|e matematica|riduzione)', ur'(?:\.ru|\.png|" e "Del)', ]) + #26
+lema(ur'[Ll]og_í_sticas?_i', xpre=[ur'Cecchi ', ur'Fruit ', ur'Rad ', ur'Varig ', ], xpos=[ur' até', ]) + #26
+lema(ur'[Ff]en_ó_meno_o', xpre=[ur'NIFO‑', ur'\bO ', ur'\b[Ii]l ', ur'come ', ur'comesviluppo del ', ur'sviluppo del ', ], xpos=[ur' (?:di|Esperanto|paranormale|radiante cerebropsichico|sociale)\b', ur'\.com', ]) + #25
+lema(ur'[Aa]rchidi_ó_cesis_o', xpos=[ur' (?:Turritanus|Praetoriensis|Bisuntinis|Limanus)', ]) + #24
+lema(ur'[Cc]l_í_max_i', pre=ur'(?:[Ee]l|[Uu]n|de|en|su) ', xpre=[ur'Situación ', ur'[Mm]unicipio ', ur'anual ', ur'cartucho ', ur'fama ', ur'residiendo ', ]) + #24
+lema(ur'[Gg]arant_í_as?_i', xpre=[ur' e ', ur' em ', ur'Banco ', ]) + #23
+lema(ur'[Pp]arec_í_a[ns]?_i', xpos=[ur' Não', ]) + #23
+lema(ur'[Aa]lfab_é_tic(?:[ao]s?|amente)_e', xpre=[ur'Sull\'', ]) + #22
+lema(ur'[Ii]n_é_dit[ao]s_e', xpre=[ur'corrispondenza ', ur'tum ', ]) + #22
+lema(ur'[Pp]orter_í_as?_i', xpre=[ur'Diari de la ', ur'OJ ', ], xpos=[ur' (?:albopunctata|escapulada està)', ]) + #22
+lema(ur'[Zz]ool_ó_gicos?_o', xpre=[ur' e ', ur'Monitore ', ], xpos=[ur' (?:dell|La Specola|di )', ]) + #22
+lema(ur'[Aa]cu_á_tic[ao]s?_a', xpre=[ur'f\. ', ], xpos=[ur' Milan', ]) + #21
+lema(ur'[Dd]ram_á_tic[ao]_a', xpre=[ur'Encyclopedia ', ur'Encyclopædia ', ur'Lento e ', ur'Ouverture ', ur'favola ', ur'mezzosoprano ', ], xpos=[ur'Cascais ', ]) + #21
+lema(ur'[Ee]tnograf_í_as?_i', xpre=[ur' e ', ur'd[\'’]', ur'falações de variantes ', ], xpos=[ur' (?:[Pp]ortuguesa|religiosa e psicanálise|brasileira|e Folclore|del tarantismo pugliese|do )', ]) + #21
+lema(ur'[Rr]om_á_ntico_a', xpre=[ur' e ', ur' rom ', ur'Concerto ', ur'Essere ', ur'Operachi ', ur'[Mm]elodramma ', ur'[Qq]uartetto ', ur'[Tt]rio ', ur'amore ', ur'bacio ', ur'belcanto ', ], xpos=[ur' (?:blues|Rock|Bosanova|e mistico)', ]) + #21
+lema(ur'[Tt]ra_í_as?_i', xpre=[ur'Is ', ], xpos=[ur' del Gofio', ]) + #21
+lema(ur'Ir_á_n_a', pre=ur'(?:[Dd]e|[Ee]n) ', xpre=[ur'Francaises ', ur'Française ', ur'Pasquier ', ur'Recherche ', ur'Recherches ', ur'San Clemente ', ur'historiques ', ur'peinture ', ], xpos=[ur' (?:Air|Aseman|Chamber|Telecommunications|et)', ]) + #20
+lema(ur'[Ff]isiolog_í_as?_i', xpre=[ur'\b[ei] ', ], xpos=[ur' (?:umana|vegetale|comparate|dell|dos|aeroespacial : conhecimentos)', ur', taxonomia, ecologia e gen[eé]tica', ]) + #20
+lema(ur'[Vv]_á_lvulas?_a', xpre=[ur'Elaver ', ], xpos=[ur' venae', ]) + #20
+lema(ur'[Hh]_í_brid(?:as|os?)_i', xpos=[ur' di ', ]) + #19
+lema(ur'[Aa]s_c_enso_', xpre=[ur'González ', ur'Jacobo ', ur'real ', ], xpos=[ur' Ampim', ]) + #18
+lema(ur'[Bb]_é_same_e', xpos=[ur'\.fm', ]) + #18
+lema(ur'[Cc]onf_í_a[ns]?_i', xpre=[ur'DTU ', ur'\be ', ur'proceedings‚ ', ], xpos=[ur' em ', ]) + #18
+lema(ur'[Ff]armac_é_utic[ao]s?_e', xpre=[ur'Palestra ', ur'Tribuna ', ur'di Botanica ', ], xpos=[ur' (?:di |e tossicologica)', ]) + #18
+lema(ur'[Ii]n_é_dita_e', xpre=[ur'Carmina ', ur'Lettera ', ur'Opera ', ur'Pelecopsis ', ur'Problemata ', ur'Vallesia ', ur'[Ss]acra ', ur'adhuc ', ur'corrispondenza ', ur'lettera ', ur'maximum ', ur'quam ', ur'ricerca sociologica ', ur'tum ', ], xpos=[ur' (?:di |a cura di|e due|grammatica|Discorso|Editores)', ]) + #18
+lema(ur'[Ss]u_é_ter_e', xpre=[ur'Murray ', ur'banda\)\|', ur'escrito como ', ], xpos=[ur' (?:5|Book)', ]) + #18
+lema(ur'[Mm]inor_í_as?_i', xpre=[ur'Fusulina ', ], xpos=[ur' [Aa]bsoluta', ]) + #17
+lema(ur'[Pp]erif_é_ric[ao]s?_e', xpre=[ur'troppo ', ]) + #16
+lema(ur'[Mm]edi_á_tic[ao]s?_a', xpre=[ur'democrazia ', ]) + #15
+lema(ur'[Pp]art_í_culas?_i', xpre=[ur'historiae ', ur'novem ', ], xpos=[ur' (?:prima|secunda)', ]) + #15
+lema(ur'[Pp]siquiatr_í_as?_i', xpre=[ur' e ', ur' em ', ur'A ', ur'Brasileira de ', ur'antropològica existencial de la ', ur'questões de ', ], xpos=[ur' (?:fonamental|e psicanálise| (?:do|em) )', ur'\.com', ]) + #15
+lema(ur'[Rr]ob_ó_tic[ao]s?_o', xpre=[ur'Toccata ', ], xpos=[ur' (?:\(juego|earthensis)', ur': Cybernation', ]) + #15
+lema(ur'est_á__a', pre=ur'(?:Él|[ÉE]lla) ', xpos=[ur' comunidad', ]) + #14
+lema(ur'[Ee]ntomolog_í_as?_i', xpre=[ur' (?:et|di) ', ur'[Bb]rasileira de ', ur'sull\'', ], xpos=[ur' (?:African|agraria e biologia applicata|[Ss]ystematica|Parisiensis|applicata|generale|[Cc]arniolica|nella|Americana|Experimentalis|de Mocambique)', ur'\.?\'', ]) + #12
+lema(ur'[Ff]el_i_(?:z|ces)_í', xpre=[ur'San ', ]) + #11
+lema(ur'[Mm]etaf_í_sic[ao]s?_i', xpre=[ur' d[ai] ', ur'Giornale de ', ur'della ', ur'di una ', ur'scuola ', ur'suono ', ], xpos=[ur' (?:[Aa]perta|classica|das|di )', ur'\'\' di', ]) + #11
+lema(ur'[Cc]_á_scaras?_a', xpos=[ur' Sagrado', ]) + #10
+lema(ur'[Ee]stad_í_as?_i', xpos=[ur' y Telquinis', ]) + #10
+lema(ur'[Dd]esaf_í_o de_i', xpre=[ur'O ', ], xpos=[ur' Criar', ]) + #8
+lema(ur'[Ee]str_é_s_e', xpos=[ur'(?:\]\]or|\'\'s)', ]) + #8
+lema(ur'[Mm]icr_ó_fonos?_o', xpos=[ur' (?:è|d)', ]) + #8
+lema(ur'[Cc]orrer_á_[ns]?_a', xpre=[ur'Azalia ', ur'Camila ', ur'Luigi ', ur'son ', ]) + #6
+lema(ur'[Aa]utob_ú_s_u', pre=ur'(?:[Ee]l|[Uu]n|[Ee]n) ', xpos=[ur' tutto', ]) + #5
+lema(ur'[Qq]uerr_á_[ns]?_a', xpre=[ur'en la ', ]) + #5
+lema(ur'[Pp]eque_ñ_[ao]s? (?:formato|gran|países|[Ss]uite|Democracias|Italia|Jerusalen|Larousse|Maravilla|Mundo|Odessa|Polonia|Reyes|Veneta)_n', xpos=[ur' de Marcos', ]) + #2
+lema(ur'[Cc]aer_á_[ns]?_a', xpre=[ur' (?:of|be) ', ur'Camila ', ur'Cerrig y ', ur'Denk ', ], xpos=[ur' O\'Shaughneey', ur'\'', ]) + #1
 []][0]
 
 grupo7 = [# 10-24
@@ -11885,7 +11899,7 @@ lema(ur'[Bb]iol_ó_gic(?:[ao]s|amente)_o', xpre=[ur' e ', ur'Ciências ', ur'Ci�
 lema(ur'[Ff]a_s_cin(?:ante|ación|ad[ao]s|ó|an?|antes?|aba[ns]?|ación)_', xpre=[ur'Adriana ', ur'de ', ], xpos=[ur' Cane', ur'\]', ]) + #21
 lema(ur'[Tt]ra__stornos?_n', xpos=[ur' mentais', ]) + #21
 lema(ur'[Ii]rland_é_s_e', xpos=[ur'\]\][a-z]+', ]) + #20
-lema(ur'[Pp]l_á_stica_a', xpre=[ur'Bianco ', ur'Nero ', ur'Rosso ', ur'[Dd]i ', ur'[Vv]is ', ur'litúrgia ', ], xpos=[ur' Narboria']) + #20
+lema(ur'[Pp]l_á_stica_a', xpre=[ur'uomo ', ur'Bianco ', ur'Nero ', ur'Rosso ', ur'[Dd]i ', ur'[Vv]is ', ur'litúrgia ', ], xpos=[ur' Narboria']) + #20
 lema(ur'_é_l van?_e', xpos=[ur' (?:escometre|parir|Helsing|dame)', ur'\.ran', ]) + #19
 lema(ur'L_é_rida_e', xpre=[ur' i ', ], xpos=[ur' ostroma', ]) + #19
 lema(ur'[Pp]en_ú_ltim[ao]s?_u', xpos=[ur' (?:Online|calatorie)', ]) + #19
@@ -12376,6 +12390,20 @@ lema(ur'_e_spañol_E', pre=ur'\b(?:e[ln]|del?|idioma|y) ', xpre=[ur'llega ', ur'
 
 ####
 nuevos = [
+[(ur'(?P<f>\[|\|)(?P<a>Campeonato de Wimbledon|Torneo de Roland Garros) (?P<b>[12][0-9][0-9][0-9]) Individuales Masculinos(?P<e>\}|\]|\|)', ur'\g<f>Anexo:\g<a> \g<b> (individual masculino)\g<e>')] + #1
+[(ur'(?P<f>\[|\|)(?P<a>Campeonato de Wimbledon|Torneo de Roland Garros) (?P<b>[12][0-9][0-9][0-9]) Individuales Femeninos(?P<e>\}|\]|\|)', ur'\g<f>Anexo:\g<a> \g<b> (individual femenino)\g<e>')] + #1
+[(ur'(?P<f>\[|\|)(?P<a>Campeonato de Wimbledon|Torneo de Roland Garros) (?P<b>[12][0-9][0-9][0-9]) Dobles Masculinos(?P<e>\}|\]|\|)', ur'\g<f>Anexo:\g<a> \g<b> (dobles masculino)\g<e>')] + #1
+[(ur'(?P<f>\[|\|)(?P<a>Campeonato de Wimbledon|Torneo de Roland Garros) (?P<b>[12][0-9][0-9][0-9]) Dobles Femeninos(?P<e>\}|\]|\|)', ur'\g<f>Anexo:\g<a> \g<b> (dobles femenino)\g<e>')] + #1
+[(ur'\((?P<a>[12][0-9][0-9][0-9]) film\)', ur'(película de \g<a>)')] + #1
+[(ur'\((?P<a>[12][0-9][0-9][0-9]) [Bb]engal[ií] film\)', ur'(película bengalí de \g<a>)')] + #1
+[(ur'\([Bb]engal[ií] film\)', ur'(película bengalí)')] + #1
+[(ur'\([Tt][Vv] series\)', ur'(serie de televisión)')] + #1
+[(ur'\([Bb]oxer\)', ur'(boxeador)')] + #1
+[(ur'\([Ww]restler\)', ur'(luchador)')] + #1
+[(ur'\((?:Banda [Ss]onora|banda Sonora)\)', ur'(banda sonora)')] + #1
+[(ur'\[\[(?:Parque [Nn]acional [Mm]arítimo-[Tt]errestre del Archipi[eé]lago de Cabrera|Parque nacional del Archipiélago de Cabrera|Parque [Nn]acional del Archipi[eé]lago de Cabrera)(?P<a>\]|\|)', ur'[[Parque nacional marítimo-terrestre del Archipiélago de Cabrera\g<a>')] + #1
+[(ur'\b(?P<a>[Tt]ermin)o(?P<b> [0-9]+)', ur'\g<a>ó\g<b>')] +
+
 lema(ur'[Bb]engal_í__i', xpre=[ur'\bin ', ur'the ', ur'and ', ur'Uca ', ur'nuit ', ur'Jolly ', ur'Indigenous ', ur'Renault\]\] ', ur'Renault '], xpos=[ur' (?:in|and|Night|Album|English|[Cc]inema|[Rr]ock|[Ff]olk|[Bb]eat|[Ff]ilms?|[Mm]ovies?|title|[Ss]ongs?|webzine|Lyrics|Liberation|[Ll]anguage|Bantam|Bauls|Alphabet|Songs|[Aa]mbassador|Tiger)']) + #132
 lema(ur'[Hh]i_c_ieron_z', xpos=[ur' los capitanes']) + #30
 lema(ur'[Hh]i_z_o_s', xpre=[ur'quispe tito ', ur'\| '], xpos=[ur' Hyakuga', ur'\)']) + #13
@@ -12391,8 +12419,6 @@ lema(ur'_japoné_s_(?:Japon[eé]|japone)', pre=ur'\b(?:idioma|e[nl]|del?|y) ', x
 lema(ur'_i_taliano_I', pre=ur'\b(?:idioma|e[nl]|del?|e) ', xpre=[ur'Club ', ur'Alemán y ']) + #1
 lema(ur'_c_oreano_C', pre=ur'\b(?:idioma|e[nl]|del?|e) ') + #1
 lema(ur'_inglé_s_(?:Ingl[eé]|ingle)', pre=ur'\b(?:e[ln]|del?|idioma|e) ', xpre=[ur'Diccionario ', ur'Gestión ', ur'Preescolar ', ur'en Francés ', ur'Nivel ', ur'Docencia ', ur'[Dd]epartamento ', ur'B\.A\. ', ur'Juan ', ur'Pedagogía ', ur'bilingüe ', ur'[Cc]lase ', ur'[Cc]lases ', ur'[Cc]ursos ', ur'[Cc]arreras ', ur'aparte ', ur'titula ', ur'[Pp]rofesores ', ur'[Pp]rofesor ', ur'Diplomado ', ur'Programa ', ur'[Ee]nseñanza ', ur'graduó ', ur'especializada ', ur'\bla ', ur'Mesa del ', ur'Piedra ', ur'Castellano ', ur'Castillo ', ur'orales ', ur'Maestra ', ur'[Pp]rogramas ', ur'Teacher ', ur'interrelacionados ', ur'Punta ', ur'Playa ', ur'Pico ', ur'Instituto ', ur'Física Nuclear ', ur'grado ', ur'profesor\]\]a ', ur'[Pp]rofesor ', ur'[Pp]rofesora ', ur'Profesorado ', ur'Maestría ', ur'Japón\]\] ', ur'Bogotá\)\|', ur'Playa ', ], xpos=[ur' (?:\(idiomas)', ur'\'\'']) + lema(ur'[Ii]ngl_é_s(?:\]\]|[,.]| \(pueblo)_e', xpre=[ur'Zach ', ur'Chris ', ur'Clube ', ur'cintura e ', ur'David ', ur'Nelson ', ur'J\. ', ur'Joe ', ur'Joe Ingles\|', ur'ojos e ', ur'las ', ur'sus ', ], xpos=[ur'[a-z]+', ur' (?:cuello|axilas|\(Bogotá)']) + #583
- 
-
 lema(ur'_c_heco_C', pre=ur'\bde ', xpos=[ur' (?:a|Pérez)\b']) + #1
 lema(ur'_ú_nic(?:[ao]s|amente)_u', xpre=[ur'pedes dúo ', ]) + #1
 lema(ur'_ó_rbitas?_o', pre=ur'(?:[Ll]as?|[Ss]us?|[Uu]nas?|[Ee]n) ', xpre=[ur'que ']) + #1
@@ -12711,7 +12737,6 @@ lema(ur'[Cc]ong_é_nit[ao]s?_e', xpre=[ur'Litoria ']) + #1
 lema(ur'[Pp]rincip_i_os?_', xpos=[ur' defeso']) + #1
 lema(ur'[Gg]eobot_á_nic[ao]s?_a', xpre=[ur'Phytotaxonomica ', ur'Folia ', ur'Series A, Taxonomica, ']) + #1
 lema(ur'[Cc]_ó_smic[ao]s?_o', xpre=[ur'mistero '], xpos=[ur' (?:do|Artists)\b']) + #1
-#[(ur'¿ *(?:por *qu[eé]|Porqu[eé]|Por que)', ur'¿Por qué')] + #1
 lema(ur'¿[Pp]or_ qué__(?:qu[eé]| [Qq]ue)', xpos=[ur' decide establecer']) + #1
 # lema(ur'[Pp]r_á_ctic[ao]_a', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Dd]e) ', xpre=[ur'nadie ', ur'aun ', ur'se ']) + #1
 lema(ur'[Pp]r_á_ctica_a', pre=ur'(?:[Aa]|[Ee]n|[Dd]e|[Uu]na?|[Pp]ara) la ', xpos=[ur' (?:iudiciaria|della)']) + #1
@@ -12728,7 +12753,7 @@ lema(ur'[Oo]x_í_genos?_i', xpos=[ur'\.bo']) + #1
 lema(ur'[Nn]_ó_dulos?_o', xpos=[ur'\.org']) + #1
 lema(ur'[Ll]_i_quen_í', xpre=[ur'Lira de ', ur'Siphula \('], xpos=[ur'\]\]es']) + #1
 lema(ur'[Cc]entr_í_fug[ao]s?_i', xpre=[ur'[Ss]e ']) + #1
-lema(ur'[Ll]at_í_n_i', pre=ur'(?:[Ee]n|[Ee]l|[Dd]el) ', xpos=[ur' (?:house|amour|Beat|jazz|lover|New|Award|Horror|American|Cinema|Alternative|Tracks|Grammy|script|Songs|Pop)']) + #1
+lema(ur'[Ll]at_í_n_i', pre=ur'(?:[Ee]n|[Ee]l|[Dd]el) ', xpos=[ur' (?:house|amour|Beat|jazz|lover|New|Award|Horror|American|Cinema|Alternative|Tracks|Grammy|script|Songs|Pop|Regional Mexican)']) + #1
 lema(ur'[Nn]av_í_os?_i', xpre=[ur'\bdo ', ur'Francisco ', ur'Malo i ', ur'Malo ', ur'Melara '], xpos=[ur' da\b', ur'[\'\]]']) + #1
 lema(ur'[Aa]lmac_é_n_e', xpos=[ur'\]\]es']) + #1
 lema(ur'[Ii]ncluy_ó__o', xpre=[ur'[Yy]o ']) + #1
@@ -12744,26 +12769,14 @@ lema(ur'_Í_ndole_I', xpos=[ur' Metabolism']) + #1
 lema(ur'[Vv]iol_ó__o', xpre=[ur'Sergio ', ur'[Ss]i no ', ur'[ns]i ']) + #1
 lema(ur'[Hh]om_ó_log[ao]s?_o', xpre=[ur'coordina y ', ur'[Qq]ue ', ur'\b(?:[Ss]e|[Nn]o|[Ll][ao]) ', ur'[Ll][ao]s '], xpos=[ur' norma']) + #1
 lema(ur'[Ll]_l_amad[ao]s?_', xpos=[ur' Award']) + #1
-lema(ur'[Mm]_é_dica_e', xpre=[ur'\b(?:se|et) ', ur'physico ', ur'Questio ', ur'politice ', ur'Citrus ', ur'John ', ur'Excerpta ', ur'Eduardo ', ur'Scuola ', ur'[Aa]rs ', ur'Clio ', ur'Tesis ', ur'Micaria ', ur'Praecepta ', ur'[Mm]ateria ', ur'Mariana Practica ', ur'dottrina ', ur'\be ', ur'Tipula ', ur'\b[Rr]e ', ur'T\. '], xpos=[ur' (?:[Cc]ompleta|Inauguralis|Italo-Argentina|et|nel|facultate|libri|sistens|e dell)\b', ur', Battat']) + #1
+lema(ur'[Mm]_é_dica_e', xpre=[ur'\b(?:se|et) ', ur'physico ', ur'Questio ', ur'politice ', ur'Citrus ', ur'John ', ur'Excerpta ', ur'Eduardo ', ur'Scuola ', ur'[Aa]rs ', ur'Clio ', ur'Tesis ', ur'Micaria ', ur'Praecepta ', ur'[Mm]ateria ', ur'Mariana Practica ', ur'dottrina ', ur'\be ', ur'Tipula ', ur'\b[Rr]e ', ur'T\. '], xpos=[ur' (?:nell|[Cc]ompleta|Inauguralis|Italo-Argentina|et|nel|facultate|libri|sistens|e dell)\b', ur', Battat']) + #1
 lema(ur'[Ee]st_á_[ns]?_à', xpre=[ur'Mercè '], xpos=[ur' (?:fent|al exconvento|em|triomfant|amb|gotjant|ben|per|si bull|envoltada|llenot|enamorat|oberta|el nostre|es Canal|blau|pioc|a|perduda|constituït|clar|mort|relacionada formalement|en (?:dit|crisi|consonància|son|xinès)|ensorrant|malalt|assegurada|mai|embelt|“marginat|damunt|que bossa|sol)\b']) + #1
 lema(ur'[Mm]ar_í_tima_i', xpre=[ur'Sueda ', ur'latín\]\] \'\'', ur'\b[ABL]\. ', ur'subsp\. ', ur'ssp\. ', ur'var\. ', ur'var\. \'\'', ur'Prunus\]\] ', ur'912 ', ur'912\) ', ur'Anurida ', ur'Ruppia ', ur'Muilla ', ur'Matricaria ', ur'Diospyros ', ur'Puccinellia ', ur'Armeria ', ur'Missao de Biologia ', ur'Stachys ', ur'Dipsastraea ', ur'Draba ', ur'Drimia ', ur'Glyce ', ur'Scabiosa ', ur'Alnus ', ur'Cleome ', ur'Cicindela ', ur'Lavatera ', ur'[Ss]partina ', ur'Alnus ', ur'Linaria ', ur'Armenia ', ur'lobularia ', ur'Lasaia ', ur'Salsola ', ur'Chenopodina ', ur'Cryptantha ', ur'Octadenia ', ur'Gnaphosa ', ur'Ipomoea ', ur'Silene ', ur'Urginea ', ur'Artemisia ', ur'Abronia ', ur'Anthemis ', ur'Senckenbergiana ', ur'Armeria', ur'Festuca ', ur'pars ', ur'[Ll]oca ', ur'Glaucoides ', ur'Geositta ', ur'Chromodoris ', ur'ditione ', ur'maritima ', ur'Calendula ', ur'Kakile ', ur'Eurybia ', ur'Mertensia ', ur'Calidris ', ur'Strumpfia ', ur'Carex ', ur'Glaux ', ur'Crucianella ', ur'Mammillaria ', ur'[Ss]uaeda ', ur'Suriana ', ur'Hypselodoris ', ur'Suaeda ', ur'Statice ', ur'\b[Oo]ra ', ur'Batis ', ur'Cakile ', ur'Malcolmia ', ur'Remirea ', ur'Crambe ', ur'Lysimachia ', ur'Urginea ', ur'Vignea ', ur'vulgaris ', ur'Strumpfia ', ur'Jacobaea ', ur'Koniga ', ur'Clypeola ', ur'Prunus ', ur'Lobularia ', ur'Plantago ', ur'Caesarea ', ur'Pinus ', ur'[Rr]uppia ', ur'Thermotoga '], xpos=[ur' (?:in|Centrum|reveal|din|Italorum|omnis|uocauit|crudelissime|\(costera|tiene un \[\[periodo)\b', ur'\'\'']) + #1
 lema(ur'[Dd]emocr_á_tic[ao]_a', xpre=[ur'dittatore ', ur'Organizzazione ', ur'Editrice ', ur'Convergència ', ur'della teoria ', ur'Esquerra ', ur'istituita la ', ur'Partito Socialista ', ur'Partito ', ur'Sinistra ', ur'Liberalis ', ur'do Movimento '], xpos=[ur' (?:di|in|per|pra|Cinque|Svizzero|Nazionale|Repubblicana|della)\b']) + #1
-[(ur'(?P<f>\[|\|)(?P<a>Campeonato de Wimbledon|Torneo de Roland Garros) (?P<b>[12][0-9][0-9][0-9]) Individuales Masculinos(?P<e>\}|\]|\|)', ur'\g<f>Anexo:\g<a> \g<b> (individual masculino)\g<e>')] + #1
-[(ur'(?P<f>\[|\|)(?P<a>Campeonato de Wimbledon|Torneo de Roland Garros) (?P<b>[12][0-9][0-9][0-9]) Individuales Femeninos(?P<e>\}|\]|\|)', ur'\g<f>Anexo:\g<a> \g<b> (individual femenino)\g<e>')] + #1
-[(ur'(?P<f>\[|\|)(?P<a>Campeonato de Wimbledon|Torneo de Roland Garros) (?P<b>[12][0-9][0-9][0-9]) Dobles Masculinos(?P<e>\}|\]|\|)', ur'\g<f>Anexo:\g<a> \g<b> (dobles masculino)\g<e>')] + #1
-[(ur'(?P<f>\[|\|)(?P<a>Campeonato de Wimbledon|Torneo de Roland Garros) (?P<b>[12][0-9][0-9][0-9]) Dobles Femeninos(?P<e>\}|\]|\|)', ur'\g<f>Anexo:\g<a> \g<b> (dobles femenino)\g<e>')] + #1
 lema(ur'_t_v_T', pre=ur'de ', xpos=[ur' Azteca']) + #7506
 lema(ur'[Mm]_é_danos?_e', xpos=[ur' Alt']) + #1
 lema(ur'[Uu]top_í_as?_i', pre=ur'(?:[Ll]as?|[Uu]nas?) ', xpre=[ur'd\'']) + #1
-[(ur'\((?P<a>[12][0-9][0-9][0-9]) film\)', ur'(película de \g<a>)')] + #1
-[(ur'\((?P<a>[12][0-9][0-9][0-9]) [Bb]engal[ií] film\)', ur'(película bengalí de \g<a>)')] + #1
-[(ur'\([Bb]engal[ií] film\)', ur'(película bengalí)')] + #1
-[(ur'\([Tt][Vv] series\)', ur'(serie de televisión)')] + #1
-[(ur'\([Bb]oxer\)', ur'(boxeador)')] + #1
-[(ur'\([Ww]restler\)', ur'(luchador)')] + #1
-[(ur'\((?:Banda [Ss]onora|banda Sonora)\)', ur'(banda sonora)')] + #1
 lema(ur'C_anadá__ánada', xpre=[ur'William ', ur'cónsul ']) + #1
-[(ur'\[\[(?:Parque [Nn]acional [Mm]arítimo-[Tt]errestre del Archipi[eé]lago de Cabrera|Parque nacional del Archipiélago de Cabrera|Parque [Nn]acional del Archipi[eé]lago de Cabrera)(?P<a>\]|\|)', ur'[[Parque nacional marítimo-terrestre del Archipiélago de Cabrera\g<a>')] + #1
 lema(ur'[Aa]rt_í_fices?_i', xpre=[ur'Dark ', ur'and ', ur'd[’\']'], xpos=[ur' (?:et|and)']) + #1
 lema(ur'[Dd]i_ó_cesis_o', xpre=[ur'in '], xpos=[ur' Hispaniarum']) + #1
 lema(ur'[Pp]_í_car[ao]s?_i', xpre=[ur'se '], xpos=[ur' Press']) + #1
@@ -12786,7 +12799,8 @@ lema(ur'[Cc]r_í_tica_i', pre=ur'(?:[Ll]a|[Uu]na|[Ss]u|[Oo]tra|[Dd]ura|[Hh]istor
 lema(ur'[Cc]r_í_ticas_i', xpre=[ur'[Qq]ue ', ur'[Cc]uando ', ur'chronologicas e '], xpos=[ur' tu propia']) + #1
 lema(ur'[Gg]an_ó__o', xpre=[ur'G\. ', ur'Calle ', ur'Tara ', ur'Gordon ', ur'Graham ', ur'John ', ur'Maersk ', ur'Zinho ', ur'[Qq]ué ', ur'Nada ', ur'Yo\) ', ur'\b(?:[Yy]o|[Tt]e|[Mm]e) '], xpos=[ur' (?:di|degli|Burbridge|gol|[Yy]o|o me|porque me|Grills|Dunn|porque me)\b', ur'(?:, (?:gana|soy)|’\) o)']) + #657
 lema(ur'[Gg]uaran_í__i', xpre=[ur'\* ', ur'\bO ', ur'\bdo ', ur'origem \[\[', ur'Diapoma ', ur'Clube Guarani\|', ur'Clube\|', ur'VBTP-MR ', ur'Clube ', ur'Hyphessobrycon ', ], xpos=[ur' (?:EC|FC|Book|Futebol|Award|Sarandi|Esporte|Juazeiro|no coração|de (?:Goiás|Campinas))', ]) + #306
-lema(ur'_Amé_rica_(?:am[eé]|Ame)', pre=ur'(?:[Ee]n|[Ee]l|[Aa]unque|[Aa]tl[ée]tico|[Aa]venidas?|[Cc]apit[aá]n|[Cc]entro|[Cc]lub|[Cc]ontinente|[Cc]opa|[Cc]uando|[Ee]l|[Ee]ditorial|[Ll]atino|[Nn]orte|[Nn]ueva|[Nn]uestra|[Ss]u[dr]|[Tt]oda|a|del|abreviado|con|considerando|descubrir|descubre|descubrió|descubrieron|desde|entonces|entre|hacia|incluso|ni|nombres?|nuestra|o|palabras?|para|por|resultando|siendo|sobre|tanto|que|visitar|y) ', xpre=[ur'Mature en ', ur'citta del ', ], xpos=[ur' (?:TV|Next|huishoudende|SOAP|Coming|Labor|Television|Online|do|RJ|West|East|Bank)', ur'(?:[\'’]s|\'?: The|\.com)', ]) + #168
+lema(ur'_Amé_rica_(?:am[eé]|Ame)', pre=ur'(?:[Ee]n|[Ee]l|[Aa]unque|[Aa]tl[ée]tico|[Aa]venidas?|[Cc]apit[aá]n|[Cc]entro|[Cc]lub|[Cc]ontinente|[Cc]opa|[Cc]uando|[Ee]l|[Ee]ditorial|[Nn]orte|[Nn]ueva|[Nn]uestra|[Ss]u[dr]|[Tt]oda|a|del|abreviado|con|considerando|descubrir|descubre|descubrió|descubrieron|desde|entonces|entre|hacia|incluso|ni|nombres?|nuestra|o|palabras?|para|por|resultando|siendo|sobre|tanto|que|visitar|y) ', xpre=[ur'Mature en ', ur'citta del ', ], xpos=[ur' (?:TV|Next|huishoudende|SOAP|Coming|Labor|Television|Online|do|RJ|West|East|Bank)', ur'(?:[\'’]s|\'?: The|\.com)', ]) + #168
+lema(ur'_Latinoamé_rica_(?:latino ?[Aa]m[eé]|Latino [Aa]m[eé]|Latinoame)') + #1
 lema(ur'[Dd]_ú_plex_u', xpre=[ur'tractatus ', ur'Zelotes ', ur'Pakeha ', ur'Shadowy ', ur'TGV ', ur'rubiginosa\'\' \'', ur'argentea ', ur'Coregonus ', ur'Diploplecta ', ur'Japonicum ', ur'Sciaphila ', ur'Pleurothallis ', ur'Vasseuromys ', ur'[Ff]ull ', ur'[Hh]alf ', ur'[Tt]he ', ur'acies ', ], xpos=[ur' (?:acies|Planet|longa|Spacing|hinc|ordo)', ]) + #153
 lema(ur'[Mm]elod_í_as?_i', xpre=[ur'C\'è una ', ur'Três ', ur'sulla ', ur'estudio “', ur'\bM\. ', ur'Luiz ', ur'Chorale ', ur'Melospiza ', ur'Stardust ', ur'álbum\)\|', ], xpos=[ur' (?:Tecna|Musik|e Letra|\(álbum)', ur'\'\' \(Diana', ]) + #142
 lema(ur'[Bb]_ú_hos?_u', xpre=[ur'Gary ', ur'se al ', ur'Partita de ', ], xpos=[ur' (?:Jolson|Rep)\b', ]) + #113
@@ -12828,7 +12842,7 @@ lema(ur'Panam_á__a', pre=ur'(?:[Dd]e|[Ee]n) ', xpre=[ur'(?:[Dd]u|[Ll]e) [Cc]ana
 lema(ur'Rodr_í_guez_i', xpre=[ur'and ', ur'Claudinei ', ur'Jayson ', ur'Benjamin ', ur'Robert ', ur'Michelle '], xpos=[ur'(?:, G\.|, Carvallaro|\|2012)', ur' (?:Buron|International)']) + #1
 lema(ur'Taip_é_i_e', pre=ur'(?:[Dd]e|[Ee]n) ', xpos=[ur' City']) + #169
 lema(ur'V_á_squez_a', xpre=[ur'Junior ', ur'Jhonen ', ur'and Mario ']) + #1
-lema(ur'[Aa]_é_re[ao]s?_e', xpre=[ur'Societá ', ur'illeggibili\'\' - ', ur'Divisione ', ur'Chaetomorpha ', ur'Macchina ', ur'Forca ', ur'tabula ', ur'tabu\[la ', ur'tabul\(a\) ', ur'Allagrapha ', ur'Atitara ', ur'Babilonia ', ur'Brigata ', ur'Compagnia ', ur'Corpo ', ur'Dicladispa ', ur'Excoecaria ', ur'Navigazione ', ur'Noctua ', ur'Peperomia ', ur'Quercus ', ur'Salvia ', ur'Società ', ur'Società Incremento Tur[ií]stico ', ur'Svenska ', ur'Temnoscheila ', ur'[AT]\. ', ur'[Ll]inhas ', ur'architettura ', ur'dall\'', ur'navigazione ', ur'var\. ', ur'vulcanetto ', ], xpos=[ur' (?:di |in |quae|dell|Teseo|magnifica|Carabinieri|Negrot|del Decennale)', ur'(?:\. Conoscere|\'\' Urquhart)', ]) + #430
+lema(ur'[Aa]_é_re[ao]s?_e', xpre=[ur'L\'', ur'vascello ', ur'Societá ', ur'illeggibili\'\' - ', ur'Divisione ', ur'Chaetomorpha ', ur'Macchina ', ur'Forca ', ur'tabula ', ur'tabu\[la ', ur'tabul\(a\) ', ur'Allagrapha ', ur'Atitara ', ur'Babilonia ', ur'Brigata ', ur'Compagnia ', ur'Corpo ', ur'Dicladispa ', ur'Excoecaria ', ur'Navigazione ', ur'Noctua ', ur'Peperomia ', ur'Quercus ', ur'Salvia ', ur'Società ', ur'Società Incremento Tur[ií]stico ', ur'Svenska ', ur'Temnoscheila ', ur'[AT]\. ', ur'[Ll]inhas ', ur'architettura ', ur'dall\'', ur'navigazione ', ur'var\. ', ur'vulcanetto ', ], xpos=[ur' (?:di |in |quae|dell|Teseo|magnifica|Carabinieri|Negrot|del Decennale)', ur'(?:\. Conoscere|\'\' Urquhart)', ]) + #430
 lema(ur'[Aa]bad_í_as?_i', xpre=[ur'\bA\. ', ur'\bna ', ur'Guy ', ur'Francolí: ', ur'Bock ', ur'C\. ', ur'Capella de la ', ur'Editor ', ur'Escolania de la ', ur'Herney ', ur'Lourdes ', ur'Maria ', ur'Natale ', ur'[DdLl][´’\']', ], xpos=[ur' (?:dos|de (?:Nossa|Mont?serrat|Goiás))', ]) + #115
 lema(ur'[Aa]burr_í__i', xpre=[ur'Aburria ', ]) + #4
 lema(ur'[Aa]di_ó_s_o', xpre=[ur'Vaarwel, ', ur'nombre de \'\''], xpos=[ur' (?:alligator|\|\|)', ur'\'+ (?:es|fue)\b']) + #1
@@ -12985,7 +12999,6 @@ lema(ur'[Tt]elef_ó_nic[ao]s?_o', xpre=[ur'L\'Esercizio ', ur'L\'elenco', ], xpo
 lema(ur'[Tt]em_á_tic[ao]s?_a', xpre=[ur'Tartini ', ur'Platti – Catalogo ', ur'l\'opera con catalogo ', ur'Parco '], xpos=[ur' (?:dell[ae]|Nazionale)', ]) + #64
 lema(ur'[Tt]eolog_í_as?_i', xpre=[ur'\b(?:em|di|da) ', ur'\b[aeéi] ', ur'\be la ', ur'Doutrina Católica - ', ur'Facultat de ', ur'Història de la ', ur'Institut de ', ur'Libertação, ', ur'Pietro: ', ur'Revista catalana de ', ur'Uma ', ur'della ', ], xpos=[ur' (?:lucana|Práticas|Razionale|Politica dell|avui|ecofeminista|actual|Morale|[Ff]ondamentale|com|d[ai]|pol[ií]tica (?:pastorale|per|di|e dissimulazione)|della|delle|e (?:Liberazione|spiritualità)|por la Insigne Vniversidad|i|na)\b', ur'(?:\.com|, storia)', ]) + #132
 lema(ur'[Tt]eor_í_as?_i', pre=ur'(?:[Ee]stas?|[Ll]as?|[Oo]tras?|[Uu]nas?|[Ee]n|[Dd]iversas) ', xpos=[ur' (?:politica di|scientifica|ideologica della|Senyal|e (?:Crítica|i suoi)|della|degli|dei|de la Probabilitat|del sacro|di )', ur'\.com', ]) + #98
-[(ur'\b(?P<a>[Tt]ermin)o(?P<b> [0-9]+)', ur'\g<a>ó\g<b>')] +
 lema(ur'[Tt]ermin_ó_ (?:sus?|por|con|en|el|después|empatad[ao]|eliminad[ao]|primer[ao]|segund[ao]|tercer[ao]|cuart[ao]|quint[ao])_o', xpre=[ur'dando ', ur'nuevo ', ], xpos=[ur' el']) + #115
 lema(ur'[Tt]opograf_í_as?_i', xpre=[ur'\ba ', ur'\bdi ', ur'sulla ', ], xpos=[ur' (?:e geografia|d[io]|dei|Savini|Firenze|dels)', ur'\]', ]) + #6
 lema(ur'[Tt]os_í_a[ns]?_i', xpre=[ur'Santa ', ], xpos=[ur' (?:Altman|Malamud|apenas tenía)', ur'(?:\]| \|\|)', ]) + #3
@@ -13013,6 +13026,7 @@ lema(ur'_Á_lgebras?_A', xpre=[ur' (?:of|to|[ai]n|on) ', ur'# ', ur'\'', ur'Doub
 lema(ur'[Mm]uft_í_s?_i', xpre=[ur'Aamir ', ur'des ', ur'Mehbooba ', ur'Mumtaz ', ur'Mohammed ', ur'A\. ', ur'Al '], xpos=[ur' Mohammad']) + #186
 lema(ur'_C_hile_c', pre=ur'(?:[Aa]|[Aa]nte|[Ee]n|[Pp]ara|[Pp]or) ') + #1
 lema(ur'[Vv]_í_a de_i', xpre=[ur'Uma '], xpos=[ur' les']) + #1
+lema(ur'[Vv]_í_as de_i') + #1
 lema(ur'[Ee]scond_é_rsel[ao]s?_e') + #1
 lema(ur'[Ee]nterar_í_a[ns]?_i') + #1
 lema(ur'[d]ar_í_a[ns]?_i') + #1
@@ -13024,7 +13038,7 @@ lema(ur'_S_ur ?[Aa]m[eé]rica_s') + #1
 lema(ur'_C_entro ?[Aa]m[eé]rica_c') + #1
 lema(ur'[Pp]rov_e_nientes?_i') + #1
 lema(ur'[Cc]l_ú_ster_u', pre=ur'(?:[Ee]l|[Uu]n) ') + #1
-lema(ur'[Cc]onquistar_á_[ns]?_a', xpre=[ur'\bl[ae] ']) + #1
+lema(ur'[Cc]onquistar_á_[ns]?_a', xpre=[ur'que ', ur'\bl[ae] ']) + #1
 lema(ur'[Tt]iran_í_as?_i') + #1
 lema(ur'_Castejó_n_(?:castej[oó]|Castejo)') + #1
 lema(ur'[Ee]nc_é_falos?_e') + #1
@@ -13034,8 +13048,8 @@ lema(ur'[Pp]repar_ó__o', xpre=[ur'\b(?:[Mm]e|[Yy]o|[Ll]o|de) '], xpos=[ur' (?:l
 lema(ur'[Vv]isit_ó__o', xpos=[ur' (?:Mi Región|Mi Naturaleza|Mi Historia)']) + #1
 lema(ur'[Pp]re_c_isamente_s') + #1
 lema(ur'[Ee]spadach_í_n_i') + #1
-#lema(ur'___') + #1
-#lema(ur'___') + #1
+lema(ur'[Cc]r_í_ticos? de_i') + #1
+lema(ur'[Pp]ornogr_á_fic[ao]s?_a') + #1
 #lema(ur'___') + #1
 #lema(ur'___') + #1
 #lema(ur'___') + #1
@@ -13484,7 +13498,6 @@ fixes = {
         'postreplacements': grupoPre + grupoPost + [[(ur'\[\[ *([^]|]+?) *\| *\1 *\]\]', ur'[[\1]]')]][0],
         'replacements': 
         #  grupo1 + 
-        # grupoFrec + 
         # grupo2 + 
         # grupo3 + 
         # grupo4 + 
@@ -13536,7 +13549,6 @@ fixes = {
         'prereplacements': grupoPre,
         'postreplacements': grupoPre + grupoPost ,
         'replacements': enlacesInternos + 
-        grupoFrec + 
         grupo1 + 
         grupo2 + 
         grupo3 + 
@@ -13599,9 +13611,9 @@ fixes = {
         grupo10 + 
         nuevos,
         'replacements': enlacesInternos + 
-        grupoFrec +
-        grupoMas +
-        grupoPerfecto +
+        grupo1Frec +
+        grupo1Mas +
+        grupo2Perfecto +
         [(ur'\[\[ *([^]|]+?) *\| *\1 *\]\]', ur'[[\1]]')] + 
         [[]][0],
 
