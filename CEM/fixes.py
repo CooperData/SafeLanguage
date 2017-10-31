@@ -114,6 +114,7 @@ noCorregirEn =  [ ur'(?i)(?:(?:[Ii]magen?|[Ff]ile|[Aa]rchivo):[^\|\]]+(?=[\]\|])
                 ]
 
 excluir = [
+    ur'Ultracorrección', #Esta agua
     ur'Anexo:Jueces federales de Estados Unidos', #Gonzalez
     ur'Anexo:Miembros de la Academia Brasileña de Ciencias', #Perez
     ur'Parana (Lena)', #Parana
