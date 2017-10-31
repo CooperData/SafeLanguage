@@ -114,6 +114,7 @@ noCorregirEn =  [ ur'(?i)(?:(?:[Ii]magen?|[Ff]ile|[Aa]rchivo):[^\|\]]+(?=[\]\|])
                 ]
 
 excluir = [
+    ur'Selenio 79', #Se se
     ur'Ultracorrección', #Esta agua
     ur'Anexo:Jueces federales de Estados Unidos', #Gonzalez
     ur'Anexo:Miembros de la Academia Brasileña de Ciencias', #Perez
@@ -2620,6 +2621,7 @@ def titulo(m):
 #lema(ur'[Cc]o_m_pila(?:d[ao]s?|ciones)_', xpos=[ur' por el orden']) + #existe copilar
 #lema(ur'[Cc]onfes_ó__o', xpre=[ur'\b(?:[Uu]n|[Ss]u|[EeÉe]l|[Ee]s|no) ', ur'ateo ', ur'caníbal ', ur'incendiario\]\] ', ur'[Mm]elómano ', ur'simpatizante ', ur'asesino ', ur'pagano ', ur'republicanismo ', ur'hincha ', ur'admirador ', ur'asesino ', ur'seguidor ', ur'anglófilo ', ur'miembro ', ur'convicto ', ur'amor ', ur'Amante ', ur'halló ', ur'delito ', ur'suicida ', ur'homicida ', ur'socialista ', ur'fascista ', ur'\by ', ur'cristiano ', ur'homosexual ', ur'fan ', ur'autor ', ur'objetivo '], xpos=[ur' (?:de|del|hincha|seguidor|fanático|aficionado|ladrón|amante|adicto)\b', ur'\'(?:\'|, confuso)']) + #1
 #lema(ur'[Aa]_ _d[oó]nde_', xpos=[ur' marchaba']) + #Adonde existe
+#lema(ur'[s]ali_o__ó', pre=ur'[Ee]mperador ') + #8
 
 #Prereplacements
 fechas = [
@@ -11272,7 +11274,6 @@ lema(ur'[p]erd_í_a_i') + #7
 lema(ur'[p]ondr_á_s?_a') + #7
 lema(ur'[q]_ue_ le_') + #1
 lema(ur'[s]ab_í_an_i') + #13
-lema(ur'[s]ali_o__ó', pre=ur'[Ee]mperador ') + #8
 lema(ur'[s]erv_í_a_i') + #31
 lema(ur'[t]_é_rmino_e', pre=ur'(?:[Aa]l?|[Dd]el?|[Uu]n|[Ss]u|[Ee]l) ') + #390
 lema(ur'[t]_é_rminos_e', pre=ur'[Ll]os ') + #14
