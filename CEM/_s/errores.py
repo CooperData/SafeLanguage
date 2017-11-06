@@ -107,8 +107,8 @@ lemasFileName = 'Los.lem'
 
 lemas= [##Eliminar ur y cambiar \b por \\b
 
-lema('_É_l (?:aceptó|actuó|afirmó|anunció|apareció|aprendió|argumentó|asistió|ayudó|buscó|cambió|cantó|comentó|comenzó|compitió|concluyó|conoció|consiguió|continuó|creció|creó|debutó|decidió|declaró|dejó|demostró|desafió|desarrolló|descubrió|dirigió|diseñó|dominó|eligió|empezó|encontró|entró|envió|equipó|escogió|escribió|estableció|estrenó|estudió|explicó|falleció|firmó|formó|fundó|ganó|grabó|inició|intentó|interpretó|jugó|llamó|llegó|llevó|logró|luchó|mató|mencionó|murió|nació|negó|notó|ofreció|participó|pasó|pensó|perteneció|pidió|presentó|proyectó|publicó|realizó|recibió|regresó|respondió|rondó|salió|siguió|sirvió|sugirió|terminó|tomó|trabajó|trió|usó|utilizó|vivió)_E') + #9
-lema('_É_l (?:acompañó|administró|adoptó|agregó|alcanzó|alegó|anotó|arbitró|asedió|atendió|audicionó|añadió|bombardeó|caló|causó|cayó|centró|citó|compartió|comparó|completó|compró|concursó|confirmó|conquistó|consideró|contribuyó|contó|coreografió|corrió|creyó|criticó|dedicó|denominó|denunció|derrotó|desapareció|describió|desempeñó|dimitió|elogió|emigró|encargó|enseñó|esperó|experimentó|expresó|forró|frió|habló|ideó|impactó|impartió|impulsó|incendió|informó|ingresó|insistió|inspiró|inventó|lanzó|libró|mandó|marcó|mostró|nombró|observó|organizó|perdió|permaneció|prefirió|pregó|premió|preparó|prometió|promovió|quedó|rechazó|reclutó|recomendó|reemplazó|registró|removió|renunció|representó|resaltó|respetó|restó|retomó|retornó|rompió|señaló|sintió|sitió|sobrevivió|subió|sucedió|sufrió|tituló|tocó|torneó|traspasó|trató|vendió|viajó|visitó|volvió)_E') + #9
+lema('_ú_nico [a-zñáéíóú]+_', xpre=['[Ll]\'', 'in un ', 'in ', 'Partito ', 'quasi '], xpos=[' (?:motus|expressarum|concorrente|Amore|mercato|arbëreshë|posto|suo|la quantità|gli|norme|manuale|prima|de Espana|leggi|tra|di|nome|biblioteche|in|funivia|di|suo|della|queda|leggi|per)']) + #1
+
 
  
 []][0]

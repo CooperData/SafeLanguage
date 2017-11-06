@@ -114,6 +114,13 @@ noCorregirEn =  [ ur'(?i)(?:(?:[Ii]magen?|[Ff]ile|[Aa]rchivo):[^\|\]]+(?=[\]\|])
                 ]
 
 excluir = [
+    ur'Ultracorrección', #Esta agua
+    ur'Anexo:Jueces federales de Estados Unidos', #Gonzalez
+    ur'Anexo:Miembros de la Academia Brasileña de Ciencias', #Perez
+    ur'Parana (Lena)', #Parana
+    ur'La leyenda de los hombres más guapos del mundo', #Cansión
+    ur'On the Floor', #Lopez
+    ur'Reforma Ortográfica de 1911', #:pt
     ur'Albares de la Ribera', #osp
     ur'Copa Desafío Europeo de Rugby 2016-2017', #Caprichos del autor
     ur'Alton Towers', #Galactica, Nemesis
@@ -2623,6 +2630,7 @@ def titulo(m):
 #lema(ur'[Cc]onfes_ó__o', xpre=[ur'\b(?:[Uu]n|[Ss]u|[EeÉe]l|[Ee]s|no) ', ur'ateo ', ur'caníbal ', ur'incendiario\]\] ', ur'[Mm]elómano ', ur'simpatizante ', ur'asesino ', ur'pagano ', ur'republicanismo ', ur'hincha ', ur'admirador ', ur'asesino ', ur'seguidor ', ur'anglófilo ', ur'miembro ', ur'convicto ', ur'amor ', ur'Amante ', ur'halló ', ur'delito ', ur'suicida ', ur'homicida ', ur'socialista ', ur'fascista ', ur'\by ', ur'cristiano ', ur'homosexual ', ur'fan ', ur'autor ', ur'objetivo '], xpos=[ur' (?:de|del|hincha|seguidor|fanático|aficionado|ladrón|amante|adicto)\b', ur'\'(?:\'|, confuso)']) + #1
 #lema(ur'[Aa]_ _d[oó]nde_', xpos=[ur' marchaba']) + #Adonde existe
 #lema(ur'[Aa]ctuar_í_a_i', xpre=[ur' (?:en|de) ', ur' o ', ur'[Cc]iencia ', ur'[Nn]otaria ', ur'justicia ', ur'mecanógrafa, ', ], xpos=[ur'\'', ]) + #5
+#lema(ur'[s]ali_o__ó', pre=ur'[Ee]mperador ') + #6
 
 #Prereplacements
 fechas = [
@@ -2725,7 +2733,11 @@ lema(ur'[Ss]_o_l(?:os|as?)_ó') + #última reforma
 #lema(ur'[Ss]_o_lo_ó', xpos=[ur' (?:tú \(canción|pienso en ti)']) + #última reforma
 #lema(ur'[Aa]qu_é_llos_é') + #última reforma
 lema(ur'_é_l (?:y|como|a|después|lo|la|con)_e', pre=ur'(?:[Aa]|[Dd]e|[Ee]n) ') + #1
-#lema(ur'_consultado__acessado') + #25
+lema(ur'_é_l,_e', pre=ur'(?:[Aa]|[Dd]e|[Cc]on|[Ee]n|[Pp]or|[Hh]acia) ', xpos=[ur' (?:hasta|la, els|así|hoy|en ese|abarrotado|de q|también|entonces|por|ya desaparecido|hoy|relativamente)\b']) + #1
+lema(ur'_é_l[.]_e', pre=ur'(?:[Aa]|[Dd]e|[Cc]on|[Ee]n|[Pp]or|[Hh]acia) ', xpos=[ur'\.\.', ]) + #266
+lema(ur'_é_l[,]_e', pre=ur'(?:[Aa]|[Dd]e|[Cc]on|[Ee]n|[Pp]or|[Hh]acia) ', xpos=[ur' (?:este|ya|hoy|entonces|abarrotado|en ese|relativamente|ahora|por)', ]) + #261
+lema(ur'_é_l[:]_e', pre=ur'(?:[Aa]|[Dd]e|[Cc]on|[Ee]n|[Pp]or|[Hh]acia) ', xpre=[ur'limita ', ]) + #12
+lema(ur'_é_l[;]_e', pre=ur'(?:[Aa]|[Dd]e|[Cc]on|[Ee]n|[Pp]or|[Hh]acia) ', xpre=[ur'limita ', ]) + #9
 lema(ur'_e_nero_E', pre=ur'(?:(?:[AaEe]l|lunes|martes|mi[eé]rcoles|vueves|viernes|s[aá]bado|domingo) [0-9]+|[Mm]es) de |[Ee]n ') + #1
 lema(ur'_f_ebrero_F', pre=ur'(?:(?:[AaEe]l|lunes|martes|mi[eé]rcoles|vueves|viernes|s[aá]bado|domingo) [0-9]+|[Mm]es) de |[Ee]n ') + #1
 lema(ur'_m_arzo_M', pre=ur'(?:(?:[AaEe]l|lunes|martes|mi[eé]rcoles|vueves|viernes|s[aá]bado|domingo) [0-9]+|[Mm]es) de |[Ee]n ') + #1
@@ -2823,6 +2835,7 @@ grupo1FormatoLibre = [
  (ur'\[\[([Mm])(esoam)[eé](rica)\]\](n[ao]s?)', ur'[[M\2é\3|\1\2e\3\4]]'),
  (ur'\[\[([Mm])(oj)[oó](n)\]\](es)', ur'[[M\2ó\3|\1\2o\3\4]]'),
  (ur'\[\[([Mm])(ont)[oó](n)\]\](es)', ur'[[M\2ó\3|\1\2o\3\4]]'),
+ (ur'\[\[([Mm])(usulm)[aá](n)\]\](es)', ur'[[M\2á\3|\1\2a\3\4]]'),
  (ur'\[\[([Nn])(eutr)[oó](n)\]\](es)', ur'[[N\2ó\3|\1\2o\3\4]]'),
  (ur'\[\[([Nn])(orteam)[eé](rica)\]\](n[ao]s?)', ur'[[N\2é\3|\1\2e\3\4]]'),
  (ur'\[\[([Oo])(scilaci)[oó](n)\]\](es)', ur'[[O\2ó\3|\1\2o\3\4]]'),
@@ -2835,6 +2848,7 @@ grupo1FormatoLibre = [
  (ur'\[\[([Pp])(rot)[oó](n)\]\](es)', ur'[[P\2ó\3|\1\2o\3\4]]'),
  (ur'\[\[([Rr])(egi)[oó](n)\]\](es|al|ales)', ur'[[R\2ó\3|\1\2o\3\4]]'),
  (ur'\[\[([Rr])(evoluci)[oó](n)\]\](es|ari[ao]s?)', ur'[[R\2ó\3|\1\2o\3\4]]'),
+ (ur'\[\[([Rr])(az)[oó](n)\]\](es|ad[ao]s?)', ur'[[R\2ó\3|\1\2o\3\4]]'),
  (ur'\[\[([Ss])(al)[oó](n)\]\](es)', ur'[[S\2ó\3|\1\2o\3\4]]'),
  (ur'\[\[([Ss])(axof)[oó](n)\]\](es|istas?)', ur'[[S\2ó\3|\1\2o\3\4]]'),
  (ur'\[\[([Ss])(ubregi)[oó](n)\]\](es)', ur'[[S\2ó\3|\1\2o\3\4]]'),
@@ -2962,6 +2976,8 @@ lema(ur'[Ee]st_á_ (?:distra|extra|pose|prove)íd[ao]_a') + #7
 lema(ur'[Ee]st_á_ (?:él|ella)_a', xpre=[ur' (?:[Dd]e|[Ee]n) ', ]) + #5
 lema(ur'[Ee]st_á_ embarazad[ao]_a', xpre=[ur'estando ', ]) + #5
 lema(ur'[Ee]st_á_ pactad[ao]_a', xpos=[ur' solución', ]) + #1
+lema(ur'[e]st_á__a', pre=ur'[Nn]o ', xpre=[ur'\b[yo] ', ur'precisamente ', ], xpos=[ur' (?:vez|Corte|noche)', ]) + #167
+lema(ur'[e]st_á__a', pre=ur'(?:él|ella) ', xpre=[ur' (?:de|en) ', ur' a ', ur'[Cc]on ', ur'[Pp]ara ', ur'[Ss]egún ', ], xpos=[ur' noticia']) + #24
 #lema(ur'[Ee]st_á_ bautizad[ao]_a', xpre=[ur'Siendo ', ]) + #0
 []][0]
 
@@ -3034,7 +3050,7 @@ lema(ur'[Bb](?:abe|ail|aj|alance|albuce|anc|araj|as|ast|atall|ate|añ|eatific|ec
 lema(ur'[Dd]estruy_ó__o') + #15
 lema(ur'[Dd]irigi_ó__o') + #15
 lema(ur'[Ii]mpidi_ó__o') + #15
-lema(ur'[m]arc_ó__o', pre=ur'\b(?:[Ss]e(?: me| te| l[aeo]s?|)|[Ll]os?|y) ') + #15
+lema(ur'[m]arc_ó__o', pre=ur'\b(?:[Ss]e(?: me| te| l[aeo]s?|)|[Ll]os?|y) ', xpos=[ur' de']) + #15
 lema(ur'[Pp]ermiti_ó__o') + #15
 lema(ur'[Pp]erteneci_ó__o') + #15
 lema(ur'[Dd]ebi_ó__o') + #14
@@ -3124,7 +3140,7 @@ lema(ur'[a]terr_ó__o') + #5
 lema(ur'[Aa]dvirti_ó__o') + #4
 lema(ur'[Cc]oncedi_ó__o') + #4
 lema(ur'[Dd]esapareci_ó__o') + #4
-lema(ur'[Dd]esconcert_ó__o') + #4
+lema(ur'[Dd]esconcert_ó__o', xpos=[ur'\'\'']) + #4
 lema(ur'[Dd]evolvi_ó__o') + #4
 lema(ur'[Ee]ludi_ó__o') + #4
 lema(ur'[Ee]ncontr_ó__o', pre=ur'(?:[Ss]e(?: l[aeo]s?|)|[Ll][aeo]s?|[Dd]onde) ') + #4
@@ -4363,7 +4379,12 @@ lema(ur'[Aa]plic_á_ndo(?:[mst]e|l[aeo]s?|nos)(?:[mt]e|l[aeo]s?|nos|)_a') + #1
 []][0]
 
 grupo1Musica = [
-lema(ur'[Mm]_ú_sica_u', pre=ur'[Ll]a ', xpre=[ur' e ', ur'Contro ', ur'Euridice, ', ur'Per ', ur'Plau De ', ur'Prima ', ur'Storia de ', ur'per ', ur'sei ', ur'sopra ', ], xpos=[ur' (?:[èe]|dei|ci|Italiana nel|alla|del (?:cuore|violone|mare)|alla|per|degli|antica|nella|intorno|Fiorentina|Notturna|russa|In)\b', ]) + #217
+lema(ur'_álbu_m(?:es|)_albú') + #35
+lema(ur'\(_álbum de \g<num>_\)_(?P<num>[0-9]{4}) album') + #9
+lema(ur'_á_lbum(?:es|)_a', pre=ur'(?:[Aa]l|[Dd]el?|[Ee]ste|[Ee]stos|[Ee]l|[Ee]n|[Ll]os|[Dd]os|[Tt]res|[Cc]uatro|[Ss]us?|[Pp]rimer|[Ss]egundo|[Tt]ercer|[Cc]uarto|[Qq]uinto|[Ss]exto|[UuÚú]ltimo|[Mm]ejor|[Nn]ing[uú]n|[Nn]uevo|[Mm]ismo) ') + #407
+lema(ur'_Á_lbum(?:es|)_A', pre=ur'(?:[Aa]l|[Dd]el?|[Ee]ste|[Ee]stos|[Ee]l|[Ee]n|[Ll]os|[Uu]n|[Dd]os|[Tt]res|[Cc]uatro|[Ss]us?|[Pp]rimer|[Ss]egundo|[Tt]ercer|[UuÚú]ltimo|[Nn]ing[uú]n|[Nn]uevo) ', xpos=[ur' famille', ]) + #50
+lema(ur'_á_lbum_a', pre=ur'[Uu]n ', xpos=[ur' che', ]) + #30
+lema(ur'[Mm]_ú_sica_u', pre=ur'[Ll]a ', xpre=[ur' e ', ur'Contro ', ur'Euridice, ', ur'Per ', ur'Plau De ', ur'Prima ', ur'Storia de ', ur'per ', ur'sei ', ur'sopra ', ], xpos=[ur' (?:[èe]|dei|ci|provata|Italiana nel|alla|del (?:cuore|violone|mare)|alla|per|degli|antica|nella|intorno|Fiorentina|Notturna|russa|In)\b', ]) + #217
 lema(ur'[Mm]_ú_sica_u', pre=ur'\bde ', xpre=[ur'\'', ur'Dialogus ', ur'Escola ', ur'Scriptores ', ur'Tractatus ', ur'ecclesiastici ', ], xpos=[ur' (?:i|da|medii|libri|tratactus|theorica|Elettronica|aurea|Ficta|Tonante|negli)\b', ]) + #182
 lema(ur'[Mm]_ú_sicos?_u', xpre=[ur'Adversus ', ur'\b(?:di|[Ii]l) ', ], xpos=[ur' (?:prattico|del secolo|di|portuguezes|ha menester|perfetto)\b', ]) + #150
 lema(ur'[Mm]_ú_sica (?:o|y|a|[Aa]c[uú]stica|culta|elaborada|folcl[óo]rica|instrumental|militar|original|orquestal|popular|pagana|profana|sinf[oó]nica|tradicional|regional|religiosa|vocal|[Ee]lectr[óo]nica|[Mm]ec[aá]nica|[Cc]ountry)\b_u') + #142
@@ -4374,11 +4395,12 @@ lema(ur'[Mm]_ú_sica cl[aá]sica_u') + #12
 lema(ur'[Mm]_ú_sica del_u', xpre=[ur'Ars ', ], xpos=[ur' (?:XV [Ss]ecolo|cuore|violone|mare|señor Giulio|Signor)', ]) + #11
 lema(ur'[Mm]_ú_sica al_u', xpos=[ur' (?:Castell|tempo)', ]) + #2
 #lema(ur'[Mm]_ú_sicas_u', pre=ur'(?:[Ll]as|[Uu]nas|[Ss]us) ', xpos=[ur' [Cc]0
+#lema(ur'_álbumes__albums', pre=ur'(?:[Ll]os|[Ss]us)') + #0
 []][0]
 
 grupo1 = grupo1FormatoLibre + grupo1Frec + grupo1Mas + grupo1Esta + grupo1Musica + grupo1Andos + grupo1Se + [#Desde 1000
 lema(ur'[Tt]_í_tulos?_i', xpre=[ur' [Ss]e ', ur'<', ur'[Qq]ue ', ur'atributo "', ur'class="', ur'inline,splendido ', ], xpos=[ur' (?:Sancti|post praemia|Basilicae|Sanctae|Immaculatae)', ]) + #2000
-lema(ur'[Rr]ep_ú_blicas?_u', xpre=[ur'\bse ', ur'Ceska ', ur'Maria ', ur'Summa de ', ur'Trăiască ', ur'Vèneta ', ur'\b(?:Na|De|et) ', ur'\b(?:[Dd]el|the|Res) ', ur'\bA ', ur'\ba I ', ur'della ', ur'i de la ', ur'nella ', ur'siue ', ur'summa ', ], xpos=[ur' (?:litteraria|\(álbum|Sovietică|Velha|sang Negros|Moldova|Socialistă|Moldovenească|Cheka|Portuguesa|emendanda|\(banda|noastră|Populară|dominatione|semanalmente|libri|est|e a política|commentationes|e Chantun|Iasorum|Mioritică|Neo |d[io] )', ur'(?:\.com|, Westside|, grabando|\]\]n[ao]s?)', ]) + #1119
+lema(ur'[Rr]ep_ú_blicas?_u', xpre=[ur'\bse ', ur'Ceska ', ur'Maria ', ur'Summa de ', ur'Trăiască ', ur'Vèneta ', ur'\b(?:Na|De|et) ', ur'\b(?:[Dd]el|the|Res) ', ur'\bA ', ur'\ba I ', ur'della ', ur'i de la ', ur'nella ', ur'siue ', ur'summa ', ], xpos=[ur' (?:Pureza|litteraria|\(álbum|Sovietică|Velha|sang Negros|Moldova|Socialistă|Moldovenească|Cheka|Portuguesa|emendanda|\(banda|noastră|Populară|dominatione|semanalmente|libri|est|e a política|commentationes|e Chantun|Iasorum|Mioritică|Neo |d[io] )', ur'(?:\.com|, Westside|, grabando|\]\]n[ao]s?)', ]) + #1119
 []][0]
 
 grupo2Accion = [
@@ -4386,7 +4408,7 @@ lema(ur'[Ss]elecci_ó_n_o', xpos=[ur' Esportives', ur'\]\]es', ]) + #614
 lema(ur'[Cc]lasificaci_ó_n_o', xpos=[ur'\]\]es', ]) + #539
 lema(ur'[Pp]oblaci_ó_n_o', xpre=[ur'New ', ur'North ', ur'Old ', ur'South ', ], xpos=[ur' (?:East|West)', ur'\]\](?:es|al|ales)', ]) + #501
 lema(ur'[Nn]aci_ó_n_o', xpre=[ur'Mexicana ', ], xpos=[ur' Occitana', ur'(?:\]|\.com)', ]) + #427
-lema(ur'[Ee]staci_ó_n_o', xpos=[ur'\]\]es', ]) + #425
+lema(ur'[Ee]staci_ó_n_o', xpos=[ur' San Alberto Hurtado.jpg', ur'\]\]es', ]) + #425
 lema(ur'[Rr]edirecci_ó_n_o', xpos=[ur'\]\]es', ]) + #300
 lema(ur'[Ff]undaci_ó_n_o', xpre=[ur'Fundación en 1987 "', ], xpos=[ur' Paraguaya\'s', ur'(?:[\]@]|2008|\.uocra)', ]) + #282
 lema(ur'[Cc]anci_ó_n_o', xpos=[ur'\]\]es', ]) + #216
@@ -4409,7 +4431,7 @@ lema(ur'[Vv]ersi_ó_n_o', pre=ur'(?:de|[Ll]a|[Uu]na|[Ee]sta|[Ee]sa|[Cc]ada|[Ss]u
 lema(ur'[Ee]ducaci_ó_n_o', xpos=[ur' Salsa', ur'(?:\]|\.go[bv]|\.yucatan|\.es)', ]) + #106
 lema(ur'[Aa]sociaci_ó_n_o', xpos=[ur'\]|\.Civil', ]) + #104
 lema(ur'[Tt]elevisi_ó_n_o', pre=ur'[Dd]e ', xpos=[ur' (?:City|Without|Heaven)', ]) + #102
-lema(ur'[Rr]elaci_ó_n_o', xpos=[ur'\]\]es', ]) + #95
+lema(ur'[Rr]elaci_ó_n_o', xpos=[ur' del cautiverio i trabajo', ur'\]\]es']) + #95
 lema(ur'_Venevisió_n_(venevisi[óo]|Venevisio)', xpre=[ur'\.', ], xpos=[ur'\.', ]) + #93
 lema(ur'[Rr]evoluci_ó_n_o', xpre=[ur'Zonda ', ], xpos=[ur'\]\]es', ]) + #89
 lema(ur'[Cc]añ_ó_n_o', xpre=[ur'Ipyahe ', ur'[Mm]icropolitana ', ], xpos=[ur' City', ur'\]\]es', ]) + #88
@@ -4427,7 +4449,7 @@ lema(ur'[Aa]vi_ó_n_o', xpre=[ur'CS ', ur'Calais\)\|', ur'Cantón de ', ur'Comme
 lema(ur'[Cc]olecci_ó_n_o', xpos=[ur'\]\]es', ]) + #72
 lema(ur'[Cc]omunicaci_ó_n_o', xpos=[ur'(?:\,umh|\]\]es|\.senado)', ]) + #72
 lema(ur'[Pp]asi_ó_n_o', xpre=[ur'E\. ', ur'the ', ], xpos=[ur' (?:for|Wrestling|Dub|ni)\b', ur'\.demotilla', ]) + #72
-lema(ur'[Uu]ni_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Ee]st?a) ', xpre=[ur' á ', ur'Auto ', ur'Journal de la ', ur'Ridge ', ur'San Fernando de ', ur'of ', ], xpos=[ur' (?:Libérale|Académique|College|Women|Insurance|Catholique|anarchiste|County|Nazionale|Bordeaux|Sportive|Testament|Metallic|Anarco-communiste|Athletique|Avenue|Bay|Brazilian|Buildings|Carbide|Castle|Chapel|Church|City|Company|Cycliste|Elementary|Elevated|Evangelischer|Ferry|Fire|Flag|Française|Guilde|High|Hill|Internationale|Jack|League|List|Maçonnique|Mining|Mundial pro|Nationale|Oil|Pacific|Square|Station|Steamship|Stock|Street|Terminal|Theological|Trust|Turnpike|University|Vélocipédique|anarcho|calédonienne|des|fédérale|istorica|nationale|pour|socialiste|storica|de (?:Compositeurs|banques)|(?:of|do) )', ]) + #64
+lema(ur'[Uu]ni_ó_n_o', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Ee]st?a) ', xpre=[ur' á ', ur'Auto ', ur'Journal de la ', ur'Ridge ', ur'San Fernando de ', ur'of ', ], xpos=[ur' (?:Camp|Libérale|Académique|College|Women|Insurance|Catholique|anarchiste|County|Nazionale|Bordeaux|Sportive|Testament|Metallic|Anarco-communiste|Athletique|Avenue|Bay|Brazilian|Buildings|Carbide|Castle|Chapel|Church|City|Company|Cycliste|Elementary|Elevated|Evangelischer|Ferry|Fire|Flag|Française|Guilde|High|Hill|Internationale|Jack|League|List|Maçonnique|Mining|Mundial pro|Nationale|Oil|Pacific|Square|Station|Steamship|Stock|Street|Terminal|Theological|Trust|Turnpike|University|Vélocipédique|anarcho|calédonienne|des|fédérale|istorica|nationale|pour|socialiste|storica|de (?:Compositeurs|banques)|(?:of|do) )', ]) + #64
 lema(ur'[Aa]dministraci_ó_n_o', xpos=[ur'(?:@|\]\]es)', ]) + #63
 lema(ur'[Ii]lustraci_ó_n_o', xpos=[ur'\]\]es', ]) + #61
 lema(ur'[Oo]cupaci_ó_n_o', xpos=[ur'\]\]es', ]) + #61
@@ -6928,7 +6950,7 @@ lema(ur'[Dd]__el_el d') + #338
 lema(ur'[Pp]a_í_ses(?! Baixos)_i') + #291
 lema(ur'[Qq]__ue_ue q') + #278
 lema(ur'_e_xternos_E', pre=ur'(?:[Ee]nlaces|[Vv]ínculos) ') + #257
-lema(ur'[Mm]usulm_á_n_a', xpre=[ur'suis ', ur'Occident ']) + #225
+lema(ur'[Mm]usulm_á_n_a', xpre=[ur'monde ', ur'problème ', ur'suis ', ur'Occident '], xpos=[ur'\]\]es']) + #225
 lema(ur'[Mm]_á_s (?:alt|amarg|amig|citad|competitiv|desconocid|distintiv|envejecid|equilibrad|ergonómic|insegur|lujos|notad|óptim|pequeñ|poblad|prolífic|rocker|select|sosegad|vendid|veteran|vigoros|violent|viv)[ao]s?\b_a') + #221
 lema(ur'[Uu]n_a_ (?:alerta|alianza|amiga|armadura|atmósfera|auténtica|avenida|barrera|batalla|bebida|beca|bella|biografía|bola|bolsa|brigada|broma|bóveda|caldera|carga|carretera|caída|ceremonia|cifra|cinta|clara|clínica|cola|colina|comarca|competencia|computadora|conferencia|corona|cubierta|cueva|curva|célula|cúpula|demanda|determinada|diferencia|disputa|dura|década|economía|entrada|ermita|escalera|escritora|esfera|estrategia|estrecha|experiencia|falla|famosa|feria|finca|flota|fotografía|futura|granja|hermana|hija|hora|huelga|inmensa|jugadora|junta|lengua|letra|leyenda|llamada|maestra|mancha|marcha|medalla|medida|mejora|mina|montaña|muestra|ofensiva|oferta|oficina|orquesta|pantalla|parada|parodia|partícula|pelota|piedra|pintura|pistola|postura|presencia|princesa|propuesta|protesta|proteína|provincia|pr[aá]ctica|r[eé]plica|rampa|reforma|regla|revuelta|rica|rueda|rápida|secuela|semana|silla|talla|tarjeta|tecnología|teoría|trampa|trenza|típica|vasta|ventaja|vieja|villa|visita|vista|vivienda|órbita|última)\b_') + #210
 lema(ur'_ú_ltima_u', pre=ur'(?:[Aa]|[Cc]omo|[Dd]el|[Ee]st[ao]s?|[Ll]as?|[Pp]or|[Qq]ueda[nsr]?|[Qq]uedó|[Ss]us?|[Uu]na|[Uu]nas|[Yy]) ') + #195
@@ -6951,10 +6973,10 @@ lema(ur'[Mm]_á_nager_a', pre=ur'(?:[Ee]l|[Dd]el?|[Ll]a|[Uu]n|[Ss]u|nuevo|antigu
 lema(ur'Berm_ú_dez_u') + #113
 lema(ur'[Gg]r_á_fico_a', xpos=[ur' Editoriale', ]) + #112
 lema(ur'[Nn]orteam_é_rica(?!\]\])_e') + #110
-lema(ur'[Cc]l_á_sica_a', xpos=[ur'(?: do|maior)\b', ur'2\.com', ]) + #107
+lema(ur'[Cc]l_á_sica_a', xpos=[ur' (?:do|maior)\b', ur'2\.com', ]) + #107
 lema(ur'[Ss]__e_e s') + #107
 lema(ur'_á_reas?_a', pre=ur'(?:[AaEe]l|[Ll]as|[Mm][aá]s|[Uu]nas|[Aa]lgunas|[Dd]el?|[Uu]n|[Cc]ada|[Ss]us|[Oo]tras?|[Dd]os|[Ee]stas?|[Ee]sas?|[Ee]n) ') + #105
-lema(ur'[Ss]istem_á_tic(?:[ao]s?|amente)_a') + #102
+lema(ur'[Ss]istem_á_tic(?:[ao]s?|amente)_a', xpos=[ur' de angiospermas']) + #102
 lema(ur'Rep_ú_blica Dominicana_u') + #100
 lema(ur'[Ee]xtra_í_(?:a[ns]?|d[ao]s?)_i') + #94
 lema(ur'[Ee]xtra_í_d[ao]s?_i') + #94
@@ -6962,7 +6984,7 @@ lema(ur'[Pp]or s_í so_l[ao]s?_(?:i s[oó]|í só)') + #90
 lema(ur'[Ll]o_s_ (?:habitantes|hechos|hermanos|héroes|hijos|hombres|huevos|indígenas|intereses|jóvenes|juegos|jugadores|líderes|límites|machos|medios|mercados|meses|métodos|miembros|modelos|momentos|motores|municipios|músicos|nazis|niños|niveles|ojos|otros|padres|países|partidos|pasos|períodos|personajes|pobladores|pocos|poderes|precios|premios|primeros|principales|principios|problemas|programas|pueblos|puntos|quales|relatos|resultados|reyes|ríos|sábados|sectores|seis|seres|servicios|siglos|siguientes|símbolos|sistemas|sitios|soldados|sucesos|suelos|territorios|tiempos|trabajos|trenes|tres|últimos|únicos|usuarios|valores|vascos|vecinos|votos)_') + #86
 lema(ur'[Cc]aracter_í_stic[ao]s?_i') + #85
 lema(ur'[Mm]_á_scaras?_a', pre=ur'(?:[Ll]as?|[Uu]nas?|[Ss]us?) ') + #84
-lema(ur'[Cc]__omo_omo c') + #83
+lema(ur'[Cc]__omo_omo c', xpre=[ur'[Yy]o ']) + #83
 lema(ur'_el á_rea_(?:el a|la [aá])') + #83
 lema(ur'[Ll]_í_deres_i') + #82
 lema(ur'[Mm]_ás allá__(?:as all[aá]|ás alla)') + #82
@@ -7028,7 +7050,7 @@ lema(ur'[Ee]spec_í_fic(?:[ao]s|amente)_i') + #44
 lema(ur'[Aa]rtiller_í_as?_i') + #43
 lema(ur'[Rr]_á_pid(?:[ao]s|amente)_a') + #42
 lema(ur'[Tt]en_í_an_i') + #42
-lema(ur'[Dd]_ó_lares_o', pre=ur'(?:[Ll]os|[Uu]nos|[Ee]n|[Dd]e) ') + #41
+lema(ur'[Dd]_ó_lares_o', pre=ur'(?:[Ll]os|[Uu]nos|[Ee]n|[Dd]e|[0-9]+|[0-9][0-9.,]+[0-9]) ') + #41
 lema(ur'[Ee]xclu_i_d[ao]s?_í') + #41
 lema(ur'[Aa]erol_í_neas?_i') + #40
 lema(ur'[Bb]_á_sic(?:as|os?|amente)_a') + #40
@@ -7047,7 +7069,6 @@ lema(ur'_Ú_ltimas?_U', pre=ur'(?:[Ll]as?|[Uu]nas?) ') + #36
 lema(ur'[Gg]rupo_s__', pre=ur'[Ll]os ') + #35
 lema(ur'[Mm]_u_sical_ú') + #35
 lema(ur'_Á_rbitros?_A') + #35
-lema(ur'_álbu_m(?:es|)_albú') + #35
 lema(ur'[Aa]tribu_i_d[ao]s?_í') + #34
 lema(ur'[Cc]on_strui_d[ao]s?_(?:tru[ií]|struí)') + #34
 lema(ur'[Cc]on_strui_d[ao]s?_(?:tru[ií]|struí)') + #34
@@ -7079,7 +7100,7 @@ lema(ur'[Ll]a_s_ islas_') + #28
 lema(ur'[Ll]a_s_ obras_') + #28
 lema(ur'[Mm]ediod_í_as?_i') + #28
 lema(ur'[Aa]p_é_ndices?_e') + #27
-lema(ur'[Cc]an_c_i(?:ón|ones)_s', xpos=[ur' barias', ]) + #27
+lema(ur'[Cc]an_c_i(?:ón|ones)_s', xpre=[ur'Serrat: ', ur'Cansiones\|'], xpos=[ur' barias', ]) + #27
 lema(ur'[Rr]eci_é_n_e') + #27
 lema(ur'[v]iv(?:ir|)_í_a[ns]?_i') + #27
 lema(ur'_V_enezuela_v', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #27
@@ -7315,7 +7336,6 @@ lema(ur'[Ss]i_s_temas?_') + #9
 lema(ur'[Ss]onr_í_e[ns]?_i') + #9
 lema(ur'[Tt]el_é_fono_e', pre=ur'(?:[Ee]l|[Ss]u|[Uu]n|como|por) ') + #9
 lema(ur'[Uu]n_a ré_plica_ r[eé]') + #9
-lema(ur'\(_álbum de \g<num>_\)_(?P<num>[0-9]{4}) album') + #9
 lema(ur'_É_l (?:anhela|pued[ae]|gana)_E') + #9
 lema(ur'_ú_ltimamente_u') + #9
 lema(ur'(?:[Cc]on|[Ss](?:ub|))igu_i_entes?_') + #8
@@ -7484,7 +7504,6 @@ lema(ur'[Ss]of_á_s?_a', pre=ur'(?:[Ss]u|[Ee]l|[Dd]el|[Uu]n|[Ll]os|como) ') + #6
 lema(ur'[Tt]_á_ctil(?:es|)_a') + #6
 lema(ur'[Tt]errest_r_es?_') + #6
 lema(ur'[Tt]rampol_í_n_i') + #6
-lema(ur'[s]ali_o__ó', pre=ur'[Ee]mperador ') + #6
 lema(ur'_G_recia_g', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #6
 lema(ur'_P_araguay_p', pre=ur'(?:[Aa]|[Aa]nte|[Dd]e|[Ee]n|[Pp]ara|[Pp]or) ') + #6
 lema(ur'_encontraba__encuentraba') + #6
@@ -7568,7 +7587,7 @@ lema(ur'[Uu]t_i_lizad[ao]s?_') + #5
 lema(ur'[Vv]er_sió_n_ci[oó]') + #5
 lema(ur'[m]_í_nimas?_i', pre=ur'(?:[Ll]as?|[Uu]nas?) ') + #5
 lema(ur'_e inglé_s_[ey] ingle', pre=ur'(?:quechua|franc[eé]s|español|coreano|japon[eé]s) ') + #5
-lema(ur'_Ú_nic(?:[ao]s|amente)_U') + #5
+lema(ur'_ú_nic(?:[ao]s|amente)_u', xpre=[ur'pedes dúo ', ]) + #5
 lema(ur'_á_ngulos?_a', pre=ur'(?:[Ee][nl]|[Uu]n|[Ll]os|[Uu]nos) ') + #5
 lema(ur'_é_xodos?_e') + #5
 lema(ur'_í_ntimamente_i') + #5
@@ -7903,7 +7922,7 @@ lema(ur'[Ee]mp_r_esari(?:os?|al)_') + #2
 lema(ur'[Ee]mpatar_í_a[ns]?_i') + #2
 lema(ur'[Ee]mpezar_í_a[ns]?_i') + #2
 lema(ur'[Ee]mular_í_a[ns]?_i') + #2
-lema(ur'[Ee]namorar_í_a[ns]?_i') + #2
+lema(ur'[Ee]namorar_í_a[ns]?_i', xpre=[ur'm\'']) + #2
 lema(ur'[Ee]ncontrar_í_a(?:[ns]?|mos)_i') + #2
 lema(ur'[Ee]ntalp_í_as?_i') + #2
 lema(ur'[Ee]ntr_e_vista(?:s?|d[ao]s?)_') + #2
@@ -11463,9 +11482,7 @@ lema(ur'_É_nfasis_E') + #1
 #lema(ur'_Á_gil(?:es|mente)_A') + #0
 #lema(ur'_Á_ure[ao]s_A') + #0
 #lema(ur'_É_tnic(?:[ao]s|amente)_E') + #0
-#lema(ur'_álbumes__albums', pre=ur'(?:[Ll]os|[Ss]us)') + #0
 #lema(ur'_ó_pticas_o') + #0
-#lema(ur'_ú_nico_u', pre=ur'(?:[Ee]l|[Uu]n)] ') + #0
 []][0]
 
 grupo2 = grupo2Perfecto + grupo2Accion + [# 500-999
@@ -11485,27 +11502,24 @@ lema(ur'[Hh]ist_ó_ricos?_o', xpre=[ur'Boletim ', ur'Estudo ', ur'Illimani ', ur
 []][0]
 
 grupo3 = [# 250-499
-lema(ur'[Tt]en_í_as?_i', xpre=[ur'Estas ', ur'Mario ', ur'Ram[oó]n ', ur'[Ee]l ', ur'[Ll]as ', ur'\ba ', ur'\bcon ', ur'\bde ', ur'curar la ', ur'entre ', ur'excepto ', ur'llamado ', ], xpos=[ur' (?:\((?:adulta|arquitectura)|E\. granulosus|o lombriz|de la que|saginata|del rumiante|dues cases|del (?:pez|género)|raor|els|[Mm]ortal)', ur'(?:[\'\|\]]|, amiba)', ]) + #794
-lema(ur'[Nn]_ú_mero (?:de|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|veinte|[1-9][0-9]*)_u', xpre=[ur'(?:[Ii]l|um) ', ur'Anno III – ', ur'Canzone ', ur'Magazine, ', ur'Resolução ', ur'Sunyer\. ', ur'Turisme\'\'\. ', ur'anno 1897 ', ur'anno 8. ', ur'anno I, ', ur'anno II, ', ur'anno III, ', ur'anno IV, ', ur'archi ', ur'grande ', ur'humanitat\. ', ur'notte ', ur'pericolo ', ur'pubblicazione ', ur'scudetto ', ur'stesso ', ur'tram ', ], xpos=[ur' (?:apeles|d[ai] )', ]) + #465
+lema(ur'[Tt]en_í_as?_i', xpre=[ur'Estas ', ur'Mario ', ur'Ram[oó]n ', ur'[Ee]l ', ur'[Ll]as ', ur'\ba ', ur'\bcon ', ur'\bde ', ur'curar la ', ur'entre ', ur'excepto ', ur'llamado ', ], xpos=[ur' (?:\((?:adulta|arquitectura)|E\. granulosus|o lombriz|de la que|saginata|del (?:hombre|\[\[perro|rumiante)|dues cases|del (?:pez|género)|raor|els|[Mm]ortal)', ur'(?:[\'\|\]]|, amiba)', ]) + #794
+lema(ur'[Nn]_ú_mero (?:de|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|veinte|[1-9][0-9]*)_u', xpre=[ur'(?:[Ii]l|um) ', ur'Anno III – ', ur'Cabine ', ur'Canzone ', ur'Magazine, ', ur'Resolução ', ur'Sunyer\. ', ur'Turisme\'\'\. ', ur'anno 1897 ', ur'anno 8. ', ur'anno I, ', ur'anno II, ', ur'anno III, ', ur'anno IV, ', ur'archi ', ur'grande ', ur'humanitat\. ', ur'notte ', ur'pericolo ', ur'pubblicazione ', ur'scudetto ', ur'stesso ', ur'tram ', ], xpos=[ur' (?:apeles|d[ai] )', ]) + #465
 lema(ur'[Aa]uton_ó_mic[ao]s?_o', xpos=[ur'[0-9]', ]) + #441
 lema(ur'[Ff]_ú_tbol_u', pre=ur'(?:[Aa]l|[Ee]l|[Uu]n|[Dd]el) ', xpre=[ur'Cap ', ur'Estadi ', ur'Història crítica ', ur'lusionistes ', ], xpos=[ur' (?:Gavà|Català|Martinenc|modest|Reus|Vilanova i|Igualada|Balaguer|D\'Ordino|Nou|Club Santboià)', ur'ʹnyy̆', ]) + #412
-lema(ur'_á_lbum(?:es|)_a', pre=ur'(?:[Aa]l|[Dd]el?|[Ee]ste|[Ee]stos|[Ee]l|[Ee]n|[Ll]os|[Dd]os|[Tt]res|[Cc]uatro|[Ss]us?|[Pp]rimer|[Ss]egundo|[Tt]ercer|[Cc]uarto|[Qq]uinto|[Ss]exto|[UuÚú]ltimo|[Mm]ejor|[Nn]ing[uú]n|[Nn]uevo|[Mm]ismo) ') + #407
 lema(ur'[Ee]j_é_rcito_e', pre=ur'(?:[Aa]l|[Ee]l|[Dd]el|[Uu]n|[Ss]u) ') + #395
-lema(ur'(?:[Aa]|[Dd]e)__l (?:equipo|resto|primer|grupo|pueblo|personaje|nombre|[Rr]ey|programa|club|presidente|nuevo|álbum|municipio|planeta|número|estado|centro|trabajo|productor|padre|mundo|lugar|jugador|gobierno|país|margen|juego|incremento|gran|estudio|elenco|desarrollo|cuarto|antiguo|verdadero|usuario|[uú]ltimo|tema|poder|oeste|momento|español|otro|entonces)_ e', xpre=[ur'intentos y ', ur'(?:[Ll]ado|[Cc]ara) ', ur'\.', ]) + #363
+lema(ur'(?:[Aa]|[Dd]e)__l (?:[Rr]ey|[uú]ltimo|antiguo|centro|club|cuarto|desarrollo|elenco|entonces|equipo|español|estado|estudio|g[ée]nero|gobierno|gran|grupo|incremento|juego|jugador|lugar|margen|momento|mundo|municipio|nombre|nuevo|número|oeste|otro|padre|país|personaje|planeta|poder|presidente|primer|productor|programa|pueblo|resto|tema|trabajo|usuario|verdadero|álbum)_ e', xpre=[ur'intentos y ', ur'(?:[Ll]ado|[Cc]ara) ', ur'\.', ]) + #363
 lema(ur'Medell_í_n_i', xpre=[ur'366272\) ', ur'in ', ]) + #338
 lema(ur'B_é_lgica_e', xpre=[ur' (?:du|el) ', ur' (?:du|el) \'\'', ur'1884\)\|', ur'1884\)\|\'\'', ur'Botanica ', ur'Florula ', ur'Fort ', ur'Galia ', ur'Gallia ', ur'Janseniana ', ur'Linneana ', ur'María ', ur'Neurologica ', ur'Nova ', ur'Psychiatrica ', ur'RV ', ur'RV \'\'', ur'S\.Y\. ', ur'Scripta Bot\. ', ur'Scripta botanica ', ur'The ', ur'[Ll]a ', ur'[ae]l ', ur'\(1052\) ', ur'de la ', ur'del ', ur'del \'\'', ur'el "', ur'expédition "', ur'género\)\|', ur'llamándolo \'\'', ur'navío ', ur'navío "', ur'nombre de \'\'', ur'velero ', ], xpos=[ur' (?:Nova|prima|secunda|de Nassau|antarctica|Diary|FC|Edegem|Universe|Prima|Secunda|Historiae|Nostri|Flemish|Wallonian|Edegem|Select|Albums|Top|\(género)', ]) + #336
 lema(ur'[Hh]ist_ó_ric(?:as?|amente)_o', xpre=[ur' e[nt] ', ur'Acta ', ur'Augustiniana ', ur'Bibliotheca ', ur'Commentatio ', ur'De ', ur'De arte ', ur'Dissertatio ', ur'Epitome ', ur'Exquisitio ', ur'Flora ', ur'Folia Linguistica ', ur'Folia Lingüística ', ur'Fragmenta ', ur'Geographia ', ur'Geographica ', ur'Germaniae ', ur'Germanica ', ur'Germaniæ ', ur'Militaria & ', ur'Miscellanea ', ur'Monumenta ', ur'Opera ', ur'Recerca ', ur'Relatio ', ur'Romaniae ', ur'Studia ', ur'Studia ', ur'Synopsis ', ur'panta: ', ], xpos=[ur' (?:Minutes|facultate|Constantiniana|Bohemica|da|del Rei|e [Gg]eneal[oó]gicas|Hungariam|Asturiensia|Didactica|Foundation|Russiae|Lwów|et)\b', ur'(?:\] project|\.(?:ejercito|unam)|\'\')', ]) + #333
 lema(ur'[Pp]eri_ó_dic[ao]_o', xpre=[ur'Christiana ', ur'Il sistema ', ur'Publicatio ', ], xpos=[ur' (?:della|dell|evangeliorum|Constantiniana|internazionale|national|\(sic|di )', ur'\.cnt', ]) + #316
 lema(ur'[s]er_á__a', xpre=[ur'(?:da|ne|où|\'a) ', ur'Ades ', ur'Alla ', ur'Aussi ', ur'Bona ', ur'Buona ', ur'Caledanapis ', ur'Campanile ', ur'Domenica ', ur'Elle ', ur'L\'ultima ', ur'La ', ur'Pissarrachampsa ', ur'Prima ', ur'Quando viene ', ur'Quando viene la ', ur'Quella ', ur'Questa ', ur'Stampa ', ur'Verso ', ur'Viene ', ur'[\' ](?:[Ff]a|[Ii]l|[Dd][ei]|[Cc]e|[Nn]a|[Ll]a) ', ur'[Qq]ue ', ur'[Qq]ui ', ur'[Ss]abato ', ur'[Ss]er[aá] ', ur'[Ss]er[aá], ', ur'[Tt]out ', ur'[Tt]oyota ', ur'[Uu]na ', ur'[Uu]na ', ur'c\'', ur'che ', ur'come ', ur'culotte ', ur'dell\'ultima ', ur'della ', ur'devoir ', ur'domenica ', ur'dur ', ur'esce la ', ur'grande ', ur'idioma ', ur'ieri ', ur'mezza ', ur'n\'ata ', ur'nella ', ur'nous ', ur'quel ', ur'quella ', ur'questa ', ur'stessa ', ur'subito ', ur'vie ', ], xpos=[ur' (?:a [cz]ena|admis|assimilée|aussi|calme|como antes: MPB anos|complet|del grande|di|définitivement|démocratique|reprise|dépassé|désormais|en retard|facilement|fait|fiesolana|fuku|gentile|impitoyable|jamais|l\'aurore|le mois|liberté|longue|l´alba|mon|notre|pas|plus|pour|quando|tamen|toujours|tournée|une|unité|à )', ur', (?:ser[aá]|aussi|amen)', ]) + #315
-lema(ur'[Ee]conom_í_as?_i', xpre=[ur'Facultade de ', ur'Història, ', ur'Nodal ', ur'Outra ', ur'Parlem de ', ur'Pensiero – ', ur'Societat i ', ur'Societat, ', ur'UOL ', ur'[Ll][`’\']', ur'[Uu]ma ', ur'[dl]\'', ur'\b(?:e[dm]|na) ', ur'\b[Aa] ', ur'\bd[ai] ', ur'\be ', ur'\by \'\'', ur'dell\'', ur'il Magnifico: politica, ', ur'llamado \'\'', ur'nostra ', ur'nuova ', ], xpos=[ur' (?:non|Fechada|rustica per|d[aio]|dell|Internazionale|canaglia|Brasileira|pubblica|mundial em|Política do|Solidária|\(editorial|e (?:sviluppo|[Ss]ociedade|società|[Tt]eologia|[Pp]olítica|[Gg]estão|Storia|Retórica|Finanze)|i|popular e solidária|- Itália marca)\b', ur'(?:[]0-9]+|, (?:cultura i|planejamento|producció|Internazionale|Management|Administração)|\.(?:gob|uady)|: O novo)\b', ]) + #313
+lema(ur'[Ee]conom_í_as?_i', xpre=[ur'Facultade de ', ur'Història, ', ur'Instituições de ', ur'Nodal ', ur'Outra ', ur'Parlem de ', ur'Pensiero – ', ur'Societat i ', ur'Societat, ', ur'UOL ', ur'[Ll][`’\']', ur'[Uu]ma ', ur'[dl]\'', ur'\b(?:e[dm]|na) ', ur'\b[Aa] ', ur'\bd[ai] ', ur'\be ', ur'\by \'\'', ur'dell\'', ur'il Magnifico: politica, ', ur'llamado \'\'', ur'nostra ', ur'nuova ', ], xpos=[ur' (?:non|Fechada|rustica per|d[aio]|dell|Internazionale|canaglia|Brasileira|pubblica|mundial em|Política do|Solidária|\(editorial|e (?:sviluppo|[Ss]ociedade|società|[Tt]eologia|[Pp]olítica|[Gg]estão|Storia|Retórica|Finanze)|i|popular e solidária|- Itália marca)\b', ur'(?:[]0-9]+|, (?:cultura i|planejamento|producció|Internazionale|Management|Administração)|\.(?:gob|uady)|: O novo)\b', ]) + #313
 lema(ur'Bogot_á__a', xpre=[ur'12325\) ', ur'Illinois\)\|', ur'Labama ', ur'Royal ', ur'Tennessee\)\|', ur'[Ff]rom ', ur'\b(?:in|of) ', ur'\bthe ', ur'd[\'’]Or de ', ], xpos=[ur'\.gov\.co|: From|[\'’]s| (?:[Ii]n|Film|Beer|Wildlife|[Pp]roject|Laser|\((?:Tennessee|Illinois)|Telephone)', ]) + #307
 lema(ur'M_á_laga_a', xpre=[ur'Gustave ', ur'[Mm]unicipio de ', ur'\b(?:í|a) ', ur'\bin ', ], xpos=[ur' (?:Auditorium|Airport)', ur'\.es', ]) + #286
 lema(ur'[Pp]ol_í_tica_i', xpre=[ur'Carità ', ur'Commentatio ', ur'Comunicacao & ', ur'Exercitatio ', ur'Lege ', ur'Palingenesi ', ur'Principia ', ur'Renovacio ', ur'Scienza ', ur'Societá italiana de Filosofia ', ur'Studia ', ur'Vita ', ur'Zero ', ur'[Rr]egio ', ur'[Ss]cienza & ', ur'\b(?:d[ai]|De) ', ur'\b[Aaei] ', ur'\be la ', ur'\buma ', ur'\by \'\'', ur'alla ', ur'capitale ', ur'concepire la ', ur'dalla mafia ', ur'dell[\'’][Ee]conomia ', ur'dell[ae] ', ur'della filosofia ', ur'democrazia ', ur'di Economia ', ur'di [Ee]conomía ', ur'di economia ', ur'di teoria ', ur'distinzione ', ur'e Cultura ', ur'eclesiastica: ', ur'elettorale ', ur'et ', ur'giurisdizione ', ur'il Magnifico: ', ur'in "Filosofia ', ur'legittimazione ', ur'libertate ', ur'nella ', ur'nuova ', ur'partecipazione ', ur'passione ', ur'rappresentanza ', ur'riflessione ', ur'scienza ', ur'sulla ', ur'trias ', ur'vita ', ur'vita la ', ], xpos=[ur' (?:del diritto|Educacional No|del novecento|autoritară|sapientia|nazionale|hermetica|mineaza|ostile|estera|xxi|contro|Oeconomica|sotterranea|Methodicae|and|nell|[Ee] (?:morte|cultura|nuove|verità|utopia|letteratura|dissimulazione|la|[Hh]istoria)|italiana di|seu|Logica|perduta|ecclesiatica|Hermetica|e |(?:ed|in) |come|razzista|occidentale|internazionale|d[aio] |dell|della|al tempo|del (?:Regno|corpo)|tedesca|de Acalmação)', ur'(?:, (?:mafia e giustizia|Corsica)|: Logica e Metodo|\.Ambiental)', ]) + #286
 lema(ur'[Ee]stad_í_sticas_i', xpre=[ur'CD ', ], xpos=[ur'(?:\.sport)', ]) + #272
-lema(ur'_é_l[.]_e', pre=ur'(?:[Aa]|[Dd]e|[Cc]on|[Ee]n|[Pp]or|[Hh]acia) ', xpos=[ur'\.\.', ]) + #266
 lema(ur'[Hh]ab_í_a_i', xpos=[ur' (?:atrimaxillaris|rubra|rubica|fuscicauda|cristata|copetona|ceniza|gutteralis|Carinegra|de garganta|que chusar|gutturalis|\[\[Rosa|sombría|gorjirroja|coronirroja|carinegra)', ur'(?:\]\]|\'\')', ]) + #266
 lema(ur'[Bb]_é_isbol_e', xpre=[ur'Camp de ', ur'Politics, ', ur'française de ', ], xpos=[ur' (?:Elkartea|i Softbol|Viladecans|i Sofbol)', ur'(?:\.com|\]\]istas?)', ]) + #261
-lema(ur'_é_l[,]_e', pre=ur'(?:[Aa]|[Dd]e|[Cc]on|[Ee]n|[Pp]or|[Hh]acia) ', xpos=[ur' (?:este|ya|hoy|entonces|abarrotado|en ese|relativamente|ahora|por)', ]) + #261
 lema(ur'[Mm]en_ú__u', xpre=[ur'\'s ', ur'Alain ', ur'Beatmac ', ur'Bernadette ', ur'Bernard ', ur'British ', ur'CD ', ur'CSS3', ur'Charles ', ur'Cheat ', ur'Clothilde ', ur'Conde ', ur'Expanded ', ur'François ', ur'Home ', ur'Ithaa ', ur'Jan ', ur'Jean-Christophe ', ur'Koi ', ur'Load ', ur'Love ', ur'Main ', ur'Me ', ur'Memphis ', ur'Michel ', ur'Millionaire ', ur'Operation ', ur'Paris: ', ur'Philippe ', ur'Pierre ', ur'Player ', ur'Rudi ', ur'S\. ', ur'Services ', ur'Short ', ur'Special ', ur'Start ', ur'Sunday ', ur'Sunday ', ur'Teni ', ur'Video ', ur'Word ', ur'[Aa]dministration ', ur'[Gg]eneral ', ur'[Tt]he ', ur'[・]', ur'\ba ', ur'attribute ', ur'het ', ur'main ', ur'pie ', ur'pineau ', ur'value ', ], xpos=[ur' (?:à|items|W9|du |wa Tips|Planner|Cookbook|Music|automatically|Screen|programming|Degustació|of|and|for|bétail|[Bb]ar|[Dd]efinition|idéal|Yves|Steam|y (?:Command|Back)|de (?:Ménil|dimanche|repas)|loops|Theme|Engineer|Engineering|Select|Items|navigation|editor|von|Có|\(Melee|& Autopsy)', ur'(?:\.(?:xml|asp|[Aa]pplet|com)|\|, (?:Scheduler|en|\(1984|M\.|Michel)|\'\'\', \(1987|\]\], 1984)', ]) + #258
 lema(ur'_Perú__(?:per[uú]|Peru)', pre=ur'(?:[Aa]|[AaEe]l|[Aa]nte|[Dd]el?|[Ee]n|[Pp]ara|[Pp]or|[Ss]omos) ', xpre=[ur'Reynos ', ur'[Mm]icropolitana ', ur'[Mm]unicipio ', ], xpos=[ur' \((?:condado|Iowa)', ur'(?:\.com|[0-9]+)', ]) + #255
 lema(ur'[Ss]_é_ptim[ao]s?_e', xpre=[ur'Anne ', ur'Dissertation ', ur'Drepanosticta ', ur'Et ', ur'Franca ', ur'Legio ', ur'Limnoria ', ur'Macromia ', ur'Triacanthagyna ', ur'vicesima ', ], xpos=[ur' (?:Vector|Gemina|saeculo|Basiano|Severo|Arts|editio|ab )', ur'\.cl', ]) + #254
@@ -11545,7 +11559,6 @@ lema(ur'Valpara_í_so_i', xpre=[ur'College\|', ur'DTP ', ur'Florida\)\|', ur'Ind
 lema(ur'_é_xitos?_e', xpos=[ur'\.com', ]) + #170
 lema(ur'L_í_bano_i', xpre=[ur'\bdal ', ur'\bin ', ur'Andrew ', ur'Bilbao ', ur'Giulio ', ur'Il cedro del ', ur'Medaglia [Cc]ommemorativa ONU ', ], xpos=[ur' Noruega', ]) + #170
 lema(ur'[Cc]ronolog_í_as?_i', xpre=[ur'\b[ei] ', ur'Barça del canvi\. Una ', ur'amb la ', ur'd’una ', ur'per a una ', ur'su una ', ur'sulla ', ], xpos=[ur' (?:Ornitologica|Histórica|dei|dell|: les causes|[Cc]ronografia e [Cc]alendario|de Tyrteu|e (?:documentaçom|fortuna)|Prototipi|d\'|d[io] )', ur', [Cc]ronografia e [Cc]alendario', ]) + #167
-lema(ur'[e]st_á__a', pre=ur'[Nn]o ', xpre=[ur'\b[yo] ', ur'precisamente ', ], xpos=[ur' (?:vez|Corte|noche)', ]) + #167
 lema(ur'[Ss]eg_ú_n_u', xpre=[ur'Mabel ', ], xpos=[ur' (?:Owobowale|James|Adeniyi|Lazkano|Adefila|Atere|Amoo|Odegbani|Odegbami|Oluwaniyi|Olumodeji|Michael|Toriola)', ]) + #167
 lema(ur'[Pp]resent_ó__o', xpre=[ur'(?:[Mm]e|[Ll]e|[Ll]o|[Tt]e|Vi|Ti|[Oo]s|[Yy]o) ', ur'[Cc][oó]mo ', ur'[Ll]es ', ]) + #165
 lema(ur'[Aa]ut_ó_nom[ao]s?_o', xpre=[ur'1465\) ', ur'Comunicació de la Universidad ', ur'Komando ', ur'Regiöes ', ur'Universitat ', ur'[Rr]egiao ', ur'[Rr]egioes ', ur'[Rr]egione ', ur'comune ', ur'teritoriala ', ], xpos=[ur' (?:dei|Volturno|Caccia|carri|delle|Zacatensis|di|recibió|orbita)\b', ur'\]', ]) + #162
@@ -11569,7 +11582,7 @@ lema(ur'[Dd]_é_cadas?_e', xpre=[ur'Orbe ', ], xpos=[ur' (?:da|de Orbe Novo)', u
 lema(ur'T_á_chira_a', xpos=[ur' (?:Emerald|Antpitta)', ]) + #137
 lema(ur'Andr_é_s_e', pre=ur'San ', xpre=[ur'\bof ', ur'Fort ', ]) + #134
 lema(ur'[Ll]ibrer_í_as?_i', xpre=[ur'Istituto Propaganda ', ur'U[Tt][Ee][Tt] ', ], xpos=[ur' (?:Universitària|Piani|Aeronautica\. Milano|d[\'’]|[Mm]usicale|Cattolica|Serret|Piccolomini|del Mercurio|Milanese|Antiquaria|Gregoriana estense|Internazionale|Scientifica|dello|del Excelentissimo|Croce|Tres i Quatre|Miguel-Creus|[Ee]ditrice|dell|Ed\.)', ]) + #130
-lema(ur'[Cc]om_ú_n_u', xpre=[ur'D\'Mente ', ur'\bdi ', ], xpos=[ur' (?:Nuovo|françois)', ]) + #125
+lema(ur'[Cc]om_ú_n_u', xpre=[ur'D\'Mente ', ur'\bdi ', ], xpos=[ur' (?:Nuovo|françois)', ur'\. Inst']) + #125
 lema(ur'[Dd]ep_ó_sitos?_o', xpre=[ur'(?:[Ii]l|[Ll]a) ', ur'Cardili, ', ur'sepulcro ', ], xpos=[ur' (?:Giordani|da)', ]) + #124
 lema(ur'[Rr]a_í_z_i', xpre=[ur'\b[dn]a ', ur'Playsson ', ur'in una ', ur'minha ', ur'músico\)\|', ], xpos=[ur' (?:Records|Music|Tape|madrugada|de Orvalho|Afectuosa|d[aio]|\((?:músico|60))\b', ]) + #124
 lema(ur'[Ss]eñor_í_[ao]s?_i', xpre=[ur'Nobiliario de los reinos y ', ]) + #122
@@ -11603,7 +11616,7 @@ lema(ur'[Cc]ient_í_fic(?:as|os?|amente)_i', xpre=[ur'trabalhos ', ], xpos=[ur' 
 lema(ur'Taiw_á_n_a', pre=ur'(?:[Dd]e|[Ee]n) ', xpre=[ur'Pont ', ], xpos=[ur' (?:Taoyuan International|zhi)', ]) + #89
 lema(ur'[Pp]_ú_blic(?:os|amente)_u', xpos=[ur' hostes', ur'\'', ]) + #88
 lema(ur'[Ff]_ó_rmulas?_o', pre=ur'(?:[Ll]as?|[Uu]nas?|[Dd]e) ', xpre=[ur'quién ', ], xpos=[ur' (?:One|Romani|della)', ]) + #87
-lema(ur'[Tt]ecnolog_í_as?_i', xpre=[ur' [aei&] ', ur' in ', ur'Català de ', ur'Ciência e ', ur'Contemporâneo de ', ur'Faculdade de ', ur'Fòrum Nord de la ', ur'Investigação para ', ur'Mauá de ', ur'Mediterrani de la ', ur'Mix ', ur'Museu de Ciencia y ', ur'Transferência de ', ur'd[ae]lla ', ur'd[ai] ', ur'e Alta ', ur'e la ', ur'e raciocínio', ur'em ', ur'i la ', ur'importação de ', ur'outras ', ], xpos=[ur' (?:na|ao|em|d[ao]|dei|dell|della|pelo|\(UNIFOR|restauro conservazione|y Ciências|nella|para produzir|Avanzata|educacional: política, histórias|de Informação|del design|de (?:produção|Sementes)|e (?:Ensino|[Gg]overnabilidade|Sociedade|[Gg]estão|Inovação|Políticas|materiali|o homen)|i (?:Cultura|educació))', ur', comunicazione', ur'\. Atti del convegno', ]) + #87
+lema(ur'[Tt]ecnolog_í_as?_i', xpre=[ur' [aei&] ', ur' in ', ur'Català de ', ur'Ciência e ', ur'do Comércio de ', ur'Contemporâneo de ', ur'Faculdade de ', ur'Fòrum Nord de la ', ur'Investigação para ', ur'Mauá de ', ur'Mediterrani de la ', ur'Mix ', ur'Museu de Ciencia y ', ur'Transferência de ', ur'd[ae]lla ', ur'd[ai] ', ur'e Alta ', ur'e la ', ur'e raciocínio', ur'em ', ur'i la ', ur'importação de ', ur'outras ', ], xpos=[ur' (?:na|ao|em|d[ao]|dei|dell|della|pelo|\(UNIFOR|restauro conservazione|y Ciências|nella|para produzir|Avanzata|educacional: política, histórias|de Informação|del design|de (?:produção|Sementes)|e (?:Ensino|[Gg]overnabilidade|Sociedade|[Gg]estão|Inovação|Políticas|materiali|o homen)|i (?:Cultura|educació))', ur', comunicazione', ur'\. Atti del convegno', ]) + #87
 lema(ur'_Á_rea (?:[Mm]etropolitana|[Cc]hica|Natural|Local|[Cc]onurbada|[Bb]iogeogr[áa]fica|[Rr]ecreativa)\b_A', xpre=[ur'l\'', ]) + #86
 lema(ur'[Hh]urac_á_n_a', xpos=[ur' (?:Studio|Dive)', ur'\]', ]) + #85
 lema(ur'[Vv]_í_nculos?_i', xpre=[ur'[Ss]e ', ], xpos=[ur' Caritatis', ]) + #82
@@ -11656,7 +11669,6 @@ lema(ur'_ha_ (?:ca[ií]do|calculado|calificado|cambiado|cantado|capacitado|captu
 lema(ur'[Mm]ar_í_tim(?:as|os?)_i', xpre=[ur'Museu ', ]) + #53
 lema(ur'[Pp]aleontolog_í_as?_i', xpre=[ur' da ', ur' e ', ur'Brasileir[ao] de ', ur'Català de ', ur'Institut de ', ur'Trabalho de ', ur'di ', ur'i la ', ], xpos=[ur' (?:em |Electronica|Africana|Lombarda|E Stratigrafia|i Evolució\')', ]) + #53
 lema(ur'[Hh]onor_í_fic[ao]s?_i', xpre=[ur'T\. ', ur'Tipula ', ur'[Ss]e ', ]) + #51
-lema(ur'_Á_lbum(?:es|)_A', pre=ur'(?:[Aa]l|[Dd]el?|[Ee]ste|[Ee]stos|[Ee]l|[Ee]n|[Ll]os|[Uu]n|[Dd]os|[Tt]res|[Cc]uatro|[Ss]us?|[Pp]rimer|[Ss]egundo|[Tt]ercer|[UuÚú]ltimo|[Nn]ing[uú]n|[Nn]uevo) ', xpos=[ur' famille', ]) + #50
 lema(ur'[Gg]astronom_í_as?_i', xpre=[ur'\be ', ur'Art i ', ], xpos=[ur' Elkartea', ]) + #50
 lema(ur'_h_oland[eé]s_H', pre=ur'\b(?:e[ln]|del?|idioma|y) ', xpre=[ur'Diplomado ', ], xpos=[ur' (?:[Ee]rrante|[Vv]olador)', ]) + #50
 lema(ur'[Ii]nfanter_í_as?_i', xpre=[ur'd\'', ], xpos=[ur' de marinha', ]) + #50
@@ -11678,7 +11690,7 @@ lema(ur'[Aa]utor_í_as?_i', xpre=[ur'1985, ', ur'[dl][’\']', ur'd\'Autor 2014 
 lema(ur'est_á_ bajo_a', xpre=[ur'[Aa] ', ]) + #44
 lema(ur'[Jj]ur_í_dic[ao]_i', xpre=[ur'[Oo]pera ', ur'esperienza ', ]) + #44
 lema(ur'[Aa]natom_í_as?_i', xpre=[ur' d[ai] ', ur' e ', ur'[Cc]orporis ', ur'[Hh]umani ', ur'd[’\']', ur'das plantas ', ur'dell\'', ur'pela ', ], xpos=[ur' (?:auri|Hvmani|Mundini|de raízes|Patológica e Medicina|patologica di|Plantarum|Vegetal\. Viçosa|[Cc]omparata|[Uu]mana|comparada (?:das|do)|corporis|foliar|generalis|hummingbird|microscopica corporis|partium|pharmaceutica|półprawd|sistematica|uteri|Vitrioli|d[aio] |dos|del (?:Vitrioli|somni|[Cc]avallo)|comparada da|e (?:fisiologia|[Mm]orfologia|ontogenia|relações|sistematica)|de (?:la relativitat|uma|espécies)|d[’\']un)', ]) + #44
-lema(ur'Ben_í_n_i', pre=ur'(?:[Dd]e|[Ee]n) ', xpre=[ur'et ', ], xpos=[ur' (?:City|Golf|jusqu)', ]) + #43
+lema(ur'Ben_í_n_i', pre=ur'(?:[Dd]e|[Ee]n) ', xpre=[ur'Dame ', ur'et ', ], xpos=[ur' (?:City|Golf|jusqu)', ]) + #43
 lema(ur'Berl_í_n_i', pre=ur'(?:[Ee]n|y|o) ', xpos=[ur' (?:Dahlem|Air)', ur'\.de', ]) + #43
 lema(ur'[Ff]_é_rtil(?:es|)_e', xpre=[ur'J\. ', ur'Reprod ', ur'Terres ', ur'[Yy]eux ', ur'plu ', ur'vallées ', ], xpos=[ur' (?:Grass|Steril|Women|SteriI)', ur'\. Steril', ]) + #43
 lema(ur'Han_ó_i_o', pre=ur'(?:[Dd]e|[Ee]n) ', xpos=[ur' (?:Rocks|Jane|Securities|Road)', ]) + #43
@@ -11709,16 +11721,15 @@ lema(ur'[Pp]roblem_á_tic[ao]s?_a', xpre=[ur'Cypraea ', ur'Jivaromyia ', ur'Leed
 lema(ur'[s]er_á__a', pre=ur'(?:[Qq]ui[ée]n|[Qq]u[ée]|[Dd][óo]nde|[Cc]u[áa]ndo|[Tt]ambién|[Aa]demás|[Ss]e|[Ll]os?) ', xpre=[ur'de ', ], xpos=[ur' (?:Marz|[Ss]era)', ur', sera', ]) + #34
 lema(ur'[Aa]ut_ó_dromo_o', xpre=[ur'dell\'', ur'spider ', ], xpos=[ur' (?:di|Nazionale|Internazionale|Enzo e Dino Ferrari|de (?:Portimao|Umbria))', ]) + #33
 lema(ur'[Ee]limin_ó__o', xpre=[ur'[Yy]o ', ur'[Yy]o los ', ]) + #33
-lema(ur'[Ee]vang_é_lica_e', xpre=[ur'Chiesa ', ur'Demonstratio ', ur'Harmonia ', ur'Iosephina ', ur'Lux ', ur'Perfectione ', ur'Praeparatio ', ur'Preparatio ', ur'Studia ', ur'praedicatione ', ], xpos=[ur' (?:Beati|Praeparatione|libertate|et|e Documentazione|a Georgio)', ]) + #33
+lema(ur'[Ee]vang_é_lica_e', xpre=[ur'Dubia ', ur'Chiesa ', ur'Demonstratio ', ur'Harmonia ', ur'Iosephina ', ur'Lux ', ur'Perfectione ', ur'Praeparatio ', ur'Preparatio ', ur'Studia ', ur'praedicatione ', ], xpos=[ur' (?:Beati|Praeparatione|libertate|et|e Documentazione|a Georgio)', ]) + #33
 lema(ur'[Hh]oland_é_s_e', xpre=[ur'permitió que el ', ]) + #32
 lema(ur'[Ll]oter_í_as?_i', xpre=[ur'Caixa ', ], xpos=[ur' (?:Vella|sem)', ]) + #32
 lema(ur'[Rr]e_í_r(?:se|)_i', xpos=[ur'\'', ]) + #32
-lema(ur'[Tt]ur_í_stica_i', xpre=[ur'Consociazione ', ur'Promozione ', ], xpos=[ur' (?:della|del Tigullio)', ]) + #32
+lema(ur'[Tt]ur_í_stica_i', xpre=[ur'accoglienza ', ur'Consociazione ', ur'Promozione ', ], xpos=[ur' (?:della|del Tigullio)', ]) + #32
 lema(ur'[Aa]post_ó_lico_o', xpre=[ur'Missionario ', ur'Nunzio ', ur'Palazzo ', ur'Pellegrino ', ur'amministratore ', ur'ex ', ], xpos=[ur' (?:[Mm]uneri|Seggio|di Bologna|San Michele)', ]) + #31
 lema(ur'[Cc]_á_maras_a', xpre=[ur' as ', ]) + #31
 lema(ur'[Dd]ir_á_[ns]?_a', xpre=[ur' (?:on|El|ne) ', ur' nun ', ur'Elle le ', ur'Ledisi, ', ur'Oya ', ur'Plaza ', ur'Qui ', ur'Tal\'', ur'aipatzekoak ', ur'arindu ', ur'errian ', ur'kontuak ', ur'matxinatu ', ur'ne le ', ur'qui la ', ur'vous ', ], xpos=[ur' (?:cristau|inoiz|Hitzak|Lehaskir|Paes|miraballesen|egiazko|besteak|notre|pezetan|ito|Yulianti|Sugandi|Alexanian|Stevsson|Oyelade|Kelekian|Noubar|Sarkissian|Airways|de lui)', ur'(?:[\'\)]|, (?:huato|"muchos|che))', ]) + #31
 lema(ur'[Pp]atri_ó_tic[ao]s?_o', xpre=[ur'Ação ', ], xpos=[ur' di\b', ]) + #31
-lema(ur'_á_lbum_a', pre=ur'[Uu]n ', xpos=[ur' che', ]) + #30
 lema(ur'_Á_reas?_A', pre=ur'[Dd]e ', xpre=[ur'María ', ur'Punta ', ur'[Ee]stación ', ur'[Ii]nsua ', ur'[Ii]sla ', ur'[Pp]arroquia ', ur'[Pp]laya ', ur'praia ', ]) + #30
 lema(ur'_e_ll[ao]s?_é', xpos=[ur' llos ', ]) + #30
 lema(ur'[Ff]_é_mur_e', xpre=[ur'Abogado de ', ur'Bonita ', ur'Freddie ', ur'Neandertal \[\[', ur'Rural \(', ur'\.\.\. ', ur'\b[Tt]he ', ur'\bof ', ur'left ', ur'super ', ], xpos=[ur' (?:and)', ur'\+head', ]) + #30
@@ -11750,7 +11761,6 @@ lema(ur'[Ee]sp_e_cies?_a', xpos=[ur' sus']) + #16
 lema(ur'[Aa]rchidi_ó_cesis_o', xpos=[ur' (?:Turritanus|Praetoriensis|Bisuntinis|Limanus)', ]) + #24
 lema(ur'[Cc]l_í_max_i', pre=ur'(?:[Ee]l|[Uu]n|de|en|su) ', xpre=[ur'Situación ', ur'[Mm]unicipio ', ur'anual ', ur'cartucho ', ur'fama ', ur'residiendo ', ]) + #24
 lema(ur'[Cc]_ó_nclaves?_o', xpre=[ur'Caribbean ', ur'Magic, ', ur'Papal ', ur'Piano ', ur'Tenor ', ur'The ', ur'Triennial ', ur'[Ii][ls] ', ur'des ', ur'papal ', ur's ', ], xpos=[ur' (?:of|visentibus|& Earshot)', ]) + #24
-lema(ur'est_á__a', pre=ur'(?:él|ella) ', xpre=[ur' (?:de|en) ', ur' a ', ur'[Cc]on ', ur'[Pp]ara ', ur'[Ss]egún ', ]) + #24
 lema(ur'[Gg]al_á_ctic[ao]s?_a', xpre=[ur' (?:la|of) ', ur'2004\)\|', ur'Agua \(', ur'Aria ', ur'Battlestar ', ur'Battlestar "', ur'Battlestar\]\] ', ur'Ephemeroptera ', ur'Galactica\|', ur'Hyde ', ur'Imperium ', ur'Invaders ', ur'Pirámide \(', ur'Saddlesore ', ur'Saddlessore ', ur'Sadlessore ', ur'Shadow ', ur'\ba ', ur'como ', ur'marca ', ], xpos=[ur' (?:e[ns] |Donut|Discovers|Plants|Myosotis|Tornado|Tsunami|Crunch|Magnum|reúne|Year|Inflation|Scales|Superstring|1980|\((?:voz|nave))', ur'(?:\)\||\'\'|: The|, [Aa]stronave)', ]) + #24
 lema(ur'[Pp]resb_í_ter[ao]s?_i', xpre=[ur'F\. ', ]) + #24
 lema(ur'[Dd]ur_ó_ (?:m[aá]s |[0-9+]+)_o', xpre=[ur'[Dd]isco ', ur'[Rr]ock ', ur'caparazón ', ur'de a ', ur'de un ', ur'golpeó ', ur'metal ', ]) + #23
@@ -11786,7 +11796,7 @@ lema(ur'[Ee]_x_clusiv[ao]s?_s', xpre=[ur'Toscana ', ], xpos=[ur' XII', ]) + #19
 lema(ur'[Hh]_í_brid(?:as|os?)_i', xpos=[ur' di ', ]) + #19
 lema(ur'[Pp]roced_í_a[ns]?_i', xpre=[ur'ELSEVIER ', ur'Elsevier ', ur'Platform\. ', ], xpos=[ur' Economics', ]) + #19
 lema(ur'[Rr]eh_é_n_e', xpos=[ur'\]\][a-zñ]+', ]) + #19
-lema(ur'[Aa]s_c_enso_', xpre=[ur'González ', ur'Jacobo ', ur'real ', ], xpos=[ur' Ampim', ]) + #18
+lema(ur'[Aa]s_c_enso_', xpre=[ur'García ', ur'González ', ur'Jacobo ', ur'real ', ], xpos=[ur' Ampim', ]) + #18
 lema(ur'[Aa]utom_á_tica_a', xpre=[ur'Elaborazione ', ur'Quattroporte ', ur'[Hh]ead ', ur'[Ii]nformazione ', ], xpos=[ur' [0-9]+', ]) + #18
 lema(ur'[Bb]_é_same_e', xpos=[ur'\.fm', ]) + #18
 lema(ur'[Cc]onf_í_a[ns]?_i', xpre=[ur'DTU ', ur'\be ', ur'proceedings‚ ', ], xpos=[ur' em ', ]) + #18
@@ -11818,7 +11828,7 @@ lema(ur'[Pp]erif_é_ric[ao]s?_e', xpre=[ur'troppo ', ]) + #16
 lema(ur'[Tt]aiwan_é_s_e', xpos=[ur'\]\](?:as?|es)', ]) + #16
 lema(ur'[Dd]escubr_ió__(?:io|ío)', xpre=[ur'quando ', ], xpos=[ur' no anno', ]) + #15
 lema(ur'[Jj]ard_í_n_i', pre=ur'[Uu]n ', xpre=[ur'[Dd]ans ', ur'avait ', ur'd\'', ], xpos=[ur' (?:qui|pour|Royale?|En Méditerranée|en désordre|[Bb]otanique|secret|sauvage|mouillé|à |sans |sur |du |au |de (?:Passacailles|Ville|l\'État)|d[\'’])', ]) + #15
-lema(ur'[Mm]edi_á_tic[ao]s?_a', xpre=[ur'democrazia ', ]) + #15
+lema(ur'[Mm]edi_á_tic[ao]s?_a', xpre=[ur'non ', ur'democrazia ', ]) + #15
 lema(ur'[Pp]art_í_culas?_i', xpre=[ur'historiae ', ur'novem ', ], xpos=[ur' (?:prima|secunda)', ]) + #15
 lema(ur'[Pp]sic_ó_log[ao]s?_o', xpos=[ur' del carattere', ]) + #15
 lema(ur'[Pp]siquiatr_í_as?_i', xpre=[ur' e ', ur' em ', ur'A ', ur'Brasileira de ', ur'antropològica existencial de la ', ur'questões de ', ], xpos=[ur' (?:fonamental|e psicanálise| (?:do|em) )', ur'\.com', ]) + #15
@@ -11850,7 +11860,6 @@ lema(ur'[Aa]rmer_í_as?_i', xpre=[ur' in ', ur'Byzantine ', ur'Dianthus ', ur'Gl
 lema(ur'[Ee]ntomolog_í_as?_i', xpre=[ur' (?:et|di) ', ur'[Bb]rasileira de ', ur'sull\'', ], xpos=[ur' (?:African|agraria e biologia applicata|[Ss]ystematica|Parisiensis|applicata|generale|[Cc]arniolica|nella|Americana|Experimentalis|de Mocambique)', ur'\.?\'', ]) + #12
 lema(ur'[Ee]p_í_tetos?_i', xpos=[ur' (?:Botánicos|Melesigenes)', ]) + #12
 lema(ur'[Ee]xc_é_ntric[ao]_e', xpre=[ur'Acacia ', ur'Bulolia ', ur'Compsodrillia ', ur'Dentalina ', ur'Eoophyla ', ur'Hallo ', ur'Kefersteinia ', ur'Pleurothallis ', ur'Stachybotryna ', ]) + #12
-lema(ur'_é_l[:]_e', pre=ur'(?:[Aa]|[Dd]e|[Cc]on|[Ee]n|[Pp]or|[Hh]acia) ', xpre=[ur'limita ', ]) + #12
 lema(ur'le_í_a[ns]?_i', xpre=[ur'2 ', ], xpos=[ur' sawola', ]) + #12
 lema(ur'[Mm]agn_í_fica_i', pre=ur'(?:[Ll]a|[Uu]na|[Dd]e|[Ee]sta|[Ss]u|[Tt]an) ', xpos=[ur' (?:Cure|ni)\b', ]) + #12
 lema(ur'[Mm]arcar_í_a[ns]?_i', xpre=[ur'Julio ', ur'Protección ', ], xpos=[ur' (?:Julio|sopra)', ur'\]', ]) + #12
@@ -11890,7 +11899,6 @@ lema(ur'[Bb]enem_é_rit[ao]s?_e', xpos=[ur' Associazione', ]) + #9
 lema(ur'[Cc]riminolog_í_as?_i', xpre=[ur'derecho\.', ], xpos=[ur' (?:femminile|e direito)', ]) + #9
 lema(ur'[Ee]mbriolog_í_as?_i', xpos=[ur' di\b', ]) + #9
 lema(ur'[Ee]_x_tendid[ao]s?_s?', xpre=[ur'onde ', ]) + #9
-lema(ur'_é_l[;]_e', pre=ur'(?:[Aa]|[Dd]e|[Cc]on|[Ee]n|[Pp]or|[Hh]acia) ', xpre=[ur'limita ', ]) + #9
 lema(ur'[Hh]_á_bitat_a', pre=ur'(?:[Ee]l|[Ss]u|[Uu]n|[Ee]s) ', xpos=[ur' (?:collectif|magdalénien)', ]) + #9
 lema(ur'[Ll]a_s_ versiones_', xpos=[ur' ufficiale', ]) + #9
 lema(ur'[Pp]end_í_a[ns]?_i', xpre=[ur' (?:de|en) ', ], xpos=[ur'(?:[|\]])', ]) + #9
@@ -12256,6 +12264,7 @@ grupo11 = [#Sin ocurrencias 2015/09
 
 ### Por revisar, han fallado receintemente.
 congelador = [
+lema(ur'[Aa]divin_ó__o', xpre=[ur'caso ', ur'enano ', ur'(?:ser|del) ', ur'\b([AaEe]l|es|un) '], xpos=[ur'\)']) + #1
 lema(ur'[Dd]esterr_ó__o', xpre=[ur'Florianópolis\|', ur'\bO ', ur'\bd[eo] ', ], xpos=[ur' (?:do|RC|\(Santa)', ur'(?:: Edições|\]\]|\')', ]) + #32
 lema(ur'[Ss]err_ó__o', xpos=[ur' (?:do|Ventoso)\b', ur'(?:\]\]|, Zifronte)', ]) + #23
 lema(ur'_Centroamé_rica_[Cc]entroame', xpos=[ur'\]\]n[ao]s?', ]) + #55
@@ -12413,13 +12422,12 @@ lema(ur'[Pp]aran_á__a', xpre=[ur'[Hf]\. ', ur'Le Rio ', ur'the ', ur'1779\) ', 
 lema(ur'[Pp]oes_í_as?_i', xpre=[ur'\b[AaàePi]\. ', ur'\b[AaàePi] ', ur'\b(?:[Dd][ai]|na) ', ur'C\'è ', ur'\be la ', ur'946\) ', ur'Roma, ', ur'Iniciació a la ', ur'Prémio de ', ur'Foscari ', ur'Versions de ', ur'Igualda de ', ur'Falar de ', ur'Bown’s ', ur'Prémio de ', ur'Premi de ', ur'Noptile de ', ur'Jaume de ', ur'Rainha Sofia de ', ur'originale volgare ', ur'jovem ', ur'Prémio Internacional de ', ur'Premi Crítica Serra d\'Or de ', ur'do Bem-Te-Vi: ', ur'Premi Martí Dot de ', ur'Quaderns de ', ur'As 7 ', ur'Bon dia, ', ur'món de ', ur'Concert de ', ur'[Nn]ova ', ur'collecção de ', ur'cicle de ', ur'[Dd]ella ', ur'teva ', ur'Encontro maior: ', ur'Ciència, fe, ', ur'd[\'’]abril de ', ur'València de ', ur'aplech de ', ur'della epica ', ur'\be de ', ur'amb la ', ur'Introducció a la ', ur'Outras ', ur'Sulla ', ur'Jornal de ', ur'Natura, ', ur'Elogi de la ', ur'Quart en ', ur'nella ', ur'vera ', ur'Premis Octubre de ', ur'Pedaliodes ', ur'Pronophila ', ur'Premi de ', ur'celobert. Antologia de ', ur'[Mm]elhores ', ur'[Rr]evista \'\'', ur'Jabuti de ', ur'perfetta ', ur'Futura: ', ur'MSC ', ur'na ', ur'mig editorial de ', ur'minha alma: '], xpos=[ur' (?:[di]|in|di|per|do|des|nell|nel|dins|dels|\'90|[Aa]cadèmica|[Pp]erifèrica|come|napoletana|al Carrer|dialettale|sarda e|satirica in|sempre|scritta|experimental en terres|[Nn]ova|en valencià|insular del segle|catalana del segle|lirica ed|numa|jove|sonora|kaierak|Mienia|No Condado|Escolhidas|contemporània|Completa \(1940|espanhola|eletronica|popolare|originale|Etna-Taormina|ed|comprometida com|spagnola|galega|banatua|bromélias|en acció|egípcia antiga|neoclàssica|[Ss]enza|noranta|xinesa|a quel|argentina e brasileira|e (?:storia|[Pp]rosa|sentimento|Composição|Crônica|retorica)|de (?:les|la Mediterrània|Marian Aguiló)|Espanhola)\b', ur'(?:: a paixão|\'+ y \'+Teatre|\.(?:cl|cat)|, (?:realisme, història|estética e política)|\'\', Antonio|[:,] \[\[(?:Paolo|contos|Enrico|Alessandro|Maria Luisa Spazani|Antonella))']) + #523
 lema(ur'_alemá_n_(?:Alem[aá]|alema)', pre=ur'\b(?:idioma) ') + #444
 lema(ur'_alemá_n_(?:Alem[aá]|alema)', pre=ur'\b(?:e[nl]|del?|y) ', xpre=[ur'por ', ur'Baile ', ur'Mina ', ur'Pozo ', ur'llamado ', ur'reales ', ur'entrega ', ur'hombres ', ur'presidencia ', ur'especialización ', ur'huyeran, ', ur'revolución ', ur'gobierno ', ur'[Mm]aestra ', ur'viuda ', ur'privado ', ur'catedrático ', ur'taller ', ur'Instituto ', ur'Magnani ', ur'Velasco ', ur'clases en Griego ', ur'estudió Inglés, Francés ', ur'Natural ', ur'Derecho\]\] ', ur'Internacional ', ur'Colegio Francés ', ur'Viganego ', ur'Sánchez ', ur'Sadoc ', ur'Farrill ', ur'Filosofía ', ur'Latín ', ur'Juan ', ur'Profesora ', ur'Profesor ', ur'Profesores ', ur'Sanscrito ', ur'alemán y ', ur'Espuny y ', ur'Aberardo ', ur'Cursos ', ur'Básico ', ur'Avanzado ', ur'Conrado ', ur'Diego ', ur'Hermann ', ur'Silvia ', ur'Velasco\]\] ', ur'Nicol[aá]s ', ur'Garnier ', ur'Valdez ', ur'Monterrey ', ur'Zorida ', ur'Programa ', ur'Diplomado ', ur'Didáctica ', ur'Columna ', ur'Huerta ', ur'Valdés ', ur'Schultz, ', ur'Henry ', ur'Herm[aá]n ', ur'Química ', ur'Español, ', ur'Departamento ', ur'Pedagogías ', ur'Estudios ', ur'Sanabria ', ur'ojos ', ur'Ortega ', ur'Sayula '], xpos=[ur' Transatlántico', ur'(?:"|\'\')']) + #444
-lema(ur'_francé_s_(?:Franc[eé]|france)', pre=ur'\b(?:e[ln]|del?|idioma) ', xpre=[ur'Guerra ', ur'maestra ', ur'Docencia ', ur'Diplomado ']) + #1
+lema(ur'_francé_s_(?:Franc[eé]|france)', pre=ur'\b(?:e[ln]|del?|idioma) ', xpre=[ur'José ', ur'Guerra ', ur'maestra ', ur'Docencia ', ur'Diplomado ']) + #1
 lema(ur'_japoné_s_(?:Japon[eé]|japone)', pre=ur'\b(?:idioma|e[nl]|del?|y) ', xpre=[ur'Diplomado ']) + #1
 lema(ur'_i_taliano_I', pre=ur'\b(?:idioma|e[nl]|del?|e) ', xpre=[ur'clases ', ur'Club ', ur'Francés e ', ur'Alemán y ']) + #1
 lema(ur'_c_oreano_C', pre=ur'\b(?:idioma|e[nl]|del?|e) ') + #1
 lema(ur'_inglé_s_(?:Ingl[eé]|ingle)', pre=ur'\b(?:e[ln]|del?|e) ', xpre=[ur'Diccionario ', ur'Gestión ', ur'Preescolar ', ur'en Francés ', ur'Nivel ', ur'Docencia ', ur'[Dd]epartamento ', ur'B\.A\. ', ur'Juan ', ur'Pedagogía ', ur'bilingüe ', ur'[Cc]lase ', ur'[Cc]lases ', ur'[Cc]ursos ', ur'[Cc]arreras ', ur'aparte ', ur'titula ', ur'[Pp]rofesores ', ur'[Pp]rofesor ', ur'Diplomado ', ur'Programa ', ur'[Ee]nseñanza ', ur'graduó ', ur'especializada ', ur'\bla ', ur'Mesa del ', ur'Piedra ', ur'Castellano ', ur'Castillo ', ur'orales ', ur'Maestra ', ur'[Pp]rogramas ', ur'Teacher ', ur'interrelacionados ', ur'Punta ', ur'Playa ', ur'Pico ', ur'Instituto ', ur'Física Nuclear ', ur'grado ', ur'profesor\]\]a ', ur'[Pp]rofesor ', ur'[Pp]rofesora ', ur'Profesorado ', ur'Maestría ', ur'Japón\]\] ', ur'Bogotá\)\|', ur'Playa ', ], xpos=[ur' (?:\(idiomas)', ur'\'\'']) + lema(ur'[Ii]ngl_é_s(?:\]\]|[,.]| \(pueblo)_e', xpre=[ur'Zach ', ur'Chris ', ur'Clube ', ur'cintura e ', ur'David ', ur'Nelson ', ur'J\. ', ur'Joe ', ur'Joe Ingles\|', ur'ojos e ', ur'las ', ur'sus ', ], xpos=[ur'[a-z]+', ur' (?:cuello|axilas|\(Bogotá)']) + #583
 lema(ur'_c_heco_C', pre=ur'\bde ', xpos=[ur' (?:a|Pérez)\b']) + #1
-lema(ur'_ú_nic(?:[ao]s|amente)_u', xpre=[ur'pedes dúo ', ]) + #1
 lema(ur'_ó_rbitas?_o', pre=ur'(?:[Ll]as?|[Ss]us?|[Uu]nas?|[Ee]n) ', xpre=[ur'que ']) + #1
 lema(ur'_é_tnic[ao]_e', xpre=[ur'rapporto ', ur'composizione ', ur'Dalmazia ', ], xpos=[ur' e resistenza', ur'\'', ]) + #1
 lema(ur'_ejé_rcito_Ej[eé]', pre=ur'(?:[Aa]l|[Ee]l|[Dd]el|[Uu]n|[Ss]u) (?:[Pp]rimer|[Ss]egundo|[Tt]ercer|[Cc]uarto|[Qq]uinto|[Ss]exto|[Ss]éptimo|[Oo]ctavo|[Nn]oveno|[Dd]écimo|[0-9]+º) ', xpos=[ur' (?:Panzer|Francés)']) + #1
@@ -12429,7 +12437,7 @@ lema(ur'[Rr]_í_gid(?:as|os?|amente)_i', xpos=[ur' e [Cc]erimonale']) + #1
 lema(ur'[Qq]u_í_mic[ao]_i', xpre=[ur'Uniao ', ur'Estudo '], xpos=[ur'cNova', ur'\.uady']) + #1
 lema(ur'[Pp]sicol_ó_gic[ao]_o', xpre=[ur'e ', ur'primo ', ], xpos=[ur' ed', ]) + #1
 lema(ur'[Pp]ol_í_tico_i', xpre=[ur'\be ', ur'\b[Ii]l ', ur'de \'\'', ur'ordinamento ', ur'periódico\)\|', ur'regime ', ur'come paradigma ', ur'categorie del ', ur'pensamento ', ur'regolarità del ciclo ', ur'Aspetti del realismo ', ur'Niente Asilo ', ur'The ', ur'canterò ', ur'il ', ur'significato ', ur'scritto ', ur'Niente Asilo ', ur'The ', ur'il ', ur'scritto ', ur'uomo ', ], xpos=[ur' (?:Centrale|dalla|delle|dei|di|\(periódico)\b', ur'\.(?:com| Diplomazia)']) + #1
-lema(ur'[Mm]_é_todo_e', xpre=[ur'\be ', ur'\b(?:di|[Ii]l) ', ur'Cirilo y ', ur'struktura ', ur'Introduzione al ', ur'genesi del ', ur'[Ss]ul ', ], xpos=[ur' (?:mui|facile|naturale|ipocondriaco|konparatzailea|[Cc]lassico|exposita|refrigerandi|Telecomunicacoes|storico|anal[ií]tico, filosofico e fisiologico|e tavole|per|di )', ur', Fonti', ]) + #109
+lema(ur'[Mm]_é_todo_e', xpre=[ur'\be ', ur'\b(?:di|[Ii]l) ', ur'Cirilo y ', ur'struktura ', ur'Introduzione al ', ur'genesi del ', ur'[Ss]ul ', ], xpos=[ur' (?:mui|facile|naturale|galileiano|ipocondriaco|konparatzailea|[Cc]lassico|exposita|refrigerandi|Telecomunicacoes|storico|anal[ií]tico, filosofico e fisiologico|e tavole|per|di )', ur', Fonti', ]) + #109
 lema(ur'[Ll]ogr_ó_ +(?:el|la|los|las|un|una|unos|unas|dos|tres|cuatro|cinco)_o', xpre=[ur'(?:[Uu]n|[Ss]u|[Ll][eo]|[Ss]e) ', ur'mayor ', ur'[Ee]ste ', ur'[Ss]e (?:me|te|l[aeo]) ', ur'[Ss]e l[aeo]s ']) + #1
 lema(ur'[Ii]nt_é_rprete_e', pre=ur'(?:[Ll]a|[Ee]l|[Uu]na?|como) ', xpre=[ur'no '], xpos=[ur' (?:como|siente|\'\'a capella|el|[ay] )']) + #1
 lema(ur'[Ff]_á_ciles_a', xpre=[ur'T\. ', ur'Tugulusaurus ', ur'[Pp]ièces ', ], xpos=[ur' (?:à|pour|et)', ]) + #1
@@ -12693,7 +12701,7 @@ lema(ur'[Mm]and_í_bulas?_i', xpre=[ur'uma ', ur'Euphitrea '], xpos=[ur'\]\]res'
 lema(ur'[Mm]eteorol_ó_gic[ao]s?_o', xpre=[ur'Società ', ur'Societas ', ur'Meteorología \(', ur'Servizio ', ], xpos=[ur'\'\'']) + #59
 lema(ur'[Mm]ol_é_culas?_e', xpre=[ur'Truncatellina '], xpos=[ur'(?:\]\]r(?:es|)|\.cl)', ]) + #58
 lema(ur'[Nn]umism_á_tic[ao]s?_a', xpre=[ur'Antiqua ', ur'della ', ur'Bibliotheca ', ur'\bdi '], xpos=[ur' (?:e antichità|- Descrizione)']) + #24
-lema(ur'[Pp]_á_nicos?_a', xpre=[ur'\bdi ', ur'Sami ', ur'Timor ', ur'Dario ', ur'Giovanni ', ur'Patrizia ', ur'Panico\|', ur'Giuseppe '], xpos=[ur' (?:O|Ia[ck]ovou|Chrysanthou|urvilleani|Pirata|Na)\b', ur'(?:\'s|! La creazione)']) + #113
+lema(ur'[Pp]_á_nicos?_a', xpre=[ur'\bdi ', ur'Sami ', ur'Timor ', ur'Dario ', ur'Giovanni ', ur'Patrizia ', ur'Panico\|', ur'Giuseppe '], xpos=[ur' (?:O|Ia[ck]ovou|Chrysanthou|urvilleani|Orphanides|Pirata|Na)\b', ur'(?:\'s|! La creazione)']) + #113
     lema(ur'[Pp]_á_rroc[ao]s?_a', xpre=[ur'dell\'ex '], xpos=[ur' (?:i|di|in)\b']) + #103
 lema(ur'[Pp]anor_á_mic[ao]s?_a', xpos=[ur' (?:di|della)\b']) + #318
 lema(ur'[Pp]ar_á_metros?_a', xpre=[ur'int ', ], xpos=[ur', (?:n|Roma)\b']) + #58
@@ -12740,7 +12748,7 @@ lema(ur'¿[Pp]or_ qué__(?:qu[eé]| [Qq]ue)', xpos=[ur' decide establecer']) + #
 # lema(ur'[Pp]r_á_ctic[ao]_a', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Dd]e) ', xpre=[ur'nadie ', ur'aun ', ur'se ']) + #1
 lema(ur'[Pp]r_á_ctica_a', pre=ur'(?:[Aa]|[Ee]n|[Dd]e|[Uu]na?|[Pp]ara) la ', xpos=[ur' (?:iudiciaria|della)']) + #1
 lema(ur'[Rr]_é_cords?_e', pre=ur'(?:[Ll]os|[Uu]nos|[Ee]l|[Uu]n|[Ss]us?|nuevos?|anterior(?:es|)|otros?) ', xpos=[ur' (?:i|o un Recordset|Week|Store|Manager|Plant|Academy|[Rr]eport)\b']) + #1
-lema(ur'[Rr]_é_cords? (?:del?|que|Guiness|absoluto|[Mm]undial|[Oo]l[ií]mpico)_e', xpre=[ur'(?:[Ee]l|[Uu]n|[Ss]u) ', ur'\b[KM] ', ur'Bros\. ', ur'ABC ', ur'Active ', ur'Jazzman ', ur'Atlantic ', ur'Wondaland ', ur'URL ', ur'Fear ', ur'Virgin ', ur'Columbia ', ur'Radish ', ur'Daily ', ur'Selectric ', ur'Doorn ', ur'Invasion ', ur'Flicker ', ur'Capitol ', ur'House ', ur'Repsychled ', ur'Counterfeit ', ur'Tower ', ur'Blind ', ur'RCA ', ur'Earache ', ur'Cleopatra ', ur'Hollywood ', ur'MODE ', ur'Nine ', ur'Elígeme ', ur'Pulse ', ur'London ', ur'Jive ', ur'Ultra ', ur'Reprise ', ur'Napalm ', ur'Stiff ', ur'nuevo ', ur'anterior ', ur'otro ', ur'speed ', ur'Rede ', ur'Cinematic ', ur'World ', ur'Boot ', ], xpos=[ur' (?:l|France|Saló|Comunicações|València)\b']) + #1
+lema(ur'[Rr]_é_cords? (?:del?|que|Guiness|absoluto|[Mm]undial|[Oo]l[ií]mpico)_e', xpre=[ur'(?:[Ee]l|[Uu]n|[Ss]u) ', ur'\b[KM] ', ur'Bros\. ', ur'ABC ', ur'Active ', ur'Jazzman ', ur'Atlantic ', ur'Colpix ', ur'Gigolo ', ur'Dekathlon ', ur'Wondaland ', ur'URL ', ur'Fear ', ur'Virgin ', ur'Columbia ', ur'Radish ', ur'Daily ', ur'Selectric ', ur'Doorn ', ur'Invasion ', ur'Flicker ', ur'Capitol ', ur'House ', ur'Repsychled ', ur'Counterfeit ', ur'Tower ', ur'Blind ', ur'RCA ', ur'Earache ', ur'Cleopatra ', ur'Hollywood ', ur'MODE ', ur'Nine ', ur'Elígeme ', ur'Pulse ', ur'London ', ur'Jive ', ur'Ultra ', ur'Reprise ', ur'Napalm ', ur'Stiff ', ur'nuevo ', ur'anterior ', ur'otro ', ur'speed ', ur'Rede ', ur'Cinematic ', ur'World ', ur'Boot ', ], xpos=[ur' (?:l|France|Saló|Comunicações|València)\b']) + #1
 lema(ur'[Hh]echi_c_er[ao]s?_z', xpre=[ur'bruxa y '], xpos=[ur' Band']) + #1
 lema(ur'[Cc]_á_ncer_a', pre=ur'(?:[Ee]l|[Uu]n|al|del?|por|tenía|tiene|tuvo) (?:\[\[|)', xpos=[ur' (?:and|Therapy|pagurus|Council|Bats|Research|Immunology)\b']) + #1
 lema(ur'[Cc]_á_ncer(?:\]\]|) (?:del?|en)_a', xpre=[ur'(?:[Ee]l|[Uu]n|al|de) \[\[', ur'(?:[Ee]l|[Uu]n|al|de) ', ur'(?:del|por) \[\[', ur'(?:del|por) ', ur'Gastric ', ur'Dinah '], xpos=[ur' (?:la MEN|inglés)']) + #1
@@ -12770,7 +12778,7 @@ lema(ur'[Hh]om_ó_log[ao]s?_o', xpre=[ur'coordina y ', ur'[Qq]ue ', ur'\b(?:[Ss]
 lema(ur'[Ll]_l_amad[ao]s?_', xpos=[ur' Award']) + #1
 lema(ur'[Mm]_é_dica_e', xpre=[ur'\b(?:se|et) ', ur'physico ', ur'Questio ', ur'politice ', ur'Citrus ', ur'John ', ur'Excerpta ', ur'Eduardo ', ur'Scuola ', ur'[Aa]rs ', ur'Clio ', ur'Tesis ', ur'Micaria ', ur'Praecepta ', ur'[Mm]ateria ', ur'Mariana Practica ', ur'dottrina ', ur'\be ', ur'Tipula ', ur'\b[Rr]e ', ur'T\. '], xpos=[ur' (?:nell|[Cc]ompleta|Inauguralis|Italo-Argentina|et|nel|facultate|libri|sistens|e dell)\b', ur', Battat']) + #1
 lema(ur'[Ee]st_á_[ns]?_à', xpre=[ur'Mercè '], xpos=[ur' (?:fent|al exconvento|em|triomfant|amb|gotjant|ben|per|si bull|envoltada|llenot|enamorat|oberta|el nostre|es Canal|blau|pioc|a|perduda|constituït|clar|mort|relacionada formalement|en (?:dit|crisi|consonància|son|xinès)|ensorrant|malalt|assegurada|mai|embelt|“marginat|damunt|que bossa|sol)\b']) + #1
-lema(ur'[Mm]ar_í_tima_i', xpre=[ur'Sueda ', ur'latín\]\] \'\'', ur'\b[ABL]\. ', ur'subsp\. ', ur'ssp\. ', ur'var\. ', ur'var\. \'\'', ur'Prunus\]\] ', ur'912 ', ur'912\) ', ur'Anurida ', ur'Ruppia ', ur'Muilla ', ur'Matricaria ', ur'Diospyros ', ur'Puccinellia ', ur'Armeria ', ur'Missao de Biologia ', ur'Stachys ', ur'Dipsastraea ', ur'Draba ', ur'Drimia ', ur'Glyce ', ur'Scabiosa ', ur'Alnus ', ur'Cleome ', ur'Cicindela ', ur'Lavatera ', ur'[Ss]partina ', ur'Alnus ', ur'Linaria ', ur'Armenia ', ur'lobularia ', ur'Lasaia ', ur'Salsola ', ur'Chenopodina ', ur'Cryptantha ', ur'Octadenia ', ur'Gnaphosa ', ur'Ipomoea ', ur'Silene ', ur'Urginea ', ur'Artemisia ', ur'Abronia ', ur'Anthemis ', ur'Senckenbergiana ', ur'Armeria', ur'Festuca ', ur'pars ', ur'[Ll]oca ', ur'Glaucoides ', ur'Geositta ', ur'Chromodoris ', ur'ditione ', ur'maritima ', ur'Calendula ', ur'Kakile ', ur'Eurybia ', ur'Mertensia ', ur'Calidris ', ur'Strumpfia ', ur'Carex ', ur'Glaux ', ur'Crucianella ', ur'Mammillaria ', ur'[Ss]uaeda ', ur'Suriana ', ur'Hypselodoris ', ur'Suaeda ', ur'Statice ', ur'\b[Oo]ra ', ur'Batis ', ur'Cakile ', ur'Malcolmia ', ur'Remirea ', ur'Crambe ', ur'Lysimachia ', ur'Urginea ', ur'Vignea ', ur'vulgaris ', ur'Strumpfia ', ur'Jacobaea ', ur'Koniga ', ur'Clypeola ', ur'Prunus ', ur'Lobularia ', ur'Plantago ', ur'Caesarea ', ur'Pinus ', ur'[Rr]uppia ', ur'Thermotoga '], xpos=[ur' (?:in|Centrum|reveal|din|Italorum|omnis|uocauit|crudelissime|\(costera|tiene un \[\[periodo)\b', ur'\'\'']) + #1
+lema(ur'[Mm]ar_í_tima_i', xpre=[ur'Nicea ', ur'Sueda ', ur'latín\]\] \'\'', ur'\b[ABL]\. ', ur'subsp\. ', ur'ssp\. ', ur'var\. ', ur'var\. \'\'', ur'Prunus\]\] ', ur'912 ', ur'912\) ', ur'Anurida ', ur'Ruppia ', ur'Muilla ', ur'Matricaria ', ur'Diospyros ', ur'Puccinellia ', ur'Armeria ', ur'Missao de Biologia ', ur'Stachys ', ur'Dipsastraea ', ur'Draba ', ur'Drimia ', ur'Glyce ', ur'Scabiosa ', ur'Alnus ', ur'Cleome ', ur'Cicindela ', ur'Lavatera ', ur'[Ss]partina ', ur'Alnus ', ur'Linaria ', ur'Armenia ', ur'lobularia ', ur'Lasaia ', ur'Salsola ', ur'Chenopodina ', ur'Cryptantha ', ur'Octadenia ', ur'Gnaphosa ', ur'Ipomoea ', ur'Silene ', ur'Urginea ', ur'Artemisia ', ur'Abronia ', ur'Anthemis ', ur'Senckenbergiana ', ur'Armeria', ur'Festuca ', ur'pars ', ur'[Ll]oca ', ur'Glaucoides ', ur'Geositta ', ur'Chromodoris ', ur'ditione ', ur'maritima ', ur'Calendula ', ur'Kakile ', ur'Eurybia ', ur'Mertensia ', ur'Calidris ', ur'Strumpfia ', ur'Carex ', ur'Glaux ', ur'Crucianella ', ur'Mammillaria ', ur'[Ss]uaeda ', ur'Suriana ', ur'Hypselodoris ', ur'Suaeda ', ur'Statice ', ur'\b[Oo]ra ', ur'Batis ', ur'Cakile ', ur'Malcolmia ', ur'Remirea ', ur'Crambe ', ur'Lysimachia ', ur'Urginea ', ur'Vignea ', ur'vulgaris ', ur'Strumpfia ', ur'Jacobaea ', ur'Koniga ', ur'Clypeola ', ur'Prunus ', ur'Lobularia ', ur'Plantago ', ur'Caesarea ', ur'Pinus ', ur'[Rr]uppia ', ur'Thermotoga '], xpos=[ur' (?:in|Centrum|reveal|din|Italorum|omnis|uocauit|crudelissime|\(costera|tiene un \[\[periodo)\b', ur'\'\'']) + #1
 lema(ur'[Dd]emocr_á_tic[ao]_a', xpre=[ur'dittatore ', ur'Organizzazione ', ur'Editrice ', ur'Convergència ', ur'della teoria ', ur'Esquerra ', ur'istituita la ', ur'Partito Socialista ', ur'Partito ', ur'Sinistra ', ur'Liberalis ', ur'do Movimento '], xpos=[ur' (?:di|in|per|pra|Cinque|Svizzero|Nazionale|Repubblicana|della)\b']) + #1
 lema(ur'_t_v_T', pre=ur'de ', xpos=[ur' Azteca']) + #7506
 lema(ur'[Mm]_é_danos?_e', xpos=[ur' Alt']) + #1
@@ -12823,7 +12831,7 @@ lema(ur'[Cc]om_í_a[ns]?_i', xpre=[ur'Laiza ', ur'mulher que ', ], xpos=[ur'\]\]
 lema(ur'Brun_é_i_e', xpre=[ur' (?:of|in) ', ur'from ', ur'The ', ur'Shah ', ur'Sungai ', ur'Independent Borneo – ', ur'DBP:', ur'Empayar ', ur'Melayu ', ur'Daerah ', ur'Televisyen ', ur'Teluk ', ur'Concert ', ur'Diraja ', ur'Malaysia, ', ur'Muzium ', ur'Populaire de ', ur'Mahkota ', ur'Royal ', ur'Saru ', ur'School ', ur'Sungei ', ur'for ', ], xpos=[ur' (?:DPMM|Moden|Gallery|Super|Amateur|Yang|Times|Town|History|Shell|Museum|Rock|Investment|Project|Princess|Business|Beauty|People|Premier|Darussalam|- List)', ur': The']) + #431
 lema(ur'Canad_á_ *,_a', xpre=[ur'Health ', ur'Martin ', ur'Aircraft ', ur'Roe ', ur'Siddeley ', ur'Havilland ', ur'Avro ', ur'Western ', ur'UK, ', ur'Development ', ur'Skate ', ur'Exposing ', ur'Bell ', ur'Primus ', ur'Rommel ', ur'Par[ck]s ', ur'Music ', ur'Hello! ', ur'\bO ', ur'\b(?:[Oo]f|[Dd]u|[Tt]o|[Ii]n) ', ur'\bfor ', ur'in Toronto, ', ur'Statistics ', ur'Team ', ur'Blame ', ur'Resources ', ur'Child ', ur'Don Mills Ontario ', ur'Education ', ur'Arctic ', ur'Indiangrass - ', ur'Intuit ' ur'Statistics ', ur'Marport ', ur'Environment ', ur'Agriculture ', ur'Air ', ur'Bechtel ', ur'Intuit ', ur'Horizon ', ur'Press ', ur'Woolworth ', ur'Shell ', ur'BP ', ur'against ', ur'Transport ', ], xpos=[ur' (?:we|UK|Geoffrey|Golf|Inc\.|EL Nicholls|Museum|architects|Journal|and|Latin America|Russia|Bibliothèque|Hochelaga|ISL-1129|7E-2008)']) + #1453
 lema(ur'Canad_á__a', pre=ur'\b(?:[Dd]e|[Ee]n|y) ', xpre=[ur'W\. ', ur'Education ', ur'Statistics ', ur'Dominion ', ur'[Mm]unicipio ', ur'[Rr]ivière ', ], xpos=[ur' (?:Fed|EIC|Basketball|Dept|Packers|Bread|Water|State|Soccer|Dry)', ur'(?:\.[Cc]om|\'s|,)', ]) + #70
-lema(ur'Dom_í_nguez_i', xpre=[ur'P ', ur'R\.; ', ur'P\. ', ur'd\'Oscar ', ur'Patrice Dominguez\|', ur'Patrice ', ur'Patrick ', ], xpos=[ur' Hills', ]) + #1105
+lema(ur'Dom_í_nguez_i', xpre=[ur'P ', ur'R\.; ', ur'P\. ', ur'Eléonore ', ur'd\'Oscar ', ur'Patrice Dominguez\|', ur'Patrice ', ur'Patrick ', ], xpos=[ur' Hills', ]) + #1105
 lema(ur'Hern_á_ndez_a', xpre=[ur'\bby ', ur'over ', ur'Ferreyra ', ur'Feuntes ', ur'Patrick ', ur'Joe ', ur'Cole ', ur'Laurie ', ur'Jason ', ur'Gérard '], xpos=[ur' (?:High|Satyricon|es actualmente)', ur', Kelly']) + #1
 lema(ur'M_é_ndez_e') + #1
 lema(ur'P_á_ez_a') + #1
@@ -12832,7 +12840,7 @@ lema(ur'Jerusal_é_n_e', xpre=[ur'frayre a ', ur'Hapoel ']) + #139
 lema(ur'Ju_á_rez_a', xpre=[ur'the Sierra de ', ur'\bof ', ], xpos=[ur' (?:do|et|City|Fuel|Murders|Elementary|Távora|Hidden|\((?:Texas|canción)|Community)\b', ur'\]', ]) + #412
 lema(ur'Mart_í_n_i', pre=ur'San ', xpre=[ur'\bof ', ur'the ', ur'Ameskoako ', ur'and ', ur'2745\) '], xpos=[ur' (?:Came|[Ii]n|et|Txiki|Station|\(California)', ur'\'s', ur', California', ]) + #569
 lema(ur'Mazatl_á_n_a', xpos=[ur' Times', ur': Sea', ]) + #28
-lema(ur'Tur_í_n_i') + #28
+lema(ur'Tur_í_n_i', xpre=[ur'Gentilhombre '], xpos=[ur' Ferroviaire']) + #28
 lema(ur'Mil_á_n_a', pre=ur'(?:[Dd]e|[Ee]n) ', xpre=[ur'amor ', ur'nombre ', ur'político ', ur'muerte ', ur'marcha ', ur'favor ', ur'africain ', ur'esposa ', ur'Maître ', ur'Africain ', ur'Dame ', ur'politiques ', ur'aldea ', ur'amante ', ur'padre ', ur'favor ', ur'Passage ', ur'Internazionale ', ur'Bâton de Jean ', ur'Pico ', ur'personas residiendo ', ur'Princesse ', ur'Jefa ', ur'Naturale ', ur'Scala ', ur'Valentine ', ur'[Mm]unicipio ', ur'l\'Etat ', ], xpos=[ur' (?:\(fue mucho|Trenc|Gurovic|oeste|Football|Piqué|Stojadinović|Ivelic|Vidmar|Knížák|Ciganović|Lalkovič|Janković|Studios|Kadlec|Kosovac|Bandić|Gorkić|Bisevac|Turkovic|[Dd]i|Kundera|Melvin|Begović)', ]) + #261
 lema(ur'Neuqu_é_n_e', xpre=[ur'7'], xpos=[ur' Trabvun']) + #1
 lema(ur'Guzm_á_n_a', xpre=[ur'Roderici de '], xpos=[ur' audience']) + #1
@@ -12850,7 +12858,7 @@ lema(ur'[Aa]di_ó_s_o', xpre=[ur'Vaarwel, ', ur'nombre de \'\''], xpos=[ur' (?:a
 lema(ur'[Aa]gon_í_as?_i', xpre=[ur'\b(?:da|by) ', ur'Dolce ', ur'Theresa ', ur'Crisi e ', ur'l\''], xpos=[ur' (?:de (?:Llum|l\'home)|dels|Records|la dels)', ur'(?:\'\' en catalán|<br/>Deathstrike|, 2004)']) + #1
 lema(ur'[a]gr_í_colas?_i', xpre=[ur'[AHOo]\. ', ur'calcaratus ', ur'ricerca ', ur'thraso ', ur'Coccospora ', ur'Gecarcinus ', ur'Heliophanus ', ur'Ochlodes ', ur'Acrocephalus ']) + #1
 lema(ur'[Aa]legor_í_as?_i', xpre=[ur' da ', ur' e ', ], xpos=[ur' (?:da |Moral|al Paraná|Polski)', ur', Warszaw', ]) + #31
-lema(ur'[Aa]legr_í_as?_i', xpre=[ur'Un ', ur'Ter ', ur'Muita ', ur'Paguristes ', ur'Lautaro ', ur'So ', ur'Eqüestre ', ur'Chã de ', ur'minha ', ur'Epipactis.. ', ur' da ', ur' [eé] ', ur'[Ll][’\']', ur'Provavelmente ', ur'Alegria, ', ur'Cartola\)\|', ur'Ousadia & ', ur'Outras ', ur'A '], xpos=[ur' (?:i|Productions|do|Ao|de viure|de Viver|e Ternura|É Viver|minha|que passa|\(canção)\b', ur'(?:[\'´]s|, Alegria|’s)']) + #1
+lema(ur'[Aa]legr_í_as?_i', xpre=[ur'Un ', ur'Ter ', ur'Muita ', ur'Paguristes ', ur'Lautaro ', ur'So ', ur'Eqüestre ', ur'Chã de ', ur'minha ', ur'Epipactis.. ', ur' da ', ur' [eé] ', ur'[Ll][’\']', ur'Provavelmente ', ur'Alegria, ', ur'Cartola\)\|', ur'Ousadia & ', ur'Outras ', ur'A '], xpos=[ur' (?:i|Productions|do|Ao|de viure|de Viver|e Ternura|Cristā|É Viver|minha|que passa|\(canção)\b', ur'(?:[\'´]s|, Alegria|’s)']) + #1
 lema(ur'[Aa]mar_á__a', pre=ur'(?:[MmTt]e|[Nn]os) ', xpre=[ur'dejar que ', ur'Si ella ']) + #1
 lema(ur'[Aa]nt_á_rtic[ao]s?_a', xpre=[ur'Nothofagus ', ur'Dicksonia ', ur'Ginkgoites ', ur'Vesperal ']) + #1
 lema(ur'[Aa]ntolog_í_as?_i', xpre=[ur'\be ', ur'\bna ', ur'\be vividos - ', ur'inquietants\. ', ur'Cançó. ', ur'vacants\. ', ur'Un\'', ur'L\'', ur'etsiko\. ', ur'cançó\. ', ur'Pierwsza ', ur'Palavras: ', ur'rua\. ', ur'Possibles, II \(', ur'Possibles, I \(', ur'Crew - ', ur'Nova ', ur'il\'', ur'II - ', ur'Ionios ', ur'Grande ', ur'Petita ', ur'Nuova ', ur'uma ', ur'celobert\. ', ur'literaturaren ', ur'Gacitúa ', ur'adversos: ', ur'Poesiaren ', ur'Klasikoen ', ur'adolescência: ', ur'beltzaren ', ur'continu : una ', ur'd[\'’]', ur'perduto\. ', ur'ride ', ], xpos=[ur' (?:até|sonora della|Poetica 1971-1998|[Pp]oètica|[Pp]oética(?:\'\'\. Belo| - selecção|\'\' - Porto|\'\' \(1962|\'\' \[\[1963|\'\' - Editora do|\'\' \(nova)|\'\', Barcelona, Edicions|\+ 3 inediti|dos|nos|Musicale|italiana per|della|degli|de (?:Trovadores|II Poetas do|Pedro Velho|joves|literatures|poetów|poemes|la poesía alemanya|10 anys|poemas dos|poetica dedicata|poesia universitária|poesia do século|Contos|poetes|Cants|l[\'’])|d[aio]|d\'un|del grande|dalle|dei|dos|bat|dels|\(Recopilatorio|general de la poesia catalana\'\', Edicions|74-99|comentada de literatura brasileira|i collecció|post-junghiana|kabaretu|Contemporânea|luso-brasileira|poezji|poeziei|poetek|polskiej|Poética|internazionale|storico|pessoal|privata|opowiadań|bachiczna|Pessoal|Festivalului|scritti|Catalana|del nou|de (?:la nova|poesía portuguesa erótica e|poetica dedicata|Poetas Brasileiros)|e storia|\'\'Een)', ]) + #297
@@ -12860,7 +12868,7 @@ lema(ur'[Aa]rmon_í_as?_i', xpre=[ur'Gruppo ', ur'\be ', ur'\bdi ', ur'[LlDd][´
 lema(ur'[Aa]rtr_ó_pod[ao]s?_o', xpre=[ur'los ', ]) + #17
 lema(ur'[Aa]si_á_tica_a', xpre=[ur'[ABCeGHhLMOPRrSTZ]\. ', ur'formas \'\'', ur'subespecie \'\'', ur'Hoplolabis ', ur'Anthopleura ', ur'Austrolimnophila ', ur'Anoxia ', ur'Isoetes ', ur'Solpugella ', ur' var\. \'\'', ur'Achillea ', ur'Acrolepia ', ur'Actaea ', ur'Adlumia ', ur'Agrimonia ', ur'Amelanchier ', ur'Amphipoea ', ur'Andrena ', ur'Annona ', ur'Antiphylla ', ur'Barringtonia ', ur'Bevanda ', ur'Bryolichenologica ', ur'Buddleja ', ur'Bulbine ', ur'Centella ', ur'Centrolepis ', ur'Cetonia ', ur'Channa ', ur'Cholera ', ur'Chrysochloris ', ur'Chrysocloris ', ur'Cicindela ', ur'Colubrina ', ur'Colubrina\]\] ', ur'Coscinida ', ur'Crantzia ', ur'Cuviera ', ur'Cymodocea ', ur'Cyprianthe ', ur'Digitivalva ', ur'Dysdera ', ur'Encyclopaedia ', ur'Eomerope ', ur'Eremogone ', ur'Epigaea ', ur'Euphydryas ', ur'Fagus ', ur'Galenia ', ur'Garnotia ', ur'Gmelina ', ur'Golshanichthys ', ur'Grewia ', ur'Hanabusaya ', ur'Hemicordulia ', ur'Hoplolabis ' ur'Hepatica ', ur'Hersilia ', ur'Hilaira ', ur'Hitobia ', ur'Hydrocotyle ', ur'Ischnura ', ur'Isoperla ', ur'Itineria ', ur'Keumkangsania ', ur'Laetesia ', ur'Lechytia ', ur'Lycosa ', ur'Macaroeris ', ur'Malus ', ur'Mammea ', ur'Malouetia ', ur'Manotes ', ur'Megachile ', ur'Megalaima ', ur'Melanophthalma ', ur'Mentha ', ur'Monolepis ', ur'Monsonia ', ur'Morisonia ', ur'Musée ', ur'Nectarinia ', ur'Oparba ', ur'Ornitrophe ', ur'Osmunda ', ur'Parasteatoda ', ur'Padus ', ur'Parasyrisca ', ur'Perdicula ', ur'Plantago ', ur'Prunella ', ur'Pseudiosma ', ur'Rana ', ur'Rivetina ', ur'Sakaina ', ur'Saxifraga ', ur'Scyloxes ', ur'Sida ', ur'Setaria ', ur'Sillago ', ur'Spirochaeta ', ur'Striga ', ur'Symphyandra ', ur'Tarenna ', ur'Teilhardina ', ur'Tetracera ', ur'Toddalia ', ur'Torenia ', ur'Triglochin ', ur'Vallisneria ', ur'Zala ', ur'Zenaida ', ur'Zostera ', ur'asiatica ', ur'europaea ', ur'società ', ur'ssp\. ', ur'ssp\. \'\'', ur'subsp\. ', ur'var\'\'\'\. \'\'\'\'\'', ur'var\. ', ], xpos=[ur', vol\. 6', ur' (?:Film Mediale|Barringtonia|equitatu)', ]) + #19
 lema(ur'[Aa]stronom_í_as?_i', xpre=[ur'\be ', ur'(?:De|di) ', ur'[DdLl][’\']', ur'Mathematici de ', ur'1154\) ', ur'llibre de la ', ur'rotunda\|', ur'sua ', ur'Prodromus ', ur'dell\'', ur'della ', ], xpos=[ur' (?:alla|lunaris|[Nn]ova|e Ciencias|del rei|des|Esperanto-Klubo|reformata|2014 \[Gratis)', ur'(?:\.net|, Geofísica e Ciências|[0-9])']) + #88
-lema(ur'[Aa]t_ó_mic[ao]s?_o', xpre=[ur'Fizica ', ur'Desyello ', ur'Zanzara ', ur'formica ', ur'rubammo la bomba ', ur'vis ', ], xpos=[ur' (?:e altri|and|cinese|Patibulo)', ur'\]', ]) + #22
+lema(ur'[Aa]t_ó_mic[ao]s?_o', xpre=[ur'\be ', ur'Fizica ', ur'Desyello ', ur'Zanzara ', ur'formica ', ur'rubammo la bomba ', ur'vis ', ], xpos=[ur' (?:e altri|and|cinese|Patibulo)', ur'\]', ]) + #22
 lema(ur'[Aa]ut_ó_cton[ao]s?_o', xpos=[ur' per', ]) + #28
 lema(ur'[Aa]ut_ó_grafos?_o', xpre=[ur'dell[\'’]', ur'di un ', ]) + #39
 lema(ur'[Bb]_í_ceps_i', xpre=[ur'N\. ', ur'Math\. ', ur'Paikiniana ', ur'Pelecopsis ', ur'[Bb]rachii ', ur'Pseudanabaena ', ur'Pseuderanthemum ', ur'Athyreus ', ur'Acianthera ', ur'Neoathyreus ', ur'Eupatorium ', ur'Mathesis ', ur'Tiso '], xpos=[ur' (?:slicer|femoris|Brachii)']) + #101
@@ -12875,7 +12883,7 @@ lema(ur'[Cc]_á_rcel(?:es|)_a', xpre=[ur'Fran ', ur'Guillaume ', ur'[Cc]alle '],
 lema(ur'[Cc]_í_vic[ao]s?_i', xpre=[ur'Dictyna ', ur'Galleria ', ur'Doroteo ', ur'Senso ', ur'Arena ', ur'[Mm]useum ', ur'Pinacoteca ', ur'Lista ', ur'Museo ', ur'e Humanismo '], xpos=[ur' (?:d\'|[Mm]useo|Orto|Istituto|uniti|Storico|di|Raccolta|Planetario)\b', ur', Bologna']) + #793
 lema(ur'[Cc]_ó_leras?_o', xpre=[ur'\bdal ', ur'\bRem ', ur'[Ii]l ', ur'Mendiri y ', ur'Quirze de ', ur'Quirico de ', ur'Estación de ', ur'Colera\|', ur'Boned ', ur'\| \[\[', ur'\| '], xpos=[ur' (?:Jiménez|Morbo|[Mm]orbus|· \'\'\'Portbou)', ur'(?:\]\](?:,| y) \[\[Portbou|\]\] cercano)', ]) + #168
 lema(ur'[Cc]_ó_mic(?:as?|o)_o', xpre=[ur'\b(?:de|at) ', ur'Absurda ', ur'Theatro ', ur'ricreatione ', ur'Discoides ', ur'Scena ', ur'Stelis ', ur'di un ', ur'nasce un ', ur'Il Poeta '], xpos=[ur' (?:Valkyrie|caduto|spettacolo|Comics)\b', ur'(?:[0-9:\]\']|\.jp)']) + #1
-lema(ur'[Cc]_ó_mics?_o', pre=ur'\b(?:[Uu]n|[Ee]l|[Ll]os|de|en) ', xpos=[ur' (?:Relief|books?|Earth|Bulletin|[Cc]on|Vine|Book|Strip|Buyer|Code)', ur'\.com']) + #384
+lema(ur'[Cc]_ó_mics?_o', pre=ur'\b(?:[Uu]n|[Ee]l|[Ll]os|de|en) ', xpos=[ur' (?:Relief|books?|Earth|News|Bulletin|[Cc]on|Vine|Book|Strip|Buyer|Code)', ur'\.com']) + #384
 lema(ur'[Cc]anciller_í_as?_i', xpre=[ur'documents de la '], xpos=[ur'\.go[bv]']) + #16
 lema(ur'[Cc]arn_í_vora_i', xpre=[ur'[Oo]rden ', ur'Orden: ', ur'Orden \'\'', ur'Category:', ur'Order ', ur'\[', ur'Anexo:', ur'Union: ', ur'edición de ', ur'Orden '], xpos=[ur' (?:==|Dracunivora)', ur' and', ur'(?:: Canidae|\'\'\'\|y \[\[Miacoidea|, (?:Fissipedia|Ursidae))']) + #1
 lema(ur'[Cc]artograf_í_as?_i', xpre=[ur'és la '], xpos=[ur' (?:da|dell|fitoclimatica dell|medievale|de Barcelona, del segle)\b', ur'\]\]da']) + #16
@@ -12902,7 +12910,7 @@ lema(ur'[Aa]mnist_í_as?_i', xpre=[ur'Art ', ur'L\'', ur'Premi ', ], xpos=[ur' (
 lema(ur'[Ee]con_ó_mica_o', pre=ur'\b(?:y|más|Antropolog[ií]a|Ciudad|[Cc]omisi[oó]n|[Cc]ompensacion|[Cc]onferencia|[Cc]omunidad|[Cc]ooperaci[óo]n|[Dd]epresi[oó]n|[Gg]uerra|[Vv]ida|[Pp]articipaci[oó]n|[Dd]euda|fuente|[Bb]iblioteca|[Oo]pción|[Aa]portación|[Aa]ctividad|[Hh]istoria|[Cc]lase|[Cc]ultura|[Cc]risis|[Cc]iencia|[Mm]undial|[Pp]olitica,?|[Rr]ecesión|[Rr]egi[oó]n|[Ss]ituaci[oó]n|zona) ', xpre=[ur' di ', ur'nuova ', ], xpos=[ur' (?:tra)\b']) + #25
 lema(ur'[Ee]ntr_ó_ (?:al?|en)_o', xpos=[ur' (?:el gran buit|otro mundo)', ]) + #92
 lema(ur'[Ee]nv_í_a_i', xpre=[ur'Shimano ', ], xpos=[ur' (?:220|garciai|\'m)', ur'(?:\]|\'m)', ]) + #29
-lema(ur'[Ee]p_í_stolas?_i', xpre=[ur'\'\'', ur'\bin ', ur'cum ', ur'Poet\. 50; ', ur'apostoli ', ur'suum ', ur'seu ', ur'Pauli ', ur'Romani \.\.\. ', ur'Rajum\.\.\. ', ur'Plantarum ', ur'Theatri ', ur'Remensem ', ur'Mertensium ', ur'plantarum ', ], xpos=[ur' (?:ad|et|às|em|di|Pelagianorum|quare|Pauli|Mathildis|Sancti|Clementi|Cuthberti|Pio|Julii|de (?:nihilo et|Symphysia|secretis)|Petri|partic)\b', ]) + #197
+lema(ur'[Ee]p_í_stolas?_i', xpre=[ur'\'\'', ur'\bin ', ur'per ', ur'cum ', ur'Poet\. 50; ', ur'apostoli ', ur'suum ', ur'seu ', ur'Pauli ', ur'Romani \.\.\. ', ur'Rajum\.\.\. ', ur'Plantarum ', ur'Theatri ', ur'Remensem ', ur'Mertensium ', ur'plantarum ', ], xpos=[ur' (?:ad|et|às|em|di|Pelagianorum|quare|Pauli|Mathildis|Sancti|Clementi|Cuthberti|Pio|Julii|de (?:nihilo et|Symphysia|secretis)|Petri|partic)\b', ]) + #197
 lema(ur'[Ee]sp_í_as?_i', xpre=[ur'espía\'\' \'', ], xpos=[ur' català', ur'\'\' \'espía']) + #64
 lema(ur'[Ee]t_í_lic[ao]s?_i', xpre=[ur'Pscirco ', ]) + #3
 lema(ur'[Ff]_é_rre[ao]s?_e', xpre=[ur'Banksia ', ur'Mesua ', ur'Clathria ', ur'Caesalpinia ', ur'manus ', ]) + #216
@@ -12948,7 +12956,7 @@ lema(ur'[Mm]_í_stic[ao]s?_i', xpre=[ur'\be ', ur'alla ', ur'Predicatore - ', ur
 lema(ur'[Mm]_ú_ltiples_u', xpre=[ur' et ', ur'faces ', ur'About ', ur'and ', ur'talents ', ], xpos=[ur' (?:Myelom|arcades|façons|accords|auteurs|by|concessions|effets|expéditions|flashes|Hwanguks|infinis|[Oo]f|parsemés|pattes|Pigmentsarkom|pour|punt|sont|splendeurs|statuts|tours|travées|subcomplexes|submissions|visages|et )', ur'(?:, SE|\.es)\b', ]) + #178
 lema(ur'[Mm]a_í_z_i', xpre=[ur'\be ', ur'Extremera ', ur'Alejandro ', ur'Antton ', ur'Fran ', ur'Ramón ', ur'Rementeria ', ur'mays\]\] \(', ], xpos=[ur' (?:Mier|II)', ]) + #206
 lema(ur'[Mm]agn_í_fic(?:as|os?)_i', xpre=[ur'\b[Dd]on ', ur'\b[Ii]l ', ur'Il falso ', ur'Walter ', ur'Guglielmo '], xpos=[ur' (?:cornuto|Arts|theatro|Studios)', ur'(?:, Salves|\')']) + #1
-lema(ur'[Mm]aor_í_(?:es|)_i', xpre=[ur'the ', ur'Blacks ', ur'Kaupapa ', ur'Does ', ur'\bof '], xpos=[ur' (?:converts|Tattoo|Myths|Lore|village|Songs|Venture|tattooing|tatu|or Less)', ur'\'']) + #160
+lema(ur'[Mm]aor_í_(?:es|)_i', xpre=[ur'[Tt]he ', ur'Blacks ', ur'Kaupapa ', ur'Does ', ur'\bof '], xpos=[ur' (?:converts|Tattoo|Myths|Lore|village|Songs|Venture|tattooing|tatu|or Less)', ur'\'']) + #160
 lema(ur'[Mm]e_z_cla_s', xpre=[ur'"', ], xpos=[ur' (?:de noms|or Less)', ]) + #12
 lema(ur'[Mm]el_ó_dic[ao]s?_o', xpre=[ur'Hohner ', ur'álbum\)\|' ], xpos=[ur'"', ur' (?:for|Records|napoletana|Cega|\(álbum)']) + #66
 lema(ur'[Mm]elancol_í_as?_i', xpre=[ur'\b[Aa] ', ur'pàgina de '], xpos=[ur', a revolução']) + #8
@@ -12986,11 +12994,11 @@ lema(ur'[Ss]elec_c_ionad[ao]s?_', xpos=[ur' na\b']) + #13
 lema(ur'[Ss]inf_ó_nic[ao]s?_o', xpre=[ur'Pezzo ', ur'Ciaccona ', ur'Rappresentazione ', ur'Trinita ', ur'Intermezzo ', ur'Associazione ', ur'[Oo]rchestra ', ur'Suite ', ur'\|', ], xpos=[ur' (?:per|della|e Coro|(?:di|of) )', ]) + #53
 lema(ur'[Ss]oberan_í_as?_i', xpos=[ur' (?:i|do|das|del reyno|e Cultura)\b', ]) + #38
 lema(ur'[Ss]ociolog_í_as?_i', xpre=[ur'\b(?:em|na|di) ', ur'Systema de ', ur'Català de ', ur'espaço: textos de ', ur'\bi '], xpos=[ur' (?:da|della|e Comunicaçao)\b']) + #8
-lema(ur'[Ss]omal_í__i', xpre=[ur'Hamzeh '], xpos=[ur' (?:Piracy|Pigeon|Queen|King|Nationalism|Airlines|Supper)']) + #1
+lema(ur'[Ss]omal_í__i', xpre=[ur'Hamzeh '], xpos=[ur' (?:Man|Piracy|Pigeon|Queen|King|Nationalism|Airlines|Supper)']) + #1
 lema(ur'[Ss]orb_í_an_i', xpos=[ur' Cultural', ur'"\. El']) + #3
 lema(ur'[Ss]ubterr_á_ne[ao]s?_a', xpre=[ur'[AP]\. ', ur'\ba ', ur'\b(?:en|de) ', ur'Aphaenogaster ', ur'Ficus ', ur'Rieti ', ur'Etlingera ', ur'Walckenaeria ', ur'Acalypha ', ur'Vicia ', ur'horrea ', ur'Microcreagrina ', ur'Agrotis ', ur'Thermotoga ', ur'Physica ', ur'Adesmia ', ur'Linyphia ', ur'Phanetta ', ur'Newberrya ', ur'Voandzeia ', ], xpos=[ur' (?:films|\(cómic|Americal|do)\b', ur'\'\', álbum']) + #1
 lema(ur'[T]ard_í_[ao]_i', xpre=[ur'Vinicius ', ur'Alex ', ur'Chris ', ur'Jackie ', ur'Joseph ', ur'Loaiza ', ur'Rojas ', ur'Sandro ', ], xpos=[ur' y Guzm[áa]n', ]) + #12
-lema(ur'[Tt]_é_cnica (?:de|que)_e', xpos=[ur' Engenharia']) + lema(ur'[Tt]_é_cnicas? de_e', xpos=[ur' de coleta e herborizacao']) + lema(ur'[Tt]_é_cnic(?:[ao]s|amente)_e', xpre=[ur' e ']) + lema(ur'[Tt]_é_cnico_e', xpre=[ur'Istituto ', ur'Boletim ', ur'Stabilimento ', ur'Studio ', ], xpos=[ur' (?:d\'Artiglieria|Industriale|superiore|dell|di )', ur'@', ]) + lema(ur'[Tt]_é_cnica_e', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Ee]sta|y) ', xpre=[ur' i de ', ur'Scuola ', ], xpos=[ur' (?:edilizia|dell|di )', ]) + #63
+lema(ur'[Tt]_é_cnica (?:de|que)_e', xpos=[ur' Engenharia']) + lema(ur'[Tt]_é_cnicas? de_e', xpos=[ur' de coleta e herborizacao']) + lema(ur'[Tt]_é_cnic(?:[ao]s|amente)_e', xpre=[ur' e ']) + lema(ur'[Tt]_é_cnico_e', xpre=[ur'Istituto ', ur'Boletim ', ur'Stabilimento ', ur'Studio ', ur'Superiore '], xpos=[ur' (?:d\'Artiglieria|Industriale|superiore|dell|di )', ur'@', ]) + lema(ur'[Tt]_é_cnica_e', pre=ur'(?:[Ll]a|[Uu]na|[Cc]ada|[Ss]u|[Ee]sta|y) ', xpre=[ur' i de ', ur'Scuola ', ], xpos=[ur' (?:edilizia|dell|di )', ]) + #63
 lema(ur'[Tt]_í_mid(?:[ao]s?|amente)_i', xpre=[ur'T\. ', ur'Alstroemeria ', ur'Benoitia ', ur'labbro ', ur'Ebrechtella ', ur'Benoitia ', ur'Dibolia ', ur'Carex ', ur'Gentiana ', ur'Actinia ', ur'mais ', ur'Il ', ur'Zephyranthes ', ur'Triglochinura ', ur'Megachile ', ur'Troppo ']) + #51
 lema(ur'[Tt]_ú_nicas?_u', xpre=[ur'\bsa ', ur'lenguas ', ur'idioma ', ur'Thrinax ', ur'Pablo ',ur'longa ', ], xpos=[ur' (?:Resorts|muscularis|language|\(Misisipi|\(MS)', ur'(?:\]|, Greenville|, Mississippi)', ]) + #170
 lema(ur'[Tt]al_ _vez_', xpre=[ur'Um Dia… ', ur'Amanhã '], xpos=[ur' (?:não|[Ss]eja|Depois)']) + #1
@@ -13016,7 +13024,7 @@ lema(ur'[Vv]ern_á_cul[ao]s?_a', xpre=[ur'Legio '], xpos=[ur'\]\]r\b']) + #1
 lema(ur'[Vv]est_í_a[ns]?_i', xpos=[ur' (?:la giubba|lycioides|foetida|gotov)', ur'(?:\]\]|\'\'\'\'\' es)', ]) + #18
 lema(ur'[Vv]olc_á_n_a', xpre=[ur'être un ', ur'pequeño de ', ur'planes de ', ur'Viola ', ur'Mangora ', ur'Anyphaenoides ', ur'Lygromma ', ur' (?:du|[Ll]e) '], xpos=[ur' (?:d\'|du|de nous|Mines|Club|Entertainment|Studios)\b', ur'(?:\]\]es)']) + #1
 lema(ur'[d]e_ _l[ao]s_', xpre=[ur' (?:en|de) ', ur' a ', ur'calandarios '], xpos=[ur'[\]\|\']', ur' (?:\)|Santos|Alas|Eljas|Reyes|[BW]\.)']) + #10
-lema(ur'[f]r_í_[ao]_i', xpre=[ur'\bdo ', ur'Theridion ', ur'Acrobasis ', ur'Andrena ', ur'Herpyllus ', ur'Noite ', ur'P\. ', ur'Poecilia ', ur'Priapichthys ', ur'Pseudopoecilia ', ur'aquela ', ur'\b[Dd]u ', ], xpos=[ur'5']) + #191
+lema(ur'[f]r_í_[ao]_i', xpre=[ur'\bdo ', ur'Theridion ', ur'Acrobasis ', ur'Andrena ', ur'Herpyllus ', ur'Noite ', ur'P\. ', ur'Poecilia ', ur'Priapichthys ', ur'Pseudopoecilia ', ur'aquela ', ur'\b[Dd]u ', ], xpos=[ur' konsterna', ur'5']) + #191
 lema(ur'[m]et_á_lic[ao]s?_a', xpre=[ur'T\. ', ur'Fanzine ', ur'Chamaedorea ', ur'Mnesarete '], xpos=[ur' zine', ur'\.com']) + #1
 lema(ur'[t]ard_í_[ao]_i', xpre=[ur'Director ', ur'Neil ', ur'\*', ur'do amor ', ], xpos=[ur' de Rio Grande do Sul', ]) + #27
 lema(ur'[v]iv_í_a[ns]?_i', xpre=[ur'\b[Dd]i '], xpos=[ur' es el']) + #1
@@ -13033,7 +13041,6 @@ lema(ur'[Ee]nterar_í_a[ns]?_i') + #1
 lema(ur'[d]ar_í_a[ns]?_i') + #1
 lema(ur'[Dd]iver_sió_n_(?:ci[oó]|sió)') + #1
 lema(ur'[Ii]r_í_a[ns]? (?:a|de)\b_i') + #1
-lema(ur'[Aa]divin_ó__o', xpre=[ur'enano ', ur'(?:ser|del) ', ur'\b([AaEe]l|es|un) '], xpos=[ur'\)']) + #1
 lema(ur'[Ee]ntreten_í_a[ns]?_i') + #1
 lema(ur'_S_ur ?[Aa]m[eé]rica_s') + #1
 lema(ur'_C_entro ?[Aa]m[eé]rica_c') + #1
@@ -13050,10 +13057,9 @@ lema(ur'[Pp]ornogr_á_fic[ao]s?_a') + #1
 lema(ur'[Aa]__ l[ao]s_l') + #1
 lema(ur'[Ee]n_ _una?_') + #1
 lema(ur'[Pp]roteger_í_a[ns]?_i') + #1
-lema(ur'[Jj]ugar_á_[ns]_a') + #1
+lema(ur'[Jj]ugar_á_[ns]_a', xpre=[ur'que ambos ']) + #1
 lema(ur'[Jj]ugar_á__a', pre=ur'\b[Ss]e ') + #1
 lema(ur'[Oo]per_ó__o', xpre=[ur'\bv ', ur'[Yy]o ', ur'y lo ', ur'delle ', ur'mejor me '], xpos=[ur' omnia']) + #1
-lema(ur'[Mm]arc_ó_ (?:un|dos|tres|la|l[ao]s)_o') + #1
 lema(ur'[Pp]repar_ó__o', xpre=[ur'\b(?:[Mm]e|[Yy]o|[Ll]o|de) '], xpos=[ur' (?:la adecuada|muy bien|el (?:t[eé]|arroz)|arroz|te para|una (?:fiambrera|super)|muy poco|estas gilipolleces)']) + #1
 lema(ur'[Vv]isit_ó__o', xpos=[ur' (?:Mi Región|Mi Naturaleza|Mi Historia)']) + #1
 lema(ur'[Cc]re_ó_ (?:una?|el|la)_o') + #1
@@ -13071,6 +13077,13 @@ lema(ur'_é_l (?:acompañó|administró|adoptó|agregó|alcanzó|alegó|anotó|a
 lema(ur'[Cc]lasific_ó_ (?:al|en)_o') + #1
 lema(ur'[Cc]elebr_ó_ (?:al|en)_o') + #1
 lema(ur'[Rr]adi_ó_log[oa]s?_o') + #1
+lema(ur'[Pp]rocuradur_í_as?_i') + #1
+lema(ur'[Cc]lausur_ó__o') + #1
+lema(ur'[Gg]eneral_me_nte_em') + #1
+lema(ur'_ú_nico [a-zñáéíóú]+_', xpre=[ur'[Ll]\'', ur'in un ', ur'in ', ur'Partito ', ur'quasi '], xpos=[ur' (?:motus|expressarum|concorrente|Amore|mercato|arbëreshë|posto|suo|la quantità|gli|norme|manuale|prima|de Espana|leggi|tra|di|nome|biblioteche|in|funivia|di|suo|della|queda|leggi|per)']) + #1
+lema(ur'[Mm]arc_ó_ (?:en|un|dos|tres|la|l[ao]s)_o', xpre=[ur'como ']) + #1
+lema(ur'[Ee]_spe_cies?_(?:pe|sp)') + #1
+#lema(ur'___') + #1
 #lema(ur'___') + #1
 #lema(ur'___') + #1
 #lema(ur'___') + #1
@@ -13079,65 +13092,65 @@ lema(ur'[Rr]adi_ó_log[oa]s?_o') + #1
 #lema(ur'___') + #1
 #lema(ur'___') + #deleitó 
 
+lema(ur'[Aa]_ _los_', xpre=[ur'Arnaldo ', ur'Arronte ', ur'Peiro ', ur' et '], xpos=[ur' (?:Ahmed|más tarde|Indios|passados)', ur'(?:\]|\.e-monsite)']) + #50
+lema(ur'[Aa]__l_ la e', xpre=[ur'[Ll]a '], xpos=[ur' la']) + #1
+lema(ur'[Aa]_l_ (?:[AÁaá](?:rea|guila|lgebra)|ánima|a(?:rma|rca|lma|lza|gua|la|rpa|ve)|ha(?:bla|da|cha|mbre|mpa|rpa))_ (?:el|la)', xpos=[ur' [Mm][aá]ter']) + #1
+lema(ur'[Aa]firm_ó__o', xpre=[ur'\bdi ', ur'afirmar y ', ur'\[', ur'\b(?:[Nn]o|[SsNn]i|[YyLl]o|me) '], xpos=[ur' (?:oc|hoy|No|que en este punto|lo que|toda la|un contenido|l\'esperança|un judaísmo)', ur', pues']) + #1
+lema(ur'[Cc]ancel_ó__o', xpre=[ur'João ', 'Cancelo\|'], xpos=[ur'\]\]']) + #1
+lema(ur'[Dd]__e_e d', xpos=[ur' (?:Quervain|Waite|Murise|Beer|Toro|Broglie|Gaulle|Morgan|Arteaga)']) + #1
+lema(ur'[Dd]e_l_ (?:[AÁaá](?:rea|guila|lgebra)|ánima|a(?:rma|rca|lma|lza|gua|la|rpa|ve)|ha(?:bla|da|cha|mbre|mpa|rpa))_ la', xpos=[ur' [Mm][aá]ter']) + #1
+lema(ur'[Ee]__n_n e', xpos=[ur' año', ur'\.']) + #1
+lema(ur'[Ee]__s_s e', xpre=[ur'[Ll]o que ', ur'[\]\.]'], xpos=[ur' (?:eterno|el solar)']) + #1
+lema(ur'[Ee]n_ _la_', xpos=[ur' (?:eglesia|lengua castellana)']) + #1
+lema(ur'[Ee]st?_a_ (?:[AÁaá](?:rea|guila|lgebra)|ánima|a(?:rma|rca|lma|lza|gua|la|rpa|ve)|ha(?:da|cha|mbre|mpa|rpa))_e', xpre=[ur'del '], xpos=[ur' [Mm][aá]ter']) + #1
+lema(ur'[Ff]_á_bricas? de_a', xpre=[ur'\b[Ss]e ']) + #1
+lema(ur'[Ff]em_e_nin[ao]s?_i', xpre=[ur'[Mfs]\. ', ur'\bdo ', ur'prisão política ', ur'do sexo ', ur'condiçao ', ur'Sul-Americano ', ur'Identidade ', ur'Pachycephala ', ur'Miomantis ', ur'Basquete ', ur'Speocera ', ur'Zanomys ', ur'progresso ', ur'Histórias ', ur'Urethra ', ur'Profissionalização ', ur'sexualidade ', ur'Revelação ', ur'Diospyros ', ur'stephaniae ', ur'revista \'\'Alma ', ur'da escrita ', ur'Paranaense '], xpos=[ur' (?:dos|na|Masculino, uma)\b']) + #1
+lema(ur'[Ll]__a_a l', xpre=[ur'dzim ', ur'tra ', ur'"', ur'[OoUu]h ', ur'Limbo ', ur'[Ll]a ', ur'lae ', ur'Sha '], xpos=[ur'[)\'\]"]', ur' (?:la|aku|jump|m )']) + #1
+lema(ur'[Pp]__ara_ara p', xpos=[ur'[|\]\']']) + #1
+lema(ur'[Pp]sicolog_í_as?_i', xpre=[ur'Ensaios de ', ur'em Psicopedagogia, ', ur'Viver ', ur'Um curso moderno de ', ur'\bna ', ur'\bem ', ur'\bd[ai] ', ur'\b[àae] ', ur'della ', ur'alla ', ur'Grau de ', ur'Estudiants ', ur'Sociedade ', ur'Facultat de ', ur'Paulista de '], xpos=[ur'(?:\.(?:unmsm|pt)|: (?:ciência|Reflexão)|, arte e política)', ur' (?:i|dels|geral|pune|USP|alla|da|dal|dels|dell[ae]?|em|do|de les|per|no Brasil|a (?:Granollers|Catalunya)|e (?:na|sociedade|limiti|ambiente|logica|educaçao|storia|Ciência)|del (?:llenguatge|pensament|ritratto)|Educacão|Psicoterapia Psichiatria)\b']) + #32
+lema(ur'[Rr]eprogramaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
+lema(ur'[Ss]__u_u s', xpre=[ur'[Ss]u '], xpos=[ur' su']) + #1
+lema(ur'[Tt]_ó_tems?_o', xpre=[ur'\'\'', ur'Galería ', ur'multimedia ', ur'Evil ', ur'Dark ', ur'Tour ', ur'Poste ', ur'Jungle ', ur'Twisted ', ur'Magical ', ur'(?:[Dd]ie|his|des|Oma|[Tt]he|[Ll]es|HMS) ', ur'París, ', ur'grupo ', ur'Living ', ur'titulado ', ur'Risk ', ur'Mountain ', ur'Zapotec ', ur'Wolf ', ur'\bU ', ur'\b(?:di|de|en|[Ll]e|[Ii]l) ', ur'mejoras a ', ur'revista\)\|', ur'revista\)\|', ur'Faun\)\|', ur'película\)\|', ur'banda\)\|', ur'software\)\|', ], xpos=[ur' (?:[12] con|III|d|[Pp]oles?|Spell|Store|Lake|urbain|cómics|and|et|to|on|el [Cc][oó]mix|la revista|monumento ao|de la Bande|Wines|del Tambo|Power|Mole|Park|Games|Ocean|Press|Records|y (?:Nautilus|MPlayer|\'\'Descarga|\[\[Puma)|\((?:revista|Wines|software|desambiguación|banda|película|álbum))\b', ur'(?:: The|"|, (?:and|con|Eye|el C[oó]mix|Germans|la revista|Psiglo|Editorial)|\. L)', ]) + #344
+lema(ur'[Uu]__na_na u', xpre=[ur'cada ']) + #1
+lema(ur'[Uu]n__ (?:[AÁaá](?:rea|guila|lgebra)|ánima|a(?:rma|rca|lma|lza|gua|la|rpa|ve)|ha(?:da|cha|mbre|mpa|rpa))_a', xpos=[ur' [Mm][aá]ter']) + #1
+lema(ur'[Uu]n_a fó_rmula_ f[oó]', xpos=[ur' (?:1|[Uu]no|compitiendo)\b', ]) + #127
+lema(ur'[Uu]n_a ví_a_(?: v[ií]|a vi)', xpos=[ur' [Cc]rucis', ]) + #127
+lema(ur'[Uu]n_a ó_pera_ [oó]', xpre=[ur'd[\'’]', ur'\bda ']) + #127
+lema(ur'[Uu]n_a_ (?:primera|segunda|tercera)_', xpos=[ur' base', ]) + #110
+lema(ur'[Uu]n_a_ bella_', xpre=[ur'per ', ]) + #10
+lema(ur'[Uu]n_a_ camisa_', xpos=[ur' (?:roja|vieja)', ]) + #10
+lema(ur'[Uu]n_a_ cara_', xpos=[ur' (?:o cruz|a cara)', ]) + #10
+lema(ur'[Uu]n_a_ carta_', xpre=[ur'd\'']) + #10
+lema(ur'[Uu]n_a_ cuenta_', xpos=[ur' (?:revoluciones|chistes|cuentos)', ]) + #10
+lema(ur'[Uu]n_a_ guitarra_', xpre=[ur'reclutaron a '], xpos=[ur' (?:con el|\(Mantas|de \[\[Valdeganga)', ]) + #10
+lema(ur'[Uu]n_a_ ida_', xpos=[ur' (?:y vuelta)', ]) + #10
+lema(ur'[Uu]n_a_ lanza_', xpos=[ur' (?:agua|granadas|dardos|misiles|pelotas|petardos|cohetes|dardos|discos)', ]) + #10
+lema(ur'[Uu]n_a_ larga_', xpos=[ur' (?:duración)', ]) + #10
+lema(ur'[Uu]n_a_ mala_', xpos=[ur' (?:sangre)', ]) + #10
+lema(ur'[Uu]n_a_ meta_', xpos=[ur' (?:análisis|estudio|sistema)', ]) + #10
+lema(ur'[Uu]n_a_ puerta_', xpos=[ur' (?:a puerta)', ]) + #10
+lema(ur'[Uu]n_a_ punta_', xpos=[ur' (?:izquierdo|derecho|pie|neto)', ]) + #10
+lema(ur'[Uu]n_a_ pura_', xpos=[ur' (?:sangre|raza)', ]) + #10
+lema(ur'[Uu]n_a_ toma_', xpos=[ur' y (?:daca|dame)', ]) + #10
+lema(ur'[Vv]iaj_ó__o', xpre=[ur'[Yy]o '], xpos=[ur' (?:en tu|con mamá|al país)', ur'\.com']) + #1
+lema(ur'[y]___ y', xpre=[ur'\]', ur'[Ll]a ', ur'\|\| ', ur'como ', ur'Eosina ', ur'Bay ', ur'Mboi[’\']', ur'= x ', ur'kurupa\'', ur'cromosoma ', ur'núcleo ', ur'R4', ur'w̃, ', ur'W e ', ur'½', ur'X o '], xpos=[ur'[=}\'\]|]', ur' (?:[:BbZzWwXxKk]|iv|ll|el aumento|mitocondrial|luego|el ADN|magia|[0-9])']) + #1
+lema(ur'\b[Dd]e_ _[0-9][0-9.,]+_', xpre=[ur'[#]']) + #1
+lema(ur'_El_ (?:[AÁaá](?:rea|guila|lgebra)|ánima|a(?:rma|rca|lma|lza|gua|la|rpa|ve)|ha(?:bla|da|cha|mbre|mpa|rpa))_La', xpos=[ur' (?:en gesto|[Mm][aá]ter)', ur'\'\'']) + #1
+lema(ur'_L_a_Un [Ll]', xpos=[ur' (?:b[eé]mol|natural)', ur'3']) + #5
+lema(ur'__la_un ', xpre=[ur'será ', ur'sería ',], xpos=[ur' (?:bemol|natural)\b', ur'(?:3|, el inicio)']) + #90
+lema(ur'_e_ (?!i[ivx]|ius|imn|indios|indica|induce|ist|hiérvelo|hide|hip|high|hippies|hippy|hie|hits)h?[ií][a-záéíóúñ]+_y', xpre=[ur'>='], xpos=[ur' (?:Meteo|installer|interceptèrent|installa|ii\)|(?:ia|in) )']) + #1
+lema(ur'_el_ (?:[AÁaá](?:rea|guila|lgebra)|ánima|a(?:rma|rca|lma|lza|gua|la|rpa|ve)|ha(?:bla|da|cha|mbre|mpa|rpa))_la', xpre=[ur'dióle '], xpos=[ur' [Mm][aá]ter', ur'\'\'"']) + #1
+lema(ur'_el__la el' , xpre=[ur'cerul ', ur'un ']) + #1
 lema(ur'_É_l (?:est(?:ar|)[aá]n?|estará|estuvo|estaban|estar[ií]an?|vienen?|fu[ée]|fueron|vendr[aá]n?|tiene|tuvo|tendrán?|es|era|serán?|fue|ha|hab[ií]a|sabe|sab[ií]a)_E', xpre=[ur'(?:ch\'|Af\')', ur'Gnet ', ur'H\''], xpos=[ur' (?:agua|esos)']) + #630
 lema(ur'_É_xodos?_E', xpre=[ur'\|', ur'Trofeo del '], xpos=[ur' Salmus', ur', Excess']) + #1
 lema(ur'_Ó_rdenes_O', pre=ur'(?:[Ll]as|[Uu]nas|[Ss]us) ', xpos=[ur' (?:[Mm]ilitares|[Rr]eligiosas|[Cc]iviles|[Dd]inásticas|[yi] [Dd]ecretos)']) + #1
 lema(ur'_Ó_rganos?_O', xpre=[ur'\b(?:De|il) ', ur'Grand\'', ur'[DdLl][’\']', ur'Lowrey ', ur' in ', ur'per ', ur'Tetl '], xpos=[ur' (?:dei|che|para que puedam)', ur', resumido en doze']) + #1
 lema(ur'_Ú_nico_U', xpre=[ur'= ', ur'[«"]', ur'\b(?:o[fr]|il) ', ur'\by ', ur'\'\' - ', ur'Amore ', ur'Girone ', ur'Hermanos ', ur'Physis ', ur'Senso ', ur'de temas ', ur'il Catalogo ', ], xpos=[ur' (?:suo|Uomo|Properties|Maho|reemplaza|Ambientale|Microfon|delle|e la|Special|Wilhem|Wilhelm|van|Glorie|National|in )', ur'(?:[\|:]|\]\]|, por)', ]) + #56
-lema(ur'_í_ndices?_i', xpre=[ur'\bet ', ur'LVA ', ur'local ', ur'duplici ', ur'dell\'', ], xpos=[ur' (?:copiosissimo|locupletissimo|contenu|ad)', ur'[\'"]', ]) + lema(ur'_Í_ndices?_I', xpre=[ur' et ', ur'Double ', ur'Price ', ur'Bond ', ur'Capability ', ur'Cum', ur'[Ll]\'', ur'reagent ', ], xpos=[ur' (?:d|e sviluppo|dos|istorico|de las Glorias|Analítico dell|Virgen|generale|capitum|Nominum|rerum|copiosissimo|and|Excerptarum|nominum|seminum|botanici|et|on|ad|of|to|ac)\b', ur'”\.']) + #10
-lema(ur'[Pp]sicolog_í_as?_i', xpre=[ur'Ensaios de ', ur'em Psicopedagogia, ', ur'Viver ', ur'Um curso moderno de ', ur'\bna ', ur'\bem ', ur'\bd[ai] ', ur'\b[àae] ', ur'della ', ur'alla ', ur'Grau de ', ur'Estudiants ', ur'Sociedade ', ur'Facultat de ', ur'Paulista de '], xpos=[ur'(?:\.(?:unmsm|pt)|: (?:ciência|Reflexão)|, arte e política)', ur' (?:i|dels|geral|pune|USP|alla|da|dal|dels|dell[ae]?|em|do|de les|per|no Brasil|a (?:Granollers|Catalunya)|e (?:na|sociedade|limiti|ambiente|logica|educaçao|storia|Ciência)|del (?:llenguatge|pensament|ritratto)|Educacão|Psicoterapia Psichiatria)\b']) + #32
-lema(ur'[Tt]_ó_tems?_o', xpre=[ur'\'\'', ur'Galería ', ur'multimedia ', ur'Evil ', ur'Dark ', ur'Tour ', ur'Poste ', ur'Jungle ', ur'Twisted ', ur'Magical ', ur'(?:[Dd]ie|his|des|Oma|[Tt]he|[Ll]es|HMS) ', ur'París, ', ur'grupo ', ur'Living ', ur'titulado ', ur'Risk ', ur'Mountain ', ur'Zapotec ', ur'Wolf ', ur'\bU ', ur'\b(?:di|de|en|[Ll]e|[Ii]l) ', ur'mejoras a ', ur'revista\)\|', ur'revista\)\|', ur'Faun\)\|', ur'película\)\|', ur'banda\)\|', ur'software\)\|', ], xpos=[ur' (?:[12] con|III|d|[Pp]oles?|Spell|Store|Lake|urbain|cómics|and|et|to|on|el [Cc][oó]mix|la revista|monumento ao|de la Bande|Wines|del Tambo|Power|Mole|Park|Games|Ocean|Press|Records|y (?:Nautilus|MPlayer|\'\'Descarga|\[\[Puma)|\((?:revista|Wines|software|desambiguación|banda|película|álbum))\b', ur'(?:: The|"|, (?:and|con|Eye|el C[oó]mix|Germans|la revista|Psiglo|Editorial)|\. L)', ]) + #344
-lema(ur'[Cc]ancel_ó__o', xpre=[ur'João ', 'Cancelo\|'], xpos=[ur'\]\]']) + #1
-lema(ur'[Ff]em_e_nin[ao]s?_i', xpre=[ur'[Mfs]\. ', ur'\bdo ', ur'prisão política ', ur'do sexo ', ur'condiçao ', ur'Sul-Americano ', ur'Identidade ', ur'Pachycephala ', ur'Miomantis ', ur'Basquete ', ur'Speocera ', ur'Zanomys ', ur'progresso ', ur'Histórias ', ur'Urethra ', ur'Profissionalização ', ur'sexualidade ', ur'Revelação ', ur'Diospyros ', ur'stephaniae ', ur'revista \'\'Alma ', ur'da escrita ', ur'Paranaense '], xpos=[ur' (?:dos|na|Masculino, uma)\b']) + #1
-lema(ur'_é_l en\b_e', pre=ur'[Cc]on ', xpos=[ur' ese']) + #1
 lema(ur'_é_l ante\b_e', pre=ur'[Cc]on ', xpos=[ur' último', ur' penúltimo']) + #1
-lema(ur'_é_l para\b_e', pre=ur'[Cc]on ', xpos=[ur' entonces', ur'-médico']) + #1
 lema(ur'_é_l contra\b_e', pre=ur'[Cc]on ', xpos=[ur'-(?:insulto|tenor|almirante)']) + #1
-lema(ur'[Rr]eprogramaci_ó_n_o', xpos=[ur'\]\]es', ]) + #1
-lema(ur'[Vv]iaj_ó__o', xpre=[ur'[Yy]o '], xpos=[ur' (?:en tu|con mamá|al país)', ur'\.com']) + #1
-lema(ur'[Ff]_á_bricas? de_a', xpre=[ur'\b[Ss]e ']) + #1
-lema(ur'[Aa]firm_ó__o', xpre=[ur'\bdi ', ur'afirmar y ', ur'\[', ur'\b(?:[Nn]o|[SsNn]i|[YyLl]o|me) '], xpos=[ur' (?:oc|hoy|No|que en este punto|lo que|toda la|un contenido|l\'esperança|un judaísmo)', ur', pues']) + #1
-lema(ur'[Uu]n_a fó_rmula_ f[oó]', xpos=[ur' (?:1|[Uu]no|compitiendo)\b', ]) + #127
-lema(ur'[Uu]n_a ví_a_(?: v[ií]|a vi)', xpos=[ur' [Cc]rucis', ]) + #127
-lema(ur'[Uu]n_a ó_pera_ [oó]', xpre=[ur'd[\'’]', ur'\bda ']) + #127
-lema(ur'[Uu]n_a_ (?:primera|segunda|tercera)_', xpos=[ur' base', ]) + #110
-lema(ur'[Uu]n_a_ cara_', xpos=[ur' (?:o cruz|a cara)', ]) + #10
-lema(ur'[Uu]n_a_ carta_', xpre=[ur'd\'']) + #10
-lema(ur'[Uu]n_a_ camisa_', xpos=[ur' (?:roja|vieja)', ]) + #10
-lema(ur'[Uu]n_a_ ida_', xpos=[ur' (?:y vuelta)', ]) + #10
-lema(ur'[Uu]n_a_ larga_', xpos=[ur' (?:duración)', ]) + #10
-lema(ur'[Uu]n_a_ mala_', xpos=[ur' (?:sangre)', ]) + #10
-lema(ur'[Uu]n_a_ meta_', xpos=[ur' (?:análisis|estudio|sistema)', ]) + #10
-lema(ur'[Uu]n_a_ guitarra_', xpre=[ur'reclutaron a '], xpos=[ur' (?:con el|\(Mantas|de \[\[Valdeganga)', ]) + #10
-lema(ur'[Uu]n_a_ toma_', xpos=[ur' y (?:daca|dame)', ]) + #10
-lema(ur'[Uu]n_a_ pura_', xpos=[ur' (?:sangre|raza)', ]) + #10
-lema(ur'[Uu]n_a_ bella_', xpre=[ur'per ', ]) + #10
-lema(ur'[Uu]n_a_ lanza_', xpos=[ur' (?:agua|granadas|misiles|pelotas|petardos|cohetes|dardos|discos)', ]) + #10
-lema(ur'[Uu]n_a_ punta_', xpos=[ur' (?:izquierdo|derecho|pie|neto)', ]) + #10
-lema(ur'[Uu]n_a_ cuenta_', xpos=[ur' (?:revoluciones|chistes|cuentos)', ]) + #10
-lema(ur'[Uu]n_a_ puerta_', xpos=[ur' (?:a puerta)', ]) + #10
-lema(ur'__la_un ', xpre=[ur'será ', ur'sería ',], xpos=[ur' (?:bemol|natural)\b', ur'(?:3|, el inicio)']) + #90
-lema(ur'_L_a_Un [Ll]', xpos=[ur' (?:b[eé]mol|natural)', ur'3']) + #5
-lema(ur'[Aa]_l_ (?:[AÁaá](?:rea|guila|lgebra)|ánima|a(?:rma|rca|lma|lza|gua|la|rpa|ve)|ha(?:bla|da|cha|mbre|mpa|rpa))_ (?:el|la)', xpos=[ur' [Mm][aá]ter']) + #1
-lema(ur'[Dd]e_l_ (?:[AÁaá](?:rea|guila|lgebra)|ánima|a(?:rma|rca|lma|lza|gua|la|rpa|ve)|ha(?:bla|da|cha|mbre|mpa|rpa))_ la', xpos=[ur' [Mm][aá]ter']) + #1
-lema(ur'_El_ (?:[AÁaá](?:rea|guila|lgebra)|ánima|a(?:rma|rca|lma|lza|gua|la|rpa|ve)|ha(?:bla|da|cha|mbre|mpa|rpa))_La', xpos=[ur' (?:en gesto|[Mm][aá]ter)', ur'\'\'']) + #1
-lema(ur'_el_ (?:[AÁaá](?:rea|guila|lgebra)|ánima|a(?:rma|rca|lma|lza|gua|la|rpa|ve)|ha(?:bla|da|cha|mbre|mpa|rpa))_la', xpre=[ur'dióle '], xpos=[ur' [Mm][aá]ter', ur'\'\'"']) + #1
-lema(ur'[Uu]n__ (?:[AÁaá](?:rea|guila|lgebra)|ánima|a(?:rma|rca|lma|lza|gua|la|rpa|ve)|ha(?:da|cha|mbre|mpa|rpa))_a', xpos=[ur' [Mm][aá]ter']) + #1
-lema(ur'[Ee]st?_a_ (?:[AÁaá](?:rea|guila|lgebra)|ánima|a(?:rma|rca|lma|lza|gua|la|rpa|ve)|ha(?:da|cha|mbre|mpa|rpa))_e', xpre=[ur'del '], xpos=[ur' [Mm][aá]ter']) + #1
-lema(ur'[Aa]_ _los_', xpre=[ur'Arnaldo ', ur'Arronte ', ur'Peiro ', ur' et '], xpos=[ur' (?:Ahmed|más tarde|Indios|passados)', ur'(?:\]|\.e-monsite)']) + #50
-lema(ur'[Aa]__l_ la e', xpre=[ur'[Ll]a '], xpos=[ur' la']) + #1
-lema(ur'\b[Dd]e_ _[0-9][0-9.,]+_', xpre=[ur'[#]']) + #1
-lema(ur'[Dd]__e_e d', xpos=[ur' (?:Quervain|Waite|Murise|Beer|Toro|Broglie|Gaulle|Morgan|Arteaga)']) + #1
-lema(ur'[Ee]n_ _la_', xpos=[ur' (?:eglesia|lengua castellana)']) + #1
-lema(ur'[Ee]__n_n e', xpos=[ur' año', ur'\.']) + #1
-lema(ur'[Ee]__s_s e', xpre=[ur'[Ll]o que ', ur'[\]\.]'], xpos=[ur' (?:eterno|el solar)']) + #1
-lema(ur'[Ll]__a_a l', xpre=[ur'dzim ', ur'tra ', ur'"', ur'[OoUu]h ', ur'Limbo ', ur'[Ll]a ', ur'lae ', ur'Sha '], xpos=[ur'[)\'\]"]', ur' (?:la|aku|jump|m )']) + #1
-lema(ur'[Pp]__ara_ara p', xpos=[ur'[|\]\']']) + #1
-lema(ur'[Ss]__u_u s', xpre=[ur'[Ss]u '], xpos=[ur' su']) + #1
-lema(ur'[Uu]__na_na u', xpre=[ur'cada ']) + #1
-lema(ur'[y]___ y', xpre=[ur'\]', ur'[Ll]a ', ur'\|\| ', ur'como ', ur'Eosina ', ur'Bay ', ur'Mboi[’\']', ur'= x ', ur'kurupa\'', ur'cromosoma ', ur'núcleo ', ur'R4', ur'w̃, ', ur'W e ', ur'½', ur'X o '], xpos=[ur'[=}\'\]|]', ur' (?:[:BbZzWwXxKk]|iv|ll|el aumento|mitocondrial|luego|el ADN|magia|[0-9])']) + #1
-lema(ur'_e_ (?!i[ivx]|ius|imn|indios|indica|induce|ist|hiérvelo|hide|hip|high|hippies|hippy|hie|hits)h?[ií][a-záéíóúñ]+_y', xpre=[ur'>='], xpos=[ur' (?:Meteo|installer|interceptèrent|installa|ii\)|(?:ia|in) )']) + #1
-lema(ur'_el__la el' , xpre=[ur'cerul ', ur'un ']) + #1
+lema(ur'_é_l en\b_e', pre=ur'[Cc]on ', xpos=[ur' ese']) + #1
+lema(ur'_é_l para\b_e', pre=ur'[Cc]on ', xpos=[ur' entonces', ur'-médico']) + #1
+lema(ur'_í_ndices?_i', xpre=[ur'\bet ', ur'LVA ', ur'local ', ur'duplici ', ur'dell\'', ], xpos=[ur' (?:copiosissimo|locupletissimo|contenu|ad)', ur'[\'"]', ]) + lema(ur'_Í_ndices?_I', xpre=[ur' et ', ur'Double ', ur'Price ', ur'Bond ', ur'Capability ', ur'Cum', ur'[Ll]\'', ur'reagent ', ], xpos=[ur' (?:d|e sviluppo|dos|istorico|de las Glorias|Analítico dell|Virgen|generale|capitum|Nominum|rerum|copiosissimo|and|Excerptarum|nominum|seminum|botanici|et|on|ad|of|to|ac)\b', ur'”\.']) + #10
 []][0]
 
 
