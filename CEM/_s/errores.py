@@ -42,7 +42,7 @@ def lema(pat, pre=None, xpre=None, xpos=None):
   else:
     src+= ", pre=ur'"+pre+"'"
   xpres=''
-  if not xpre is None:
+  if xpre is not None:
       xpre.sort() 
       src+=", xpre=["
       for p in xpre:
@@ -50,7 +50,7 @@ def lema(pat, pre=None, xpre=None, xpos=None):
           src+="ur\'"+qte.sub("\\'",p)+"\', "
       src+="]"
   xposs=''
-  if not xpos is None:
+  if xpos is not None:
       xpos.sort()
       src+=", xpos=["
       for p in xpos:
@@ -92,14 +92,13 @@ def compilar():
     pat = pat + '|' + p
     lemas[i][0]=re.compile('(?<!' + alpha + ')('+p+')(?!' + alpha + ')',flags)
   pat = '(?<!' + alpha + ')(?P<c>'+pat[1:]+')(?!' + alpha + ')'
-  trans = '(.*?)\\b(?P<l>.{0,40})'+pat+'(?P<r>.{0,40})\\b(.*?)'
+#  trans = '(.*?)\\b(?P<l>.{0,40})'+pat+'(?P<r>.{0,40})\\b(.*?)'
+  trans = '(?P<l>.*)'+pat+'(?P<r>.*)'
   val = '...\\g<l>\'\'\'\\g<c>\'\'\'\\g<r>...'
   #print (pat)
   return (re.compile(pat,flags),re.compile(trans,flags),val)
 
 #Cambios ambiguos
-#lema('_xx__[Ee]l (?:algunas|campos|cercanías|cuartos|detrás|distritos|días|estados|estudios|gobiernos|mismos|muchos|nombres|nosotros|números|objetivos|otras|partidos|personajes|playoffs|podemos|premios|primeros|principios|problemas|productos|programas|pueblos|representantes|récords|sencillos|siguientes|sitios|temas|todas|todos|varias|ámbitos|áreas|últimos)') + 
-#lema('_xx__[Ee]l (?!abrebotellas|abrecartas|adi[oó]s|aguafiestas|albanés|albatros|alias|antes|análisis|apocalipsis|apófisis|aragonés|aranés|aspis|atlas|aulos|autobús|bibliobús|blues|botones|brindis|burgalés|burgués|campus|cannabis|caos|cascanueces|chasis|ciprés|clítoris|compás|cordobés|corpus|cosmos|cumpleaños|danés|despu[eé]s|dios|eibarrés|entonces|entremésasturleonés|envés|escocés|estatus|estrés|finlandés|finés|francés|frontis|galés|genovés|gris|guardaespaldas|holandés|inglés|interés|iris|irlandés|japonés|jueves|leonés|locus|los|lunes|m[áa]s|marcapasos|marqués|martes|matarlos|menos|microcosmos|mirandés|miércoles|modus|neerlandés|oasis|palmarés|parabrisas|paracaídas|paraguas|paréntesis|pasacalles|país|portaaviones|portugués|psicoanálisis|páncreas|raquis|rascacielos|revés|rompecabezas|saltamontes|seis|senegalés|status|tenis|tres|vals|viernes|virus|énfasis|éxtasis)[a-záéíóúüñ]+s') + 
 
 lemasFileName = 'Los.lem'
 # lemasPos= [##Eliminar ur y cambiar \b por \\b
@@ -108,16 +107,9 @@ lemasFileName = 'Los.lem'
 
 lemas= [##Eliminar ur y cambiar \b por \\b
 
-lema('[Hh]i_c_ieron_z', xpos=[' los capitanes']) + #32
-lema('[Hh]i_z_o_s', xpre=['quispe tito ', '\| '], xpos=[' Hyakuga', '\)']) + 
-lema('[Ll]_í_mites_i', pre='[Ll]os ') + #58
-lema('[Ll]_í_mites?_i', pre='(?:[Ss]in(?: m[aá]s|)|[Hh]ay|[Cc]on|[Cc]omo|[Dd]el?|[Ee]ntre|[Tt]odo|[Ss]us?|[Ee]l|[Uu]n|[Uu]nos|al?|y|[Ee]st?e|[Ee]stos|[Ff]ija|[Dd]etermina|tiempo) ', xpre=['questão ', 'Froid ', 'Mondi ', 'signore ', ], xpos=[' Produções', ', d\'échang']) + #480
-lema('_alemá_n_(?:Alem[aá]|alema)', pre='\\b(?:e[ln]|del?|idioma|y) ', xpre=['Sanscrito ', 'El pícaro ', ur'Casa ', ur'Hermann ', 'Columna ', 'Hermán ', 'Estudios ', 'Sanabria ', 'ojos ', 'Ortega ', 'Sayula '], xpos=['"']) + 
-lema('[Pp]aran_á__a', xpre=['[H]\. ', 'Burón y ', '[Vv]iaducto de ', 'Hemigrammus ', 'Lena\)\|', 'Hololena ', 'Cryptachaea '], xpos=[' \(Lena', '(?:´i|, etc)']) + 
-lema('[Cc]onfes_ó__o', xpre=['\\b(?:[Uu]n|[Ss]u|[EeÉe]l|[Ee]s) ', 'ateo ', 'caníbal ', 'incendiario\]\] ', '[Mm]elómano ', 'simpatizante ', 'asesino ', 'pagano ', 'hincha ', 'asesino ', 'seguidor ', 'anglófilo ', 'miembro ', 'convicto ', 'amor ', 'Amante ', 'halló ', 'delito ', 'suicida ', 'homicida ', 'socialista ', 'fascista ', '\\by ', 'cristiano ', 'homosexual ', 'fan ', 'autor ', 'objetivo '], xpos=[' (?:de|del|hincha|seguidor|fanático|aficionado|ladrón|amante|adicto)\\b', '\'\'']) + 
-lema('[Bb]engal_í__i', xpre=['and ', 'Renault '], xpos=[' (?:English|Liberation|Tiger)']) + 
-lema('[Mm]_é_ritos?_e', xpre=['\\b(?:[Yy]a|di|et|do|il|in) ', 'Libens ', 'Nilo ', 'San Fernando del ', 'Bene ', 'aedem ', 'quas ', 'Ordine al ', ], xpos=[' (?:M[ei]litensi|Sportivo|Culturale|dedicata|tali|beneficia quae|legionemque|dei|rabirrubio|della|hec|dell|del lavoro|per|civile|per|ad |di )']) +
-lema('[Pp]oes_í_as?_i', xpre=['\\b[AaàeP] ', '\\b[AaàeP]\. ', '\\b(?:[Dd]a|di|na) ', 'Rainha Sofia de ', 'mia ', ur'jovem ', 'Prémio Internacional de ', 'Premi Crítica Serra d\'Or de ', 'Premi Martí Dot de ', 'Quaderns de ', 'As 7 ', 'Bon dia, ', 'món de ', 'Concert de ', 'cicle de ', 'teva ', 'Encontro maior: ', 'Ciència, fe, ', 'd[\'’]abril de ', 'València de ', 'aplech de ', 'della epica ', '\\be de ', 'amb la ', 'Introducció a la ', 'Outras ', 'Sulla ', 'Jornal de ', 'Natura, ', 'Elogi de la ', 'Quart en ', 'nella ', 'vera ', 'Premis Octubre de ', 'Pedaliodes ', 'Pronophila ', 'Premi de ', 'celobert. Antologia de ', '[Mm]elhores ', '[Rr]evista \'\'', 'Jabuti de ', 'perfetta ', 'Futura: ', 'della ', 'MSC ', 'na ', 'mig editorial de ', 'minha alma: '], xpos=[' (?:i|in|di|per|\'90|Acadèmica|dialettale|sarda e|satirica in|experimental en terres|Nova|nell|en valencià|lirica ed|sonora|kaierak|Mienia|do|Escolhidas|contemporània|Completa \(1940|espanhola|eletronica|popolare|Etna-Taormina|ed|d|en acció|egípcia antiga|argentina e brasileira|e (?:storia|Prosa|sentimento|Composição|Crônica|retorica)|de (?:les|Marian Aguiló)|Espanhola)\\b', '(?:: a paixão|, estética e política|\'\', Antonio|[:,] \[\[(?:Paolo|contos|Enrico|Alessandro|Maria Luisa Spazani|Antonella))']) + #978
+lema('_ú_nico [a-zñáéíóú]+_', xpre=['[Ll]\'', 'in un ', 'in ', 'Partito ', 'quasi '], xpos=[' (?:motus|expressarum|concorrente|Amore|mercato|arbëreshë|posto|suo|la quantità|gli|norme|manuale|prima|de Espana|leggi|tra|di|nome|biblioteche|in|funivia|di|suo|della|queda|leggi|per)']) + #1
+
+
  
 []][0]
 
@@ -143,6 +135,17 @@ def proxArticulo(noElimDup, elimExcl, elimRev, excluidos, revisados):
                 partes = linea.split("]]→",1)
  
 
+def quote(txt):
+  txt1 = re.sub(',',',,', re.sub('"', '""', txt))
+  if txt1 != txt:
+    return '"'+txt1+'"'
+  else:
+    return txt
+
+
+def toCSV(*cols):
+    return ', '.join([quote(col) for col in cols])
+
 def filtrar(noElimDup, elimExcl, elimRev, excluidos, revisados):
   pat,trans,val = compilar()
   titulo=''
@@ -150,8 +153,8 @@ def filtrar(noElimDup, elimExcl, elimRev, excluidos, revisados):
   contador = 0
   encontrados = 0
   errores = 0
-#  cada = 83660126/1024 #número de líneas 12/07
-  cada = 125651742/1024 #número de líneas 03/04/17
+ #  cada = 83660126/1024 #número de líneas 12/07
+  cada = 125651742/512 #número de líneas 03/04/17
   contador = 0
   sys.stderr.write("#")
   lemaFile = open(lemasFileName, 'w')
@@ -180,14 +183,17 @@ def filtrar(noElimDup, elimExcl, elimRev, excluidos, revisados):
           match = pat.search(contenido)
           if match:
             if elimExcl:
-              match = trans.match(contenido)
-              if match:
-                  pal = match.group('c')
-                  contenido = match.expand(val)
-              else:
-                  pal="???"
+              pal = match.group('c')
+              contenido = contenido.strip()
+              # match = trans.match(contenido)
+              # if match:
+              #     pal = match.group('c')
+              #     #contenido = match.expand(val)
+              #     contenido = contenido.strip()
+              # else:
+              #     pal="???"
               #print("pal="+pal+" contenido="+contenido)
-              print (pal+';'+titulo+']]→'+contenido)
+              print (quote(pal)+','+quote(titulo+']]')+','+quote(contenido))
               sys.stdout.flush()
               tituloAnt = titulo;
               encontrados +=1

@@ -1,179 +1,120 @@
-[[Avatar: la leyenda de Aang (videojuego)]]
-[[Ave End]]
-[[Ave de presa]]
-[[Avellaneda (Córdoba)]]
-[[Avemetatarsalia]]
-[[Avenida Abancay]]
-[[Avenida Balboa]]
-[[Avenida Canadá]]
-[[Avenida Concha y Toro]]
-[[Avenida Crámer]]
-[[Avenida Francisco Bilbao]]
-[[Avenida Gran Bretaña]]
-[[Avenida Grecia]]
-[[Avenida Larco]]
-[[Avenida Luis María Campos]]
-[[Avenida Manuel Antonio Matta (Santiago de Chile)]]
-[[Avenida Matucana]]
-[[Avenida Nueve de Octubre]]
-[[Avenida Paseo Colón]]
-[[Avenida Pedro de Valdivia]]
-[[Avenida Ruiz Huidobro]]
-[[Avenida de la Almozara]]
-[[Avenida de la Constitución (Sevilla)]]
-[[Averell Harriman]]
-[[Averroes]]
-[[Aveyron]]
-[[AviaSelva]]
-[[Aviación virtual]]
-[[Avialae]]
-[[Avianca Cargo]]
-[[Avianca Ecuador]]
-[[Avianca Guatemala]]
-[[Avianca Honduras]]
-[[Aviation Industry Computer-Based Training Committee]]
-[[Avidemux]]
-[[Avira]]
-[[Avispas Negras]]
-[[Avión (Orense)]]
-[[Avión comercial]]
-[[Avión de papel lanzado desde el espacio]]
-[[Avión]]
-[[Avram Grant]]
-[[Avro 504]]
-[[Avshalom Haviv]]
-[[Avusy]]
-[[Avy Scott]]
-[[Axayácatl]]
-[[Axdir]]
-[[Axel Steel]]
-[[Axim X3]]
-[[Axiomas de Zermelo-Fraenkel]]
-[[Axiomas de probabilidad]]
-[[Axis of Justice]]
-[[Axwell]]
-[[Aya Ueto]]
-[[Ayame Sōma]]
-[[Ayamonte]]
-[[Ayane's High Kick]]
-[[Aykin Tolepbergen]]
-[[Ayla]]
-[[Aylthon Brandão Joly]]
-[[Aysén (comuna)]]
-[[Ayudas a la navegación]]
-[[Ayuntamiento de Sevilla]]
-[[Ayutla de los Libres (municipio)]]
-[[Ayutuxtepeque]]
-[[Azadinos]]
-[[Azaghâl]]
-[[Azalea roja]]
-[[Azathoth]]
-[[Azcapotzalco]]
-[[Azendohsaurus]]
-[[Azeri-Chirag-Guneshli]]
-[[Aziliense]]
-[[Azken guda dantza]]
-[[Azmi Bishara]]
-[[Azogue (novela)]]
-[[Azonia]]
-[[Azorella compacta]]
-[[Azote]]
-[[Azteca Trece]]
-[[Aztreonam]]
-[[Azua]]
-[[Azucena Martín-Dorado Calvo]]
-[[Azud]]
-[[Azukiarai]]
-[[Azul (desambiguación)]]
-[[Azul (novela)]]
-[[Azul Azul]]
-[[Azul y Negro]]
-[[Azumanga Daioh]]
-[[Azumi]]
-[[Aéreo Servicio Guerrero]]
-[[Aída Luz]]
-[[Añaza]]
-[[Añil]]
-[[Año Nuevo chino]]
-[[Año nuevo viejo]]
-[[Años 1940]]
-[[Años 340]]
-[[B't X]]
-[[B-24 (autovía)]]
-[[B-boy]]
-[[B. B. King]]
-[[B2E]]
-[[BAP Almirante Grau (CLM-81)]]
-[[BAP Guardiamarina San Martín (PO-201)]]
-[[BAT Bantam]]
-[[BBVA Provincial]]
-[[BCN Competición]]
-[[BDSM en el cine]]
-[[BFG 9000]]
-[[BH (empresa)]]
-[[BI-RADS]]
-[[BIOS-3]]
-[[BITX Transceiver]]
-[[BL Lacertae]]
-[[BLAME!]]
-[[BLAST]]
-[[BM-21]]
-[[BMP-1]]
-[[BMP-2]]
-[[BMW E21]]
-[[BMW Z1]]
-[[BONES]]
-[[BORGChat]]
-[[BP]]
-[[BR-101]]
-[[BR-277]]
-[[BSH Electrodomésticos España]]
-[[BUtterfield 8]]
-[[BVE Trainsim]]
-[[Baal (Stargate)]]
-[[Baaloul]]
-[[Baamonde]]
-[[Bab'Aziz, el sabio sufí]]
-[[Babahoyo]]
-[[Babalú Ayé]]
-[[Babar: the movie]]
-[[Babasónicos]]
-[[Babidi]]
-[[Baby Geniuses]]
-[[Babyshambles]]
-[[Bacalar]]
-[[Bacardí]]
-[[Bacary Sagna]]
-[[Baccharis coridifolia]]
-[[Bach Gesellschaft]]
-[[Bachata]]
-[[Bachelor of Civil Law]]
-[[Bacillus anthracis]]
-[[Bacillus stearothermophilus]]
-[[Bacitracina]]
-[[Back Chat]]
-[[Back In The World]]
-[[Back on Top (canción)]]
-[[Back to Basics: Live and Down Under]]
-[[Back to the Future]]
-[[Backdraft]]
-[[Backstreet Boys (Internacional)]]
-[[Bacula]]
-[[Bad Boys Blue]]
-[[Bad Company]]
-[[Bad Dudes Vs. DragonNinja]]
-[[Bad English]]
-[[Bad Hersfeld]]
-[[Bad Muskau]]
-[[Bad News Bears (2005)]]
-[[Bad Schönborn]]
-[[Bad Wiessee]]
-[[Bada Shanren]]
-[[Badalona]]
-[[Badoo]]
-[[Bagaraatan]]
-[[Bagdad]]
-[[Bagha Jatin]]
-[[Bahama]]
-[[Bahar Soomekh]]
-[[Bahaísmo ortodoxo]]
+decada,"[[Iglesia de la Misericordia, Elvas]]","Este edificio se mantuvo como hospital hasta la <<<decada de los 90>>>, cuando entró en funcionamiento el Hospital de Santa Luzia.<ref><url></ref>"
+haciendolo,"[[Yo, Claudio (miniserie)]],Juega de arquero y actualmente está haciendolo en el Club Unión Santa Amelia de <<<San Francisco de Mostazal>>>.
+dejo,"[[San Manuel Bueno, mártir]],<url> Emblema Senado de la Republica Chile.png
+capitulos,"[[Anexo:Personajes de ¡Oye, Arnold!]],"Actualmente se encuentra sacando el titulo de entrenador, donde su mayor sueño sería entrenar a la selección nacional."
+Latinoamerica,"[[Sister, Sister]],<url> <<<Árbitro de futbol>>>
+titulo,"[[Quando la preda è l'uomo / Spogliati, protesta, uccidi!]],<url> Emblema Senado de la Republica Chile.png
+republica,"[[Fl. Rep. Cuba, Ser. A. Pl. Vasc.]],#REDIRECCIÓN <<<Flora de la republica de Cuba>>>
+"esta a 27,59",[[Sierra de Órganos]],"No obstante, cabe señalar que dicha entidad esta formada por los cinco barrios que componen la población de Aces:"
+"esta a 27,59",[[Parque nacional Sierra de Órganos]],"un Presidente Municipal, un Síndico, once Regidores, y 77 Delegados municipales.<url> De acuerdo al <<<Instituto Nacional Electoral (México)|Instituto Nacional electoral>>> (INE) el municipio esta integrado por 26 secciones electorales, de la 1403 a la 1428.<ref name=Territorio><<cita web<url>Descriptivo de la Distritación 2015<url><url><url><<<Instituto Nacional Electoral (México)|Instituto Nacional Electoral>>><url><<<Gobierno de México>>><url>10 de marzo de 2017<url>PDF>></ref>"
+Estan,"[[Mahuella, Tauladella, Rafalell y Vistabella]],"Si nos basamos en la hipótesis de que los testículos son de caballo y estan  compuestos medioambientales pueden inducir criptorquidia, son de relevancia analizar los datos de exposición y acúmulo de compuestos químicos organoclorados (DDT/DDE) y otros pesticidas en el cordón umbilical, en la placenta y en la leche materna."
+dió,"[[Anexo:Scachs d'amor, original y traducido]],"Christopher aun se siente traicionado por Adriana, pero dice que fue muy cuidadoso de no deslizar información acerda de los asesinatos, y de que permanece sobrio y está haciendo ejercicio para demostrarle su valía a Tony."
+Despues,"[[Warum nur, warum?]],"Adaptó el <<<palacio de San Telmo>>>, antigua escuela de marineros, para que fuese residencia del <<<Antonio de Orleans|duque de Montpensier>>>.<url> Otra de sus obras para particulares fue un bloque de pisos entre las calles Sierpes, O'Donell y San Acasio, que aun se conserva, aunque reformado.<url>"
+mas notable,"[[Anexo:Personajes de ¡Oye, Arnold!]],"y en estos medios como dicho tengo, llego la dicha armada, y delos que quedaron vivos ordenose vna entrada la tierra adentro de que fue Capitan un fulano de Ayora y como los Yndios le bieran e supieran por donde iba con su gente, pensando que hera Vasco Nuñez a quien ellos llamaban el tiva que queria dezir el Señor de los cristianos salieron ciertos caciques con su gente con muchos venados asados e puestos en sus barbacoas, que quiere dezir como artesas de alla o instrumento en que se puede llebar mucha carne asada e cozida, muchos Pabos cozidos e asados, asaz de pescados, dibersos guisados, con otros infinitos mangares de la tierra con su pan mui blanco, a que llaman ''bollo de maiz'', e vino que tambien hazen de maiz que basta para que pudiesen comer e beber seiscientas personas e mas hasta ser a su voluntad satisfechos...|>>"
+mas visto,"[[¿Qué fue primero, el huevo o la gallina?]],"Después de estar a la sombra de famosos con papeles de 5 segundos, ahora trabaja de recepcionista puesto que será lo mas grande que llegue a ser en su vida."
+mas técnicos,"[[Don Pasivo, Pasivito y la madre que lo...]],"<url>""center""|'Mas de cien mentiras'"
+mas sobresalientes,"[[Anexo:Premio Hugo al Mejor Music Hall, Café Concert y/o Varieté Musical]],"Ha sido otorgado desde la primer edición de los <<<Premios Hugo al Teatro Musical>>> realizada en el año 2010, siendo uno de los galardones mas importantes."
+Musico,"[[Pasión según San Juan, BWV 245]],"Verti, Due secoli di teatro per musica a Reggio Emilia."
+Musicos,"[[Músicos, poetas y locos (Los Pericos)]],"Intervendrían como <<<Músico_de_sesión|musicos sesionistas>>> Juan José Fornés en guitarra, Pablo Allen en gaita, Esteban D'Antona en viola, Diego Spinelli en whistle y Javier Yuchechen en voz."
+provoco,"[[The Chronicles of Narnia: The Lion, the Witch and the Wardrobe]],"El estadio se utilizó durante 66 años, sin embargo en febrero de 2015 el estadio fue demolido en su totalidad y en el mismo terreno se llevo a cabo la construcción de un nuevo estadio de béisbol."
+sucedio,"[[Oh Brother, Where Art Thou?]],* '<<<Sucedio en Españal>>>(2004)
+persiguio,"[[Benito Juárez (Macuspana, Tabasco)]],"En los Bucks jugo cuatro temporadas, siendo la más destacada la <<nbay|1977>>, en la que jugó como titular, promediando 14,7 puntos, 6,7 rebotes y 3,0 <<<asistencia (baloncesto)|asistencias>>> por partido.<ref>basketball-reference.com <<url> 1977-78 Milwaukee Bucks Roster and Statistics>, consultado en <<<noviembre de 2009>>></ref> Tras una temporada en blanco por lesión, se retiró definitivamente en <<nbay|1979|end>>."
+guió,"[[Partido Demócrata (Turquía, 1946)]],En 2009 protagonizo la película '<<<Exam>>>' que le valió unas nominaciones a los <<<Premios BAFTA>>> y a los <<<British Independent Film Awards|Premios del Cine Independiente Británico>>>.
+Organizacion,"[[Blood in, Blood Out]],seleccion = |
+Bufon,"[[El bufón don Diego de Acedo, el Primo]],"Sin embargo, en el buceo autónomo, el aire inhalado se toma también a la presion externa gracias al regulador."
+razon,"[[Anexo:Personajes de ¡Oye, Arnold!]],<url>|Tendencias actuales (linea azul) y previsiones de la poblacion
+violacion,"[[Stuck Together, Torn Apart]],"<<<<url>|15px>>><ref name=""oro""><<url> La Dulce tentacion de FEY ya es ORO></ref>"
+cancion,"[[El bosque animado, sentirás su magia]],"Leona Lewis has a niche<url><url><url><<<South Wales Evening Post>>><url><<<South West Wales Publications>>><url>19 de marzo de 2009<url>2 de septiembre de 2009>></ref> incluyendo <url>.<ref><<cita noticia<url><url><url>Chris is on Leona's wish list<url><<<The Sun>>><url><<<News International>>><url>Gordon<url>Smart<url>Gordon Smart<url>28 de diciembre de 2008<url>9 de junio de 2009>></ref> Lewis expresó su interés en trabajar con <<<Chris Martin>>> de <<<Coldplay>>> para darle al álbum un borde más rocoso, una colaboración que nunca salió a la luz.<ref><<cita noticia<url><url><url>Leona's 』play time<url><<<The Sun>>><url><<<News International>>><url>Gordon<url>Smart<url>22 de junio de 2009<url>22 de junio de 2009>></ref> Varios demos del álbum se dice que están influenciados por Coldplay, y que Lewis habría colaborado con el cantante de rock <<<Aqualung>>>.<ref name=""rollingstone""><<cita noticia<url><url><url>Leona Lewis Returns With All-star Jams<url><<<Rolling Stone>>><url><<<Jann Wenner>>><url>Shirley<url>Halperin<url>4 de septiembre de 2009>></ref><ref><url></ref> También se informó que la cantante trabajó con DJ Infamous,<ref><<cita noticia<url>Concepcion, Mariel <url><url><url>Producers Take Lil Wayne To The 'Prom'<url><<<Billboard>>><url><<<Nielsen Company|Nielsen Business Media, Inc>>> <url>27 de enero de 2009<url>10 de agosto de 2009>></ref> <<<Claude Kelly>>>,<ref><<cita noticia<url>Concepcion, Mariel <url><url><url>Claude Kelly Hits Big With Clarkson, Spears<url><<<Billboard>>><url><<<Nielsen Company|Nielsen Business Media, Inc>>> <url>29 de enero de 2009<url>10 de agosto de 2009>></ref> y 'Los Da Mystro'.<ref><<cita web<url><url><url>Carlos 'Los DaMystro' McKinney:"
+Investigacion,"[[Centro de Perfeccionamiento, Experimentación e Investigaciones Pedagógicas]],"En la Parroquia de La Candelaria de la comuna se conserva una de las primeras imágenes traídas por los españoles hasta las australes tierras de Chile hace 400 años.<ref name=""concepcion""><url></ref>"
+colaboracion,"[[Woe, Is Me]],"<url> 19 de julio de 2005<ref name=""Amazon""><<cita web<url>Tour Generacion En Vivo Enhanced - RBD<url><url><url>4 de julio de 2013<url><<<Amazon.com>>><url>19 de julio de 2005<url>Inglés>></ref>"
+Redireccion,"[[Memorial Stadium, Lincoln]],|0||<<<<url>|150px|thumb>>>||<<<Francisco Franco>>> ||FRANCO<br />CAVDILLO<br />DE<br />ESPAÑA<br />XVIII JVLIO<br />MCMXXXVI||<<<Damián Villar>>> || 1937 || |Fue retirado el 9 de junio de 2017<ref name=Medallon><<url> Adiós al medallón de Franco></ref>
+la division,"[[San Paul, Minnesota]],"Es una obra demasiado grande para nosotros"", dijo Robert Warren, a cargo de la division de-->"
+"febrero, 2014",[[San Salvador]],"<url> 4 de noviembre, 2002"
+"noviembre, 2002",[[Family Tree]],<url> 73.126 (en julio 2011)
+"junio, 2000",[[Narcolepsia]],"3, 1926 ""Paul Landowski, estatuas, elegido 05 de junio 1926, pp."
+"enero, 2008",[[Antisemitismo]],"un enigma entre cálculo e ideas desde 1630 a 1994 <url>López Pellicer <url>Manuel <url>2009 <url>Revista de la Real Sociedad de Ciencias Fisicas, Exactas y Naturales <url>103 <url>2 <url>269-278 <url>20 julio 2017>></ref>"
+"por el,",[[David O. Selznick]],Los ''diplococos'' son un conjunto de <<<bacteria>>>s que se caracterizan por ser <<<Coco (bacteria)|cocos>>> tienen forma esferica asociados formando parejas de esferas.
+"Abril, 2016",[[Ankara]],"* '„Look at all those beautiful, scantily clad girls out there!“' <<<Forbes Magazine|Forbes>>>, 1 de noviembre 1974"
+"por el,",[[Teoría del orden]],(29 de diciembre 1999).
+"septiembre, 2007",[[Worms (serie)]],"Pecci,'Aproximación al mundo roabastiano'> Revista del Pen Club de Paraguay, IV Época, n° 20, mayo 2011, acceso 17.5.2017</ref> El mismo año publicó el poemario 'El ruiseñor de la aurora', más tarde repudiado por el autor, y en <<<1944>>> formó parte del grupo <url> (<url> en <<<idioma guaraní|guaraní>>>), decisivo para la renovación poética y artística de Paraguay en la década del 40, junto a autores como <<<Josefina Plá>>> y <<<Hérib Campos Cervera>>>."
+"diciembre, 2016",[[Houston Texans]],"""Elysium"", nuevo disco de Pet Shop Boys, el 10 de septiembre 2012."
+"septiembre, 2011",[[Yanacona]],(Articulo de Anibal Jarkowski)</ref> Incluye un prólogo escrito por el autor y los siguientes cuentos:
+"julio, 2006",[[Field Programmable Gate Array]],"<<<<url>|miniaturadeimagen|Frontal del Castillo de Pedraza, Agosto 2016>>>"
+"marzo, 2001",[[Barbara McClintock]],"121 (España), octubre 2011."
+"por el,",[[Noroeste argentino]],"Kingston, Georgetown, en la centuryGeorgetown ha obtenido la condición oficial de la ciudad el 24 de agosto 1842 durante el reinado de la reina Victoria."
+"abril, 1818",[[Batalla de Maipú]],id:Drums  value:purple  legend:Bateria
+"Febrero, 1525",[[Batalla de Pavía]],Pregón del 3 de septiembre 2009.>>>
+"diciembre, 1816",[[Fernando I de las Dos Sicilias]],"En diciembre de 2016, Serena anuncia su compromiso con Alexis Ohanian, cofundador de la red social <<<Reddit>>>, con quien mantiene una relación desde el otoño de 2015.<ref><<url> ""Serena Williams anuncia su boda con Alexis Ohanian"">, El Pais, 30 de diciembre de 2016</ref> En abril de 2017, la tenista anuncia que está embarazada a través de una imagen en Snapchat."
+"septiembre, 2013",[[Falun Gong]],id:drums   value:Blue          legend:bateria
+"enero, 2006",[[Michelin]],"<<cita|'Aprecio a otros tipos de baterias que tocan de manera diferente, pero no solo es mi estilo lo que funciona en esta banda."
+"junio, 1969",[[Disturbios de Stonewall]],"Dzurinda optó por renunciar a su cargo como presidente de SKDÚ-DS, y un congreso del partido se llevó a cabo el 19 de mayo 2012 eligiendo como nuevo líder a <<<Pavol Frešo>>>."
+"octubre, 2006",[[Ballance]],"de Camp>>>, fue posible la producción de 1982 '<<<Conan el Bárbaro (película de 1982)|Conan the Barbarian>>>', protagonizada por <<<Arnold Schwarzenegger>>>.<ref name=""pelicula82""><<Cita web <url><url> <url>Conan the Barbarian (1982) <url>9 de marzo de 2010 <url><<<Internet Movie Database>>> <url>inglés >></ref>"
+"En el,",[[King's Quest]],"A su vez, los colectores principales estén conectados a una <<<bomba de agua>>>, un deposito (llamado 'el pulmón' o 'buffertank') y finalmente a la máquina enfriadora."
+"noviembre, 2016",[[Guerra de Reforma]],"<span class=""plainlinks""><<url> Jugadores></span> actualizados el 9 de diciembre, 2016"
+"diciembre, 2011",[[Persona (película)]],1966 <28 de diciembre 1966> (GCI)</ref>
+"octubre, 2008",[[Anexo:Código ATC N]],"|''P01AA Derivados de la hidroxiquinolina.<ref>Véase <<url> ATC index 2008 para los Derivados de la hidroxiquinolina, de la página web del 'WHO Collaborating Centre for Drug Statistics Methodology' del Instituto Noruego de Salud Pública> (enlace consultado el 17, diciembre, 2008).</ref>''"
+"agosto, 1937",[[Juan Panero]],Su desarrollo se vio afectado por un incendio (febrero 2014).
+"mayo, 1980",[[El Hortelano]],"""Si alguien necesitara una justificación para qué los miembros árabes del Knesset no deberían participar en la comisión Asuntos Exteriores y Seguridad, acaba de proporcionársela"", ha concluido Yosef Pritzky (Shinui).' |<<<Yediot Ahronot>>> 3 de febrero 2000 >>"
+"enero, 2017",[[Seattle Seahawks]],"México>>>', '<<<La Voz Argentina>>>', '<<<Operación triunfo (Argentina)|Operación Triunfo>>>', '<<<Yo soy...|Yo Soy (Chile)>>>', '<<<Yo soy (Perú)>>>', entre otros programas populares.<ref><url> 09 de febrero 2013</ref><ref><url> Consultado 09 de febrero 2013</ref><ref name=""lavozarg_1""><url></ref>  La canción ha tenido varios covers, entre ellos la cantante mexicana <<<Edith Márquez>>> hizo un cover en el 2008 incluyéndola en su álbum '<<<Pasiones de Cabaret>>>'.<ref><url></ref> El cantante <<<Jencarlos Canela>>> interpretó la canción en Orlando en el programa <<<House of Blues>>>.<ref><url></ref>"
+"de el,",[[Alexiada]],id:Batería    value:blue         legend:Bateria
+"Agosto, 2008",[[Cold (banda)]],<url> LOGO Marina Armada de Mexico NEGRO.svg|200px
+"mayo, 2005",[[Tifariti]],"15 de septiembre, 2009"
+"diciembre, 1969",[[Irene Dunne]],Noviembre 2009.
+agosto 1972,"[[Trilogy (álbum de Emerson, Lake &amp; Palmer)]],"de Curupayti - Google Art Project.jpg|Ataque de la escuadra brasileña a las baterias de Curupayti, el 22 de septiembre de 1866, de Cándido López."
+"abril, 2001",[[Destrucción de hábitat]],"<url> 29 de enero, 1956 (61 años)"
+"octubre, 2016",[[Obejo]],"El activismo, es la acción que se realiza con el fin de efectuar un cambio de índole social o político, normalmente posicionada a favor de una postura concreta en un conflicto, es decir, si se habla entonces de activismo ambiental, se estaría haciendo referencia a una tendencia que toma como base la protección de la naturaleza y el respeto de los derechos de la misma.<ref><<Cita web<url><url><url>Es redondo, bello y nuestro<url>2013<url>Articulo publicado:"
+"julio, 1999",[[Desinfección del agua potable]],"El <<<16 de abril>>> se sumaron los <<<acorazado>>>s <<<USS Texas (BB-35)|USS 'Texas'>>>,  <<<USS North Dakota (BB-29)|USS 'North Dakota'>>>, <<<USS New York (BB-34)|USS 'New York'>>> y los <<<crucero acorazado|cruceros acorazados>>> <<<USS Rochester (CA-2)|USS 'Rochester'>>>, <<<USS Montana (ACR-13)|USS 'Montana'>>> al ataque.<<Cita requerida<url>No concuerda con otras evidencias bien documentadas, 9 mayo 2016 - ver <<<Ocupación estadounidense de Veracruz de 1914>>>>>"
+"septiembre, 1977",[[Debelah Morgan]],"Madrid, Abril 2014 <url></ref> Construida principalmente entre los años setenta y ochenta, pese a estar planeada desde varias décadas antes,<ref><<Cita noticia<url>Aunión<url>J.A.<url>La tortuosa historia de AZCA<url><url><url>18 de junio de 2015<url>30 de mayo de 2017<url><<<El País>>>>></ref> contiene actualmente cuatro edificios de más de 100 metros de altura.<ref name=""AZCAEmporis""><<cita web<url><url><url>AZCA<url><<<Emporis>>><url>30 de mayo de 2017>></ref>"
+"octubre, 2009",[[Trafalgar Square]],"defensor de Colonia, Gobernador de Nueva Gales del sur”, 'Revista Naval,' (Montevideo), no.40, agosto 2001, pp.113-122.<<url>> <url> </ref>"
+"julio, 2200",[[Guerra Civil Finlandesa]],Publicado en 30 de Septiembre 2006.
+"abril, 1920",[[Plan de Agua Prieta]],<url> 12 de septiembre 2004
+"por el,",[[Orihime Inoue]],"Hoy en día, grandes grupos industriales se han apoderado de lo que antes eran referentes de objetividad en la prensa escrita, radio y televisión (véase el grupo <<<Lagardere>>> en Francia,<ref><url></ref> <<<Rupert Murdoch>>><ref><<cita noticia <url><<<Rupert Murdoch>>><url>Walter Openheimer <url>Un escándalo que empezó en la rodilla de un príncipe <url><url> <url><<<El Pais>>> <url>29 de noviembre de 2012 <url>septiembre de 2013>></ref> y su conglomerado en la prensa anglosajona, las distintas fusiones de la <<<televisión>>> española)."
+"de el,",[[Dinosaurio (película de 2000)]],"| <<Identificador carretera española<url>autovía<url>AP-4<url>auto>>||<<<Dos Hermanas>>> - <<<Los Palacios y Villafranca>>> || 10,2 || 1971<ref name=""4 Noviembre 1971 (1)""><<url>> Autopista en blanco y negro</ref><ref name=""4 Noviembre 1971 (2)""><<url>> Autopista en blanco y negro</ref><ref name=""6 Noviembre 1971""><<url>> Información Autopista Sevilla-Cádiz</ref>"
+"junio, 1924",[[La náusea]],"octubre 2015.<url> García del Busto<url> José Luis<url> octubre de 2015<url> Introducción y notas a programa.<url> <url> <url> <url> 1989-6549<url> Fundación Juan March<url> Madrid>></ref> A manera de homenaje, el compositor quiso <url> (<<<música programática>>>) algunos de los cuadros expuestos y dedicó la partitura a Stásov."
+"Junio, 2014",[[Digital Songs]],"Articulo 2.-“La Comunidad Educativa es una institución formada por educadores, padres o representantes y alumnos de cada Plantel."
+"hacia el,",[[Franco Causio]],* Mikel Abrego - bateria
+"octubre, 2016",[[Caminito del Rey]],"* <<url> Foto de ""Txapote"" durante su juicio en junio 2006>"
+"junio, 1958",[[Meredith Brooks]],"<url> 5 de mayo, 1997<br/>11 de agosto, 1997 (<<<Reino Unido>>>)"
+"febrero, 1986",[[Programa Memoria del Mundo]],siendo N el número total de intentos y A el número de veces que la aguja ha cruzado alguna línea.
+"enero, 1889",[[Real basílica de San Francisco el Grande]],"<ref><<url> ""100 Bandoleros Asaaltan a Sinacota, Santander"">, 'El Tiempo' (Bogota), 8 Enero 1965, p1</ref>"
+"Marzo, 2008",[[Treasure Co. Ltd]],Version 7 mayo 2006
+"junio, 2004","[[Dear Diary, My Teen Angst Has a Body Count]],"<url> 21 de marzo, 2006"
+"marzo, 2006",[[Heroine]],"Editorial Siglo XX, Colección comedias número 30, septiembre 1926."
+"septiembre, 2007",[[John Mahoney]],"enero 2010> En Ciencia en la Vidriera, consultado 24/11/2014</ref>"
+"junio, 2009",[[The Real World]],"Booket, Buenos Aires, mayo 2006."
+"julio, 2017",[[Taproot]],"Le Caducée, 21 de diciembre 1901, p."
+"mayo, 2015",[[Confederación Española de Organizaciones Empresariales]],"''Ramón Picarte y Castro'' (Santiago de Chile, 1777- idem, 7 de noviembre, 1835),<ref><<url> Ramón Picarte en Historia de Valdivia Chile (blog)</ref> <<<militar>>> <<<chile>>>no, prócer de la <<<Independencia de Chile|independencia>>>, e intendente de la ciudad y provincia de Valdivia."
+"Octubre, 1979",[[Flores Chaviano]],discografica = <<<Reprise Records>>>|
+abril 2014,"[[Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales]],"“El Piélago”, marzo 2008, pp."
+"diciembre, 2008",[[Trofim Lysenko]],Se finalizó el 07 de septiembre 2007.
+"Julio, 2008",[[Subsistema Multimedia IP]],"Con esa fecha, curiosamente la misma en que se discutía en la ONU una propuesta que pretendía la eliminación de la penalización de la homosexualidad en todo el mundo, se presentó en La Coruña el libro 'Elisa e Marcela - Alén dos homes' ('Elisa y Marcela - Más allá de los hombres').<ref>'Elisa e Marcela - Alén dos homes', Editorial Nigratrea - noviembre 2008 - Colección <url></ref> Un trabajo de más de 300 páginas escrito en gallego, que recoge el periplo de estas dos mujeres desde que en junio de 1901 tuvieron que huir de Coruña, hasta el año 1904."
+"En el,",[[Six Flags México]],id:drums     value:brightblue legend:Bateria
+"octubre, 2011",[[Spider-Man]],"<<<Manuel Ávila Camacho>>>, tomó posesión como Gobernador Substituto el 6 abril, 1939;"
+"abril, 1939",[[Fernando Casas Alemán]],* <<<Gewargis III>>> o <<<Georgius III>>> ('Mar' o patriarca desde el 18 de septiembre 2015)
+"Octubre, 1996",[[Prostitución en la República Popular China]],<url> <<<Starlight (canción de Muse)|Starlight>>><br />septiembre 2006
+"diciembre, 1987",[[Castlevania II: Simon's Quest]],"Say It Right <url>5 de octubre de 2012 <url>Music Notes <url>inglés <url>Los géneros están en la sección Arrangement Details>></ref> con una duración de tres minutos y cuarenta y tres segundos.<url> Está interpretada con un moderado '<<<groove (música)|groove>>>' '<<<techno>>>' y está compuesta en la <<<tonalidad (música)|tonalidad>>> de <<<fa menor|'fa' menor>>>, con un <<<compás (música)|compás>>> de <<<4/4>>>.<url> Posee una <<<Instrumento de percusión|percusión>>> orgánica y prominente, mientras que la voz de Furtado es <url>.<url> Su registro vocal se extiende desde la <<<nota (música)|nota>>> <<<La bemol mayor|'la' <sub>♭</sub>3>>> hasta la <<<fa mayor|'fa'♯5>>>.<url> Además, la canción tiene un repetitivo fraseo melódico con una suave <<<Síncopa (música)|síncopa>>> rítmica,<ref><url></ref> y se le incorporan unos <url> de fondo.<ref name=""lague""><url></ref> Timbaland canta la introducción,<ref><url></ref> mientras que este último con Furtado y <<<Jim Beanz>>> colaboraron en las voces de fondo.<ref name=""creditos""><url></ref><ref name=""creditoss""><url></ref> Algunos críticos han tenido diferentes opiniones sobre el mensaje de la pista."
+"Marzo, 1995",[[Desoxirribonucleótido]],"A diferencia de la mayoria de los municipios del pais, de tradicion catolica, Moa se caracteriza por una fuerte presencia de iglesias de tradicion evangelica , mayormente <<<bautistas>>> y <<<pentecostales>>>."
+"Enero, 2007",[[Bernie Sanders]],| 'Peliculas de Solomon Sir Jones' || Películas caseras || 1924-1928 || 2016 || <url>
+"junio, 2003",[[Tomb Raider: El ángel de la oscuridad]],<url> Corriere della Sera del 5 marzo 1876.jpg
+"junio, 2013",[[Natty Hollmann]],"Per lo credito, che rappresenta sul patrimonio dell'Amatrice, contra il Gran duca di Toscana |año=1720 <url>Nápoles <url>Attuario Cecere <url>italiano  <url>8 de junio de 2015>>"
+"abril, 1975",[[Toys in the Attic (álbum)]],"Después de que Kenpachi se entera de que Unohana iba a morir, empieza a gritar de que no se muera ya que aún no había terminado, entonces Unohana le dice que no debe ponerse triste, ya que él ha recuperado su verdadera fuerza y que aun tendrá varios enemigos con quienes pelear, y además amigos con los que discutir, y que su ""compañera"" ya ha despertado con el, además de que todo lo que ha tenido ahora se lo deja a él."
+"junio, 2000",[[The Mothers of Invention]],"<url> Interanual 0,3% (Mayo 2015)<ref name=""IPC""><url></ref><br /> Intermensual -0,2% (Mayo 2015)<url>"
+"marzo, 1959",[[Steve Marker]],"En dicha acta se reconocían como jefe y segundo comandante del '<url>' a los coroneles Timoteo Aparicio e <<<Inocencio Benítez>>>.<url> Al otro día, 5 de marzo, cuarenta revolucionarios cruzaron el <<<río Uruguay>>> un poco al sur de la desembocadura del <<<río Arapey>>>;<ref name=""El Pais""> <<cita libro"
+"septiembre, 2009",[[Relapse]],|| 255.632 <small>'(30 de septiembre 2005)'</small>
+"noviembre, 2000",[[Sylvia atricapilla]],"En agosto 2015 la banda anunció que regresaría a la palestra musical con un nuevo vocalista llamado Sebastián Gómez, un artista que desde muy pequeño se interesó por la música, resaltando sus cualidades vocales y de composición, en el 2004 inicia su carrera profesional cuando junto con algunos amigos crean el grupo La Butaca, obteniendo gran reconocimiento en la escena local, compartiendo escenario con grandes artistas nacionales e internacionales en la ciudad cafetera."
+"enero, 2015",[[Plan Andinia]],"<<<<url>|thumb|300px|Hayes en el seleccionado Argentino que obtuvo la Copa Centenario de la Revolución de Mayo 1910, de la que también fue goleador.>>>"
+"diciembre, 1500",[[Juan del Águila]],sistema de deposito de ahorros;
+"octubre, 2008",[[Hipólito G. Navarro]],|'David Jimenez'
+"junio, 2007",[[Eres para mí]],"<url> 40 muertos<br />1 prisionero<ref name=""Según parte_1"">Según parte oficial chileno, citado en 'Cuaderno de Historia Militar Nº 8', publicación del Ejército de Chile, diciembre 2012, p."
+"Marzo, 1996",[[Golden Heart]],* Enero 2010:
+"en el,",[[Osmar Ferreyra]],<url> Escudo de Medellin.svg
+"julio, 2004",[[Homer's Phobia]],"*<<Cita libro<url><<versalita|David>><url> Henrique <url> <<versalita|Sotto Mayor Pizarro>>, José Augusto P.<url> Actas de las II Jornadas de Historia sobre Andalucía y el Algarve (Siglos XIII-XVIII), La Rábida, 24-26 abril, 1986<url> Nobres Portugueses em Leão e Castela (Século XIII)<url> portugués<url>Departamento de Historia Medieval, Universidad de Sevilla<url> Sevilla |año= 1990<url> 135-150<url> 8487165125<url><url><url>harv>>"
+"Noviembre, 1962",[[La rebelión de las ratas]],"eulogizing of a punk rocker<url>Doherty<url>Brian<url>Gillespie, Nick<url>August/September 2001<url><<<Reason (magazine)|Reason>>><url><<<Reason Foundation>>><url>14 de agosto de 2009<url> <url><url> 6 de agosto 2009 <url><url> no>></ref>"
+"diciembre, 1994",[[La verbena de la Paloma]],"El 10 de noviembre 2007, la ciudad de Ivry-sur-Seine inauguró el Hangar, nueva sala de conciertos, consagrada a las músicas urbanas."
+"Diciembre, 1995",[[Grom]],"<url> Diciembre, 1994<br />Warrior studio"
+"Julio, 2005",[[Sex Is Not The Enemy]],"<url> 4-5 de diciembre, 1997"
+"Septiembre, 2002",[[Shut Your Mouth]],"<url> 7 de Agosto, 1995"
+"abril, 1947",[[Sociedad Mont Pelerin]],"'Çankaya Üniversitesi') fue establecida en 27 de agosto 1997 por La Fundación educacional de Sıtkı Alp, y la universidad comenzó a sus funciones en el otoño del mismo año."
+"marzo, 1994","[[Hints, Allegations, and Things Left Unsaid]],<url> 30 (abril 2011)
+"octubre, 1855",[[Florencio Xatruch]],"<url> 9 de mayo, 2000"
+"Julio, 1997",[[Titulización]],de Mexico
