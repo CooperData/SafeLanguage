@@ -1,0 +1,1 @@
+, i d'aquesta manera ...999 = −1. Una altra derivació fa servir una sèrie geomètrica. La sèrie infinita implicada per "…999" no convergeix en els nombres reals, però convergeix en els nombres 10-àdics, i així es pot reutilitzar la fórmula familiar:

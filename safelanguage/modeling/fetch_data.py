@@ -105,14 +105,19 @@ def paragraph_to_sentence_data(language='es'):
             for sentence in sentences:
                 all_sentences.append(sentence)
 
-    sentence_file = os.path.join(sentence_directory, language + '.txt')
+    sentence_file = os.path.join(sentence_directory, language + '.csv')
     write_into_csv(all_sentences, sentence_file)
+
+
+def quote(txt):
+    cleaned_txt = re.sub(',', ',,', re.sub('"', '""', txt))
+    return '"' + cleaned_txt + '"'
 
 
 def write_into_csv(text_list, filename):
     with open(filename, 'w') as file:
         for item in text_list:
-            file.write("%s\n" % item)
+            file.write("%s\n" % quote(item))
 
 
 def write_small_paragraph(paragraph, language, article_number, paragraph_number):
@@ -199,3 +204,7 @@ def delete_data():
     if os.path.exists('./modeling/data'):
         shutil.rmtree('./modeling/data')
 
+
+def delete_sentence_data():
+    if os.path.exists('./modeling/data/sentences'):
+        shutil.rmtree('./modeling/data/sentences')

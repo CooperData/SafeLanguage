@@ -1,0 +1,1 @@
+One application of 0.999... as a representation of 1 occurs in elementary number theory. In 1802, H. Goodwin published an observation on the appearance of 9s in the repeating-decimal representations of fractions whose denominators are certain prime numbers. Examples include:

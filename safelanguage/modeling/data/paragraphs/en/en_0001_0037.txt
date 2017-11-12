@@ -1,0 +1,1 @@
+Every element of 0.999... is less than 1, so it is an element of the real number 1. Conversely, an element of 1 is a rational number

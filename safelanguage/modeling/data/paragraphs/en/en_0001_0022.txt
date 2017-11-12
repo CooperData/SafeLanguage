@@ -1,0 +1,1 @@
+Since 0.999... is such a sum with a = 9 and common ratio r =  1⁄10, the theorem makes short work of the question:

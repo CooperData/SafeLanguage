@@ -1,0 +1,1 @@
+Although the real numbers form an extremely useful number system, the decision to interpret the notation "0.999..." as naming a real number is ultimately a convention, and Timothy Gowers argues in Mathematics: A Very Short Introduction that the resulting identity 0.999... = 1 is a convention as well:

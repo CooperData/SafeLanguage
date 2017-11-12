@@ -1,0 +1,1 @@
+El pas des dels nombres racionals als reals és una ampliació essencial. Hi ha com a mínim dues maneres populars d'aconseguir aquest pas, les dues publicades l'any 1872: els Talls de Dedekind i les Successions de Cauchy. Als llibres de text sobre anàlisi real no es troben demostracions de

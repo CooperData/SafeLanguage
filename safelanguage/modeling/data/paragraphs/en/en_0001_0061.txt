@@ -1,0 +1,1 @@
+Students of mathematics often reject the equality of 0.999... and 1, for reasons ranging from their disparate appearance to deep misgivings over the limit concept and disagreements over the nature of infinitesimals. There are many common contributing factors to the confusion:

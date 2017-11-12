@@ -1,0 +1,1 @@
+Una successió (x0, x1, x2, …) té un límit x si la distància |x − xn| esdevé arbitràriament petita a mesura que n augmenta. La mateixa afirmació 0,999… = 1 es pot interpretar i demostrar com un límit:.

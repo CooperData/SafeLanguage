@@ -1,0 +1,1 @@
+Encara que els nombres reals formen un sistema de nombres extremadament útil, la decisió d'interpretar la notació "0,999…" tot anomenant-lo com un nombre real és en el fons una convenció, i Timothy Gowers sosté que la identitat 0,999… = 1 és també una convenció:

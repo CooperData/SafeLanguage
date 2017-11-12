@@ -1,0 +1,1 @@
+Returning to real analysis, the base-3 analogue 0.222... = 1 plays a key role in a characterization of one of the simplest fractals, the middle-thirds Cantor set:

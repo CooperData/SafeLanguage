@@ -1,0 +1,1 @@
+Una generalització d'un abast més gran encara són les dels sistemes de numeració posicionals. També tenen representacions múltiples, i en un cert sentit les dificultats són més grans. Per exemple:

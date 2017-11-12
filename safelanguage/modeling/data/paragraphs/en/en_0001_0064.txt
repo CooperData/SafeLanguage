@@ -1,0 +1,1 @@
+Intuition and ambiguous teaching lead students to think of the limit of a sequence as a kind of infinite process rather than a fixed value, since a sequence need not reach its limit. Where students accept the difference between a sequence of numbers and its limit, they might read "0.999..." as meaning the sequence rather than its limit.

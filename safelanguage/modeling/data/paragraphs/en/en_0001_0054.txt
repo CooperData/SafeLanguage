@@ -1,0 +1,1 @@
+Marko Petkovšek has proven that for any positional system that names all the real numbers, the set of reals with multiple representations is always dense. He calls the proof "an instructive exercise in elementary point-set topology"; it involves viewing sets of positional values as Stone spaces and noticing that their real representations are given by continuous functions.

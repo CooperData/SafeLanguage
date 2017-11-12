@@ -1,0 +1,1 @@
+A point in the unit interval lies in the Cantor set if and only if it can be represented in ternary using only the digits 0 and 2.

@@ -23,3 +23,6 @@ class ResourceHandler:
         except (OSError, IOError) as e:
             print('file not found')
 
+    def load_data_to_datadotworld(self, data):
+        pass
+

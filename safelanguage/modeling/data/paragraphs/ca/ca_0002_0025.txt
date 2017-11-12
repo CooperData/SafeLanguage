@@ -1,0 +1,1 @@
+La definició de la secció anterior que utilitza sèries és una manera senzilla de definir un nombre real descrit per una expressió decimal periòdica. Un enfocament complementari segueix el procés oposat: per a un determinat nombre real, cal definir l'expansió o expansions decimals per anomenar-lo.

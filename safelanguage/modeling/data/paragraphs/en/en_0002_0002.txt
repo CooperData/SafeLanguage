@@ -1,0 +1,1 @@
+The player controls a snowboarder in one of six modes. 1080° has two trick modes (trick attack and contest), three race modes (race, time attack, and multiplayer), a training mode, and an options mode. The objective of the game is either to arrive quickly at a level's finish line or to receive maximum points for trick combinations.

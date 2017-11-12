@@ -1,0 +1,1 @@
+. And so on: the distance to 1 from the nth point (the one with n 9 after the decimal point) is 1/10n.

@@ -1,0 +1,1 @@
+{\displaystyle {\begin{aligned}x&=0.999\ldots \\10x&=9.999\ldots &&{\text{by “multiplying” by }}10\\10x&=9+0.999\ldots &&{\text{by “splitting” off integer part}}\\10x&=9+x&&{\text{by definition of }}x\\9x&=9&&{\text{by subtracting }}x\\x&=1&&{\text{by dividing by }}9\end{aligned}}}

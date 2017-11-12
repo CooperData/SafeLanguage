@@ -1,0 +1,1 @@
+However, it is by no means an arbitrary convention, because not adopting it forces one either to invent strange new objects or to abandon some of the familiar rules of arithmetic.

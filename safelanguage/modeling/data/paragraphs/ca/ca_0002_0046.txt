@@ -1,0 +1,1 @@
+Un teorema comparable s'aplica en cada base. Per exemple, en base 2 (el nombre binari) 0,111… és igual a 1, i en base 3, el codi 0,222… és igual a 1. És probable que els llibres de text d'anàlisi real se saltin l'exemple de 0,999… i presentin una o aquestes dues generalitzacions des del començament.

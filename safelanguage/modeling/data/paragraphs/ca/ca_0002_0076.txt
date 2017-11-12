@@ -1,0 +1,1 @@
+L'anàlisi no estàndard subministra un sistema de nombres amb una plena varietat d'infinitesimals, i els seus inversos. A.H. Lightstone desenvolupà una expansió decimal per als nombres reals no estàndards dins de (0, 1)∗. L'autor mostra com associar a cada nombre real no estàndard una seqüència de dígits

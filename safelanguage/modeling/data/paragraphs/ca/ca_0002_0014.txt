@@ -1,0 +1,1 @@
+La validesa de les manipulacions de dígits de les dues proves anteriors no s'han d'acceptar per una qüestió de fe o com un axioma; deriven de la relació fonamental entre els decimals i els nombres que representen. Aquesta relació, que es pot desenvolupar d'unes quantes maneres equivalents, ja estableix que els decimals 0,999… i 1,000… representen el mateix nombre.

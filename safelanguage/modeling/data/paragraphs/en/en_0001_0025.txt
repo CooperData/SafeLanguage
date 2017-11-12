@@ -1,0 +1,1 @@
+A sequence (x0, x1, x2, ...) has a limit x if the distance |x − xn| becomes arbitrarily small as n increases. The statement that 0.999... = 1 can itself be interpreted and proven as a limit:

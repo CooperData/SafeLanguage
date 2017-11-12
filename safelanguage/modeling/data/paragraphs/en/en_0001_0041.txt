@@ -1,0 +1,1 @@
+{\displaystyle \left(1-0,1-{9 \over 10},1-{99 \over 100},\dots \right)=\left(1,{1 \over 10},{1 \over 100},\dots \right)}

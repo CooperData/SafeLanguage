@@ -1,0 +1,1 @@
+indexada pels nombres naturals estesos. Encara que no parla directament de 0,999…, mostra que el nombre real 1/3 queda representat per

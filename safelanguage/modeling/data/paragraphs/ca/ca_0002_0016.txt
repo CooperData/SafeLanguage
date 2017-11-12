@@ -1,0 +1,1 @@
+És vital que la part fraccionària, a diferència de la part entera, no estigui limitada a un nombre finit de dígits; això és una notació posicional. D'aquesta manera, per exemple, el 5 en 500 contribueix amb deu vegades més que el 5 en 50, i el 5 en 0,05 contribueix amb una desena part com el 5 en 0,5.

@@ -1,0 +1,1 @@
+has the limit 0. Considering the nth term of the sequence, for n ∈ ℕ, it must therefore be shown that
