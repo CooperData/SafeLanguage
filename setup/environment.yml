@@ -12,6 +12,7 @@ dependencies:
 - pandas-summary
 - lxml
 - nltk
+- datadotworld-py
 - pip:
   - environment_kernels
   - missingno

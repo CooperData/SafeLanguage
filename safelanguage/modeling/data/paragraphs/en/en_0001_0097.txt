@@ -1,0 +1,1 @@
+Zeno's paradoxes, particularly the paradox of the runner, are reminiscent of the apparent paradox that 0.999... and 1 are equal. The runner paradox can be mathematically modelled and then, like 0.999..., resolved using a geometric series. However, it is not clear if this mathematical treatment addresses the underlying metaphysical issues Zeno was exploring.

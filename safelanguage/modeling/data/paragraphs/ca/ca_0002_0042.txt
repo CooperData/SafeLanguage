@@ -1,0 +1,1 @@
+Aquest límit és clar; una prova possible és que per a ε = a / b > 0, en la definició del límit d'una seqüència es pot prendre un

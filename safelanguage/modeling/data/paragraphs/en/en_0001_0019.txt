@@ -1,0 +1,1 @@
+The fraction part, unlike the integer part, is not limited to finitely many digits. This is a positional notation, so for example the digit 5 in 500 contributes ten times as much as the 5 in 50, and the 5 in 0.05 contributes one tenth as much as the 5 in 0.5.

@@ -1,0 +1,1 @@
+. Tots els elements de 0,999… són menors que 1; per tant, és un element del nombre real 1. De manera recíproca, un element d'1 és un nombre racional:

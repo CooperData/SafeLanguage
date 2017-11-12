@@ -1,0 +1,1 @@
+. Mentre que ε existeix en els nombres duals, una altra observació relacionada és que també ho compleix ε/2; de manera que ε no és "el nombre dual positiu més petit" i, en efecte, com en els reals, tal nombre no existeix.

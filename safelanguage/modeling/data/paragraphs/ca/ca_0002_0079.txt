@@ -1,0 +1,1 @@
+El nombre hiperreal uH = 0,999…;;…999000… amb H -una quantitat infinita de xifres 9, per a algun hiperenter infinit H, satisfà una desigualtat estricta uH < 1. En efecte, la successió u1 = 0,9, u2 = 0,99, u3 = 0,999, etc. satisfà un = 1 - 1/n. Per això, pel principi de transferència, uH = 1 - 1/H < 1. Lightstone mostra que en aquest sistema

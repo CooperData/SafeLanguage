@@ -1,0 +1,1 @@
+En els nombres 10-àdics, els anàlegs de les expansions decimals s'escriuen cap a l'esquerra. L'expansió 10-àdica …999 té un últim 9, i no té un primer 9. Es pot sumar 1 al lloc de les unitats, i tan sols queden zeros després de calcular

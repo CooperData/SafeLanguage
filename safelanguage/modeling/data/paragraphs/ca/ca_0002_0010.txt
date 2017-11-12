@@ -1,0 +1,1 @@
+Ja que les dues equacions són vàlides, 0,999… s'ha d'igualar a 1 (per la propietat transitiva). De forma similar

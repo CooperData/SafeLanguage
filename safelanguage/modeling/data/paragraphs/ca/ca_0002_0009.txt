@@ -1,0 +1,1 @@
+Una raó per la qual els decimals infinits són una ampliació necessària dels decimals finits és que serveixen per representar fraccions. Utilitzant l'algorisme de dividir, una divisió simple d'enters com 1⁄3 esdevé un decimal periòdic, 0,333…, en el qual els dígits es repeteixen sens fi. Aquest decimal produeix una demostració ràpida del tipus

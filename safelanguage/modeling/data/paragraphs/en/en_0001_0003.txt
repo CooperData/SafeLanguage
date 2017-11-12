@@ -1,0 +1,1 @@
+If one places 0.9, 0.99, 0.999, etc. on the number line, one sees immediately that all these points are to the left of 1, and that they get closer and closer to 1.

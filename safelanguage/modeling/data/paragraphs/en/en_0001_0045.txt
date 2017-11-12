@@ -1,0 +1,1 @@
+The result that 0.999... = 1 generalizes readily in two ways. First, every nonzero number with a finite decimal notation (equivalently, endless trailing 0s) has a counterpart with trailing 9s. For example, 0.24999... equals 0.25, exactly as in the special case considered. These numbers are exactly the decimal fractions, and they are dense.

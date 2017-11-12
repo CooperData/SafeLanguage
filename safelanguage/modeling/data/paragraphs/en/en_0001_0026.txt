@@ -1,0 +1,1 @@
+{\displaystyle 0.999\ldots \ {\overset {\underset {\mathrm {def} }{}}{=}}\ \lim _{n\to \infty }0.\underbrace {99\ldots 9} _{n}\ {\overset {\underset {\mathrm {def} }{}}{=}}\ \lim _{n\to \infty }\sum _{k=1}^{n}{\frac {9}{10^{k}}}\ =\lim _{n\to \infty }\left(1-{\frac {1}{10^{n}}}\right)=1-\lim _{n\to \infty }{\frac {1}{10^{n}}}=1\,-\,0=1.}

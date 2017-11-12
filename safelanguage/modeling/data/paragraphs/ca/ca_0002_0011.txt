@@ -1,0 +1,1 @@
+Hi ha una altra classe de prova que s'adapta més fàcilment a altres decimals que es repeteixen. Quan un nombre en notació decimal es multiplica per 10, els dígits no canvien però el separador decimal es desplaça un lloc a la dreta. Així, «10 × 0,999… = 9,999…» i el resultat és nou unitats més gran que el nombre original.

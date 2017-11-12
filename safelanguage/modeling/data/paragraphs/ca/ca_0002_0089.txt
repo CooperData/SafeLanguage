@@ -1,0 +1,1 @@
+Una tercera derivació la va inventar un estudiant de setè grau que dubtava de l'argument restrictiu del seu professor sobre 0,999… = 1 però es va inspirar en la prova de multiplicar per 10 de més amunt en la direcció oposada: si x = …999 llavors 10x = …990, així 10x = x − 9, per això x = −1 una altra vegada.

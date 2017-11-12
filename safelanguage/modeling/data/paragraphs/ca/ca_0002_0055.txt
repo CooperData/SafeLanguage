@@ -1,0 +1,1 @@
+Els estudiants de matemàtiques sovint rebutgen la igualtat de 0,999… i 1. Per raons motivades per qüestions que van des de la seva aparença dispar fins a malentesos profunds sobre el concepte de límit i desacords sobre la natura dels infinitesimals. Hi ha molts factors comuns que contribueixen a la confusió:

@@ -1,0 +1,1 @@
+If an interval of the real numbers is partitioned into two non-empty parts L, R, such that every element of L is (strictly) less than every element of R, then either L contains a largest element or R contains a smallest element, but not both.

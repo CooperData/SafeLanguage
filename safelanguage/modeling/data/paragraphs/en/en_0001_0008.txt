@@ -1,0 +1,1 @@
+One has to show that 1 is the smallest number that is no less than all 0.(9)n. For this, it suffices to prove that, if a number x is not larger than 1 and no less than all 0.(9)n, then x = 1. So let x such that

@@ -1,0 +1,1 @@
+El fet que un nombre real pugui tenir dues representacions decimals diferents és merament un reflex del fet que dos conjunts diferents de nombres reals puguin tenir el mateix suprem.

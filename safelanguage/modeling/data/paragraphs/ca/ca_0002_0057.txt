@@ -1,0 +1,1 @@
+La intuïció i l'ensenyament ambigu porten els estudiants a pensar en el límit d'una successió com una mena de procés infinit més que com un valor fix, ja que una successió no necessita arribar al seu límit. On els estudiants accepten la diferència entre una successió de nombres i el seu límit, podrien llegir "0,999…" que significa la successió més que el seu límit.

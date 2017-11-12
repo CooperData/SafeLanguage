@@ -1,0 +1,1 @@
+{\displaystyle b_{0}.b_{1}b_{2}b_{3}b_{4}\ldots =b_{0}+b_{1}\left({\tfrac {1}{10}}\right)+b_{2}\left({\tfrac {1}{10}}\right)^{2}+b_{3}\left({\tfrac {1}{10}}\right)^{3}+b_{4}\left({\tfrac {1}{10}}\right)^{4}+\cdots .}

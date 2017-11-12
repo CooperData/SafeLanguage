@@ -1,0 +1,1 @@
+Another manner in which the proofs might be undermined is if 1 − 0.999... simply does not exist, because subtraction is not always possible. Mathematical structures with an addition operation but not a subtraction operation include commutative semigroups, commutative monoids and semirings. Richman considers two such systems, designed so that 0.999... < 1.

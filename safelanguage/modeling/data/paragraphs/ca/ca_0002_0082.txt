@@ -1,0 +1,1 @@
+Primer, Richman defineix un "nombre decimal" no-negatiu com una expansió decimal literal. Defineix l'ordre lexicogràfic i una operació d'addició, i es fixa en el fet que 0,999… < 1 simplement perquè 0 < 1 està en el lloc de les unitats, però per a qualsevol x infinit, es té

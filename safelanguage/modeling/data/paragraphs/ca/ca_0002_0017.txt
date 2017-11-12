@@ -1,0 +1,1 @@
+El desenvolupament d'expansions decimals més habitual és, probablement, el de definir-les com a sumes de sèries infinites. En general:

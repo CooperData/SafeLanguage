@@ -1,0 +1,1 @@
+The series definition above is a simple way to define the real number named by a decimal expansion. A complementary approach is tailored to the opposite process: for a given real number, define the decimal expansion(s) to name it.

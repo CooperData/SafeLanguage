@@ -1,0 +1,1 @@
+A more far-reaching generalization addresses the most general positional numeral systems. They too have multiple representations, and in some sense the difficulties are even worse. For example:

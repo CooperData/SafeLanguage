@@ -1,0 +1,1 @@
+Una aplicació de 0,999… com a representació d'1 es dóna en la teoria de nombres elemental. L'any 1802, H. Goodwin publicà una observació sobre l'aparició de xifres 9 en les representacions, en forma de decimals que es repeteixen, de les fraccions en les quals els denominadors són uns determinats nombres primers. Els exemples inclouen:

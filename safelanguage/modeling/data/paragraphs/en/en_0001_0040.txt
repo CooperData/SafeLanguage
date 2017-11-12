@@ -1,0 +1,1 @@
+If (xn) and (yn) are two Cauchy sequences, then they are defined to be equal as real numbers if the sequence (xn − yn) has the limit 0. Truncations of the decimal number b0.b1b2b3... generate a sequence of rationals which is Cauchy; this is taken to define the real value of the number. Thus in this formalism the task is to show that the sequence of rational numbers

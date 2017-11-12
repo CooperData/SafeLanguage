@@ -1,0 +1,1 @@
+. D'aquesta manera una peculiaritat dels nombres decimals és que l'addició no sempre pot ser cancel·lada. Una altra peculiaritat és que cap nombre decimal no correspon a 13. Després de definir la multiplicació, els nombres decimals formen un semianell positiu, totalment ordenat, commutatiu.

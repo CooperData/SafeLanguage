@@ -1,0 +1,1 @@
+juga un paper clau en una caracterització dels fractals més simples, en el conjunt de Cantor de terços mitjans: «Un punt en l'interval unitat és en el conjunt de Cantor si i només si es pot representar en base 3 fent servir només els dígits 0 i 2.»

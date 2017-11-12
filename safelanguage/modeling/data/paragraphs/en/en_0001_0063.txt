@@ -1,0 +1,1 @@
+Some students interpret "0.999..." (or similar notation) as a large but finite string of 9s, possibly with a variable, unspecified length. If they accept an infinite string of nines, they may still expect a last 9 "at infinity".
