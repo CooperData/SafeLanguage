@@ -80,5 +80,15 @@ profile
 **/*~
 
 
+#CEM temporary files
+CEM/uno.txt
+CEM/dos.txt
+CEM/tres.txt
+CEM/cuatro.txt
+CEM/cinco.txt
+CEM/seis.txt
+CEM/login-data/**
+CEM/logs/**
+
 # End of https://www.gitignore.io/api/pycharm
 
